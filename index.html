@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<script type="application/javascript">!function( /* Window */ window ) {
+
+	function parse(language) {
+		language = language.replace( /-.*$/, '' );
+		return language in available && language;
+	}
+
+	var available = { 'ru': 0, 'be': 0, 'en': 0 };
+	var navigator = window.navigator;
+	var languages = navigator[ 'languages' ];
+	var language;
+
+	if ( languages ) {
+		var i = 0, l = languages.length;
+		for ( ; i<l; ++i ) {
+			if ( language = parse( languages[ i ] ) ) break;
+		}
+	}
+
+	if ( !language ) {
+		language = parse( navigator[ 'navigator' ] || navigator[ 'userLanguage' ] || navigator[ 'browserLanguage' ] || navigator[ 'systemLanguage' ] );
+	}
+
+	if ( !language ) {
+		language = 'en';
+	}
+
+	window.location = '/' + language + '/';
+
+}( window )</script>
+<head><meta http-equiv="refresh" content="0; url=/en/" /></head>
+</html>

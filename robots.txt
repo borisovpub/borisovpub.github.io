@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: http://irish-pub.by/sitemap.xml
+Host: irish-pub.by
