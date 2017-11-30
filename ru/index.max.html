@@ -964,6 +964,11 @@
 
 	<script type="application/javascript">!function( /* Window */ window ) {
 
+		/** @type {Location|String} */
+		var location = window.location;
+		/** @type {History} */
+		var history = window.history;
+
 		/** @type {HTMLDocument} */
 		var document = window.document;
 		/** @type {Element} */
@@ -1341,6 +1346,8 @@
 		appendChild( querySelector( 'head' ), createScript( '//www.google-analytics.com/analytics.js' ) );
 		ga( 'create', 'UA-29836360-1', 'auto' );
 		ga( 'send', 'pageview' );
+
+		if ( location.search && history ) history.replaceState( null, document.title, location.pathname );
 
 		// хуки для ie
 		if ( /Trident|MSIE/.exec( window.navigator.userAgent ) ) {
