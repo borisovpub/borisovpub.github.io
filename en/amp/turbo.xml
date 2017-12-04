@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss
+	xmlns:yandex="http://news.yandex.ru"
+	xmlns:turbo="http://turbo.yandex.ru"
+	version="2.0"
+>
+
+	<channel>
+
+		<link>http://irish-pub.by</link>
+		<title>Irish Pub in Barysaw</title>
+		<description>Beer restaurant with a great selection of beer, european cuisine, high level of service, sports broadcasts and live music</description>
+		<language>en</language>
+
+		<item turbo="true">
+
+			<link>http://irish-pub.by/en/</link>
+			<pubDate>Fri, 15 Jun 2012 19:00:00 +0300</pubDate>
+
+			<turbo:content><![CDATA[
+				<img src="http://irish-pub.by/@/bg.jpg" />
+				<h2>About Pub</h2>
+				<p><b>Irish Pub</b> in Borisov is waiting for great lovers of good food and beer, all those who know how to have a good time.</p>
+				<p><b>Pub</b> - is a place where people come to relax and have a glass of beer after work, to spend time with their friends. The most common phrase in <b>Pub</b> is "For me as usual". Here you can dine in the evening, taste exquisite drinks and meet old or new friends.</p>
+				<p>Our <b>Pub</b> offers the wide range of draft and bottled beers. Dark and light, ale and lager, strong and non-alcoholic - everyone can find something to enjoy in the <b>Pub</b> menu. Various beer snacks, meat and fish steaks, burgers will complement your dinner.</p>
+				<p>In addition, the <b>Pub</b> has a great entertainment option for any company. Table for pool billiards, two dartboards, table football (kicker) are available for all guests of our restaurant. In Irish <b>Pub</b> you can watch broadcasts of different sporting events, celebrate your personal occasion or join the celebration of such international festivals and holidays as Halloween, St. Patrick's Day, Arthur Guinness Day and others. Every year on June 15 the big celebration of Irish Pub’s birthday takes place.</p>
+				<p>In the <b>Pub</b> we create the traditions together. So let your visit to ours become a good tradition! </p>
+				<p><b>Irish Pub</b> in Borisov is a great rest for the best friends!</p>
+			]]></turbo:content>
+
+			<yandex:related>
+				<link url="tel:+375177761089" img="http://irish-pub.by/@/tl.svg">+375 (177) 76-10-89</link>
+				<link url="mailto:info@irish-pub.by" img="http://irish-pub.by/@/ml.svg">info@irish-pub.by</link>
+				<link url="//goo.gl/hLgUuc" img="http://irish-pub.by/@/mp.svg">Goolge maps</link>
+				<link url="//goo.gl/8Gbfgs" img="http://irish-pub.by/@/fb.svg">Facebook</link>
+				<link url="//goo.gl/mOL4xb" img="http://irish-pub.by/@/ig.svg">Instagram</link>
+				<link url="//goo.gl/UTH0eJ" img="http://irish-pub.by/@/vk.svg">VKontakte</link>
+				<link url="//goo.gl/omuw5f" img="http://irish-pub.by/@/ok.svg">Odnoklassniki</link>
+			</yandex:related>
+
+		</item>
+
+	</channel>
+
+</rss>
