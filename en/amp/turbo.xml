@@ -17,8 +17,10 @@
 			<link>http://irish-pub.by/en/</link>
 			<pubDate>Fri, 15 Jun 2012 19:00:00 +0300</pubDate>
 
+			<title>About Pub</title>
+
 			<turbo:content><![CDATA[
-				<img src="http://irish-pub.by/@/bg.jpg" />
+				<header><figure><img src="http://irish-pub.by/@/bg.jpg" /></figure></header>
 				<h2>About Pub</h2>
 				<p><b>Irish Pub</b> in Borisov is waiting for great lovers of good food and beer, all those who know how to have a good time.</p>
 				<p><b>Pub</b> - is a place where people come to relax and have a glass of beer after work, to spend time with their friends. The most common phrase in <b>Pub</b> is "For me as usual". Here you can dine in the evening, taste exquisite drinks and meet old or new friends.</p>
@@ -37,6 +39,8 @@
 				<link url="//goo.gl/UTH0eJ" img="http://irish-pub.by/@/vk.svg">VKontakte</link>
 				<link url="//goo.gl/omuw5f" img="http://irish-pub.by/@/ok.svg">Odnoklassniki</link>
 			</yandex:related>
+
+			<amplink>http://irish-pub.by/en/amp/</amplink>
 
 		</item>
 
