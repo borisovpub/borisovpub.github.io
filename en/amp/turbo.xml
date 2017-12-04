@@ -31,11 +31,11 @@
 			]]></turbo:content>
 
 			<yandex:related>
-				<link url="//goo.gl/hLgUuc" img="http://irish-pub.by/@/mp.svg">Goolge maps</link>
-				<link url="//goo.gl/8Gbfgs" img="http://irish-pub.by/@/fb.svg">Facebook</link>
-				<link url="//goo.gl/mOL4xb" img="http://irish-pub.by/@/ig.svg">Instagram</link>
-				<link url="//goo.gl/UTH0eJ" img="http://irish-pub.by/@/vk.svg">VKontakte</link>
-				<link url="//goo.gl/omuw5f" img="http://irish-pub.by/@/ok.svg">Odnoklassniki</link>
+				<link url="//goo.gl/hLgUuc" img="http://irish-pub.by/@/mp.png">Goolge maps</link>
+				<link url="//goo.gl/8Gbfgs" img="http://irish-pub.by/@/fb.png">Facebook</link>
+				<link url="//goo.gl/mOL4xb" img="http://irish-pub.by/@/ig.png">Instagram</link>
+				<link url="//goo.gl/UTH0eJ" img="http://irish-pub.by/@/vk.png">VKontakte</link>
+				<link url="//goo.gl/omuw5f" img="http://irish-pub.by/@/ok.png">Odnoklassniki</link>
 			</yandex:related>
 
 			<amplink>http://irish-pub.by/en/amp/</amplink>
