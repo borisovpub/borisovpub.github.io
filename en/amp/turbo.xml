@@ -17,7 +17,7 @@
 			<link>http://irish-pub.by/en/</link>
 			<pubDate>Fri, 15 Jun 2012 19:00:00 +0300</pubDate>
 
-			<title>About Pub</title>
+			<title>Irish Pub in Barysaw</title>
 
 			<turbo:content><![CDATA[
 				<header><figure><img src="http://irish-pub.by/@/bg.jpg" /></figure></header>
@@ -31,8 +31,6 @@
 			]]></turbo:content>
 
 			<yandex:related>
-				<link url="tel:+375177761089" img="http://irish-pub.by/@/tl.svg">+375 (177) 76-10-89</link>
-				<link url="mailto:info@irish-pub.by" img="http://irish-pub.by/@/ml.svg">info@irish-pub.by</link>
 				<link url="//goo.gl/hLgUuc" img="http://irish-pub.by/@/mp.svg">Goolge maps</link>
 				<link url="//goo.gl/8Gbfgs" img="http://irish-pub.by/@/fb.svg">Facebook</link>
 				<link url="//goo.gl/mOL4xb" img="http://irish-pub.by/@/ig.svg">Instagram</link>
