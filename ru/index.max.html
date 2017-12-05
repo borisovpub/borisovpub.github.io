@@ -3,7 +3,7 @@
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# place: http://ogp.me/ns/place# restaurant: http://ogp.me/ns/restaurant#">
 
-	<link rel="amphtml" href="https://irish-pub.by/ru/amp/" />
+	<link rel="amphtml" href="https://irish-pub.by/ru/" />
 
 	<title>Ирландский Паб в Борисове</title>
 
@@ -1011,7 +1011,7 @@
 			}
 		);
 		/** @type {function(Function):Function} */
-		var unbindNonE = function(func) { return func && unbind( func ) };
+		var unbindNonEmpty = function(func) { return func && unbind( func ) };
 
 		/** @type {function(Object, PropertyKey):boolean} */
 		var hasOwnProperty = unbind( Object.prototype.hasOwnProperty );
@@ -1037,7 +1037,7 @@
 		/** @type {function(Node, Node):Element} */
 		var appendChild = unbind( documentElement.appendChild );
 		/** @type {function(Node):void} */
-		var removeChild = unbindNonE( getNativeFunction( documentElement[ 'remove' ] ) ) || function(node) { var parent = node.parentNode; if ( parent ) parent.removeChild( node ) };
+		var removeChild = unbindNonEmpty( getNativeFunction( documentElement[ 'remove' ] ) ) || function(node) { var parent = node.parentNode; if ( parent ) parent.removeChild( node ) };
 
 		/** @type {function(string):Element} */
 		var createElement = bind( document.createElement, document );
@@ -1090,7 +1090,7 @@
 		 * @param {function(Element):void} handle
 		 * @returns {void}
 		 */
-		var createscC = function(element, handle) {
+		var createscContainer = function(element, handle) {
 
 			addEventListener( element, 'mouseenter', function mouseEnterOnce() {
 
@@ -1200,7 +1200,7 @@
 		var arr, i, l;
 
 		// vk.com
-		vk && createscC( vk, function(C) {
+		vk && createscContainer( vk, function(C) {
 
 			var widget = appendChild( C, createElement( 'div' ) );
 			var script = appendChild( widget, createScript( '//vk.com/js/api/openapi.js?150' ) );
@@ -1224,7 +1224,7 @@
 		} );
 
 		// facebook.com
-		fb && createscC( fb, function(C) {
+		fb && createscContainer( fb, function(C) {
 
 			var widget = appendChild( C, createIFrame( '//www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fborisovpub%2F&tabs&width=320&&hide_cta=true' ) );
 
@@ -1234,7 +1234,7 @@
 		} );
 
 		// ok.ru
-		ok && createscC( ok, function(C) {
+		ok && createscContainer( ok, function(C) {
 
 			var widget = appendChild( C, createElement( 'div' ) );
 			var script = appendChild( widget, createScript( '//connect.ok.ru/connect.js' ) );
@@ -1255,7 +1255,7 @@
 		} );
 
 		// instagram.com
-		ig && createscC( ig, function(C) {
+		ig && createscContainer( ig, function(C) {
 
 			var widget = appendChild( C, createElement( 'blockquote' ) );
 			var anchor = appendChild( widget, createElement( 'a' ) );
