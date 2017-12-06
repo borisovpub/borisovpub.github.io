@@ -82,8 +82,8 @@
 			white-space: nowrap;
 		}
 
-		iframe {
-			margin-top: 40px;
+		main iframe {
+			margin-top: 20px;
 			min-height: 200px;
 			width: 100%;
 		}
@@ -255,8 +255,8 @@
 
 	var ga = window[ 'ga' ] = function ga() { ga[ 'q' ].push( arguments ) };
 
-	/** @type {HTMLDocument} */
 	var document = window.document;
+	var location = window.location;
 
 	var parse = function(language) {
 		return available[ language.replace( /-.*$/, '' ) ];
@@ -301,6 +301,15 @@
 	ga = document.createElement( 'iframe' );
 	ga[ 'src' ] = '//carte.by/borisov/irish-pub/export/' + language + '/?order';
 	document.querySelector( 'main' ).appendChild( ga );
+
+	if ( location.hash.replace( '#', '' ) == 'order' ) {
+		window.addEventListener( 'message', function handleOrder(event) {
+			if ( event.origin == 'https://carte.by' ) {
+				window.removeEventListener( 'message', handleOrder );
+				window.postMessage( '{"showOrder":"//carte.by/borisov/irish-pub/?order=iframe"}', '*' );
+			}
+		} );
+	}
 
 	createScript( '//carte.by/source/front/api.js' );
 	createScript( '//www.google-analytics.com/analytics.js' );
