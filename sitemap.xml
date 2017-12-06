@@ -17,4 +17,8 @@
 		<loc>http://blooddy.by/en/</loc>
 		<changefreq>monthly</changefreq>
 	</url>
+	<url>
+		<loc>http://blooddy.by/mennu/</loc>
+		<changefreq>monthly</changefreq>
+	</url>
 </urlset>
