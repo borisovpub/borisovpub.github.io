@@ -7,7 +7,6 @@
 		<email>info@irish-pub.by</email>
 		<currencies>
 			<currency id="BYN" rate="1" />
-			<currency id="BYR" rate="0.0001" />
 		</currencies>
 		<categories>
 			<category id="1">Закуски</category>
