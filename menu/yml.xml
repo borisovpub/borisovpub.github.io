@@ -23,6 +23,7 @@
 		</categories>
 		<offers>
 			<offer>
+				<url>http://irish-pub.by/menu/</url>
 				<name>Чесночные гренки</name>
 				<description>Ломтики обжаренного ржаного хлеба с зубчиками чеснока и фирменным соусом, Инструкция: нежно натираем гренку ароматным чесноком, погружаем в соус и хрустим, запивая большим количеством вкусного пива на Ваш выбор</description>
 				<currencyId>BYN</currencyId>
@@ -31,6 +32,7 @@
 				<categoryId>1</categoryId>
 			</offer>
 			<offer>
+				<url>http://irish-pub.by/menu/</url>
 				<name>Хрустящая курочка</name>
 				<description>Кусочки нежного куриного филе, обжаренного в панировке, с картошкой фри и соусом на гарнир</description>
 				<currencyId>BYN</currencyId>
@@ -39,6 +41,7 @@
 				<categoryId>1</categoryId>
 			</offer>
 			<offer>
+				<url>http://irish-pub.by/menu/</url>
 				<name>Чизболз</name>
 				<description>Горячие шарики из сыра “Сулугуни” с необычным соусом, Вызывают непреодолимое желание продегустировать новый сорт пива :)</description>
 				<currencyId>BYN</currencyId>
