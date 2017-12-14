@@ -4,7 +4,7 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# place: http://ogp.me/ns/place# restaurant: http://ogp.me/ns/restaurant#">
 
 	<link rel="canonical" href="/ru/" />
-	<link rel="amphtml" href="https://irish-pub.by/ru/" />
+	<link rel="amphtml" href="/ru/amp/" />
 
 	<title>Ирландский Паб в Борисове</title>
 
@@ -16,7 +16,7 @@
 	<meta property="fb:app_id" content="127939534000255" />
 	<meta property="fb:pages" content="405114422859324" />
 	<meta property="og:type" content="restaurant.restaurant" />
-	<meta property="og:url" content="http://irish-pub.by/ru/" />
+	<meta property="og:url" content="http://irish-pub.by/ru/menu/" />
 	<meta property="og:image" content="http://irish-pub.by/@/av.jpg" />
 	<meta property="og:title" content="Ирландский Паб в Борисове" />
 	<meta property="og:description" content="Пивной ресторан с большим выбором пива, европейской кухней, высоким уровнем обслуживания, спортивными трансляциями и живой музыкой" name="description" />
@@ -132,6 +132,11 @@
 			transition: 100ms linear;
 		}
 
+		a {
+			color: inherit;
+			text-decoration: inherit;
+		}
+
 		li {
 			list-style: none;
 		}
@@ -201,16 +206,19 @@
 			line-height: 30px;
 			position: absolute;
 			right: 250px;
-			text-decoration: none;
 			font-weight: bold;
 			font-size: 20px;
 			color: #AAA;
-
 		}
 
 		#ml:hover,
 		#tl:hover {
 			color: #FFF;
+		}
+
+		#ml img,
+		#tl img {
+			display: none;
 		}
 
 		#tl { top: 15px }
@@ -239,24 +247,15 @@
 			height: 50px;
 			width: 50px;
 			text-align: center;
-			text-decoration: none;
 			text-transform: uppercase;
 		}
 
-		#lg li a {
+		#lg a {
 			background-color: #44A;
 		}
 
-		#lg li a:hover {
+		#lg a:hover {
 			background-color: #335;
-		}
-
-		#mp {
-			position: absolute;
-			right: 20px;
-			top: 110px;
-			padding: 10px;
-			background-color: rgba( 0, 0, 0, 0.85 );
 		}
 
 		#ct > * {
@@ -308,7 +307,6 @@
 		#ct a {
 			color: #FF8;
 			font-weight: bold;
-			text-decoration: none;
 		}
 
 		#ct a:hover {
@@ -371,7 +369,6 @@
 			padding: 20px 0;
 		}
 
-		#mp,
 		#sc a {
 			display: block;
 			width: 80px;
@@ -389,6 +386,25 @@
 			line-height: 80px;
 			text-transform: uppercase;
 			overflow: hidden;
+		}
+
+		#mp {
+			height: 60px;
+			position: absolute;
+			right: 20px;
+			top: 110px;
+			padding: 20px;
+			background-color: rgba( 0, 0, 0, 0.85 );
+		}
+
+		#mp img {
+			width: 60px;
+			height: 60px;
+		}
+
+		#mp span {
+			height: 60px;
+			line-height: 60px;
 		}
 
 		#vk > a { background: #4D76A1 }
@@ -432,7 +448,6 @@
 			height: 387px;
 		}
 
-		#mp:hover,
 		#sc li.H a,
 		#sc li:hover a {
 			width: 320px;
@@ -477,11 +492,26 @@
 				left: 20px;
 				padding: 15px;
 				background: rgba( 0, 0, 0, 0.85 );
-				line-height: 24px;
+				line-height: 30px;
+				height: 30px;
+			}
+
+			#ml img,
+			#tl img {
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+			}
+
+			#ml span,
+			#tl span {
+				display: inline-block;
+				overflow: hidden;
+				margin: 0 10px;
 			}
 
 			#ml {
-				top: 164px;
+				top: 170px;
 			}
 
 		}
@@ -591,37 +621,27 @@
 				background: rgba( 0, 0, 0, 0.85 );
 			}
 
-			header.H #mn,
-			header:hover #mn{
-				opacity: 1;
-			}
-
-			header.H #lg,
-			header:hover #lg,
-			header.H #ml,
-			header:hover #ml,
-			header.H #tl,
-			header:hover #tl,
-			header.H #mp,
-			header:hover #mp {
-				display: block;
-			}
-
-			#tl {
-				margin-top: -10px;
-			}
-
-			#mp, #mp span,
+			#mp,
 			#ml,
 			#tl {
 				width: auto;
-				height: 50px;
-				line-height: 50px;
-				padding: 0 0 0 20px;
+				height: 40px;
+				line-height: 40px;
+				padding: 5px 0 5px 20px;
+				font-weight: normal;
+			}
+
+			#tl {
+				margin-top: -7px;
+				padding-top: 20px;
 			}
 
 			#mp span {
+				width: auto;
+				height: auto;
+				line-height: inherit;
 				color: #AAA;
+				margin: 0 10px;
 			}
 
 			#mp span {
@@ -634,17 +654,37 @@
 				color: #FFF;
 			}
 
-			#mp img {
-				display: none;
-			}
-
 			#lg {
 				height: 70px;
-				padding: 0 0 0 10px;
+				padding: 10px;
 			}
 
 			#lg li {
 				padding: 10px;
+			}
+
+			#ml img,
+			#tl img,
+			#mp img {
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+			}
+
+			header.H #mn,
+			header:hover #mn {
+				opacity: 1;
+			}
+
+			header.H #lg,
+			header:hover #lg,
+			header.H #ml,
+			header:hover #ml,
+			header.H #tl,
+			header:hover #tl,
+			header.H #mp,
+			header:hover #mp {
+				display: block;
 			}
 
 			aside {
@@ -888,6 +928,10 @@
 
 		@media ( max-width: 799px ) {
 
+			.ie #tl {
+				margin-top: -8px;
+			}
+
 			.ie #wg span {
 				font-size: 14px;
 			}
@@ -931,9 +975,11 @@
 	<header data-active>
 		<h1 itemprop="name">Ирландский Паб <span>в Борисове</span></h1>
 		<span id="mn" data-button><img src="../@/mn.svg" width="60" height="60" alt="Меню" /></span>
-		<a id="tl" href="tel:+375177761089">+375 (177) 76-10-89</a>
-		<a id="ml" href="mailto:info@irish-pub.by">info@irish-pub.by</a>
-		<a id="mp" itemprop="sameAs significantLink" target="_blank" data-href="//goo.gl/FBfGXS" href="//maps.google.com/maps?cid=12187415209804223660" data-active><img src="../@/gm.svg" width="80" height="80" /><span>Google maps</span></a>
+		<ul id="cs">
+			<li><a id="tl" href="tel:+375177761089"><img src="../@/tl.svg" width="40" height="40" /><span>+375 (177) 76-10-89</span></a></li>
+			<li><a id="ml" href="mailto:info@irish-pub.by"><img src="../@/ml.svg" width="40" height="40" /><span>info@irish-pub.by</span></a></li>
+			<li><a id="mp" itemprop="sameAs significantLink" target="_blank" data-href="//goo.gl/FBfGXS" href="//maps.google.com/maps?cid=12187415209804223660" data-active><img src="../@/mp.svg" width="60" height="60" /><span>Google maps</span></a></li>
+		</ul>
 		<ul id="lg">
 			<li><a itemprop="sameAs" href="../be/" hreflang="be" rel="alternate">be</a></li>
 			<li><span itemprop="inLanguage">ru</span></li>

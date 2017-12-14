@@ -4,6 +4,10 @@
 	xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >
 	<url>
+		<loc>http://irish-pub.by/</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
 		<loc>http://irish-pub.by/ru/</loc>
 		<changefreq>monthly</changefreq>
 		<xhtml:link rel="amphtml" hreflang="ru" href="http://irish-pub.by/ru/amp/" />
@@ -27,5 +31,23 @@
 	<url>
 		<loc>http://irish-pub.by/menu/</loc>
 		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>http://irish-pub.by/ru/menu/</loc>
+		<changefreq>monthly</changefreq>
+		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/menu/" />
+		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/menu/" />
+	</url>
+	<url>
+		<loc>http://irish-pub.by/be/menu/</loc>
+		<changefreq>monthly</changefreq>
+		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/menu/" />
+		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/menu/" />
+	</url>
+	<url>
+		<loc>http://irish-pub.by/en/menu/</loc>
+		<changefreq>monthly</changefreq>
+		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/menu/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/menu/" />
 	</url>
 </urlset>
