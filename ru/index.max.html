@@ -125,6 +125,9 @@
 			-moz-user-select: none;
 			-ms-user-select: none;
 			user-select: none;
+		}
+
+		body, body > * {
 			min-width: 320px;
 		}
 
@@ -1009,7 +1012,7 @@
 			<p><b>Паб</b> – это место, куда приходят пропустить по бокальчику пива, отдохнуть после работы, повеселиться с друзьями. <b>Паб</b> – это место, где самая распространённая фраза «Мне как обычно», куда можно прийти одному и встретить друзей, где легко не только поужинать вечером и продегустировать изысканные напитки, но и многое узнать и отдохнуть душой.</p>
 			<p>Наш <b>Паб</b> предлагает всем желающим оценить широкий выбор разливного и бутылочного пива. Темное и светлое, эль и лагер, крепкое и безалкогольное – каждый найдёт себе сорт по душе в нашем меню. А не захмелеть от выбора напитков помогут сытные блюда: различные пивные закуски, стейки из мяса и рыбы, настоящие бургеры, приготовленные специально для Вас.</p>
 			<p>Кроме всего прочего у нас есть отличный выбор развлечений для шумной компании. Стол для игры на бильярде, доски для игры в дартс, настольный футбол – все это к услугам всех друзей ресторана. В зале <b>Паба</b> можно посмотреть спортивные трансляции, отметить Ваш личный праздник или присоединится к празднованию таких международных гуляний как Хэллоуин, День Святого Патрика, День Артура Гиннесса и многое другое. Каждый год 15-го июня с размахом отмечается День Рождения Паба.</p>
-			<p>На регулярной основе в <b>Пабе</b> играют в широко известную «<a data-href="//goo.gl/reScQE" target="_blank" href="//mozgoboj.by">МозгоБойню</a>», а так же изучают культуру Беларуси на занятиях «<a data-href="//goo.gl/RR2zNn" target="_blank" href="//www.movananova.by">Мова Нанова</a>». Часто музыкальные концерты в Борисове проходят на сцене <b>Ирландского Паба</b>. Здесь уже успели выступить такие известные музыкальные коллективы как «<b>Крама</b>», «<b>Нейро Дюбель</b>», «<b>Akute</b>», «<b>Дай Дорогу!</b>», «<b>Лявон Вольскі</b>». Присоединяйтесь и Вы к веселой культурной жизни нашего <b>Паба</b>.</p>
+			<p>На регулярной основе в <b>Пабе</b> играют в широко известную «<a href="mozgoboj">МозгоБойню</a>», а так же изучают культуру Беларуси на занятиях «<a data-href="//goo.gl/RR2zNn" target="_blank" href="//www.movananova.by">Мова Нанова</a>». Часто музыкальные концерты в Борисове проходят на сцене <b>Ирландского Паба</b>. Здесь уже успели выступить такие известные музыкальные коллективы как «<b>Крама</b>», «<b>Нейро Дюбель</b>», «<b>Akute</b>», «<b>Дай Дорогу!</b>», «<b>Лявон Вольскі</b>». Присоединяйтесь и Вы к веселой культурной жизни нашего <b>Паба</b>.</p>
 			<p><b>Ирландский Паб</b> в Борисове – это традиции, которые мы создаём вместе. Так пусть зайти в гости к нам – станет Вашей доброй традицией!</p>
 			<p>Отличный отдых для лучших друзей!</p>
 		</div>
@@ -1027,14 +1030,15 @@
 		/** @type {Element} */
 		var documentElement = document.documentElement;
 
-		var FunctionPrototype = Function.prototype;
+		var Object = window.Object;
+		var FunctionPrototype = window.Function.prototype;
 
 		/**
 		 * @param {Function} func
 		 * @return {Function}
 		 */
 		var getNativeFunction = function(func) {
-			return typeof func == 'function' && /function\s+\w+\(\)\s*\{\s*\[native code]\s*}/.test( Function.prototype.toString.call( func ) ) && func;
+			return typeof func == 'function' && /function\s+\w+\(\)\s*\{\s*\[native code]\s*}/.test( FunctionPrototype.toString.call( func ) ) && func;
 		};
 
 		/** @type {function(Object, ...*):*} */
@@ -1109,7 +1113,7 @@
 		 */
 		var createIFrame = function(src) {
 
-			var iframe = createElement( 'iframe' );
+			var iframe = /** @type {HTMLIFrameElement} */createElement( 'iframe' );
 
 			setAttribute( iframe, 'src', src );
 			setAttribute( iframe, 'allowTransparency', true );
@@ -1125,7 +1129,7 @@
 		 */
 		var createScript = function(src) {
 
-			var script = createElement( 'script' );
+			var script = /** @type {HTMLScriptElement} */ createElement( 'script' );
 
 			setAttribute( script, 'type', 'text/javascript' );
 			setAttribute( script, 'async', 'async' );
@@ -1140,7 +1144,7 @@
 		 * @param {function(Element):void} handle
 		 * @returns {void}
 		 */
-		var createscContainer = function(element, handle) {
+		var createContainer = function(element, handle) {
 
 			addEventListener( element, 'mouseenter', function mouseEnterOnce() {
 
@@ -1148,11 +1152,11 @@
 
 				var timerID;
 
-				var C = appendChild( element, createElement( 'div' ) );
+				var container = appendChild( element, createElement( 'div' ) );
 
-				setAttribute( C, 'class', 'C R E' );
-				C.getBoundingClientRect();
-				setAttribute( C, 'class', 'C E' );
+				setAttribute( container, 'class', 'C R E' );
+				container.getBoundingClientRect();
+				setAttribute( container, 'class', 'C E' );
 
 				addEventListener( element, 'mouseenter', mouseEnter );
 				addEventListener( element, 'mouseleave', mouseLeave );
@@ -1163,22 +1167,22 @@
 						removeEventListener( element, 'mouseenter', mouseEnter );
 						removeEventListener( element, 'mouseleave', mouseLeave );
 
-						handle( C );
+						handle( container );
 
 						var loadTimeout = function() {
 							setTimeout( function() {
-								setAttribute( C, 'class', 'C' );
+								setAttribute( container, 'class', 'C' );
 							}, 500 );
 						};
 
 						var loadIFrame = function() {
-							var iframe = queryElementSelector( C, 'iframe' );
+							var iframe = queryElementSelector( container, 'iframe' );
 							if ( iframe ) onIFrameLoad( iframe, loadTimeout );
 							else loadTimeout();
 						};
 
 						var loadScript = function() {
-							var script = queryElementSelector( C, 'script' );
+							var script = queryElementSelector( container, 'script' );
 							if ( script ) onScriptLoad( script, function() {
 								setTimeout( loadIFrame );
 							} );
@@ -1250,9 +1254,9 @@
 		var arr, i, l;
 
 		// vk.com
-		vk && createscContainer( vk, function(C) {
+		vk && createContainer( vk, function(container) {
 
-			var widget = appendChild( C, createElement( 'div' ) );
+			var widget = appendChild( container, createElement( 'div' ) );
 			var script = appendChild( widget, createScript( '//vk.com/js/api/openapi.js?150' ) );
 
 			setAttribute( widget, 'id', 'vk_widget' );
@@ -1274,9 +1278,9 @@
 		} );
 
 		// facebook.com
-		fb && createscContainer( fb, function(C) {
+		fb && createContainer( fb, function(container) {
 
-			var widget = appendChild( C, createIFrame( '//www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fborisovpub%2F&tabs&width=320&&hide_cta=true' ) );
+			var widget = appendChild( container, createIFrame( '//www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fborisovpub%2F&tabs&width=320&&hide_cta=true' ) );
 
 			setAttribute( widget, 'width', '320' );
 			setAttribute( widget, 'height', '214' );
@@ -1284,12 +1288,12 @@
 		} );
 
 		// ok.ru
-		ok && createscContainer( ok, function(C) {
+		ok && createContainer( ok, function(container) {
 
-			var widget = appendChild( C, createElement( 'div' ) );
+			var widget = appendChild( container, createElement( 'div' ) );
 			var script = appendChild( widget, createScript( '//connect.ok.ru/connect.js' ) );
 
-			setAttribute( C, 'id', 'ok_C' );
+			setAttribute( container, 'id', 'ok_C' );
 			setAttribute( widget, 'id', 'ok_widget' );
 
 			onScriptLoad( script, function() {
@@ -1305,9 +1309,9 @@
 		} );
 
 		// instagram.com
-		ig && createscContainer( ig, function(C) {
+		ig && createContainer( ig, function(container) {
 
-			var widget = appendChild( C, createElement( 'blockquote' ) );
+			var widget = appendChild( container, createElement( 'blockquote' ) );
 			var anchor = appendChild( widget, createElement( 'a' ) );
 
 			appendChild( widget, createScript( '//platform.instagram.com/ru_RU/embeds.js' ) );
@@ -1425,7 +1429,7 @@
 
 		}
 
-	}( window )</script>
+	}( this )</script>
 
 	<link href="//fonts.googleapis.com/css?family=Open+Sans|Caveat" rel="stylesheet" type="text/css" />
 
