@@ -1,0 +1,928 @@
+
+@import url( "//fonts.googleapis.com/css?family=Open+Sans|Caveat" );
+
+html {
+	overflow-x: hidden;
+}
+
+html, body {
+	height: 100%;
+	font: 0 'Open Sans', sans-serif;
+	color: #FFF;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+body, body > * {
+	width: 100%;
+	min-width: 320px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	transition: all 100ms linear;
+}
+
+img {
+	width: auto;
+	height: auto;
+}
+
+a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+ul * {
+	display: inline-block;
+}
+
+li {
+	list-style: none;
+}
+
+aside {
+	font-size: 0;
+}
+
+iframe {
+	display: block;
+}
+
+header {
+	background: rgba( 0, 0, 0, 0.8 );
+	position: relative;
+}
+
+h1 {
+	margin: 0 20px;
+	line-height: 90px;
+	text-transform: uppercase;
+	font-size: 36px;
+	font-weight: normal;
+}
+
+h1 span {
+	text-transform: none;
+	transform-origin: 50% 0;
+	transform: rotate(-10deg);
+	font-family: Caveat,'Arial Narrow',sans-serif;
+	font-size: 56px;
+	color: #F70;
+}
+
+header div {
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: 50px;
+	padding: 20px 10px;
+}
+
+header * {
+	display: inline-block;
+	vertical-align: top;
+}
+
+header li {
+	padding: 0 10px;
+	font-size: 24px;
+}
+
+#list {
+	display: none;
+}
+
+#list img {
+	width: 60px;
+	height: 60px;
+}
+
+#contacts img {
+	height: 50px;
+	width: 50px;
+}
+
+#lang li > * {
+	text-align: center;
+	text-transform: uppercase;
+	width: 50px;
+	height: 50px;
+	background: #334;
+}
+
+#lang a {
+	background: #44A;
+}
+
+#lang a:hover {
+	background: #335;
+}
+
+#bg, #bg>* {
+	transition: 0s;
+}
+
+#bg {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	background-color: #333;
+	overflow: hidden;
+}
+
+#bg>* {
+	height: 100%;
+	width: auto;
+	margin-left: 50%;
+	transform: translateX( -50% );
+}
+
+.ie h1 > span {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 36px;
+	font-style: italic;
+}
+
+@media ( min-width: 1079px ) {
+
+	#contacts span {
+		padding: 0;
+		max-width: 0;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	#contacts a:hover span {
+		padding: 0 0 0 10px;
+		max-width: 220px;
+	}
+
+}
+
+@media ( max-width: 1239px ) and ( min-width: 1080px ) {
+
+	h1 {
+		font-size: 2.9vw;
+	}
+
+	h1 span {
+		font-size: 4.5vw;
+	}
+
+	header div {
+		line-height: 4vw;
+		padding: calc( 45px - 2vw ) 10px;
+	}
+
+	header li {
+		font-size: 1.8vw;
+	}
+
+	#contacts img,
+	#lang li > * {
+		width: 4vw;
+		height: 4vw;
+	}
+
+	.ie h1 > span {
+		font-size: 2.9vw;
+	}
+
+}
+
+@media ( max-width: 1079px ) and ( min-width: 1020px ) {
+
+	#contacts a:hover img {
+		opacity: 0.8;
+	}
+
+}
+
+@media ( max-width: 1079px ) and ( min-width: 800px ) {
+
+	#contacts span {
+		position: absolute;
+		display: block;
+		transform: translateX( -50% );
+		margin: 15px 0 0 25px;
+		padding: 0 15px;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	#contacts span:before {
+		content: '';
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		border: 10px solid transparent;
+		margin-left: -10px;
+	}
+
+	#contacts a:hover span {
+		opacity: 1;
+	}
+
+	#tel span { background: #409C00 }
+	#mail span { background: #E3B21D }
+	#map span { background: #D73F35 }
+
+	#tel span:before { border-bottom-color: #409C00 }
+	#mail span:before { border-bottom-color: #E3B21D }
+	#map span:before { border-bottom-color: #D73F35 }
+
+	.ie #contacts span {
+		max-height: 0;
+		overflow: hidden;
+	}
+
+	.ie #contacts a:hover span {
+		max-height: 50px;
+		overflow: inherit;
+	}
+
+}
+
+@media ( max-width: 1019px ) and ( min-width: 800px ) {
+
+	h1 {
+		font-size: 3.53vw;
+	}
+
+	h1 span {
+		transform-origin: 50% 50%;
+		font-size: 5.5vw;
+	}
+
+	header div {
+		line-height: 4.9vw;
+		padding: calc( 45px - 2.45vw ) 10px;
+	}
+
+	header li {
+		padding: 0 0.99vw;
+		font-size: 2.4vw;
+	}
+
+	#contacts img,
+	#lang li > * {
+		width: 4.9vw;
+		height: 4.9vw;
+	}
+
+	#contacts span {
+		transform: translateX( -50% );
+		margin-left: 2.45vw;
+	}
+
+	.ie h1 > span {
+		font-size: 3.6vw;
+	}
+
+}
+
+@media ( max-width: 799px ) {
+
+	#contacts img {
+		width: 40px;
+		height: 40px;
+	}
+
+	header li {
+		padding: 5px 10px;
+		font-size: 22px;
+	}
+
+	header div {
+		background: rgba( 0, 0, 0, 0.8 );
+		z-index: 2;
+		display: block;
+		left: 0;
+		top: 90px;
+		line-height: 0;
+		padding: 0 10px;
+	}
+
+	header ul {
+		display: block;
+		line-height: 40px;
+		max-height: 0;
+		overflow: hidden;
+	}
+
+	#list {
+		cursor: pointer;
+		display: block;
+		position: absolute;
+		right: 0;
+		top: -90px;
+		padding: 15px 20px;
+		opacity: 0.8;
+	}
+
+	#contacts {
+		margin: 0;
+	}
+
+	#contacts li {
+		display: block;
+	}
+
+	#contacts span {
+		padding: 0 10px;
+		opacity: 0.6;
+	}
+
+	#contacts a {
+		width: 100%;
+	}
+
+	#contacts a:hover img,
+	#contacts a:hover span {
+		opacity: 1;
+	}
+
+	#lang li > * {
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+	}
+
+	header.hover div,
+	header:hover div {
+		padding: 20px 10px;
+	}
+
+	header.hover ul,
+	header:hover ul {
+		max-height: 150px;
+	}
+
+	header.hover #contacts,
+	header:hover #contacts {
+		margin: 0 0 10px;
+	}
+
+	header.hover #list,
+	header:hover #list {
+		opacity: 1;
+	}
+
+}
+
+@media ( max-width: 699px ) and ( min-width: 550px ) {
+
+	h1 {
+		line-height: 13vw;
+		font-size: 5.15vw;
+	}
+
+	h1 span {
+		font-size: 8vw;
+	}
+
+	header div {
+		top: 12.9vw;
+	}
+
+	#list {
+		top: -12.9vw;
+		padding: 2.07vw 20px;
+	}
+
+	#list img {
+		width: 8.7vw;
+		height: 8.7vw;
+	}
+
+	.ie h1 > span {
+		font-size: 5.4vw;
+	}
+
+}
+
+@media ( max-width: 549px ) {
+
+	h1 {
+		font-size: 5.5vw;
+		line-height: 70px;
+	}
+
+	h1 span {
+		transform-origin: 50% 100%;
+		font-size: 7vw;
+	}
+
+	header div {
+		top: 70px;
+	}
+
+	#list {
+		top: -70px;
+		padding: 12px 20px;
+	}
+
+	#list img {
+		width: 46px;
+		height: 46px;
+	}
+
+	.ie h1 > span {
+		font-size: 4.8vw;
+	}
+
+}
+
+@media ( max-width: 429px ) {
+
+	h1 {
+		font-size: 24px;
+	}
+
+	h1 span {
+		display: none;
+	}
+
+}
+
+/* === ABOUT === */
+
+#about h2 span {
+	line-height: 80px;
+	font-size: 24px;
+}
+
+#about main {
+	font-size: 16px;
+}
+
+#about main p {
+	margin: 10px 20px;
+}
+
+#about main a {
+	color: #FF8;
+	font-weight: bold;
+}
+
+#about main a:hover {
+	color: #F88;
+	text-decoration: underline;
+}
+
+#warning {
+	display: block;
+}
+
+#warning span {
+	display: inline-block;
+	height: 80px;
+	width: 230px;
+	vertical-align: top;
+	margin: 0 0 0 20px;
+	text-transform: uppercase;
+	font-size: 15px;
+	line-height: 26px;
+	text-align: left;
+}
+
+#warning img,
+#social img {
+	width: 80px;
+	height: 80px;
+}
+
+.ie #social .social {
+	display: none;
+}
+
+.ie #social li.hover .social,
+.ie #social li:hover .social {
+	display: block;
+}
+
+@media ( min-width: 1060px ) {
+
+	#warning {
+		left: 260px;
+		bottom: 0;
+	}
+
+	#warning span {
+		font-size: 18px;
+		width: 280px;
+	}
+
+}
+
+@media ( max-width: 1059px ) and ( min-width: 800px ) {
+
+	#warning {
+		right: 0;
+		bottom: 140px;
+	}
+
+	#warning img {
+		width: 60px;
+		height: 60px;
+	}
+
+	#warning span {
+		width: 240px;
+		height: 60px;
+		line-height: 20px;
+	}
+
+}
+
+@media ( min-width: 840px ) {
+
+	#social span {
+		width: 0;
+		font-size: 24px;
+		line-height: 80px;
+		text-align: center;
+		vertical-align: top;
+		text-transform: uppercase;
+		overflow: hidden;
+	}
+
+	#social li {
+		position: relative;
+	}
+
+	#social li.hover span,
+	#social li:hover span {
+		width: 240px;
+	}
+
+	#social .social {
+		left: -20px;
+	}
+
+}
+
+@media ( min-width: 800px ) and ( max-width: 839px ) {
+
+	#social li {
+		position: static;
+	}
+
+	#social .social {
+		left: 0;
+	}
+
+}
+
+@media ( min-width: 800px ) {
+
+	#about h2 {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		padding: 20px;
+		background: rgba( 0, 0, 0, 0.8 );
+		cursor: pointer;
+	}
+
+	#about h2 span {
+		display: inline-block;
+		background: #C11;
+		height: 80px;
+		width: 200px;
+		text-align: center;
+	}
+
+	#about main div {
+		background-color: rgba( 0, 0, 0, 0.8 );
+		font-size: 16px;
+		overflow: auto;
+		position: absolute;
+		width: 700px;
+		top: 90px;
+		bottom: 120px;
+		left: -700px;
+		opacity: 0;
+	}
+
+	#about main div::-webkit-scrollbar {
+		background: transparent;
+		width: 6px;
+	}
+
+	#about main div::-webkit-scrollbar-thumb {
+		display: block;
+		background: rgba( 255, 255, 255, 0.8 );
+	}
+
+	#about main.hover div,
+	#about main:hover div {
+		left: 0;
+		opacity: 1;
+	}
+
+	#about main.hover span,
+	#about main:hover span {
+		background: #900;
+	}
+
+	#warning {
+		position: absolute;
+		background: rgba( 0, 0, 0, 0.8 );
+		padding: 10px 20px;
+		opacity: 0.6;
+	}
+
+	#warning.hover,
+	#warning:hover {
+		opacity: 1;
+	}
+
+	#social {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		display: block;
+		padding: 0 20px;
+		background: rgba( 0, 0, 0, 0.8 );
+	}
+
+	#social li {
+		padding: 20px 0;
+	}
+
+	#social .social {
+		position: absolute;
+		bottom: 120px;
+		width: 320px;
+		padding: 20px 20px 0;
+		background: rgba( 0, 0, 0, 0.8 );
+		pointer-events: none;
+		overflow: hidden;
+	}
+
+	#social .social.empty {
+		background: rgba( 0, 0, 0, 0.8 ) url( "../@/ld.svg" ) no-repeat center center;
+		min-height: 100px;
+	}
+
+	#social .social > * {
+		background: #FFF;
+	}
+
+	#social .social.empty > * {
+		opacity: 0;
+	}
+
+	#social .social,
+	#social .social.reset,
+	#social li.hover .social.reset,
+	#social li:hover .social.reset {
+		opacity: 0;
+	}
+
+	#social li.hover .social,
+	#social li:hover .social {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	#vk > a { background: #4D76A1 }
+	#ok > a { background: #F58220 }
+	#ig > a { background: #F50000 }
+	#fb > a { background: #4862A3 }
+
+	#vk .social { height: 208px }
+	#ok .social { height: 255px }
+	#ig .social { height: 376px }
+
+}
+
+@media ( max-width: 799px ) {
+
+	#about header {
+		background: #000;
+	}
+
+	#about #bg {
+		position: static;
+		height: auto;
+	}
+
+	#about #bg > * {
+		width: 100%;
+		height: auto;
+	}
+
+	#about h2 span {
+		margin: 0 0 0 20px;
+		height: 60px;
+		line-height: 60px;
+	}
+
+	#about main {
+		margin: 20px 0 40px;
+		color: #000;
+	}
+
+	#about main a {
+		color: #338;
+	}
+
+	#about main a:hover {
+		color: #366;
+	}
+
+	#social,
+	#warning {
+		display: inline-block;
+		background: #000;
+		text-align: center;
+	}
+
+	#social span,
+	#social div {
+		display: none;
+	}
+
+}
+
+@media ( max-width: 799px ) and ( min-width: 720px )  {
+
+	#social {
+		width: 360px;
+	}
+
+	#warning {
+		width: calc( 100% - 360px );
+	}
+
+	#social,
+	#warning {
+		padding: 20px 0;
+	}
+
+	#warning span {
+		margin: 0 0 0 10px;
+	}
+
+}
+
+@media ( max-width: 719px ) and ( min-width: 510px ) {
+
+	#social {
+		width: 45vw;
+	}
+
+	#warning {
+		width: calc( 100% - 45vw );
+	}
+
+	#social img,
+	#warning img,
+	#warning span {
+		width: 10vw;
+		height: 10vw;
+	}
+
+	#social,
+	#warning {
+		padding: 2.5vw 0;
+	}
+
+	#warning span {
+		width: calc( 100% - 18vw );
+		font-size: 2.2vw;
+		line-height: 3.3vw;
+		margin: 0 0 0 1vw;
+	}
+
+}
+
+@media ( max-width: 509px ) {
+
+	#social,
+	#warning {
+		display: block;
+	}
+
+	#warning {
+		width: 100%;
+	}
+
+	#warning img {
+		width: 50px;
+	}
+
+	#warning img,
+	#warning span {
+		height: 50px;
+		padding: 10px 0;
+		line-height: 16px;
+		font-size: 13px;
+	}
+
+	#social {
+		position: absolute;
+		width: 100%;
+		background: transparent;
+		text-align: right;
+	}
+
+	#social li {
+		padding: 10px 10px 0 0;
+	}
+
+	#social img {
+		width: 40px;
+		height: 40px;
+	}
+
+	#about main {
+		margin-top: 5px;
+	}
+
+}
+
+/* === MENU === */
+
+#menu header {
+	background: #000;
+}
+
+#menu main iframe {
+	margin-top: 20px;
+	min-height: 200px;
+	width: 100%;
+	overflow: hidden;
+}
+
+/* === MOZGOBOJ === */
+
+#mozgoboj #bg {
+	background-color: #2D0B37;
+}
+
+#mozgoboj h2 {
+	position: absolute;
+	top: 120px;
+	margin: 0;
+	transform: none;
+	text-align: center;
+	width: 100%;
+	height: 35%;
+}
+
+#mozgoboj h2 img {
+	height: 100%;
+}
+
+#mozgoboj #bg > div {
+	display: block;
+	position: absolute;
+	height: auto;
+	top: calc( 140px + 35% );
+	background: rgba( 45, 11, 55, 0.5 );
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 2.5vh;
+	text-align: center;
+}
+
+#mozgoboj #bg > div time {
+	display: block;
+	font-size: 3.5vh;
+}
+
+#mozgoboj h2 span {
+	position: absolute;
+	left: 50%;
+	top: 66%;
+	transform: translateX( -50% );
+	text-transform: uppercase;
+	font-size: 3.5vh;
+}
+
+#mozgoboj main a {
+	position: absolute;
+	background: #338;
+	border: solid 1px #FFF;
+	padding: 8px 16px;
+	border-radius: 4px;
+	left: 50%;
+	bottom: 40px;
+	font-size: 16px;
+	transform-origin: 50% 0;
+	transform: translateX( -50% );
+}
+
+#mozgoboj main a:hover {
+	background: #116;
+}
