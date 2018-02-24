@@ -485,8 +485,7 @@
 					'onCanNotWrite': function() {
 						window[ 'VK' ][ 'Widgets' ][ 'CommunityMessages' ][ 'destroy' ]( 'vk_widget' );
 					}
-				},
-				34963172
+				}
 			);
 
 		} );
