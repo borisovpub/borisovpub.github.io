@@ -1,0 +1,554 @@
+
+body > :not(header):not(#bg) {
+	display: initial;
+}
+
+/** === about === */
+
+#about h2 span {
+	line-height: 80px;
+	font-size: 24px;
+}
+
+#about main {
+	font-size: 16px;
+}
+
+#about main p {
+	margin: 10px 20px;
+}
+
+#about main a {
+	color: #FF8;
+	font-weight: bold;
+}
+
+#about main a:hover {
+	color: #F88;
+	text-decoration: underline;
+}
+
+#warning {
+	display: block;
+}
+
+#warning span {
+	display: inline-block;
+	height: 80px;
+	width: 230px;
+	vertical-align: top;
+	margin: 0 0 0 20px;
+	text-transform: uppercase;
+	font-size: 15px;
+	line-height: 26px;
+	text-align: left;
+}
+
+#warning img,
+#social img {
+	width: 80px;
+	height: 80px;
+}
+
+.ie #social .social {
+	display: none;
+}
+
+.ie #social li.hover .social,
+.ie #social li:hover .social {
+	display: block;
+}
+
+@media ( min-width: 1060px ) {
+
+	#warning {
+		left: 260px;
+		bottom: 0;
+	}
+
+	#warning span {
+		font-size: 18px;
+		width: 280px;
+	}
+
+}
+
+@media ( max-width: 1059px ) and ( min-width: 800px ) {
+
+	#warning {
+		right: 0;
+		bottom: 140px;
+	}
+
+	#warning img {
+		width: 60px;
+		height: 60px;
+	}
+
+	#warning span {
+		width: 240px;
+		height: 60px;
+		line-height: 20px;
+	}
+
+}
+
+@media ( min-width: 840px ) {
+
+	#social span {
+		width: 0;
+		font-size: 24px;
+		line-height: 80px;
+		text-align: center;
+		vertical-align: top;
+		text-transform: uppercase;
+		overflow: hidden;
+	}
+
+	#social li {
+		position: relative;
+	}
+
+	#social li.hover span,
+	#social li:hover span {
+		width: 240px;
+	}
+
+	#social .social {
+		left: -20px;
+	}
+
+}
+
+@media ( min-width: 800px ) and ( max-width: 839px ) {
+
+	#social li {
+		position: static;
+	}
+
+	#social .social {
+		left: 0;
+	}
+
+}
+
+@media ( min-width: 800px ) {
+
+	#about h2 {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		padding: 20px;
+		background: rgba( 0, 0, 0, 0.8 );
+		cursor: pointer;
+	}
+
+	#about h2 span {
+		display: inline-block;
+		background: #C11;
+		height: 80px;
+		width: 200px;
+		text-align: center;
+	}
+
+	#about main div {
+		background-color: rgba( 0, 0, 0, 0.8 );
+		font-size: 16px;
+		overflow: auto;
+		position: absolute;
+		width: 100%;
+		top: 90px;
+		bottom: 120px;
+		left: -100%;
+		opacity: 0;
+	}
+
+	#about main div::-webkit-scrollbar {
+		background: transparent;
+		width: 6px;
+	}
+
+	#about main div::-webkit-scrollbar-thumb {
+		display: block;
+		background: rgba( 255, 255, 255, 0.8 );
+	}
+
+	#about main.hover div,
+	#about main:hover div {
+		left: 0;
+		opacity: 1;
+	}
+
+	#about main.hover span,
+	#about main:hover span {
+		background: #900;
+	}
+
+	#warning {
+		position: absolute;
+		background: rgba( 0, 0, 0, 0.8 );
+		padding: 10px 20px;
+		opacity: 0.6;
+	}
+
+	#warning.hover,
+	#warning:hover {
+		opacity: 1;
+	}
+
+	#social {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		display: block;
+		padding: 0 20px;
+		background: rgba( 0, 0, 0, 0.8 );
+	}
+
+	#social li {
+		padding: 20px 0;
+	}
+
+	#social .social {
+		position: absolute;
+		bottom: 120px;
+		width: 320px;
+		padding: 20px 20px 0;
+		background: rgba( 0, 0, 0, 0.8 );
+		pointer-events: none;
+		overflow: hidden;
+	}
+
+	#social .social.empty {
+		background: rgba( 0, 0, 0, 0.8 ) url( "/@/ld.svg" ) no-repeat center center;
+		min-height: 100px;
+	}
+
+	#social .social > * {
+		background: #FFF;
+	}
+
+	#social .social.empty > * {
+		opacity: 0;
+	}
+
+	#social .social,
+	#social .social.reset,
+	#social li.hover .social.reset,
+	#social li:hover .social.reset {
+		opacity: 0;
+	}
+
+	#social li.hover .social,
+	#social li:hover .social {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	#vk > a { background: #4D76A1 }
+	#ok > a { background: #F58220 }
+	#ig > a { background: #F50000 }
+	#fb > a { background: #4862A3 }
+
+	#vk .social { height: 208px }
+	#ok .social { height: 255px }
+	#ig .social { height: 376px }
+
+}
+
+@media ( min-width: 840px ) {
+
+	#about main div {
+		width: 700px;
+		left: -700px;
+	}
+
+}
+
+@media ( max-width: 799px ) {
+
+	#about header {
+		background: #000;
+	}
+
+	#about #bg {
+		position: static;
+		height: auto;
+	}
+
+	#about #bg > * {
+		width: 100%;
+		height: auto;
+	}
+
+	#about h2 span {
+		margin: 0 0 0 20px;
+		height: 60px;
+		line-height: 60px;
+	}
+
+	#about main {
+		margin: 20px 0 40px;
+		color: #000;
+	}
+
+	#about main a {
+		color: #338;
+	}
+
+	#about main a:hover {
+		color: #366;
+	}
+
+	#social,
+	#warning {
+		display: inline-block;
+		background: #000;
+		text-align: center;
+	}
+
+	#social span,
+	#social div {
+		display: none;
+	}
+
+}
+
+@media ( max-width: 799px ) and ( min-width: 720px )  {
+
+	#social {
+		width: 360px;
+	}
+
+	#warning {
+		width: calc( 100% - 360px );
+	}
+
+	#social,
+	#warning {
+		padding: 20px 0;
+	}
+
+	#warning span {
+		margin: 0 0 0 10px;
+	}
+
+}
+
+@media ( max-width: 719px ) and ( min-width: 510px ) {
+
+	#social {
+		width: 45vw;
+	}
+
+	#warning {
+		width: calc( 100% - 45vw );
+	}
+
+	#social img,
+	#warning img,
+	#warning span {
+		width: 10vw;
+		height: 10vw;
+	}
+
+	#social,
+	#warning {
+		padding: 2.5vw 0;
+	}
+
+	#warning span {
+		width: calc( 100% - 18vw );
+		font-size: 2.2vw;
+		line-height: 3.3vw;
+		margin: 0 0 0 1vw;
+	}
+
+}
+
+@media ( min-width: 550px ) and ( max-width: 799px ) and ( max-height: 479px ) {
+
+	#about header {
+		background: rgba( 0, 0, 0, 0.8 );
+		margin-bottom: 80vh;
+	}
+
+	#about #bg {
+		position: absolute;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	#about #bg > * {
+		height: 100%;
+		width: auto;
+	}
+
+}
+
+@media ( max-width: 509px ) {
+
+	#social,
+	#warning {
+		display: block;
+	}
+
+	#warning {
+		width: 100%;
+	}
+
+	#warning img {
+		width: 50px;
+	}
+
+	#warning img,
+	#warning span {
+		height: 50px;
+		padding: 10px 0;
+		line-height: 16px;
+		font-size: 13px;
+	}
+
+	#social {
+		position: absolute;
+		width: 100%;
+		background: transparent;
+		text-align: right;
+	}
+
+	#social li {
+		padding: 10px 10px 0 0;
+	}
+
+	#social img {
+		width: 40px;
+		height: 40px;
+	}
+
+	#about main {
+		margin-top: 5px;
+	}
+
+}
+
+/** === menu === */
+
+#menu header {
+	background: #000;
+}
+
+#menu main iframe {
+	margin-top: 20px;
+	min-height: 200px;
+	width: 100%;
+	overflow: hidden;
+}
+
+/** === mozgoboj === */
+
+#mozgoboj #bg {
+	background-color: #2D0B37;
+}
+
+#mozgoboj h2 {
+	position: absolute;
+	top: 110px;
+	margin: 0;
+	transform: none;
+	text-align: center;
+	width: 100%;
+	height: 35%;
+}
+
+#mozgoboj h2 img {
+	height: 100%;
+}
+
+#mozgoboj h2 span {
+	position: absolute;
+	left: 50%;
+	top: 66%;
+	transform: translateX( -50% );
+	text-transform: uppercase;
+	font-size: 3.5vh;
+}
+
+#mozgoboj #bg > div {
+	display: block;
+	position: absolute;
+	height: auto;
+	top: calc( 140px + 35% );
+	background: rgba( 45, 11, 55, 0.5 );
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 2.5vh;
+	text-align: center;
+	min-width: 260px;
+}
+
+#mozgoboj #bg > div time {
+	display: block;
+	font-size: 3.5vh;
+}
+
+#mozgoboj main a {
+	position: absolute;
+	background: #338;
+	border: solid 1px #FFF;
+	padding: 8px 16px;
+	border-radius: 4px;
+	left: 50%;
+	bottom: 30px;
+	font-size: 16px;
+	transform-origin: 50% 0;
+	transform: translateX( -50% );
+}
+
+#mozgoboj main a:hover {
+	background: #116;
+}
+
+@media ( max-height: 459px ) {
+
+	#mozgoboj h2 {
+		height: 50%;
+	}
+
+	#mozgoboj h2 span {
+		font-size: 5vh;
+	}
+
+	#mozgoboj #bg > div {
+		display: none;
+	}
+
+}
+
+@media ( max-height: 399px ) {
+
+	#mozgoboj h2 {
+		height: 35%;
+	}
+
+	#mozgoboj h2 span {
+		font-size: 3.5vh;
+	}
+
+}
+
+@media ( max-height: 299px ) {
+
+	#mozgoboj h2 {
+		top: 25vh;
+		height: 70%;
+	}
+
+	#mozgoboj h2 span {
+		font-size: 7vh;
+	}
+
+	#mozgoboj main a {
+		display: none;
+	}
+
+}

@@ -21,7 +21,7 @@
 	 * @return {Function}
 	 */
 	var getNativeFunction = function(func) {
-		return typeof func == 'function' && /function\s+\w+\(\)\s*\{\s*\[native code]\s*}/.test( FunctionPrototype.toString.call( func ) ) && func;
+		return typeof func == 'function' && /function\s+\w+\(\)\s*{\s*\[native code]\s*}/.test( FunctionPrototype.toString.call( func ) ) && func;
 	};
 
 	/** @type {function(Object, ...*):*} */
@@ -90,41 +90,56 @@
 	/** @type {function(number):void} */
 	var clearTimeout = window.clearTimeout;
 
-	var ie = /MSIE/.test( userAgent );
-	var iet = /Trident/.exec( userAgent );
-
 	var head = /** @type {HTMLHeadElement} */ querySelector( 'head' );
-	var body = /** @type {HTMLBodyElement} */ querySelector( 'body' );
 
 	/**
 	 * @param {string} src
-	 * @returns {HTMLIFrameElement}
+	 * @param {HTMLElement} [parent]
+	 * @returns {HTMLLinkElement}
 	 */
-	var createIFrame = function(src) {
+	var createLink = function(src, parent) {
 
-		var iframe = /** @type {HTMLIFrameElement} */createElement( 'iframe' );
+		var link = createElement( 'link' );
 
-		setAttribute( iframe, 'src', src );
-		setAttribute( iframe, 'allowTransparency', true );
-		setAttribute( iframe, 'scrolling', 'no' );
+		setAttribute( link, 'type', 'text/css' );
+		setAttribute( link, 'rel', 'stylesheet' );
+		setAttribute( link, 'href', src );
 
-		return iframe;
+		return /** @type {HTMLLinkElement} */ appendChild( parent || head, link );
 
 	};
 
 	/**
 	 * @param {string} src
+	 * @param {HTMLElement} [parent]
+	 * @returns {HTMLIFrameElement}
+	 */
+	var createIFrame = function(src, parent) {
+
+		var iframe = createElement( 'iframe' );
+
+		setAttribute( iframe, 'src', src );
+		setAttribute( iframe, 'allowTransparency', true );
+		setAttribute( iframe, 'scrolling', 'no' );
+
+		return /** @type {HTMLIFrameElement} */ appendChild( parent, iframe );
+
+	};
+
+	/**
+	 * @param {string} src
+	 * @param {HTMLElement} [parent]
 	 * @returns {HTMLScriptElement}
 	 */
-	var createScript = function(src) {
+	var createScript = function(src, parent) {
 
-		var script = /** @type {HTMLScriptElement} */ createElement( 'script' );
+		var script = createElement( 'script' );
 
 		setAttribute( script, 'type', 'text/javascript' );
 		setAttribute( script, 'async', 'async' );
 		setAttribute( script, 'src', src );
 
-		return script;
+		return /** @type {HTMLScriptElement} */ appendChild( parent || head, script );
 
 	};
 
@@ -196,8 +211,8 @@
 	// подменяем историю
 	if ( location.search && history ) history.replaceState( null, document.title, location.pathname );
 
-	// хуки для ie
-	if ( ie || iet ) setAttribute( body, 'class', 'ie' );
+	createLink( '//fonts.googleapis.com/css?family=Open+Sans|Caveat' );
+	createLink( '/@/sd.max.css' );
 
 	// фиксим ссылки
 	arr = querySelectorAll( 'a' );
@@ -260,7 +275,7 @@
 	} );
 
 	// social buttons
-	if ( !ie && ( i = querySelector( '#social' ) ) ) ( function(social) {
+	if ( !/MSIE/.test( userAgent ) && ( i = querySelector( '#social' ) ) ) ( function( /** Element */ social ) {
 
 		/**
 		 * @param {Element} element
@@ -325,7 +340,7 @@
 
 			} );
 
-			if ( iet ) {
+			if ( /Trident/.exec( userAgent ) ) {
 
 				addEventListener( element, 'mouseenter', function() {
 					setAttribute( element, 'class', 'hover' );
@@ -345,13 +360,13 @@
 		( o = queryElementSelector( social, '#vk' ) ) && createSocial( o, function(container) {
 
 			var widget = /** @type {HTMLDivElement} */ appendChild( container, createElement( 'div' ) );
-			var script = /** @type {HTMLScriptElement} */ appendChild( widget, createScript( '//vk.com/js/api/openapi.js?150' ) );
+			var script = /** @type {HTMLScriptElement} */ appendChild( widget, createScript( '//vk.com/js/api/openapi.js?152' ) );
 
 			setAttribute( widget, 'id', 'vk_widget' );
 
 			onScriptLoad( script, function() {
 
-				window[ 'VK' ][ 'Widgets' ][ 'Group'](
+				window[ 'VK' ][ 'Widgets' ][ 'Group' ](
 					'vk_widget', {
 						'mode': 3,
 						'wide': 1,
@@ -368,7 +383,7 @@
 		// facebook.com
 		( o = queryElementSelector( social, '#fb' ) ) && createSocial( o, function(container) {
 
-			var widget = /** @type {HTMLIFrameElement} */ appendChild( container, createIFrame( '//www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fborisovpub%2F&tabs&width=320&&hide_cta=true' ) );
+			var widget = createIFrame( '//www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fborisovpub%2F&tabs&width=320&&hide_cta=true', container );
 
 			setAttribute( widget, 'width', '320' );
 			setAttribute( widget, 'height', '214' );
@@ -418,18 +433,22 @@
 	// menu
 	if ( querySelector( '#menu' ) ) ( function() {
 
-		appendChild( head, createScript( '//carte.by/source/front/api.js' ) );
+		createScript( '//carte.by/source/front/api.js' );
 
 	}() );
 
 	// mozgoboj
 	if ( querySelector( '#mozgoboj' ) ) ( function() {
 
+		var main = querySelector( 'main' );
 		var bg = querySelector( '#bg' );
 		var next = appendChild( bg, createElement( 'div' ) );
 
 		var nextText = appendChild( next, createElement( 'span' ) );
 		var nextTime = appendChild( next, createElement( 'time' ) );
+
+		var widget = /** @type {HTMLDivElement} */ appendChild( main, createElement( 'div' ) );
+		var script = /** @type {HTMLScriptElement} */ appendChild( widget, createScript( '//vk.com/js/api/openapi.js?152' ) );
 
 		var D = getAttribute( bg, 'data-d' );
 		var H = getAttribute( bg, 'data-h' );
@@ -454,11 +473,33 @@
 
 		setInterval( update, 1e3 );
 
+		setAttribute( widget, 'id', 'vk_widget' );
+
+		onScriptLoad( script, function() {
+
+			window[ 'VK' ][ 'Widgets' ][ 'CommunityMessages' ](
+				'vk_widget', 87610892, {
+					'tooltipButtonText': getAttribute( main, 'data-q' ),
+					'expandTimeout': 60000,
+					'disableButtonTooltip': ( window.innerWidth < 549 ? 1 : 0 ),
+					'onCanNotWrite': function() {
+						window[ 'VK' ][ 'Widgets' ][ 'CommunityMessages' ][ 'destroy' ]( 'vk_widget' );
+					}
+				},
+				34963172
+			);
+
+		} );
+
+
 	}() );
 
 	// Google Analitics
-	appendChild( head, createScript( '//www.google-analytics.com/analytics.js' ) );
+	createScript( '//www.google-analytics.com/analytics.js' );
 	ga( 'create', 'UA-29836360-1', 'auto' );
 	ga( 'send', 'pageview' );
+
+	// по идеи должен автоматом спрятать полосу прокрутки в мобилках
+	setTimeout( function() { window.scrollTo( 0, 1 ) } );
 
 }( this );
