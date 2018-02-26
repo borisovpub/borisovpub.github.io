@@ -20,6 +20,7 @@
 	<noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 	<script src="https://cdn.ampproject.org/v0.js" async></script>
 
+	<script src="https://cdn.ampproject.org/v0/amp-video-0.1.js" async custom-element="amp-video"></script>
 	<script src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js" async custom-element="amp-fit-text"></script>
 	<script src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js" async custom-element="amp-lightbox"></script>
 	<script src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js" async custom-element="amp-analytics"></script>
@@ -78,7 +79,7 @@
 			background: rgba( 0, 0, 0, 0.85 );
 		}
 
-		#langs a,
+		#langs li > *,
 		button {
 			color: #FFF;
 			font-size: 24px;
@@ -87,9 +88,13 @@
 			width: 50px;
 			text-align: center;
 			text-transform: uppercase;
-			background-color: #44A;
+			background: #44A;
 			display: inline-block;
 			outline: 1px solid #FFF;
+		}
+
+		#langs li > span {
+			background: #334;
 		}
 
 		button {
@@ -112,7 +117,7 @@
 			display: inline-block;
 		}
 
-		#langs a {
+		#langs li>* {
 			margin: 10px 20px;
 			text-decoration: none;
 		}
@@ -159,14 +164,19 @@
 	</header>
 
 	<section id="bg">
-		<amp-img src="/@/bg.jpg" width="1024" height="576" layout="responsive"></amp-img>
+		<amp-video autoplay loop playsinline muted width="1280" height="720" layout="responsive" poster="/@/bg.jpg">
+			<source src="/@/bg.webm" type="video/webm" />
+			<source src="/@/bg.mp4" type="video/mp4" />
+			<amp-img fallback src="/@/bg.jpg" width="1024" height="576" layout="responsive"></amp-img>
+		</amp-video>
 		<button on="tap:langs" role="button" tabindex="0">ru</button>
 	</section>
 
 	<amp-lightbox id="langs" layout="nodisplay" on="tap:langs.close" role="button" tabindex="0">
 		<ul>
-			<li><a href="/en/amp/" hreflang="en" rel="alternate">en</a></li>
 			<li><a href="/be/amp/" hreflang="be" rel="alternate">be</a></li>
+			<li><span>ru</span></li>
+			<li><a href="/en/amp/" hreflang="en" rel="alternate">en</a></li>
 		</ul>
 	</amp-lightbox>
 
@@ -188,7 +198,7 @@
 		<p><b>Паб</b> – это место, куда приходят пропустить по бокальчику пива, отдохнуть после работы, повеселиться с друзьями. <b>Паб</b> – это место, где самая распространённая фраза «Мне как обычно», куда можно прийти одному и встретить друзей, где легко не только поужинать вечером и продегустировать изысканные напитки, но и многое узнать и отдохнуть душой.</p>
 		<p>Наш <b>Паб</b> предлагает всем желающим оценить широкий выбор разливного и бутылочного пива. Темное и светлое, эль и лагер, крепкое и безалкогольное – каждый найдёт себе сорт по душе в нашем меню. А не захмелеть от выбора напитков помогут сытные блюда: различные пивные закуски, стейки из мяса и рыбы, настоящие бургеры, приготовленные специально для Вас.</p>
 		<p>Кроме всего прочего у нас есть отличный выбор развлечений для шумной компании. Стол для игры на бильярде, доски для игры в дартс, настольный футбол – все это к услугам всех друзей ресторана. В зале <b>Паба</b> можно посмотреть спортивные трансляции, отметить Ваш личный праздник или присоединится к празднованию таких международных гуляний как Хэллоуин, День Святого Патрика, День Артура Гиннесса и многое другое. Каждый год 15-го июня с размахом отмечается День Рождения Паба.</p>
-		<p>На регулярной основе в <b>Пабе</b> играют в широко известную «<a href="mozgoboj">МозгоБойню</a>», а так же изучают культуру Беларуси на занятиях «<a href="//goo.gl/RR2zNn" target="_blank">Мова Нанова</a>». Часто музыкальные концерты в Борисове проходят на сцене <b>Ирландского Паба</b>. Здесь уже успели выступить такие известные музыкальные коллективы как «<b>Крама</b>», «<b>Нейро Дюбель</b>», «<b>Akute</b>», «<b>Дай Дорогу!</b>», «<b>Лявон Вольскі</b>». Присоединяйтесь и Вы к веселой культурной жизни нашего <b>Паба</b>.</p>
+		<p>На регулярной основе в <b>Пабе</b> играют в широко известную «<a href="/ru/mozgoboj">МозгоБойню</a>», а так же изучают культуру Беларуси на занятиях «<a href="//goo.gl/RR2zNn" target="_blank">Мова Нанова</a>». Часто музыкальные концерты в Борисове проходят на сцене <b>Ирландского Паба</b>. Здесь уже успели выступить такие известные музыкальные коллективы как «<b>Крама</b>», «<b>Нейро Дюбель</b>», «<b>Akute</b>», «<b>Дай Дорогу!</b>», «<b>Лявон Вольскі</b>». Присоединяйтесь и Вы к веселой культурной жизни нашего <b>Паба</b>.</p>
 		<p><b>Ирландский Паб</b> в Борисове – это традиции, которые мы создаём вместе. Так пусть зайти в гости к нам – станет Вашей доброй традицией!</p>
 		<p>Отличный отдых для лучших друзей!</p>
 	</main>
