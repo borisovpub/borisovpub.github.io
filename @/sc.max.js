@@ -496,6 +496,7 @@
 	// Google Analitics
 	createScript( '//www.google-analytics.com/analytics.js' );
 	ga( 'create', 'UA-29836360-1', 'auto' );
+	ga( 'require', 'GTM-MDJMFT6' );
 	ga( 'send', 'pageview' );
 
 	// по идеи должен автоматом спрятать полосу прокрутки в мобилках
