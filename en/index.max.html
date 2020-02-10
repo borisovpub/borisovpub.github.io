@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# place: http://ogp.me/ns/place# restaurant: http://ogp.me/ns/restaurant#">
 
@@ -9,7 +9,7 @@
 	<link rel="canonical" href="/en/" />
 	<link rel="alternate" hreflang="x-default" href="/" />
 	<link rel="alternate" hreflang="be" href="/be/" />
-	<link rel="alternate" hreflang="en" href="/en/" />
+	<link rel="alternate" hreflang="ru" href="/ru/" />
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
 
@@ -19,7 +19,7 @@
 	<meta property="fb:app_id" content="127939534000255" />
 	<meta property="fb:pages" content="405114422859324" />
 	<meta property="og:type" content="restaurant.restaurant" />
-	<meta property="og:url" content="http://irish-pub.by/en/" />
+	<meta property="og:url" content="http://irish-pub.by/ru/" />
 	<meta property="og:image" content="http://irish-pub.by/@/av.jpg" />
 	<meta property="og:title" content="Irish Pub in Barysaw" />
 	<meta property="og:description" content="Beer restaurant with a great selection of beer, european cuisine, high level of service, sports broadcasts and live music" name="description" />
@@ -27,63 +27,206 @@
 	<meta property="place:location:latitude" content="54.222662" />
 	<meta property="place:location:longitude" content="28.488434" />
 
+	<link rel="preconnect" href="https://maps.googleapis.com" />
+	<link rel="preconnect" href="https://maps.gstatic.com" />
+
+	<link href="//fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed" type="text/css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="/@/st.max.css" />
-	<link rel="alternate" type="application/ld+json" href="/@/ld.max.json" />
+
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"name": "Irish Pub in Barysaw",
+					"item": "http://irish-pub.by/en/"
+				}
+			]
+		}
+	</script>
+
+	<script type="application/ld+json">
+		{
+
+			"@context": "http://www.schema.org",
+
+			"@type": [
+				"Organization",
+				"Place",
+				"LocalBusiness",
+				"FoodEstablishment",
+				"Restaurant",
+				"BarOrPub"
+			],
+
+			"name": [
+				{ "@language": "ru", "@value": "Ирландский Паб" },
+				{ "@language": "be", "@value": "Ірландскі Паб" },
+				{ "@language": "en", "@value": "Irish Pub" }
+			],
+
+			"url": "http://irish-pub.by",
+
+			"image": "http://irish-pub.by/@/av.jpg",
+			"logo": "http://irish-pub.by/@/av.jpg",
+
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": "54.222662",
+				"longitude": "28.488434"
+			},
+
+			"address": {
+				"@type": "PostalAddress",
+				"addressCountry": "BY",
+				"addressRegion": [
+					{ "@language": "ru", "@value": "Минская область" },
+					{ "@language": "be", "@value": "Мінская вобласць" },
+					{ "@language": "en", "@value": "Minsk region" }
+				],
+				"streetAddress": [
+					{ "@language": "ru", "@value": "ул. Ватутина, 32а" },
+					{ "@language": "be", "@value": "вул. Ватуціна, 32а" },
+					{ "@language": "en", "@value": "Vatutina, 32a" }
+				],
+				"postalCode": "222520"
+			},
+
+			"telephone": "+375177761089",
+
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"contactType": "customer service",
+				"email": "info@irish-pub.by",
+				"telephone": "+375177761089",
+				"availableLanguage": [ "Russian", "Belarusian", "English" ]
+			},
+
+			"sameAs": [
+
+				"https://carte.by/borisov/irish-pub/",
+				"https://catalog.pivo.by/place/irish-pub",
+
+				"https://g.page/borisov_pub",
+				"https://yandex.by/profile/1091911896",
+				"https://yandex.by/maps/org/1091911896",
+				"https://foursquare.com/borisov_pub",
+
+				"https://linkedin.com/company/3915822",
+
+				"https://ok.ru/borisovpub",
+				"https://vk.com/borisov_pub",
+				"https://facebook.com/borisovpub",
+				"https://twitter.com/borisov_pub",
+
+				"https://instagram.com/borisov_pub",
+				"https://borisov-pub.tumblr.com/",
+				"https://soundcloud.com/borisov_pub",
+				"https://youtube.com/user/TheBorisovPub",
+
+				"https://tripadvisor.ru/Restaurant_Review-g297307-d3336830-Reviews-Irish_Pub-Barysaw_Minsk_Region.html"
+
+			],
+
+			"openingHoursSpecification": {
+				"@type": "OpeningHoursSpecification",
+				"opens": "15:00",
+				"closes": "03:00"
+			},
+
+			"priceRange": "$$",
+
+			"acceptsReservations": "True"
+
+		}
+	</script>
 
 </head>
 
-<body id="about" itemscope itemtype="http://schema.org/AboutPage">
+<body itemscope itemtype="http://schema.org/AboutPage">
 
-<script type="application/javascript">if(/MSIE|Trident/.test(navigator.userAgent))document.querySelector('body').className='ie'</script>
+<header>
 
-<header data-active>
-	<h1 itemprop="name">Irish Pub <span>in Barysaw</span></h1>
-	<div>
-		<span id="list" data-button><img src="/@/mn.svg" width="40" height="40" alt="Menu" /></span>
-		<ul id="contacts">
-			<li><a id="tel" href="tel:+375177761089"><img src="/@/tl.svg" width="40" height="40" /><span>+375 (177) 76-10-89</span></a></li>
-			<li><a id="mail" href="mailto:info@irish-pub.by"><img src="/@/ml.svg" width="40" height="40" /><span>info@irish-pub.by</span></a></li>
-			<li><a id="map" itemprop="sameAs significantLink" data-href="//goo.gl/FBfGXS" target="_blank" href="//maps.google.com/maps?cid=12187415209804223660"><img src="/@/mp.svg" width="40" height="40" /><span>Google Maps</span></a></li>
-		</ul>
-		<ul id="lang">
-			<li><a itemprop="sameAs" href="/be/" hreflang="be" rel="alternate">be</a></li>
-			<li><a itemprop="sameAs" href="/ru/" hreflang="ru" rel="alternate">ru</a></li>
-			<li><span itemprop="inLanguage">en</span></li>
-		</ul>
+	<h1 itemprop="name">Irish Pub <i>in Barysaw</i></h1>
+	<img src="/@/logo.svg" width="100" height="100" alt="&#127808;" />
+
+	<div id="mode">
+		<span id="open">Open today until <time>03:00</time></span>
+		<span id="close">Opens today at <time>15:00</time></span>
 	</div>
-</header>
 
-<section id="bg">
+	<nav>
+		<ul>
+			<li><a id="menu" href="/en/menu/">Menu</a></li>
+<!--			<li><a id="beer" href="/en/beer/">Beer</a></li>-->
+		</ul>
+	</nav>
+
+	<ul id="lang">
+		<li><a itemprop="sameAs" href="/be/" hreflang="be" rel="alternate">be</a></li>
+		<li><a itemprop="sameAs" href="/ru/" hreflang="ru" rel="alternate">ru</a></li>
+		<li><span itemprop="inLanguage">en</span></li>
+	</ul>
+
+	<ul id="social">
+		<li><a itemprop="sameAs significantLink" href="//instagram.com/borisov_pub" target="_blank" rel="noopener noreferrer" title="Instagram"><img alt="Instagram" src="/@/ig.svg" width="30" height="30" /></a></li>
+		<li><a itemprop="sameAs significantLink" href="//facebook.com/borisovpub" target="_blank" rel="noopener noreferrer" title="Facebook"><img alt="Facebook" src="/@/fb.svg" width="30" height="30" /></a></li>
+		<li><a itemprop="sameAs significantLink" href="//vk.com/borisov_pub" target="_blank" rel="noopener noreferrer" title="VKontakte"><img alt="VKontakte" src="/@/vk.svg" width="30" height="30" /></a></li>
+	</ul>
+
+	<ul id="tel">
+		<li><a itemprop="telephone" href="tel:+375177761089">+375 (177) 76-10-89</a></li>
+		<li><a itemprop="telephone" href="tel:+375447661089">+375 (44) 766-10-89</a></li>
+	</ul>
+
 	<video itemprop="video" autoplay="autoplay" loop="loop" playsinline="playsinline" muted="muted" poster="/@/bg.jpg" width="1280" height="720">
 		<source src="/@/bg.webm" type="video/webm" />
 		<source src="/@/bg.mp4" type="video/mp4" />
 	</video>
-</section>
 
-<aside>
-	<div id="warning" data-active><img src="/@/wg.png" alt="18+" width="80" height="80" /><span>Excessive alcohol consumption is harmful to your health</span></div>
-	<ul id="social">
-		<li id="fb" data-active><a itemprop="sameAs significantLink" data-button data-href="//goo.gl/8Gbfgs" target="_blank" href="//www.facebook.com/borisovpub"><img src="/@/fb.svg" width="80" height="80" /><span>Facebook</span></a></li>
-		<li id="ig" data-active><a itemprop="sameAs significantLink" data-button data-href="//goo.gl/mOL4xb" target="_blank" href="//instagram.com/borisov_pub"><img src="/@/ig.svg" width="80" height="80" /><span>Instagram</span></a></li>
-		<li id="vk" data-active><a itemprop="sameAs significantLink" data-button data-href="//goo.gl/UTH0eJ" target="_blank" href="//vk.com/borisov_pub"><img src="/@/vk.svg" width="80" height="80" /><span>VKontakte</span></a></li>
-		<li id="ok" data-active><a itemprop="sameAs significantLink" data-button data-href="//goo.gl/omuw5f" target="_blank" href="//ok.ru/borisovpub"><img src="/@/ok.svg" width="80" height="80" /><span>Odnoklassniki</span></a></li>
-	</ul>
-</aside>
+</header>
 
-<main itemprop="mainContentOfPage mainEntity" data-active itemscope itemtype="http://schema.org/WebPageElement">
-	<h2 itemprop="name" data-button><span>About Pub</span></h2>
-	<div itemprop="text">
-		<p><b>Irish Pub</b> in Borisov is waiting for great lovers of good food and beer, all those who know how to have a good time.</p>
-		<p><b>Pub</b> - is a place where people come to relax and have a glass of beer after work, to spend time with their friends. The most common phrase in <b>Pub</b> is "For me as usual". Here you can dine in the evening, taste exquisite drinks and meet old or new friends.</p>
-		<p>Our <b>Pub</b> offers the wide range of draft and bottled beers. Dark and light, ale and lager, strong and non-alcoholic - everyone can find something to enjoy in the <b>Pub</b> menu. Various beer snacks, meat and fish steaks, burgers will complement your dinner.</p>
-		<p>In addition, the <b>Pub</b> has a great entertainment option for any company. Table for pool billiards, two dartboards, table football (kicker) are available for all guests of our restaurant. In Irish <b>Pub</b> you can watch broadcasts of different sporting events, celebrate your personal occasion or join the celebration of such international festivals and holidays as Halloween, St. Patrick's Day, Arthur Guinness Day and others. Every year on June 15 the big celebration of Irish Pub’s birthday takes place.</p>
-		<p>In the <b>Pub</b> we create the traditions together. So let your visit to ours become a good tradition!</p>
-		<p><b>Irish Pub</b> in Borisov is a great rest for the best friends!</p>
-	</div>
+<main itemprop="mainContentOfPage mainEntity" itemscope itemtype="http://schema.org/WebPageElement">
+	<article>
+		<h2 itemprop="name">About Pub</h2>
+		<div itemprop="text">
+			<p><b>Irish Pub</b> in Borisov is waiting for great lovers of good food and beer, all those who know how to have a good time.</p>
+			<p><b>Pub</b> - is a place where people come to relax and have a glass of beer after work, to spend time with their friends. The most common phrase in <b>Pub</b> is "For me as usual". Here you can dine in the evening, taste exquisite drinks and meet old or new friends.</p>
+			<p>Our <b>Pub</b> offers the wide range of draft and bottled beers. Dark and light, ale and lager, strong and non-alcoholic - everyone can find something to enjoy in the <b>Pub</b> menu. Various beer snacks, meat and fish steaks, burgers will complement your dinner.</p>
+			<p>In addition, the <b>Pub</b> has a great entertainment option for any company. Table for pool billiards, two dartboards, table football (kicker) are available for all guests of our restaurant. In Irish <b>Pub</b> you can watch broadcasts of different sporting events, celebrate your personal occasion or join the celebration of such international festivals and holidays as Halloween, St. Patrick's Day, Arthur Guinness Day and others. Every year on June 15 the big celebration of Irish Pub’s birthday takes place.</p>
+			<p>In the <b>Pub</b> we create the traditions together. So let your visit to ours become a good tradition!</p>
+			<p><b>Irish Pub</b> in Borisov is a great rest for the best friends!</p>
+		</div>
+		<div>
+			<img itemprop="image" src="/@/st.jpg" width="700" height="800" alt="салаты" />
+		</div>
+	</article>
 </main>
+
+<footer>
+	<iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDtPwB4fVdWFMnXP99EEPr9zp2gX3DSqZM&q=place_id:ChIJX9SAw3P42kYRrNSSxo9lIqk&language=en_US" title="Google Maps" width="100%" height="450" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
+	<section>
+		<div>We work daily<br /><time datetime="Mo-Su 15:00-03:00">from 15:00 to 03:00</time></div>
+		<div id="contacts">
+			<a href="tel:+375177761089">+375 (177) 76-10-89</a><br />
+			<a href="tel:+375449761089">+375 (44) 976-10-89</a><br />
+			<a href="mailto:info@irish-pub.by">info@irish-pub.by</a>
+		</div>
+		<div id="registry">
+			<p>ООО "Наш Шэмрок", TIN 691380934. 32a Vatutina Barysaw 222512</p>
+			<p>License №62080/4452 as of 11.06.2012 valid till 10.06.2022 issued by Barysaw City Executive Committee</p>
+			<p>Recorded in the Trade Register - 10.06.2012.</p>
+		</div>
+		<div id="warning">Excessive alcohol consumption is harmful to your health</div>
+	</section>
+</footer>
 
 </body>
 
-<script type="application/javascript" src="/@/sc.max.js"></script>
+<script>!function(){}()</script>
+<script src="/@/sc.max.js"></script>
 
 </html>

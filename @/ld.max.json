@@ -55,20 +55,29 @@
 	},
 
 	"sameAs": [
-		"//www.facebook.com/borisovpub/",
-		"//vk.com/borisov_pub",
-		"//ok.ru/borisovpub",
-		"//instagram.com/borisov_pub/",
-		"//www.linkedin.com/company/3915822/",
-		"//plus.google.com/+irish-pub-by/",
-		"//foursquare.com/borisov_pub",
-		"//www.youtube.com/user/TheBorisovPub",
-		"//twitter.com/borisov_pub",
-		"//borisov-pub.tumblr.com/",
-		"//soundcloud.com/borisov_pub",
-		"//www.tripadvisor.ru/Restaurant_Review-g297307-d3336830-Reviews-Irish_Pub-Barysaw_Minsk_Region.html",
-		"//maps.google.com/maps?cid=12187415209804223660",
-		"//yandex.by/maps/org/irlandskiy_pab/1112296240/"
+
+		"https://carte.by/borisov/irish-pub/",
+		"https://catalog.pivo.by/place/irish-pub",
+
+		"https://g.page/borisov_pub",
+		"https://yandex.by/profile/1091911896",
+		"https://yandex.by/maps/org/1091911896",
+		"https://foursquare.com/borisov_pub",
+
+		"https://linkedin.com/company/3915822",
+
+		"https://ok.ru/borisovpub",
+		"https://vk.com/borisov_pub",
+		"https://facebook.com/borisovpub",
+		"https://twitter.com/borisov_pub",
+
+		"https://instagram.com/borisov_pub",
+		"https://borisov-pub.tumblr.com/",
+		"https://soundcloud.com/borisov_pub",
+		"https://youtube.com/user/TheBorisovPub",
+
+		"https://tripadvisor.ru/Restaurant_Review-g297307-d3336830-Reviews-Irish_Pub-Barysaw_Minsk_Region.html"
+
 	],
 
 	"openingHoursSpecification": {
