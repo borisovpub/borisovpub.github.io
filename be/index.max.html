@@ -153,8 +153,8 @@
 	<img src="/@/logo.svg" width="100" height="100" alt="&#127808;" />
 
 	<div id="mode">
-		<span id="open">Працуе сёння да <time>03:00</time></span>
-		<span id="close">Адчыняецца сёння ў <time>15:00</time></span>
+		<div id="open">Працуе сёння да <time>03:00</time></div>
+		<div id="close">Адчыняецца сёння ў <time>15:00</time></div>
 	</div>
 
 	<nav>
@@ -226,7 +226,51 @@
 
 </body>
 
-<script>!function(){}()</script>
-<script src="/@/sc.max.js"></script>
+<script>!function( window ) {
+
+	var Date = window.Date;
+	var document = window.document;
+	var location = window.location;
+	var history = window.history;
+
+	var querySelector = document.querySelector.bind( document );
+	/** @noinline */
+	var setAttribute = function( element, key, value ) { element.setAttribute( key, value || key ) };
+
+	var script = document.createElement( 'script' );
+	var mode = querySelector( '#mode' );
+
+	var ga = window[ 'ga' ] = function ga() { ga[ 'q' ].push( arguments ) };
+
+	// подменяем историю
+	if ( location.search && history ) history.replaceState( null, document.title, location.pathname );
+
+	ga[ 'q' ] = [];
+	ga[ 'l' ] = 1 * new Date();
+
+	ga( 'create', 'UA-29836360-1', 'auto' );
+	ga( 'require', 'GTM-MDJMFT6' );
+	ga( 'send', 'pageview' );
+
+	setAttribute( script, 'type', 'text/javascript' );
+	setAttribute( script, 'async', 'async' );
+	setAttribute( script, 'src', '//www.google-analytics.com/analytics.js' );
+	querySelector( 'head' ).appendChild( script );
+
+	mode && ( function update() {
+
+		var d = new Date();
+
+		if ( d.getUTCHours() * 60 + d.getUTCMinutes() < 12*60 ) {
+			setAttribute( mode, 'class', 'close' );
+		} else {
+			setAttribute( mode, 'class', 'open' );
+		}
+
+		window.setTimeout( update, 60*1e3 );
+
+	} )();
+
+}( this )</script>
 
 </html>

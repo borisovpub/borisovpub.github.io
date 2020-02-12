@@ -97,8 +97,36 @@
 
 </body>
 
-<script>!function(){}()</script>
-<script src="/@/sc.max.js"></script>
+<script>!function( window ) {
+
+	var document = window.document;
+	var location = window.location;
+	var history = window.history;
+
+	var querySelector = document.querySelector.bind( document );
+	/** @noinline */
+	var setAttribute = function( element, key, value ) { element.setAttribute( key, value || key ) };
+
+	var script = document.createElement( 'script' );
+
+	var ga = window[ 'ga' ] = function ga() { ga[ 'q' ].push( arguments ) };
+
+	// подменяем историю
+	if ( location.search && history ) history.replaceState( null, document.title, location.pathname );
+
+	ga[ 'q' ] = [];
+	ga[ 'l' ] = 1 * new  window.Date();
+
+	ga( 'create', 'UA-29836360-1', 'auto' );
+	ga( 'require', 'GTM-MDJMFT6' );
+	ga( 'send', 'pageview' );
+
+	setAttribute( script, 'type', 'text/javascript' );
+	setAttribute( script, 'async', 'async' );
+	setAttribute( script, 'src', '//www.google-analytics.com/analytics.js' );
+	querySelector( 'head' ).appendChild( script );
+
+}( this )</script>
 <script src="//carte.by/source/front/api.js" async="async"></script>
 
 </html>
