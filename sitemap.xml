@@ -13,7 +13,6 @@
 	<url>
 		<loc>http://irish-pub.by/ru/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="amphtml" hreflang="ru" href="http://irish-pub.by/ru/amp/" />
 		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/" />
 		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/" />
 		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/" />
@@ -21,7 +20,6 @@
 	<url>
 		<loc>http://irish-pub.by/be/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="amphtml" hreflang="be" href="http://irish-pub.by/be/amp/" />
 		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/" />
 		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/" />
 		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/" />
@@ -29,7 +27,6 @@
 	<url>
 		<loc>http://irish-pub.by/en/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="amphtml" hreflang="en" href="http://irish-pub.by/en/amp/" />
 		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/" />
 		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/" />
 		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/" />
@@ -61,24 +58,6 @@
 		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/menu/" />
 		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/menu/" />
 		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/menu/" />
-	</url>
-	<url>
-		<loc>http://irish-pub.by/mozgoboj/</loc>
-		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/mozgoboj/" />
-		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/mozgoboj/" />
-	</url>
-	<url>
-		<loc>http://irish-pub.by/ru/mozgoboj/</loc>
-		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/mozgoboj/" />
-		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/mozgoboj/" />
-	</url>
-	<url>
-		<loc>http://irish-pub.by/be/mozgoboj/</loc>
-		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/mozgoboj/" />
-		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/mozgoboj/" />
 	</url>
 	<url>
 		<loc>http://irish-pub.by/wifi/</loc>
