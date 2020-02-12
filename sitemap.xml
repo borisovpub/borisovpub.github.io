@@ -59,32 +59,4 @@
 		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/menu/" />
 		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/menu/" />
 	</url>
-	<url>
-		<loc>http://irish-pub.by/wifi/</loc>
-		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/wifi/" />
-		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/wifi/" />
-		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/wifi/" />
-	</url>
-	<url>
-		<loc>http://irish-pub.by/ru/wifi/</loc>
-		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/wifi/" />
-		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/wifi/" />
-		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/wifi/" />
-	</url>
-	<url>
-		<loc>http://irish-pub.by/be/wifi/</loc>
-		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/wifi/" />
-		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/wifi/" />
-		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/wifi/" />
-	</url>
-	<url>
-		<loc>http://irish-pub.by/en/wifi/</loc>
-		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/wifi/" />
-		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/wifi/" />
-		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/wifi/" />
-	</url>
 </urlset>
