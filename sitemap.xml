@@ -59,4 +59,32 @@
 		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/menu/" />
 		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/menu/" />
 	</url>
+	<url>
+		<loc>http://irish-pub.by/beer/</loc>
+		<changefreq>monthly</changefreq>
+		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/beer/" />
+		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/beer/" />
+		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/beer/" />
+	</url>
+	<url>
+		<loc>http://irish-pub.by/ru/beer/</loc>
+		<changefreq>monthly</changefreq>
+		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/beer/" />
+		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/beer/" />
+		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/beer/" />
+	</url>
+	<url>
+		<loc>http://irish-pub.by/be/beer/</loc>
+		<changefreq>monthly</changefreq>
+		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/beer/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/beer/" />
+		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/beer/" />
+	</url>
+	<url>
+		<loc>http://irish-pub.by/en/beer/</loc>
+		<changefreq>monthly</changefreq>
+		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/beer/" />
+		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/beer/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/beer/" />
+	</url>
 </urlset>

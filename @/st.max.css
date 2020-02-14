@@ -8,7 +8,7 @@
 
 html, body {
 	height: 100%;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', Arial, sans-serif;
 }
 
 a {
@@ -32,6 +32,7 @@ header {
 	-ms-user-select: none;
 	user-select: none;
 	white-space: nowrap;
+	overflow: hidden;
 }
 
 header a {
@@ -69,7 +70,7 @@ video {
 }
 
 h1, h2, #warning {
-	font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
+	font-family: 'Roboto Condensed', Arial, sans-serif;
 	text-transform: uppercase;
 }
 
@@ -85,6 +86,7 @@ h1 {
 	transform: translate( -300px, -70px );
 	filter: drop-shadow( 0 0 15px #000 );
 	white-space: normal;
+	transition: none;
 }
 
 h1 i {
@@ -478,12 +480,16 @@ main iframe {
 @media ( max-width: 609px ) {
 
 	.wrap {
-		height: 100px;
+		width: calc( 100% - 40px );
+		padding-top: 80px;
+		padding-right: 20px;
+		text-align: center;
 	}
 
 	.wrap nav {
-		right: 0;
-		top: 60px;
+		left: 0;
+		top: 0;
+		text-align: left;
 	}
 
 }
@@ -494,11 +500,7 @@ main iframe {
 		font-size: 10vw;
 		max-width: 100%;
 		left: 0;
-		transform: translate( 0, -50px );
-	}
-
-	nav li {
-		display: block;
+		transform: translateY( -70px );
 	}
 
 	#social {
@@ -519,10 +521,6 @@ main iframe {
 }
 
 @media ( max-width: 499px ) {
-
-	nav li {
-		display: block;
-	}
 
 	footer > section {
 		display: inline-block;
@@ -569,6 +567,14 @@ main iframe {
 
 }
 
+@media ( max-width: 439px ) {
+
+	nav li {
+		display: block;
+	}
+
+}
+
 @media ( max-width: 349px ) {
 
 	#lang li {
@@ -594,7 +600,7 @@ main iframe {
 
 }
 
-@media ( max-height: 699px ) and ( max-width: 599px ){
+@media ( max-height: 699px ) and ( max-width: 599px ) {
 
 	#social {
 		bottom: 0;
@@ -602,6 +608,14 @@ main iframe {
 
 	#tel {
 		bottom: 60px;
+	}
+
+}
+
+@media ( max-height: 599px ) and ( max-width: 699px ) and ( min-width: 600px ) {
+
+	#social {
+		left: 0;
 	}
 
 }
