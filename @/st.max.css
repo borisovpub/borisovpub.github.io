@@ -526,30 +526,6 @@ main iframe {
 		display: inline-block;
 	}
 
-	.wrap h1,
-	.wrap h1 *,
-	.wrap h2 {
-		font-size: 6vw;
-		line-height: 8vw;
-		height: 8vw;
-	}
-
-	.wrap nav li > *,
-	.wrap #lang li > * {
-		height: 8vw;
-		width: 8vw;
-		line-height: 8vw;
-		font-size: 4vw;
-	}
-
-	.wrap nav li > * {
-		width: 20vw;
-	}
-
-	.wrap ul li {
-		padding: 2vw;
-	}
-
 }
 
 @media ( max-height: 599px ) {
