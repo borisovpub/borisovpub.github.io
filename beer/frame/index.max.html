@@ -52,7 +52,7 @@
 			grid-template-columns: 50% 50%;
 			padding: 5px;
 			width: calc( 100% - 10px );
-			max-width: 1000px;
+			max-width: 990px;
 		}
 
 		#draft:not( :empty ) {
@@ -192,6 +192,24 @@
 
 		}
 
+		main > div {
+			display: inline-block;
+			text-align: right;
+			padding: 20px;
+			width: calc( 100% - 40px );
+			max-width: 960px;
+			font-size: 14px;
+		}
+
+		main > div a {
+			color: #0066ff;
+			text-decoration: underline;
+		}
+
+		main > div a[href]:hover {
+			color: red;
+		}
+
 	</style>
 
 	<template id="beer">
@@ -224,6 +242,7 @@
 <body itemscope itemtype="http://schema.org/WebPage">
 
 <main>
+	<div>Меню предоставлено <a href="https://catalog.pivo.by/place/irish-pub">Pivo.by</a></div>
 	<ul id="draft"></ul>
 	<ul id="other"></ul>
 </main>
