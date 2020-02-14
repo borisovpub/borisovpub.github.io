@@ -526,21 +526,6 @@ main iframe {
 		display: inline-block;
 	}
 
-	.wrap {
-		width: 45vw;
-		padding-right: calc( 100% - 45vw - 20px );
-		height: calc( 20px + 28vw );
-	}
-
-	.wrap #lang li {
-		display: block;
-	}
-
-	.wrap nav {
-		right: 13vw;
-		top: 0;
-	}
-
 	.wrap h1,
 	.wrap h1 *,
 	.wrap h2 {
@@ -563,22 +548,6 @@ main iframe {
 
 	.wrap ul li {
 		padding: 2vw;
-	}
-
-}
-
-@media ( max-width: 439px ) {
-
-	nav li {
-		display: block;
-	}
-
-}
-
-@media ( max-width: 349px ) {
-
-	#lang li {
-		display: block;
 	}
 
 }
