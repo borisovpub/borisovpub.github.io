@@ -235,25 +235,40 @@
 	/** @noinline */
 	var setAttribute = function( element, key, value ) { element.setAttribute( key, value || key ) };
 
-	var script = document.createElement( 'script' );
+	/** @noinline */
+	var createScript = function( src ) {
+		var script = document.createElement( 'script' );
+		setAttribute( script, 'type', 'text/javascript' );
+		setAttribute( script, 'async', 'async' );
+		setAttribute( script, 'src', src );
+		return querySelector( 'head' ).appendChild( script );
+	};
+
 	var mode = querySelector( '#mode' );
 
-	var ga = window[ 'ga' ] = function ga() { ga[ 'q' ].push( arguments ) };
+	var dl = window.dataLayer = [];
+	var gtag = window.ga = function() { dl.push( arguments ) };
+	var ym = window.ym = function() { ym.a.push( arguments ) };
+
+	ym.a = [];
+	ym.l = 1 * new Date();
+
+	gtag( 'js', new Date() );
+	gtag( 'config', 'UA-29836360-1' );
+	gtag( 'set', { 'user_id': 'USER_ID' } );
+
+	ym( 57548482, 'init', {
+		clickmap: true,
+		trackLinks: true,
+		accurateTrackBounce: true,
+		webvisor: true
+	} );
+
+	createScript( '//googletagmanager.com/gtag/js?id=UA-29836360-1' );
+	createScript( '//mc.yandex.ru/metrika/tag.js' );
 
 	// подменяем историю
 	if ( location.search && history ) history.replaceState( null, document.title, location.pathname );
-
-	ga[ 'q' ] = [];
-	ga[ 'l' ] = 1 * new Date();
-
-	ga( 'create', 'UA-29836360-1', 'auto' );
-	ga( 'require', 'GTM-MDJMFT6' );
-	ga( 'send', 'pageview' );
-
-	setAttribute( script, 'type', 'text/javascript' );
-	setAttribute( script, 'async', 'async' );
-	setAttribute( script, 'src', '//www.google-analytics.com/analytics.js' );
-	querySelector( 'head' ).appendChild( script );
 
 	mode && ( function update() {
 
