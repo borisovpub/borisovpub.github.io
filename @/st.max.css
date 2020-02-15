@@ -528,6 +528,18 @@ main iframe {
 
 }
 
+@media ( max-width: 419px ) {
+
+	nav li {
+		display: block;
+	}
+
+	.wrap nav li {
+		display: inline-block;
+	}
+
+}
+
 @media ( max-height: 599px ) {
 
 	#tel,
