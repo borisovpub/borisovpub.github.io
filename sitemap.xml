@@ -4,87 +4,87 @@
 	xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >
 	<url>
-		<loc>http://irish-pub.by/</loc>
+		<loc>https://irish-pub.by/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/" />
-		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/" />
-		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="https://irish-pub.by/ru/" />
+		<xhtml:link rel="alternate" hreflang="be" href="https://irish-pub.by/be/" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://irish-pub.by/en/" />
 	</url>
 	<url>
-		<loc>http://irish-pub.by/ru/</loc>
+		<loc>https://irish-pub.by/ru/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/" />
-		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/" />
-		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/" />
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://irish-pub.by/" />
+		<xhtml:link rel="alternate" hreflang="be" href="https://irish-pub.by/be/" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://irish-pub.by/en/" />
 	</url>
 	<url>
-		<loc>http://irish-pub.by/be/</loc>
+		<loc>https://irish-pub.by/be/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/" />
-		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/" />
-		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/" />
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://irish-pub.by/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="https://irish-pub.by/ru/" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://irish-pub.by/en/" />
 	</url>
 	<url>
-		<loc>http://irish-pub.by/en/</loc>
+		<loc>https://irish-pub.by/en/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/" />
-		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/" />
-		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/" />
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://irish-pub.by/" />
+		<xhtml:link rel="alternate" hreflang="be" href="https://irish-pub.by/be/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="https://irish-pub.by/ru/" />
 	</url>
 	<url>
-		<loc>http://irish-pub.by/menu/</loc>
+		<loc>https://irish-pub.by/menu/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/menu/" />
-		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/menu/" />
-		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/menu/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="https://irish-pub.by/ru/menu/" />
+		<xhtml:link rel="alternate" hreflang="be" href="https://irish-pub.by/be/menu/" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://irish-pub.by/en/menu/" />
 	</url>
 	<url>
-		<loc>http://irish-pub.by/ru/menu/</loc>
+		<loc>https://irish-pub.by/ru/menu/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/menu/" />
-		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/menu/" />
-		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/menu/" />
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://irish-pub.by/menu/" />
+		<xhtml:link rel="alternate" hreflang="be" href="https://irish-pub.by/be/menu/" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://irish-pub.by/en/menu/" />
 	</url>
 	<url>
-		<loc>http://irish-pub.by/be/menu/</loc>
+		<loc>https://irish-pub.by/be/menu/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/menu/" />
-		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/menu/" />
-		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/menu/" />
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://irish-pub.by/menu/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="https://irish-pub.by/ru/menu/" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://irish-pub.by/en/menu/" />
 	</url>
 	<url>
-		<loc>http://irish-pub.by/en/menu/</loc>
+		<loc>https://irish-pub.by/en/menu/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/menu/" />
-		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/menu/" />
-		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/menu/" />
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://irish-pub.by/menu/" />
+		<xhtml:link rel="alternate" hreflang="be" href="https://irish-pub.by/be/menu/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="https://irish-pub.by/ru/menu/" />
 	</url>
 	<url>
-		<loc>http://irish-pub.by/beer/</loc>
+		<loc>https://irish-pub.by/beer/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/beer/" />
-		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/beer/" />
-		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/beer/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="https://irish-pub.by/ru/beer/" />
+		<xhtml:link rel="alternate" hreflang="be" href="https://irish-pub.by/be/beer/" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://irish-pub.by/en/beer/" />
 	</url>
 	<url>
-		<loc>http://irish-pub.by/ru/beer/</loc>
+		<loc>https://irish-pub.by/ru/beer/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/beer/" />
-		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/beer/" />
-		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/beer/" />
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://irish-pub.by/beer/" />
+		<xhtml:link rel="alternate" hreflang="be" href="https://irish-pub.by/be/beer/" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://irish-pub.by/en/beer/" />
 	</url>
 	<url>
-		<loc>http://irish-pub.by/be/beer/</loc>
+		<loc>https://irish-pub.by/be/beer/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/beer/" />
-		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/beer/" />
-		<xhtml:link rel="alternate" hreflang="en" href="http://irish-pub.by/en/beer/" />
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://irish-pub.by/beer/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="https://irish-pub.by/ru/beer/" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://irish-pub.by/en/beer/" />
 	</url>
 	<url>
-		<loc>http://irish-pub.by/en/beer/</loc>
+		<loc>https://irish-pub.by/en/beer/</loc>
 		<changefreq>monthly</changefreq>
-		<xhtml:link rel="alternate" hreflang="x-default" href="http://irish-pub.by/beer/" />
-		<xhtml:link rel="alternate" hreflang="be" href="http://irish-pub.by/be/beer/" />
-		<xhtml:link rel="alternate" hreflang="ru" href="http://irish-pub.by/ru/beer/" />
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://irish-pub.by/beer/" />
+		<xhtml:link rel="alternate" hreflang="be" href="https://irish-pub.by/be/beer/" />
+		<xhtml:link rel="alternate" hreflang="ru" href="https://irish-pub.by/ru/beer/" />
 	</url>
 </urlset>
