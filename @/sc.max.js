@@ -38,8 +38,8 @@
 		webvisor: true
 	} );
 
-	window.yandexChatWidgetCallback = function() {
-		window.yandexChatWidget = new window.Ya.ChatWidget( {
+	window.yandexChatWidgetCallback = function() { try {
+		new window.Ya.ChatWidget( {
 			guid: '5b97d160-6cac-43e5-83f4-95a0f44b7f34',
 			buttonText: 'Чат с администратором',
 			title: 'Чат',
@@ -47,7 +47,16 @@
 			collapsedDesktop: 'hover',
 			collapsedTouch: 'always',
 		} );
-	};
+		[ 'widget', 'button', 'button__container', 'icon' ].forEach( function( key ) {
+			key = 'ya-chat-' + key + '_size_';
+			var e = querySelector( '.' + key + 'large' );
+			if ( e ) {
+				e = e.classList;
+				e.remove( key + 'large' );
+				e.add( key + 'normal' );
+			}
+		} );
+	} catch ( e ) {} };
 
 	createScript( '//googletagmanager.com/gtag/js?id=UA-29836360-1' );
 	createScript( '//mc.yandex.ru/metrika/tag.js' );
