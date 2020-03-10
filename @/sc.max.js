@@ -48,13 +48,16 @@
 			collapsedTouch: 'always',
 		} );
 		[ 'widget', 'button', 'button__container', 'icon' ].forEach( function( key ) {
-			key = 'ya-chat-' + key + '_size_';
-			var e = querySelector( '.' + key + 'large' );
+			var s = 'ya-chat-' + key + '_size_';
+			var e = querySelector( '.' + s + 'large' );
 			if ( e ) {
 				e = e.classList;
-				e.remove( key + 'large' );
-				e.add( key + 'normal' );
+				e.remove( s + 'large' );
+				e.add( s + 'normal' );
 			}
+			s = 'ya-chat-' + key + '_mobile';
+			e = querySelector( '.' + s );
+			if ( e ) e.classList.remove( s );
 		} );
 	} catch ( e ) {} };
 
