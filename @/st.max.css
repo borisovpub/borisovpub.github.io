@@ -212,7 +212,7 @@ nav a {
 
 #social {
 	position: absolute;
-	bottom: 50px;
+	bottom: 0;
 	left: 50%;
 	transform: translateX( -100px );
 }
@@ -225,7 +225,8 @@ nav a {
 #social a {
 	border-radius: 20px;
 	border: 2px solid #fff;
-	filter: drop-shadow( 0 0 15px rgba( 0, 0, 0, 0.8 ) );
+	filter: drop-shadow( 0 0 15px rgba( 0, 0, 0, 1 ) );
+	background: rgba( 55, 55, 55, 0.4 );
 }
 
 #social a * {
@@ -238,9 +239,9 @@ nav a {
 }
 
 #tel {
-	position: absolute;
+	position: fixed;
 	bottom: 50px;
-	right: 50px;
+	right: 0;
 	width: 36px;
 	height: 36px;
 	margin: 20px;
@@ -463,7 +464,7 @@ main iframe {
 @media ( max-width: 699px ) {
 
 	#social {
-		left: 50px;
+		left: 0;
 		transform: none;
 	}
 
@@ -503,21 +504,6 @@ main iframe {
 		transform: translateY( -70px );
 	}
 
-	#social {
-		left: 50%;
-		transform: translateX( -100px );
-	}
-
-	#tel {
-		left: 50%;
-		bottom: 140px;
-		transform: translateX( -40px );
-	}
-
-	#tel:hover {
-		transform: translateX( -135px );
-	}
-
 }
 
 @media ( max-width: 499px ) {
@@ -542,29 +528,8 @@ main iframe {
 
 @media ( max-height: 599px ) {
 
-	#tel,
-	#social {
-		bottom: 0;
-	}
-
-	#tel {
-		right: 0;
-	}
-
 	header > img {
 		display: none;
-	}
-
-}
-
-@media ( max-height: 699px ) and ( max-width: 599px ) {
-
-	#social {
-		bottom: 0;
-	}
-
-	#tel {
-		bottom: 60px;
 	}
 
 }
