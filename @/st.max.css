@@ -487,6 +487,19 @@ main iframe {
 
 }
 
+@media ( max-width: 629px ) {
+
+	nav li {
+		display: block;
+		text-align: left;
+	}
+
+	.wrap nav li {
+		display: inline-block;
+	}
+
+}
+
 @media ( max-width: 609px ) {
 
 	.wrap {
@@ -518,18 +531,6 @@ main iframe {
 @media ( max-width: 499px ) {
 
 	footer > section {
-		display: inline-block;
-	}
-
-}
-
-@media ( max-width: 419px ) {
-
-	nav li {
-		display: block;
-	}
-
-	.wrap nav li {
 		display: inline-block;
 	}
 
