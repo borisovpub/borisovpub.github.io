@@ -168,25 +168,34 @@ nav {
 }
 
 nav a {
-	width: 90px;
+	min-width: 64px;
 	height: 40px;
 	line-height: 40px;
+	padding: 0 20px
+}
+
+#delivery {
+	background: #c00;
 }
 
 #menu {
-	background: #2b6b14;
+	background: #371;
 }
 
 #beer {
-	background: #c05625;
+	background: #c53;
+}
+
+#delivery:hover {
+	background: rgba( 204, 0, 0, 0.5 );
 }
 
 #menu:hover {
-	background: rgba( 58, 145, 27, 0.5 );
+	background: rgba( 51, 85, 17, 0.5 );
 }
 
 #beer:hover {
-	background: rgba( 192, 86, 37, 0.5 );
+	background: rgba( 204, 85, 51, 0.5 );
 }
 
 #lang {
