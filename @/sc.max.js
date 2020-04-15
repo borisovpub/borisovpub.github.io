@@ -21,7 +21,7 @@
 	var mode = querySelector( '#mode' );
 
 	var dl = window.dataLayer = [];
-	var gtag = window.ga = function() { dl.push( arguments ) };
+	var gtag = window.gtag = function() { dl.push( arguments ) };
 	var ym = window.ym = function() { ym.a.push( arguments ) };
 
 	ym.a = [];
@@ -61,9 +61,9 @@
 		} );
 	} catch ( e ) {} };
 
-	createScript( '//googletagmanager.com/gtag/js?id=UA-29836360-1' );
+	createScript( '//www.googletagmanager.com/gtag/js?id=UA-29836360-1' );
 	createScript( '//mc.yandex.ru/metrika/tag.js' );
-	createScript( '//chat.s3.yandex.net/widget.js' );
+	createScript( '//yastatic.net/s3/chat/widget.js' );
 
 	// подменяем историю
 	if ( location.search && history ) history.replaceState( null, document.title, location.pathname );
