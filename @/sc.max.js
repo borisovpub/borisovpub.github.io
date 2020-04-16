@@ -82,4 +82,10 @@
 
 	} )();
 
+	document.querySelectorAll( '#burger,aside .close' ).forEach( function( e ) {
+		e.addEventListener( 'click', function() {
+			querySelector( 'aside' ).classList.toggle( 'show' );
+		} );
+	} );
+
 }( this );
