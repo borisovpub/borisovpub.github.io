@@ -402,6 +402,9 @@
 				for ( ; j<m; ++j ) {
 
 					sku = beer.skus[ j ];
+
+					if ( !sku.price ) continue;
+
 					skuNode = cloneNode( skuTemplate );
 
 					skuVolume = querySelector( skuNode, '.volume' );
@@ -410,7 +413,7 @@
 
 					if ( sku.volume ) skuVolume.textContent = toNumber( sku.volume );
 					if ( sku.packing ) skuPacking.textContent = sku.packing;
-					if ( sku.price ) skuPrice.textContent = toNumber( sku.price );
+					//if ( sku.price ) skuPrice.textContent = toNumber( sku.price );
 
 					appendChild( querySelector( beerNode, '.skus' ), skuNode );
 
