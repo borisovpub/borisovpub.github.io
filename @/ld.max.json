@@ -44,13 +44,13 @@
 		"postalCode": "222520"
 	},
 
-	"telephone": "+375177761089",
+	"telephone": "+375177755755",
 
 	"contactPoint": {
 		"@type": "ContactPoint",
 		"contactType": "customer service",
 		"email": "info@irish-pub.by",
-		"telephone": "+375177761089",
+		"telephone": "+375177755755",
 		"availableLanguage": [ "Russian", "Belarusian", "English" ]
 	},
 
