@@ -83,7 +83,7 @@
 	"openingHoursSpecification": {
 		"@type": "OpeningHoursSpecification",
 		"opens": "15:00",
-		"closes": "03:00"
+		"closes": "23:00"
 	},
 
 	"priceRange": "$$",

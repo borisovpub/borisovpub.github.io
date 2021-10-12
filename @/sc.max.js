@@ -71,11 +71,12 @@
 	mode && ( function update() {
 
 		var d = new Date();
+		d = d.getUTCHours() * 60 + d.getUTCMinutes();
 
-		if ( d.getUTCHours() * 60 + d.getUTCMinutes() < 12*60 ) {
-			setAttribute( mode, 'class', 'close' );
-		} else {
+		if ( ( 15 - 3 ) * 60 <= d && d < ( 23 - 3 ) * 60 ) {
 			setAttribute( mode, 'class', 'open' );
+		} else {
+			setAttribute( mode, 'class', 'close' );
 		}
 
 		window.setTimeout( update, 60*1e3 );
