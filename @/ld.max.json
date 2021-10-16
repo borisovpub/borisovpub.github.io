@@ -82,7 +82,7 @@
 
 	"openingHoursSpecification": {
 		"@type": "OpeningHoursSpecification",
-		"opens": "15:00",
+		"opens": "12:00",
 		"closes": "23:00"
 	},
 
