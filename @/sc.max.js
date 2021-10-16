@@ -73,7 +73,7 @@
 		var d = new Date();
 		d = d.getUTCHours() * 60 + d.getUTCMinutes();
 
-		if ( ( 15 - 3 ) * 60 <= d && d < ( 23 - 3 ) * 60 ) {
+		if ( ( 12 - 3 ) * 60 <= d && d < ( 23 - 3 ) * 60 ) {
 			setAttribute( mode, 'class', 'open' );
 		} else {
 			setAttribute( mode, 'class', 'close' );
