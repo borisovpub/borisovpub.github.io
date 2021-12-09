@@ -38,32 +38,8 @@
 		webvisor: true
 	} );
 
-	window.yandexChatWidgetCallback = function() { try {
-		new window.Ya.ChatWidget( {
-			guid: '5b97d160-6cac-43e5-83f4-95a0f44b7f34',
-			buttonText: 'Чат с администратором',
-			title: 'Чат',
-			theme: 'light',
-			collapsedDesktop: 'hover',
-			collapsedTouch: 'always',
-		} );
-		[ 'widget', 'button', 'button__container', 'icon' ].forEach( function( key ) {
-			var s = 'ya-chat-' + key + '_size_';
-			var e = querySelector( '.' + s + 'large' );
-			if ( e ) {
-				e = e.classList;
-				e.remove( s + 'large' );
-				e.add( s + 'normal' );
-			}
-			s = 'ya-chat-' + key + '_mobile';
-			e = querySelector( '.' + s );
-			if ( e ) e.classList.remove( s );
-		} );
-	} catch ( e ) {} };
-
 	createScript( '//www.googletagmanager.com/gtag/js?id=UA-29836360-1' );
 	createScript( '//mc.yandex.ru/metrika/tag.js' );
-	createScript( '//yastatic.net/s3/chat/widget.js' );
 
 	// подменяем историю
 	if ( location.search && history ) history.replaceState( null, document.title, location.pathname );
@@ -83,7 +59,7 @@
 
 	} )();
 
-	document.querySelectorAll( '#burger,aside .close' ).forEach( function( e ) {
+	document.querySelectorAll( '.aside' ).forEach( function( e ) {
 		e.addEventListener( 'click', function() {
 			querySelector( 'aside' ).classList.toggle( 'show' );
 		} );

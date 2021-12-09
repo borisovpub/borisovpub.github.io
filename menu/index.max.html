@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="x-default" xml:lang="x-default" xmlns="http://www.w3.org/1999/xhtml">
-
+<!--
 <script type="application/javascript">!function( /* Window */ window ) {
 
-	function parse(language) {
+	var parse = function( language ) {
 		return available[ language.replace( /-.*$/, '' ) ];
 	}
 
@@ -15,7 +15,7 @@
 	if ( languages ) {
 		var i = 0, l = languages.length;
 		for ( ; i<l; ++i ) {
-			if ( language = parse( languages[ i ] ) ) break;
+			if ( ( language = parse( languages[ i ] ) ) ) break;
 		}
 	}
 
@@ -30,13 +30,15 @@
 	window.location = '/' + language + '/menu/';
 
 }( window )</script>
-
+-->
 <head>
 	<meta http-equiv="refresh" content="0; url=/ru/menu/" />
+	<!--
 	<link rel="canonical" href="/ru/menu/" />
 	<link rel="alternate" hreflang="be" href="/be/menu/" />
 	<link rel="alternate" hreflang="ru" href="/ru/menu/" />
 	<link rel="alternate" hreflang="en" href="/en/menu/" />
+	-->
 </head>
 
 </html>

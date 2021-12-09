@@ -17,10 +17,10 @@
 		{ "@language": "en", "@value": "Irish Pub" }
 	],
 
-	"url": "http://irish-pub.by",
+	"url": "https://irish-pub.by",
 
-	"image": "http://irish-pub.by/@/av.jpg",
-	"logo": "http://irish-pub.by/@/av.jpg",
+	"image": "https://irish-pub.by/@/av.jpg",
+	"logo": "https://irish-pub.by/@/av.jpg",
 
 	"geo": {
 		"@type": "GeoCoordinates",
