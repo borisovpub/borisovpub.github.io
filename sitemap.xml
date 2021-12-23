@@ -33,4 +33,14 @@
 		<changefreq>monthly</changefreq>
 		<xhtml:link rel="alternate" hreflang="x-default" href="https://irish-pub.by/beer/" />
 	</url>
+	<url>
+		<loc>https://irish-pub.by/lunch/</loc>
+		<changefreq>monthly</changefreq>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://irish-pub.by/ru/lunch/" />
+	</url>
+	<url>
+		<loc>https://irish-pub.by/ru/lunch/</loc>
+		<changefreq>monthly</changefreq>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://irish-pub.by/lunch/" />
+	</url>
 </urlset>
