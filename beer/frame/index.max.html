@@ -250,7 +250,7 @@
 <body>
 
 <main>
-	<div>Меню предоставлено <a href="https://catalog.pivo.by/place/irish-pub" target="_blank" rel="noopener noreferrer">Pivo.by</a></div>
+	<div>Меню предоставлено <a href="https://your.beer/place/irish-pub" target="_blank" rel="noopener noreferrer">Pivo.by</a></div>
 	<ul id="draft"></ul>
 	<ul id="other"></ul>
 </main>
@@ -278,7 +278,7 @@
 
 	var xhr = new ( window.XDomainRequest || window.XMLHttpRequest )();
 
-	xhr.open( 'GET', 'https://catalog.pivo.by/api/v1/places/irish-pub', true );
+	xhr.open( 'GET', 'https://your.beer/api/v1/places/irish-pub', true );
 
 	if ( xhr.overrideMimeType ) xhr.overrideMimeType( 'application/json' );
 
@@ -374,7 +374,7 @@
 
 					breweryName = querySelector( breweryNode, 'a' );
 
-					if ( brewery.slug ) setAttribute( breweryName, 'href', '//catalog.pivo.by/brewery/' + brewery.slug );
+					if ( brewery.slug ) setAttribute( breweryName, 'href', '//your.beer/brewery/' + brewery.slug );
 					if ( brewery.name ) breweryName.textContent = brewery.name;
 
 					appendChild( beerBreweries, breweryNode );
@@ -387,12 +387,12 @@
 					appendChild( beerLogo, beerLogoIMG );
 				}
 				if ( beer.slug ) {
-					setAttribute( beerLogo, 'href', '//catalog.pivo.by/beer/' + beer.slug );
-					setAttribute( beerNameA, 'href', '//catalog.pivo.by/beer/' + beer.slug );
+					setAttribute( beerLogo, 'href', '//your.beer/beer/' + beer.slug );
+					setAttribute( beerNameA, 'href', '//your.beer/beer/' + beer.slug );
 				}
 				if ( beer.name ) beerNameA.textContent = beer.name;
 				if ( beer.beer_style ) {
-					if ( beer.beer_style.slug ) setAttribute( beerStyle, 'href', '//catalog.pivo.by/beers/' + beer.beer_style.slug );
+					if ( beer.beer_style.slug ) setAttribute( beerStyle, 'href', '//your.beer/beers/' + beer.beer_style.slug );
 					if ( beer.beer_style.name ) beerStyle.textContent = beer.beer_style.name;
 				}
 				if ( beer.abv ) beerABV.textContent = toNumber( beer.abv );
