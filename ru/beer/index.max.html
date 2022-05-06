@@ -28,9 +28,195 @@
 	<meta property="place:location:latitude" content="54.222662" />
 	<meta property="place:location:longitude" content="28.488434" />
 
-	<link rel="preconnect" href="https://your.beer" />
-
 	<link rel="stylesheet" type="text/css" href="/@/st.max.css" />
+
+	<style>
+
+		main {
+			padding-bottom: 20px;
+		}
+
+		main > article > ul {
+			display: inline-grid;
+			text-align: left;
+			grid-template-columns: 50% 50%;
+			padding: 5px;
+			width: calc( 100% - 10px );
+			max-width: 990px;
+			font-size: 12px;
+		}
+
+		main > article > ul:empty {
+
+		}
+
+		.beer {
+			display: inline-grid;
+			border: 1px solid rgba( 0, 0, 0, 0.125 );
+			border-radius: 5px;
+			margin: 10px;
+			grid-template-columns: 85px 1fr;
+			grid-template-rows: min-content min-content min-content 1fr;
+			padding: 16px;
+			width: calc( 100% - 54px );
+			overflow: hidden;
+		}
+
+		.beer:hover {
+			box-shadow: 0 0 8px #dee2e6;
+		}
+
+		.sticker {
+			margin-right: 10px;
+			grid-row-start: 1;
+			grid-row-end: 5;
+		}
+
+		.sticker a {
+			display: block;
+		}
+
+		.sticker img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+
+		.breweries > * {
+			display: inline;
+		}
+
+		.brewery a {
+			font-weight: 300;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: 12px;
+			color: rgb( 33, 37, 41 );
+		}
+
+		.name {
+			padding: 6px 0;
+		}
+
+		.name a {
+			font-size: 20px;
+			font-weight: 700;
+			letter-spacing: -0.5px;
+			font-family: 'Roboto Condensed', Arial, sans-serif;
+			line-height: 1.2;
+			color: rgb( 33, 37, 41 );
+		}
+
+		.desc > * {
+			display: inline-block;
+			color: #adb5bd;
+			line-height: 1.4;
+		}
+
+		.ibu:not( :empty ):before,
+		.abv:not( :empty ):before {
+			content: '•';
+			margin: 0 4px;
+		}
+
+		.ibu:not( :empty ):after,
+		.abv:not( :empty ):after {
+			content: '% abv';
+			text-transform: uppercase;
+		}
+
+		.ibu:not( :empty ):after {
+			content: ' ibu';
+		}
+
+		.skus {
+			margin-top: 6px;
+		}
+
+		.sku:after {
+			content: '';
+			display: block;
+			width: 100%;
+			position: absolute;
+			border-bottom: 2px dotted #dee2e6;
+			bottom: 6px;
+			z-index: -1;
+		}
+
+		.sku {
+			position: relative;
+			margin-top: 4px;
+		}
+
+		.sku div {
+			display: inline-block;
+			font-weight: 700;
+			background: #fff;
+			color: #495057;
+		}
+
+		.volume:not( :empty ):after {
+			content: ' l';
+		}
+
+		.packing {
+			padding: 0 4px;
+		}
+
+		.packing:not( :empty ):before {
+			content: '(';
+		}
+
+		.packing:not( :empty ):after {
+			content: ')';
+		}
+
+		.price {
+			position: absolute;
+			right: 0;
+			padding-left: 4px;
+		}
+
+		.price:not( :empty ):after {
+			content: 'BYN';
+		}
+
+		@media ( max-width: 900px ) {
+
+			main > article > ul {
+				display: inline-block;
+				max-width: 700px;
+			}
+
+		}
+
+	</style>
+
+	<template id="beer">
+		<li class="beer">
+			<a class="sticker" target="_blank" rel="noopener noreferrer"></a>
+			<ul class="breweries"></ul>
+			<h3 class="name"><a target="_blank" rel="noopener noreferrer"></a></h3>
+			<div class="desc">
+				<a class="style" target="_blank" rel="noopener noreferrer"></a>
+				<div class="abv"></div>
+				<div class="ibu"></div>
+			</div>
+			<ul class="skus"></ul>
+		</li>
+	</template>
+
+	<template id="brewery">
+		<li class="brewery"><h3><a target="_blank" rel="noopener noreferrer"></a></h3></li>
+	</template>
+
+	<template id="sku">
+		<li class="sku">
+			<div class="volume"></div>
+			<div class="packing"></div>
+			<div class="price"></div>
+		</li>
+	</template>
 
 	<script type="application/ld+json">
 		{
@@ -53,6 +239,8 @@
 		}
 	</script>
 
+	<link rel="preload" href="https://your.beer/api/v1/places/irish-pub" as="fetch" crossorigin="anonymous" />
+
 </head>
 
 <body>
@@ -67,7 +255,14 @@
 </header>
 
 <main>
-	<iframe src="/beer/frame/index.max.html#ru" title="Пиво" width="100%" height="800" scrolling="no"></iframe>
+	<article id="draft">
+		<h2 class="h1">Разливное</h2>
+		<ul></ul>
+	</article>
+	<article id="other">
+		<h2 class="h1">Бутылочное</h2>
+		<ul></ul>
+	</article>
 </main>
 
 <aside>
@@ -131,6 +326,178 @@
 <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400|Montserrat:400&display=swap" rel="stylesheet" type="text/css" />
 
 <script src="/@/sc.max.js" async="async"></script>
+
+<script>!function( /** Window */ window ) {
+
+	/** @noinline */
+	var querySelector = function( node, selector ) { return node.querySelector( selector ) };
+	/** @noinline */
+	var cloneNode = function( node ) { return document.importNode( node.content, true ) };
+	/** @noinline */
+	var appendChild = function( node, child ) { node.appendChild( child ) };
+	/** @noinline */
+	var setAttribute = function( node, key, value ) { node.setAttribute( key, value || key ) };
+
+	var document = window.document;
+
+	var xhr = new ( window.XDomainRequest || window.XMLHttpRequest )();
+
+	xhr.open( 'GET', 'https://your.beer/api/v1/places/irish-pub', true );
+
+	if ( xhr.overrideMimeType ) xhr.overrideMimeType( 'application/json' );
+
+	xhr.onerror = function() {
+
+		// TODO
+
+	};
+
+	xhr.onload = function() {
+
+		/**
+		 * @typedef { {
+		 * 		id: number,
+		 * 		slug: string,
+		 * 		name: string,
+		 * 		breweries: Array< {
+		 * 			id: number,
+		 *			name: string,
+		 * 		} >,
+		 * 		logo_image: string,
+		 * 		beer_style: {
+		 * 			slug: string,
+		 * 			name: string,
+		 * 		},
+		 * 		gravity: null,
+		 * 		abv: number,
+		 * 		ibu: number,
+		 * 		avg_rating: number,
+		 * 		date_start: string,
+		 * 		is_checked: boolean,
+		 * 		skus: Array< {
+		 * 		    price: number,
+		 * 		    volume: string,
+		 * 		    packing: string,
+		 * 		} >,
+		 * 		sale_data: {
+		 * 			tap_number: string,
+		 * 			start_sales_at: string,
+		 * 			shop_price: boolean,
+		 * 		},
+		 * } } Beer
+		 */
+
+		/** @type { { tap: Array< Beer >, other: Array< Beer > } } */
+		var beers = window.JSON.parse( xhr.responseText ).beers;
+
+		var beerTemplate = querySelector( document, '#beer' );
+		var breweryTemplate = querySelector( document, '#brewery' );
+		var skuTemplate = querySelector( document, '#sku' );
+
+		/**
+		 * @param { number } value
+		 * @returns { string }
+		 */
+		var toNumber = function( value ) {
+			return window.String( value || 0 ).replace( '.', ',' );
+		};
+
+		/**
+		 * @param { HTMLElement } slot
+		 * @param { Array< Beer > } beers
+		 * @returns { HTMLElement }
+		 */
+		var buildBeers = function( slot, beers ) {
+
+			var i, l, j, m;
+
+			var beer, beerNode, beerSticker, beerStickerIMG, beerName, beerNameA, beerBreweries, beerStyle, beerABV, beerIBU;
+			var brewery, breweryNode, breweryName;
+			var sku, skuNode, skuVolume, skuPacking, skuPrice;
+
+			i = 0; l = beers.length;
+			for ( ; i<l; ++i ) {
+
+				beer = beers[ i ];
+				beerNode = cloneNode( beerTemplate );
+
+				beerBreweries = querySelector( beerNode, '.breweries' );
+				beerSticker = querySelector( beerNode, '.sticker' );
+				beerName = querySelector( beerNode, '.name' );
+				beerStyle = querySelector( beerNode, '.style' );
+				beerABV = querySelector( beerNode, '.abv' );
+				beerIBU = querySelector( beerNode, '.ibu' );
+
+				beerNameA = querySelector( beerName, 'a' );
+
+				j = 0; m = beer.breweries.length;
+				for ( ; j<m; ++j ) {
+
+					brewery = beer.breweries[ j ];
+					breweryNode = cloneNode( breweryTemplate );
+
+					breweryName = querySelector( breweryNode, 'a' );
+
+					if ( brewery.slug ) setAttribute( breweryName, 'href', '//your.beer/brewery/' + brewery.slug );
+					if ( brewery.name ) breweryName.textContent = brewery.name;
+
+					appendChild( beerBreweries, breweryNode );
+
+				}
+
+				if ( beer.logo_image ) {
+					beerStickerIMG = document.createElement( 'img' );
+					setAttribute( beerStickerIMG, 'src', beer.logo_image );
+					appendChild( beerSticker, beerStickerIMG );
+				}
+				if ( beer.slug ) {
+					setAttribute( beerSticker, 'href', '//your.beer/beer/' + beer.slug );
+					setAttribute( beerNameA, 'href', '//your.beer/beer/' + beer.slug );
+				}
+				if ( beer.name ) beerNameA.textContent = beer.name;
+				if ( beer.beer_style ) {
+					if ( beer.beer_style.slug ) setAttribute( beerStyle, 'href', '//your.beer/beers/' + beer.beer_style.slug );
+					if ( beer.beer_style.name ) beerStyle.textContent = beer.beer_style.name;
+				}
+				if ( beer.abv ) beerABV.textContent = toNumber( beer.abv );
+				if ( beer.ibu ) beerIBU.textContent = toNumber( beer.ibu );
+
+				j = 0; m = beer.skus.length;
+				for ( ; j<m; ++j ) {
+
+					sku = beer.skus[ j ];
+
+					if ( !sku.price ) continue;
+
+					skuNode = cloneNode( skuTemplate );
+
+					skuVolume = querySelector( skuNode, '.volume' );
+					skuPacking = querySelector( skuNode, '.packing' );
+					skuPrice = querySelector( skuNode, '.price' );
+
+					if ( sku.volume ) skuVolume.textContent = toNumber( sku.volume );
+					if ( sku.packing ) skuPacking.textContent = sku.packing;
+					//if ( sku.price ) skuPrice.textContent = toNumber( sku.price );
+
+					appendChild( querySelector( beerNode, '.skus' ), skuNode );
+
+				}
+
+				appendChild( slot, beerNode );
+
+
+			}
+
+		};
+
+		buildBeers( querySelector( document, '#draft ul' ), beers.tap );
+		buildBeers( querySelector( document, '#other ul' ), beers.other );
+
+	};
+
+	xhr.send();
+
+}( this )</script>
 
 </body>
 
