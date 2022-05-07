@@ -228,20 +228,8 @@
 
 		}
 
-		h1,
-		h2 {
+		.h2 {
 			margin: 40px 20px;
-			font-size: 40px !important;
-		}
-
-		h1:after,
-		h2:after {
-			content: '';
-			display: block;
-			height: 2px;
-			width: 35%;
-			min-width: 250px;
-			background: #555;
 		}
 
 		#about {
@@ -325,11 +313,6 @@
 
 		@media ( max-width: 1000px ) {
 
-			main h1:after,
-			main h2:after {
-				margin-left: -20px;
-			}
-
 			#about img {
 				width: 100%;
 			}
@@ -338,7 +321,7 @@
 
 		@media ( max-width: 700px ) {
 
-			main #about {
+			#about {
 				display: inline;
 			}
 
@@ -514,7 +497,7 @@
 
 <main>
 	<article id="about">
-		<h1 class="h1">О Пабе</h1>
+		<h1 class="h1 h2">О Пабе</h1>
 		<div>
 			<p><b>Пивной ресторан</b> ждёт в гости любителей вкусно поесть, ценителей отличного пива и всех тех, кто умеет хорошо проводить время.</p>
 			<p>Наш <b>Паб</b> предлагает всем желающим оценить широкий выбор разливного и бутылочного пива, а так же большую винную карту. Темное и светлое, эль и лагер, крепкое и безалкогольное – каждый найдёт себе напиток по душе в нашем меню. А не захмелеть помогут сытные и изысканные блюда, которые создадут превосходные гастрономические пары. Выбрать различные закуски, стейки из мяса и рыбы, идеальные бургеры, вам помогут наши дружелюбные официанты.</p>
@@ -530,7 +513,7 @@
 		</div>
 	</article>
 	<article id="collection">
-		<h2 class="h1"><a href="//delivery.irish-pub.by">Доставка</a></h2>
+		<h2 class="h1 h2"><a href="//delivery.irish-pub.by">Доставка</a></h2>
 		<div>
 			<a href="//delivery.irish-pub.by/collection/burgers-sandwiches">
 				<img loading="lazy" src="//static.insales.ru/images/products/1/6902/471030518/medium_IMG_3753.jpg" width="240" height="240" alt="Бургер с куриным бедром и айоли" />
@@ -615,9 +598,9 @@
 	</section>
 </footer>
 
-<link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400|Montserrat:400&display=swap" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Condensed:400|Montserrat:400&display=swap" />
 
-<script src="/@/sc.max.js" async="async"></script>
+<script type="text/javascript" src="/@/sc.max.js" async="async"></script>
 
 </body>
 

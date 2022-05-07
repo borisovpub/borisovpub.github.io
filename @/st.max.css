@@ -40,21 +40,19 @@ ul {
 	text-transform: uppercase;
 }
 
-h2 {
+.h2 {
 	margin: 20px 20px;
-	font-size: 40px !important;
+	font-size: 40px;
 	text-align: left;
 }
 
-h2:after {
+.h2:after {
 	content: '';
 	display: block;
 	height: 2px;
-	width: 35%;
-	min-width: 250px;
+	width: 330px;
 	background: #555;
 }
-
 
 .fit {
 	object-fit: cover;
@@ -134,6 +132,32 @@ a.i[href^="mailto:"]:before {
 	padding: 2px;
 	border-radius: 50%;
 	border: 1px solid #333;
+}
+
+@media ( max-width: 1000px ) {
+
+	.h2:after {
+		margin-left: -20px;
+		width: 350px;
+	}
+
+}
+
+@media ( max-width: 500px ) {
+
+	.h2:after {
+		margin-left: -20px;
+		width: 100%;
+	}
+
+}
+
+.load:empty {
+	display: block;
+	max-width: 100%;
+	min-height: 80px;
+
+	background: center / 40px no-repeat url( "/@/p.svg" );
 }
 
 /****************

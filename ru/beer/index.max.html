@@ -256,12 +256,12 @@
 
 <main>
 	<article id="draft">
-		<h2 class="h1">Разливное</h2>
-		<ul></ul>
+		<h2 class="h1 h2">Разливное</h2>
+		<ul class="load"></ul>
 	</article>
 	<article id="other">
-		<h2 class="h1">Бутылочное</h2>
-		<ul></ul>
+		<h2 class="h1 h2">Бутылочное</h2>
+		<ul class="load"></ul>
 	</article>
 </main>
 
@@ -322,10 +322,6 @@
 		<div id="warning" class="h1">Чрезмерное употребление алкоголя вредит вашему здоровью</div>
 	</section>
 </footer>
-
-<link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400|Montserrat:400&display=swap" rel="stylesheet" type="text/css" />
-
-<script src="/@/sc.max.js" async="async"></script>
 
 <script>!function( /** Window */ window ) {
 
@@ -448,6 +444,9 @@
 				if ( beer.logo_image ) {
 					beerStickerIMG = document.createElement( 'img' );
 					setAttribute( beerStickerIMG, 'src', beer.logo_image );
+					setAttribute( beerStickerIMG, 'loading', 'lazy' );
+					setAttribute( beerStickerIMG, 'width', 200 );
+					setAttribute( beerStickerIMG, 'height', 200 );
 					appendChild( beerSticker, beerStickerIMG );
 				}
 				if ( beer.slug ) {
@@ -498,6 +497,10 @@
 	xhr.send();
 
 }( this )</script>
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Condensed:400|Montserrat:400&display=swap" />
+
+<script type="text/javascript" src="/@/sc.max.js" async="async"></script>
 
 </body>
 
