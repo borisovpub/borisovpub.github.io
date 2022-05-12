@@ -398,7 +398,7 @@
 		var lunchCollection, lunchCollectionNode, lunchCollectionTemplate;
 		var brunch, brunchNode, brunchTemplate;
 
-		querySelector( document, 'h2 time' ).textContent = pad2( d.getDate() ) + '.' + pad2( d.getUTCMonth() ) + '.' + d.getUTCFullYear();
+		querySelector( document, 'h2 time' ).textContent = pad2( d.getDate() ) + '.' + pad2( d.getUTCMonth() + 1 ) + '.' + d.getUTCFullYear();
 
 		if ( data.mode ) {
 

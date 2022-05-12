@@ -5,20 +5,14 @@
 	var location = window.location;
 	var history = window.history;
 
-	var querySelector = document.querySelector.bind( document );
-	/** @noinline */
-	var setAttribute = function( element, key, value ) { element.setAttribute( key, value || key ) };
-
 	/** @noinline */
 	var createScript = function( src ) {
 		var script = document.createElement( 'script' );
-		setAttribute( script, 'type', 'text/javascript' );
-		setAttribute( script, 'async', 'async' );
-		setAttribute( script, 'src', src );
-		return querySelector( 'head' ).appendChild( script );
+		script.setAttribute( 'type', 'text/javascript' );
+		script.setAttribute( 'async', 'async' );
+		script.setAttribute( 'src', src );
+		return document.querySelector( 'head' ).appendChild( script );
 	};
-
-	var mode = querySelector( '#mode' );
 
 	var dl = window.dataLayer = [];
 	var gtag = window.gtag = function() { dl.push( arguments ) };
@@ -44,24 +38,9 @@
 	// подменяем историю
 	if ( location.search && history ) history.replaceState( null, document.title, location.pathname );
 
-	mode && ( function update() {
-
-		var d = new Date();
-		d = d.getUTCHours() * 60 + d.getUTCMinutes();
-
-		if ( ( 12 - 3 ) * 60 <= d && d < ( 23 - 3 ) * 60 ) {
-			setAttribute( mode, 'class', 'open' );
-		} else {
-			setAttribute( mode, 'class', 'close' );
-		}
-
-		window.setTimeout( update, 60*1e3 );
-
-	} )();
-
 	document.querySelectorAll( '.aside' ).forEach( function( e ) {
 		e.addEventListener( 'click', function() {
-			querySelector( 'aside' ).classList.toggle( 'show' );
+			document.querySelector( 'aside' ).classList.toggle( 'show' );
 		} );
 	} );
 
