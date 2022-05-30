@@ -218,8 +218,30 @@
 
 		@media ( max-width: 500px ) {
 
-			.lunch {
-				display: none;
+			nav {
+				width: 100%;
+				right: initial;
+				top: initial;
+				bottom: 0;
+			}
+
+			nav .inline {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				width: 100%;
+			}
+
+			nav li {
+				padding: 0 !important;
+			}
+
+			nav a {
+				width: 100%;
+				padding: 0;
+			}
+
+			header .social {
+				bottom: 80px;
 			}
 
 		}
