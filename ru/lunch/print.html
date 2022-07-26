@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru" xml:lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+
+	<style media="all">
+
+		@page {
+			size: A4 portrait;
+			margin: 1cm;
+		}
+
+		@font-face {
+			font-family: 'Open Sans Condensed';
+			src: local( 'Open Sans Condensed Bold' );
+		}
+
+		@font-face {
+			font-family: 'Open Sans Condensed Light';
+			src: local( 'Open Sans Condensed Light' );
+		}
+
+		*,
+		:after,
+		:before {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			transition: all 0.1s linear;
+		}
+
+		ul {
+			list-style-type: none;
+		}
+
+		html, body {
+			height: 100%;
+			font: 14pt 'Open Sans Condensed Light', Arial, sans-serif;
+		}
+
+		h1,
+		.lunch-collection > span,
+		.not-lunch .name {
+			font: normal 20pt 'Open Sans Condensed', Arial, sans-serif;
+			text-transform: uppercase;
+			margin: 14pt 0 4pt 0;
+			display: inline-block;
+		}
+
+		body {
+			display: grid;
+			grid-template-columns: auto auto;
+			grid-gap: 2cm;
+		}
+
+		img {
+			height: 2.5cm;
+			width: auto;
+		}
+
+		.logo {
+			filter: invert( 1 );
+			height: 2.5cm;
+		}
+
+		h1 {
+			font-size: 35pt;
+			display: block;
+			margin: 0;
+		}
+
+		article {
+			display: grid;
+			grid-template-rows: auto min-content min-content auto;
+			text-align: center;
+			align-items: center;
+		}
+
+		article > div > span {
+			font-size: 20pt;
+		}
+
+		.lunch-collection {
+			text-align: left;
+		}
+
+		.lunch {
+			display: grid;
+			grid-template-columns: auto min-content;
+			grid-gap: 14pt;
+		}
+
+		article > div:last-of-type {
+			padding-top: 20pt;
+		}
+
+		.weight {
+			opacity: .6;
+		}
+
+		.weight:not( :empty ):before {
+			content: '(';
+		}
+
+		.weight:not( :empty ):after {
+			content: ')';
+		}
+
+		.cost {
+			text-align: right;
+			font-family: 'Open Sans Condensed', Arial, sans-serif;
+		}
+
+		.cost > span {
+			font-size: 11pt;
+		}
+
+		.not-lunch img:not( .logo ),
+		.not-lunch article > div > span {
+			display: none;
+		}
+
+		.not-lunch .cost {
+			text-align: center;
+		}
+
+		.not-lunch .name {
+			font-size: 14pt;
+		}
+
+	</style>
+
+	<template id="lunch-collection">
+		<li class="lunch-collection">
+			<span></span>
+			<ul></ul>
+		</li>
+	</template>
+
+	<template id="lunch">
+		<li class="lunch">
+			<div><span class="name"></span>&nbsp;&nbsp;&nbsp;<span class="weight"></span></div>
+			<div class="cost">.<span></span></div>
+		</li>
+	</template>
+
+	<template id="brunch">
+		<li class="brunch">
+			<div class="name"></div>
+			<div><span class="desc"></span>&nbsp;&nbsp;<span class="weight"></span></div>
+			<div class="cost">.<span></span></div>
+		</li>
+	</template>
+
+</head>
+
+<body>
+
+<article>
+	<div>
+		<img class="logo" src="/@/logo.svg" />
+	</div>
+	<div>
+		<h1>Обед</h1>
+		<span>по будням<br/>12:00 – 16:00</span>
+	</div>
+	<ul></ul>
+	<div>
+		<img src="/@/bc.svg" />
+	</div>
+</article>
+
+<script type="text/javascript">( ( /** Window */ window ) => {
+
+	/** @noinline */
+	var querySelector = ( node, selector ) => node.querySelector( selector );
+	/** @noinline */
+	var cloneNode = ( node ) => document.importNode( node.content, true );
+	/** @noinline */
+	var appendChild = ( node, child ) => node.appendChild( child );
+
+	/** @noinline */
+	var setCost = ( node, cost ) => {
+		var c = cost.toFixed( 2 ).split( '.' );
+		node.insertBefore( document.createTextNode( c[ 0 ] ), node.firstChild );
+		querySelector( node, 'span' ).textContent = c[ 1 ];
+	};
+
+	var document = window.document;
+
+	var xhr = new window.XMLHttpRequest();
+
+	xhr.open( 'GET', '/lunch/menu.json?' + window.Math.random(), true );
+
+	if ( xhr.overrideMimeType ) xhr.overrideMimeType( 'application/json' );
+
+	xhr.onerror = () => {
+
+		// TODO
+
+	};
+
+	xhr.onload = () => {
+
+		/** @typedef { [ string, number, number ] } Lunch */
+
+		/** @typedef { [ string | Lunch ] } LunchCollection */
+
+		/** @typedef { [ string, string, number, number ] } Brunch */
+
+		/** @type { { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } } */
+		var data = window.JSON.parse( xhr.responseText );
+
+		var body = document.body;
+		var article = querySelector( document, 'article' );
+		var name = querySelector( document, 'h1' );
+		var collection = querySelector( document, 'ul' );
+
+		var i, l, j, m;
+
+		var lunch, lunchNode, lunchTemplate;
+		var lunchCollection, lunchCollectionNode, lunchCollectionTemplate;
+		var brunch, brunchNode, brunchTemplate;
+
+		if ( data.mode ) {
+
+			body.classList.add( 'not-lunch' )
+
+			name.textContent = 'Бранч';
+
+			brunchTemplate = querySelector( document, '#brunch' );
+
+			i = 0; l = data.brunch.length;
+			for ( ; i<l; ++i ) {
+
+				brunch = data.brunch[ i ];
+				brunchNode = cloneNode( brunchTemplate );
+
+				querySelector( brunchNode, '.name' ).textContent = brunch[ 0 ];
+				querySelector( brunchNode, '.weight' ).textContent = brunch[ 2 ];
+				querySelector( brunchNode, '.desc' ).textContent = brunch[ 1 ];
+
+				setCost( querySelector( brunchNode, '.cost' ), brunch[ 3 ] );
+
+				appendChild( collection, brunchNode );
+
+			}
+
+		} else {
+
+			name.textContent = 'Обед';
+
+			lunchCollectionTemplate = querySelector( document, '#lunch-collection' );
+			lunchTemplate = querySelector( document, '#lunch' );
+
+			i = 0; l = data.lunch.length;
+			for ( ; i<l; ++i ) {
+
+				lunchCollection = data.lunch[ i ];
+				lunchCollectionNode = cloneNode( lunchCollectionTemplate );
+
+				querySelector( lunchCollectionNode, 'span' ).textContent = lunchCollection.shift();
+
+				j = 0; m = lunchCollection.length;
+				for ( ; j<m; ++j ) {
+
+					lunch = lunchCollection[ j ];
+					lunchNode = cloneNode( lunchTemplate );
+
+					querySelector( lunchNode, '.name' ).textContent = lunch[ 0 ];
+					querySelector( lunchNode, '.weight' ).textContent = lunch[ 1 ];
+
+					setCost( querySelector( lunchNode, '.cost' ), lunch[ 2 ] );
+
+					appendChild( querySelector( lunchCollectionNode, 'ul' ), lunchNode );
+
+				}
+
+				appendChild( collection, lunchCollectionNode );
+
+			}
+
+		}
+
+		appendChild( body, article.cloneNode( true ) );
+
+	};
+
+	xhr.send();
+
+} )( this )</script>
+
+</body>
+
+</html>
