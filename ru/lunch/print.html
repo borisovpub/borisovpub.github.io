@@ -12,17 +12,25 @@
 
 		@page {
 			size: A4 portrait;
-			margin: 1cm;
+			margin: 0;
+		}
+
+		@media screen {
+			html {
+				background: #999;
+			}
 		}
 
 		@font-face {
 			font-family: 'Open Sans Condensed';
-			src: local( 'Open Sans Condensed Bold' );
+			src: local( 'Open Sans Condensed Bold' ),
+				 url( '/@/OpenSansCondensed-Bold.ttf' );
 		}
 
 		@font-face {
 			font-family: 'Open Sans Condensed Light';
-			src: local( 'Open Sans Condensed Light' );
+			src: local( 'Open Sans Condensed Light' ),
+				 url( '/@/OpenSansCondensed-Light.ttf' );
 		}
 
 		*,
@@ -38,9 +46,15 @@
 			list-style-type: none;
 		}
 
-		html, body {
-			height: 100%;
+		body {
 			font: 14pt 'Open Sans Condensed Light', Arial, sans-serif;
+			width: 190mm;
+			height: 277mm;
+			padding: 1cm;
+			background: #fff;
+			display: grid;
+			grid-template-columns: auto auto;
+			grid-gap: 1.5cm;
 		}
 
 		h1,
@@ -50,12 +64,6 @@
 			text-transform: uppercase;
 			margin: 14pt 0 4pt 0;
 			display: inline-block;
-		}
-
-		body {
-			display: grid;
-			grid-template-columns: auto auto;
-			grid-gap: 1.5cm;
 		}
 
 		img {
@@ -195,7 +203,7 @@
 
 	var xhr = new window.XMLHttpRequest();
 
-	xhr.open( 'GET', '/lunch/menu.json?' + window.Math.random(), true );
+	xhr.open( 'GET', '/lunch/data.json?' + window.Math.random(), true );
 
 	if ( xhr.overrideMimeType ) xhr.overrideMimeType( 'application/json' );
 

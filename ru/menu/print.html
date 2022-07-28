@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru" xml:lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+
+	<style media="all">
+
+		@page {
+			size: 450mm 320mm;
+			margin: 0;
+		}
+
+		@media screen {
+			html {
+				background: #999;
+			}
+		}
+
+		@font-face {
+			font-family: 'Open Sans Condensed';
+			src: local( 'Open Sans Condensed Bold' ),
+				 url( '/@/OpenSansCondensed-Bold.ttf' );
+		}
+
+		@font-face {
+			font-family: 'Open Sans Condensed Light';
+			src: local( 'Open Sans Condensed Light' ),
+				 url( '/@/OpenSansCondensed-Light.ttf' );
+		}
+
+		*,
+		:after,
+		:before {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			transition: all 0.1s linear;
+		}
+
+		ul {
+			list-style-type: none;
+		}
+
+		body {
+			font: 13.2pt/17pt 'Open Sans Condensed Light', Arial, sans-serif;
+			width: 450mm;
+			height: 320mm;
+			background: #fff;
+		}
+
+		.page {
+			width: calc( 450mm - 16mm );
+			height: calc( 320mm - 16mm );
+			padding: 8mm;
+			display: grid;
+			grid-template-columns: 96.5mm 96.5mm 96.5mm 96.5mm;
+			grid-gap: 16mm;
+			outline: 1px solid black;
+		}
+
+		.section > .name {
+			display: inline-block;
+			font: 23pt/23pt 'Open Sans Condensed', Arial, sans-serif;
+			margin: 12pt 0 4pt 0;
+			text-transform: uppercase;
+		}
+
+		.section:first-child > .name {
+			margin-top: 0;
+		}
+
+		.dish {
+			display: grid;
+			grid-template-columns: auto min-content;
+			grid-template-rows: auto auto;
+			grid-gap: 0 14pt;
+		}
+
+		.dish > ul {
+			grid-column: 1 / 3;
+			margin-left: 6mm;
+		}
+
+		.weight {
+			font-size: 12pt;
+			opacity: .6;
+		}
+
+		.weight:not( :empty ):before {
+			content: '(';
+		}
+
+		.weight:not( :empty ):after {
+			content: ')';
+		}
+
+		.cost {
+			text-align: right;
+			font-family: 'Open Sans Condensed', Arial, sans-serif;
+			float: right;;
+		}
+
+		.cost > span {
+			font-size: 11pt;
+		}
+
+		.img {
+			width: 100%;
+			text-align: center;
+			padding: 5mm 0;
+		}
+
+	</style>
+
+	<template id="section">
+		<div class="section">
+			<span class="name"></span>
+			<ul></ul>
+		</div>
+	</template>
+
+	<template id="dish">
+		<li class="dish">
+			<div><span class="name"></span>  <span class="weight"></span></div>
+			<div></div>
+			<ul></ul>
+		</li>
+	</template>
+
+	<template id="dish2">
+		<li class="dish">
+			<div><span class="name"></span></div>
+			<div><span class="weight"></span></div>
+			<ul></ul>
+		</li>
+	</template>
+
+	<template id="cost">
+		<div class="cost">.<span></span></div>
+	</template>
+
+</head>
+
+<body>
+
+<article class="page">
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</article>
+
+<!--<article class="page">-->
+<!--	<div></div>-->
+<!--	<div></div>-->
+<!--	<div></div>-->
+<!--	<div></div>-->
+<!--</article>-->
+
+<script type="text/javascript">( ( /** Window */ window ) => {
+
+	/** @noinline */
+	var querySelector = ( node, selector ) => node.querySelector( selector );
+	/** @noinline */
+	var querySelectorAll = ( node, selector ) => node.querySelectorAll( selector );
+	/** @noinline */
+	var cloneNode = ( node ) => document.importNode( node.content, true );
+	/** @noinline */
+	var appendChild = ( node, child ) => node.appendChild( child );
+
+	var document = window.document;
+
+	var xhr = new window.XMLHttpRequest();
+
+	xhr.open( 'GET', '/menu/data.json?' + window.Math.random(), true );
+
+	if ( xhr.overrideMimeType ) xhr.overrideMimeType( 'application/json' );
+
+	xhr.onerror = () => {
+
+		// TODO
+
+	};
+
+	xhr.onload = () => {
+
+		var data = window.JSON.parse( xhr.responseText );
+
+
+		var getName = ( data ) => window.Array.isArray( data ) ? data[ 0 ] : data;
+
+		var sectionTemplate = querySelector( document, '#section' );
+
+		var createSection = ( data, two = false ) => {
+
+			var result = cloneNode( sectionTemplate );
+			var ul = querySelector( result, 'ul' );
+
+			querySelector( result, '.name' ).textContent = getName( data.name );
+
+			var arr = data.collection;
+			var i = 0, l = arr.length;
+
+			for ( ; i<l; ++i ) {
+				appendChild( ul, createDish( arr[ i ], two ) );
+			}
+
+			return result;
+
+		};
+
+		var dishTemplate = querySelector( document, '#dish' );
+		var dish2Template = querySelector( document, '#dish2' );
+
+		var createDish = ( data, two = false ) => {
+
+			var result = cloneNode( two ? dish2Template : dishTemplate );
+			var li = querySelector( result, 'li' );
+
+			querySelector( result, '.name' ).textContent = getName( data.name );
+
+			if ( data.weight ) {
+				querySelector( result, '.weight' ).textContent = data.weight;
+			}
+
+			if ( data.cost ) {
+				appendChild( querySelector( li, 'div:last-of-type' ), createCost( data.cost ) );
+			}
+
+			if ( data.collection ) {
+
+				var ul = querySelector( li, 'ul' );
+
+				var arr = data.collection;
+				var i = 0, l = arr.length;
+
+				for ( ; i<l; ++i ) {
+					appendChild( ul, createDish( arr[ i ] ) );
+				}
+
+			}
+
+			return result;
+
+		};
+
+		var costTemplate = querySelector( document, '#cost' );
+
+		var createCost = ( data ) => {
+
+			var result = cloneNode( costTemplate );
+			var div = querySelector( result, 'div' );
+
+			var c = data.toFixed( 2 ).split( '.' );
+			div.insertBefore( document.createTextNode( c[ 0 ] ), div.firstChild );
+			querySelector( result, 'span' ).textContent = c[ 1 ];
+
+			return result;
+
+		};
+
+		var page1 = querySelectorAll( document, '.page>div' );
+
+		appendChild( page1[ 0 ], createSection( data.BeerStarters ) );
+		appendChild( page1[ 0 ], createSection( data.Starters ) );
+		appendChild( page1[ 0 ], createSection( data.StartersForCompany ) );
+		appendChild( page1[ 0 ], createSection( data.Additives ) );
+
+		appendChild( page1[ 1 ], createSection( data.Soups ) );
+		appendChild( page1[ 1 ], createSection( data.Salads ) );
+		appendChild( page1[ 1 ], createSection( data.SeasonalSalads ) );
+		appendChild( page1[ 1 ], createSection( data.BurgersSandwiches ) );
+		page1[ 1 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="/@/cb.svg" /></div>' );
+
+		appendChild( page1[ 2 ], createSection( data.HotDishes ) );
+		appendChild( page1[ 2 ], createSection( data.Garnish ) );
+		appendChild( page1[ 2 ], createSection( data.Desserts ) );
+		page1[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="/@/bc.svg" style="height:31.417mm" /></div>' );
+
+		appendChild( page1[ 3 ], createSection( data.Gasing ) );
+		appendChild( page1[ 3 ], createSection( data.Coffee ) );
+		appendChild( page1[ 3 ], createSection( data.Tea ) );
+		appendChild( page1[ 3 ], createSection( data.Juice, true ) );
+		appendChild( page1[ 3 ], createSection( data.Milkshakes ) );
+		appendChild( page1[ 3 ], createSection( data.NonAlcoholicCocktails ) );
+
+	};
+
+	xhr.send();
+
+} )( this )</script>
+
+</body>
+
+</html>
