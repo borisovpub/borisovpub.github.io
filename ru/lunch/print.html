@@ -179,11 +179,17 @@
 	</div>
 	<ul></ul>
 	<div>
-		<img src="/@/bc.svg" />
+<!--		<img src="/@/bc.svg" />-->
 	</div>
 </article>
 
-<script type="text/javascript">( ( /** Window */ window ) => {
+<script type="text/javascript">( ( /** Window */ window ) =>  window.fetch( '/lunch/data.json?' + window.Math.random() ).then( ( response ) => response.json() ).then( ( /** { { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } } */ data ) => {
+
+	/** @typedef { [ string, number, number ] } Lunch */
+
+	/** @typedef { [ string | Lunch ] } LunchCollection */
+
+	/** @typedef { [ string, string, number, number ] } Brunch */
 
 	/** @noinline */
 	var querySelector = ( node, selector ) => node.querySelector( selector );
@@ -201,107 +207,80 @@
 
 	var document = window.document;
 
-	var xhr = new window.XMLHttpRequest();
+	var body = document.body;
+	var article = querySelector( document, 'article' );
+	var name = querySelector( document, 'h1' );
+	var collection = querySelector( document, 'ul' );
 
-	xhr.open( 'GET', '/lunch/data.json?' + window.Math.random(), true );
+	var i, l, j, m;
 
-	if ( xhr.overrideMimeType ) xhr.overrideMimeType( 'application/json' );
+	var lunch, lunchNode, lunchTemplate;
+	var lunchCollection, lunchCollectionNode, lunchCollectionTemplate;
+	var brunch, brunchNode, brunchTemplate;
 
-	xhr.onerror = () => {
+	if ( data.mode ) {
 
-		// TODO
+		body.classList.add( 'not-lunch' )
 
-	};
+		name.textContent = 'Бранч';
 
-	xhr.onload = () => {
+		brunchTemplate = querySelector( document, '#brunch' );
 
-		/** @typedef { [ string, number, number ] } Lunch */
+		i = 0; l = data.brunch.length;
+		for ( ; i<l; ++i ) {
 
-		/** @typedef { [ string | Lunch ] } LunchCollection */
+			brunch = data.brunch[ i ];
+			brunchNode = cloneNode( brunchTemplate );
 
-		/** @typedef { [ string, string, number, number ] } Brunch */
+			querySelector( brunchNode, '.name' ).textContent = brunch[ 0 ];
+			querySelector( brunchNode, '.weight' ).textContent = brunch[ 2 ];
+			querySelector( brunchNode, '.desc' ).textContent = brunch[ 1 ];
 
-		/** @type { { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } } */
-		var data = window.JSON.parse( xhr.responseText );
+			setCost( querySelector( brunchNode, '.cost' ), brunch[ 3 ] );
 
-		var body = document.body;
-		var article = querySelector( document, 'article' );
-		var name = querySelector( document, 'h1' );
-		var collection = querySelector( document, 'ul' );
-
-		var i, l, j, m;
-
-		var lunch, lunchNode, lunchTemplate;
-		var lunchCollection, lunchCollectionNode, lunchCollectionTemplate;
-		var brunch, brunchNode, brunchTemplate;
-
-		if ( data.mode ) {
-
-			body.classList.add( 'not-lunch' )
-
-			name.textContent = 'Бранч';
-
-			brunchTemplate = querySelector( document, '#brunch' );
-
-			i = 0; l = data.brunch.length;
-			for ( ; i<l; ++i ) {
-
-				brunch = data.brunch[ i ];
-				brunchNode = cloneNode( brunchTemplate );
-
-				querySelector( brunchNode, '.name' ).textContent = brunch[ 0 ];
-				querySelector( brunchNode, '.weight' ).textContent = brunch[ 2 ];
-				querySelector( brunchNode, '.desc' ).textContent = brunch[ 1 ];
-
-				setCost( querySelector( brunchNode, '.cost' ), brunch[ 3 ] );
-
-				appendChild( collection, brunchNode );
-
-			}
-
-		} else {
-
-			name.textContent = 'Обед';
-
-			lunchCollectionTemplate = querySelector( document, '#lunch-collection' );
-			lunchTemplate = querySelector( document, '#lunch' );
-
-			i = 0; l = data.lunch.length;
-			for ( ; i<l; ++i ) {
-
-				lunchCollection = data.lunch[ i ];
-				lunchCollectionNode = cloneNode( lunchCollectionTemplate );
-
-				querySelector( lunchCollectionNode, 'span' ).textContent = lunchCollection.shift();
-
-				j = 0; m = lunchCollection.length;
-				for ( ; j<m; ++j ) {
-
-					lunch = lunchCollection[ j ];
-					lunchNode = cloneNode( lunchTemplate );
-
-					querySelector( lunchNode, '.name' ).textContent = lunch[ 0 ];
-					querySelector( lunchNode, '.weight' ).textContent = lunch[ 1 ];
-
-					setCost( querySelector( lunchNode, '.cost' ), lunch[ 2 ] );
-
-					appendChild( querySelector( lunchCollectionNode, 'ul' ), lunchNode );
-
-				}
-
-				appendChild( collection, lunchCollectionNode );
-
-			}
+			appendChild( collection, brunchNode );
 
 		}
 
-		appendChild( body, article.cloneNode( true ) );
+	} else {
 
-	};
+		name.textContent = 'Обед';
 
-	xhr.send();
+		lunchCollectionTemplate = querySelector( document, '#lunch-collection' );
+		lunchTemplate = querySelector( document, '#lunch' );
 
-} )( this )</script>
+		i = 0; l = data.lunch.length;
+		for ( ; i<l; ++i ) {
+
+			lunchCollection = data.lunch[ i ];
+			lunchCollectionNode = cloneNode( lunchCollectionTemplate );
+
+			querySelector( lunchCollectionNode, 'span' ).textContent = lunchCollection.shift();
+
+			j = 0; m = lunchCollection.length;
+			for ( ; j<m; ++j ) {
+
+				lunch = lunchCollection[ j ];
+				lunchNode = cloneNode( lunchTemplate );
+
+				querySelector( lunchNode, '.name' ).textContent = lunch[ 0 ];
+				querySelector( lunchNode, '.weight' ).textContent = lunch[ 1 ];
+
+				setCost( querySelector( lunchNode, '.cost' ), lunch[ 2 ] );
+
+				appendChild( querySelector( lunchCollectionNode, 'ul' ), lunchNode );
+
+			}
+
+			appendChild( collection, lunchCollectionNode );
+
+		}
+
+	}
+
+	appendChild( body, article.cloneNode( true ) );
+
+} ) )( this )</script>
 
 </body>
 

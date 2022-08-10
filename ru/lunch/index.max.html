@@ -347,7 +347,13 @@
 	</section>
 </footer>
 
-<script type="text/javascript">!function( /** Window */ window ) {
+<script type="text/javascript">( ( /** Window */ window ) => window.fetch( '/lunch/data.json?' + window.Math.random() ).then( ( response ) => response.json() ).then( ( /** { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } */ data ) => {
+
+	/** @typedef { [ string, number, number ] } Lunch */
+
+	/** @typedef { [ string | Lunch ] } LunchCollection */
+
+	/** @typedef { [ string, string, number, number ] } Brunch */
 
 	/** @noinline */
 	var querySelector = function( node, selector ) { return node.querySelector( selector ) };
@@ -362,103 +368,76 @@
 
 	var document = window.document;
 
-	var xhr = new ( window.XDomainRequest || window.XMLHttpRequest )();
+	var name = querySelector( document, 'h2 span' );
+	var collection = querySelector( document, 'article ul' );
 
-	xhr.open( 'GET', '/lunch/data.json?' + window.Math.random(), true );
+	var d = new window.Date();
 
-	if ( xhr.overrideMimeType ) xhr.overrideMimeType( 'application/json' );
+	var i, l, j, m;
 
-	xhr.onerror = function() {
+	var lunch, lunchNode, lunchTemplate;
+	var lunchCollection, lunchCollectionNode, lunchCollectionTemplate;
+	var brunch, brunchNode, brunchTemplate;
 
-		// TODO
+	querySelector( document, 'h2 time' ).textContent = pad2( d.getDate() ) + '.' + pad2( d.getUTCMonth() + 1 ) + '.' + d.getUTCFullYear();
 
-	};
+	if ( data.mode ) {
 
-	xhr.onload = function() {
+		name.textContent = 'Бранч';
 
-		/** @typedef { [ string, number, number ] } Lunch */
+		brunchTemplate = querySelector( document, '#brunch' );
 
-		/** @typedef { [ string | Lunch ] } LunchCollection */
+		i = 0; l = data.brunch.length;
+		for ( ; i<l; ++i ) {
 
-		/** @typedef { [ string, string, number, number ] } Brunch */
+			brunch = data.brunch[ i ];
+			brunchNode = cloneNode( brunchTemplate );
 
-		/** @type { { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } } */
-		var data = window.JSON.parse( xhr.responseText );
+			querySelector( brunchNode, '.name' ).textContent = brunch[ 0 ];
+			querySelector( brunchNode, '.weight' ).textContent = brunch[ 2 ];
+			querySelector( brunchNode, '.cost' ).textContent = brunch[ 3 ].toFixed( 2 );
+			querySelector( brunchNode, '.desc' ).textContent = brunch[ 1 ];
 
-		var name = querySelector( document, 'h2 span' );
-		var collection = querySelector( document, 'article ul' );
-
-		var d = new window.Date();
-
-		var i, l, j, m;
-
-		var lunch, lunchNode, lunchTemplate;
-		var lunchCollection, lunchCollectionNode, lunchCollectionTemplate;
-		var brunch, brunchNode, brunchTemplate;
-
-		querySelector( document, 'h2 time' ).textContent = pad2( d.getDate() ) + '.' + pad2( d.getUTCMonth() + 1 ) + '.' + d.getUTCFullYear();
-
-		if ( data.mode ) {
-
-			name.textContent = 'Бранч';
-
-			brunchTemplate = querySelector( document, '#brunch' );
-
-			i = 0; l = data.brunch.length;
-			for ( ; i<l; ++i ) {
-
-				brunch = data.brunch[ i ];
-				brunchNode = cloneNode( brunchTemplate );
-
-				querySelector( brunchNode, '.name' ).textContent = brunch[ 0 ];
-				querySelector( brunchNode, '.weight' ).textContent = brunch[ 2 ];
-				querySelector( brunchNode, '.cost' ).textContent = brunch[ 3 ].toFixed( 2 );
-				querySelector( brunchNode, '.desc' ).textContent = brunch[ 1 ];
-
-				appendChild( collection, brunchNode );
-
-			}
-
-		} else {
-
-			name.textContent = 'Обед';
-
-			lunchCollectionTemplate = querySelector( document, '#lunch-collection' );
-			lunchTemplate = querySelector( document, '#lunch' );
-
-			i = 0; l = data.lunch.length;
-			for ( ; i<l; ++i ) {
-
-				lunchCollection = data.lunch[ i ];
-				lunchCollectionNode = cloneNode( lunchCollectionTemplate );
-
-				querySelector( lunchCollectionNode, 'span' ).textContent = lunchCollection.shift();
-
-				j = 0; m = lunchCollection.length;
-				for ( ; j<m; ++j ) {
-
-					lunch = lunchCollection[ j ];
-					lunchNode = cloneNode( lunchTemplate );
-
-					querySelector( lunchNode, '.name' ).textContent = lunch[ 0 ];
-					querySelector( lunchNode, '.weight' ).textContent = lunch[ 1 ];
-					querySelector( lunchNode, '.cost' ).textContent = lunch[ 2 ].toFixed( 2 );
-
-					appendChild( querySelector( lunchCollectionNode, 'ul' ), lunchNode );
-
-				}
-
-				appendChild( collection, lunchCollectionNode );
-
-			}
+			appendChild( collection, brunchNode );
 
 		}
 
-	};
+	} else {
 
-	xhr.send();
+		name.textContent = 'Обед';
 
-}( this )</script>
+		lunchCollectionTemplate = querySelector( document, '#lunch-collection' );
+		lunchTemplate = querySelector( document, '#lunch' );
+
+		i = 0; l = data.lunch.length;
+		for ( ; i<l; ++i ) {
+
+			lunchCollection = data.lunch[ i ];
+			lunchCollectionNode = cloneNode( lunchCollectionTemplate );
+
+			querySelector( lunchCollectionNode, 'span' ).textContent = lunchCollection.shift();
+
+			j = 0; m = lunchCollection.length;
+			for ( ; j<m; ++j ) {
+
+				lunch = lunchCollection[ j ];
+				lunchNode = cloneNode( lunchTemplate );
+
+				querySelector( lunchNode, '.name' ).textContent = lunch[ 0 ];
+				querySelector( lunchNode, '.weight' ).textContent = lunch[ 1 ];
+				querySelector( lunchNode, '.cost' ).textContent = lunch[ 2 ].toFixed( 2 );
+
+				appendChild( querySelector( lunchCollectionNode, 'ul' ), lunchNode );
+
+			}
+
+			appendChild( collection, lunchCollectionNode );
+
+		}
+
+	}
+
+} ) )( this )</script>
 
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Condensed:400|Montserrat:400&display=swap" />
 

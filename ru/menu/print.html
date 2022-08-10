@@ -304,7 +304,9 @@
 	<div></div>
 </article>
 
-<script type="text/javascript">( ( /** Window */ window ) => {
+<script type="text/javascript">( ( /** Window */ window ) =>  window.fetch( '/menu/data.js?' + window.Math.random() ).then( ( respose ) => respose.text() ).then( ( data ) => {
+
+	data = window.eval( data );
 
 	/** @noinline */
 	var querySelector = ( node, selector ) => node.querySelector( selector );
@@ -318,336 +320,322 @@
 	var document =	window.document;
 	var Array =		window.Array;
 
-	var xhr = new window.XMLHttpRequest();
+	var lang = window.location.search.replace( /^\?/, '' );
 
-	xhr.open( 'GET', '/menu/data.json?' + window.Math.random(), true );
+	var getName = ( data ) => Array.isArray( data ) ? data[ lang === 'en' ? 1 : 0 ] : data;
 
-	if ( xhr.overrideMimeType ) xhr.overrideMimeType( 'application/json' );
+	var sectionTemplate = querySelector( document, '#section' );
 
-	xhr.onerror = () => {
+	var createSection = ( data, createLI, createSUB = null ) => {
 
-		// TODO
+		var result = cloneNode( sectionTemplate );
+
+		var left = querySelector( result, '.title' );
+		var right = querySelector( result, '.sub-title' );
+		var bottom = querySelector( result, 'ul' );
+
+		left.textContent = getName( data.name );
+
+		if ( createSUB ) {
+			appendChild( right, createSUB( data ) );
+		}
+
+		var arr = data.collection;
+		var i = 0, l = arr.length;
+
+		for ( ; i<l; ++i ) {
+			appendChild( bottom, createLI( arr[ i ] ) );
+		}
+
+		return result;
 
 	};
 
-	xhr.onload = () => {
+	var weightTemplate = querySelector( document, '#weight' );
 
-		var lang = window.location.search.replace( /^\?/, '' );
+	var createWeight = ( data ) => {
 
-		var data = window.JSON.parse( xhr.responseText );
+		var result = cloneNode( weightTemplate );
+		querySelector( result, 'span' ).textContent = getName( data.weight );
 
-		var getName = ( data ) => Array.isArray( data ) ? data[ lang === 'en' ? 1 : 0 ] : data;
+		return result;
 
-		var sectionTemplate = querySelector( document, '#section' );
+	};
 
-		var createSection = ( data, createLI, createSUB = null ) => {
+	var costTemplate = querySelector( document, '#cost' );
 
-			var result = cloneNode( sectionTemplate );
+	var slashTemplate = querySelector( document, '#slash' );
+	var boldSlashTemplate = querySelector( document, '#bold-slash' );
 
-			var left = querySelector( result, '.title' );
-			var right = querySelector( result, '.sub-title' );
-			var bottom = querySelector( result, 'ul' );
+	var createCost = ( data ) => {
 
-			left.textContent = getName( data.name );
+		var result, span;
 
-			if ( createSUB ) {
-				appendChild( right, createSUB( data ) );
-			}
+		if ( Array.isArray( data ) ) {
+
+			result = cloneNode( boldSlashTemplate );
+			span = querySelector( result, 'span' );
+
+			var left = querySelector( result, 'span>:first-child' );
+			var right = querySelector( result, 'span>:last-child' );
+
+			appendChild( left, createCost( data[ 0 ] ) );
+			appendChild( right, createCost( data[ 1 ] ) );
+
+		} else {
+
+			result = cloneNode( costTemplate );
+			span = querySelector( result, 'span' );
+
+			var c = data.toFixed( 2 ).split( '.' );
+			span.insertBefore( document.createTextNode( c[ 0 ] ), span.firstChild );
+			querySelector( span, 'span' ).textContent = c[ 1 ];
+
+		}
+
+		return result;
+
+	};
+
+	var mlTemplate = querySelector( document, '#ml' );
+
+	var createML = ( data ) => {
+
+		var result;
+
+		if ( Array.isArray( data ) ) {
+
+			result = cloneNode( slashTemplate );
+
+			var left = querySelector( result, 'span>:first-child' );
+			var right = querySelector( result, 'span>:last-child' );
+
+			appendChild( left, createML( data[ 0 ] ) );
+			appendChild( right, createML( data[ 1 ] ) );
+
+		} else {
+
+			result = cloneNode( mlTemplate );
+			querySelector( result, 'span' ).textContent = data;
+
+		}
+
+		return result;
+
+	};
+
+	var createCapacity = ( data ) => createML( data.capacity );
+
+	var dishTemplate = querySelector( document, '#dish' );
+
+	var createDish = ( data ) => {
+
+		var result = cloneNode( dishTemplate );
+		var li = querySelector( result, 'li' );
+
+		var left = querySelector( li, 'div' );
+		var right = querySelector( li, 'div:last-of-type' );
+		var bottom = querySelector( li, 'ul' );
+
+		querySelector( left, 'span' ).textContent = getName( data.name );
+
+		if ( data.weight ) {
+			appendChild( left, createWeight( data ) );
+		}
+
+		if ( data.cost ) {
+			appendChild( right, createCost( data.cost ) );
+		}
+
+		if ( data.collection ) {
 
 			var arr = data.collection;
 			var i = 0, l = arr.length;
 
 			for ( ; i<l; ++i ) {
-				appendChild( bottom, createLI( arr[ i ] ) );
+				appendChild( bottom, createDish( arr[ i ] ) );
 			}
 
-			return result;
+		}
 
-		};
+		return result;
 
-		var weightTemplate = querySelector( document, '#weight' );
+	};
 
-		var createWeight = ( data ) => {
+	var alcTemplate = querySelector( document, '#alc' );
 
-			var result = cloneNode( weightTemplate );
-			querySelector( result, 'span' ).textContent = getName( data.weight );
+	var createAlc = ( data ) => {
 
-			return result;
+		var result;
+		var li, arr;
 
-		};
+		if ( ( arr = data.collection ) ) {
 
-		var costTemplate = querySelector( document, '#cost' );
+			result = document.createDocumentFragment()
 
-		var slashTemplate = querySelector( document, '#slash' );
-		var boldSlashTemplate = querySelector( document, '#bold-slash' );
+			var alc;
+			var o, i = 0, l = arr.length;
+			for ( ; i<l; ++i ) {
 
-		var createCost = ( data ) => {
+				o = arr[ i ];
 
-			var result, span;
-
-			if ( Array.isArray( data ) ) {
-
-				result = cloneNode( boldSlashTemplate );
-				span = querySelector( result, 'span' );
-
-				var left = querySelector( result, 'span>:first-child' );
-				var right = querySelector( result, 'span>:last-child' );
-
-				appendChild( left, createCost( data[ 0 ] ) );
-				appendChild( right, createCost( data[ 1 ] ) );
-
-			} else {
-
-				result = cloneNode( costTemplate );
-				span = querySelector( result, 'span' );
-
-				var c = data.toFixed( 2 ).split( '.' );
-				span.insertBefore( document.createTextNode( c[ 0 ] ), span.firstChild );
-				querySelector( span, 'span' ).textContent = c[ 1 ];
-
-			}
-
-			return result;
-
-		};
-
-		var mlTemplate = querySelector( document, '#ml' );
-
-		var createML = ( data ) => {
-
-			var result;
-
-			if ( Array.isArray( data ) ) {
-
-				result = cloneNode( slashTemplate );
-
-				var left = querySelector( result, 'span>:first-child' );
-				var right = querySelector( result, 'span>:last-child' );
-
-				appendChild( left, createML( data[ 0 ] ) );
-				appendChild( right, createML( data[ 1 ] ) );
-
-			} else {
-
-				result = cloneNode( mlTemplate );
-				querySelector( result, 'span' ).textContent = data;
-
-			}
-
-			return result;
-
-		};
-
-		var createCapacity = ( data ) => createML( data.capacity );
-
-		var dishTemplate = querySelector( document, '#dish' );
-
-		var createDish = ( data ) => {
-
-			var result = cloneNode( dishTemplate );
-			var li = querySelector( result, 'li' );
-
-			var left = querySelector( li, 'div' );
-			var right = querySelector( li, 'div:last-of-type' );
-			var bottom = querySelector( li, 'ul' );
-
-			querySelector( left, 'span' ).textContent = getName( data.name );
-
-			if ( data.weight ) {
-				appendChild( left, createWeight( data ) );
-			}
-
-			if ( data.cost ) {
-				appendChild( right, createCost( data.cost ) );
-			}
-
-			if ( data.collection ) {
-
-				var arr = data.collection;
-				var i = 0, l = arr.length;
-
-				for ( ; i<l; ++i ) {
-					appendChild( bottom, createDish( arr[ i ] ) );
-				}
-
-			}
-
-			return result;
-
-		};
-
-		var alcTemplate = querySelector( document, '#alc' );
-
-		var createAlc = ( data ) => {
-
-			var result;
-			var li, arr;
-
-			if ( ( arr = data.collection ) ) {
-
-				result = document.createDocumentFragment()
-
-				var alc;
-				var o, i = 0, l = arr.length;
-				for ( ; i<l; ++i ) {
-
-					o = arr[ i ];
-
-					alc = cloneNode( alcTemplate );
-					li = querySelector( alc, 'li' );
-
-					querySelector( li, '.name' ).textContent = getName( data.name );
-					querySelector( li, '.kind' ).textContent = getName( o.name );
-
-					if ( o.cost ) {
-						appendChild( querySelector( li, 'div:last-of-type' ), createCost( o.cost ) );
-					}
-
-					appendChild( result, alc );
-
-				}
-
-			} else {
-
-				result = cloneNode( alcTemplate );
-				li = querySelector( result, 'li' );
+				alc = cloneNode( alcTemplate );
+				li = querySelector( alc, 'li' );
 
 				querySelector( li, '.name' ).textContent = getName( data.name );
-				// querySelector( li, '.kind' ).textContent = getName( data.name );
+				querySelector( li, '.kind' ).textContent = getName( o.name );
 
-				if ( data.cost ) {
-					appendChild( querySelector( li, 'div:last-of-type' ), createCost( data.cost ) );
+				if ( o.cost ) {
+					appendChild( querySelector( li, 'div:last-of-type' ), createCost( o.cost ) );
 				}
 
+				appendChild( result, alc );
+
 			}
 
-			return result;
+		} else {
 
-		};
+			result = cloneNode( alcTemplate );
+			li = querySelector( result, 'li' );
 
-		var beerTemplate = querySelector( document, '#beer' );
-
-		var createBeer = ( data ) => {
-
-			var result = cloneNode( beerTemplate );
-			var li = querySelector( result, 'li' );
-
-			querySelector( result, '.name' ).textContent = getName( data.name );
-
-			if ( data.alc ) {
-				querySelector( result, '.alc' ).textContent = data.alc;
-			}
-
-			if ( data.den ) {
-				querySelector( result, '.den' ).textContent = data.den;
-			}
-
-			if ( data.cap ) {
-				querySelector( result, '.cap' ).textContent = data.cap;
-			}
+			querySelector( li, '.name' ).textContent = getName( data.name );
+			// querySelector( li, '.kind' ).textContent = getName( data.name );
 
 			if ( data.cost ) {
 				appendChild( querySelector( li, 'div:last-of-type' ), createCost( data.cost ) );
 			}
 
-			return result;
+		}
 
-		};
+		return result;
 
-		var cocktailTemplate = querySelector( document, '#cocktail' );
+	};
 
-		var createCocktail = ( data ) => {
+	var beerTemplate = querySelector( document, '#beer' );
 
-			var result = cloneNode( cocktailTemplate );
-			var li = querySelector( result, 'li' );
+	var createBeer = ( data ) => {
 
-			querySelector( result, '.name' ).textContent = getName( data.name );
+		var result = cloneNode( beerTemplate );
+		var li = querySelector( result, 'li' );
 
-			if ( data.cap ) {
-				querySelector( result, '.cap' ).textContent = data.cap;
-			}
+		querySelector( result, '.name' ).textContent = getName( data.name );
 
-			if ( data.cost ) {
-				appendChild( querySelector( li, 'div:last-of-type' ), createCost( data.cost ) );
-			}
+		if ( data.alc ) {
+			querySelector( result, '.alc' ).textContent = data.alc;
+		}
 
-			return result;
+		if ( data.den ) {
+			querySelector( result, '.den' ).textContent = data.den;
+		}
 
-		};
+		if ( data.cap ) {
+			querySelector( result, '.cap' ).textContent = data.cap;
+		}
 
-		var shotTemplate = querySelector( document, '#shot' );
+		if ( data.cost ) {
+			appendChild( querySelector( li, 'div:last-of-type' ), createCost( data.cost ) );
+		}
 
-		var createShot = ( data ) => {
+		return result;
 
-			var result = cloneNode( shotTemplate );
-			var div = querySelector( result, 'div' );
+	};
 
-			querySelector( result, '.name' ).textContent = getName( data.name );
+	var cocktailTemplate = querySelector( document, '#cocktail' );
 
-			if ( data.cap ) {
-				querySelector( result, '.cap' ).textContent = data.cap;
-			}
+	var createCocktail = ( data ) => {
 
-			if ( data.cost ) {
-				appendChild( querySelector( div, 'div:last-of-type' ), createCost( data.cost ) );
-			}
+		var result = cloneNode( cocktailTemplate );
+		var li = querySelector( result, 'li' );
 
-			return result;
+		querySelector( result, '.name' ).textContent = getName( data.name );
 
-		};
+		if ( data.cap ) {
+			querySelector( result, '.cap' ).textContent = data.cap;
+		}
 
-		var colon = querySelectorAll( document, '.page>div' );
-		var colon2 = querySelectorAll( colon[ 5 ], '.mini>div' );
+		if ( data.cost ) {
+			appendChild( querySelector( li, 'div:last-of-type' ), createCost( data.cost ) );
+		}
 
-		appendChild( colon[ 0 ], createSection( data.BeerStarters, createDish ) );
-		appendChild( colon[ 0 ], createSection( data.Starters, createDish ) );
-		appendChild( colon[ 0 ], createSection( data.StartersForCompany, createDish ) );
-		appendChild( colon[ 0 ], createSection( data.Additives, createDish ) );
+		return result;
 
-		appendChild( colon[ 1 ], createSection( data.Soups, createDish ) );
-		appendChild( colon[ 1 ], createSection( data.Salads, createDish ) );
-		appendChild( colon[ 1 ], createSection( data.SeasonalSalads, createDish ) );
-		appendChild( colon[ 1 ], createSection( data.BurgersSandwiches, createDish ) );
-		colon[ 1 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="/@/cb.svg" /></div>' );
+	};
 
-		appendChild( colon[ 2 ], createSection( data.HotDishes, createDish ) );
-		appendChild( colon[ 2 ], createSection( data.Garnish, createDish ) );
-		appendChild( colon[ 2 ], createSection( data.Desserts, createDish ) );
-		colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="/@/bc.svg" style="height:31.417mm" /></div>' );
+	var shotTemplate = querySelector( document, '#shot' );
 
-		appendChild( colon[ 3 ], createSection( data.Gasing, createDish ) );
-		appendChild( colon[ 3 ], createSection( data.Coffee, createDish ) );
-		appendChild( colon[ 3 ], createSection( data.Tea, createDish ) );
-		appendChild( colon[ 3 ], createSection( data.Juice, createDish, createWeight ) );
-		appendChild( colon[ 3 ], createSection( data.Milkshakes, createDish ) );
-		appendChild( colon[ 3 ], createSection( data.NonAlcoholicCocktails, createDish ) );
+	var createShot = ( data ) => {
 
-		appendChild( colon[ 4 ], createSection( data.WhiteWine, createDish, createCapacity ) );
-		appendChild( colon[ 4 ], createSection( data.RoseWine, createDish, createCapacity ) );
-		appendChild( colon[ 4 ], createSection( data.RedWine, createDish, createCapacity ) );
-		appendChild( colon[ 4 ], createSection( data.SparklingWine, createDish, createCapacity ) );
-		appendChild( colon[ 4 ], createSection( data.PortWine, createDish, createCapacity ) );
-		appendChild( colon[ 4 ], createSection( data.Martini, createDish, createCapacity ) );
+		var result = cloneNode( shotTemplate );
+		var div = querySelector( result, 'div' );
 
-		appendChild( colon2[ 0 ], createSection( data.Whiskey, createAlc, createCapacity ) );
-		appendChild( colon2[ 0 ], createSection( data.Vodka, createAlc, createCapacity ) );
-		appendChild( colon2[ 0 ], createSection( data.Tequila, createAlc, createCapacity ) );
+		querySelector( result, '.name' ).textContent = getName( data.name );
 
-		appendChild( colon2[ 1 ], createSection( data.Tinctures, createAlc, createCapacity ) );
-		appendChild( colon2[ 1 ], createSection( data.Gin, createAlc, createCapacity ) );
-		appendChild( colon2[ 1 ], createSection( data.Brandy, createAlc, createCapacity ) );
-		appendChild( colon2[ 1 ], createSection( data.Bitter, createAlc, createCapacity ) );
-		appendChild( colon2[ 1 ], createSection( data.Rom, createAlc, createCapacity ) );
+		if ( data.cap ) {
+			querySelector( result, '.cap' ).textContent = data.cap;
+		}
 
-		appendChild( colon[ 5 ], createSection( data.Cocktails, createCocktail ) );
-		appendChild( colon[ 5 ], createShot( data.Shot ) );
+		if ( data.cost ) {
+			appendChild( querySelector( div, 'div:last-of-type' ), createCost( data.cost ) );
+		}
 
-		colon[ 6 ].insertAdjacentHTML( 'beforeend', `
-			<div style="margin-top: ${ lang === 'en' ? 12.5 : 6 }cm">
-				<img src="/@/logo.svg" style="width:45mm; filter: invert( 1 )" />
-			</div>
-			<div class="bold" style="font-size: 72pt">${ getName( [ "Меню", "Menu" ] ) }</div>
-		` );
+		return result;
+
+	};
+
+	var colon = querySelectorAll( document, '.page>div' );
+	var colon2 = querySelectorAll( colon[ 5 ], '.mini>div' );
+
+	appendChild( colon[ 0 ], createSection( data.BeerStarters, createDish ) );
+	appendChild( colon[ 0 ], createSection( data.Starters, createDish ) );
+	appendChild( colon[ 0 ], createSection( data.StartersForCompany, createDish ) );
+	appendChild( colon[ 0 ], createSection( data.Additives, createDish ) );
+
+	appendChild( colon[ 1 ], createSection( data.Soups, createDish ) );
+	appendChild( colon[ 1 ], createSection( data.Salads, createDish ) );
+	appendChild( colon[ 1 ], createSection( data.SeasonalSalads, createDish ) );
+	appendChild( colon[ 1 ], createSection( data.BurgersSandwiches, createDish ) );
+	colon[ 1 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="/@/cb.svg" /></div>' );
+
+	appendChild( colon[ 2 ], createSection( data.HotDishes, createDish ) );
+	appendChild( colon[ 2 ], createSection( data.Garnish, createDish ) );
+	appendChild( colon[ 2 ], createSection( data.Desserts, createDish ) );
+	colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="/@/bc.svg" style="height:31.417mm" /></div>' );
+
+	appendChild( colon[ 3 ], createSection( data.Gasing, createDish ) );
+	appendChild( colon[ 3 ], createSection( data.Coffee, createDish ) );
+	appendChild( colon[ 3 ], createSection( data.Tea, createDish ) );
+	appendChild( colon[ 3 ], createSection( data.Juice, createDish, createWeight ) );
+	appendChild( colon[ 3 ], createSection( data.Milkshakes, createDish ) );
+	appendChild( colon[ 3 ], createSection( data.NonAlcoholicCocktails, createDish ) );
+
+	appendChild( colon[ 4 ], createSection( data.WhiteWine, createDish, createCapacity ) );
+	appendChild( colon[ 4 ], createSection( data.RoseWine, createDish, createCapacity ) );
+	appendChild( colon[ 4 ], createSection( data.RedWine, createDish, createCapacity ) );
+	appendChild( colon[ 4 ], createSection( data.SparklingWine, createDish, createCapacity ) );
+	appendChild( colon[ 4 ], createSection( data.PortWine, createDish, createCapacity ) );
+	appendChild( colon[ 4 ], createSection( data.Martini, createDish, createCapacity ) );
+
+	appendChild( colon2[ 0 ], createSection( data.Whiskey, createAlc, createCapacity ) );
+	appendChild( colon2[ 0 ], createSection( data.Vodka, createAlc, createCapacity ) );
+	appendChild( colon2[ 0 ], createSection( data.Tequila, createAlc, createCapacity ) );
+
+	appendChild( colon2[ 1 ], createSection( data.Tinctures, createAlc, createCapacity ) );
+	appendChild( colon2[ 1 ], createSection( data.Gin, createAlc, createCapacity ) );
+	appendChild( colon2[ 1 ], createSection( data.Brandy, createAlc, createCapacity ) );
+	appendChild( colon2[ 1 ], createSection( data.Bitter, createAlc, createCapacity ) );
+	appendChild( colon2[ 1 ], createSection( data.Rom, createAlc, createCapacity ) );
+
+	appendChild( colon[ 5 ], createSection( data.Cocktails, createCocktail ) );
+	appendChild( colon[ 5 ], createShot( data.Shot ) );
+
+	colon[ 6 ].insertAdjacentHTML( 'beforeend', `
+		<div style="margin-top: ${ lang === 'en' ? 12.5 : 6 }cm">
+			<img src="/@/logo.svg" style="width:45mm; filter: invert( 1 )" />
+		</div>
+		<div class="bold" style="font-size: 72pt">${ getName( [ "Меню", "Menu" ] ) }</div>
+	` );
+
+	if ( lang !== 'en' ) {
 
 		colon[ 6 ].insertAdjacentHTML( 'beforeend', `
 			<div class="opacity" style="font-size: 24pt; line-height: 24pt; margin-top: 5cm">
@@ -667,16 +655,13 @@
 			</div>
 		` );
 
+	}
 
-		appendChild( colon[ 7 ], createSection( data.DraftBeer, createBeer ) );
-		appendChild( colon[ 7 ], createSection( data.BottledBeer, createBeer ) );
-		appendChild( colon[ 7 ], createSection( data.NonAlcoholicBeer, createBeer ) );
+	appendChild( colon[ 7 ], createSection( data.DraftBeer, createBeer ) );
+	appendChild( colon[ 7 ], createSection( data.BottledBeer, createBeer ) );
+	appendChild( colon[ 7 ], createSection( data.NonAlcoholicBeer, createBeer ) );
 
-	};
-
-	xhr.send();
-
-} )( this )</script>
+} ) )( this )</script>
 
 </body>
 
