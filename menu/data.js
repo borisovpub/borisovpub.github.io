@@ -2341,7 +2341,7 @@
         name: 'Jack Daniel’s',
         collection: [
           {
-            name: '№7,',
+            name: '№7',
             cost: 11.00,
           },
           {

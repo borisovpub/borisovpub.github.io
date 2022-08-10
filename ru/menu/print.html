@@ -130,6 +130,10 @@
 			content: '  ';
 		}
 
+		.slash > span:not( :empty ) + :before {
+			content: ' / ';
+		}
+
 		.section {
 
 			display: grid;
@@ -176,10 +180,6 @@
 			grid-template-columns: auto min-content 11mm;
 		}
 
-		.beer .percent:not( :empty ) + *:before {
-			content: ' / ';
-		}
-
 		.shot .name {
 			font-size: calc( 16pt * var( --ratio ) );
 		}
@@ -213,11 +213,11 @@
 	</template>
 
 	<template id="slash">
-		<span class="nowrap"><span></span> / <span></span></span>
+		<span class="nowrap slash"></span>
 	</template>
 
 	<template id="bold-slash">
-		<span class="bold nowrap"><span></span> / <span></span></span>
+		<span class="bold nowrap slash"></span>
 	</template>
 
 	<template id="cost">
@@ -248,7 +248,7 @@
 			<div>
 				<span class="name"></span>
 			</div>
-			<div class="opacity nowrap sub-text">
+			<div class="opacity nowrap sub-text slash">
 				<span class="alc percent"></span>
 				<span class="den percent"></span>
 				<span class="cap L"></span>
@@ -294,8 +294,8 @@
 
 <article class="page">
 	<div></div>
-	<div style="--ratio: 0.95">
-		<div style="--ratio: 0.86" class="mini">
+	<div style="--ratio: 1">
+		<div style="--ratio: 0.85" class="mini">
 			<div></div>
 			<div></div>
 		</div>
@@ -376,11 +376,8 @@
 			result = cloneNode( boldSlashTemplate );
 			span = querySelector( result, 'span' );
 
-			var left = querySelector( result, 'span>:first-child' );
-			var right = querySelector( result, 'span>:last-child' );
-
-			appendChild( left, createCost( data[ 0 ] ) );
-			appendChild( right, createCost( data[ 1 ] ) );
+			appendChild( span, createCost( data[ 0 ] ) );
+			appendChild( span, createCost( data[ 1 ] ) );
 
 		} else {
 
@@ -401,17 +398,15 @@
 
 	var createML = ( data ) => {
 
-		var result;
+		var result, span;
 
 		if ( Array.isArray( data ) ) {
 
 			result = cloneNode( slashTemplate );
+			span = querySelector( result, 'span' );
 
-			var left = querySelector( result, 'span>:first-child' );
-			var right = querySelector( result, 'span>:last-child' );
-
-			appendChild( left, createML( data[ 0 ] ) );
-			appendChild( right, createML( data[ 1 ] ) );
+			appendChild( span, createML( data[ 0 ] ) );
+			appendChild( span, createML( data[ 1 ] ) );
 
 		} else {
 
