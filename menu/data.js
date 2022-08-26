@@ -2902,6 +2902,20 @@
       //   cost: 11,
       // },
       {
+        name: 'Guinness Draught Stout',
+        alc: 4.2,
+        den: 9.9,
+        cap: 0.33,
+        cost: 9,
+      },
+      {
+        name: 'Guinness West Indies Porter',
+        alc: 6.0,
+        den: 14.0,
+        cap: 0.33,
+        cost: 12,
+      },
+      {
         name: 'Braufactum Progusta IPA',
         alc: 6.8,
         den: 16.5,
