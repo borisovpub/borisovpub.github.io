@@ -15,12 +15,6 @@
 			margin: 0;
 		}
 
-		@media screen {
-			html {
-				background: #999;
-			}
-		}
-
 		@font-face {
 			font-family: 'Open Sans Condensed';
 			src: local( 'Open Sans Condensed Bold' ),
@@ -51,6 +45,10 @@
 			width: 450mm;
 			height: 640mm;
 			background: #fff;
+		}
+
+		[contenteditable="true"] {
+			-webkit-user-modify: read-only;
 		}
 
 		.page {
@@ -184,32 +182,58 @@
 			font-size: calc( 16pt * var( --ratio ) );
 		}
 
-		.cost > span {
+		.cost > span + span {
 			font-size: calc( 11pt * var( --ratio ) );
 		}
 
-		.cost > span:not( :empty ):before {
+		.cost > span + span:not( :empty ):before {
 			content: '.';
 		}
 
 		.img {
 			width: 96.5mm;
 			text-align: center;
-			margin-top: 1.5cm;
+			position: absolute;
+			bottom: 16mm;
+		}
+
+		@media screen {
+
+			html {
+				background: #999;
+			}
+
+			.page {
+				outline: 1px solid #555;
+				position: relative;
+			}
+
+			.page:before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 8mm;
+				right: 8mm;
+				bottom: 8mm;
+				left: 8mm;
+				outline: 1mm dashed #f99;
+				pointer-events: none;
+			}
+
 		}
 
 	</style>
 
 	<template id="section">
 		<div class="section">
-			<div class="title bold"></div>
+			<div class="title bold" contenteditable="true"></div>
 			<div class="sub-title opacity"></div>
 			<ul></ul>
 		</div>
 	</template>
 
 	<template id="weight">
-		<span class="weight opacity brackets sub-text"></span>
+		<span class="weight opacity brackets sub-text" contenteditable="true"></span>
 	</template>
 
 	<template id="slash">
@@ -221,16 +245,16 @@
 	</template>
 
 	<template id="cost">
-		<span class="cost bold"><span></span></span>
+		<span class="cost bold"><span contenteditable="true"></span><span contenteditable="true"></span></span>
 	</template>
 
 	<template id="ml">
-		<span class="ml"></span>
+		<span class="ml" contenteditable="true"></span>
 	</template>
 
 	<template id="dish">
 		<li class="dish item">
-			<div><span class="nbsp"></span></div>
+			<div><span class="nbsp" contenteditable="true"></span></div>
 			<div></div>
 			<ul></ul>
 		</li>
@@ -238,7 +262,7 @@
 
 	<template id="alc">
 		<li class="dish item">
-			<div><span class="name"></span> <span class="kind opacity"></span></div>
+			<div><span class="name" contenteditable="true"></span> <span class="kind opacity" contenteditable="true"></span></div>
 			<div></div>
 		</li>
 	</template>
@@ -246,12 +270,12 @@
 	<template id="beer">
 		<li class="beer item ext">
 			<div>
-				<span class="name"></span>
+				<span class="name" contenteditable="true"></span>
 			</div>
 			<div class="opacity nowrap sub-text slash">
-				<span class="alc percent"></span>
-				<span class="den percent"></span>
-				<span class="cap L"></span>
+				<span class="alc percent" contenteditable="true"></span>
+				<span class="den percent" contenteditable="true"></span>
+				<span class="cap L" contenteditable="true"></span>
 			</div>
 			<div></div>
 		</li>
@@ -260,10 +284,10 @@
 	<template id="cocktail">
 		<li class="cocktail item ext">
 			<div>
-				<span class="name"></span>
+				<span class="name" contenteditable="true"></span>
 			</div>
 			<div class="opacity sub-text">
-				<span class="cap ml"></span>
+				<span class="cap ml" contenteditable="true"></span>
 			</div>
 			<div></div>
 		</li>
@@ -272,10 +296,10 @@
 	<template id="shot">
 		<div class="shot item ext">
 			<div class="bold">
-				<span class="name"></span>
+				<span class="name" contenteditable="true"></span>
 			</div>
 			<div class="opacity sub-text">
-				<span class="cap ml"></span>
+				<span class="cap ml" contenteditable="true"></span>
 			</div>
 			<div></div>
 		</div>
@@ -293,7 +317,7 @@
 </article>
 
 <article class="page">
-	<div></div>
+	<div style="--ratio: 0.98"></div>
 	<div style="--ratio: 1">
 		<div style="--ratio: 0.85" class="mini">
 			<div></div>
@@ -382,11 +406,12 @@
 		} else {
 
 			result = cloneNode( costTemplate );
-			span = querySelector( result, 'span' );
+			span = querySelectorAll( result, '.cost span' );
 
 			var c = data.toFixed( 2 ).split( '.' );
-			span.insertBefore( document.createTextNode( c[ 0 ] ), span.firstChild );
-			querySelector( span, 'span' ).textContent = c[ 1 ];
+
+			span[ 0 ].textContent = c[ 0 ];
+			span[ 1 ].textContent = c[ 1 ];
 
 		}
 
@@ -576,6 +601,63 @@
 		return result;
 
 	};
+
+
+	// Object.values( data ).forEach( ( o ) => {
+	//
+	// 	var val = 0;
+	// 	var min = Number.POSITIVE_INFINITY;
+	// 	var max = Number.NEGATIVE_INFINITY;
+	//
+	// 	var avg;
+	// 	var cnt = 0;
+	//
+	// 	var check = ( o ) => {
+	//
+	// 		if ( o.cost ) {
+	// 			var cost = Array.isArray( o.cost ) ? o.cost[ 1 ] : o.cost;
+	// 			val += cost;
+	// 			if ( cost < min ) min = cost;
+	// 			if ( cost > max ) max = cost;
+	// 			cnt++;
+	// 		}
+	//
+	// 		if ( o.collection ) Object.values( o.collection ).forEach( check );
+	//
+	// 	};
+	//
+	// 	var calc = ( o ) => {
+	//
+	// 		if ( o.cost ) {
+	//
+	// 			var cost = Array.isArray( o.cost ) ? o.cost[ 1 ] : o.cost;
+	// 			var ratio;
+	//
+	// 			if ( cost > avg ) {
+	// 				ratio = 7.5 - ( ( ( cost - avg ) / ( max - avg ) * 2.5 ) || 0 );
+	// 			} else {
+	// 				ratio = 7.5 + ( ( ( cost - min ) / ( avg - min ) * 2.5 ) || 0 );
+	// 			}
+	// 			ratio = 10 + ratio / 10;
+	//
+	// 			if ( Array.isArray( o.cost ) ) {
+	// 				o.cost = o.cost.map( ( c ) => Math.round( c * ratio ) / 10 );
+	// 			} else {
+	// 				o.cost = Math.round( o.cost * ratio ) / 10;
+	// 			}
+	// 		}
+	//
+	// 		if ( o.collection ) Object.values( o.collection ).forEach( calc );
+	//
+	// 	};
+	//
+	// 	check( o );
+	//
+	// 	avg = val / cnt;
+	//
+	// 	calc( o );
+	//
+	// } );
 
 	var colon = querySelectorAll( document, '.page>div' );
 	var colon2 = querySelectorAll( colon[ 5 ], '.mini>div' );
