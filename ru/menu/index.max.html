@@ -125,14 +125,20 @@
 		.gallery .img {
 			left: 50%;
 			top: 50%;
+			width: 100%;
+			max-width: 500px;
 			transform: translate( -50%, -50% );
-			max-width: 100%;
-			height: auto;
 			text-align: center;
 			color: #fff;
 			background: rgba( 0, 0, 0, 0.5 );
 			padding: 0 10px 10px 10px;
 		}
+
+		.gallery img {
+			width: 100%;
+			height: auto;
+		}
+
 
 		.gallery img,
 		.gallery .img {
@@ -147,6 +153,32 @@
 
 			.section {
 				max-width: 700px;
+			}
+
+			.gallery {
+				background: rgba( 0, 0, 0, 0.9 );
+			}
+
+		}
+
+		@media ( max-width: 600px ) {
+
+			.gallery .prev {
+				left: -20px;
+			}
+
+			.gallery .next {
+				right: -20px;
+			}
+
+		}
+
+		@media ( max-width: 520px ) {
+
+			.gallery img,
+			.gallery .img {
+				border-radius: 0;
+				padding-bottom: 0;
 			}
 
 		}
