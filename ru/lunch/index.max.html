@@ -221,20 +221,14 @@
 
 	<template id="lunch">
 		<li class="lunch">
-			<div>
-				<span class="name"></span>
-				<span class="weight"></span>
-			</div>
+			<div><span class="name"></span>  <span class="weight"></span></div>
 			<div class="cost"></div>
 		</li>
 	</template>
 
 	<template id="brunch">
 		<li class="brunch">
-			<div>
-				<span class="name"></span>
-				<span class="weight"></span>
-			</div>
+			<div><span class="name"></span>  <span class="weight"></span></div>
 			<div class="cost"></div>
 			<div class="desc"></div>
 		</li>
@@ -347,7 +341,7 @@
 	</section>
 </footer>
 
-<script type="text/javascript">( ( /** Window */ window ) => window.fetch( '/lunch/data.json?' + window.Math.random() ).then( ( response ) => response.json() ).then( ( /** { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } */ data ) => {
+<script>( ( /** Window */ window ) => window.fetch( '/lunch/data.json?' + window.Math.random() ).then( ( response ) => response.json() ).then( ( /** { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } */ data ) => {
 
 	/** @typedef { [ string, number, number ] } Lunch */
 
@@ -356,13 +350,13 @@
 	/** @typedef { [ string, string, number, number ] } Brunch */
 
 	/** @noinline */
-	var querySelector = function( node, selector ) { return node.querySelector( selector ) };
+	var querySelector = ( node, selector ) => node.querySelector( selector );
 	/** @noinline */
-	var cloneNode = function( node ) { return document.importNode( node.content, true ) };
+	var cloneNode = ( node ) => document.importNode( node.content, true );
 	/** @noinline */
-	var appendChild = function( node, child ) { node.appendChild( child ) };
+	var appendChild = ( node, child ) => node.appendChild( child );
 	/** @noinline */
-	var pad2 = function( v ) { return ( v < 10 ? '0' : '' ) + v };
+	var pad2 = ( v ) => ( v < 10 ? '0' : '' ) + v;
 
 	var document = window.document;
 

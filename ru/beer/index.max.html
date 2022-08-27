@@ -79,7 +79,8 @@
 		.sticker img {
 			width: 100%;
 			height: auto;
-			object-fit: cover;
+			max-height: 75px;
+			object-fit: contain;
 		}
 
 		.breweries > * {
@@ -323,180 +324,160 @@
 	</section>
 </footer>
 
-<script>!function( /** Window */ window ) {
+<script>( ( /** Window */ window ) => window.fetch( 'https://your.beer/api/v1/places/irish-pub' ).then( ( response ) => response.json() ).then( ( /** { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } */ data ) => {
+
+	/**
+	 * @typedef { {
+	 * 		id: number,
+	 * 		slug: string,
+	 * 		name: string,
+	 * 		breweries: Array< {
+	 * 			id: number,
+	 *			name: string,
+	 * 		} >,
+	 * 		logo_image: string,
+	 * 		beer_style: {
+	 * 			slug: string,
+	 * 			name: string,
+	 * 		},
+	 * 		gravity: null,
+	 * 		abv: number,
+	 * 		ibu: number,
+	 * 		avg_rating: number,
+	 * 		date_start: string,
+	 * 		is_checked: boolean,
+	 * 		skus: Array< {
+	 * 		    price: number,
+	 * 		    volume: string,
+	 * 		    packing: string,
+	 * 		} >,
+	 * 		sale_data: {
+	 * 			tap_number: string,
+	 * 			start_sales_at: string,
+	 * 			shop_price: boolean,
+	 * 		},
+	 * } } Beer
+	 */
+
+	/** @type { { tap: Array< Beer >, other: Array< Beer > } } */
+	var beers = data.beers;
 
 	/** @noinline */
-	var querySelector = function( node, selector ) { return node.querySelector( selector ) };
+	var querySelector = ( node, selector ) => node.querySelector( selector );
 	/** @noinline */
-	var cloneNode = function( node ) { return document.importNode( node.content, true ) };
+	var cloneNode = ( node ) => document.importNode( node.content, true );
 	/** @noinline */
-	var appendChild = function( node, child ) { node.appendChild( child ) };
+	var appendChild = ( node, child ) => node.appendChild( child );
 	/** @noinline */
-	var setAttribute = function( node, key, value ) { node.setAttribute( key, value || key ) };
+	var setAttribute = ( node, key, value ) => node.setAttribute( key, value || key );
 
 	var document = window.document;
 
-	var xhr = new ( window.XDomainRequest || window.XMLHttpRequest )();
+	var beerTemplate = querySelector( document, '#beer' );
+	var breweryTemplate = querySelector( document, '#brewery' );
+	var skuTemplate = querySelector( document, '#sku' );
 
-	xhr.open( 'GET', 'https://your.beer/api/v1/places/irish-pub', true );
+	/**
+	 * @param { number } value
+	 * @returns { string }
+	 */
+	var toNumber = ( value ) => window.String( value || 0 ).replace( '.', ',' );
 
-	if ( xhr.overrideMimeType ) xhr.overrideMimeType( 'application/json' );
+	/**
+	 * @param { HTMLElement } slot
+	 * @param { Array< Beer > } beers
+	 * @returns { HTMLElement }
+	 */
+	var buildBeers = ( slot, beers ) => {
 
-	xhr.onerror = function() {
+		var i, l, j, m;
 
-		// TODO
+		var beer, beerNode, beerSticker, beerStickerIMG, beerName, beerNameA, beerBreweries, beerStyle, beerABV, beerIBU;
+		var brewery, breweryNode, breweryName;
+		var sku, skuNode, skuVolume, skuPacking, skuPrice;
 
-	};
+		i = 0; l = beers.length;
+		for ( ; i<l; ++i ) {
 
-	xhr.onload = function() {
+			beer = beers[ i ];
+			beerNode = cloneNode( beerTemplate );
 
-		/**
-		 * @typedef { {
-		 * 		id: number,
-		 * 		slug: string,
-		 * 		name: string,
-		 * 		breweries: Array< {
-		 * 			id: number,
-		 *			name: string,
-		 * 		} >,
-		 * 		logo_image: string,
-		 * 		beer_style: {
-		 * 			slug: string,
-		 * 			name: string,
-		 * 		},
-		 * 		gravity: null,
-		 * 		abv: number,
-		 * 		ibu: number,
-		 * 		avg_rating: number,
-		 * 		date_start: string,
-		 * 		is_checked: boolean,
-		 * 		skus: Array< {
-		 * 		    price: number,
-		 * 		    volume: string,
-		 * 		    packing: string,
-		 * 		} >,
-		 * 		sale_data: {
-		 * 			tap_number: string,
-		 * 			start_sales_at: string,
-		 * 			shop_price: boolean,
-		 * 		},
-		 * } } Beer
-		 */
+			beerBreweries = querySelector( beerNode, '.breweries' );
+			beerSticker = querySelector( beerNode, '.sticker' );
+			beerName = querySelector( beerNode, '.name' );
+			beerStyle = querySelector( beerNode, '.style' );
+			beerABV = querySelector( beerNode, '.abv' );
+			beerIBU = querySelector( beerNode, '.ibu' );
 
-		/** @type { { tap: Array< Beer >, other: Array< Beer > } } */
-		var beers = window.JSON.parse( xhr.responseText ).beers;
+			beerNameA = querySelector( beerName, 'a' );
 
-		var beerTemplate = querySelector( document, '#beer' );
-		var breweryTemplate = querySelector( document, '#brewery' );
-		var skuTemplate = querySelector( document, '#sku' );
+			j = 0; m = beer.breweries.length;
+			for ( ; j<m; ++j ) {
 
-		/**
-		 * @param { number } value
-		 * @returns { string }
-		 */
-		var toNumber = function( value ) {
-			return window.String( value || 0 ).replace( '.', ',' );
-		};
+				brewery = beer.breweries[ j ];
+				breweryNode = cloneNode( breweryTemplate );
 
-		/**
-		 * @param { HTMLElement } slot
-		 * @param { Array< Beer > } beers
-		 * @returns { HTMLElement }
-		 */
-		var buildBeers = function( slot, beers ) {
+				breweryName = querySelector( breweryNode, 'a' );
 
-			var i, l, j, m;
+				if ( brewery.slug ) setAttribute( breweryName, 'href', '//your.beer/brewery/' + brewery.slug );
+				if ( brewery.name ) breweryName.textContent = brewery.name;
 
-			var beer, beerNode, beerSticker, beerStickerIMG, beerName, beerNameA, beerBreweries, beerStyle, beerABV, beerIBU;
-			var brewery, breweryNode, breweryName;
-			var sku, skuNode, skuVolume, skuPacking, skuPrice;
-
-			i = 0; l = beers.length;
-			for ( ; i<l; ++i ) {
-
-				beer = beers[ i ];
-				beerNode = cloneNode( beerTemplate );
-
-				beerBreweries = querySelector( beerNode, '.breweries' );
-				beerSticker = querySelector( beerNode, '.sticker' );
-				beerName = querySelector( beerNode, '.name' );
-				beerStyle = querySelector( beerNode, '.style' );
-				beerABV = querySelector( beerNode, '.abv' );
-				beerIBU = querySelector( beerNode, '.ibu' );
-
-				beerNameA = querySelector( beerName, 'a' );
-
-				j = 0; m = beer.breweries.length;
-				for ( ; j<m; ++j ) {
-
-					brewery = beer.breweries[ j ];
-					breweryNode = cloneNode( breweryTemplate );
-
-					breweryName = querySelector( breweryNode, 'a' );
-
-					if ( brewery.slug ) setAttribute( breweryName, 'href', '//your.beer/brewery/' + brewery.slug );
-					if ( brewery.name ) breweryName.textContent = brewery.name;
-
-					appendChild( beerBreweries, breweryNode );
-
-				}
-
-				if ( beer.logo_image ) {
-					beerStickerIMG = document.createElement( 'img' );
-					setAttribute( beerStickerIMG, 'src', beer.logo_image );
-					setAttribute( beerStickerIMG, 'loading', 'lazy' );
-					setAttribute( beerStickerIMG, 'width', 200 );
-					setAttribute( beerStickerIMG, 'height', 200 );
-					appendChild( beerSticker, beerStickerIMG );
-				}
-				if ( beer.slug ) {
-					setAttribute( beerSticker, 'href', '//your.beer/beer/' + beer.slug );
-					setAttribute( beerNameA, 'href', '//your.beer/beer/' + beer.slug );
-				}
-				if ( beer.name ) beerNameA.textContent = beer.name;
-				if ( beer.beer_style ) {
-					if ( beer.beer_style.slug ) setAttribute( beerStyle, 'href', '//your.beer/beers/' + beer.beer_style.slug );
-					if ( beer.beer_style.name ) beerStyle.textContent = beer.beer_style.name;
-				}
-				if ( beer.abv ) beerABV.textContent = toNumber( beer.abv );
-				if ( beer.ibu ) beerIBU.textContent = toNumber( beer.ibu );
-
-				j = 0; m = beer.skus.length;
-				for ( ; j<m; ++j ) {
-
-					sku = beer.skus[ j ];
-
-					if ( !sku.price ) continue;
-
-					skuNode = cloneNode( skuTemplate );
-
-					skuVolume = querySelector( skuNode, '.volume' );
-					skuPacking = querySelector( skuNode, '.packing' );
-					skuPrice = querySelector( skuNode, '.price' );
-
-					if ( sku.volume ) skuVolume.textContent = toNumber( sku.volume );
-					if ( sku.packing ) skuPacking.textContent = sku.packing;
-					//if ( sku.price ) skuPrice.textContent = toNumber( sku.price );
-
-					appendChild( querySelector( beerNode, '.skus' ), skuNode );
-
-				}
-
-				appendChild( slot, beerNode );
-
+				appendChild( beerBreweries, breweryNode );
 
 			}
 
-		};
+			if ( beer.logo_image ) {
+				beerStickerIMG = document.createElement( 'img' );
+				setAttribute( beerStickerIMG, 'src', beer.logo_image );
+				setAttribute( beerStickerIMG, 'loading', 'lazy' );
+				setAttribute( beerStickerIMG, 'width', 200 );
+				setAttribute( beerStickerIMG, 'height', 200 );
+				appendChild( beerSticker, beerStickerIMG );
+			}
+			if ( beer.slug ) {
+				setAttribute( beerSticker, 'href', '//your.beer/beer/' + beer.slug );
+				setAttribute( beerNameA, 'href', '//your.beer/beer/' + beer.slug );
+			}
+			if ( beer.name ) beerNameA.textContent = beer.name;
+			if ( beer.beer_style ) {
+				if ( beer.beer_style.slug ) setAttribute( beerStyle, 'href', '//your.beer/beers/' + beer.beer_style.slug );
+				if ( beer.beer_style.name ) beerStyle.textContent = beer.beer_style.name;
+			}
+			if ( beer.abv ) beerABV.textContent = toNumber( beer.abv );
+			if ( beer.ibu ) beerIBU.textContent = toNumber( beer.ibu );
 
-		buildBeers( querySelector( document, '#draft ul' ), beers.tap );
-		buildBeers( querySelector( document, '#other ul' ), beers.other );
+			j = 0; m = beer.skus.length;
+			for ( ; j<m; ++j ) {
+
+				sku = beer.skus[ j ];
+
+				if ( !sku.price ) continue;
+
+				skuNode = cloneNode( skuTemplate );
+
+				skuVolume = querySelector( skuNode, '.volume' );
+				skuPacking = querySelector( skuNode, '.packing' );
+				skuPrice = querySelector( skuNode, '.price' );
+
+				if ( sku.volume ) skuVolume.textContent = toNumber( sku.volume );
+				if ( sku.packing ) skuPacking.textContent = sku.packing;
+				//if ( sku.price ) skuPrice.textContent = toNumber( sku.price );
+
+				appendChild( querySelector( beerNode, '.skus' ), skuNode );
+
+			}
+
+			appendChild( slot, beerNode );
+
+
+		}
 
 	};
 
-	xhr.send();
+	buildBeers( querySelector( document, '#draft ul' ), beers.tap );
+	buildBeers( querySelector( document, '#other ul' ), beers.other );
 
-}( this )</script>
+} ) )( this )</script>
 
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Condensed:400|Montserrat:400&display=swap" />
 
