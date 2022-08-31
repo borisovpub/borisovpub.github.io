@@ -320,8 +320,11 @@
 	var cloneNode = ( node ) => document.importNode( node.content, true );
 	/** @noinline */
 	var appendChild = ( node, child ) => node.appendChild( child );
+	/** @noinline */
+	var addEventListener = ( node, type, listener ) => node.addEventListener( type, listener );
 
 	var document =	window.document;
+	var history =	window.history;
 
 	var isArray =	window.Array.isArray;
 	var body =		document.body;
@@ -368,7 +371,10 @@
 				} ) )
 			;
 			name.dataset.img = '';
-			name.addEventListener( 'click', () => showGallery( index ) );
+			addEventListener( name, 'click', () => {
+				history.pushState( {}, document.title );
+				showGallery( index );
+			} );
 		}
 
 		if ( data.weight ) {
@@ -390,38 +396,47 @@
 
 		}
 
-
 		return result;
 
 	};
 
 	var imgTemplate = querySelector( document, '#gallery' );
 
+	var gallery;
+
+	var hideGallery = () => {
+		if ( gallery ) {
+			body.removeChild( gallery );
+			gallery = null;
+		}
+	}
+
 	var showGallery = ( index = 0 ) => {
 
 		var img = images[ index ];
-		var result = querySelector( cloneNode( imgTemplate ), '.gallery' );
 
-		var close = () => body.removeChild( result );
+		hideGallery();
 
-		querySelector( result, '.close' ).addEventListener( 'click', close );
+		gallery = querySelector( cloneNode( imgTemplate ), '.gallery' );
 
-		querySelector( result, '.prev' ).addEventListener( 'click', () => {
-			close();
+		addEventListener( querySelector( gallery, '.close' ), 'click', hideGallery );
+
+		addEventListener( querySelector( gallery, '.prev' ), 'click', () => {
+			hideGallery();
 			if ( --index < 0 ) index = images.length - 1;
 			showGallery( index );
 		} );
 
-		querySelector( result, '.next' ).addEventListener( 'click', () => {
-			close();
+		addEventListener( querySelector( gallery, '.next' ), 'click', () => {
+			hideGallery();
 			if ( ++index >= images.length ) index = 0
 			showGallery( index );
 		} );
 
-		querySelector( result, '.name' ).textContent = img.name;
-		querySelector( result, 'img' ).setAttribute( 'src', 'https://static.insales-cdn.com/images/products/1/' + img.src.replace( /[^/]+$/, 'large_$&' ) );
+		querySelector( gallery, '.name' ).textContent = img.name;
+		querySelector( gallery, 'img' ).setAttribute( 'src', 'https://static.insales-cdn.com/images/products/1/' + img.src.replace( /[^/]+$/, 'large_$&' ) );
 
-		appendChild( body, result );
+		appendChild( body, gallery );
 
 	};
 
@@ -439,6 +454,8 @@
 	appendChild( div, createSection( data.HotDishes ) );
 	appendChild( div, createSection( data.Garnish ) );
 	appendChild( div, createSection( data.Desserts ) );
+
+	addEventListener( window, 'popstate', hideGallery );
 
 } ) )( this )</script>
 
