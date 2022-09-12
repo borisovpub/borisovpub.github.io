@@ -1,4 +1,6 @@
 User-agent: *
 Disallow: *?*
+Disallow: *.json
+Disallow: */print
 Sitemap: https://irish-pub.by/sitemap.xml
 Host: irish-pub.by
