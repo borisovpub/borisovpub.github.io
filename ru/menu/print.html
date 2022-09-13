@@ -317,13 +317,8 @@
 </article>
 
 <article class="page">
-	<div style="--ratio: 0.98"></div>
-	<div style="--ratio: 1">
-		<div style="--ratio: 0.85" class="mini">
-			<div></div>
-			<div></div>
-		</div>
-	</div>
+	<div style="--ratio: 1"></div>
+	<div style="--ratio: 0.85"></div>
 	<div style="text-align: center"></div>
 	<div></div>
 </article>
@@ -660,7 +655,6 @@
 	// } );
 
 	var colon = querySelectorAll( document, '.page>div' );
-	var colon2 = querySelectorAll( colon[ 5 ], '.mini>div' );
 
 	appendChild( colon[ 0 ], createSection( data.BeerStarters, createDish ) );
 	appendChild( colon[ 0 ], createSection( data.Starters, createDish ) );
@@ -671,12 +665,13 @@
 	appendChild( colon[ 1 ], createSection( data.Salads, createDish ) );
 	appendChild( colon[ 1 ], createSection( data.SeasonalSalads, createDish ) );
 	appendChild( colon[ 1 ], createSection( data.BurgersSandwiches, createDish ) );
-	colon[ 1 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="/@/cb.svg" /></div>' );
+	// colon[ 1 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="/@/cb.svg" /></div>' );
 
 	appendChild( colon[ 2 ], createSection( data.HotDishes, createDish ) );
 	appendChild( colon[ 2 ], createSection( data.Garnish, createDish ) );
 	appendChild( colon[ 2 ], createSection( data.Desserts, createDish ) );
-	colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="/@/bc.svg" style="height:31.417mm" /></div>' );
+	// colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="/@/bc.svg" style="height:31.417mm" /></div>' );
+	colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="/@/cb.svg" /></div>' );
 
 	appendChild( colon[ 3 ], createSection( data.Gasing, createDish ) );
 	appendChild( colon[ 3 ], createSection( data.Coffee, createDish ) );
@@ -692,18 +687,17 @@
 	appendChild( colon[ 4 ], createSection( data.PortWine, createDish, createCapacity ) );
 	appendChild( colon[ 4 ], createSection( data.Martini, createDish, createCapacity ) );
 
-	appendChild( colon2[ 0 ], createSection( data.Whiskey, createAlc, createCapacity ) );
-	appendChild( colon2[ 0 ], createSection( data.Vodka, createAlc, createCapacity ) );
-	appendChild( colon2[ 0 ], createSection( data.Tequila, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( data.Tinctures, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( data.Whiskey, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( data.Brandy, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( data.Rom, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( data.Bitter, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( data.Tequila, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( data.Gin, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( data.Vodka, createAlc, createCapacity ) );
 
-	appendChild( colon2[ 1 ], createSection( data.Tinctures, createAlc, createCapacity ) );
-	appendChild( colon2[ 1 ], createSection( data.Gin, createAlc, createCapacity ) );
-	appendChild( colon2[ 1 ], createSection( data.Brandy, createAlc, createCapacity ) );
-	appendChild( colon2[ 1 ], createSection( data.Bitter, createAlc, createCapacity ) );
-	appendChild( colon2[ 1 ], createSection( data.Rom, createAlc, createCapacity ) );
-
-	appendChild( colon[ 5 ], createSection( data.Cocktails, createCocktail ) );
-	appendChild( colon[ 5 ], createShot( data.Shot ) );
+	// appendChild( colon[ 5 ], createSection( data.Cocktails, createCocktail ) );
+	// appendChild( colon[ 5 ], createShot( data.Shot ) );
 
 	colon[ 6 ].insertAdjacentHTML( 'beforeend', `
 		<div style="margin-top: ${ lang === 'en' ? 12.5 : 6 }cm">

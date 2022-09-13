@@ -457,6 +457,8 @@
 
 	addEventListener( window, 'popstate', hideGallery );
 
+	addEventListener( window, 'keyup', ( event ) => ( event.key == 'Escape' ) && hideGallery() );
+
 } ) )( this )</script>
 
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Condensed:400|Montserrat:400&display=swap" />
