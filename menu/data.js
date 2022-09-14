@@ -467,6 +467,7 @@
 				],
 				weight: 250,
 				cost: 5.00,
+				img: '4019/306466739/IMG_7621.jpg',
 			},
 
 			{
@@ -535,7 +536,7 @@
 			{
 				name: [
 					'Салат с уткой и запечёнными овощами',
-					'Duck salad with baked vegetables',
+					'Salad with duck and baked vegetables',
 				],
 				weight: 220,
 				cost: 14.40,
@@ -548,7 +549,7 @@
 			{
 				name: [
 					'Салат с ростбифом и овощами-гриль',
-					'Roast beef salad with grilled vegetables',
+					'Salad with roast beef and grilled vegetables',
 				],
 				weight: 290,
 				cost: 14.40,
@@ -602,6 +603,10 @@
 				],
 				weight: 255,
 				cost: 14.50,
+				img: [
+					'7142/593099750/20220913_143637.jpg',
+					'7143/593099751/20220913_143759.jpg',
+				],
 			},
 
 			{
@@ -611,6 +616,10 @@
 				],
 				weight: 280,
 				cost: 14.00,
+				img: [
+					'6896/593099504/20220913_145146.jpg',
+					'6898/593099506/20220913_145206.jpg',
+				],
 			},
 
 		],
@@ -744,6 +753,7 @@
 				],
 				weight: 350,
 				cost: 12.00,
+				img: '441/593093049/20220913_163340.jpg',
 			},
 
 			{
@@ -753,6 +763,7 @@
 				],
 				weight: 250,
 				cost: 16.00,
+				img: '1267/593093875/20220913_143553.jpg',
 			},
 
 			{
@@ -3063,7 +3074,7 @@
 				alc: 5.7,
 				den: 14.0,
 				cap: 0.5,
-				cost: 7.00,
+				cost: 8.50,
 			},
 
 		],
