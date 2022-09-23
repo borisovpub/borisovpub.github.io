@@ -24,13 +24,13 @@
 		@font-face {
 			font-family: 'Open Sans Condensed';
 			src: local( 'Open Sans Condensed Bold' ),
-				 url( '/@/OpenSansCondensed-Bold.ttf' );
+				 url('/@/OpenSansCondensed-Bold.ttf');
 		}
 
 		@font-face {
 			font-family: 'Open Sans Condensed Light';
 			src: local( 'Open Sans Condensed Light' ),
-				 url( '/@/OpenSansCondensed-Light.ttf' );
+				 url('/@/OpenSansCondensed-Light.ttf');
 		}
 
 		*,
@@ -48,13 +48,13 @@
 
 		body {
 			font: 14pt 'Open Sans Condensed Light', Arial, sans-serif;
-			width: 190mm;
-			height: 277mm;
+			width: calc( 210mm - 1.2cm );
+			height: calc( 297mm - 1.2cm );
 			padding: 0.6cm;
 			background: #fff;
 			display: grid;
 			grid-template-columns: auto auto;
-			grid-gap: 1.8cm;
+			grid-gap: 1.2cm;
 		}
 
 		h1,
@@ -183,7 +183,7 @@
 	</div>
 </article>
 
-<script>( ( /** Window */ window ) =>  window.fetch( '/lunch/data.json?' + window.Math.random() ).then( ( response ) => response.json() ).then( ( /** { { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } } */ data ) => {
+<script>( ( /** Window */ window ) =>  window.fetch( 'data.json?' + window.Math.random() ).then( ( response ) => response.json() ).then( ( /** { { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } } */ data ) => {
 
 	/** @typedef { [ string, number, number ] } Lunch */
 
