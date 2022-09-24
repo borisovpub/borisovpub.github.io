@@ -411,7 +411,10 @@
 	var coctails0 = querySelector( createSection( data.Cocktails0, createCocktail ), '.section' );
 	var coctails1 = querySelector( createSection( data.Cocktails1, createCocktail ), '.section' );
 
-	coctails1.insertAdjacentHTML( 'beforeend', '<div class="ps">Кроме прочего, у нас всегда можно заказать все базовые и классические коктейли, а так же шоты. Уточняйте у официантов.</div>' );
+	coctails1.insertAdjacentHTML( 'beforeend', `<div class="ps">${ getName( [
+		'Кроме прочего, у нас всегда можно заказать все базовые и классические коктейли, а так же шоты.<br />Уточняйте у официантов.',
+		'Among other things, you can always order all basic and classic cocktails, as well as shots.<br />Check with waiters.',
+	] ) }</div>` );
 
 	appendChild( colon[ 0 ], coctails0 );
 	appendChild( colon[ 1 ], coctails0.cloneNode( true ) );

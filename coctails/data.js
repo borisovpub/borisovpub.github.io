@@ -12,10 +12,11 @@
 			{
 				name: [
 					'Рождественский вайб',
-					'Christmas vibe',
+					'Christmas Vibe',
 				],
 				mix: [
 					'клюквенная настойка, апельсиновый ликёр, шоколадный сироп',
+					'cranberry tincture, orange liqueur, chocolate syrup',
 				],
 				cap: 150,
 				cost: 11,
@@ -25,10 +26,11 @@
 			{
 				name: [
 					'Киви-тоник',
-					'Kiwi-tonic',
+					'Kiwi-Tonic',
 				],
 				mix: [
 					'джин, пюре киви, яблочный сок',
+					'gin, kiwi puree, apple juice',
 				],
 				cap: 270,
 				cost: 12,
@@ -38,10 +40,12 @@
 			},
 			{
 				name: [
-					'Лонг айленд',
+					'Лонг-Айленд',
+					'Long Island'
 				],
 				mix: [
 					'водка, джин, текила, ром, апельсиновый ликёр',
+					'vodka, gin, tequila, rum, orange liqueur',
 				],
 				cap: 360,
 				cost: 16,
@@ -55,6 +59,7 @@
 				],
 				mix: [
 					'розовый вермут, водка, сироп чёрной смородины',
+					'pink vermouth, vodka, blackcurrant syrup',
 				],
 				cap: 150,
 				cost: 9,
@@ -68,6 +73,7 @@
 				],
 				mix: [
 					'виски, пивной сироп, белок',
+					'whiskey, beer syrup, egg white',
 				],
 				cap: 250,
 				cost: 10,
@@ -82,6 +88,7 @@
 				],
 				mix: [
 					'апельсиновый ликёр, джин, сахарный сироп',
+					'orange liqueur, gin, sugar syrup',
 				],
 				cap: 150,
 				cost: 13,
@@ -95,6 +102,7 @@
 				],
 				mix: [
 					'джин, тоник, медовый сироп, апельсиновый сок',
+					'gin, tonic, honey syrup, orange juice',
 				],
 				cap: 480,
 				cost: 12,
@@ -105,10 +113,11 @@
 			{
 				name: [
 					'Черри',
-					'Very cherry berry',
+					'Cherry',
 				],
 				mix: [
-					'вишнёвая настойка, сироп зимние специи, пряные травы',
+					'вишнёвая настойка, сироп зимних специй, пряные травы',
+					'cherry tincture, winter spice syrup, spicy herbs'
 				],
 				cap: 250,
 				cost: 9,
@@ -119,9 +128,11 @@
 			{
 				name: [
 					'Кубинский ангел',
+					'Cuban Angel',
 				],
 				mix: [
 					'светлый ром, пюре личи, сироп лемонграсс',
+					'light rum, lychee puree, lemongrass syrup',
 				],
 				cap: 150,
 				cost: 12,
@@ -132,10 +143,11 @@
 			{
 				name: [
 					'Закат Империи',
-					'Decline of the Empire',
+					'Decline and Fall of the Empire',
 				],
 				mix: [
 					'апельсиновый вермут, белый вермут, водка, малиновый сироп',
+					'orange vermouth, white vermouth, vodka, raspberry syrup',
 				],
 				cap: 150,
 				cost: 9,
@@ -161,7 +173,8 @@
 					'Feather from Polar Owl Butt',
 				],
 				mix: [
-					'джин, апельсиновы ликёр, белый вермут, вишнёвый сок',
+					'джин, белый вермут, апельсиновый ликёр, вишнёвый сок',
+					'gin, white vermouth, orange liqueur, cherry juice',
 				],
 				cap: 320,
 				cost: 16,
@@ -172,10 +185,11 @@
 			{
 				name: [
 					'Пряный полдень',
-					'Spicy',
+					'Spicy Midday',
 				],
 				mix: [
 					'крамбамбуля, белый вермут, тоник',
+					'spicy honey tincture, white vermouth, tonic'
 				],
 				cap: 250,
 				cost: 9,
@@ -186,9 +200,11 @@
 			{
 				name: [
 					'Земляничный рай',
+					'Strawberry Paradise',
 				],
 				mix: [
 					'светлый ром, морс, земляничный сироп',
+					'light rum, fruit‑drink, strawberry syrup',
 				],
 				cap: 140,
 				cost: 11,
@@ -199,10 +215,11 @@
 			{
 				name: [
 					'Порностар твист',
-					'Pornostar twist',
+					'Pornostar Twist',
 				],
 				mix: [
 					'игристое вино, водка, пюре личи, белок',
+					'sparkling wine, vodka, lychee puree, egg white',
 				],
 				cap: 200,
 				cost: 12,
@@ -216,6 +233,7 @@
 				],
 				mix: [
 					'2 вида рома, Jägermeister, земляничный сироп',
+					'2 types of rum, Jägermeister, strawberry syrup',
 				],
 				cap: 250,
 				cost: 14,
@@ -226,9 +244,11 @@
 			{
 				name: [
 					'Белый русский',
+					'White Russian',
 				],
 				mix: [
 					'водка, кофейный ликёр, сливки',
+					'vodka, coffee liqueur, cream',
 				],
 				cap: 220,
 				cost: 13,
@@ -243,6 +263,7 @@
 				],
 				mix: [
 					'водка, малиновый сироп, морс, спрайт',
+					'vodka, raspberry syrup, fruit‑drink, sprite',
 				],
 				cap: 480,
 				cost: 12,
@@ -252,9 +273,11 @@
 			{
 				name: [
 					'Мохито',
+					'Mojito',
 				],
 				mix: [
 					'ром, лайм, мята, сахарный сироп',
+					'rum, lime, mint, sugar syrup',
 				],
 				cap: 360,
 				cost: 10,
@@ -268,6 +291,7 @@
 				],
 				mix: [
 					'апельсиновый ликёр, текила, ананасовый сок, пиво Corona',
+					'orange liqueur, tequila, pineapple juice, Corona beer',
 				],
 				cap: 700,
 				cost: 22,
