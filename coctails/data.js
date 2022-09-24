@@ -20,7 +20,7 @@
 				],
 				cap: 150,
 				cost: 11,
-				img: '',
+				img: 'рождественный-вайб.svg',
 				color: 0xca3710,
 			},
 			{
@@ -51,6 +51,7 @@
 				cost: 16,
 				img: 'лонг-айлэнд.svg',
 				color: 0x866241,
+				scale: 1.2,
 			},
 			{
 				name: [
@@ -92,8 +93,9 @@
 				],
 				cap: 150,
 				cost: 13,
-				img: '',
+				img: 'фиолетовая-леди.svg',
 				color: 0x736699,
+				scale: 1.4,
 			},
 			{
 				name: [
@@ -108,7 +110,7 @@
 				cost: 12,
 				img: 'королева-пчёл.svg',
 				color: 0xc79f2f,
-				scale: 1.2,
+				scale: 1.4,
 			},
 			{
 				name: [
@@ -180,7 +182,7 @@
 				cost: 16,
 				img: 'перо-из-жопы.svg',
 				color: 0xac2506,
-				scale: 1.3,
+				scale: 1.5,
 			},
 			{
 				name: [
@@ -267,8 +269,9 @@
 				],
 				cap: 480,
 				cost: 12,
-				img: '',
+				img: 'малиновое-искушение.svg',
 				color: 0x862f48,
+				scale: 1.4,
 			},
 			{
 				name: [
@@ -281,8 +284,9 @@
 				],
 				cap: 360,
 				cost: 10,
-				img: '',
+				img: 'мохито.svg',
 				color: 0x799d3f,
+				scale: 1.65,
 			},
 			{
 				name: [
@@ -297,7 +301,7 @@
 				cost: 22,
 				img: 'коронита.svg',
 				color: 0xe6ae56,
-				scale: 1.6,
+				scale: 1.8,
 			},
 		],
 
