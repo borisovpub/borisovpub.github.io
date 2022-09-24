@@ -352,9 +352,9 @@
 	var document =	window.document;
 	var Array =		window.Array;
 
-	var lang = window.location.search.replace( /^\?/, '' );
+	var lang = window.location.search.replace( /^\?/, '' ) === 'en' ? 1 : 0;
 
-	var getName = ( data ) => Array.isArray( data ) ? data[ lang === 'en' ? 1 : 0 ] : data;
+	var getName = ( data ) => Array.isArray( data ) ? data[ lang ] : data;
 
 	var sectionTemplate = querySelector( document, '#section' );
 
