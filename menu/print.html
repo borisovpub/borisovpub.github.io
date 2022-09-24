@@ -700,33 +700,29 @@
 	// appendChild( colon[ 5 ], createShot( data.Shot ) );
 
 	colon[ 6 ].insertAdjacentHTML( 'beforeend', `
-		<div style="margin-top: ${ lang === 'en' ? 12.5 : 6 }cm">
+		<div style="margin-top: 6cm">
 			<img src="/@/logo.svg" style="width:45mm; filter: invert( 1 )" />
 		</div>
 		<div class="bold" style="font-size: 72pt">${ getName( [ "Меню", "Menu" ] ) }</div>
 	` );
 
-	if ( lang !== 'en' ) {
-
-		colon[ 6 ].insertAdjacentHTML( 'beforeend', `
-			<div class="opacity" style="font-size: 24pt; line-height: 24pt; margin-top: 5cm">
-				Закажите<br />доставку!
-			</div>
-			<div class="opacity" style="margin: 8mm 0 5mm 0">
-				<img src="qr.svg" />
-			</div>
-			<div class="opacity" style="font-size: 24pt; line-height: 24pt">
-				irish-pub.by
-			</div>
-			<div class="opacity" style="font-size: 18pt; line-height: 18pt; margin-top: 1cm">
-				Специальное меню<br />
-				обедов по будням<br />
-				и бранчей по выходным<br />
-				с 12:00 до 16:00
-			</div>
-		` );
-
-	}
+	colon[ 6 ].insertAdjacentHTML( 'beforeend', `
+		<div class="opacity" style="font-size: 24pt; line-height: 24pt; margin-top: 5cm">
+			${ getName( [ 'Закажите', 'Order' ] ) }<br />${ getName( [ 'доставку!', 'Delivery!' ] ) }
+		</div>
+		<div class="opacity" style="margin: 8mm 0 5mm 0">
+			<img src="qr.svg" />
+		</div>
+		<div class="opacity" style="font-size: 24pt; line-height: 24pt">
+			irish-pub.by
+		</div>
+		<div class="opacity" style="font-size: 18pt; line-height: 18pt; margin-top: 1cm">
+			${ getName( [ 'Специальное меню', 'Special lunch menu' ] ) }<br />
+			${ getName( [ 'обедов по будням', 'on weekdays and' ] ) }<br />
+			${ getName( [ 'и бранчей по выходным', 'brunch on weekends' ] ) }<br />
+			${ getName( [ 'с 12:00 до 16:00', 'from 12:00 to 16:00' ] ) }
+		</div>
+	` );
 
 	appendChild( colon[ 7 ], createSection( data.DraftBeer, createBeer ) );
 	appendChild( colon[ 7 ], createSection( data.BottledBeer, createBeer ) );
