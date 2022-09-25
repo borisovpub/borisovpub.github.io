@@ -136,6 +136,8 @@
 			display: grid;
 			grid-template-columns: auto 72mm;
 			width: 100%;
+			min-height: 22mm;
+
 
 			margin-bottom: 4mm;
 
@@ -159,18 +161,23 @@
 		}
 
 		.container {
-			text-align: right;
 			height: 1mm;
-			padding-right: 5mm;
+			position: relative;
+		}
+
+		.container > * {
+			display: block;
+			position: absolute;
+			right: 5mm;
+			width: 18mm;
+			text-align: center;
 		}
 
 		.cost {
-			display: inline-block;
 			font-size: 16pt;
 			line-height: 7mm;
 			width: 18mm;
 			height: 7mm;
-			position: relative;
 			text-align: center;
 			color: #fff;
 		}
@@ -192,6 +199,10 @@
 
 		.cost > span + span:not( :empty ):before {
 			content: '.';
+		}
+
+		.cap {
+			top: 9mm;
 		}
 
 		.mix {
@@ -240,7 +251,7 @@
 			right: -49mm;
 		}
 
-		.cocktail:nth-child( 2n ) .cost {
+		.cocktail:nth-child( 2n ) .container > * {
 			right: auto;
 		}
 
@@ -311,9 +322,9 @@
 							<polygon points="0,0 2.5,3.5 0,7 15.5,7 18,3.5 15.5,0"/>
 						</svg>
 					</span>
+					<div class="cap opacity sub-text ml"></div>
 				</div>
 				<div class="mix"></div>
-				<div class="cap opacity sub-text ml"></div>
 			</div>
 		</li>
 	</template>

@@ -15,7 +15,7 @@
 					'Christmas Vibe',
 				],
 				mix: [
-					'клюквенная настойка, апельсиновый ликёр, шоколадный сироп',
+					'клюквенная настойка, апельсиновый ликёр, шоколадный сироп, газировка',
 					'cranberry tincture, orange liqueur, chocolate syrup',
 				],
 				cap: 150,
@@ -29,7 +29,7 @@
 					'Kiwi-Tonic',
 				],
 				mix: [
-					'джин, пюре киви, яблочный сок',
+					'джин, пюре киви, яблочный сок, сок лимона, тоник',
 					'gin, kiwi puree, apple juice',
 				],
 				cap: 270,
@@ -44,7 +44,7 @@
 					'Long Island'
 				],
 				mix: [
-					'водка, джин, текила, ром, апельсиновый ликёр',
+					'водка, джин, текила, ром, апельсиновый ликёр, кола, лимон',
 					'vodka, gin, tequila, rum, orange liqueur',
 				],
 				cap: 360,
@@ -59,7 +59,7 @@
 					'Blackcurrant',
 				],
 				mix: [
-					'розовый вермут, водка, сироп чёрной смородины',
+					'розовый вермут, водка, сироп чёрной смородины, сок лимона',
 					'pink vermouth, vodka, blackcurrant syrup',
 				],
 				cap: 150,
@@ -73,7 +73,7 @@
 					'Beer sour',
 				],
 				mix: [
-					'виски, пивной сироп, белок',
+					'виски, пивной сироп, белок, сок лимона',
 					'whiskey, beer syrup, egg white',
 				],
 				cap: 250,
@@ -88,7 +88,7 @@
 					'Violet Lady',
 				],
 				mix: [
-					'апельсиновый ликёр, джин, сахарный сироп',
+					'апельсиновый ликёр, джин, сахарный сироп, сок лимона',
 					'orange liqueur, gin, sugar syrup',
 				],
 				cap: 150,
@@ -118,7 +118,7 @@
 					'Cherry',
 				],
 				mix: [
-					'вишнёвая настойка, сироп зимних специй, пряные травы',
+					'вишнёвая настойка, сироп зимних специй, сок лимона, газировка, вишня',
 					'cherry tincture, winter spice syrup, spicy herbs'
 				],
 				cap: 250,
@@ -133,7 +133,7 @@
 					'Cuban Angel',
 				],
 				mix: [
-					'светлый ром, пюре личи, сироп лемонграсс',
+					'светлый ром, пюре личи, сироп лемонграсс, сок лимона, яблочный сок',
 					'light rum, lychee puree, lemongrass syrup',
 				],
 				cap: 150,
@@ -148,7 +148,7 @@
 					'Decline and Fall of the Empire',
 				],
 				mix: [
-					'апельсиновый вермут, белый вермут, водка, малиновый сироп',
+					'апельсиновый вермут, белый вермут, водка, малиновый сироп, сок лимона',
 					'orange vermouth, white vermouth, vodka, raspberry syrup',
 				],
 				cap: 150,
@@ -175,7 +175,7 @@
 					'Feather from Polar Owl Butt',
 				],
 				mix: [
-					'джин, белый вермут, апельсиновый ликёр, вишнёвый сок',
+					'джин, белый вермут, апельсиновый ликёр, вишнёвый сок, лайм',
 					'gin, white vermouth, orange liqueur, cherry juice',
 				],
 				cap: 320,
@@ -205,7 +205,7 @@
 					'Strawberry Paradise',
 				],
 				mix: [
-					'светлый ром, морс, земляничный сироп',
+					'светлый ром, земляничный сироп, сок лимона, морс',
 					'light rum, fruit‑drink, strawberry syrup',
 				],
 				cap: 140,
@@ -220,7 +220,7 @@
 					'Pornostar Twist',
 				],
 				mix: [
-					'игристое вино, водка, пюре личи, белок',
+					'игристое вино, водка, пюре личи, белок, сок лимона',
 					'sparkling wine, vodka, lychee puree, egg white',
 				],
 				cap: 200,
@@ -234,7 +234,7 @@
 					'Tears of an Irish Prostitute',
 				],
 				mix: [
-					'2 вида рома, Jägermeister, земляничный сироп',
+					'2 вида рома, Jägermeister, земляничный сироп, сок лимона',
 					'2 types of rum, Jägermeister, strawberry syrup',
 				],
 				cap: 250,
@@ -264,7 +264,7 @@
 					'Raspberry Temptation',
 				],
 				mix: [
-					'водка, малиновый сироп, морс, спрайт',
+					'водка, малиновый сироп, морс, спрайт, лайм',
 					'vodka, raspberry syrup, fruit‑drink, sprite',
 				],
 				cap: 480,
@@ -279,7 +279,7 @@
 					'Mojito',
 				],
 				mix: [
-					'ром, лайм, мята, сахарный сироп',
+					'ром, лайм, мята, сахарный сироп, газировка',
 					'rum, lime, mint, sugar syrup',
 				],
 				cap: 360,
@@ -294,14 +294,14 @@
 					'Coronita',
 				],
 				mix: [
-					'апельсиновый ликёр, текила, ананасовый сок, пиво Corona',
+					'апельсиновый ликёр, текила, ананасовый сок, сахарный сироп, сок лимона, вишня, пиво Corona',
 					'orange liqueur, tequila, pineapple juice, Corona beer',
 				],
 				cap: 700,
 				cost: 22,
 				img: 'коронита.svg',
 				color: 0xe6ae56,
-				scale: 1.8,
+				scale: 1.75,
 			},
 		],
 
