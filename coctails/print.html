@@ -128,6 +128,7 @@
 
 			--color: #000;
 			--scale: 1;
+			--ratio: 1;
 
 			font-size: 14pt;
 			line-height: 13pt;
@@ -153,11 +154,11 @@
 		.cost:before {
 			content: '';
 			display: block;
-			width: 50mm;
+			width: 52mm;
 			height: 0.5mm;
 			background: var( --color );
 			position: absolute;
-			left: -49mm;
+			left: -51mm;
 		}
 
 		.container {
@@ -168,7 +169,7 @@
 		.container > * {
 			display: block;
 			position: absolute;
-			right: 5mm;
+			right: 3.5mm;
 			width: 18mm;
 			text-align: center;
 		}
@@ -202,7 +203,7 @@
 		}
 
 		.cap {
-			top: 9mm;
+			top: 8.5mm;
 		}
 
 		.mix {
@@ -226,6 +227,10 @@
 			transform: translate( -50%, -50% ) scale( var( --scale ) );
 		}
 
+		.cocktail:nth-child( 2n ) {
+			--ratio: -1;
+		}
+
 		.cocktail:nth-child( 2n ) > div {
 			position: relative;
 			left: -24.5mm;
@@ -242,13 +247,13 @@
 		}
 
 		.cocktail:nth-child( 2n ) .container {
-			padding: 0 0 0 5mm;
+			padding: 0 0 0 3.5mm;
 			text-align: left;
 		}
 
 		.cocktail:nth-child( 2n ) .cost:before {
 			left: auto;
-			right: -49mm;
+			right: -51mm;
 		}
 
 		.cocktail:nth-child( 2n ) .container > * {
