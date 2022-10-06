@@ -108,7 +108,7 @@
 					'Mussels and vongole in tom yum sauce',
 				],
 				weight: 490,
-				cost: 21.10,
+				cost: 23.10,
 			},
 
 		],
@@ -150,7 +150,7 @@
 					'Cheese plate',
 				],
 				weight: 250,
-				cost: 20.20,
+				cost: 23.00,
 			},
 
 			{
@@ -159,7 +159,7 @@
 					'Fish plate',
 				],
 				weight: 370,
-				cost: 18.70,
+				cost: 20.00,
 				img: [
 					'4765/435942045/20210504_174419.jpg',
 					'4768/435942048/20210504_174456.jpg',
@@ -177,11 +177,20 @@
 
 			{
 				name: [
+					'Сельдь с картофелем',
+					'Herring with potatoes',
+				],
+				weight: 330,
+				cost: 12.00,
+			},
+
+			{
+				name: [
 					'Карпаччо из говядины',
 					'Beef carpaccio',
 				],
 				weight: 170,
-				cost: 16.40,
+				cost: 17.00,
 				img: '2278/423921894/IMG_7889.png',
 			},
 
@@ -191,7 +200,7 @@
 					'Beef tartare with potato straws',
 				],
 				weight: 175,
-				cost: 18.10,
+				cost: 20.00,
 			},
 
 			{
@@ -207,7 +216,7 @@
 							'salmon',
 						],
 						weight: 280,
-						cost: 20.20,
+						cost: 21.00,
 					},
 
 					{
@@ -216,7 +225,7 @@
 							'tuna',
 						],
 						weight: 280,
-						cost: 20.20,
+						cost: 21.00,
 					},
 
 				],
@@ -228,7 +237,7 @@
 					'Seafood with fresh vegetables',
 				],
 				weight: 265,
-				cost: 22.60,
+				cost: 23.00,
 				img: '5709/306468429/IMG_8005.jpg',
 			},
 
@@ -277,7 +286,7 @@
 					'Meat set',
 				],
 				weight: 900,
-				cost: 42.90,
+				cost: 44.00,
 				img: [
 					'7571/463699347/IMG_2199.jpg',
 					'7570/463699346/IMG_2196.jpg',
@@ -390,6 +399,15 @@
 				],
 				weight: 40,
 				cost: 1.20,
+			},
+
+			{
+				name: [
+					'Бородинский хлеб',
+					'Borodino bread',
+				],
+				weight: 110,
+				cost: 1.50,
 			},
 
 			{
@@ -535,6 +553,19 @@
 
 			{
 				name: [
+					'Оливье с уткой',
+					'Olivier with duck',
+				],
+				weight: 200,
+				cost: 13.00,
+				img: [
+					'3342/435940622/20210504_153506.jpg',
+					'3341/435940621/20210504_153204.jpg',
+				],
+			},
+
+			{
+				name: [
 					'Салат с уткой и запечёнными овощами',
 					'Salad with duck and baked vegetables',
 				],
@@ -569,14 +600,14 @@
 
 		collection: [
 
-			{
-				name: [
-					'Салат с утиной грудкой, сливой и грушей',
-					'Salad with duck breast, plum and pear',
-				],
-				weight: 340,
-				cost: 14.80,
-			},
+			// {
+			// 	name: [
+			// 		'Салат с утиной грудкой, сливой и грушей',
+			// 		'Salad with duck breast, plum and pear',
+			// 	],
+			// 	weight: 340,
+			// 	cost: 14.80,
+			// },
 
 			// {
 			//   name: [
@@ -593,7 +624,7 @@
 					'Salad with prawns and pear',
 				],
 				weight: 310,
-				cost: 15.20,
+				cost: 16.20,
 			},
 
 			{
@@ -611,16 +642,25 @@
 
 			{
 				name: [
-					'Салат с говяжьим языком и картофелем пай',
-					'Salad with beef tongue and potato straws',
+					'Салат «Мясной»',
+					'Salad «Meat»',
 				],
-				weight: 280,
-				cost: 14.00,
-				img: [
-					'6896/593099504/20220913_145146.jpg',
-					'6898/593099506/20220913_145206.jpg',
-				],
+				weight: 300,
+				cost: 14.50,
 			},
+
+			// {
+			// 	name: [
+			// 		'Салат с говяжьим языком и картофелем пай',
+			// 		'Salad with beef tongue and potato straws',
+			// 	],
+			// 	weight: 280,
+			// 	cost: 14.00,
+			// 	img: [
+			// 		'6896/593099504/20220913_145146.jpg',
+			// 		'6898/593099506/20220913_145206.jpg',
+			// 	],
+			// },
 
 		],
 
@@ -641,7 +681,7 @@
 					'Bruschetta with roast beef',
 				],
 				weight: 200,
-				cost: 9.60,
+				cost: 10.00,
 				img: [
 					'6313/586004649/20220819_160822.jpg',
 					'6535/586004871/20220819_160827.jpg',
@@ -654,7 +694,7 @@
 					'Bruschetta with salmon',
 				],
 				weight: 200,
-				cost: 10.80,
+				cost: 12.00,
 				img: [
 					'7181/586005517/20220819_161000.jpg',
 					'7316/586005652/20220819_161038.jpg',
@@ -687,18 +727,18 @@
 				],
 			},
 
-			{
-				name: [
-					'Фишбургер с треской',
-					'Fishburger with cod',
-				],
-				weight: 330,
-				cost: 13.80,
-				img: [
-					'5763/541005443/20220429_104747.jpg',
-					'5762/541005442/20220429_104721.jpg',
-				],
-			},
+			// {
+			// 	name: [
+			// 		'Фишбургер с треской',
+			// 		'Fishburger with cod',
+			// 	],
+			// 	weight: 330,
+			// 	cost: 13.80,
+			// 	img: [
+			// 		'5763/541005443/20220429_104747.jpg',
+			// 		'5762/541005442/20220429_104721.jpg',
+			// 	],
+			// },
 
 			{
 				name: [
@@ -720,17 +760,26 @@
 				img: '1928/471189384/IMG_3989.jpg',
 			},
 
+			// {
+			// 	name: [
+			// 		'Бургер с уткой',
+			// 		'Duck burger',
+			// 	],
+			// 	weight: 260,
+			// 	cost: 13.80,
+			// 	img: [
+			// 		'7099/471030715/IMG_3797.jpg',
+			// 		'7098/471030714/IMG_3785.jpg',
+			// 	],
+			// },
+
 			{
 				name: [
-					'Бургер с уткой',
-					'Duck burger',
+					'Бургер с говяжьим языком',
+					'Burger with beef tongue',
 				],
-				weight: 260,
+				weight: 280,
 				cost: 13.80,
-				img: [
-					'7099/471030715/IMG_3797.jpg',
-					'7098/471030714/IMG_3785.jpg',
-				],
 			},
 
 			{
@@ -903,16 +952,25 @@
 
 			{
 				name: [
-					'Утиная ножка «Конфи» с бататом',
-					'Duck leg «Confit» with sweet potato',
+					'Утка с белыми грибами и печёным картофелем',
+					'Duck with porcini mushrooms and baked potatoes',
 				],
-				weight: 350,
-				cost: 26.60,
-				img: [
-					'1263/541336815/20220430_144017.jpg',
-					'1264/541336816/20220430_144039.jpg',
-				],
+				weight: 380,
+				cost: 24.50,
 			},
+
+			// {
+			// 	name: [
+			// 		'Утиная ножка «Конфи» с бататом',
+			// 		'Duck leg «Confit» with sweet potato',
+			// 	],
+			// 	weight: 350,
+			// 	cost: 26.60,
+			// 	img: [
+			// 		'1263/541336815/20220430_144017.jpg',
+			// 		'1264/541336816/20220430_144039.jpg',
+			// 	],
+			// },
 
 			{
 				name: [
@@ -920,7 +978,7 @@
 					'Rabbit leg with gratin and mushroom sauce',
 				],
 				weight: 400,
-				cost: 26.60,
+				cost: 29.90,
 				img: [
 					'6990/541334350/20220430_143710.jpg',
 					'6992/541334352/20220430_143726.jpg',
@@ -929,12 +987,21 @@
 
 			{
 				name: [
-					'Язык говяжий с пюре и квашеной капустой',
-					'Beef tongue with mashed potatoes & sauerkraut',
+					'Язык говяжий булгуром и вишнёвым барбекю',
+					'Beef tongue with bulgur and cherry barbecue',
 				],
-				weight: 350,
+				weight: 360,
 				cost: 19.90,
 			},
+
+			// {
+			// 	name: [
+			// 		'Язык говяжий с пюре и квашеной капустой',
+			// 		'Beef tongue with mashed potatoes & sauerkraut',
+			// 	],
+			// 	weight: 350,
+			// 	cost: 19.90,
+			// },
 
 			{
 				name: [
@@ -1261,6 +1328,15 @@
 				cost: 8.60,
 			},
 
+			{
+				name: [
+					'Медовик',
+					'Honey cake',
+				],
+				weight: 200,
+				cost: 8.60,
+			},
+
 			// {
 			//   name: [
 			//     'Вишнёвый сорбет',
@@ -1397,79 +1473,18 @@
 			'Tea',
 		],
 
+		weight: 600,
+
 		collection: [
 
 			{
 				name: [
-					'Чёрный',
-					'Black',
+					'Чёрный, Зелёный, Травяной, Молочный улун, Фруктовый, Красный дракон, Клубника со сливками, Мохито',
+					'Black, Green, Herbal, Milk oolong, Fruit tea, Red Dragon, Strawberries with cream, Mojito',
 				],
-				weight: 600,
 				cost: 3.80,
 			},
 
-			{
-				name: [
-					'Зелёный',
-					'Green',
-				],
-				weight: 600,
-				cost: 3.80,
-			},
-
-			{
-				name: [
-					'Травяной',
-					'Herbal',
-				],
-				weight: 600,
-				cost: 3.80,
-			},
-
-			{
-				name: [
-					'Молочный улун',
-					'Milk oolong',
-				],
-				weight: 600,
-				cost: 3.80,
-			},
-
-			{
-				name: [
-					'Фруктовый',
-					'Fruit tea',
-				],
-				weight: 600,
-				cost: 3.80,
-			},
-
-			{
-				name: [
-					'Красный дракон',
-					'Red Dragon',
-				],
-				weight: 600,
-				cost: 3.80,
-			},
-
-			{
-				name: [
-					'Масала',
-					'Masala',
-				],
-				weight: 600,
-				cost: 3.80,
-			},
-
-			{
-				name: [
-					'Мохито',
-					'Mojito',
-				],
-				weight: 600,
-				cost: 3.80,
-			},
 
 		],
 
@@ -1498,131 +1513,245 @@
 
 	},
 
-	Milkshakes: {
+	Cocktails: {
 
 		name: [
-			'Милк-шейки',
-			'Milkshakes',
+			'Коктейли',
+			'Cocktails',
 		],
 
 		collection: [
 
 			{
+
 				name: [
-					'Клубничный',
-					'Strawberry',
+					'Холодные',
+					'Cold',
+
 				],
-				weight: 310,
-				cost: 8.10,
+
+				bold: true,
+
+				collection: [
+
+					{
+						name: [
+							'Личи',
+							'Lychee',
+						],
+						weight: 250,
+						cost: 5.80,
+					},
+
+					{
+						name: [
+							'Киви-тархун',
+							'Kiwi-tarragon',
+						],
+						weight: 380,
+						cost: 5.80,
+					},
+
+					{
+						name: [
+							'Мохито',
+							'Mojito',
+						],
+						weight: 400,
+						cost: 5.80,
+					},
+
+					// {
+					//   name: [
+					//     'Дюшес',
+					//     'Duchess',
+					//   ],
+					//   weight: 380,
+					//   cost: 5.80,
+					// },
+
+					{
+						name: 'Love is...',
+						weight: 380,
+						cost: 5.80,
+					},
+
+					// {
+					// 	name: [
+					// 		'Вода с апельсином и грейпфрутом',
+					// 		'Water with orange and grapefruit',
+					// 	],
+					// 	weight: 1000,
+					// 	cost: 4.30,
+					// },
+					//
+					// {
+					// 	name: [
+					// 		'Вода с мятой и лаймом',
+					// 		'Water with mint and lime',
+					// 	],
+					// 	weight: 1000,
+					// 	cost: 4.30,
+					// },
+
+				],
+
 			},
 
 			{
+
 				name: [
-					'Шоколадный',
-					'Chocolate',
+					'Милк-шейки',
+					'Milkshakes',
 				],
-				weight: 310,
-				cost: 8.10,
+
+				bold: true,
+
+				collection: [
+
+					{
+						name: [
+							'Клубничный',
+							'Strawberry',
+						],
+						weight: 310,
+						cost: 8.10,
+					},
+
+					{
+						name: [
+							'Шоколадный',
+							'Chocolate',
+						],
+						weight: 310,
+						cost: 8.10,
+					},
+
+					{
+						name: [
+							'Сникерс',
+							'Snickers',
+						],
+						weight: 310,
+						cost: 8.10,
+					},
+
+					{
+						name: [
+							'Фисташковый',
+							'Pistachio',
+						],
+						weight: 310,
+						cost: 8.10,
+					},
+
+					// {
+					//   name: [
+					//     'Грейпфрутовый',
+					//     'Grapefruit',
+					//   ],
+					//   weight: 310,
+					//   cost: 8.10,
+					// },
+
+				],
+
 			},
 
 			{
+
 				name: [
-					'Сникерс',
-					'Snickers',
+					'Горячие',
+					'Hot',
 				],
-				weight: 310,
-				cost: 8.10,
+
+				bold: true,
+
+				collection: [
+
+					{
+						name: [
+							'Клюква с апельсином',
+							'Cranberry with orange',
+						],
+						weight: 250,
+						cost: 5.5,
+					},
+
+					{
+						name: [
+							'Облепиховый чай',
+							'Sea buckthorn tea',
+						],
+						weight: 250,
+						cost: 5.5,
+					},
+
+					{
+						name: [
+							'Мандариновый чай',
+							'Mandarin tea',
+						],
+						weight: 250,
+						cost: 5.5,
+					},
+
+					{
+						name: [
+							'Зелёный чай с киви',
+							'Green tea with kiwi',
+						],
+						weight: 250,
+						cost: 5.5,
+					},
+
+				],
+
 			},
 
 			{
+
 				name: [
-					'Фисташковый',
-					'Pistachio',
+					'Горячие с алкоголем',
+					'Hot with alcohol',
 				],
-				weight: 310,
-				cost: 8.10,
-			},
 
-			// {
-			//   name: [
-			//     'Грейпфрутовый',
-			//     'Grapefruit',
-			//   ],
-			//   weight: 310,
-			//   cost: 8.10,
-			// },
+				bold: true,
 
-		],
+				collection: [
 
-	},
+					{
+						name: [
+							'Ирландский штрудель',
+							'Irish strudel',
+						],
+						weight: 310,
+						cost: 14,
+					},
 
-	NonAlcoholicCocktails: {
+					{
+						name: [
+							'Глинтвейн',
+							'Mulled wine',
+						],
+						weight: 370,
+						cost: 14,
+					},
 
-		name: [
-			'Безалкогольные коктейли',
-			'Non-alcoholic cocktails',
-		],
+					{
+						name: 'Lillet Apple Punch',
+						weight: 250,
+						cost: 12,
+					},
 
-		collection: [
+					{
+						name: 'Lillet Strawberry Punch',
+						weight: 250,
+						cost: 12,
+					},
 
-			{
-				name: [
-					'Личи',
-					'Lychee',
 				],
-				weight: 250,
-				cost: 5.80,
-			},
 
-			{
-				name: [
-					'Киви-тархун',
-					'Kiwi-tarragon',
-				],
-				weight: 380,
-				cost: 5.80,
-			},
-
-			{
-				name: [
-					'Мохито',
-					'Mojito',
-				],
-				weight: 400,
-				cost: 5.80,
-			},
-
-			// {
-			//   name: [
-			//     'Дюшес',
-			//     'Duchess',
-			//   ],
-			//   weight: 380,
-			//   cost: 5.80,
-			// },
-
-			{
-				name: 'Love is...',
-				weight: 380,
-				cost: 5.80,
-			},
-
-			{
-				name: [
-					'Вода с апельсином и грейпфрутом',
-					'Water with orange and grapefruit',
-				],
-				weight: 1000,
-				cost: 4.30,
-			},
-
-			{
-				name: [
-					'Вода с мятой и лаймом',
-					'Water with mint and lime',
-				],
-				weight: 1000,
-				cost: 4.30,
 			},
 
 		],
@@ -1643,17 +1772,17 @@
 
 		collection: [
 
-			{
-				name: 'Dulong Moelleux Bordeaux',
-				weight: [
-					'псл',
-					's-sw',
-				],
-				cost: [
-					8.00,
-					42.80,
-				],
-			},
+			// {
+			// 	name: 'Dulong Moelleux Bordeaux',
+			// 	weight: [
+			// 		'псл',
+			// 		's-sw',
+			// 	],
+			// 	cost: [
+			// 		8.00,
+			// 		42.80,
+			// 	],
+			// },
 
 			{
 				name: 'Fantini Farnese Pinot Grigio',
@@ -1946,7 +2075,7 @@
 					'псх',
 					's-dr',
 				],
-				cost: 43.00,
+				cost: 52.00,
 			},
 
 			{
@@ -2006,7 +2135,7 @@
 					'псл',
 					's-sw',
 				],
-				cost: 48.00,
+				cost: 55.00,
 			},
 
 			{
@@ -2182,13 +2311,13 @@
 			// 	],
 			// },
 
-			{
-				name: 'Portal Fine Tawny Porto',
-				cost: [
-					10.20,
-					55.90,
-				],
-			},
+			// {
+			// 	name: 'Portal Fine Tawny Porto',
+			// 	cost: [
+			// 		10.20,
+			// 		55.90,
+			// 	],
+			// },
 
 		],
 
@@ -2248,6 +2377,14 @@
 							'3 years',
 						],
 						cost: 9.80,
+					},
+					{
+						name: 'Crested',
+						cost: 11,
+					},
+					{
+						name: 'Stout Edition',
+						cost: 11,
 					},
 				],
 			},
@@ -2548,20 +2685,12 @@
 			},
 
 			// {
-			//   name: [
-			//     'Хреновуха',
-			//     'Horseradish',
-			//   ],
-			//   cost: 4.50,
+			// 	name: [
+			// 		'Кофейная',
+			// 		'Coffee',
+			// 	],
+			// 	cost: 4.50,
 			// },
-
-			{
-				name: [
-					'Кофейная',
-					'Coffee',
-				],
-				cost: 4.50,
-			},
 
 			{
 				name: '',
@@ -2763,207 +2892,6 @@
 
 	},
 
-	Cocktails: {
-
-		name: [
-			'Коктейли',
-			'Cocktails',
-		],
-
-		collection: [
-			{
-				name: [
-					'Виски кола',
-					'Whiskey Cola',
-				],
-				cap: 260,
-				cost: 9,
-			},
-			{
-				name: [
-					'Джин-тоник',
-					'Gin and Tonic',
-				],
-				cap: 310,
-				cost: 10,
-			},
-			{
-				name: [
-					'Lemongrass Джин-тоник',
-					'Lemongrass Gin and Tonic',
-				],
-				cap: 270,
-				cost: 12,
-			},
-			{
-				name: [
-					'Белый русский',
-					'White Russian',
-				],
-				cap: 220,
-				cost: 13,
-			},
-			{
-				name: [
-					'Текила санрайз',
-					'Tequila Sunrise',
-				],
-				cap: 320,
-				cost: 11,
-			},
-			{
-				name: [
-					'Пина колада',
-					'Pina Colada',
-				],
-				cap: 380,
-				cost: 14,
-			},
-			{
-				name: [
-					'Лонг-Айленд',
-					'Long Island',
-				],
-				cap: 310,
-				cost: 16,
-			},
-			{
-				name: [
-					'Куба либре',
-					'Cuba Libre',
-				],
-				cap: 290,
-				cost: 9,
-			},
-			{
-				name: [
-					'Голубая лагуна',
-					'Blue Lagoon',
-				],
-				cap: 380,
-				cost: 13,
-			},
-			{
-				name: [
-					'Мохито',
-					'Mojito',
-				],
-				cap: 380,
-				cost: 10,
-			},
-			{
-				name: [
-					'Перо из жопы полярной совы',
-					'Feather from Polar Owl Butt',
-				],
-				cap: 320,
-				cost: 16,
-			},
-			{
-				name: [
-					'Королева пчёл',
-					'Bee Queen',
-				],
-				cap: 480,
-				cost: 12,
-			},
-			{
-				name: [
-					'Коронита',
-					'Coronita',
-				],
-				cap: 700,
-				cost: 22,
-			},
-			// {
-			//   name: [
-			//     'Красная сангрия',
-			//     'Red Sangria',
-			//   ],
-			//   cap: 480,
-			//   cost: 12,
-			// },
-			// {
-			//   name: [
-			//     'Белая сангрия',
-			//     'White Sangria',
-			//   ],
-			//   cap: 480,
-			//   cost: 10.5,
-			// },
-			{
-				name: [
-					'Слёзы ирландской проститутки',
-					'Tears of an Irish Prostitute',
-				],
-				cap: 250,
-				cost: 13,
-			},
-			{
-				name: [
-					'Голубой игнат',
-					'Blue Egnat',
-				],
-				cap: 200,
-				cost: 10,
-			},
-			{
-				name: [
-					'Малиновое искушение',
-					'Raspberry Temptation',
-				],
-				cap: 480,
-				cost: 10,
-			},
-			{
-				name: [
-					'Ирландский штрудель',
-					'Irish Strudel',
-				],
-				cap: 350,
-				cost: 14,
-			},
-			// {
-			//   name: [
-			//     'Огуречный эстрагон',
-			//     'cucumber Tarragon',
-			//   ],
-			//   cap: 350,
-			//   cost: 9,
-			// },
-			{
-				name: [
-					'Суница',
-					'Sunitsa',
-				],
-				cap: 200,
-				cost: 9,
-			},
-			{
-				name: [
-					'Выбор бармена',
-					'Bartender’s Choice',
-				],
-				cap: 200,
-				cost: 12,
-			},
-		],
-
-	},
-
-	Shot: {
-
-		name: [
-			'Шот',
-			'Shot',
-		],
-
-		cap: 50,
-
-		cost: 9.00,
-
-	},
-
 	DraftBeer: {
 
 		name: [
@@ -2973,13 +2901,13 @@
 
 		collection: [
 
-			{
-				name: 'Hoegaarden',
-				alc: 4.9,
-				den: 11.7,
-				cap: 0.5,
-				cost: 13.00,
-			},
+			// {
+			// 	name: 'Hoegaarden',
+			// 	alc: 4.9,
+			// 	den: 11.7,
+			// 	cap: 0.5,
+			// 	cost: 13.00,
+			// },
 
 			{
 				name: 'Palm',
@@ -2987,6 +2915,14 @@
 				den: 12.4,
 				cap: 0.5,
 				cost: 13.00,
+			},
+
+			{
+				name: 'Holland Crown',
+				alc: 4.8,
+				den: 14.0,
+				cap: 0.5,
+				cost: 9.00,
 			},
 
 			// {
@@ -3006,6 +2942,14 @@
 			// },
 
 			{
+				name: 'Iron Woods',
+				alc: 4.8,
+				den: 17.0,
+				cap: 0.5,
+				cost: 8.50,
+			},
+
+			{
 				name: 'Milk of Amnesia',
 				alc: 5.5,
 				den: 14.3,
@@ -3021,13 +2965,13 @@
 				cost: 8.50,
 			},
 
-			{
-				name: 'Nut Butter',
-				alc: 5.5,
-				den: 14,
-				cap: 0.5,
-				cost: 8.50,
-			},
+			// {
+			// 	name: 'Nut Butter',
+			// 	alc: 5.5,
+			// 	den: 14,
+			// 	cap: 0.5,
+			// 	cost: 8.50,
+			// },
 
 			{
 				name: 'Holiday',
@@ -3053,13 +2997,13 @@
 				cost: 7.00,
 			},
 
-			{
-				name: 'Space',
-				alc: 6.3,
-				den: 17.3,
-				cap: 0.5,
-				cost: 7.00,
-			},
+			// {
+			// 	name: 'Space',
+			// 	alc: 6.3,
+			// 	den: 17.3,
+			// 	cap: 0.5,
+			// 	cost: 7.00,
+			// },
 
 			// {
 			// 	name: 'Idol',
@@ -3069,13 +3013,13 @@
 			// 	cost: 7.00,
 			// },
 
-			{
-				name: 'Irony',
-				alc: 5.7,
-				den: 14.0,
-				cap: 0.5,
-				cost: 8.50,
-			},
+			// {
+			// 	name: 'Irony',
+			// 	alc: 5.7,
+			// 	den: 14.0,
+			// 	cap: 0.5,
+			// 	cost: 8.50,
+			// },
 
 		],
 
@@ -3131,13 +3075,13 @@
 			//   cap: 0.5,
 			//   cost: 11,
 			// },
-			{
-				name: 'Murphy’s Irish Stout',
-				alc: 4,
-				den: 9.6,
-				cap: 0.5,
-				cost: 12,
-			},
+			// {
+			// 	name: 'Murphy’s Irish Stout',
+			// 	alc: 4,
+			// 	den: 9.6,
+			// 	cap: 0.5,
+			// 	cost: 12,
+			// },
 			{
 				name: 'Guinness Draught Stout',
 				alc: 4.2,
@@ -3235,6 +3179,13 @@
 				den: 11.9,
 				cap: 0.5,
 				cost: 10,
+			},
+			{
+				name: 'Paulaner Oktoberfest Bier',
+				alc: 6,
+				den: 13.6,
+				cap: 0.5,
+				cost: 11,
 			},
 			{
 				name: 'Paulaner Münchner Hell',
