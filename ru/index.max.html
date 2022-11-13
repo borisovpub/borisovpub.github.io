@@ -483,10 +483,9 @@
 	<div class="h1" id="title">Ирландский Паб <i>в Борисове</i></div>
 	<img class="logo" src="/@/logo.svg" width="100" height="100" alt="&#127808;" />
 
-	<div id="mode" class="close">
-		<div id="close">Закрыто на неопределённый срок</div>
-<!--		<div id="close">Откроется сегодня в <time>12:00</time></div>-->
-<!--		<div id="open">Работает сегодня до <time>23:00</time></div>-->
+	<div id="mode">
+		<div id="close">Откроется сегодня в <time>12:00</time></div>
+		<div id="open">Работает сегодня до <time>23:00</time></div>
 	</div>
 
 	<nav>
@@ -620,22 +619,22 @@
 
 <script>!function( /** Window */ window ) {
 
-	// var mode = window.document.querySelector( '#mode' );
-	//
-	// ( function update() {
-	//
-	// 	var d = new Date();
-	// 	d = d.getUTCHours() * 60 + d.getUTCMinutes();
-	//
-	// 	if ( ( 12 - 3 ) * 60 <= d && d < ( 23 - 3 ) * 60 ) {
-	// 		mode.setAttribute( 'class', 'open' );
-	// 	} else {
-	// 		mode.setAttribute( 'class', 'close' );
-	// 	}
-	//
-	// 	window.setTimeout( update, 60*1e3 );
-	//
-	// } )();
+	var mode = window.document.querySelector( '#mode' );
+
+	( function update() {
+
+		var d = new Date();
+		d = d.getUTCHours() * 60 + d.getUTCMinutes();
+
+		if ( ( 12 - 3 ) * 60 <= d && d < ( 23 - 3 ) * 60 ) {
+			mode.setAttribute( 'class', 'open' );
+		} else {
+			mode.setAttribute( 'class', 'close' );
+		}
+
+		window.setTimeout( update, 60*1e3 );
+
+	} )();
 
 }( this )</script>
 
