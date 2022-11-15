@@ -433,7 +433,7 @@ footer {
 footer > section {
 	max-width: 1000px;
 	display: inline-grid;
-	grid-template-columns: minmax( 235px, 25% ) minmax( 200px, 20% ) auto;
+	grid-template-columns: minmax( 235px, 25% ) minmax( 220px, 20% ) auto;
 }
 
 
