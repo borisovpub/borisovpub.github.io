@@ -3,7 +3,7 @@
 
 <head>
 
-	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
@@ -313,16 +313,16 @@
 <body>
 
 <article class="page">
-	<div></div>
-	<div></div>
+	<div style="--ratio:0.995"></div>
+	<div style="--ratio:0.99"></div>
 	<div></div>
 	<div></div>
 </article>
 
 <article class="page">
-	<div style="--ratio: 1"></div>
-	<div style="--ratio: 0.845"></div>
-	<div style="text-align: center"></div>
+	<div style="--ratio:1"></div>
+	<div style="--ratio:0.858"></div>
+	<div style="text-align:center"></div>
 	<div></div>
 </article>
 
@@ -682,13 +682,13 @@
 	appendChild( colon[ 1 ], createSection( data.Salads, createDish ) );
 	appendChild( colon[ 1 ], createSection( data.SeasonalSalads, createDish ) );
 	appendChild( colon[ 1 ], createSection( data.BurgersSandwiches, createDish ) );
-	colon[ 1 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
+	// colon[ 1 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
 
 	appendChild( colon[ 2 ], createSection( data.HotDishes, createDish ) );
 	appendChild( colon[ 2 ], createSection( data.Garnish, createDish ) );
 	appendChild( colon[ 2 ], createSection( data.Desserts, createDish ) );
-	colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="bc.svg" style="height:31.417mm" /></div>' );
-	// colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
+	// colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="bc.svg" style="height:31.417mm" /></div>' );
+	colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
 
 	appendChild( colon[ 3 ], createSection( data.Gasing, createDish ) );
 	appendChild( colon[ 3 ], createSection( data.Coffee, createDish ) );
