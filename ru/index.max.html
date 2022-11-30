@@ -12,11 +12,12 @@
 	<link rel="alternate" hreflang="en" href="/en/" />
 	-->
 
-	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
 
+	<meta property="fb:pages" content="405114422859324" />
 	<meta property="og:type" content="restaurant.restaurant" />
 	<meta property="og:url" content="https://irish-pub.by/ru/" />
 	<meta property="og:image" content="https://irish-pub.by/@/bg.webp" />
@@ -196,6 +197,10 @@
 			border: 2px solid #fff;
 			filter: drop-shadow( 0 0 15px rgba( 0, 0, 0, 0.8 ) );
 			background: rgba( 55, 55, 55, 0.4 );
+		}
+
+		main {
+			min-height: 0;
 		}
 
 		@media ( max-width: 600px ) {
@@ -468,7 +473,14 @@
 
 			"priceRange": "$$",
 
-			"acceptsReservations": "True"
+			"hasMenu": [
+				"https://irish-pub.by/ru/menu/",
+				"https://irish-pub.by/ru/beer/",
+				"https://irish-pub.by/ru/lunch/"
+			],
+
+			"acceptsReservations": "True",
+			"smokingAllowed": "False"
 
 		}
 	</script>
