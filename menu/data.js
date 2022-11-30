@@ -41,6 +41,15 @@
 
 			{
 				name: [
+					'Картофельные крокеты с сёмгой',
+					'Salmon-and-mashed-potato croquettes',
+				],
+				weight: 250,
+				cost: 10,
+			},
+
+			{
+				name: [
 					'Шампиньоны-фри',
 					'Roasted mushrooms',
 				],
@@ -177,12 +186,21 @@
 
 			{
 				name: [
-					'Сельдь с картофелем',
-					'Herring with potatoes',
+					'Сет солений',
+					'Set of pickles',
 				],
-				weight: 330,
-				cost: 12.00,
+				weight: 650,
+				cost: 15,
 			},
+
+			// {
+			// 	name: [
+			// 		'Сельдь с картофелем',
+			// 		'Herring with potatoes',
+			// 	],
+			// 	weight: 330,
+			// 	cost: 12.00,
+			// },
 
 			{
 				name: [
@@ -446,6 +464,15 @@
 				cost: 1.70,
 			},
 
+			{
+				name: [
+					'Трюфельное масло',
+					'Truffle oil',
+				],
+				weight: 30,
+				cost: 2.00,
+			},
+
 		],
 
 	},
@@ -587,6 +614,15 @@
 				img: '5497/472184185/IMG_4020.jpg',
 			},
 
+			{
+				name: [
+					'Салат с утиной грудкой, вишней и камамбером',
+					'Salad with roast beef and grilled vegetables',
+				],
+				weight: 300,
+				cost: 15,
+			},
+
 		],
 
 	},
@@ -627,18 +663,18 @@
 				cost: 16.20,
 			},
 
-			{
-				name: [
-					'Салат с печёной свеклой и сёмгой',
-					'Salad with baked beets and salmon',
-				],
-				weight: 255,
-				cost: 14.50,
-				img: [
-					'7142/593099750/20220913_143637.jpg',
-					'7143/593099751/20220913_143759.jpg',
-				],
-			},
+			// {
+			// 	name: [
+			// 		'Салат с печёной свеклой и сёмгой',
+			// 		'Salad with baked beets and salmon',
+			// 	],
+			// 	weight: 255,
+			// 	cost: 14.50,
+			// 	img: [
+			// 		'7142/593099750/20220913_143637.jpg',
+			// 		'7143/593099751/20220913_143759.jpg',
+			// 	],
+			// },
 
 			{
 				name: [
@@ -661,6 +697,15 @@
 			// 		'6898/593099506/20220913_145206.jpg',
 			// 	],
 			// },
+
+			{
+				name: [
+					'Салат с хурмой и курицей',
+					'Salad with persimmon and chicken',
+				],
+				weight: 370,
+				cost: 13,
+			},
 
 		],
 
@@ -699,6 +744,15 @@
 					'7181/586005517/20220819_161000.jpg',
 					'7316/586005652/20220819_161038.jpg',
 				],
+			},
+
+			{
+				name: [
+					'Клаб-сэндвич с курицей',
+					'Chicken club sandwich',
+				],
+				weight: 300,
+				cost: 9.4,
 			},
 
 			{
@@ -805,15 +859,15 @@
 				img: '441/593093049/20220913_163340.jpg',
 			},
 
-			{
-				name: [
-					'Бургер с креветками и камамбером',
-					'Burger with prawns and Camembert',
-				],
-				weight: 250,
-				cost: 16.00,
-				img: '1267/593093875/20220913_143553.jpg',
-			},
+			// {
+			// 	name: [
+			// 		'Бургер с креветками и камамбером',
+			// 		'Burger with prawns and Camembert',
+			// 	],
+			// 	weight: 250,
+			// 	cost: 16.00,
+			// 	img: '1267/593093875/20220913_143553.jpg',
+			// },
 
 			{
 				name: [
@@ -881,6 +935,37 @@
 
 			{
 				name: [
+					'Бургер «Jack Daniel’s»',
+					'Burger «Jack Daniel’s»',
+				],
+				collection: [
+					{
+						name: [
+							'с курицей',
+							'with chicken',
+						],
+						weight: 350,
+						cost: 10.80,
+					}, {
+						name: [
+							'с говядиной',
+							'with beef',
+						],
+						weight: 350,
+						cost: 13.30,
+					}, {
+						name: [
+							'со свининой и говядиной',
+							'with pork and beef',
+						],
+						weight: 350,
+						cost: 12.00,
+					},
+				],
+			},
+
+			{
+				name: [
 					'Бургер с солёной карамелью и вишней',
 					'Burger with salted caramel and cherry',
 				],
@@ -911,6 +996,37 @@
 				],
 			},
 
+			{
+				name: [
+					'Дранбургер',
+					'Dranburger',
+				],
+				collection: [
+					{
+						name: [
+							'с курицей',
+							'with chicken',
+						],
+						weight: 290,
+						cost: 9.80,
+					}, {
+						name: [
+							'с говядиной',
+							'with beef',
+						],
+						weight: 290,
+						cost: 12.30,
+					}, {
+						name: [
+							'со свининой и говядиной',
+							'with pork and beef',
+						],
+						weight: 290,
+						cost: 11.00,
+					},
+				],
+			},
+
 		],
 
 	},
@@ -937,18 +1053,18 @@
 				],
 			},
 
-			{
-				name: [
-					'Утиная грудка «Магре» в апельсиновом соусе',
-					'Duck breast «Magre» in orange sauce',
-				],
-				weight: 300,
-				cost: 24.50,
-				img: [
-					'2295/541337847/20220429_151804.jpg',
-					'2291/541337843/20220429_151732.jpg',
-				],
-			},
+			// {
+			// 	name: [
+			// 		'Утиная грудка «Магре» в апельсиновом соусе',
+			// 		'Duck breast «Magre» in orange sauce',
+			// 	],
+			// 	weight: 300,
+			// 	cost: 24.50,
+			// 	img: [
+			// 		'2295/541337847/20220429_151804.jpg',
+			// 		'2291/541337843/20220429_151732.jpg',
+			// 	],
+			// },
 
 			{
 				name: [
@@ -1030,6 +1146,15 @@
 
 			{
 				name: [
+					'Буженина с квашеной капустой и фасолью',
+					'Boiled pork with sauerkraut and beans',
+				],
+				weight: 480,
+				cost: 18.00,
+			},
+
+			{
+				name: [
 					'Свиные рёбра',
 					'Pork ribs',
 				],
@@ -1083,14 +1208,14 @@
 				],
 			},
 
-			// {
-			//   name: [
-			//     'Пирог с курицей',
-			//     'Chicken pie',
-			//   ],
-			//   weight: 500,
-			//   cost: 17.00,
-			// },
+			{
+			  name: [
+			    'Пирог с курицей',
+			    'Chicken pie',
+			  ],
+			  weight: 500,
+			  cost: 17.00,
+			},
 
 			{
 				name: [
@@ -1131,6 +1256,31 @@
 						],
 						weight: 280,
 						cost: 6.50,
+					},
+				],
+			},
+
+			{
+				name: [
+					'Колбаски с картофелем и квашенной капустой',
+					'Sausages with potatoes and sauerkraut',
+				],
+				collection: [
+					{
+						name: [
+							'куриные',
+							'chicken',
+						],
+						weight: 560,
+						cost: 20,
+					},
+					{
+						name: [
+							'свино-говяжьи',
+							'pork and beef',
+						],
+						weight: 560,
+						cost: 23,
 					},
 				],
 			},
@@ -1301,23 +1451,23 @@
 			// 	cost: 8.60,
 			// },
 
-			// {
-			//   name: [
-			//     'Чизкейк «Нью-Йорк»',
-			//     'New York Cheesecake',
-			//   ],
-			//   weight: 150,
-			//   cost: 8.60,
-			// },
-
 			{
-				name: [
-					'Тыквенный чизкейк',
-					'Pumpkin cheesecake',
-				],
-				weight: 150,
-				cost: 8.60,
+			  name: [
+			    'Чизкейк «Нью-Йорк»',
+			    'New York Cheesecake',
+			  ],
+			  weight: 150,
+			  cost: 8.60,
 			},
+
+			// {
+			// 	name: [
+			// 		'Тыквенный чизкейк',
+			// 		'Pumpkin cheesecake',
+			// 	],
+			// 	weight: 150,
+			// 	cost: 8.60,
+			// },
 
 			{
 				name: [
@@ -2078,17 +2228,17 @@
 				cost: 52.00,
 			},
 
-			{
-				name: 'Eagle Creek Zinfandel',
-				weight: [
-					'псх',
-					's-dr',
-				],
-				cost: [
-					8.90,
-					46.70,
-				],
-			},
+			// {
+			// 	name: 'Eagle Creek Zinfandel',
+			// 	weight: [
+			// 		'псх',
+			// 		's-dr',
+			// 	],
+			// 	cost: [
+			// 		8.90,
+			// 		46.70,
+			// 	],
+			// },
 
 			// {
 			//   name: 'Cono Sur Tocornal Merlot',
@@ -2546,15 +2696,15 @@
 				],
 			},
 
-			{
-				name: 'Grant’s',
-				collection: [
-					{
-						name: 'Tripple Wood',
-						cost: 7.50,
-					},
-				],
-			},
+			// {
+			// 	name: 'Grant’s',
+			// 	collection: [
+			// 		{
+			// 			name: 'Tripple Wood',
+			// 			cost: 7.50,
+			// 		},
+			// 	],
+			// },
 
 			// {
 			// 	name: 'Laphroaig',
@@ -2805,10 +2955,10 @@
 
 		collection: [
 
-			{
-				name: 'Jägermeister',
-				cost: 10.00,
-			},
+			// {
+			// 	name: 'Jägermeister',
+			// 	cost: 10.00,
+			// },
 
 			{
 				name: 'Becherovka',
@@ -2909,13 +3059,13 @@
 			// 	cost: 13.00,
 			// },
 
-			{
-				name: 'Palm',
-				alc: 5.4,
-				den: 12.4,
-				cap: 0.5,
-				cost: 13.00,
-			},
+			// {
+			// 	name: 'Palm',
+			// 	alc: 5.4,
+			// 	den: 12.4,
+			// 	cap: 0.5,
+			// 	cost: 13.00,
+			// },
 
 			{
 				name: 'Holland Crown',
@@ -2923,6 +3073,22 @@
 				den: 14.0,
 				cap: 0.5,
 				cost: 9.00,
+			},
+
+			{
+				name: 'Brûler Blonde',
+				alc: 6.8,
+				den: 14.7,
+				cap: 0.5,
+				cost: 13.00,
+			},
+
+			{
+				name: 'Brûler Brune',
+				alc: 6.8,
+				den: 15.5,
+				cap: 0.5,
+				cost: 13.00,
 			},
 
 			// {
@@ -2981,6 +3147,14 @@
 				cost: 7.00,
 			},
 
+			{
+			  name: 'Breakfast',
+			  alc: 5.9,
+			  den: 15.7,
+			  cap: 0.5,
+			  cost: 7.00,
+			},
+
 			// {
 			//   name: 'Amber Ray',
 			//   alc: 5.2,
@@ -2989,13 +3163,13 @@
 			//   cost: 7.00,
 			// },
 
-			{
-				name: 'Crystal',
-				alc: 4.9,
-				den: 12,
-				cap: 0.5,
-				cost: 7.00,
-			},
+			// {
+			// 	name: 'Crystal',
+			// 	alc: 4.9,
+			// 	den: 12,
+			// 	cap: 0.5,
+			// 	cost: 7.00,
+			// },
 
 			// {
 			// 	name: 'Space',
@@ -3054,13 +3228,13 @@
 				cap: 0.355,
 				cost: 8,
 			},
-			{
-				name: 'New Yorker',
-				alc: 4.5,
-				den: 10.6,
-				cap: 0.33,
-				cost: 8,
-			},
+			// {
+			// 	name: 'New Yorker',
+			// 	alc: 4.5,
+			// 	den: 10.6,
+			// 	cap: 0.33,
+			// 	cost: 8,
+			// },
 			{
 				name: 'Estrella',
 				alc: 4.6,
@@ -3082,13 +3256,13 @@
 			// 	cap: 0.5,
 			// 	cost: 12,
 			// },
-			{
-				name: 'Guinness Draught Stout',
-				alc: 4.2,
-				den: 9.9,
-				cap: 0.33,
-				cost: 9,
-			},
+			// {
+			// 	name: 'Guinness Draught Stout',
+			// 	alc: 4.2,
+			// 	den: 9.9,
+			// 	cap: 0.33,
+			// 	cost: 9,
+			// },
 			// {
 			// 	name: 'Guinness West Indies Porter',
 			// 	alc: 6.0,
@@ -3152,13 +3326,13 @@
 				cap: 0.44,
 				cost: 13,
 			},
-			{
-				name: 'Aecht Schlenkerla Märzen',
-				alc: 5.1,
-				den: 13.2,
-				cap: 0.5,
-				cost: 12.50,
-			},
+			// {
+			// 	name: 'Aecht Schlenkerla Märzen',
+			// 	alc: 5.1,
+			// 	den: 13.2,
+			// 	cap: 0.5,
+			// 	cost: 12.50,
+			// },
 			{
 				name: 'Hop Adventure Talus IPA',
 				alc: 5,
@@ -3180,13 +3354,13 @@
 				cap: 0.5,
 				cost: 10,
 			},
-			{
-				name: 'Paulaner Oktoberfest Bier',
-				alc: 6,
-				den: 13.6,
-				cap: 0.5,
-				cost: 11,
-			},
+			// {
+			// 	name: 'Paulaner Oktoberfest Bier',
+			// 	alc: 6,
+			// 	den: 13.6,
+			// 	cap: 0.5,
+			// 	cost: 11,
+			// },
 			{
 				name: 'Paulaner Münchner Hell',
 				alc: 4.9,
@@ -3236,20 +3410,20 @@
 			// 	cap: 0.5,
 			// 	cost: 12,
 			// },
-			{
-				name: 'Hobgoblin Gold',
-				alc: 4.2,
-				den: 11.25,
-				cap: 0.5,
-				cost: 12,
-			},
-			{
-				name: 'Hobgoblin IPA',
-				alc: 5.3,
-				den: 13.25,
-				cap: 0.5,
-				cost: 12,
-			},
+			// {
+			// 	name: 'Hobgoblin Gold',
+			// 	alc: 4.2,
+			// 	den: 11.25,
+			// 	cap: 0.5,
+			// 	cost: 12,
+			// },
+			// {
+			// 	name: 'Hobgoblin IPA',
+			// 	alc: 5.3,
+			// 	den: 13.25,
+			// 	cap: 0.5,
+			// 	cost: 12,
+			// },
 			// {
 			//   name: 'King Goblin',
 			//   alc: 6.6,
@@ -3285,13 +3459,13 @@
 			// 	cap: 0.33,
 			// 	cost: 8.5,
 			// },
-			{
-				name: 'XII Flemish Red Ale',
-				alc: 6,
-				den: 13.5,
-				cap: 0.33,
-				cost: 8.5,
-			},
+			// {
+			// 	name: 'XII Flemish Red Ale',
+			// 	alc: 6,
+			// 	den: 13.5,
+			// 	cap: 0.33,
+			// 	cost: 8.5,
+			// },
 			// {
 			//   name: 'Estrella',
 			//   alc: 4.6,
@@ -3326,9 +3500,15 @@
 			},
 
 			{
+				name: 'Clausthaler Dry Hopped',
+				cap: 0.33,
+				cost: 8.00,
+			},
+
+			{
 				name: 'Paulaner Alkoholfrei',
 				cap: 0.5,
-				cost: 12.00,
+				cost: 11.00,
 			},
 
 		],
