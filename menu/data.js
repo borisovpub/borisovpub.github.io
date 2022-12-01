@@ -42,7 +42,7 @@
 			{
 				name: [
 					'Картофельные крокеты с сёмгой',
-					'Salmon-and-mashed-potato croquettes',
+					'Potato salmon croquettes',
 				],
 				weight: 250,
 				cost: 10,
@@ -617,10 +617,14 @@
 			{
 				name: [
 					'Салат с утиной грудкой, вишней и камамбером',
-					'Salad with roast beef and grilled vegetables',
+					'Salad with duck breast, cherries and camembert',
 				],
 				weight: 300,
 				cost: 15,
+				img: [
+					'1141/622953589/20221128_131634.jpg',
+					'1143/622953591/20221128_131706.jpg',
+				],
 			},
 
 		],
@@ -705,6 +709,10 @@
 				],
 				weight: 370,
 				cost: 13,
+				img: [
+					'5811/622950067/20221128_131526.jpg',
+					'5815/622950071/20221128_131556.jpg',
+				],
 			},
 
 		],
@@ -753,6 +761,7 @@
 				],
 				weight: 300,
 				cost: 9.4,
+				img: '7475/622943539/20221128_145152.jpg',
 			},
 
 			{
@@ -938,6 +947,7 @@
 					'Бургер «Jack Daniel’s»',
 					'Burger «Jack Daniel’s»',
 				],
+				img: '3064/622939128/20221128_143710.jpg',
 				collection: [
 					{
 						name: [
@@ -1001,6 +1011,7 @@
 					'Дранбургер',
 					'Dranburger',
 				],
+				img: '6013/622942077/20221128_144439.jpg',
 				collection: [
 					{
 						name: [
@@ -1042,7 +1053,7 @@
 
 			{
 				name: [
-					'Дорадо с запечёными овощами',
+					'Дорадо с запечёнными овощами',
 					'Dorado with baked vegetables',
 				],
 				weight: 500,
@@ -1103,8 +1114,8 @@
 
 			{
 				name: [
-					'Язык говяжий булгуром и вишнёвым барбекю',
-					'Beef tongue with bulgur and cherry barbecue',
+					'Язык говяжий с булгуром и вишнёвым барбекю',
+					'Beef tongue with bulgur and cherry BBQ',
 				],
 				weight: 360,
 				cost: 19.90,
