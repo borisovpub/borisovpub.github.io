@@ -365,7 +365,7 @@
 			( isArray( data.img ) ? data.img : [ data.img ] )
 				.forEach( ( src ) => images.push( {
 					src: src,
-					name: ( parent ? getName( parent.name ) + ' ' : '' ) + getName( data.name ),
+					name: parent ? getName( parent.name ) + ' (' + getName( data.name ) + ')' : getName( data.name ),
 				} ) )
 			;
 			name.dataset.img = '';
