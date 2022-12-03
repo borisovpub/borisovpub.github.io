@@ -26,7 +26,6 @@
 
 	gtag( 'js', new Date() );
 	gtag( 'config', gid );
-	gtag( 'set', { 'user_id': 'USER_ID' } );
 
 	ym( 57548482, 'init', {
 		clickmap: true,
@@ -35,8 +34,8 @@
 		webvisor: true
 	} );
 
-	// createScript( '//www.googletagmanager.com/gtag/js?id=' + gid );
-	// createScript( '//mc.yandex.ru/metrika/tag.js' );
+	createScript( '//www.googletagmanager.com/gtag/js?id=' + gid );
+	createScript( '//mc.yandex.ru/metrika/tag.js' );
 
 	// подменяем историю
 	if ( location.search && history ) history.replaceState( null, document.title, location.pathname );
