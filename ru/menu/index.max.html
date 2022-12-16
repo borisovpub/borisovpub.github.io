@@ -29,6 +29,11 @@
 
 	<style>
 
+		body {
+			--x: 0;
+			--y: 0;
+		}
+
 		main>div {
 			text-align: center;
 		}
@@ -50,14 +55,6 @@
 			grid-template-columns: auto min-content;
 			grid-gap: 0 20px;
 			margin: 5px 0;
-		}
-
-		.dish .name[data-img] {
-			cursor: pointer;
-		}
-
-		.dish .name[data-img]:hover {
-			opacity: 0.7;
 		}
 
 		.dish > ul {
@@ -88,94 +85,22 @@
 		}
 
 		.gallery {
-			width: 100%;
-			height: 100%;
+			display: none;
+			width: 110px;
+			height: 110px;
 			position: fixed;
-			left: 0;
-			top: 0;
-			background: rgba( 0, 0, 0, 0.5 );
-		}
-
-		.gallery > * {
-			position: absolute;
-		}
-
-		.gallery .close {
-			right: 20px;
-			top: 20px;
-			cursor: pointer;
-		}
-
-		.gallery .next,
-		.gallery .prev {
-			left: 20px;
-			top: 50%;
-			margin-top: -40px;
-			cursor: pointer;
-		}
-
-		.gallery .next {
-			left: auto;
-			right: 20px;
-		}
-
-		.gallery .img {
-			left: 50%;
-			top: 50%;
-			width: 100%;
-			max-width: 500px;
-			transform: translate( -50%, -50% );
-			text-align: center;
-			color: #fff;
-			background: rgba( 0, 0, 0, 0.5 );
-			padding: 0 10px 10px 10px;
-		}
-
-		.gallery img {
-			width: 100%;
-			height: auto;
-		}
-
-
-		.gallery img,
-		.gallery .img {
+			left: var( --x );
+			top: var( --y );
+			background: #000;
+			margin: 5px;
 			border-radius: 10px;
-		}
-
-		.gallery .name {
-			padding: 10px;
+			border: 5px solid #000;
 		}
 
 		@media ( max-width: 1000px ) {
 
 			.section {
 				max-width: 700px;
-			}
-
-			.gallery {
-				background: rgba( 0, 0, 0, 0.9 );
-			}
-
-		}
-
-		@media ( max-width: 600px ) {
-
-			.gallery .prev {
-				left: -20px;
-			}
-
-			.gallery .next {
-				right: -20px;
-			}
-
-		}
-
-		@media ( max-width: 520px ) {
-
-			.gallery img,
-			.gallery .img {
-				border-radius: 0;
-				padding-bottom: 0;
 			}
 
 		}
@@ -191,22 +116,14 @@
 
 	<template id="dish">
 		<li class="dish">
-			<div><span class="name"></span>&nbsp;&nbsp;<span class="weight"></span></div>
+			<div><a class="name"></a>&nbsp;&nbsp;<span class="weight"></span></div>
 			<div class="cost"></div>
 			<ul></ul>
 		</li>
 	</template>
 
 	<template id="gallery">
-		<div class="gallery">
-			<div class="img">
-				<div class="name h1"></div>
-				<img width="480" height="480" />
-			</div>
-			<div class="close"><svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="17" height="17" viewBox="0 0 100 100"><path fill="#fff" d="M58.468 50l38.374-38.373a2.117 2.117 0 000-2.994l-5.473-5.476a2.123 2.123 0 00-2.995 0L50 41.531 11.626 3.157c-.795-.795-2.202-.794-2.995 0L3.158 8.633a2.117 2.117 0 000 2.994L41.532 50 3.158 88.373a2.117 2.117 0 000 2.994l5.473 5.476a2.123 2.123 0 002.995 0L50 58.469l38.374 38.374a2.122 2.122 0 002.995 0l5.473-5.476a2.117 2.117 0 000-2.994L58.468 50z"/></svg></div>
-			<div class="prev"><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 26.67 26.67"><path fill-opacity="0.3" d="M13.33 0c-7.36,0 -13.33,5.97 -13.33,13.33 0,7.37 5.97,13.34 13.33,13.34 7.37,0 13.34,-5.97 13.34,-13.34 0,-7.36 -5.97,-13.33 -13.34,-13.33z"/><polygon fill="#fff" points="15.35,20.88 16.43,20 10.92,13.26 16.43,6.52 15.35,5.64 9.12,13.26 "/></svg></div>
-			<div class="next"><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 80 80"><path fill-opacity="0.3" d="M40 0c22.09,0 40,17.91 40,40 0,22.09 -17.91,40 -40,40 -22.09,0 -40,-17.91 -40,-40 0,-22.09 17.91,-40 40,-40z"/><polygon fill="#fff" points="33.94,62.65 30.71,60.01 47.25,39.79 30.71,19.57 33.94,16.93 52.64,39.79 "/></svg></div>
-		</div>
+		<img class="gallery" width="100" height="100" />
 	</template>
 
 	<script type="application/ld+json">
@@ -310,8 +227,6 @@
 
 	data = window.eval( data );
 
-	var images = [];
-
 	/** @noinline */
 	var querySelector = ( node, selector ) => node.querySelector( selector );
 	/** @noinline */
@@ -322,7 +237,6 @@
 	var addEventListener = ( node, type, listener ) => node.addEventListener( type, listener );
 
 	var document =	window.document;
-	var history =	window.history;
 
 	var isArray =	window.Array.isArray;
 	var body =		document.body;
@@ -358,21 +272,20 @@
 		var ul = querySelector( result, 'ul' );
 		var name = querySelector( result, '.name' );
 
+		var alias = data.alias || ( parent && parent.alias );
+
 		name.textContent = getName( data.name );
 
+		if ( alias ) {
+			name.setAttribute( 'href', '//delivery.irish-pub.by/product/' + alias );
+		}
+
 		if ( data.img ) {
-			var index = images.length;
-			( isArray( data.img ) ? data.img : [ data.img ] )
-				.forEach( ( src ) => images.push( {
-					src: src,
-					name: parent ? getName( parent.name ) + ' (' + getName( data.name ) + ')' : getName( data.name ),
-				} ) )
-			;
-			name.dataset.img = '';
-			addEventListener( name, 'click', () => {
-				history.pushState( {}, document.title );
-				showGallery( index );
-			} );
+			addEventListener( name, 'mouseenter', () => showGallery( name, data.img ) );
+			addEventListener( name, 'mouseleave', hideGallery );
+			addEventListener( name, 'touchstart', () => showGallery( name, data.img ) );
+			addEventListener( name, 'touchend', hideGallery );
+
 		}
 
 		if ( data.weight ) {
@@ -398,7 +311,7 @@
 
 	};
 
-	var imgTemplate = querySelector( document, '#gallery' );
+	var galleryTemplate = querySelector( document, '#gallery' );
 
 	var gallery;
 
@@ -409,33 +322,22 @@
 		}
 	}
 
-	var showGallery = ( index = 0 ) => {
-
-		var img = images[ index ];
+	var showGallery = ( node, src ) => {
 
 		hideGallery();
 
-		gallery = querySelector( cloneNode( imgTemplate ), '.gallery' );
+		gallery = querySelector( cloneNode( galleryTemplate ), '.gallery' );
 
-		addEventListener( querySelector( gallery, '.close' ), 'click', hideGallery );
-
-		addEventListener( querySelector( gallery, '.prev' ), 'click', () => {
-			hideGallery();
-			if ( --index < 0 ) index = images.length - 1;
-			showGallery( index );
-		} );
-
-		addEventListener( querySelector( gallery, '.next' ), 'click', () => {
-			hideGallery();
-			if ( ++index >= images.length ) index = 0
-			showGallery( index );
-		} );
-
-		querySelector( gallery, '.name' ).textContent = img.name;
-		querySelector( gallery, 'img' ).setAttribute( 'src', 'https://static.insales-cdn.com/images/products/1/' + img.src.replace( /[^/]+$/, 'large_$&' ) );
+		gallery.setAttribute( 'src', '//static.insales-cdn.com/images/products/1/' + src.replace( /[^/]+$/, 'thumb_$&' ) );
+		addEventListener( gallery, 'load', ( event ) => event.target.style.display = 'block' )
 
 		appendChild( body, gallery );
 
+	};
+
+	var setGalleryCord = ( rect ) => {
+		body.style.setProperty( '--x', ( rect.clientX + 5 ) + 'px' );
+		body.style.setProperty( '--y', ( rect.clientY - 125 ) + 'px' );
 	};
 
 	var div = querySelector( document, 'main>div' );
@@ -453,9 +355,9 @@
 	appendChild( div, createSection( data.Garnish ) );
 	appendChild( div, createSection( data.Desserts ) );
 
-	addEventListener( window, 'popstate', hideGallery );
-
-	addEventListener( window, 'keyup', ( event ) => ( event.key == 'Escape' ) && hideGallery() );
+	addEventListener( window, 'mousemove', setGalleryCord );
+	addEventListener( window, 'touchstart', ( event ) => setGalleryCord( event.touches[ 0 ] ) );
+	addEventListener( window, 'touchmove', ( event ) => setGalleryCord( event.touches[ 0 ] ) );
 
 } ) )( this )</script>
 

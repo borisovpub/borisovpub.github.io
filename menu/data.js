@@ -18,6 +18,7 @@
 				weight: 210,
 				cost: 6.20,
 				img: '5260/306467980/IMG_7940.jpg',
+				alias: 'croutons-with-garlic',
 			},
 
 			{
@@ -28,6 +29,7 @@
 				weight: 330,
 				cost: 11.50,
 				img: '2723/476408483/IMG_4329.JPG',
+				alias: 'chicken-fillet-with-french-fries'
 			},
 
 			{
@@ -37,10 +39,8 @@
 				],
 				weight: 250,
 				cost: 12.90,
-				img: [
-					'6778/623245946/20221202_125228.jpg',
-					'6776/623245944/20221202_125219.jpg',
-				],
+				img: '6778/623245946/20221202_125228.jpg',
+				alias: 'cheese-balls',
 			},
 
 			{
@@ -50,10 +50,8 @@
 				],
 				weight: 250,
 				cost: 10,
-				img: [
-					'1783/623249143/20221202_125355.jpg',
-					'1786/623249146/20221202_125404.jpg',
-				],
+				img: '1783/623249143/20221202_125355.jpg',
+				alias: 'potato-salmon-croquettes',
 			},
 
 			{
@@ -64,6 +62,7 @@
 				weight: 250,
 				cost: 9.80,
 				img: '5654/306468374/IMG_7979.jpg',
+				alias: 'roasted-mushrooms',
 			},
 
 			{
@@ -73,10 +72,8 @@
 				],
 				weight: 190,
 				cost: 23.10,
-				img: [
-					'7474/623246642/20221202_125242.jpg',
-					'7473/623246641/20221202_125246.jpg',
-				],
+				img: '7473/623246641/20221202_125246.jpg',
+				alias: 'fried-prawns-in-batter',
 			},
 
 			{
@@ -86,10 +83,8 @@
 				],
 				weight: 70,
 				cost: 8.10,
-				img: [
-					'2025/623249385/20221202_125419.jpg',
-					'2026/623249386/20221202_125424.jpg',
-				],
+				img: '2026/623249386/20221202_125424.jpg',
+				alias: 'roasted-almonds',
 			},
 
 			{
@@ -100,6 +95,7 @@
 				weight: 225,
 				cost: 9.20,
 				img: '5316/306468036/IMG_7948.jpg',
+				alias: 'onion-rings',
 			},
 
 			{
@@ -107,6 +103,7 @@
 					'Куриные крылья',
 					'Chicken wings',
 				],
+				alias: 'chicken-wings',
 				collection: [
 					{
 						name: [
@@ -136,6 +133,7 @@
 				],
 				weight: 490,
 				cost: 23.10,
+				alias: 'mussels-and-vongole-in-tom-yum-sauce',
 			},
 
 		],
@@ -159,6 +157,7 @@
 				weight: 260,
 				cost: 13.50,
 				img: '7911/476421863/IMG_4404.jpg',
+				alias: 'homemade-salo-on-borodino-bread',
 			},
 
 			{
@@ -169,6 +168,7 @@
 				weight: 280,
 				cost: 18.70,
 				img: '1857/476407617/IMG_4373.jpg',
+				alias: 'meet-plate',
 			},
 
 			{
@@ -178,10 +178,8 @@
 				],
 				weight: 250,
 				cost: 23.00,
-				img: [
-					'7339/623254699/20221202_131126.jpg',
-					'7340/623254700/20221202_131135.jpg',
-				],
+				img: '7340/623254700/20221202_131135.jpg',
+				alias: 'cheese-plate',
 			},
 
 			{
@@ -191,10 +189,8 @@
 				],
 				weight: 370,
 				cost: 20.00,
-				img: [
-					'2227/623593651/20221203_124753.jpg',
-					'2230/623593654/20221203_124815.jpg',
-				],
+				img: '2230/623593654/20221203_124815.jpg',
+				alias: 'fish-plate',
 			},
 
 			{
@@ -205,6 +201,7 @@
 				weight: 300,
 				cost: 11.30,
 				img: '65/623255617/20221202_131148.jpg',
+				alias: 'vegetable-plate',
 			},
 
 			{
@@ -214,10 +211,8 @@
 				],
 				weight: 650,
 				cost: 15,
-				img: [
-					'1404/623256956/20221202_131214.jpg',
-					'1407/623256959/20221202_131220.jpg',
-				],
+				img: '1407/623256959/20221202_131220.jpg',
+				alias: 'set-of-pickles',
 			},
 
 			// {
@@ -236,10 +231,8 @@
 				],
 				weight: 170,
 				cost: 17.00,
-				img: [
-					'2647/623594071/20221203_124834.jpg',
-					'2649/623594073/20221203_124900.jpg',
-				],
+				img: '2647/623594071/20221203_124834.jpg',
+				alias: 'beef-carpaccio',
 			},
 
 			{
@@ -250,6 +243,7 @@
 				weight: 175,
 				cost: 20.00,
 				img: '6924/623262476/photo_2022-12-02_15-06-20.jpg',
+				alias: 'beef-tartare-with-potato-straws',
 			},
 
 			{
@@ -257,6 +251,7 @@
 					'Тартар на бриошь',
 					'Tartare on Brioche',
 				],
+				alias: 'tartare-on-brioche',
 				collection: [
 
 					{
@@ -290,6 +285,7 @@
 				weight: 265,
 				cost: 23.00,
 				img: '5709/306468429/IMG_8005.jpg',
+				alias: 'seafood-with-fresh-vegetables',
 			},
 
 		],
@@ -312,10 +308,8 @@
 				],
 				weight: 790,
 				cost: 28.50,
-				img: [
-					'7800/423960184/IMG_7791.jpg',
-					'7796/423960180/IMG_7783.jpg',
-				],
+				img: '7800/423960184/IMG_7791.jpg',
+				alias: 'beer-set',
 			},
 
 			{
@@ -325,10 +319,8 @@
 				],
 				weight: 1000,
 				cost: 30.20,
-				img: [
-					'4739/463516291/IMG_2187.jpg',
-					'4740/463516292/IMG_2189.jpg',
-				],
+				img: '4739/463516291/IMG_2187.jpg',
+				alias: 'chicken-set',
 			},
 
 			{
@@ -338,10 +330,8 @@
 				],
 				weight: 900,
 				cost: 44.00,
-				img: [
-					'7571/463699347/IMG_2199.jpg',
-					'7570/463699346/IMG_2196.jpg',
-				],
+				img: '7571/463699347/IMG_2199.jpg',
+				alias: 'meat-set',
 			},
 
 			{
@@ -351,11 +341,8 @@
 				],
 				weight: 800,
 				cost: 57.80,
-				img: [
-					'5724/463697500/IMG_2518.jpg',
-					'5722/463697498/IMG_2510.jpg',
-					'5725/463697501/IMG_2521.jpg',
-				],
+				img: '5724/463697500/IMG_2518.jpg',
+				alias: 'sea-set',
 			},
 
 		],
@@ -527,6 +514,7 @@
 				weight: 250,
 				cost: 6.80,
 				img: '3993/306466713/IMG_7648.jpg',
+				alias: 'solyanka',
 			},
 
 			// {
@@ -546,6 +534,7 @@
 				weight: 250,
 				cost: 5.00,
 				img: '4019/306466739/IMG_7621.jpg',
+				alias: 'mushroom-soup',
 			},
 
 			{
@@ -576,10 +565,8 @@
 				],
 				weight: 250,
 				cost: 11.80,
-				img: [
-					'1156/551576708/20220527_120542.jpg',
-					'1162/551576714/20220527_120617.jpg',
-				],
+				img: '1162/551576714/20220527_120617.jpg',
+				alias: 'greek-salad',
 			},
 
 			{
@@ -587,6 +574,7 @@
 					'Салат «Цезарь»',
 					'Caesar salad',
 				],
+				alias: 'caesar-salad',
 				collection: [
 					{
 						name: [
@@ -595,10 +583,7 @@
 						],
 						weight: 250,
 						cost: 13.10,
-						img: [
-							'7691/472186379/IMG_4139.jpg',
-							'7694/472186382/IMG_4141.jpg',
-						],
+						img: '7694/472186382/IMG_4141.jpg',
 					},
 					{
 						name: [
@@ -607,10 +592,7 @@
 						],
 						weight: 250,
 						cost: 15.20,
-						img: [
-							'3959/623595383/20221203_130546.jpg',
-							'3960/623595384/20221203_130558.jpg',
-						],
+						img: '3960/623595384/20221203_130558.jpg',
 					},
 				],
 			},
@@ -622,10 +604,8 @@
 				],
 				weight: 200,
 				cost: 13.00,
-				img: [
-					'4559/623595983/20221203_130747.jpg',
-					'4560/623595984/20221203_130814.jpg',
-				],
+				img: '4560/623595984/20221203_130814.jpg',
+				alias: 'olivier-with-duck',
 			},
 
 			{
@@ -635,10 +615,8 @@
 				],
 				weight: 220,
 				cost: 14.40,
-				img: [
-					'3420/472182108/20210610_161759.jpg',
-					'3421/472182109/IMG_4050.jpg',
-				],
+				img: '3421/472182109/IMG_4050.jpg',
+				alias: 'salad-with-duck-and-baked-vegetables',
 			},
 
 			{
@@ -649,6 +627,7 @@
 				weight: 290,
 				cost: 14.40,
 				img: '5497/472184185/IMG_4020.jpg',
+				alias: 'salad-with-roast-beef-and-grilled-vegetables',
 			},
 
 			{
@@ -658,10 +637,8 @@
 				],
 				weight: 300,
 				cost: 15,
-				img: [
-					'1141/622953589/20221128_131634.jpg',
-					'1143/622953591/20221128_131706.jpg',
-				],
+				img: '1143/622953591/20221128_131706.jpg',
+				alias: 'salad-with-duck-breast-cherries-and-camembert',
 			},
 
 		],
@@ -702,10 +679,8 @@
 				],
 				weight: 310,
 				cost: 16.20,
-				img: [
-					'8128/623271872/photo_2022-12-02_15-19-24.jpg',
-					'8129/623271873/photo_2022-12-02_15-19-50.jpg',
-				],
+				img: '8129/623271873/photo_2022-12-02_15-19-50.jpg',
+				alias: 'salad-with-prawns-and-pear',
 			},
 
 			// {
@@ -728,6 +703,7 @@
 				],
 				weight: 300,
 				cost: 14.50,
+				alias: 'salad-meat',
 			},
 
 			// {
@@ -750,10 +726,8 @@
 				],
 				weight: 370,
 				cost: 13,
-				img: [
-					'5811/622950067/20221128_131526.jpg',
-					'5815/622950071/20221128_131556.jpg',
-				],
+				img: '5815/622950071/20221128_131556.jpg',
+				alias: 'salad-with-persimmon-and-chicken',
 			},
 
 		],
@@ -776,10 +750,8 @@
 				],
 				weight: 200,
 				cost: 10.00,
-				img: [
-					'6313/586004649/20220819_160822.jpg',
-					'6535/586004871/20220819_160827.jpg',
-				],
+				img: '6535/586004871/20220819_160827.jpg',
+				alias: 'roast-beef-bruschettas',
 			},
 
 			{
@@ -789,10 +761,8 @@
 				],
 				weight: 200,
 				cost: 12.00,
-				img: [
-					'7181/586005517/20220819_161000.jpg',
-					'7316/586005652/20220819_161038.jpg',
-				],
+				img: '7316/586005652/20220819_161038.jpg',
+				alias: 'salmon-bruschettas',
 			},
 
 			{
@@ -803,6 +773,7 @@
 				weight: 300,
 				cost: 9.4,
 				img: '7475/622943539/20221128_145152.jpg',
+				alias: 'chicken-club-sandwich',
 			},
 
 			{
@@ -812,10 +783,8 @@
 				],
 				weight: 250,
 				cost: 9.60,
-				img: [
-					'6113/471029729/IMG_3722.jpg',
-					'6114/471029730/IMG_3727.jpg',
-				],
+				img: '6113/471029729/IMG_3722.jpg',
+				alias: 'roast-beef-club-sandwich',
 			},
 
 			{
@@ -825,10 +794,8 @@
 				],
 				weight: 210,
 				cost: 10.20,
-				img: [
-					'5996/471029612/IMG_3859.jpg',
-					'5997/471029613/IMG_3865.jpg',
-				],
+				img: '5996/471029612/IMG_3859.jpg',
+				alias: 'salmond-club-sandwich',
 			},
 
 			// {
@@ -852,6 +819,7 @@
 				weight: 290,
 				cost: 14.30,
 				img: '7643/541007323/20220429_114605.jpg',
+				alias: 'beef-steak-burger',
 			},
 
 			{
@@ -862,6 +830,7 @@
 				weight: 280,
 				cost: 12.00,
 				img: '1928/471189384/IMG_3989.jpg',
+				alias: 'beef-cheek-burger',
 			},
 
 			// {
@@ -884,6 +853,7 @@
 				],
 				weight: 280,
 				cost: 13.80,
+				alias: 'burger-with-beef-tongue',
 			},
 
 			{
@@ -893,10 +863,8 @@
 				],
 				weight: 250,
 				cost: 13.80,
-				img: [
-					'6902/471030518/IMG_3753.jpg',
-					'6903/471030519/IMG_3854.jpg',
-				],
+				img: '6902/471030518/IMG_3753.jpg',
+				alias: 'chicken-thigh-burger-with-aioli',
 			},
 
 			{
@@ -907,6 +875,7 @@
 				weight: 350,
 				cost: 12.00,
 				img: '441/593093049/20220913_163340.jpg',
+				alias: 'burger-with-smoked-pork',
 			},
 
 			// {
@@ -925,6 +894,7 @@
 					'Burger «Classic»',
 				],
 				img: '7630/471031246/IMG_3824.jpg',
+				alias: 'burger-classic',
 				collection: [
 					{
 						name: [
@@ -957,6 +927,7 @@
 					'Burger «Pirate»',
 				],
 				img: '7312/471030928/IMG_3698.jpg',
+				alias: 'burger-pirate',
 				collection: [
 					{
 						name: [
@@ -989,6 +960,7 @@
 					'Burger «Jack Daniel’s»',
 				],
 				img: '3064/622939128/20221128_143710.jpg',
+				alias: 'burger-jack-daniels',
 				collection: [
 					{
 						name: [
@@ -1021,6 +993,7 @@
 					'Burger with salted caramel and cherry',
 				],
 				img: '7784/471031400/IMG_3829.jpg',
+				alias: 'burger-with-salted-caramel-and-cherry',
 				collection: [
 					{
 						name: [
@@ -1053,6 +1026,7 @@
 					'Dranburger',
 				],
 				img: '6013/622942077/20221128_144439.jpg',
+				alias: 'dranburger',
 				collection: [
 					{
 						name: [
@@ -1099,10 +1073,8 @@
 				],
 				weight: 500,
 				cost: 36.80,
-				img: [
-					'2083/541059107/20220429_104351.jpg',
-					'2084/541059108/20220429_104431.jpg',
-				],
+				img: '2083/541059107/20220429_104351.jpg',
+				alias: 'dorado-with-baked-vegetables',
 			},
 
 			// {
@@ -1125,6 +1097,7 @@
 				],
 				weight: 380,
 				cost: 24.50,
+				alias: 'duck-with-porcini-mushrooms-and-baked-potatoes',
 			},
 
 			// {
@@ -1147,10 +1120,8 @@
 				],
 				weight: 400,
 				cost: 29.90,
-				img: [
-					'6990/541334350/20220430_143710.jpg',
-					'6992/541334352/20220430_143726.jpg',
-				],
+				img: '6990/541334350/20220430_143710.jpg',
+				alias: 'rabbit-leg-with-gratin-and-mushroom-sauce',
 			},
 
 			{
@@ -1160,6 +1131,7 @@
 				],
 				weight: 360,
 				cost: 19.90,
+				alias: 'beef-tongue-with-bulgur-and-cherry-bbq',
 			},
 
 			// {
@@ -1178,9 +1150,7 @@
 				],
 				weight: 340,
 				cost: 19.30,
-				img: [
-					'5948/306468668/IMG_8238.jpg',
-				],
+				alias: 'turkey-in-a-creamy-peanut-sauce',
 			},
 
 			{
@@ -1190,10 +1160,8 @@
 				],
 				weight: 310,
 				cost: 13.00,
-				img: [
-					'1944/435963800/20210504_201800.jpg',
-					'1946/435963802/20210504_201918.jpg',
-				],
+				img: '1946/435963802/20210504_201918.jpg',
+				alias: 'chicken-fillet-in-creamy-mushroom-sauce',
 			},
 
 			{
@@ -1203,6 +1171,7 @@
 				],
 				weight: 480,
 				cost: 18.00,
+				alias: 'boiled-pork-with-sauerkraut-and-beans',
 			},
 
 			{
@@ -1210,10 +1179,8 @@
 					'Свиные рёбра',
 					'Pork ribs',
 				],
-				img: [
-					'274/489791762/IMG_2668.jpg',
-					'273/489791761/IMG_2666.jpg',
-				],
+				img: '273/489791761/IMG_2666.jpg',
+				alias: 'pork-ribs',
 				collection: [
 					{
 						name: [
@@ -1241,10 +1208,8 @@
 				],
 				weight: 300,
 				cost: 15.30,
-				img: [
-					'3065/435940345/20210504_184735.jpg',
-					'3066/435940346/20210504_184818.jpg',
-				],
+				img: '3066/435940346/20210504_184818.jpg',
+				alias: 'roast-beef-with-mashed-potatoes',
 			},
 
 			{
@@ -1254,19 +1219,18 @@
 				],
 				weight: 250,
 				cost: 15.30,
-				img: [
-					'6022/551581574/20220527_115916.jpg',
-					'6026/551581578/20220527_120049.jpg',
-				],
+				img: '6026/551581578/20220527_120049.jpg',
+				alias: 'beef-cheek-with-mashed-potatoes',
 			},
 
 			{
-			  name: [
-			    'Пирог с курицей',
-			    'Chicken pie',
-			  ],
-			  weight: 500,
-			  cost: 17.00,
+				name: [
+					'Пирог с курицей',
+					'Chicken pie',
+				],
+				weight: 500,
+				cost: 17.00,
+				alias: 'chicken-pie',
 			},
 
 			{
@@ -1274,6 +1238,7 @@
 					'Драники',
 					'Draniki',
 				],
+				alias: 'draniki',
 				collection: [
 					{
 						name: [
@@ -1282,10 +1247,7 @@
 						],
 						weight: 380,
 						cost: 14.20,
-						img: [
-							'6266/623597690/20221203_125651.jpg',
-							'6322/623597746/20221203_125714.jpg',
-						],
+						img: '6322/623597746/20221203_125714.jpg',
 					},
 					{
 						name: [
@@ -1294,10 +1256,7 @@
 						],
 						weight: 350,
 						cost: 15.30,
-						img: [
-							'6111/623597535/20221203_125539.jpg',
-							'6190/623597614/20221203_125604.jpg',
-						],
+						img: '6190/623597614/20221203_125604.jpg',
 					},
 					{
 						name: [
@@ -1306,10 +1265,7 @@
 						],
 						weight: 390,
 						cost: 10.80,
-						img: [
-							'6383/623597807/20221203_125741.jpg',
-							'6430/623597854/20221203_125821.jpg',
-						],
+						img: '6430/623597854/20221203_125821.jpg',
 					},
 					{
 						name: [
@@ -1328,6 +1284,7 @@
 					'Колбаски с картофелем и квашенной капустой',
 					'Sausages with potatoes and sauerkraut',
 				],
+				alias: 'sausages-with-potatoes-and-sauerkraut',
 				collection: [
 					{
 						name: [
@@ -1355,10 +1312,8 @@
 				],
 				weight: 1000,
 				cost: 31.70,
-				img: [
-					'5468/423974236/IMG_8360.jpg',
-					'5465/423974233/IMG_8357.jpg',
-				],
+				img: '5465/423974233/IMG_8357.jpg',
+				alias: 'pork-shank',
 			},
 
 			{
@@ -1368,10 +1323,8 @@
 				],
 				weight: 170,
 				cost: 17.00,
-				img: [
-					'7920/489807600/IMG_2542.jpg',
-					'4916/489804596/IMG_2530.jpg',
-				],
+				img: '7920/489807600/IMG_2542.jpg',
+				alias: 'pork-steak',
 			},
 
 			{
@@ -1381,10 +1334,8 @@
 				],
 				weight: 170,
 				cost: 22.50,
-				img: [
-					'738/489808610/IMG_2478.jpg',
-					'5346/489805026/IMG_2476.jpg',
-				],
+				img: '738/489808610/IMG_2478.jpg',
+				alias: 'beef-steak-with-miso-butter',
 			},
 
 			{
@@ -1394,10 +1345,8 @@
 				],
 				weight: 230,
 				cost: 25.60,
-				img: [
-					'6793/489814665/IMG_4326.JPG',
-					'6791/489814663/IMG_4323.JPG',
-				],
+				img: '6791/489814663/IMG_4323.JPG',
+				alias: 'salmon-steak-with-coconut-lime-sauce',
 			},
 
 		],

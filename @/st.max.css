@@ -62,7 +62,7 @@ ul {
 	font-size: 11px;
 }
 
-a:hover {
+a[href]:hover {
 	opacity: 0.7;
 }
 
