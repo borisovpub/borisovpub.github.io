@@ -97,6 +97,10 @@
 			content: '%';
 		}
 
+		.ibu:not( :empty ):after {
+			content: ' IBU';
+		}
+
 		.nowrap {
 			white-space: nowrap;
 		}
@@ -276,8 +280,8 @@
 				<span class="name" contenteditable="true"></span>
 			</div>
 			<div class="opacity nowrap sub-text slash">
+				<span class="ibu" contenteditable="true"></span>
 				<span class="alc percent" contenteditable="true"></span>
-				<span class="den percent" contenteditable="true"></span>
 				<span class="cap L" contenteditable="true"></span>
 			</div>
 			<div></div>
@@ -326,9 +330,51 @@
 	<div></div>
 </article>
 
-<script type="text/javascript">( ( /** Window */ window ) =>  window.fetch( 'data.js?' + window.Math.random() ).then( ( respose ) => respose.text() ).then( ( data ) => {
+<script>( ( /** Window */ window ) => Promise.all( [
+	window.fetch( '/menu/data.js?' + window.Math.random() ).then( ( respose ) => respose.text() ),
+	window.fetch( 'https://your.beer/api/v1/places/irish-pub' ).then( ( response ) => response.json() ),
+] ).then( ( [ menu, beers ] ) => {
 
-	data = window.eval( data );
+	menu = window.eval( menu );
+
+	/**
+	 * @typedef { {
+	 * 		id: number,
+	 * 		slug: string,
+	 * 		name: string,
+	 * 		breweries: Array< {
+	 * 			id: number,
+	 *			name: string,
+	 * 		} >,
+	 * 		logo_image: string,
+	 * 		beer_style: {
+	 * 			slug: string,
+	 * 			name: string,
+	 * 		},
+	 * 		gravity: null,
+	 * 		abv: number,
+	 * 		ibu: number,
+	 * 		avg_rating: number,
+	 * 		date_start: string,
+	 * 		is_checked: boolean,
+	 * 		skus: Array< {
+	 * 		    price: number,
+	 * 		    volume: string,
+	 * 		    packing: string,
+	 * 		} >,
+	 * 		sale_data: {
+	 * 			tap_number: string,
+	 * 			start_sales_at: string,
+	 * 			shop_price: boolean,
+	 * 		},
+	 * } } Beer
+	 */
+
+	beers = beers.beers;
+
+	// beers.tap.forEach( v => console.log( v.name, '/', v.slug ) );
+	// console.log( '---')
+	// beers.other.forEach( v => console.log( v.name, '/', v.slug ) );
 
 	/** @noinline */
 	var querySelector = ( node, selector ) => node.querySelector( selector );
@@ -545,32 +591,49 @@
 
 	var beerTemplate = querySelector( document, '#beer' );
 
-	var createBeer = ( data ) => {
+	var createBeer = ( data, info = beers.other ) => {
 
 		var result = cloneNode( beerTemplate );
 		var li = querySelector( result, 'li' );
 
 		querySelector( result, '.name' ).textContent = getName( data.name );
 
-		if ( data.alc ) {
-			querySelector( result, '.alc' ).textContent = data.alc;
+		if ( data.slug && ( data = info.find( ( d ) => d.slug == data.slug ) ) ) {
+
+			var sku = data.skus.reduce(
+				( a, b ) => a.volume > b.volume ? a : b,
+				{ volume: 0 }
+			);
+
+			if ( sku && sku.volume ) {
+
+				querySelector( result, '.cap' ).textContent = sku.volume;
+				appendChild( querySelector( li, 'div:last-of-type' ), createCost( sku.price ) )
+
+				if ( data.abv ) {
+					querySelector( result, '.alc' ).textContent = data.abv;
+				}
+
+				if ( data.ibu ) {
+					querySelector( result, '.ibu' ).textContent = data.ibu;
+				}
+
+			}
+
 		}
 
-		if ( data.den ) {
-			querySelector( result, '.den' ).textContent = data.den;
-		}
 
-		if ( data.cap ) {
-			querySelector( result, '.cap' ).textContent = data.cap;
-		}
-
-		if ( data.cost ) {
-			appendChild( querySelector( li, 'div:last-of-type' ), createCost( data.cost ) );
-		}
+		//
+		// if ( data.den ) {
+		// 	querySelector( result, '.den' ).textContent = data.den;
+		// }
+		//
 
 		return result;
 
 	};
+
+	var createDraftBeer = ( data ) => createBeer( data, beers.tap );
 
 	var cocktailTemplate = querySelector( document, '#cocktail' );
 
@@ -673,44 +736,45 @@
 
 	var colon = querySelectorAll( document, '.page>div' );
 
-	appendChild( colon[ 0 ], createSection( data.BeerStarters, createDish ) );
-	appendChild( colon[ 0 ], createSection( data.Starters, createDish ) );
-	appendChild( colon[ 0 ], createSection( data.StartersForCompany, createDish ) );
-	appendChild( colon[ 0 ], createSection( data.Additives, createDish ) );
+	appendChild( colon[ 0 ], createSection( menu.BeerStarters, createDish ) );
+	appendChild( colon[ 0 ], createSection( menu.Starters, createDish ) );
+	appendChild( colon[ 0 ], createSection( menu.StartersForCompany, createDish ) );
+	appendChild( colon[ 0 ], createSection( menu.Additives, createDish ) );
 
-	appendChild( colon[ 1 ], createSection( data.Soups, createDish ) );
-	appendChild( colon[ 1 ], createSection( data.Salads, createDish ) );
-	appendChild( colon[ 1 ], createSection( data.SeasonalSalads, createDish ) );
-	appendChild( colon[ 1 ], createSection( data.BurgersSandwiches, createDish ) );
+	appendChild( colon[ 1 ], createSection( menu.Soups, createDish ) );
+	appendChild( colon[ 1 ], createSection( menu.Salads, createDish ) );
+	appendChild( colon[ 1 ], createSection( menu.SeasonalSalads, createDish ) );
+	appendChild( colon[ 1 ], createSection( menu.BurgersSandwiches, createDish ) );
 	// colon[ 1 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
 
-	appendChild( colon[ 2 ], createSection( data.HotDishes, createDish ) );
-	appendChild( colon[ 2 ], createSection( data.Garnish, createDish ) );
-	appendChild( colon[ 2 ], createSection( data.Desserts, createDish ) );
+	appendChild( colon[ 2 ], createSection( menu.HotDishes, createDish ) );
+	appendChild( colon[ 2 ], createSection( menu.Garnish, createDish ) );
+	appendChild( colon[ 2 ], createSection( menu.Desserts, createDish ) );
 	// colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="bc.svg" style="height:31.417mm" /></div>' );
 	colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
 
-	appendChild( colon[ 3 ], createSection( data.Gasing, createDish ) );
-	appendChild( colon[ 3 ], createSection( data.Coffee, createDish ) );
-	appendChild( colon[ 3 ], createSection( data.Tea, createDish, createWeight ) );
-	appendChild( colon[ 3 ], createSection( data.Juice, createDish, createWeight ) );
-	appendChild( colon[ 3 ], createSection( data.Cocktails, createDish ) );
+	appendChild( colon[ 3 ], createSection( menu.Gasing, createDish ) );
+	appendChild( colon[ 3 ], createSection( menu.Coffee, createDish ) );
+	appendChild( colon[ 3 ], createSection( menu.Tea, createDish, createWeight ) );
+	appendChild( colon[ 3 ], createSection( menu.Juice, createDish, createWeight ) );
+	appendChild( colon[ 3 ], createSection( menu.Cocktails, createDish ) );
 
-	appendChild( colon[ 4 ], createSection( data.WhiteWine, createDish, createCapacity ) );
-	appendChild( colon[ 4 ], createSection( data.RoseWine, createDish, createCapacity ) );
-	appendChild( colon[ 4 ], createSection( data.RedWine, createDish, createCapacity ) );
-	appendChild( colon[ 4 ], createSection( data.SparklingWine, createDish, createCapacity ) );
-	appendChild( colon[ 4 ], createSection( data.PortWine, createDish, createCapacity ) );
-	appendChild( colon[ 4 ], createSection( data.Martini, createDish, createCapacity ) );
+	appendChild( colon[ 4 ], createSection( menu.WhiteWine, createDish, createCapacity ) );
+	appendChild( colon[ 4 ], createSection( menu.RoseWine, createDish, createCapacity ) );
+	appendChild( colon[ 4 ], createSection( menu.RedWine, createDish, createCapacity ) );
+	appendChild( colon[ 4 ], createSection( menu.SparklingWine, createDish, createCapacity ) );
+	appendChild( colon[ 4 ], createSection( menu.NonAlcoholicWine, createDish, createCapacity ) );
+	appendChild( colon[ 4 ], createSection( menu.PortWine, createDish, createCapacity ) );
+	appendChild( colon[ 4 ], createSection( menu.Martini, createDish, createCapacity ) );
 
-	appendChild( colon[ 5 ], createSection( data.Tinctures, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( data.Whiskey, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( data.Brandy, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( data.Rom, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( data.Bitter, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( data.Tequila, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( data.Gin, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( data.Vodka, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( menu.Tinctures, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( menu.Whiskey, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( menu.Brandy, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( menu.Rom, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( menu.Bitter, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( menu.Tequila, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( menu.Gin, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( menu.Vodka, createAlc, createCapacity ) );
 
 	// appendChild( colon[ 5 ], createSection( data.Cocktails, createCocktail ) );
 	// appendChild( colon[ 5 ], createShot( data.Shot ) );
@@ -740,9 +804,9 @@
 		</div>
 	` );
 
-	appendChild( colon[ 7 ], createSection( data.DraftBeer, createBeer ) );
-	appendChild( colon[ 7 ], createSection( data.BottledBeer, createBeer ) );
-	appendChild( colon[ 7 ], createSection( data.NonAlcoholicBeer, createBeer ) );
+	appendChild( colon[ 7 ], createSection( menu.DraftBeer, createDraftBeer ) );
+	appendChild( colon[ 7 ], createSection( menu.BottledBeer, createBeer ) );
+	appendChild( colon[ 7 ], createSection( menu.NonAlcoholicBeer, createBeer ) );
 
 } ) )( this )</script>
 

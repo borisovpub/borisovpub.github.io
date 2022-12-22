@@ -1840,14 +1840,14 @@
 						cost: 5.5,
 					},
 
-					{
-						name: [
-							'Облепиховый чай',
-							'Sea buckthorn tea',
-						],
-						weight: 250,
-						cost: 5.5,
-					},
+					// {
+					// 	name: [
+					// 		'Облепиховый чай',
+					// 		'Sea buckthorn tea',
+					// 	],
+					// 	weight: 250,
+					// 	cost: 5.5,
+					// },
 
 					{
 						name: [
@@ -2445,6 +2445,39 @@
 					'brut',
 				],
 				cost: 46.20,
+			},
+
+		],
+
+	},
+
+	NonAlcoholicWine: {
+
+		name: [
+			'Безалкогольное вино',
+			'Non-alcoholic wine',
+		],
+
+		capacity: 750,
+
+		collection: [
+
+			{
+				name: 'Abbazia',
+				weight: [
+					'красное',
+					'red',
+				],
+				cost: 29,
+			},
+
+			{
+				name: 'Abbazia',
+				weight: [
+					'белое',
+					'white',
+				],
+				cost: 29,
 			},
 
 		],
@@ -3062,7 +3095,6 @@
 		],
 
 		collection: [
-
 			// {
 			// 	name: 'Hoegaarden',
 			// 	alc: 4.9,
@@ -3078,39 +3110,26 @@
 			// 	cap: 0.5,
 			// 	cost: 13.00,
 			// },
-
 			{
 				name: 'Holland Crown',
-				alc: 4.8,
-				den: 14.0,
-				cap: 0.5,
-				cost: 9.00,
+				slug: 'h-west-b-v-holland-crown',
 			},
-
 			{
 				name: 'Brûler Blonde',
-				alc: 6.8,
-				den: 14.7,
-				cap: 0.5,
-				cost: 13.00,
+				slug: 'belgian-brew-factory-bruler-blonde',
 			},
-
 			{
 				name: 'Brûler Brune',
-				alc: 6.8,
-				den: 15.5,
-				cap: 0.5,
-				cost: 13.00,
+				slug: 'belgian-brew-factory-bruler-brune',
 			},
-
+			{
+				name: 'Saltaire Triple Choc',
+				slug: 'saltaire-brewery-triple-chocoholic',
+			},
 			// {
 			// 	name: 'Braufactum Pale Ale',
-			// 	alc: 5,
-			// 	den: 11.5,
-			// 	cap: 0.5,
-			// 	cost: 10.00,
+			//	slug: 'radeberger-gruppe-braufactum-german-pale-ale',
 			// },
-
 			// {
 			//   name: 'Gambrinus',
 			//   alc: 5.2,
@@ -3118,31 +3137,18 @@
 			//   cap: 0.5,
 			//   cost: 9.00,
 			// },
-
-			{
-				name: 'Iron Woods',
-				alc: 4.8,
-				den: 17.0,
-				cap: 0.5,
-				cost: 8.50,
-			},
-
+			// {
+			// 	name: 'Iron Woods',
+			// 	slug: 'gletcher-iron-woods',
+			// },
 			{
 				name: 'Milk of Amnesia',
-				alc: 5.5,
-				den: 14.3,
-				cap: 0.5,
-				cost: 8.50,
+				slug: 'gletcher-milk-of-amnesia-v-tropic-milkshake-ipa',
 			},
-
-			{
-				name: 'Underground',
-				alc: 4.7,
-				den: 11.8,
-				cap: 0.5,
-				cost: 8.50,
-			},
-
+			// {
+			// 	name: 'Underground',
+			// 	slug: 'gletcher-brewery-gletcher-underground-ale',
+			// },
 			// {
 			// 	name: 'Nut Butter',
 			// 	alc: 5.5,
@@ -3150,23 +3156,30 @@
 			// 	cap: 0.5,
 			// 	cost: 8.50,
 			// },
-
 			{
 				name: 'Holiday',
-				alc: 5.1,
-				den: 13,
-				cap: 0.5,
-				cost: 7.00,
+				slug: 'robim-good-brewery-holiday',
 			},
-
 			{
-			  name: 'Breakfast',
-			  alc: 5.9,
-			  den: 15.7,
-			  cap: 0.5,
-			  cost: 7.00,
+				name: 'Breakfast',
+				slug: 'robim-good-brewery-breakfast',
 			},
-
+			{
+				name: 'Wake Up',
+				slug: 'robim-good-brewery-wake-up',
+			},
+			{
+				name: 'Dream',
+				slug: 'robim-good-brewery-dream',
+			},
+			{
+				name: 'Dance',
+				slug: 'robim-good-brewery-dance',
+			},
+			{
+				name: 'Crystal',
+				slug: 'robim-good-brewery-crystal',
+			},
 			// {
 			//   name: 'Amber Ray',
 			//   alc: 5.2,
@@ -3174,15 +3187,6 @@
 			//   cap: 0.5,
 			//   cost: 7.00,
 			// },
-
-			// {
-			// 	name: 'Crystal',
-			// 	alc: 4.9,
-			// 	den: 12,
-			// 	cap: 0.5,
-			// 	cost: 7.00,
-			// },
-
 			// {
 			// 	name: 'Space',
 			// 	alc: 6.3,
@@ -3190,7 +3194,6 @@
 			// 	cap: 0.5,
 			// 	cost: 7.00,
 			// },
-
 			// {
 			// 	name: 'Idol',
 			// 	alc: 6.6,
@@ -3198,7 +3201,6 @@
 			// 	cap: 0.5,
 			// 	cost: 7.00,
 			// },
-
 			// {
 			// 	name: 'Irony',
 			// 	alc: 5.7,
@@ -3206,7 +3208,6 @@
 			// 	cap: 0.5,
 			// 	cost: 8.50,
 			// },
-
 		],
 
 	},
@@ -3219,40 +3220,28 @@
 		],
 
 		collection: [
-			//      {
-			//        name: 'Lindemans Kriek',
-			//        alc: 3.5,
-			//        den: 14.6,
-			//        cap: 0.25,
-			//        cost: 9,
-			//      },
+			 // {
+			 //   name: 'Lindemans Kriek',
+			 //   alc: 3.5,
+			 //   den: 14.6,
+			 //   cap: 0.25,
+			 //   cost: 9,
+			 // },
 			{
 				name: 'Mort Subite Kriek',
-				alc: 4.3,
-				den: 12.6,
-				cap: 0.25,
-				cost: 9,
+				slug: 'brouwerij-mort-subite-kriek-lambic',
 			},
 			{
 				name: 'Corona Extra',
-				alc: 4.5,
-				den: 11.3,
-				cap: 0.355,
-				cost: 8,
+				slug: 'corona-extra',
 			},
 			// {
 			// 	name: 'New Yorker',
-			// 	alc: 4.5,
-			// 	den: 10.6,
-			// 	cap: 0.33,
-			// 	cost: 8,
+			// 	slug: 'new-yorker-fine-lager-beer',
 			// },
 			{
 				name: 'Estrella',
-				alc: 4.6,
-				den: 10.7,
-				cap: 0.33,
-				cost: 6.1,
+				slug: 'damm-estrella-damm-4-6',
 			},
 			// {
 			//   name: 'Banana Bread',
@@ -3263,17 +3252,11 @@
 			// },
 			// {
 			// 	name: 'Murphy’s Irish Stout',
-			// 	alc: 4,
-			// 	den: 9.6,
-			// 	cap: 0.5,
-			// 	cost: 12,
+			// 	slug: 'murphys-irish-stout',
 			// },
 			// {
 			// 	name: 'Guinness Draught Stout',
-			// 	alc: 4.2,
-			// 	den: 9.9,
-			// 	cap: 0.33,
-			// 	cost: 9,
+			//	slug: 'guinness-draught',
 			// },
 			// {
 			// 	name: 'Guinness West Indies Porter',
@@ -3291,80 +3274,83 @@
 			// },
 			{
 				name: 'O’Hara’s Pale Ale',
-				alc: 5.2,
-				den: 13.5,
-				cap: 0.5,
-				cost: 13,
+				slug: 'oharas-irish-pale-ale',
 			},
+			// {
+			// 	name: 'O’Hara’s Irish Stout',
+			//	slug: 'oharas-irish-stout',
+			// },
 			{
-				name: 'O’Hara’s Irish Stout',
-				alc: 4.3,
-				den: 10.75,
-				cap: 0.44,
-				cost: 13,
-			},
-			{
-				name: 'O’Hara’s Leann Folain',
-				alc: 6,
-				den: 14.5,
-				cap: 0.44,
-				cost: 13,
+				name: 'O’Hara’s Leann Folláin',
+				slug: 'oharas-leann-follain',
 			},
 			{
 				name: 'O’Hara’s Irish Red Nitro',
-				alc: 4.3,
-				den: 10.75,
-				cap: 0.44,
-				cost: 13,
-			},
-			{
-			  name: 'O’Hara’s Irish Stout Nitro',
-			  alc: 4.3,
-			  den: 10.75,
-			  cap: 0.44,
-			  cost: 13,
-			},
-			{
-				name: 'O’Hara’s West Coast IPA',
-				alc: 6.2,
-				den: 14.49,
-				cap: 0.44,
-				cost: 13,
-			},
-			{
-				name: 'O’Hara’s Hazy IPA',
-				alc: 6.8,
-				den: 15.82,
-				cap: 0.44,
-				cost: 13,
+				slug: 'oharas-nitro-irish-red',
 			},
 			// {
-			// 	name: 'Aecht Schlenkerla Märzen',
-			// 	alc: 5.1,
-			// 	den: 13.2,
-			// 	cap: 0.5,
-			// 	cost: 12.50,
+			// 	name: 'O’Hara’s Irish Stout Nitro',
+			// 	slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
+			// },
+			// {
+			// 	name: 'O’Hara’s West Coast IPA',
+			// 	slug: 'o-hara-s-brewery-o-hara-s-west-coast-ipa',
+			// },
+			// {
+			// 	name: 'O’Hara’s Hazy IPA',
+			// 	slug: 'o-hara-s-brewery-o-hara-s-hazy-ipa',
 			// },
 			{
+				name: 'Saltaire Best',
+				slug: 'saltaire-brewery-best',
+			},
+			{
+				name: 'Saltaire Cascade',
+				slug: 'saltaire-brewery-cascade',
+			},
+			{
+				name: 'Saltaire Unity',
+				slug: 'saltaire-brewery-unity',
+			},
+			{
+				name: 'Saltaire Citra',
+				slug: 'saltaire-brewery-citra',
+			},
+			{
+				name: 'Belhaven Black',
+				slug: 'belhaven-black',
+			},
+			{
+				name: 'Belhaven McCallum’s Stout',
+				slug: 'belhaven-mccallums-stout',
+			},
+			{
+				name: 'Greene King IPA',
+				slug: 'greene-king-ipa',
+			},
+			{
+				name: 'Old Speckled Hen',
+				slug: 'greene-king-old-speckled-hen',
+			},
+			{
+				name: 'Aecht Schlenkerla Märzen',
+				slug: 'aecht-schlenkerla-rauchbier-marzen',
+			},
+			{
 				name: 'Hop Adventure Talus IPA',
-				alc: 5,
-				den: 12.2,
-				cap: 0.5,
-				cost: 12,
+				slug: 'o-hara-s-brewery-hop-adventure-series-talus',
+			},
+			{
+				name: 'Pilsner Urquell',
+				slug: 'pilsner-urquell',
 			},
 			{
 				name: 'Budweiser B:Original',
-				alc: 5,
-				den: 11.9,
-				cap: 0.5,
-				cost: 10,
+				slug: 'budweiser-budvar-original',
 			},
 			{
 				name: 'Budweiser B:Dark',
-				alc: 4.7,
-				den: 11.9,
-				cap: 0.5,
-				cost: 10,
+				slug: 'budweiser-budvar-dark',
 			},
 			// {
 			// 	name: 'Paulaner Oktoberfest Bier',
@@ -3375,27 +3361,19 @@
 			// },
 			{
 				name: 'Paulaner Münchner Hell',
-				alc: 4.9,
-				den: 11.3,
-				cap: 0.5,
-				cost: 11,
+				slug: 'paulaner-original-munchner-hell',
 			},
 			{
 				name: 'Paulaner Naturtrüb',
-				alc: 4.5,
-				den: 12.5,
-				cap: 0.5,
-				cost: 11,
+				slug: 'paulaner-hefe-weissbier',
 			},
 			{
 				name: 'Paulaner Dunkel',
-				alc: 5.3,
-				den: 12.5,
-				cap: 0.5,
-				cost: 11,
+				slug: 'paulaner-hefe-weissbier-dunkel',
 			},
 			{
 				name: 'Ayinger Kellerbier',
+				slug: 'ayinger-kellerbier',
 				alc: 4.9,
 				den: 11.8,
 				cap: 0.5,
@@ -3403,17 +3381,11 @@
 			},
 			{
 				name: 'Ayinger Lager Hell',
-				alc: 4.9,
-				den: 11.8,
-				cap: 0.5,
-				cost: 11,
+				slug: 'ayinger-lager-hell',
 			},
 			{
 				name: 'Ayinger Bräuweisse',
-				alc: 5.1,
-				den: 11.8,
-				cap: 0.5,
-				cost: 11,
+				slug: 'ayinger-brauweisse',
 			},
 			// {
 			// 	name: 'Hobgoblin Ruby',
@@ -3424,17 +3396,11 @@
 			// },
 			// {
 			// 	name: 'Hobgoblin Gold',
-			// 	alc: 4.2,
-			// 	den: 11.25,
-			// 	cap: 0.5,
-			// 	cost: 12,
+			//	slug: 'wychwood-brewery-hobgoblin-gold',
 			// },
 			// {
 			// 	name: 'Hobgoblin IPA',
-			// 	alc: 5.3,
-			// 	den: 13.25,
-			// 	cap: 0.5,
-			// 	cost: 12,
+			// 	slug: 'wychwood-brewery-hobgoblin-ipa',
 			// },
 			// {
 			//   name: 'King Goblin',
@@ -3452,17 +3418,11 @@
 			// },
 			{
 				name: 'Petrus Red',
-				alc: 6.9,
-				den: 15,
-				cap: 0.33,
-				cost: 9,
+				slug: 'brouwerij-de-brabandere-petrus-red',
 			},
 			{
 				name: 'Petrus Bordelux',
-				alc: 5.5,
-				den: 12,
-				cap: 0.33,
-				cost: 9,
+				slug: 'brouwerij-de-brabandere-petrus-bordeaux',
 			},
 			// {
 			// 	name: 'Petrus Rood Bruin',
@@ -3472,11 +3432,8 @@
 			// 	cost: 8.5,
 			// },
 			// {
-			// 	name: 'XII Flemish Red Ale',
-			// 	alc: 6,
-			// 	den: 13.5,
-			// 	cap: 0.33,
-			// 	cost: 8.5,
+			//	name: 'XII Flemish Red Ale',
+			//	slug: 'sosab-sour-ale-brewery-xii-flemish-red-ale',
 			// },
 			// {
 			//   name: 'Estrella',
@@ -3486,11 +3443,8 @@
 			//   cost: 7.5,
 			// },
 			{
-			  name: 'Saison 1858',
-			  alc: 6.4,
-			  den: 14.6,
-			  cap: 0.33,
-			  cost: 10.0,
+				name: 'Saison 1858',
+				slug: 'brasserie-du-bocq-saison-1858',
 			},
 		],
 
@@ -3507,20 +3461,17 @@
 
 			{
 				name: 'Clausthaler',
-				cap: 0.33,
-				cost: 8.00,
+				slug: 'radeberger-clausthaler-non-alcoholic',
 			},
 
 			{
 				name: 'Clausthaler Dry Hopped',
-				cap: 0.33,
-				cost: 8.00,
+				slug: 'radeberger-gruppe-clausthaler-dry-hopped',
 			},
 
 			{
 				name: 'Paulaner Alkoholfrei',
-				cap: 0.5,
-				cost: 11.00,
+				slug: 'paulaner-brauerei-paulaner-weissbier-alkoholfrei-0-0',
 			},
 
 		],
