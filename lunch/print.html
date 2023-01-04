@@ -47,14 +47,28 @@
 		}
 
 		body {
-			font: 14pt 'Open Sans Condensed Light', Arial, sans-serif;
-			width: calc( 210mm - 1.6cm );
-			height: calc( 297mm - 1.6cm );
-			padding: 0.8cm;
+			font-family: 'Open Sans Condensed Light', Arial, sans-serif;
+			width: 210mm;
+			height: 297mm;
 			background: #fff;
+		}
+
+		.page {
+
+			font: 14pt 'Open Sans Condensed Light', Arial, sans-serif;
+
+			background: #fff;
+
 			display: grid;
-			grid-template-columns: auto auto;
-			grid-gap: 1.6cm;
+			grid-template-columns: repeat( 2, calc( 210mm / 2 - 16mm ) );
+			grid-auto-rows: calc( 297mm - 17mm );
+			grid-gap: 16mm;
+			padding: 8mm;
+
+		}
+
+		.page > * {
+			overflow: hidden;
 		}
 
 		h1,
@@ -169,19 +183,21 @@
 
 <body>
 
-<article>
-	<div>
-		<img class="logo" src="/@/logo.svg" />
-	</div>
-	<div>
-		<h1>Обед</h1>
-		<span>по будням<br/>12:00 – 16:00</span>
-	</div>
-	<ul></ul>
-	<div>
-<!--		<img src="/@/bc.svg" />-->
-	</div>
-</article>
+<div class="page">
+	<article>
+		<div>
+			<img class="logo" src="/@/logo.svg" />
+		</div>
+		<div>
+			<h1>Обед</h1>
+			<span>по будням<br/>12:00 – 16:00</span>
+		</div>
+		<ul></ul>
+		<div>
+	<!--		<img src="/@/bc.svg" />-->
+		</div>
+	</article>
+</div>
 
 <script>( ( /** Window */ window ) =>  window.fetch( 'data.json?' + window.Math.random() ).then( ( response ) => response.json() ).then( ( /** { { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } } */ data ) => {
 
@@ -207,7 +223,7 @@
 
 	var document = window.document;
 
-	var body = document.body;
+	var page = querySelector( document, '.page' );
 	var article = querySelector( document, 'article' );
 	var name = querySelector( document, 'h1' );
 	var collection = querySelector( document, 'ul' );
@@ -220,7 +236,7 @@
 
 	if ( data.mode ) {
 
-		body.classList.add( 'not-lunch' )
+		page.classList.add( 'not-lunch' )
 
 		name.textContent = 'Бранч';
 
@@ -278,7 +294,7 @@
 
 	}
 
-	appendChild( body, article.cloneNode( true ) );
+	appendChild( page, article.cloneNode( true ) );
 
 } ) )( this )</script>
 

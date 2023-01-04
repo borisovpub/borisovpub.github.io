@@ -43,7 +43,7 @@
 		body {
 			font-family: 'Open Sans Condensed Light', Arial, sans-serif;
 			width: 450mm;
-			height: 640mm;
+			height: calc( 640mm - 2mm );
 			/*background: #fff;*/
 			-webkit-print-color-adjust: exact !important;
 		}
@@ -56,15 +56,18 @@
 
 			--ratio: 1;
 
-			width: calc( 450mm - 16mm );
-			height: calc( 320mm - 16mm );
-			padding: 8mm;
 			display: grid;
-			grid-template-columns: 96.5mm 96.5mm 96.5mm 96.5mm;
+			grid-template-columns: repeat( 4, calc( 450mm / 4 - 16mm ) );
+			grid-auto-rows: calc( 320mm - 17mm );
 			grid-gap: 16mm;
+			padding: 8mm;
 
+			page-break-before: always;
+
+		}
+
+		.page > * {
 			overflow: hidden;
-
 		}
 
 		.bold {
@@ -270,7 +273,7 @@
 			font-size: 14pt;
 			line-height: 15pt;
 			text-align: right;
-			padding: 8mm 5mm 0 10mm;
+			padding: 6mm 5mm 0 10mm;
 			opacity: 0.8;
 		}
 
@@ -289,14 +292,14 @@
 				display: none;
 			}
 
-			.section:before {
+			.page:before {
 				content: '';
 				display: block;
 				position: absolute;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
+				top: 8mm;
+				bottom: 8mm;
+				left: 8mm;
+				width: calc( 450mm / 4 - 16mm );
 				outline: 1mm dashed #f99;
 				pointer-events: none;
 			}
@@ -336,19 +339,8 @@
 
 <body>
 
-<article class="page">
-	<div></div>
-	<div></div>
-	<div></div>
-	<div></div>
-</article>
-
-<article class="page">
-	<div></div>
-	<div></div>
-	<div></div>
-	<div></div>
-</article>
+<article class="page"></article>
+<article class="page"></article>
 
 <script type="text/javascript">( ( /** Window */ window ) =>  window.fetch( 'data.js?' + window.Math.random() ).then( ( respose ) => respose.text() ).then( ( data ) => {
 
@@ -420,7 +412,7 @@
 
 	};
 
-	var colon = querySelectorAll( document, '.page>div' );
+	var page = querySelectorAll( document, '.page' );
 
 	var coctails0 = querySelector( createSection( data.Cocktails0, createCocktail ), '.section' );
 	var coctails1 = querySelector( createSection( data.Cocktails1, createCocktail ), '.section' );
@@ -430,15 +422,15 @@
 		'Among other things, you can always order all basic and classic cocktails, as well as shots.<br />Check with waiters.',
 	] ) }</div>` );
 
-	appendChild( colon[ 0 ], coctails0 );
-	appendChild( colon[ 1 ], coctails0.cloneNode( true ) );
-	appendChild( colon[ 2 ], coctails0.cloneNode( true ) );
-	appendChild( colon[ 3 ], coctails0.cloneNode( true ) );
+	appendChild( page[ 0 ], coctails0 );
+	appendChild( page[ 0 ], coctails0.cloneNode( true ) );
+	appendChild( page[ 0 ], coctails0.cloneNode( true ) );
+	appendChild( page[ 0 ], coctails0.cloneNode( true ) );
 
-	appendChild( colon[ 4 ], coctails1 )
-	appendChild( colon[ 5 ], coctails1.cloneNode( true ) );
-	appendChild( colon[ 6 ], coctails1.cloneNode( true ) );
-	appendChild( colon[ 7 ], coctails1.cloneNode( true ) );
+	appendChild( page[ 1 ], coctails1 )
+	appendChild( page[ 1 ], coctails1.cloneNode( true ) );
+	appendChild( page[ 1 ], coctails1.cloneNode( true ) );
+	appendChild( page[ 1 ], coctails1.cloneNode( true ) );
 
 } ) )( this )</script>
 
