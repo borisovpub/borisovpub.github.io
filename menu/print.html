@@ -43,7 +43,7 @@
 		body {
 			font-family: 'Open Sans Condensed Light', Arial, sans-serif;
 			width: 450mm;
-			height: 640mm;
+			height: calc( 640mm - 2mm );
 			background: #fff;
 		}
 
@@ -55,15 +55,18 @@
 
 			--ratio: 1;
 
-			width: calc( 450mm - 16mm );
-			height: calc( 320mm - 16mm );
 			padding: 8mm;
 			display: grid;
-			grid-template-columns: 96.5mm 96.5mm 96.5mm 96.5mm;
+			grid-template-columns: repeat( 4, calc( 450mm / 4 - 16mm ) );
+			grid-auto-rows: calc( 320mm - 17mm );
 			grid-gap: 16mm;
 
-			overflow: hidden;
+			page-break-before: always;
 
+		}
+
+		.page > * {
+			overflow: hidden;
 		}
 
 		.mini {
@@ -147,8 +150,12 @@
 
 			font-size: calc( 13.2pt * var( --ratio ) );
 
-			margin-bottom: calc( 14pt * var( --ratio ) * var( --ratio ) * var( --ratio ) * var( --ratio ) );
+			box-sizing: content-box;
 
+		}
+
+		.section:not( :last-of-type ) {
+			padding-bottom: calc( 14pt * var( --ratio ) * var( --ratio ) * var( --ratio ) * var( --ratio ) );
 		}
 
 		.section > .sub-title {
@@ -317,15 +324,15 @@
 <body>
 
 <article class="page">
-	<div style="--ratio:0.995"></div>
-	<div style="--ratio:0.99"></div>
+	<div></div>
+	<div style="--ratio:0.98"></div>
 	<div></div>
 	<div></div>
 </article>
 
 <article class="page">
-	<div style="--ratio:1"></div>
-	<div style="--ratio:0.858"></div>
+	<div></div>
+	<div style="--ratio:0.85"></div>
 	<div style="text-align:center"></div>
 	<div></div>
 </article>
@@ -677,7 +684,6 @@
 
 	};
 
-
 	// Object.values( data ).forEach( ( o ) => {
 	//
 	// 	var val = 0;
@@ -787,7 +793,7 @@
 	` );
 
 	colon[ 6 ].insertAdjacentHTML( 'beforeend', `
-		<div class="opacity" style="font-size: 24pt; line-height: 24pt; margin-top: 5cm">
+		<div class="opacity" style="font-size: 24pt; line-height: 24pt; margin-top: 4.5cm">
 			${ getName( [ 'Закажите', 'Order' ] ) }<br />${ getName( [ 'доставку!', 'Delivery!' ] ) }
 		</div>
 		<div class="opacity" style="margin: 8mm 0 5mm 0">

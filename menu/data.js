@@ -43,16 +43,16 @@
 				alias: 'cheese-balls',
 			},
 
-			{
-				name: [
-					'Картофельные крокеты с сёмгой',
-					'Potato salmon croquettes',
-				],
-				weight: 250,
-				cost: 10,
-				img: '1783/623249143/20221202_125355.jpg',
-				alias: 'potato-salmon-croquettes',
-			},
+			// {
+			// 	name: [
+			// 		'Картофельные крокеты с сёмгой',
+			// 		'Potato salmon croquettes',
+			// 	],
+			// 	weight: 250,
+			// 	cost: 10,
+			// 	img: '1783/623249143/20221202_125355.jpg',
+			// 	alias: 'potato-salmon-croquettes',
+			// },
 
 			{
 				name: [
@@ -1490,14 +1490,14 @@
 				cost: 8.60,
 			},
 
-			{
-				name: [
-					'Медовик',
-					'Honey cake',
-				],
-				weight: 200,
-				cost: 8.60,
-			},
+			// {
+			// 	name: [
+			// 		'Медовик',
+			// 		'Honey cake',
+			// 	],
+			// 	weight: 200,
+			// 	cost: 8.60,
+			// },
 
 			// {
 			//   name: [
