@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru" xml:lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+
+	<style media="all">
+
+		@page {
+			size: A4 portrait;
+			margin: 0;
+		}
+
+		@media screen {
+			html {
+				background: #999;
+			}
+		}
+
+		@font-face {
+			font-family: 'Intro';
+			src: local( 'Intro' ),
+				 url('/@/Intro.otf');
+		}
+
+		*,
+		:after,
+		:before {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style-type: none;
+		}
+
+		body {
+			width: 210mm;
+			height: 297mm;
+			background: #fff;
+		}
+
+		.page {
+
+			background: #fff;
+			display: block;
+			padding: 4mm;
+
+		}
+
+		.page > * {
+			overflow: hidden;
+		}
+
+		.bage {
+			display: inline-table;
+			width: 9cm;
+			height: 5.5cm;
+			background: url( "bg.png" );
+			background-size: contain;
+			margin: 4mm;
+			-webkit-print-color-adjust: exact !important;
+			font-family: Intro, Arial, sans-serif;
+			font-size: 26pt;
+			text-shadow:	0 0 1mm #fff,
+							0 0 2mm #fff,
+							0 0 2mm #fff,
+							0 0 3mm #fff,
+							0 0 3mm #fff,
+							0 0 3mm #fff,
+							0 0 4mm #fff,
+							0 0 4mm #fff,
+							0 0 4mm #fff,
+							0 0 4mm #fff;
+		}
+
+		.bage > * {
+			display: table-cell;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			vertical-align: middle;
+		}
+
+		button,
+		input {
+			margin-right: 10px;
+		}
+
+		form,
+		button {
+			display: block;
+			margin-bottom: 10px;
+			padding: 5px;
+			min-width: 100px;
+		}
+
+	</style>
+
+	<template id="bage">
+		<div class="bage">
+			<div>
+				<span class="name"></span><br /><span class="prof"></span>
+			</div>
+		</div>
+	</template>
+
+	<template id="form">
+		<form>
+			<label>Имя: <input type="text" name="name" /></label>
+			<label>Должность: <input type="text" name="prof" /></label>
+		</form>
+	</template>
+
+</head>
+
+<body>
+
+<div class="page"></div>
+
+<script>( ( /** Window */ window ) => {
+
+	/** @noinline */
+	var querySelector = ( node, selector ) => node.querySelector( selector );
+	/** @noinline */
+	var cloneNode = ( node ) => document.importNode( node.content, true );
+	/** @noinline */
+	var appendChild = ( node, child ) => node.appendChild( child );
+
+	var document = window.document;
+
+	var page = querySelector( document, '.page' );
+
+	var bages = window.decodeURIComponent( window.location.search.replace( /^\?/, '' ) ).trim();
+	if ( bages.length > 0 ) {
+
+		bages = bages.split( ';' );
+
+		var bageTemplate = querySelector( document, '#bage' );
+
+		for ( let o of bages ) {
+
+			let [ n, p ] = o.split( ',' );
+			let bageNode = cloneNode( bageTemplate );
+
+			querySelector( bageNode, '.name' ).textContent = n;
+			querySelector( bageNode, '.prof' ).textContent = p;
+
+			appendChild( page, bageNode );
+
+		}
+
+		document.fonts.addEventListener( 'loadingdone', () => {
+
+			for ( let bageNode of document.querySelectorAll( '.bage' ) ) {
+
+				let name = querySelector( bageNode, '.name' );
+
+				name.style.fontSize = window.Math.min(
+					26 * bageNode.getBoundingClientRect().width * 0.8 / name.getBoundingClientRect().width,
+					50
+				) + 'pt';
+
+			}
+
+		}, { once: true } );
+
+	} else {
+
+		let addButton = document.createElement( 'button' );
+		let submitButton = document.createElement( 'button' );
+
+		let formTemplate = querySelector( document, '#form' );
+
+		const add = () => page.insertBefore( cloneNode( formTemplate ), addButton );
+
+		addButton.textContent = 'Добавить';
+		submitButton.textContent = 'На печать';
+
+		addButton.addEventListener( 'click', add );
+
+		appendChild( page, addButton );
+		appendChild( page, submitButton );
+
+		add();
+
+		submitButton.addEventListener( 'click', () => {
+
+			const arr = [];
+			for ( let form of page.querySelectorAll( 'form' ) ) {
+				let n = querySelector( form, '[name="name"]' ).value;
+				let p = querySelector( form, '[name="prof"]' ).value;
+				if ( n ) arr.push( n + ',' + p );
+			}
+
+			window.location = '?' + window.encodeURIComponent( arr.join( ';' ) );
+
+		} );
+
+	}
+
+} )( this )</script>
+
+</body>
+
+</html>
