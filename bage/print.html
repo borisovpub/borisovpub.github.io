@@ -158,7 +158,7 @@
 
 			for ( let bageNode of document.querySelectorAll( '.bage' ) ) {
 
-				let width = bageNode.getBoundingClientRect().width * 0.8;
+				let width = 0.8 * 340.15625 /* bageNode.getBoundingClientRect().width */;
 
 				let name = querySelector( bageNode, '.name' );
 				let prof = querySelector( bageNode, '.prof' );
