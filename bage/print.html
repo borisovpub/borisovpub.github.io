@@ -158,12 +158,16 @@
 
 			for ( let bageNode of document.querySelectorAll( '.bage' ) ) {
 
-				let name = querySelector( bageNode, '.name' );
+				let width = bageNode.getBoundingClientRect().width * 0.8;
 
-				name.style.fontSize = window.Math.min(
-					26 * bageNode.getBoundingClientRect().width * 0.8 / name.getBoundingClientRect().width,
-					50
-				) + 'pt';
+				let name = querySelector( bageNode, '.name' );
+				let prof = querySelector( bageNode, '.prof' );
+
+				name.style.fontSize =
+					window.Math.min( 26 * width / name.getBoundingClientRect().width, 50 ) + 'pt';
+
+				prof.style.fontSize =
+					26 * width / window.Math.max( prof.getBoundingClientRect().width, width ) + 'pt';
 
 			}
 
