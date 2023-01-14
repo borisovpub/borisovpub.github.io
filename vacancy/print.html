@@ -51,56 +51,7 @@
 			line-height: 24px;
 		}
 
-		.vacancy {
-			display: block;
-			width: 1080px;
-			height: 1920px;
-			background: url( "bg.png" ) no-repeat;
-			position: absolute;
-			top: 0;
-			left: 0;
-		}
-
-		.vacancy > div {
-			display: block;
-			width: 620px;
-			height: 620px;
-			text-transform: uppercase;
-			font-family: 'Open Sans Condensed Light', Arial, sans-serif;
-			font-size: 60px;
-			color: #fff;
-			text-align: center;
-			position: absolute;
-			left: 230px;
-			top: 357px;
-		}
-
 	</style>
-
-	<template id="vacancy">
-		<svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
-			<style>
-				text {
-					text-transform: uppercase;
-					font-family: 'Open Sans Condensed Light', Arial, sans-serif;
-					font-size: 60px;
-					fill: #fff;
-				}
-				text > * {
-					text-anchor: middle;
-				}
-			</style>
-			<image href="bg.png" width="1080" height="1920" />
-			<text>
-				<tspan x="50%" y="400">В наш дружный</tspan>
-				<tspan x="50%" y="480">коллектив требуются</tspan>
-				<tspan x="50%" y="560"><tspan class="prof">официанты и повара</tspan>!</tspan>
-				<tspan x="50%" y="760">По всем вопросам в директ</tspan>
-				<tspan x="50%" y="840">или по телефону</tspan>
-				<tspan x="50%" y="920" class="tel">+375 (29) 888-16-00</tspan>
-			</text>
-		</svg>
-	</template>
 
 </head>
 
@@ -117,16 +68,15 @@
 
 	/** @noinline */
 	var querySelector = ( node, selector ) => node.querySelector( selector );
-	/** @noinline */
-	var cloneNode = ( node ) => document.importNode( node.content, true );
-	/** @noinline */
-	var appendChild = ( node, child ) => node.appendChild( child );
 
 	var document = window.document;
 
 	var page = querySelector( document, '.page' );
+	var button = querySelector( document, 'button' );
 
-	querySelector( document, 'button' ).addEventListener( 'click', async () => {
+	button.addEventListener( 'click', async () => {
+
+		button.disabled = true;
 
 		const getData = ( uri ) => new window.Promise( async ( resolve, reject ) => {
 
@@ -196,6 +146,8 @@
 		page.appendChild( a );
 		a.click();
 		page.removeChild( a );
+
+		button.disabled = false;
 
 	} );
 
