@@ -1678,10 +1678,10 @@
 
 			{
 				name: [
-					'Чёрный, Зелёный, Травяной, Молочный улун, Красный дракон, Клубника со сливками, Мохито',
-					'Black, Green, Herbal, Milk oolong, Red Dragon, Strawberries with cream, Mojito',
+					'Чёрный, Зелёный, Травяной, Молочный улун, Красный дракон, Клубника со сливками, Мохито, Ванильный бергамот',
+					'Black, Green, Herbal, Milk oolong, Red Dragon, Strawberries with cream, Mojito, Vanilla bergamot',
 				],
-				cost: 4.30,
+				cost: 4.50,
 			},
 
 
