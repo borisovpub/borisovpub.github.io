@@ -43,16 +43,16 @@
 				alias: 'cheese-balls',
 			},
 
-			// {
-			// 	name: [
-			// 		'Картофельные крокеты с сёмгой',
-			// 		'Potato salmon croquettes',
-			// 	],
-			// 	weight: 250,
-			// 	cost: 10,
-			// 	img: '1783/623249143/20221202_125355.jpg',
-			// 	alias: 'potato-salmon-croquettes',
-			// },
+			{
+				name: [
+					'Картофельные крокеты с сёмгой',
+					'Potato salmon croquettes',
+				],
+				weight: 250,
+				cost: 10,
+				img: '1783/623249143/20221202_125355.jpg',
+				alias: 'potato-salmon-croquettes',
+			},
 
 			{
 				name: [
@@ -237,14 +237,23 @@
 
 			{
 				name: [
-					'Тартар из говядины с картофелем пай',
-					'Beef tartare with potato straws',
+					'Тартар из говядины с картофельным гратеном',
+					'Beef tartare with gratin',
 				],
-				weight: 175,
+				weight: 400,
 				cost: 20.00,
-				img: '6924/623262476/photo_2022-12-02_15-06-20.jpg',
-				alias: 'beef-tartare-with-potato-straws',
 			},
+
+			// {
+			// 	name: [
+			// 		'Тартар из говядины с картофелем пай',
+			// 		'Beef tartare with potato straws',
+			// 	],
+			// 	weight: 175,
+			// 	cost: 20.00,
+			// 	img: '6924/623262476/photo_2022-12-02_15-06-20.jpg',
+			// 	alias: 'beef-tartare-with-potato-straws',
+			// },
 
 			{
 				name: [
@@ -846,15 +855,15 @@
 			// 	],
 			// },
 
-			{
-				name: [
-					'Бургер с говяжьим языком',
-					'Burger with beef tongue',
-				],
-				weight: 280,
-				cost: 13.80,
-				alias: 'burger-with-beef-tongue',
-			},
+			// {
+			// 	name: [
+			// 		'Бургер с говяжьим языком',
+			// 		'Burger with beef tongue',
+			// 	],
+			// 	weight: 280,
+			// 	cost: 13.80,
+			// 	alias: 'burger-with-beef-tongue',
+			// },
 
 			{
 				name: [
@@ -1068,14 +1077,23 @@
 
 			{
 				name: [
-					'Дорадо с запечёнными овощами',
-					'Dorado with baked vegetables',
+					'Филе сибаса с диким рисом и соусом карри',
+					'Sea bass fillet with wild rice and curry sauce',
 				],
-				weight: 500,
-				cost: 36.80,
-				img: '2083/541059107/20220429_104351.jpg',
-				alias: 'dorado-with-baked-vegetables',
+				weight: 410,
+				cost: 20.00,
 			},
+
+			// {
+			// 	name: [
+			// 		'Дорадо с запечёнными овощами',
+			// 		'Dorado with baked vegetables',
+			// 	],
+			// 	weight: 500,
+			// 	cost: 36.80,
+			// 	img: '2083/541059107/20220429_104351.jpg',
+			// 	alias: 'dorado-with-baked-vegetables',
+			// },
 
 			// {
 			// 	name: [
@@ -1166,12 +1184,31 @@
 
 			{
 				name: [
+					'Жаркое из свинины с белыми грибами',
+					'Roast pork with porcini mushrooms',
+				],
+				weight: 590,
+				cost: 18.00,
+				alias: 'boiled-pork-with-sauerkraut-and-beans',
+			},
+
+			{
+				name: [
 					'Буженина с квашеной капустой и фасолью',
 					'Boiled pork with sauerkraut and beans',
 				],
 				weight: 480,
 				cost: 18.00,
 				alias: 'boiled-pork-with-sauerkraut-and-beans',
+			},
+
+			{
+				name: [
+					'Говядина с мятым картофелем и трюфельным маслом',
+					'Beef with mashed potatoes and truffle oil',
+				],
+				weight: 430,
+				cost: 18.00,
 			},
 
 			{
@@ -1641,10 +1678,10 @@
 
 			{
 				name: [
-					'Чёрный, Зелёный, Травяной, Молочный улун, Фруктовый, Красный дракон, Клубника со сливками, Мохито',
-					'Black, Green, Herbal, Milk oolong, Fruit tea, Red Dragon, Strawberries with cream, Mojito',
+					'Чёрный, Зелёный, Травяной, Молочный улун, Красный дракон, Клубника со сливками, Мохито',
+					'Black, Green, Herbal, Milk oolong, Red Dragon, Strawberries with cream, Mojito',
 				],
-				cost: 3.80,
+				cost: 4.30,
 			},
 
 
@@ -1665,8 +1702,8 @@
 
 			{
 				name: [
-					'Яблоко, Апельсин, Манго + Апельсин, Ананас, Вишня, Грейпфрут, Томат, Виноград, Морс Клюква + Виноград',
-					'Apple, Orange, Mango + Orange, Pineapple, Cherry, Grapefruit, Tomato, Grapes, Morse Cranberry + Grapes',
+					'Яблоко, Апельсин, Ананас, Вишня, Грейпфрут, Томат, Виноград, Морс Клюква + Виноград',
+					'Apple, Orange, Pineapple, Cherry, Grapefruit, Tomato, Grapes, Morse Cranberry + Grapes',
 				],
 				cost: 2.70,
 			},
@@ -2612,16 +2649,39 @@
 			},
 
 			{
+				name: 'Method And Madness',
+				collection: [
+					{
+						name: 'Single Pot Still',
+						cost: 18,
+					},
+				],
+			},
+
+			{
+				name: 'Powers',
+				collection: [
+					{
+						name: [
+							'12 лет',
+							'12 years',
+						],
+						cost: 22,
+					},
+				],
+			},
+
+			{
 				name: 'Jim Beam',
 				collection: [
 					{
 						name: 'White',
 						cost: 7.70,
 					},
-					{
-						name: 'Black',
-						cost: 9.50,
-					},
+					// {
+					// 	name: 'Black',
+					// 	cost: 9.50,
+					// },
 				],
 			},
 
@@ -3000,10 +3060,10 @@
 
 		collection: [
 
-			// {
-			// 	name: 'Jägermeister',
-			// 	cost: 10.00,
-			// },
+			{
+				name: 'Jägermeister',
+				cost: 14.00,
+			},
 
 			{
 				name: 'Becherovka',
@@ -3076,10 +3136,10 @@
 						name: 'Black',
 						cost: 8.50,
 					},
-					{
-						name: 'Spiced',
-						cost: 8.90,
-					},
+					// {
+					// 	name: 'Spiced',
+					// 	cost: 8.90,
+					// },
 				],
 			},
 
@@ -3095,6 +3155,10 @@
 		],
 
 		collection: [
+			{
+				name: 'Paulaner Naturtrüb',
+				slug: 'paulaner-hefe-weissbier',
+			},
 			// {
 			// 	name: 'Hoegaarden',
 			// 	alc: 4.9,
@@ -3102,18 +3166,14 @@
 			// 	cap: 0.5,
 			// 	cost: 13.00,
 			// },
-
-			// {
-			// 	name: 'Palm',
-			// 	alc: 5.4,
-			// 	den: 12.4,
-			// 	cap: 0.5,
-			// 	cost: 13.00,
-			// },
 			{
 				name: 'Holland Crown',
 				slug: 'h-west-b-v-holland-crown',
 			},
+			// {
+			// 	name: 'Palm',
+			// 	slug: 'palm',
+			// },
 			{
 				name: 'Brûler Blonde',
 				slug: 'belgian-brew-factory-bruler-blonde',
@@ -3122,10 +3182,10 @@
 				name: 'Brûler Brune',
 				slug: 'belgian-brew-factory-bruler-brune',
 			},
-			{
-				name: 'Saltaire Triple Choc',
-				slug: 'saltaire-brewery-triple-chocoholic',
-			},
+			// {
+			// 	name: 'Saltaire Triple Choc',
+			// 	slug: 'saltaire-brewery-triple-chocoholic',
+			// },
 			// {
 			// 	name: 'Braufactum Pale Ale',
 			//	slug: 'radeberger-gruppe-braufactum-german-pale-ale',
@@ -3160,26 +3220,26 @@
 				name: 'Holiday',
 				slug: 'robim-good-brewery-holiday',
 			},
-			{
-				name: 'Breakfast',
-				slug: 'robim-good-brewery-breakfast',
-			},
+			// {
+			// 	name: 'Breakfast',
+			// 	slug: 'robim-good-brewery-breakfast',
+			// },
 			{
 				name: 'Wake Up',
 				slug: 'robim-good-brewery-wake-up',
 			},
-			{
-				name: 'Dream',
-				slug: 'robim-good-brewery-dream',
-			},
-			{
-				name: 'Dance',
-				slug: 'robim-good-brewery-dance',
-			},
-			{
-				name: 'Crystal',
-				slug: 'robim-good-brewery-crystal',
-			},
+			// {
+			// 	name: 'Dream',
+			// 	slug: 'robim-good-brewery-dream',
+			// },
+			// {
+			// 	name: 'Dance',
+			// 	slug: 'robim-good-brewery-dance',
+			// },
+			// {
+			// 	name: 'Crystal',
+			// 	slug: 'robim-good-brewery-crystal',
+			// },
 			// {
 			//   name: 'Amber Ray',
 			//   alc: 5.2,
@@ -3187,13 +3247,10 @@
 			//   cap: 0.5,
 			//   cost: 7.00,
 			// },
-			// {
-			// 	name: 'Space',
-			// 	alc: 6.3,
-			// 	den: 17.3,
-			// 	cap: 0.5,
-			// 	cost: 7.00,
-			// },
+			{
+				name: 'Space',
+				slug: 'robim-good-brewery-space',
+			},
 			// {
 			// 	name: 'Idol',
 			// 	alc: 6.6,
@@ -3227,10 +3284,10 @@
 			 //   cap: 0.25,
 			 //   cost: 9,
 			 // },
-			{
-				name: 'Mort Subite Kriek',
-				slug: 'brouwerij-mort-subite-kriek-lambic',
-			},
+			// {
+			// 	name: 'Mort Subite Kriek',
+			// 	slug: 'brouwerij-mort-subite-kriek-lambic',
+			// },
 			{
 				name: 'Corona Extra',
 				slug: 'corona-extra',
@@ -3254,10 +3311,10 @@
 			// 	name: 'Murphy’s Irish Stout',
 			// 	slug: 'murphys-irish-stout',
 			// },
-			// {
-			// 	name: 'Guinness Draught Stout',
-			//	slug: 'guinness-draught',
-			// },
+			{
+				name: 'Guinness Draught Stout',
+				slug: 'guinness-draught',
+			},
 			// {
 			// 	name: 'Guinness West Indies Porter',
 			// 	alc: 6.0,
@@ -3272,10 +3329,10 @@
 			// 	cap: 0.33,
 			// 	cost: 9,
 			// },
-			{
-				name: 'O’Hara’s Pale Ale',
-				slug: 'oharas-irish-pale-ale',
-			},
+			// {
+			// 	name: 'O’Hara’s Pale Ale',
+			// 	slug: 'oharas-irish-pale-ale',
+			// },
 			// {
 			// 	name: 'O’Hara’s Irish Stout',
 			//	slug: 'oharas-irish-stout',
@@ -3336,10 +3393,10 @@
 				name: 'Aecht Schlenkerla Märzen',
 				slug: 'aecht-schlenkerla-rauchbier-marzen',
 			},
-			{
-				name: 'Hop Adventure Talus IPA',
-				slug: 'o-hara-s-brewery-hop-adventure-series-talus',
-			},
+			// {
+			// 	name: 'Hop Adventure Talus IPA',
+			// 	slug: 'o-hara-s-brewery-hop-adventure-series-talus',
+			// },
 			{
 				name: 'Pilsner Urquell',
 				slug: 'pilsner-urquell',
@@ -3363,10 +3420,10 @@
 				name: 'Paulaner Münchner Hell',
 				slug: 'paulaner-original-munchner-hell',
 			},
-			{
-				name: 'Paulaner Naturtrüb',
-				slug: 'paulaner-hefe-weissbier',
-			},
+			// {
+			// 	name: 'Paulaner Naturtrüb',
+			// 	slug: 'paulaner-hefe-weissbier',
+			// },
 			{
 				name: 'Paulaner Dunkel',
 				slug: 'paulaner-hefe-weissbier-dunkel',
@@ -3374,10 +3431,6 @@
 			{
 				name: 'Ayinger Kellerbier',
 				slug: 'ayinger-kellerbier',
-				alc: 4.9,
-				den: 11.8,
-				cap: 0.5,
-				cost: 11,
 			},
 			{
 				name: 'Ayinger Lager Hell',
@@ -3431,21 +3484,14 @@
 			// 	cap: 0.33,
 			// 	cost: 8.5,
 			// },
-			// {
-			//	name: 'XII Flemish Red Ale',
-			//	slug: 'sosab-sour-ale-brewery-xii-flemish-red-ale',
-			// },
-			// {
-			//   name: 'Estrella',
-			//   alc: 4.6,
-			//   den: 10.7,
-			//   cap: 0.5,
-			//   cost: 7.5,
-			// },
 			{
-				name: 'Saison 1858',
-				slug: 'brasserie-du-bocq-saison-1858',
+				name: 'XII Flemish Red Ale',
+				slug: 'sosab-sour-ale-brewery-xii-flemish-red-ale',
 			},
+			// {
+			// 	name: 'Saison 1858',
+			// 	slug: 'brasserie-du-bocq-saison-1858',
+			// },
 		],
 
 	},
