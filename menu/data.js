@@ -728,16 +728,16 @@
 			// 	],
 			// },
 
-			{
-				name: [
-					'Салат с хурмой и курицей',
-					'Salad with persimmon and chicken',
-				],
-				weight: 370,
-				cost: 13,
-				img: '5815/622950071/20221128_131556.jpg',
-				alias: 'salad-with-persimmon-and-chicken',
-			},
+			// {
+			// 	name: [
+			// 		'Салат с хурмой и курицей',
+			// 		'Salad with persimmon and chicken',
+			// 	],
+			// 	weight: 370,
+			// 	cost: 13,
+			// 	img: '5815/622950071/20221128_131556.jpg',
+			// 	alias: 'salad-with-persimmon-and-chicken',
+			// },
 
 		],
 
