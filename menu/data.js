@@ -524,6 +524,7 @@
 				cost: 6.80,
 				img: '3993/306466713/IMG_7648.jpg',
 				alias: 'solyanka',
+				tp: 1,
 			},
 
 			// {
@@ -544,6 +545,7 @@
 				cost: 5.00,
 				img: '4019/306466739/IMG_7621.jpg',
 				alias: 'mushroom-soup',
+				tp: 1,
 			},
 
 			{
@@ -783,6 +785,7 @@
 				cost: 9.4,
 				img: '7475/622943539/20221128_145152.jpg',
 				alias: 'chicken-club-sandwich',
+				tp: 3,
 			},
 
 			{
@@ -794,6 +797,7 @@
 				cost: 9.60,
 				img: '6113/471029729/IMG_3722.jpg',
 				alias: 'roast-beef-club-sandwich',
+				tp: 3,
 			},
 
 			{
@@ -805,6 +809,7 @@
 				cost: 10.20,
 				img: '5996/471029612/IMG_3859.jpg',
 				alias: 'salmond-club-sandwich',
+				tp: 3,
 			},
 
 			// {
@@ -818,6 +823,7 @@
 			// 		'5763/541005443/20220429_104747.jpg',
 			// 		'5762/541005442/20220429_104721.jpg',
 			// 	],
+			// 	tp: 2,
 			// },
 
 			{
@@ -829,6 +835,7 @@
 				cost: 14.30,
 				img: '7643/541007323/20220429_114605.jpg',
 				alias: 'beef-steak-burger',
+				tp: 2,
 			},
 
 			{
@@ -840,6 +847,7 @@
 				cost: 12.00,
 				img: '1928/471189384/IMG_3989.jpg',
 				alias: 'beef-cheek-burger',
+				tp: 2,
 			},
 
 			// {
@@ -853,6 +861,7 @@
 			// 		'7099/471030715/IMG_3797.jpg',
 			// 		'7098/471030714/IMG_3785.jpg',
 			// 	],
+			// 	tp: 2,
 			// },
 
 			// {
@@ -863,6 +872,7 @@
 			// 	weight: 280,
 			// 	cost: 13.80,
 			// 	alias: 'burger-with-beef-tongue',
+			// 	tp: 2,
 			// },
 
 			{
@@ -874,6 +884,7 @@
 				cost: 13.80,
 				img: '6902/471030518/IMG_3753.jpg',
 				alias: 'chicken-thigh-burger-with-aioli',
+				tp: 2,
 			},
 
 			{
@@ -885,6 +896,7 @@
 				cost: 12.00,
 				img: '441/593093049/20220913_163340.jpg',
 				alias: 'burger-with-smoked-pork',
+				tp: 2,
 			},
 
 			// {
@@ -895,6 +907,7 @@
 			// 	weight: 250,
 			// 	cost: 16.00,
 			// 	img: '1267/593093875/20220913_143553.jpg',
+			// 	tp: 2,
 			// },
 
 			{
@@ -928,6 +941,7 @@
 						cost: 12.00,
 					},
 				],
+				tp: 1,
 			},
 
 			{
@@ -961,6 +975,7 @@
 						cost: 13.20,
 					},
 				],
+				tp: 1,
 			},
 
 			{
@@ -994,6 +1009,7 @@
 						cost: 12.00,
 					},
 				],
+				tp: 1,
 			},
 
 			{
@@ -1027,6 +1043,7 @@
 						cost: 14.00,
 					},
 				],
+				tp: 1,
 			},
 
 			{
@@ -1060,6 +1077,7 @@
 						cost: 11.00,
 					},
 				],
+				tp: 1,
 			},
 
 		],
@@ -1180,6 +1198,7 @@
 				cost: 13.00,
 				img: '1946/435963802/20210504_201918.jpg',
 				alias: 'chicken-fillet-in-creamy-mushroom-sauce',
+				tp: 1,
 			},
 
 			{
@@ -1200,6 +1219,7 @@
 				weight: 480,
 				cost: 18.00,
 				alias: 'boiled-pork-with-sauerkraut-and-beans',
+				tp: 1,
 			},
 
 			{
@@ -1236,6 +1256,7 @@
 						cost: 7.00,
 					},
 				],
+				tp: 1,
 			},
 
 			{
@@ -1247,6 +1268,7 @@
 				cost: 15.30,
 				img: '3066/435940346/20210504_184818.jpg',
 				alias: 'roast-beef-with-mashed-potatoes',
+				tp: 1,
 			},
 
 			{
@@ -1258,6 +1280,7 @@
 				cost: 15.30,
 				img: '6026/551581578/20220527_120049.jpg',
 				alias: 'beef-cheek-with-mashed-potatoes',
+				tp: 1,
 			},
 
 			{
@@ -1268,6 +1291,7 @@
 				weight: 500,
 				cost: 17.00,
 				alias: 'chicken-pie',
+				tp: 1,
 			},
 
 			{
@@ -1314,6 +1338,7 @@
 						img: '6070/623597494/20221203_125507.jpg',
 					},
 				],
+				tp: 1,
 			},
 
 			{
@@ -1340,6 +1365,7 @@
 						cost: 23,
 					},
 				],
+				tp: 1,
 			},
 
 			{
@@ -1351,6 +1377,7 @@
 				cost: 31.70,
 				img: '5465/423974233/IMG_8357.jpg',
 				alias: 'pork-shank',
+				tp: 1,
 			},
 
 			{

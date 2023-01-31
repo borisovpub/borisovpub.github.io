@@ -333,7 +333,7 @@
 
 <script>( ( /** Window */ window ) => Promise.all( [
 	window.fetch( '/menu/data.js?' + window.Math.random() ).then( ( respose ) => respose.text() ),
-	window.fetch( 'https://your.beer/api/v1/places/irish-pub' ).then( ( response ) => response.json() ),
+	window.fetch( 'https://your.beer/api/v1/places/irish-pub' ).then( ( response )  => response.json() ),
 ] ).then( ( [ menu, beers ] ) => {
 
 	menu = window.eval( menu );
