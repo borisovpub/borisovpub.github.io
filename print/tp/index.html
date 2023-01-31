@@ -25,13 +25,13 @@
 		@font-face {
 			font-family: 'Open Sans Condensed';
 			src: local( 'Open Sans Condensed Bold' ),
-				 url( '/@/OpenSansCondensed-Bold.ttf' );
+				 url('/@/OpenSansCondensed-Bold.ttf');
 		}
 
 		@font-face {
 			font-family: 'Open Sans Condensed Light';
 			src: local( 'Open Sans Condensed Light' ),
-				 url( '/@/OpenSansCondensed-Light.ttf' );
+				 url('/@/OpenSansCondensed-Light.ttf');
 		}
 
 		*,
@@ -49,7 +49,7 @@
 		body {
 			font-family: 'Open Sans Condensed Light', Arial, sans-serif;
 			width: 210mm;
-			height: 297mm;
+			height: calc( 297mm * 2 );
 			background: #fff;
 		}
 
@@ -187,6 +187,10 @@
 				position: relative;
 			}
 
+			.page > section:not( :nth-child( 1 ) ) {
+				display: none;
+			}
+
 			.page:before {
 				content: '';
 				display: block;
@@ -195,7 +199,7 @@
 				bottom: 8mm;
 				left: 8mm;
 				width: calc( 210mm / 2 - 16mm );
-				/*outline: 1mm dashed #f99;*/
+				outline: 1mm dashed #f99;
 				pointer-events: none;
 			}
 
@@ -239,18 +243,33 @@
 		</li>
 	</template>
 
+	<template id="colon">
+		<section>
+			<div style="text-align: center; position: relative">
+				<img src="tp.svg" style="width:80mm; margin-bottom: 8mm" />
+				<img src="/@/logo.svg" style="width:18mm; filter: invert( 1 ); position: absolute; left: 65mm; top: 20mm" />
+			</div>
+			<div class="content"></div>
+			<div class="opacity" style="margin: 5mm 0 5mm 0; font-size: 19pt; line-height: 18pt;">
+				<img src="../qr.svg" style="width: 25mm; height: 25mm" />
+				<span style="display: inline-block; margin-left: 2mm">
+						<span style="text-transform: uppercase">
+							Доставка из<br />
+							Ирландского Паба
+						</span><br/><br/>
+						irish-pub.by
+					</span>
+			</div>
+		</section>
+	</template>
+
 </head>
 
 <body>
 
 <article class="page">
-	<div></div>
-	<div></div>
 </article>
-
 <article class="page">
-	<div></div>
-	<div></div>
 </article>
 
 <script>( ( /** Window */ window ) => window.fetch( '/menu/data.js?' + window.Math.random() ).then( ( respose ) => respose.text() ).then( ( menu ) => {
@@ -388,48 +407,38 @@
 
 	};
 
-	var colon = querySelectorAll( document, '.page>div' );
+	var colonTemplate = querySelector( document, '#colon' );
 
-	var createPair = ( colon, append ) => {
+	var createColon = ( append ) => {
 
-		colon.insertAdjacentHTML( 'beforeend', `
-			<div style="text-align: center; position: relative">
-				<img src="tp.svg" style="width:80mm; margin-bottom: 8mm" />
-				<img src="/@/logo.svg" style="width:18mm; filter: invert( 1 ); position: absolute; left: 65mm; top: 20mm" />
-			</div>
-		` );
-
-		append( colon );
-
-		colon.insertAdjacentHTML( 'beforeend', `
-			<div class="opacity" style="margin: 5mm 0 5mm 0; font-size: 19pt; line-height: 18pt;">
-				<img src="qr.svg" style="width: 25mm; height: 25mm" />
-				<span style="display: inline-block; margin-left: 2mm">
-					<span style="text-transform: uppercase">
-						Доставка из<br />
-						Ирландского Паба
-					</span><br/><br/>
-					irish-pub.by
-				</span>
-			</div>
-		` );
+		var result = cloneNode( colonTemplate );
+		append( querySelector( result, '.content' ) );
+		return result;
 
 	};
 
-	createPair( colon[ 0 ], () => {
+	var page = querySelectorAll( document, '.page' );
 
-		appendChild( colon[ 0 ], createSection( menu.BurgersSandwiches, 1, 'Бургеры с котлетами' ) );
-		appendChild( colon[ 0 ], createSection( menu.BurgersSandwiches, 2, 'Бургеры авторские' ) );
+	var colon0 = querySelector( createColon( ( result ) => {
 
-	} );
+		appendChild( result, createSection( menu.BurgersSandwiches, 1, 'Бургеры с котлетами' ) );
+		appendChild( result, createSection( menu.BurgersSandwiches, 2, 'Бургеры авторские' ) );
 
-	createPair( colon[ 1 ], () => {
+	} ), 'section' );
 
-		appendChild( colon[ 1 ], createSection( menu.Soups, 1 ) );
-		appendChild( colon[ 1 ], createSection( menu.BurgersSandwiches, 3, 'Сэндвичи' ) );
-		appendChild( colon[ 1 ], createSection( menu.HotDishes, 1 ) );
+	var colon1 = querySelector( createColon( ( result ) => {
 
-	} );
+		appendChild( result, createSection( menu.Soups, 1 ) );
+		appendChild( result, createSection( menu.BurgersSandwiches, 3, 'Сэндвичи' ) );
+		appendChild( result, createSection( menu.HotDishes, 1 ) );
+
+	} ), 'section' );
+
+	appendChild( page[ 0 ], colon0 );
+	appendChild( page[ 0 ], colon0.cloneNode( true ) );
+
+	appendChild( page[ 1 ], colon1 );
+	appendChild( page[ 1 ], colon1.cloneNode( true ) );
 
 	// appendChild( colon[ 0 ], createSection( menu.BeerStarters, createDish ) );
 	// appendChild( colon[ 0 ], createSection( menu.Starters, createDish ) );
