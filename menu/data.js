@@ -242,6 +242,7 @@
 				],
 				weight: 400,
 				cost: 20.00,
+				alias: 'beef-tartare-with-gratin',
 			},
 
 			// {
@@ -1100,6 +1101,7 @@
 				],
 				weight: 410,
 				cost: 20.00,
+				alias: 'sea-bass-fillet-with-wild-rice-and-curry-sauce',
 			},
 
 			// {
@@ -1208,7 +1210,7 @@
 				],
 				weight: 590,
 				cost: 18.00,
-				alias: 'boiled-pork-with-sauerkraut-and-beans',
+				alias: 'roast-pork-with-porcini-mushrooms',
 			},
 
 			{
@@ -1229,6 +1231,7 @@
 				],
 				weight: 430,
 				cost: 18.00,
+				alias: 'beef-with-mashed-potatoes-and-truffle-oil',
 			},
 
 			{
