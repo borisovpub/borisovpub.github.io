@@ -324,8 +324,17 @@
 
 			{
 				name: [
+					'Сет «Мастак»',
+					'«Mastak» Set',
+				],
+				weight: 1000,
+				cost: 35.00,
+			},
+
+			{
+				name: [
 					'Куриный сет',
-					'Chicken set',
+					'Chicken Set',
 				],
 				weight: 1000,
 				cost: 30.20,
@@ -336,7 +345,7 @@
 			{
 				name: [
 					'Мясной сет',
-					'Meat set',
+					'Meat Set',
 				],
 				weight: 900,
 				cost: 44.00,
@@ -347,7 +356,7 @@
 			{
 				name: [
 					'Морской сет',
-					'Sea set',
+					'Sea Set',
 				],
 				weight: 800,
 				cost: 57.80,
@@ -913,6 +922,18 @@
 
 			{
 				name: [
+					'Классический Чизбургер',
+					'Classic Cheeseburger',
+				],
+				weight: 400,
+				cost: 14.50,
+				img: '1495/650364375/20230210_121917.jpg',
+				alias: 'classic-cheeseburger',
+				tp: 1,
+			},
+
+			{
+				name: [
 					'Бургер «Классик»',
 					'Burger «Classic»',
 				],
@@ -1410,7 +1431,7 @@
 					'Стейк из сёмги с кокосово-лаймовым соусом',
 					'Salmon steak with coconut-lime sauce',
 				],
-				weight: 230,
+				weight: 210,
 				cost: 25.60,
 				img: '6791/489814663/IMG_4323.JPG',
 				alias: 'salmon-steak-with-coconut-lime-sauce',
@@ -3200,10 +3221,14 @@
 				name: 'Holland Crown',
 				slug: 'h-west-b-v-holland-crown',
 			},
-			// {
-			// 	name: 'Palm',
-			// 	slug: 'palm',
-			// },
+			{
+				name: 'Palm',
+				slug: 'palm',
+			},
+			{
+				name: 'Abbot Ale',
+				slug: 'greene-king-abbot-ale',
+			},
 			{
 				name: 'Brûler Blonde',
 				slug: 'belgian-brew-factory-bruler-blonde',
@@ -3232,6 +3257,10 @@
 			// 	slug: 'gletcher-iron-woods',
 			// },
 			{
+				name: 'Triple Choc',
+				slug: 'saltaire-brewery-triple-chocoholic',
+			},
+			{
 				name: 'Milk of Amnesia',
 				slug: 'gletcher-milk-of-amnesia-v-tropic-milkshake-ipa',
 			},
@@ -3254,10 +3283,10 @@
 			// 	name: 'Breakfast',
 			// 	slug: 'robim-good-brewery-breakfast',
 			// },
-			{
-				name: 'Wake Up',
-				slug: 'robim-good-brewery-wake-up',
-			},
+			// {
+			// 	name: 'Wake Up',
+			// 	slug: 'robim-good-brewery-wake-up',
+			// },
 			// {
 			// 	name: 'Dream',
 			// 	slug: 'robim-good-brewery-dream',
