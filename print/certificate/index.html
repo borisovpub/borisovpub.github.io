@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru" xml:lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<title>Сертификаты | Печать</title>
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+
+	<style media="all">
+
+		@page {
+			size: 450mm 320mm;
+			margin: 0;
+		}
+
+		@font-face {
+			font-family: "Open Sans Condensed";
+			src: local( "Open Sans Condensed Bold" ),
+				 url( "/@/OpenSansCondensed-Bold.ttf" );
+		}
+
+		@font-face {
+			font-family: "Open Sans Condensed Light";
+			src: local( "Open Sans Condensed Light" ),
+				 url( "/@/OpenSansCondensed-Light.ttf" );
+		}
+
+		*,
+		:after,
+		:before {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style-type: none;
+		}
+
+		body {
+			width: 450mm;
+			background: #fff;
+			font-family: "Open Sans Condensed", Arial, sans-serif;
+			text-transform: uppercase;
+		}
+
+		[contenteditable="true"] {
+			-webkit-user-modify: read-only;
+		}
+
+		.page {
+
+			--red: rgb( 200, 45, 45 );
+
+			display: grid;
+			grid-template-columns: repeat( 5, calc( ( 450mm - 16mm ) / 5 ) );
+			grid-template-rows: repeat( 5, calc( ( 320mm - 16mm ) / 5 ) );
+			grid-gap: 0;
+			padding: 8mm 8mm 0 8mm;
+
+			page-break-before: always;
+
+		}
+
+		.page > * {
+			overflow: hidden;
+		}
+
+		.red {
+			color: var( --red );
+		}
+
+		.cert {
+			position: relative;
+			-webkit-print-color-adjust: exact !important;
+		}
+
+		.cert .head {
+			background: var( --red );
+			width: calc( 100% - 5mm );
+			color: white;
+			font-size: 14pt;
+			padding: 3mm 0 2mm 8mm;
+		}
+
+		body > div {
+			padding: 4mm;
+		}
+
+		button,
+		input {
+			margin-right: 10px;
+		}
+
+		form,
+		button {
+			display: block;
+			margin-bottom: 10px;
+			padding: 5px;
+			min-width: 100px;
+		}
+
+		@media screen {
+
+			html {
+				background: #999;
+			}
+
+			.cert {
+				outline: 1px solid black;
+			}
+
+			.page {
+				outline: 1px solid #555;
+				position: relative;
+			}
+
+		}
+
+	</style>
+
+	<template id="form">
+		<form>
+			<label>Сумма: <input type="number" name="summ" value="20" step="10" /></label>
+			<label>Количество: <input type="number" name="count" value="5" step="5" /></label>
+		</form>
+	</template>
+
+	<template id="page">
+		<article class="page">
+		</article>
+	</template>
+
+	<template id="cert1">
+		<div class="cert cert1">
+			<div class="head">Ирландский Паб</div>
+			<div>
+				<img src="bg.svg" style="
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					height: 44mm;
+				" />
+			</div>
+			<div style="
+				text-align: right;
+				font-size: 10pt;
+				line-height: 11pt;
+				margin: 1mm 4mm;
+			">
+				<span>Отличное <span class="red">место</span></span><br />
+				<span>для лучших <span class="red">друзей</span></span>
+			</div>
+		</div>
+	</template>
+
+	<template id="cert2">
+		<div class="cert cert2">
+			<div class="head">Ирландский Паб</div>
+			<div style="font-size: 10pt">
+				<div style="margin: 4mm 8mm">
+					Вексиль на <span class="red">хорошее настроение</span><br />
+					<span style="margin-left: 26mm">и удаление голода.</span>
+				</div>
+				<div style="margin: 4mm 8mm">
+					Предназначен для обмена<br />
+					<span style="margin-left: 16mm">на <span class="red">выпивошку</span> и <span class="red">нямку</span>.</span>
+				</div>
+				<div style="text-align: right; margin-right: 8mm; line-height: 12pt">
+					<span style="font-size: 18pt"><span class="cost">50</span> <span style="font-size: 12pt">р.</span></span><br />
+					<span style="color: #777; font-size: 7pt">обмену на белорусские рубли не подлежит.</span>
+				</div>
+			</div>
+		</div>
+	</template>
+
+</head>
+
+<body>
+
+<script>( ( /** Window */ window ) => {
+
+	/** @noinline */
+	var querySelector = ( node, selector ) => node.querySelector( selector );
+	/** @noinline */
+	var cloneNode = ( node ) => document.importNode( node.content, true );
+	/** @noinline */
+	var appendChild = ( node, child ) => node.appendChild( child );
+
+	var document =	window.document;
+	var body = document.body;
+
+	var certs = window.decodeURIComponent( window.location.search.replace( /^\?/, '' ) ).trim();
+	if ( certs.length > 0 ) {
+
+		certs = certs.split( ';' );
+
+		let pageTemplate = querySelector( document, '#page' );
+		let certTemplate1 = querySelector( document, '#cert1' );
+		let certTemplate2 = querySelector( document, '#cert2' );
+
+		let page1, page2;
+
+		let count = 0;
+
+		for ( let o of certs ) {
+
+			let [ s, c ] = o.split( ',' );
+
+			c = Math.ceil( window.parseInt( c ) / 5 ) * 5;
+
+			for ( let i=0; i<c; ++i ) {
+
+				if ( count % 25 === 0 ) {
+
+					page1 = appendChild( body, querySelector( cloneNode( pageTemplate ), '.page' ) );
+					page2 = appendChild( body, querySelector( cloneNode( pageTemplate ), '.page' ) );
+
+				}
+
+				let cert1 = cloneNode( certTemplate1 );
+				let cert2 = cloneNode( certTemplate2 );
+
+				querySelector( cert2, '.cost' ).textContent = s;
+
+				appendChild( page1, cert1 );
+				appendChild( page2, cert2 );
+
+				++count;
+				
+			}
+
+		}
+
+	} else {
+
+		let page = appendChild( body, document.createElement( 'div' ) );
+
+		let addButton = document.createElement( 'button' );
+		let submitButton = document.createElement( 'button' );
+
+		let formTemplate = querySelector( document, '#form' );
+
+		const add = () => page.insertBefore( cloneNode( formTemplate ), addButton );
+
+		addButton.textContent = 'Добавить';
+		submitButton.textContent = 'На печать';
+
+		addButton.addEventListener( 'click', add );
+
+		appendChild( page, addButton );
+		appendChild( page, submitButton );
+
+		add();
+
+		submitButton.addEventListener( 'click', () => {
+
+			const arr = [];
+			for ( let form of page.querySelectorAll( 'form' ) ) {
+				let s = window.parseInt( querySelector( form, '[name="summ"]' ).value );
+				let c = window.parseInt( querySelector( form, '[name="count"]' ).value );
+				if ( s > 0 && c > 0 ) arr.push( s + ',' + c );
+			}
+
+			window.location = '?' + window.encodeURIComponent( arr.join( ';' ) );
+
+		} );
+
+	}
+
+
+} )( this )</script>
+
+</body>
+
+</html>
