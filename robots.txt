@@ -4,4 +4,6 @@ Disallow: *.json
 Disallow: */print
 Disallow: *.max
 Sitemap: https://irish-pub.by/sitemap.xml
+Sitemap: https://bakery.irish-pub.by/sitemap.xml
+Sitemap: https://delivery.irish-pub.by/sitemap.xml
 Host: irish-pub.by
