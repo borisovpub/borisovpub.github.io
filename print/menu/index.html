@@ -230,6 +230,34 @@
 
 		}
 
+		.no-cost .cost {
+			display: none;
+		}
+
+		.no-cost .section {
+			grid-template-columns: minmax( 0, min-content ) auto;
+			grid-template-areas: "a b" "c c";
+		}
+
+		.no-cost .section > .title {
+			grid-area: a;
+			white-space: nowrap;
+		}
+
+		.no-cost .section > .sub-title {
+			grid-area: b;
+			text-align: left;
+			padding-left: 2mm;
+		}
+
+		.no-cost .section > ul {
+			grid-area: c;
+		}
+
+		.no-cost .beer {
+			grid-template-columns: auto min-content;
+		}
+
 	</style>
 
 	<template id="section">
@@ -373,9 +401,7 @@
 
 	beers = beers.beers;
 
-	// beers.tap.forEach( v => console.log( v.name, '/', v.slug ) );
-	// console.log( '---')
-	// beers.other.forEach( v => console.log( v.name, '/', v.slug ) );
+	var params = new window.URLSearchParams( window.location.search );
 
 	/** @noinline */
 	var querySelector = ( node, selector ) => node.querySelector( selector );
@@ -389,7 +415,7 @@
 	var document =	window.document;
 	var Array =		window.Array;
 
-	var lang = window.location.search.replace( /^\?/, '' ) === 'en' ? 1 : 0;
+	var lang = params.has( 'en' ) ? 1 : 0;
 
 	var getName = ( data ) => Array.isArray( data ) ? data[ lang ] : data;
 
@@ -599,7 +625,7 @@
 
 		querySelector( result, '.name' ).textContent = getName( data.name );
 
-		if ( data.slug && ( data = info.find( ( d ) => d.slug == data.slug ) ) ) {
+		if ( data.slug && ( data = info.find( ( d ) => d.slug === data.slug ) ) ) {
 
 			var sku = data.skus.reduce(
 				( a, b ) => a.volume > b.volume ? a : b,
@@ -807,6 +833,10 @@
 	appendChild( colon[ 7 ], createSection( menu.DraftBeer, createDraftBeer ) );
 	appendChild( colon[ 7 ], createSection( menu.BottledBeer, createBeer ) );
 	appendChild( colon[ 7 ], createSection( menu.NonAlcoholicBeer, createBeer ) );
+
+	if ( params.has( 'cost' ) ) {
+		document.body.classList.add( 'no-cost' );
+	}
 
 } ) )( this )</script>
 
