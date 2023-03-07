@@ -236,12 +236,18 @@
 	/** @noinline */
 	var addEventListener = ( node, type, listener ) => node.addEventListener( type, listener );
 
+	var fixText = ( txt ) => window.String( txt )
+		.replace( /-/g, '‑' )
+		.replace( /[`']/g, '’' )
+		.replace( /"([^"]+)"/g, '«$1»' )
+	;
+
 	var document =	window.document;
 
 	var isArray =	window.Array.isArray;
 	var body =		document.body;
 
-	var getName = ( data ) => isArray( data ) ? data[ 0 ] : data;
+	var getName = ( data ) => fixText( isArray( data ) ? data[ 0 ] : data );
 
 	var sectionTemplate = querySelector( document, '#section' );
 

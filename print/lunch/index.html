@@ -221,6 +221,12 @@
 		querySelector( node, 'span' ).textContent = c[ 1 ];
 	};
 
+	var fixText = ( txt ) => window.String( txt )
+		.replace( /-/g, '‑' )
+		.replace( /[`']/g, '’' )
+		.replace( /"([^"]+)"/g, '«$1»' )
+	;
+
 	var document = window.document;
 
 	var page = querySelector( document, '.page' );
@@ -248,9 +254,9 @@
 			brunch = data.brunch[ i ];
 			brunchNode = cloneNode( brunchTemplate );
 
-			querySelector( brunchNode, '.name' ).textContent = brunch[ 0 ];
+			querySelector( brunchNode, '.name' ).textContent = fixText( brunch[ 0 ] );
 			querySelector( brunchNode, '.weight' ).textContent = brunch[ 2 ];
-			querySelector( brunchNode, '.desc' ).textContent = brunch[ 1 ];
+			querySelector( brunchNode, '.desc' ).textContent = fixText( brunch[ 1 ] );
 
 			setCost( querySelector( brunchNode, '.cost' ), brunch[ 3 ] );
 
@@ -279,7 +285,7 @@
 				lunch = lunchCollection[ j ];
 				lunchNode = cloneNode( lunchTemplate );
 
-				querySelector( lunchNode, '.name' ).textContent = lunch[ 0 ];
+				querySelector( lunchNode, '.name' ).textContent = fixText( lunch[ 0 ] );
 				querySelector( lunchNode, '.weight' ).textContent = lunch[ 1 ];
 
 				setCost( querySelector( lunchNode, '.cost' ), lunch[ 2 ] );

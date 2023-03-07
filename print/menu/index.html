@@ -412,12 +412,18 @@
 	/** @noinline */
 	var appendChild = ( node, child ) => node.appendChild( child );
 
+	var fixText = ( txt ) => window.String( txt )
+		.replace( /-/g, '‑' )
+		.replace( /[`']/g, '’' )
+		.replace( /"([^"]+)"/g, '«$1»' )
+	;
+
 	var document =	window.document;
 	var Array =		window.Array;
 
 	var lang = params.has( 'en' ) ? 1 : 0;
 
-	var getName = ( data ) => Array.isArray( data ) ? data[ lang ] : data;
+	var getName = ( data ) => fixText( Array.isArray( data ) ? data[ lang ] : data );
 
 	var sectionTemplate = querySelector( document, '#section' );
 

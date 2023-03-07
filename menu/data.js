@@ -128,7 +128,7 @@
 
 			{
 				name: [
-					'Мидии и вонголе в соусе «Том ям»',
+					'Мидии и вонголе в соусе "Том ям"',
 					'Mussels and vongole in tom yum sauce',
 				],
 				weight: 490,
@@ -324,8 +324,8 @@
 
 			{
 				name: [
-					'Сет «Мастак»',
-					'«Mastak» Set',
+					'Сет "Мастак"',
+					'"Mastak" Set',
 				],
 				weight: 1000,
 				cost: 35.00,
@@ -388,8 +388,8 @@
 
 			{
 				name: [
-					'Курица Ballantine’s',
-					'Ballantine’s chicken',
+					'Курица Ballantine`s',
+					'Ballantine`s chicken',
 				],
 				weight: 50,
 				cost: 3.80,
@@ -581,7 +581,7 @@
 
 			{
 				name: [
-					'Салат «Греческий»',
+					'Салат "Греческий"',
 					'Greek salad',
 				],
 				weight: 250,
@@ -592,7 +592,7 @@
 
 			{
 				name: [
-					'Салат «Цезарь»',
+					'Салат "Цезарь"',
 					'Caesar salad',
 				],
 				alias: 'caesar-salad',
@@ -719,8 +719,8 @@
 
 			{
 				name: [
-					'Салат «Мясной»',
-					'Salad «Meat»',
+					'Салат "Мясной"',
+					'Salad "Meat"',
 				],
 				weight: 300,
 				cost: 14.50,
@@ -934,8 +934,8 @@
 
 			{
 				name: [
-					'Бургер «Классик»',
-					'Burger «Classic»',
+					'Бургер "Классик"',
+					'Burger "Classic"',
 				],
 				img: '7630/471031246/IMG_3824.jpg',
 				alias: 'burger-classic',
@@ -968,8 +968,8 @@
 
 			{
 				name: [
-					'Бургер «Пират»',
-					'Burger «Pirate»',
+					'Бургер "Пират"',
+					'Burger "Pirate"',
 				],
 				img: '7312/471030928/IMG_3698.jpg',
 				alias: 'burger-pirate',
@@ -1002,8 +1002,8 @@
 
 			{
 				name: [
-					'Бургер «Jack Daniel’s»',
-					'Burger «Jack Daniel’s»',
+					'Бургер "Jack Daniel`s"',
+					'Burger "Jack Daniel`s"',
 				],
 				img: '3064/622939128/20221128_143710.jpg',
 				alias: 'burger-jack-daniels',
@@ -1138,8 +1138,8 @@
 
 			// {
 			// 	name: [
-			// 		'Утиная грудка «Магре» в апельсиновом соусе',
-			// 		'Duck breast «Magre» in orange sauce',
+			// 		'Утиная грудка "Магре" в апельсиновом соусе',
+			// 		'Duck breast "Magre" in orange sauce',
 			// 	],
 			// 	weight: 300,
 			// 	cost: 24.50,
@@ -1161,8 +1161,8 @@
 
 			// {
 			// 	name: [
-			// 		'Утиная ножка «Конфи» с бататом',
-			// 		'Duck leg «Confit» with sweet potato',
+			// 		'Утиная ножка "Конфи" с бататом',
+			// 		'Duck leg "Confit" with sweet potato',
 			// 	],
 			// 	weight: 350,
 			// 	cost: 26.60,
@@ -1553,7 +1553,7 @@
 
 			{
 			  name: [
-			    'Чизкейк «Нью-Йорк»',
+			    'Чизкейк "Нью-Йорк"',
 			    'New York Cheesecake',
 			  ],
 			  weight: 150,
@@ -2254,7 +2254,7 @@
 		collection: [
 
 			{
-				name: 'Marcel Martin La Jaglerie Rose D’Anjou',
+				name: 'Marcel Martin La Jaglerie Rose D`Anjou',
 				weight: [
 					'псх',
 					's-dr',
@@ -2266,7 +2266,7 @@
 			},
 
 			{
-				name: 'Fantini Cerasuolo D’Abruzzo',
+				name: 'Fantini Cerasuolo D`Abruzzo',
 				weight: [
 					'псх',
 					's-dr',
@@ -2737,7 +2737,7 @@
 			},
 
 			{
-				name: 'Jack Daniel’s',
+				name: 'Jack Daniel`s',
 				collection: [
 					{
 						name: '№7',
@@ -2751,7 +2751,7 @@
 			},
 
 			{
-				name: 'Ballantine’s',
+				name: 'Ballantine`s',
 				collection: [
 					{
 						name: [
@@ -2767,7 +2767,7 @@
 				name: 'Glenlivet',
 				collection: [
 					{
-						name: 'Faunder’s Reserve',
+						name: 'Faunder`s Reserve',
 						cost: 10.90,
 					},
 					{
@@ -2803,7 +2803,7 @@
 						cost: 22.10,
 					},
 					{
-						name: 'Nectar D’or',
+						name: 'Nectar D`or',
 						cost: 22.10,
 					},
 				],
@@ -2853,7 +2853,7 @@
 			},
 
 			// {
-			// 	name: 'Grant’s',
+			// 	name: 'Grant`s',
 			// 	collection: [
 			// 		{
 			// 			name: 'Tripple Wood',
@@ -3367,7 +3367,7 @@
 			//   cost: 11,
 			// },
 			// {
-			// 	name: 'Murphy’s Irish Stout',
+			// 	name: 'Murphy`s Irish Stout',
 			// 	slug: 'murphys-irish-stout',
 			// },
 			{
@@ -3389,31 +3389,31 @@
 			// 	cost: 9,
 			// },
 			// {
-			// 	name: 'O’Hara’s Pale Ale',
+			// 	name: 'O`Hara`s Pale Ale',
 			// 	slug: 'oharas-irish-pale-ale',
 			// },
 			// {
-			// 	name: 'O’Hara’s Irish Stout',
+			// 	name: 'O`Hara`s Irish Stout',
 			//	slug: 'oharas-irish-stout',
 			// },
 			{
-				name: 'O’Hara’s Leann Folláin',
+				name: 'O`Hara`s Leann Folláin',
 				slug: 'oharas-leann-follain',
 			},
 			{
-				name: 'O’Hara’s Irish Red Nitro',
+				name: 'O`Hara`s Irish Red Nitro',
 				slug: 'oharas-nitro-irish-red',
 			},
 			// {
-			// 	name: 'O’Hara’s Irish Stout Nitro',
+			// 	name: 'O`Hara`s Irish Stout Nitro',
 			// 	slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
 			// },
 			// {
-			// 	name: 'O’Hara’s West Coast IPA',
+			// 	name: 'O`Hara`s West Coast IPA',
 			// 	slug: 'o-hara-s-brewery-o-hara-s-west-coast-ipa',
 			// },
 			// {
-			// 	name: 'O’Hara’s Hazy IPA',
+			// 	name: 'O`Hara`s Hazy IPA',
 			// 	slug: 'o-hara-s-brewery-o-hara-s-hazy-ipa',
 			// },
 			{
@@ -3437,7 +3437,7 @@
 				slug: 'belhaven-black',
 			},
 			{
-				name: 'Belhaven McCallum’s Stout',
+				name: 'Belhaven McCallum`s Stout',
 				slug: 'belhaven-mccallums-stout',
 			},
 			{

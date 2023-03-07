@@ -339,7 +339,7 @@
 	</section>
 </footer>
 
-<script>( ( /** Window */ window ) => window.fetch( '/lunch/data.json?' + window.Math.random() ).then( ( response ) => response.json() ).then( ( /** { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } */ data ) => {
+<script>( ( /** Window */ window ) => window.fetch( '/lunch/data.json?' + window.Math.random() ).then( ( response ) => response.json() ).then( ( /** { mode: 0 | 1 | 2, lunch: Array< LunchCollection >, brunch: Array< Brunch > } */ data ) => {
 
 	/** @typedef { [ string, number, number ] } Lunch */
 
@@ -356,6 +356,12 @@
 	/** @noinline */
 	var pad2 = ( v ) => ( v < 10 ? '0' : '' ) + v;
 
+	var fixText = ( txt ) => window.String( txt )
+		.replace( /-/g, '‑' )
+		.replace( /[`']/g, '’' )
+		.replace( /"([^"]+)"/g, '«$1»' )
+	;
+
 	var document = window.document;
 
 	var name = querySelector( document, 'h2 span' );
@@ -371,59 +377,75 @@
 
 	querySelector( document, 'h2 time' ).textContent = pad2( d.getDate() ) + '.' + pad2( d.getUTCMonth() + 1 ) + '.' + d.getUTCFullYear();
 
-	if ( data.mode ) {
+	switch ( data.mode ) {
 
-		name.textContent = 'Бранч';
+		case 2:
 
-		brunchTemplate = querySelector( document, '#brunch' );
+			querySelector( document, 'article div span' ).textContent = 'К сожалению сегодня у нас нет специального меню.';
+			collection.parentNode.removeChild( collection );
 
-		i = 0; l = data.brunch.length;
-		for ( ; i<l; ++i ) {
+			break;
 
-			brunch = data.brunch[ i ];
-			brunchNode = cloneNode( brunchTemplate );
+		case 1:
 
-			querySelector( brunchNode, '.name' ).textContent = brunch[ 0 ];
-			querySelector( brunchNode, '.weight' ).textContent = brunch[ 2 ];
-			querySelector( brunchNode, '.cost' ).textContent = brunch[ 3 ].toFixed( 2 );
-			querySelector( brunchNode, '.desc' ).textContent = brunch[ 1 ];
+			name.textContent = 'Бранч';
 
-			appendChild( collection, brunchNode );
+			brunchTemplate = querySelector( document, '#brunch' );
 
-		}
+			i = 0;
+			l = data.brunch.length;
+			for ( ; i < l; ++i ) {
 
-	} else {
+				brunch = data.brunch[ i ];
+				brunchNode = cloneNode( brunchTemplate );
 
-		name.textContent = 'Обед';
+				querySelector( brunchNode, '.name' ).textContent = fixText( brunch[ 0 ] );
+				querySelector( brunchNode, '.weight' ).textContent = brunch[ 2 ];
+				querySelector( brunchNode, '.cost' ).textContent = brunch[ 3 ].toFixed( 2 );
+				querySelector( brunchNode, '.desc' ).textContent = fixText( brunch[ 1 ] );
 
-		lunchCollectionTemplate = querySelector( document, '#lunch-collection' );
-		lunchTemplate = querySelector( document, '#lunch' );
-
-		i = 0; l = data.lunch.length;
-		for ( ; i<l; ++i ) {
-
-			lunchCollection = data.lunch[ i ];
-			lunchCollectionNode = cloneNode( lunchCollectionTemplate );
-
-			querySelector( lunchCollectionNode, 'span' ).textContent = lunchCollection.shift();
-
-			j = 0; m = lunchCollection.length;
-			for ( ; j<m; ++j ) {
-
-				lunch = lunchCollection[ j ];
-				lunchNode = cloneNode( lunchTemplate );
-
-				querySelector( lunchNode, '.name' ).textContent = lunch[ 0 ];
-				querySelector( lunchNode, '.weight' ).textContent = lunch[ 1 ];
-				querySelector( lunchNode, '.cost' ).textContent = lunch[ 2 ].toFixed( 2 );
-
-				appendChild( querySelector( lunchCollectionNode, 'ul' ), lunchNode );
+				appendChild( collection, brunchNode );
 
 			}
 
-			appendChild( collection, lunchCollectionNode );
+			break;
 
-		}
+		case 0:
+
+			name.textContent = 'Обед';
+
+			lunchCollectionTemplate = querySelector( document, '#lunch-collection' );
+			lunchTemplate = querySelector( document, '#lunch' );
+
+			i = 0;
+			l = data.lunch.length;
+			for ( ; i < l; ++i ) {
+
+				lunchCollection = data.lunch[ i ];
+				lunchCollectionNode = cloneNode( lunchCollectionTemplate );
+
+				querySelector( lunchCollectionNode, 'span' ).textContent = lunchCollection.shift();
+
+				j = 0;
+				m = lunchCollection.length;
+				for ( ; j < m; ++j ) {
+
+					lunch = lunchCollection[ j ];
+					lunchNode = cloneNode( lunchTemplate );
+
+					querySelector( lunchNode, '.name' ).textContent = fixText( lunch[ 0 ] );
+					querySelector( lunchNode, '.weight' ).textContent = lunch[ 1 ];
+					querySelector( lunchNode, '.cost' ).textContent = lunch[ 2 ].toFixed( 2 );
+
+					appendChild( querySelector( lunchCollectionNode, 'ul' ), lunchNode );
+
+				}
+
+				appendChild( collection, lunchCollectionNode );
+
+			}
+
+			break;
 
 	}
 
