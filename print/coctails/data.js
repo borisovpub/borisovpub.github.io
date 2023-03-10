@@ -9,20 +9,20 @@
 		],
 
 		collection: [
-			{
-				name: [
-					'Рождественский вайб',
-					'Christmas Vibe',
-				],
-				mix: [
-					'клюквенная настойка, апельсиновый ликёр, шоколадный сироп, газировка',
-					'cranberry tincture, orange liqueur, chocolate syrup',
-				],
-				cap: 150,
-				cost: 11,
-				img: 'рождественный-вайб.svg',
-				color: 0xca3710,
-			},
+			// {
+			// 	name: [
+			// 		'Рождественский вайб',
+			// 		'Christmas Vibe',
+			// 	],
+			// 	mix: [
+			// 		'клюквенная настойка, апельсиновый ликёр, шоколадный сироп, газировка',
+			// 		'cranberry tincture, orange liqueur, chocolate syrup',
+			// 	],
+			// 	cap: 150,
+			// 	cost: 11,
+			// 	img: 'рождественный-вайб.svg',
+			// 	color: 0xca3710,
+			// },
 			{
 				name: [
 					'Киви-тоник',
@@ -53,50 +53,50 @@
 				color: 0x866241,
 				scale: 1.2,
 			},
-			{
-				name: [
-					'Чёрная смородина',
-					'Blackcurrant',
-				],
-				mix: [
-					'розовый вермут, водка, сироп чёрной смородины, сок лимона',
-					'pink vermouth, vodka, blackcurrant syrup',
-				],
-				cap: 150,
-				cost: 9,
-				img: 'чёрная-смородина.svg',
-				color: 0x922441,
-			},
-			{
-				name: [
-					'Пивной сауэр',
-					'Beer sour',
-				],
-				mix: [
-					'виски, пивной сироп, белок, сок лимона',
-					'whiskey, beer syrup, egg white',
-				],
-				cap: 250,
-				cost: 10,
-				img: 'бир-соуэр.svg',
-				color: 0xd9b57e,
-				scale: 0.8,
-			},
-			{
-				name: [
-					'Фиолетовая леди',
-					'Violet Lady',
-				],
-				mix: [
-					'апельсиновый ликёр, джин, сахарный сироп, сок лимона',
-					'orange liqueur, gin, sugar syrup',
-				],
-				cap: 150,
-				cost: 13,
-				img: 'фиолетовая-леди.svg',
-				color: 0x736699,
-				scale: 1.4,
-			},
+			// {
+			// 	name: [
+			// 		'Чёрная смородина',
+			// 		'Blackcurrant',
+			// 	],
+			// 	mix: [
+			// 		'розовый вермут, водка, сироп чёрной смородины, сок лимона',
+			// 		'pink vermouth, vodka, blackcurrant syrup',
+			// 	],
+			// 	cap: 150,
+			// 	cost: 9,
+			// 	img: 'чёрная-смородина.svg',
+			// 	color: 0x922441,
+			// },
+			// {
+			// 	name: [
+			// 		'Пивной сауэр',
+			// 		'Beer sour',
+			// 	],
+			// 	mix: [
+			// 		'виски, пивной сироп, белок, сок лимона',
+			// 		'whiskey, beer syrup, egg white',
+			// 	],
+			// 	cap: 250,
+			// 	cost: 10,
+			// 	img: 'бир-соуэр.svg',
+			// 	color: 0xd9b57e,
+			// 	scale: 0.8,
+			// },
+			// {
+			// 	name: [
+			// 		'Фиолетовая леди',
+			// 		'Violet Lady',
+			// 	],
+			// 	mix: [
+			// 		'апельсиновый ликёр, джин, сахарный сироп, сок лимона',
+			// 		'orange liqueur, gin, sugar syrup',
+			// 	],
+			// 	cap: 150,
+			// 	cost: 13,
+			// 	img: 'фиолетовая-леди.svg',
+			// 	color: 0x736699,
+			// 	scale: 1.4,
+			// },
 			{
 				name: [
 					'Королева пчёл',
@@ -144,6 +144,21 @@
 			},
 			{
 				name: [
+					'Секретный Ингредиент',
+					'',
+				],
+				mix: [
+					'секретный ингредиент, сироп фалернум, сок лимона, сок грейпфрута',
+					'',
+				],
+				cap: 150,
+				cost: 9,
+				img: 'секретный-ингредиент.svg',
+				color: 0x975430,
+				scale: 1,
+			},
+			{
+				name: [
 					'Закат Империи',
 					'Decline and Fall of the Empire',
 				],
@@ -157,6 +172,66 @@
 				color: 0xc61304,
 				scale: 1.1,
 			},
+			{
+				name: [
+					'Киви-Сауэр',
+					'',
+				],
+				mix: [
+					'джин, пюре киви, лимонная заправка, белок',
+					'',
+				],
+				cap: 200,
+				cost: 12,
+				img: 'киви-сауэр.svg',
+				color: 0x4f6f2b,
+				scale: 1.1,
+			},
+			{
+				name: [
+					'Сникерс 18+',
+					'',
+				],
+				mix: [
+					'водка, шоколадный сироп, сироп солёная карамель, сливки',
+					'',
+				],
+				cap: 200,
+				cost: 10,
+				img: 'сникерс.svg',
+				color: 0x947b62,
+				scale: 1,
+			},
+			{
+				name: [
+					'Шипучка',
+					'',
+				],
+				mix: [
+					'апельсиновый ликёр, джин, клубничный сироп, сок грейпфрута',
+					'',
+				],
+				cap: 150,
+				cost: 12,
+				img: 'шипучка.svg',
+				color: 0xd7402f,
+				scale: 1.2,
+			},
+			// {
+			// 	name: [
+			// 		'Мандариновый Полдень',
+			// 		'',
+			// 	],
+			// 	mix: [
+			// 		'мандариновая настойка, водка, мандариновое пюре, шоколадный сироп',
+			// 		'',
+			// 	],
+			// 	cap: 120,
+			// 	cost: 9,
+			// 	img: 'мандариновый-полдень.svg',
+			// 	color: 0xae8a44,
+			// 	scale: 1,
+			// },
 		],
 
 	},
@@ -179,7 +254,7 @@
 					'gin, white vermouth, orange liqueur, cherry juice',
 				],
 				cap: 320,
-				cost: 16,
+				cost: 18,
 				img: 'перо-из-жопы.svg',
 				color: 0xac2506,
 				scale: 1.5,
@@ -238,7 +313,7 @@
 					'2 types of rum, Jägermeister, strawberry syrup',
 				],
 				cap: 250,
-				cost: 14,
+				cost: 16,
 				img: 'слёзы-ирландской-проститутки.svg',
 				color: 0xa6240a,
 				scale: 0.9,
@@ -298,7 +373,7 @@
 					'orange liqueur, tequila, pineapple juice, Corona beer',
 				],
 				cap: 700,
-				cost: 22,
+				cost: 25,
 				img: 'коронита.svg',
 				color: 0xe6ae56,
 				scale: 1.75,

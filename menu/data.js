@@ -71,7 +71,7 @@
 					'Fried prawns in batter',
 				],
 				weight: 190,
-				cost: 23.10,
+				cost: 25.00,
 				img: '7473/623246641/20221202_125246.jpg',
 				alias: 'fried-prawns-in-batter',
 			},
@@ -93,7 +93,7 @@
 					'Onion rings',
 				],
 				weight: 225,
-				cost: 9.20,
+				cost: 10.00,
 				img: '5316/306468036/IMG_7948.jpg',
 				alias: 'onion-rings',
 			},
@@ -188,7 +188,7 @@
 					'Fish plate',
 				],
 				weight: 370,
-				cost: 20.00,
+				cost: 22.00,
 				img: '2230/623593654/20221203_124815.jpg',
 				alias: 'fish-plate',
 			},
@@ -210,7 +210,7 @@
 					'Set of pickles',
 				],
 				weight: 650,
-				cost: 15,
+				cost: 18,
 				img: '1407/623256959/20221202_131220.jpg',
 				alias: 'set-of-pickles',
 			},
@@ -270,7 +270,7 @@
 							'salmon',
 						],
 						weight: 280,
-						cost: 21.00,
+						cost: 22.00,
 						img: '3118/623594542/20221203_125158.jpg',
 					},
 
@@ -328,7 +328,7 @@
 					'"Mastak" Set',
 				],
 				weight: 1000,
-				cost: 35.00,
+				cost: 40.00,
 			},
 
 			{
@@ -585,7 +585,7 @@
 					'Greek salad',
 				],
 				weight: 250,
-				cost: 11.80,
+				cost: 12.00,
 				img: '1162/551576714/20220527_120617.jpg',
 				alias: 'greek-salad',
 			},
@@ -612,7 +612,7 @@
 							'with salmon',
 						],
 						weight: 250,
-						cost: 15.20,
+						cost: 16.00,
 						img: '3960/623595384/20221203_130558.jpg',
 					},
 				],
@@ -635,7 +635,7 @@
 					'Salad with duck and baked vegetables',
 				],
 				weight: 220,
-				cost: 14.40,
+				cost: 15.50,
 				img: '3421/472182109/IMG_4050.jpg',
 				alias: 'salad-with-duck-and-baked-vegetables',
 			},
@@ -657,7 +657,7 @@
 					'Salad with duck breast, cherries and camembert',
 				],
 				weight: 300,
-				cost: 15,
+				cost: 16,
 				img: '1143/622953591/20221128_131706.jpg',
 				alias: 'salad-with-duck-breast-cherries-and-camembert',
 			},
@@ -723,7 +723,7 @@
 					'Salad "Meat"',
 				],
 				weight: 300,
-				cost: 14.50,
+				cost: 15.00,
 				alias: 'salad-meat',
 			},
 
@@ -770,7 +770,7 @@
 					'Bruschetta with roast beef',
 				],
 				weight: 200,
-				cost: 10.00,
+				cost: 11.00,
 				img: '6535/586004871/20220819_160827.jpg',
 				alias: 'roast-beef-bruschettas',
 			},
@@ -781,7 +781,7 @@
 					'Bruschetta with salmon',
 				],
 				weight: 200,
-				cost: 12.00,
+				cost: 13.00,
 				img: '7316/586005652/20220819_161038.jpg',
 				alias: 'salmon-bruschettas',
 			},
@@ -792,7 +792,7 @@
 					'Chicken club sandwich',
 				],
 				weight: 300,
-				cost: 9.4,
+				cost: 10.0,
 				img: '7475/622943539/20221128_145152.jpg',
 				alias: 'chicken-club-sandwich',
 				tp: 3,
@@ -804,7 +804,7 @@
 					'Roast beef club sandwich',
 				],
 				weight: 250,
-				cost: 9.60,
+				cost: 10.00,
 				img: '6113/471029729/IMG_3722.jpg',
 				alias: 'roast-beef-club-sandwich',
 				tp: 3,
@@ -816,7 +816,7 @@
 					'Salmon club sandwich',
 				],
 				weight: 210,
-				cost: 10.20,
+				cost: 11.00,
 				img: '5996/471029612/IMG_3859.jpg',
 				alias: 'salmond-club-sandwich',
 				tp: 3,
@@ -842,7 +842,7 @@
 					'Steak burger with beef',
 				],
 				weight: 290,
-				cost: 14.30,
+				cost: 14.50,
 				img: '7643/541007323/20220429_114605.jpg',
 				alias: 'beef-steak-burger',
 				tp: 2,
@@ -854,7 +854,7 @@
 					'Beef cheek burger',
 				],
 				weight: 280,
-				cost: 12.00,
+				cost: 13.00,
 				img: '1928/471189384/IMG_3989.jpg',
 				alias: 'beef-cheek-burger',
 				tp: 2,
@@ -891,7 +891,7 @@
 					'Chicken thigh burger with aioli',
 				],
 				weight: 250,
-				cost: 13.80,
+				cost: 14.00,
 				img: '6902/471030518/IMG_3753.jpg',
 				alias: 'chicken-thigh-burger-with-aioli',
 				tp: 2,
@@ -903,7 +903,7 @@
 					'Burger with smoked pork',
 				],
 				weight: 350,
-				cost: 12.00,
+				cost: 12.50,
 				img: '441/593093049/20220913_163340.jpg',
 				alias: 'burger-with-smoked-pork',
 				tp: 2,
@@ -926,7 +926,7 @@
 					'Classic Cheeseburger',
 				],
 				weight: 400,
-				cost: 14.50,
+				cost: 15.00,
 				img: '1495/650364375/20230210_121917.jpg',
 				alias: 'classic-cheeseburger',
 				tp: 1,
@@ -946,21 +946,21 @@
 							'with chicken',
 						],
 						weight: 300,
-						cost: 10.80,
+						cost: 11.00,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
 						weight: 300,
-						cost: 13.30,
+						cost: 14.00,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
 						weight: 300,
-						cost: 12.00,
+						cost: 12.50,
 					},
 				],
 				tp: 1,
@@ -987,14 +987,14 @@
 							'with beef',
 						],
 						weight: 350,
-						cost: 14.50,
+						cost: 15.00,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
 						weight: 350,
-						cost: 13.20,
+						cost: 13.50,
 					},
 				],
 				tp: 1,
@@ -1014,21 +1014,21 @@
 							'with chicken',
 						],
 						weight: 350,
-						cost: 10.80,
+						cost: 12.00,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
 						weight: 350,
-						cost: 13.30,
+						cost: 15.00,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
 						weight: 350,
-						cost: 12.00,
+						cost: 13.50,
 					},
 				],
 				tp: 1,
@@ -1055,14 +1055,14 @@
 							'with beef',
 						],
 						weight: 290,
-						cost: 15.30,
+						cost: 15.80,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
 						weight: 290,
-						cost: 14.00,
+						cost: 14.30,
 					},
 				],
 				tp: 1,
@@ -1117,11 +1117,11 @@
 
 			{
 				name: [
-					'Филе сибаса с диким рисом и соусом карри',
+					'Филе морского окуня с диким рисом',
 					'Sea bass fillet with wild rice and curry sauce',
 				],
 				weight: 410,
-				cost: 20.00,
+				cost: 22.00,
 				alias: 'sea-bass-fillet-with-wild-rice-and-curry-sauce',
 			},
 
@@ -1152,7 +1152,7 @@
 			{
 				name: [
 					'Утка с белыми грибами и печёным картофелем',
-					'Duck with porcini mushrooms and baked potatoes',
+					'Duck with porcini mushrooms and potatoes',
 				],
 				weight: 380,
 				cost: 24.50,
@@ -1178,7 +1178,7 @@
 					'Rabbit leg with gratin and mushroom sauce',
 				],
 				weight: 400,
-				cost: 29.90,
+				cost: 26.00,
 				img: '6990/541334350/20220430_143710.jpg',
 				alias: 'rabbit-leg-with-gratin-and-mushroom-sauce',
 			},
@@ -1189,7 +1189,7 @@
 					'Beef tongue with bulgur and cherry BBQ',
 				],
 				weight: 360,
-				cost: 19.90,
+				cost: 20.00,
 				alias: 'beef-tongue-with-bulgur-and-cherry-bbq',
 			},
 
@@ -1208,7 +1208,7 @@
 					'Turkey in creamy nut sauce',
 				],
 				weight: 340,
-				cost: 19.30,
+				cost: 20.00,
 				alias: 'turkey-in-a-creamy-peanut-sauce',
 			},
 
@@ -1218,7 +1218,7 @@
 					'Chicken fillet in creamy mushroom sauce',
 				],
 				weight: 310,
-				cost: 13.00,
+				cost: 16.00,
 				img: '1946/435963802/20210504_201918.jpg',
 				alias: 'chicken-fillet-in-creamy-mushroom-sauce',
 				tp: 1,
@@ -1230,7 +1230,7 @@
 					'Roast pork with porcini mushrooms',
 				],
 				weight: 590,
-				cost: 18.00,
+				cost: 19.00,
 				alias: 'roast-pork-with-porcini-mushrooms',
 			},
 
@@ -1240,14 +1240,14 @@
 					'Boiled pork with sauerkraut and beans',
 				],
 				weight: 480,
-				cost: 18.00,
+				cost: 20.00,
 				alias: 'boiled-pork-with-sauerkraut-and-beans',
 				tp: 1,
 			},
 
 			{
 				name: [
-					'Говядина с мятым картофелем и трюфельным маслом',
+					'Говядина картофелем и трюфельным маслом',
 					'Beef with mashed potatoes and truffle oil',
 				],
 				weight: 430,
@@ -1269,7 +1269,7 @@
 							'classic',
 						],
 						weight: 100,
-						cost: 7.00,
+						cost: 9.00,
 					},
 					{
 						name: [
@@ -1277,7 +1277,7 @@
 							'smoked',
 						],
 						weight: 100,
-						cost: 7.00,
+						cost: 9.00,
 					},
 				],
 				tp: 1,
@@ -1289,7 +1289,7 @@
 					'Roast beef with mashed potatoes',
 				],
 				weight: 300,
-				cost: 15.30,
+				cost: 16.00,
 				img: '3066/435940346/20210504_184818.jpg',
 				alias: 'roast-beef-with-mashed-potatoes',
 				tp: 1,
@@ -1301,7 +1301,7 @@
 					'Beef cheek with mashed potatoes',
 				],
 				weight: 250,
-				cost: 15.30,
+				cost: 16.00,
 				img: '6026/551581578/20220527_120049.jpg',
 				alias: 'beef-cheek-with-mashed-potatoes',
 				tp: 1,
@@ -1313,7 +1313,7 @@
 					'Chicken pie',
 				],
 				weight: 500,
-				cost: 17.00,
+				cost: 19.00,
 				alias: 'chicken-pie',
 				tp: 1,
 			},
@@ -1398,7 +1398,7 @@
 					'Pork shank',
 				],
 				weight: 1000,
-				cost: 31.70,
+				cost: 32.00,
 				img: '5465/423974233/IMG_8357.jpg',
 				alias: 'pork-shank',
 				tp: 1,
@@ -1530,7 +1530,7 @@
 					'Apple strudel',
 				],
 				weight: 220,
-				cost: 8.60,
+				cost: 9.00,
 			},
 
 			{
@@ -1557,7 +1557,7 @@
 			    'New York Cheesecake',
 			  ],
 			  weight: 150,
-			  cost: 8.60,
+			  cost: 9.00,
 			},
 
 			// {
@@ -1575,7 +1575,7 @@
 					'Chocolate fondant',
 				],
 				weight: 150,
-				cost: 8.60,
+				cost: 9.00,
 			},
 
 			// {
@@ -1602,7 +1602,7 @@
 					'Ice cream',
 				],
 				weight: 180,
-				cost: 6.50,
+				cost: 7.00,
 			},
 
 		],
@@ -1621,31 +1621,31 @@
 			{
 				name: 'Coca cola',
 				weight: 500,
-				cost: 3.50,
+				cost: 4.00,
 			},
 
 			{
 				name: 'Fanta',
 				weight: 500,
-				cost: 3.50,
+				cost: 4.00,
 			},
 
 			{
 				name: 'Sprite',
 				weight: 500,
-				cost: 3.50,
+				cost: 4.00,
 			},
 
 			{
 				name: 'Schweppes',
 				weight: 500,
-				cost: 3.80,
+				cost: 4.50,
 			},
 
 			{
 				name: 'Bonaqua',
 				weight: 500,
-				cost: 2.70,
+				cost: 3.00,
 			},
 
 			{
@@ -1756,7 +1756,7 @@
 					'Яблоко, Апельсин, Ананас, Вишня, Грейпфрут, Томат, Виноград, Морс Клюква + Виноград',
 					'Apple, Orange, Pineapple, Cherry, Grapefruit, Tomato, Grapes, Morse Cranberry + Grapes',
 				],
-				cost: 2.70,
+				cost: 3.00,
 			},
 
 		],
@@ -2046,17 +2046,17 @@
 				],
 			},
 
-			{
-				name: 'Fortius Blanco Navarra Chardonnay',
-				weight: [
-					'сх',
-					'dr',
-				],
-				cost: [
-					8.00,
-					42.80,
-				],
-			},
+			// {
+			// 	name: 'Fortius Blanco Navarra Chardonnay',
+			// 	weight: [
+			// 		'сх',
+			// 		'dr',
+			// 	],
+			// 	cost: [
+			// 		8.50,
+			// 		50.00,
+			// 	],
+			// },
 
 			{
 				name: 'Edit Abtei Himmerod Riesling',
@@ -2065,16 +2065,16 @@
 					's-sw',
 				],
 				cost: [
-					8.90,
-					49.40,
+					9.30,
+					55.00,
 				],
 			},
 
 			{
 				name: 'Pampas del Sur Chardonnay-Chenin',
 				weight: [
-					'сх',
-					'dr',
+					'псх',
+					's-dr',
 				],
 				cost: [
 					8.00,
@@ -2085,8 +2085,8 @@
 			{
 				name: 'Pampas del Sur Torrontes',
 				weight: [
-					'сх',
-					'dr',
+					'псх',
+					's-dr',
 				],
 				cost: [
 					8.90,
@@ -2104,8 +2104,8 @@
 					's-sw',
 				],
 				cost: [
-					7.00,
-					34.60,
+					7.20,
+					36.00,
 				],
 			},
 
@@ -2167,28 +2167,28 @@
 					's-dr',
 				],
 				cost: [
-					7.00,
-					37.00,
+					7.80,
+					40.00,
 				],
 			},
 
-			{
-				name: 'Cape Dream Chenin Blanc',
-				weight: [
-					'сх',
-					'dr',
-				],
-				cost: [
-					7.00,
-					37.00,
-				],
-			},
+			// {
+			// 	name: 'Cape Dream Chenin Blanc',
+			// 	weight: [
+			// 		'сх',
+			// 		'dr',
+			// 	],
+			// 	cost: [
+			// 		7.00,
+			// 		37.00,
+			// 	],
+			// },
 
 			{
 				name: 'Stories of Italy Trebbiano Chardonnay',
 				weight: [
-					'сх',
-					'dr',
+					'п-сх',
+					's-dr',
 				],
 				cost: [
 					8.00,
@@ -2204,7 +2204,7 @@
 				],
 				cost: [
 					8.00,
-					42.80,
+					45.00,
 				],
 			},
 
@@ -2260,8 +2260,8 @@
 					's-dr',
 				],
 				cost: [
-					8.90,
-					49.40,
+					9.30,
+					55.00,
 				],
 			},
 
@@ -2272,8 +2272,8 @@
 					's-dr',
 				],
 				cost: [
-					8.90,
-					46.70,
+					9.00,
+					52.00,
 				],
 			},
 
@@ -2385,7 +2385,7 @@
 					'псл',
 					's-sw',
 				],
-				cost: 55.00,
+				cost: 58.00,
 			},
 
 			{
@@ -2398,8 +2398,8 @@
 					'dr',
 				],
 				cost: [
-					7.00,
-					37.00,
+					7.20,
+					39.00,
 				],
 			},
 
@@ -2413,8 +2413,8 @@
 					's-sw',
 				],
 				cost: [
-					8.00,
-					42.80,
+					8.50,
+					45.00,
 				],
 			},
 
@@ -2457,8 +2457,8 @@
 			{
 				name: 'Stories of Italy Montepulciano',
 				weight: [
-					'сх',
-					'dr',
+					'п-сх',
+					's-dr',
 				],
 				cost: [
 					8.00,
@@ -2489,7 +2489,7 @@
 				],
 				cost: [
 					7.00,
-					37.00,
+					38.00,
 				],
 			},
 
@@ -2602,6 +2602,16 @@
 			// 	],
 			// },
 
+			{
+				name: 'Porto Alegre Ruby',
+				cost: 59.00,
+			},
+
+			{
+				name: 'Porto Alegre Tawny',
+				cost: 59.00,
+			},
+
 		],
 
 	},
@@ -2659,15 +2669,15 @@
 							'3 года',
 							'3 years',
 						],
-						cost: 9.80,
+						cost: 10.20,
 					},
 					{
 						name: 'Crested',
-						cost: 11,
+						cost: 12,
 					},
 					{
 						name: 'Stout Edition',
-						cost: 11,
+						cost: 12,
 					},
 				],
 			},
@@ -2690,11 +2700,11 @@
 				collection: [
 					{
 						name: 'Original',
-						cost: 7.80,
+						cost: 8.20,
 					},
 					{
 						name: 'Black Bush',
-						cost: 10.90,
+						cost: 11.20,
 					},
 				],
 			},
@@ -2727,7 +2737,7 @@
 				collection: [
 					{
 						name: 'White',
-						cost: 7.70,
+						cost: 8.00,
 					},
 					// {
 					// 	name: 'Black',
@@ -2758,7 +2768,7 @@
 							'3 года',
 							'3 years',
 						],
-						cost: 7.50,
+						cost: 8.00,
 					},
 				],
 			},
@@ -2775,14 +2785,14 @@
 							'12 лет',
 							'12 years',
 						],
-						cost: 12.10,
+						cost: 15.30,
 					},
 					{
 						name: [
 							'15 лет',
 							'15 years',
 						],
-						cost: 16.00,
+						cost: 19.00,
 					},
 				],
 			},
@@ -2817,14 +2827,14 @@
 							'12 лет',
 							'12 years',
 						],
-						cost: 12.90,
+						cost: 20.00,
 					},
 					{
 						name: [
 							'15 лет',
 							'15 years',
 						],
-						cost: 18.00,
+						cost: 22.00,
 					},
 				],
 			},
@@ -2837,7 +2847,7 @@
 							'12 лет',
 							'12 years',
 						],
-						cost: 12.90,
+						cost: 14.00,
 					},
 				],
 			},
@@ -2847,7 +2857,7 @@
 				collection: [
 					{
 						name: 'Red Label',
-						cost: 7.50,
+						cost: 8.30,
 					},
 				],
 			},
@@ -2894,12 +2904,31 @@
 
 			{
 				name: 'Finlandia',
-				cost: 7.90,
+				cost: 8.00,
 			},
 
 			{
 				name: 'Absolut',
-				cost: 7.40,
+				collection: [
+					{
+						name: '',
+						cost: 7.40,
+					},
+					{
+						name: [
+							'Лимон',
+							'Lemon',
+						],
+						cost: 8.30,
+					},
+					{
+						name: [
+							'Чёрная смородина',
+							'Kurant',
+						],
+						cost: 8.30,
+					},
+				],
 			},
 
 			{
@@ -2935,7 +2964,7 @@
 
 			{
 				name: 'Olmeca',
-				cost: 9.50,
+				cost: 9.80,
 			},
 
 			{
@@ -2990,6 +3019,14 @@
 				cost: 4.50,
 			},
 
+			{
+				name: [
+					'Мандариновка',
+					'Tangerine',
+				],
+				cost: 4.50,
+			},
+
 			// {
 			// 	name: [
 			// 		'Кофейная',
@@ -2998,18 +3035,18 @@
 			// 	cost: 4.50,
 			// },
 
-			{
-				name: '',
-				collection: [
-					{
-						name: [
-							'Сезонная',
-							'Seasonal',
-						],
-						cost: 4.50,
-					},
-				],
-			},
+			// {
+			// 	name: '',
+			// 	collection: [
+			// 		{
+			// 			name: [
+			// 				'Сезонная',
+			// 				'Seasonal',
+			// 			],
+			// 			cost: 4.50,
+			// 		},
+			// 	],
+			// },
 
 		],
 
@@ -3028,7 +3065,7 @@
 
 			{
 				name: 'Beefeater',
-				cost: 7.50,
+				cost: 8.00,
 			},
 
 			{
@@ -3077,21 +3114,28 @@
 							'Ани',
 							'Ani',
 						],
-						cost: 8.60,
+						cost: 9.50,
 					},
 					{
 						name: [
 							'Ахтамар',
 							'Akhtamar',
 						],
-						cost: 12.80,
+						cost: 13.50,
 					},
 					{
 						name: [
 							'Априкот',
 							'Apricot',
 						],
-						cost: 8.60,
+						cost: 9.00,
+					},
+					{
+						name: [
+							'Вишня',
+							'Cherry',
+						],
+						cost: 9.00,
 					},
 				],
 			},
@@ -3118,7 +3162,7 @@
 
 			{
 				name: 'Becherovka',
-				cost: 7.50,
+				cost: 8.00,
 			},
 
 			{
@@ -3154,7 +3198,7 @@
 					},
 					{
 						name: 'Spiced',
-						cost: 8.50,
+						cost: 9.20,
 					},
 				],
 			},
@@ -3207,6 +3251,10 @@
 
 		collection: [
 			{
+				name: 'Belhaven Black',
+				slug: 'belhaven-black',
+			},
+			{
 				name: 'Paulaner Naturtrüb',
 				slug: 'paulaner-hefe-weissbier',
 			},
@@ -3233,33 +3281,25 @@
 				name: 'Brûler Blonde',
 				slug: 'belgian-brew-factory-bruler-blonde',
 			},
-			{
-				name: 'Brûler Brune',
-				slug: 'belgian-brew-factory-bruler-brune',
-			},
 			// {
-			// 	name: 'Saltaire Triple Choc',
-			// 	slug: 'saltaire-brewery-triple-chocoholic',
+			// 	name: 'Brûler Brune',
+			// 	slug: 'belgian-brew-factory-bruler-brune',
 			// },
+			{
+				name: 'Saltaire Triple Choc',
+				slug: 'saltaire-brewery-triple-chocoholic',
+			},
 			// {
 			// 	name: 'Braufactum Pale Ale',
 			//	slug: 'radeberger-gruppe-braufactum-german-pale-ale',
 			// },
 			// {
 			//   name: 'Gambrinus',
-			//   alc: 5.2,
-			//   den: 12.25,
-			//   cap: 0.5,
-			//   cost: 9.00,
 			// },
 			// {
 			// 	name: 'Iron Woods',
 			// 	slug: 'gletcher-iron-woods',
 			// },
-			{
-				name: 'Triple Choc',
-				slug: 'saltaire-brewery-triple-chocoholic',
-			},
 			{
 				name: 'Milk of Amnesia',
 				slug: 'gletcher-milk-of-amnesia-v-tropic-milkshake-ipa',
@@ -3270,10 +3310,6 @@
 			// },
 			// {
 			// 	name: 'Nut Butter',
-			// 	alc: 5.5,
-			// 	den: 14,
-			// 	cap: 0.5,
-			// 	cost: 8.50,
 			// },
 			{
 				name: 'Holiday',
@@ -3301,29 +3337,21 @@
 			// },
 			// {
 			//   name: 'Amber Ray',
-			//   alc: 5.2,
-			//   den: 13,
-			//   cap: 0.5,
-			//   cost: 7.00,
 			// },
-			{
-				name: 'Space',
-				slug: 'robim-good-brewery-space',
-			},
+			// {
+			// 	name: 'Space',
+			// 	slug: 'robim-good-brewery-space',
+			// },
 			// {
 			// 	name: 'Idol',
-			// 	alc: 6.6,
-			// 	den: 15.7,
-			// 	cap: 0.5,
-			// 	cost: 7.00,
 			// },
 			// {
 			// 	name: 'Irony',
-			// 	alc: 5.7,
-			// 	den: 14.0,
-			// 	cap: 0.5,
-			// 	cost: 8.50,
 			// },
+			{
+				name: 'Relax',
+				slug: 'robim-good-brewery-relax',
+			}
 		],
 
 	},
@@ -3338,10 +3366,6 @@
 		collection: [
 			 // {
 			 //   name: 'Lindemans Kriek',
-			 //   alc: 3.5,
-			 //   den: 14.6,
-			 //   cap: 0.25,
-			 //   cost: 9,
 			 // },
 			// {
 			// 	name: 'Mort Subite Kriek',
@@ -3361,84 +3385,131 @@
 			},
 			// {
 			//   name: 'Banana Bread',
-			//   alc: 5.2,
-			//   den: 11.5,
-			//   cap: 0.5,
-			//   cost: 11,
 			// },
 			// {
-			// 	name: 'Murphy`s Irish Stout',
-			// 	slug: 'murphys-irish-stout',
+			// 	name: 'Murphy`s',
+			// 	collection: [
+			// 		{
+			// 			name: 'Irish Stout',
+			// 			slug: 'murphys-irish-stout',
+			// 		},
+			// 	],
 			// },
-			{
-				name: 'Guinness Draught Stout',
-				slug: 'guinness-draught',
-			},
 			// {
-			// 	name: 'Guinness West Indies Porter',
-			// 	alc: 6.0,
-			// 	den: 14.0,
-			// 	cap: 0.33,
-			// 	cost: 12,
+			// 	name: 'Guinness',
+			// 	collection: [
+			// 		{
+			// 			name: 'Draught',
+			// 			slug: 'guinness-draught',
+			// 		},
+			// 		{
+			// 			name: 'West Indies Porter',
+			// 		},
+			// 	],
 			// },
 			// {
 			// 	name: 'Braufactum Progusta IPA',
-			// 	alc: 6.8,
-			// 	den: 16.5,
-			// 	cap: 0.33,
-			// 	cost: 9,
+			// },
+			{
+				name: 'O`Hara`s',
+				collection: [
+					{
+						name: 'Pale Ale',
+						slug: 'oharas-irish-pale-ale',
+					},
+					{
+						name: 'Irish Red Nitro',
+						slug: 'oharas-nitro-irish-red',
+					},
+					// {
+					// 	name: 'Irish Stout',
+					// 	slug: 'oharas-irish-stout',
+					// },
+					{
+						name: 'Irish Stout Nitro',
+						slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
+					},
+					{
+						name: 'Leann Folláin',
+						slug: 'oharas-leann-follain',
+					},
+					{
+						name: 'White Haze',
+						slug: 'oharas-white-haze',
+					},
+					{
+						name: 'West Coast IPA',
+						slug: 'o-hara-s-brewery-o-hara-s-west-coast-ipa',
+					},
+					// {
+					// 	name: 'Hazy IPA',
+					// 	slug: 'o-hara-s-brewery-o-hara-s-hazy-ipa',
+					// },
+					// {
+					// 	name: 'Hop Adventure Talus IPA',
+					// 	slug: 'o-hara-s-brewery-hop-adventure-series-talus',
+					// },
+				]
+			},
+			// {
+			// 	name: 'Hobgoblin',
+			// 	collection: [
+			// 		{
+			// 			name: 'Ruby',
+			// 		},
+			// 		{
+			// 			name: 'Gold',
+			// 			slug: 'wychwood-brewery-hobgoblin-gold',
+			// 		},
+			// 		{
+			// 			name: 'IPA',
+			// 			slug: 'wychwood-brewery-hobgoblin-ipa',
+			// 		},
+			// 	],
 			// },
 			// {
-			// 	name: 'O`Hara`s Pale Ale',
-			// 	slug: 'oharas-irish-pale-ale',
+			// 	name: 'King Goblin',
 			// },
 			// {
-			// 	name: 'O`Hara`s Irish Stout',
-			//	slug: 'oharas-irish-stout',
+			// 	name: 'Double Chocolate',
 			// },
 			{
-				name: 'O`Hara`s Leann Folláin',
-				slug: 'oharas-leann-follain',
+				name: 'Saltaire',
+				collection: [
+					{
+						name: 'Best',
+						slug: 'saltaire-brewery-best',
+					},
+					{
+						name: 'Cascade',
+						slug: 'saltaire-brewery-cascade',
+					},
+					{
+						name: 'Unity',
+						slug: 'saltaire-brewery-unity',
+					},
+					{
+						name: 'Citra',
+						slug: 'saltaire-brewery-citra',
+					},
+					{
+						name: 'Triple Choc',
+						slug: 'saltaire-brewery-triple-chocoholic',
+					},
+				],
 			},
 			{
-				name: 'O`Hara`s Irish Red Nitro',
-				slug: 'oharas-nitro-irish-red',
-			},
-			// {
-			// 	name: 'O`Hara`s Irish Stout Nitro',
-			// 	slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
-			// },
-			// {
-			// 	name: 'O`Hara`s West Coast IPA',
-			// 	slug: 'o-hara-s-brewery-o-hara-s-west-coast-ipa',
-			// },
-			// {
-			// 	name: 'O`Hara`s Hazy IPA',
-			// 	slug: 'o-hara-s-brewery-o-hara-s-hazy-ipa',
-			// },
-			{
-				name: 'Saltaire Best',
-				slug: 'saltaire-brewery-best',
-			},
-			{
-				name: 'Saltaire Cascade',
-				slug: 'saltaire-brewery-cascade',
-			},
-			{
-				name: 'Saltaire Unity',
-				slug: 'saltaire-brewery-unity',
-			},
-			{
-				name: 'Saltaire Citra',
-				slug: 'saltaire-brewery-citra',
-			},
-			{
-				name: 'Belhaven Black',
-				slug: 'belhaven-black',
-			},
-			{
-				name: 'Belhaven McCallum`s Stout',
-				slug: 'belhaven-mccallums-stout',
+				name: 'Belhaven',
+				collection: [
+					{
+						name: 'Black',
+						slug: 'belhaven-black',
+					},
+					{
+						name: 'McCallum`s Stout',
+						slug: 'belhaven-mccallums-stout',
+					},
+				],
 			},
 			{
 				name: 'Greene King IPA',
@@ -3449,100 +3520,106 @@
 				slug: 'greene-king-old-speckled-hen',
 			},
 			{
-				name: 'Aecht Schlenkerla Märzen',
-				slug: 'aecht-schlenkerla-rauchbier-marzen',
-			},
-			// {
-			// 	name: 'Hop Adventure Talus IPA',
-			// 	slug: 'o-hara-s-brewery-hop-adventure-series-talus',
-			// },
-			{
 				name: 'Pilsner Urquell',
 				slug: 'pilsner-urquell',
 			},
 			{
-				name: 'Budweiser B:Original',
-				slug: 'budweiser-budvar-original',
+				name: 'Budweiser',
+				collection: [
+					{
+						name: 'B:Original',
+						slug: 'budweiser-budvar-original',
+					},
+					{
+						name: 'B:Dark',
+						slug: 'budweiser-budvar-dark',
+					},
+				],
 			},
 			{
-				name: 'Budweiser B:Dark',
-				slug: 'budweiser-budvar-dark',
-			},
-			// {
-			// 	name: 'Paulaner Oktoberfest Bier',
-			// 	alc: 6,
-			// 	den: 13.6,
-			// 	cap: 0.5,
-			// 	cost: 11,
-			// },
-			{
-				name: 'Paulaner Münchner Hell',
-				slug: 'paulaner-original-munchner-hell',
-			},
-			// {
-			// 	name: 'Paulaner Naturtrüb',
-			// 	slug: 'paulaner-hefe-weissbier',
-			// },
-			{
-				name: 'Paulaner Dunkel',
-				slug: 'paulaner-hefe-weissbier-dunkel',
+				name: 'Aecht Schlenkerla',
+				collection: [
+					{
+						name: 'Märzen',
+						slug: 'aecht-schlenkerla-rauchbier-marzen',
+					},
+				],
 			},
 			{
-				name: 'Ayinger Kellerbier',
-				slug: 'ayinger-kellerbier',
+				name: 'Franziskaner',
+				collection: [
+					{
+						name: 'Naturtrüb',
+						slug: 'franziskaner-hefe-weissbier-naturtrub',
+					}
+				],
 			},
 			{
-				name: 'Ayinger Lager Hell',
-				slug: 'ayinger-lager-hell',
+				name: 'Paulaner',
+				collection: [
+					// {
+					// 	name: 'Paulaner Oktoberfest Bier',
+					// },
+					{
+						name: 'Münchner Hell',
+						slug: 'paulaner-original-munchner-hell',
+					},
+					// {
+					// 	name: 'Naturtrüb',
+					// 	slug: 'paulaner-hefe-weissbier',
+					// },
+					{
+						name: 'Dunkel',
+						slug: 'paulaner-hefe-weissbier-dunkel',
+					},
+				],
 			},
 			{
-				name: 'Ayinger Bräuweisse',
-				slug: 'ayinger-brauweisse',
-			},
-			// {
-			// 	name: 'Hobgoblin Ruby',
-			// 	alc: 4.5,
-			// 	den: 13,
-			// 	cap: 0.5,
-			// 	cost: 12,
-			// },
-			// {
-			// 	name: 'Hobgoblin Gold',
-			//	slug: 'wychwood-brewery-hobgoblin-gold',
-			// },
-			// {
-			// 	name: 'Hobgoblin IPA',
-			// 	slug: 'wychwood-brewery-hobgoblin-ipa',
-			// },
-			// {
-			//   name: 'King Goblin',
-			//   alc: 6.6,
-			//   den: 16.5,
-			//   cap: 0.5,
-			//   cost: 12,
-			// },
-			// {
-			// 	name: 'Double Chocolate',
-			// 	alc: 5.2,
-			// 	den: 13.8,
-			// 	cap: 0.44,
-			// 	cost: 12,
-			// },
-			{
-				name: 'Petrus Red',
-				slug: 'brouwerij-de-brabandere-petrus-red',
+				name: 'Ayinger',
+				collection: [
+					{
+						name: 'Kellerbier',
+						slug: 'ayinger-kellerbier',
+					},
+					{
+						name: 'Lager Hell',
+						slug: 'ayinger-lager-hell',
+					},
+					{
+						name: 'Bräuweisse',
+						slug: 'ayinger-brauweisse',
+					},
+				],
 			},
 			{
-				name: 'Petrus Bordelux',
-				slug: 'brouwerij-de-brabandere-petrus-bordeaux',
+				name: 'Leffe',
+				collection: [
+					{
+						name: 'Blonde',
+						slug: 'leffe-blonde',
+					},
+					{
+						name: 'Brune',
+						slug: 'leffe-brune',
+					},
+				],
 			},
-			// {
-			// 	name: 'Petrus Rood Bruin',
-			// 	alc: 5.5,
-			// 	den: 12,
-			// 	cap: 0.33,
-			// 	cost: 8.5,
-			// },
+			{
+				name: 'Petrus',
+				collection: [
+					{
+						name: 'Red',
+						slug: 'brouwerij-de-brabandere-petrus-red',
+					},
+					// {
+					// 	name: 'Bordelux',
+					// 	slug: 'brouwerij-de-brabandere-petrus-bordeaux',
+					// },
+					// {
+					// 	name: 'Rood Bruin',
+					// },
+				],
+			},
 			{
 				name: 'XII Flemish Red Ale',
 				slug: 'sosab-sour-ale-brewery-xii-flemish-red-ale',
@@ -3551,6 +3628,31 @@
 			// 	name: 'Saison 1858',
 			// 	slug: 'brasserie-du-bocq-saison-1858',
 			// },
+			{
+				name: 'Medovarus',
+				collection: [
+					{
+						name: 'Медовуха традиционная',
+						slug: 'medovarus-traditional',
+					},
+					{
+						name: 'Медовуха дикая',
+						slug: 'medovarus-vildmjod',
+					},
+					{
+						name: 'Вишнёвый крик',
+						slug: 'medovarus-kriek',
+					},
+					{
+						name: 'Чёрносмородиновый ламбик',
+						slug: 'medovarus-chernosmorodinovyj-lambik',
+					},
+					{
+						name: 'Малиновый ламбик',
+						slug: 'medovarus-malinovyj-lambik',
+					},
+				],
+			},
 		],
 
 	},
@@ -3563,22 +3665,28 @@
 		],
 
 		collection: [
-
 			{
 				name: 'Clausthaler',
-				slug: 'radeberger-clausthaler-non-alcoholic',
+				collection: [
+					{
+						name: '',
+						slug: 'radeberger-clausthaler-non-alcoholic',
+					},
+					{
+						name: 'Dry Hopped',
+						slug: 'radeberger-gruppe-clausthaler-dry-hopped',
+					},
+				],
 			},
-
-			{
-				name: 'Clausthaler Dry Hopped',
-				slug: 'radeberger-gruppe-clausthaler-dry-hopped',
-			},
-
-			{
-				name: 'Paulaner Alkoholfrei',
-				slug: 'paulaner-brauerei-paulaner-weissbier-alkoholfrei-0-0',
-			},
-
+			// {
+			// 	name: 'Paulaner',
+			// 	collection: [
+			// 		{
+			// 			name: 'Alkoholfrei',
+			// 			slug: 'paulaner-brauerei-paulaner-weissbier-alkoholfrei-0-0',
+			// 		},
+			// 	],
+			// },
 		],
 
 	},

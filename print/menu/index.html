@@ -307,6 +307,7 @@
 		<li class="beer item ext">
 			<div>
 				<span class="name" contenteditable="true"></span>
+				<span class="kind opacity" contenteditable="true"></span>
 			</div>
 			<div class="opacity nowrap sub-text slash">
 				<span class="ibu" contenteditable="true"></span>
@@ -353,10 +354,10 @@
 </article>
 
 <article class="page">
-	<div></div>
-	<div style="--ratio:0.85"></div>
+	<div style="--ratio:0.99"></div>
+	<div style="--ratio:0.82"></div>
 	<div style="text-align:center"></div>
-	<div></div>
+	<div style="--ratio:0.97"></div>
 </article>
 
 <script>( ( /** Window */ window ) => Promise.all( [
@@ -577,44 +578,38 @@
 
 	var createAlc = ( data ) => {
 
-		var result;
-		var li, arr;
+		var createItem = ( data, name = null ) => {
+
+			var result = cloneNode( alcTemplate );
+			var li = querySelector( result, 'li' );
+
+			querySelector( li, '.name' ).textContent = getName( name || data.name );
+			if ( name ) querySelector( li, '.kind' ).textContent = getName( data.name );
+
+			if ( data.cost ) {
+				appendChild( querySelector( li, 'div:last-of-type' ), createCost( data.cost ) );
+			}
+
+			return result;
+
+		};
+
+		var result, arr;
 
 		if ( ( arr = data.collection ) ) {
 
-			result = document.createDocumentFragment()
+			result = document.createDocumentFragment();
 
-			var alc;
-			var o, i = 0, l = arr.length;
+			var i = 0, l = arr.length;
 			for ( ; i<l; ++i ) {
 
-				o = arr[ i ];
-
-				alc = cloneNode( alcTemplate );
-				li = querySelector( alc, 'li' );
-
-				querySelector( li, '.name' ).textContent = getName( data.name );
-				querySelector( li, '.kind' ).textContent = getName( o.name );
-
-				if ( o.cost ) {
-					appendChild( querySelector( li, 'div:last-of-type' ), createCost( o.cost ) );
-				}
-
-				appendChild( result, alc );
+				appendChild( result, createItem( arr[ i ], data.name ) );
 
 			}
 
 		} else {
 
-			result = cloneNode( alcTemplate );
-			li = querySelector( result, 'li' );
-
-			querySelector( li, '.name' ).textContent = getName( data.name );
-			// querySelector( li, '.kind' ).textContent = getName( data.name );
-
-			if ( data.cost ) {
-				appendChild( querySelector( li, 'div:last-of-type' ), createCost( data.cost ) );
-			}
+			result = createItem( data );
 
 		}
 
@@ -626,41 +621,65 @@
 
 	var createBeer = ( data, info = beers.other ) => {
 
-		var result = cloneNode( beerTemplate );
-		var li = querySelector( result, 'li' );
+		var createItem = ( data, name = null ) => {
 
-		querySelector( result, '.name' ).textContent = getName( data.name );
+			var result = cloneNode( beerTemplate );
+			var li = querySelector( result, 'li' );
 
-		if ( data.slug && ( data = info.find( ( d ) => d.slug === data.slug ) ) ) {
+			querySelector( li, '.name' ).textContent = getName( name || data.name );
+			if ( name ) querySelector( li, '.kind' ).textContent = getName( data.name );
 
-			var sku = data.skus.reduce(
-				( a, b ) => a.volume > b.volume ? a : b,
-				{ volume: 0 }
-			);
+			if ( data.slug && ( data = info.find( ( d ) => d.slug === data.slug ) ) ) {
 
-			if ( sku && sku.volume ) {
+				var sku = data.skus.reduce(
+					( a, b ) => a.volume > b.volume ? a : b,
+					{ volume: 0 }
+				);
 
-				querySelector( result, '.cap' ).textContent = sku.volume;
-				appendChild( querySelector( li, 'div:last-of-type' ), createCost( sku.price ) )
+				if ( sku ) {
+
+					if ( sku.volume ) {
+						querySelector( li, '.cap' ).textContent = sku.volume;
+					}
+
+					if ( sku.price ) {
+						appendChild( querySelector( li, 'div:last-of-type' ), createCost( sku.price ) );
+					}
+
+				}
 
 				if ( data.abv ) {
-					querySelector( result, '.alc' ).textContent = data.abv;
+					querySelector( li, '.alc' ).textContent = data.abv;
 				}
 
 				if ( data.ibu ) {
-					querySelector( result, '.ibu' ).textContent = data.ibu;
+					querySelector( li, '.ibu' ).textContent = data.ibu;
 				}
 
 			}
 
+			return result;
+
+		};
+
+		var result, arr;
+
+		if ( ( arr = data.collection ) ) {
+
+			result = document.createDocumentFragment();
+
+			var i = 0, l = arr.length;
+			for ( ; i<l; ++i ) {
+
+				appendChild( result, createItem( arr[ i ], data.name ) );
+
+			}
+
+		} else {
+
+			result = createItem( data );
+
 		}
-
-
-		//
-		// if ( data.den ) {
-		// 	querySelector( result, '.den' ).textContent = data.den;
-		// }
-		//
 
 		return result;
 
@@ -801,12 +820,12 @@
 
 	appendChild( colon[ 5 ], createSection( menu.Tinctures, createAlc, createCapacity ) );
 	appendChild( colon[ 5 ], createSection( menu.Whiskey, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( menu.Brandy, createAlc, createCapacity ) );
 	appendChild( colon[ 5 ], createSection( menu.Rom, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( menu.Brandy, createAlc, createCapacity ) );
 	appendChild( colon[ 5 ], createSection( menu.Bitter, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( menu.Vodka, createAlc, createCapacity ) );
 	appendChild( colon[ 5 ], createSection( menu.Tequila, createAlc, createCapacity ) );
 	appendChild( colon[ 5 ], createSection( menu.Gin, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( menu.Vodka, createAlc, createCapacity ) );
 
 	// appendChild( colon[ 5 ], createSection( data.Cocktails, createCocktail ) );
 	// appendChild( colon[ 5 ], createShot( data.Shot ) );
