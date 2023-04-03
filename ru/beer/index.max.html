@@ -117,20 +117,19 @@
 			margin: 0 4px;
 		}
 
-		.ibu:not( :empty ):after,
 		.abv:not( :empty ):after {
-			content: "% abv";
-			text-transform: uppercase;
+			content: "% ABV";
 		}
 
 		.ibu:not( :empty ):after {
-			content: " ibu";
+			content: " IBU";
 		}
 
 		.skus {
 			margin-top: 6px;
 		}
 
+		/*
 		.sku:after {
 			content: "";
 			display: block;
@@ -140,6 +139,7 @@
 			bottom: 6px;
 			z-index: -1;
 		}
+		*/
 
 		.sku {
 			position: relative;
@@ -154,7 +154,7 @@
 		}
 
 		.volume:not( :empty ):after {
-			content: " l";
+			content: "L";
 		}
 
 		.packing {
@@ -381,6 +381,12 @@
 	 */
 	var toNumber = ( value ) => window.String( value || 0 ).replace( '.', ',' );
 
+	var PACKING = {
+		keg: '',
+		bottle: 'бутылка',
+		can: 'банка',
+	};
+
 	/**
 	 * @param { HTMLElement } slot
 	 * @param { Array< Beer > } beers
@@ -458,7 +464,7 @@
 				skuPrice = querySelector( skuNode, '.price' );
 
 				if ( sku.volume ) skuVolume.textContent = toNumber( sku.volume );
-				if ( sku.packing ) skuPacking.textContent = sku.packing;
+				if ( sku.packing ) skuPacking.textContent = PACKING[ sku.packing ];
 				//if ( sku.price ) skuPrice.textContent = toNumber( sku.price );
 
 				appendChild( querySelector( beerNode, '.skus' ), skuNode );

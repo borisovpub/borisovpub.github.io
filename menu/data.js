@@ -43,16 +43,16 @@
 				alias: 'cheese-balls',
 			},
 
-			{
-				name: [
-					'Картофельные крокеты с сёмгой',
-					'Potato salmon croquettes',
-				],
-				weight: 250,
-				cost: 10,
-				img: '1783/623249143/20221202_125355.jpg',
-				alias: 'potato-salmon-croquettes',
-			},
+			// {
+			// 	name: [
+			// 		'Картофельные крокеты с сёмгой',
+			// 		'Potato salmon croquettes',
+			// 	],
+			// 	weight: 250,
+			// 	cost: 10,
+			// 	img: '1783/623249143/20221202_125355.jpg',
+			// 	alias: 'potato-salmon-croquettes',
+			// },
 
 			{
 				name: [
@@ -322,14 +322,14 @@
 				alias: 'beer-set',
 			},
 
-			{
-				name: [
-					'Сет "Мастак"',
-					'"Mastak" Set',
-				],
-				weight: 1000,
-				cost: 40.00,
-			},
+			// {
+			// 	name: [
+			// 		'Сет "Мастак"',
+			// 		'"Mastak" Set',
+			// 	],
+			// 	weight: 1000,
+			// 	cost: 40.00,
+			// },
 
 			{
 				name: [
@@ -1729,8 +1729,8 @@
 
 			{
 				name: [
-					'Чёрный, Зелёный, Травяной, Молочный улун, Красный дракон, Клубника со сливками, Мохито, Ванильный бергамот',
-					'Black, Green, Herbal, Milk oolong, Red Dragon, Strawberries with cream, Mojito, Vanilla bergamot',
+					'Чёрный, Зелёный, Травяной, Молочный улун, Персиковый улун, Земляничный улун, Жасминовый улун, Красный дракон, Красный апельсин, Чёрная смородина, Клубника со сливками, Мохито, Ванильный бергамот, Крем-брюле',
+					'Black, Green, Herbal, Milk oolong, Peach oolong, Strawberry oolong, Jasmine oolong, Red dragon, Red orange, Black currant, Strawberries with cream, Mojito, Vanilla bergamot, Creme brulee',
 				],
 				cost: 4.50,
 			},
@@ -1753,8 +1753,8 @@
 
 			{
 				name: [
-					'Яблоко, Апельсин, Ананас, Вишня, Грейпфрут, Томат, Виноград, Морс Клюква + Виноград',
-					'Apple, Orange, Pineapple, Cherry, Grapefruit, Tomato, Grapes, Morse Cranberry + Grapes',
+					'Яблоко, Апельсин, Апельсин + Манго, Ананас, Вишня, Грейпфрут, Томат, Виноград, Морс Клюква + Виноград',
+					'Apple, Orange, Orange + Mango, Pineapple, Cherry, Grapefruit, Tomato, Grapes, Morse Cranberry + Grapes',
 				],
 				cost: 3.00,
 			},
@@ -2058,17 +2058,17 @@
 			// 	],
 			// },
 
-			{
-				name: 'Edit Abtei Himmerod Riesling',
-				weight: [
-					'псл',
-					's-sw',
-				],
-				cost: [
-					9.30,
-					55.00,
-				],
-			},
+			// {
+			// 	name: 'Edit Abtei Himmerod Riesling',
+			// 	weight: [
+			// 		'псл',
+			// 		's-sw',
+			// 	],
+			// 	cost: [
+			// 		9.30,
+			// 		55.00,
+			// 	],
+			// },
 
 			{
 				name: 'Pampas del Sur Chardonnay-Chenin',
@@ -2109,17 +2109,17 @@
 				],
 			},
 
-			{
-				name: 'Felix Gruner Veltliner',
-				weight: [
-					'сх',
-					'dr',
-				],
-				cost: [
-					8.90,
-					46.70,
-				],
-			},
+			// {
+			// 	name: 'Felix Gruner Veltliner',
+			// 	weight: [
+			// 		'сх',
+			// 		'dr',
+			// 	],
+			// 	cost: [
+			// 		8.90,
+			// 		46.70,
+			// 	],
+			// },
 
 			{
 				name: 'Los Molinos Airen-Verdejo',
@@ -2232,6 +2232,18 @@
 				cost: [
 					7.00,
 					34.60,
+				],
+			},
+
+			{
+				name: 'Fortius Blanco',
+				weight: [
+					'сх',
+					'dr',
+				],
+				cost: [
+					8.90,
+					46.70,
 				],
 			},
 
@@ -3285,10 +3297,6 @@
 			// 	name: 'Brûler Brune',
 			// 	slug: 'belgian-brew-factory-bruler-brune',
 			// },
-			{
-				name: 'Saltaire Triple Choc',
-				slug: 'saltaire-brewery-triple-chocoholic',
-			},
 			// {
 			// 	name: 'Braufactum Pale Ale',
 			//	slug: 'radeberger-gruppe-braufactum-german-pale-ale',
@@ -3348,10 +3356,10 @@
 			// {
 			// 	name: 'Irony',
 			// },
-			{
-				name: 'Relax',
-				slug: 'robim-good-brewery-relax',
-			}
+			// {
+			// 	name: 'Relax',
+			// 	slug: 'robim-good-brewery-relax',
+			// }
 		],
 
 	},
@@ -3536,15 +3544,15 @@
 					},
 				],
 			},
-			{
-				name: 'Aecht Schlenkerla',
-				collection: [
-					{
-						name: 'Märzen',
-						slug: 'aecht-schlenkerla-rauchbier-marzen',
-					},
-				],
-			},
+			// {
+			// 	name: 'Aecht Schlenkerla',
+			// 	collection: [
+			// 		{
+			// 			name: 'Märzen',
+			// 			slug: 'aecht-schlenkerla-rauchbier-marzen',
+			// 		},
+			// 	],
+			// },
 			{
 				name: 'Franziskaner',
 				collection: [
@@ -3601,6 +3609,10 @@
 					{
 						name: 'Brune',
 						slug: 'leffe-brune',
+					},
+					{
+						name: 'Ruby',
+						slug: 'leffe-ruby',
 					},
 				],
 			},
