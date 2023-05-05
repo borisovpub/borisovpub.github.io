@@ -237,54 +237,83 @@
 
 			{
 				name: [
-					'Тартар из говядины с картофельным гратеном',
-					'Beef tartare with gratin',
+					'Карпаччо из сёмги',
+					'Salmon carpaccio',
 				],
-				weight: 400,
-				cost: 20.00,
-				alias: 'beef-tartare-with-gratin',
+				weight: 220,
+				cost: 22.00,
 			},
 
 			// {
 			// 	name: [
-			// 		'Тартар из говядины с картофелем пай',
-			// 		'Beef tartare with potato straws',
+			// 		'Тартар из говядины с картофельным гратеном',
+			// 		'Beef tartare with gratin',
 			// 	],
-			// 	weight: 175,
+			// 	weight: 400,
 			// 	cost: 20.00,
-			// 	img: '6924/623262476/photo_2022-12-02_15-06-20.jpg',
-			// 	alias: 'beef-tartare-with-potato-straws',
+			// 	alias: 'beef-tartare-with-gratin',
 			// },
 
 			{
 				name: [
-					'Тартар на бриошь',
-					'Tartare on Brioche',
+					'Тартар из бычьего сердца с кремом из шпината',
+					'Beef heart tartare with spinach cream',
+				],
+				weight: 290,
+				cost: 18.00,
+			},
+
+			{
+				name: [
+					'Тартар из говядины с картофелем пай',
+					'Beef tartare with potato straws',
+				],
+				weight: 175,
+				cost: 20.00,
+				img: '6924/623262476/photo_2022-12-02_15-06-20.jpg',
+				alias: 'beef-tartare-with-potato-straws',
+			},
+
+			// {
+			// 	name: [
+			// 		'Тартар на бриошь',
+			// 		'Tartare on Brioche',
+			// 	],
+			// 	alias: 'tartare-on-brioche',
+			// 	collection: [
+			//
+			// 		{
+			// 			name: [
+			// 				'из сёмги',
+			// 				'salmon',
+			// 			],
+			// 			weight: 280,
+			// 			cost: 22.00,
+			// 			img: '3118/623594542/20221203_125158.jpg',
+			// 		},
+			//
+			// 		{
+			// 			name: [
+			// 				'из тунца',
+			// 				'tuna',
+			// 			],
+			// 			weight: 280,
+			// 			cost: 21.00,
+			// 			img: '3121/623594545/20221203_125302.jpg',
+			// 		},
+			//
+			// 	],
+			// },
+
+			{
+				name: [
+					'Тартар из тунца на бриошь',
+					'Tuna tartare on Brioche',
 				],
 				alias: 'tartare-on-brioche',
-				collection: [
-
-					{
-						name: [
-							'из сёмги',
-							'salmon',
-						],
-						weight: 280,
-						cost: 22.00,
-						img: '3118/623594542/20221203_125158.jpg',
-					},
-
-					{
-						name: [
-							'из тунца',
-							'tuna',
-						],
-						weight: 280,
-						cost: 21.00,
-						img: '3121/623594545/20221203_125302.jpg',
-					},
-
-				],
+				weight: 280,
+				cost: 21.00,
+				img: '3121/623594545/20221203_125302.jpg',
 			},
 
 			{
@@ -317,7 +346,7 @@
 					'Beer Set',
 				],
 				weight: 790,
-				cost: 28.50,
+				cost: 30.00,
 				img: '7800/423960184/IMG_7791.jpg',
 				alias: 'beer-set',
 			},
@@ -537,26 +566,27 @@
 				tp: 1,
 			},
 
-			// {
-			//   name: [
-			//     'Холодник',
-			//     'Cold borscht',
-			//   ],
-			//   weight: 250,
-			//   cost: 4.30,
-			// },
-
 			{
 				name: [
-					'Крем-суп из шампиньонов',
-					'Champignon cream soup',
+					'Холодник',
+					'Cold borscht',
 				],
 				weight: 250,
-				cost: 5.00,
-				img: '4019/306466739/IMG_7621.jpg',
-				alias: 'mushroom-soup',
+				cost: 4.30,
 				tp: 1,
 			},
+
+			// {
+			// 	name: [
+			// 		'Крем-суп из шампиньонов',
+			// 		'Champignon cream soup',
+			// 	],
+			// 	weight: 250,
+			// 	cost: 5.00,
+			// 	img: '4019/306466739/IMG_7621.jpg',
+			// 	alias: 'mushroom-soup',
+			// 	tp: 1,
+			// },
 
 			{
 				name: [
@@ -618,16 +648,16 @@
 				],
 			},
 
-			{
-				name: [
-					'Оливье с уткой',
-					'Olivier with duck',
-				],
-				weight: 200,
-				cost: 13.00,
-				img: '4560/623595984/20221203_130814.jpg',
-				alias: 'olivier-with-duck',
-			},
+			// {
+			// 	name: [
+			// 		'Оливье с уткой',
+			// 		'Olivier with duck',
+			// 	],
+			// 	weight: 200,
+			// 	cost: 13.00,
+			// 	img: '4560/623595984/20221203_130814.jpg',
+			// 	alias: 'olivier-with-duck',
+			// },
 
 			{
 				name: [
@@ -675,6 +705,33 @@
 
 		collection: [
 
+			{
+				name: [
+					'Салат овощной с редисом и авокадо',
+					'Vegetable salad with radish and avocado',
+				],
+				weight: 310,
+				cost: 14.00,
+			},
+
+			{
+				name: [
+					'Салат с креветками, авокадо и грейпфрутом',
+					'Salad with shrimps, avocado and grapefruit',
+				],
+				weight: 270,
+				cost: 15.00,
+			},
+
+			{
+				name: [
+					'Салат с клубникой и камамбером',
+					'Salad with strawberries and camembert',
+				],
+				weight: 250,
+				cost: 16.00,
+			},
+
 			// {
 			// 	name: [
 			// 		'Салат с утиной грудкой, сливой и грушей',
@@ -693,16 +750,16 @@
 			//   cost: 14.50,
 			// },
 
-			{
-				name: [
-					'Салат с креветками и грушей',
-					'Salad with prawns and pear',
-				],
-				weight: 310,
-				cost: 16.20,
-				img: '8129/623271873/photo_2022-12-02_15-19-50.jpg',
-				alias: 'salad-with-prawns-and-pear',
-			},
+			// {
+			// 	name: [
+			// 		'Салат с креветками и грушей',
+			// 		'Salad with prawns and pear',
+			// 	],
+			// 	weight: 310,
+			// 	cost: 16.20,
+			// 	img: '8129/623271873/photo_2022-12-02_15-19-50.jpg',
+			// 	alias: 'salad-with-prawns-and-pear',
+			// },
 
 			// {
 			// 	name: [
@@ -1117,6 +1174,16 @@
 
 			{
 				name: [
+					'Оссобуко из говядины с печёным картофелем',
+					'Beef ossobuco with baked potatoes',
+				],
+				weight: 420,
+				cost: 24.00,
+				alias: 'sea-bass-fillet-with-wild-rice-and-curry-sauce',
+			},
+
+			{
+				name: [
 					'Филе морского окуня с диким рисом',
 					'Sea bass fillet with wild rice and curry sauce',
 				],
@@ -1149,15 +1216,15 @@
 			// 	],
 			// },
 
-			{
-				name: [
-					'Утка с белыми грибами и печёным картофелем',
-					'Duck with porcini mushrooms and potatoes',
-				],
-				weight: 380,
-				cost: 24.50,
-				alias: 'duck-with-porcini-mushrooms-and-baked-potatoes',
-			},
+			// {
+			// 	name: [
+			// 		'Утка с белыми грибами и печёным картофелем',
+			// 		'Duck with porcini mushrooms and potatoes',
+			// 	],
+			// 	weight: 380,
+			// 	cost: 24.50,
+			// 	alias: 'duck-with-porcini-mushrooms-and-baked-potatoes',
+			// },
 
 			// {
 			// 	name: [
@@ -1174,10 +1241,30 @@
 
 			{
 				name: [
-					'Кроличья нога с гратеном и грибным соусом',
-					'Rabbit leg with gratin and mushroom sauce',
+					'Утиная ножка с кремом из цветной капусты',
+					'Duck leg with cauliflower cream',
 				],
-				weight: 400,
+				weight: 470,
+				cost: 24.00,
+			},
+
+			// {
+			// 	name: [
+			// 		'Кроличья нога с гратеном и грибным соусом',
+			// 		'Rabbit leg with gratin and mushroom sauce',
+			// 	],
+			// 	weight: 400,
+			// 	cost: 26.00,
+			// 	img: '6990/541334350/20220430_143710.jpg',
+			// 	alias: 'rabbit-leg-with-gratin-and-mushroom-sauce',
+			// },
+
+			{
+				name: [
+					'Кроличья нога с картофельным пюре',
+					'Rabbit leg with mashed potatoes',
+				],
+				weight: 500,
 				cost: 26.00,
 				img: '6990/541334350/20220430_143710.jpg',
 				alias: 'rabbit-leg-with-gratin-and-mushroom-sauce',
@@ -1247,7 +1334,7 @@
 
 			{
 				name: [
-					'Говядина картофелем и трюфельным маслом',
+					'Говядина с картофелем и трюфельным маслом',
 					'Beef with mashed potatoes and truffle oil',
 				],
 				weight: 430,
@@ -1327,6 +1414,14 @@
 				collection: [
 					{
 						name: [
+							'с уткой и сливочно-грибным соусом',
+							'with duck and creamy mushroom sauce',
+						],
+						weight: 430,
+						cost: 18.00,
+					},
+					{
+						name: [
 							'с ростбифом',
 							'with roast beef',
 						],
@@ -1365,32 +1460,32 @@
 				tp: 1,
 			},
 
-			{
-				name: [
-					'Колбаски с картофелем и квашенной капустой',
-					'Sausages with potatoes and sauerkraut',
-				],
-				alias: 'sausages-with-potatoes-and-sauerkraut',
-				collection: [
-					{
-						name: [
-							'куриные',
-							'chicken',
-						],
-						weight: 560,
-						cost: 20,
-					},
-					{
-						name: [
-							'свино-говяжьи',
-							'pork and beef',
-						],
-						weight: 560,
-						cost: 23,
-					},
-				],
-				tp: 1,
-			},
+			// {
+			// 	name: [
+			// 		'Колбаски с картофелем и квашенной капустой',
+			// 		'Sausages with potatoes and sauerkraut',
+			// 	],
+			// 	alias: 'sausages-with-potatoes-and-sauerkraut',
+			// 	collection: [
+			// 		{
+			// 			name: [
+			// 				'куриные',
+			// 				'chicken',
+			// 			],
+			// 			weight: 560,
+			// 			cost: 20,
+			// 		},
+			// 		{
+			// 			name: [
+			// 				'свино-говяжьи',
+			// 				'pork and beef',
+			// 			],
+			// 			weight: 560,
+			// 			cost: 23,
+			// 		},
+			// 	],
+			// 	tp: 1,
+			// },
 
 			{
 				name: [
@@ -1578,6 +1673,15 @@
 				cost: 9.00,
 			},
 
+			{
+				name: [
+					'Лимонный тарт',
+					'Lemon tart',
+				],
+				weight: 150,
+				cost: 9.00,
+			},
+
 			// {
 			// 	name: [
 			// 		'Медовик',
@@ -1595,6 +1699,15 @@
 			//   weight: 150,
 			//   cost: 6.00,
 			// },
+
+			{
+				name: [
+					'Шоколадный фондан',
+					'Chocolate fondant',
+				],
+				weight: 150,
+				cost: 9.00,
+			},
 
 			{
 				name: [
@@ -1826,23 +1939,23 @@
 						cost: 5.80,
 					},
 
-					// {
-					// 	name: [
-					// 		'Вода с апельсином и грейпфрутом',
-					// 		'Water with orange and grapefruit',
-					// 	],
-					// 	weight: 1000,
-					// 	cost: 4.30,
-					// },
-					//
-					// {
-					// 	name: [
-					// 		'Вода с мятой и лаймом',
-					// 		'Water with mint and lime',
-					// 	],
-					// 	weight: 1000,
-					// 	cost: 4.30,
-					// },
+					{
+						name: [
+							'Вода с апельсином и грейпфрутом',
+							'Water with orange and grapefruit',
+						],
+						weight: 1000,
+						cost: 4.30,
+					},
+
+					{
+						name: [
+							'Вода с мятой и лаймом',
+							'Water with mint and lime',
+						],
+						weight: 1000,
+						cost: 4.30,
+					},
 
 				],
 
@@ -1988,17 +2101,17 @@
 						cost: 14,
 					},
 
-					{
-						name: 'Lillet Apple Punch',
-						weight: 250,
-						cost: 12,
-					},
-
-					{
-						name: 'Lillet Strawberry Punch',
-						weight: 250,
-						cost: 12,
-					},
+					// {
+					// 	name: 'Lillet Apple Punch',
+					// 	weight: 250,
+					// 	cost: 12,
+					// },
+					//
+					// {
+					// 	name: 'Lillet Strawberry Punch',
+					// 	weight: 250,
+					// 	cost: 12,
+					// },
 
 				],
 
@@ -2172,6 +2285,18 @@
 				],
 			},
 
+			{
+				name: 'Heinz Eifel Gewürztraminer',
+				weight: [
+					'сх',
+					'dr',
+				],
+				cost: [
+					7.80,
+					40.00,
+				],
+			},
+
 			// {
 			// 	name: 'Cape Dream Chenin Blanc',
 			// 	weight: [
@@ -2215,8 +2340,8 @@
 					'dr',
 				],
 				cost: [
-					6.10,
-					31.90,
+					7.00,
+					35.00,
 				],
 			},
 
@@ -2296,8 +2421,8 @@
 					'dr',
 				],
 				cost: [
-					6.10,
-					31.90,
+					7.00,
+					35.00,
 				],
 			},
 
@@ -2485,8 +2610,8 @@
 					'dr',
 				],
 				cost: [
-					6.10,
-					31.90,
+					7.00,
+					35.00,
 				],
 			},
 
@@ -3031,13 +3156,13 @@
 				cost: 4.50,
 			},
 
-			{
-				name: [
-					'Мандариновка',
-					'Tangerine',
-				],
-				cost: 4.50,
-			},
+			// {
+			// 	name: [
+			// 		'Мандариновка',
+			// 		'Tangerine',
+			// 	],
+			// 	cost: 4.50,
+			// },
 
 			// {
 			// 	name: [
@@ -3047,18 +3172,18 @@
 			// 	cost: 4.50,
 			// },
 
-			// {
-			// 	name: '',
-			// 	collection: [
-			// 		{
-			// 			name: [
-			// 				'Сезонная',
-			// 				'Seasonal',
-			// 			],
-			// 			cost: 4.50,
-			// 		},
-			// 	],
-			// },
+			{
+				name: '',
+				collection: [
+					{
+						name: [
+							'Сезонная',
+							'Seasonal',
+						],
+						cost: 4.50,
+					},
+				],
+			},
 
 		],
 
@@ -3263,12 +3388,26 @@
 
 		collection: [
 			{
-				name: 'Belhaven Black',
-				slug: 'belhaven-black',
+				name: 'Belhaven',
+				collection: [
+					{
+						name: 'Black',
+						slug: 'belhaven-black',
+					},
+				],
 			},
 			{
-				name: 'Paulaner Naturtrüb',
-				slug: 'paulaner-hefe-weissbier',
+				name: 'Old Speckled Hen',
+				slug: 'greene-king-old-speckled-hen',
+			},
+			{
+				name: 'Paulaner',
+				collection: [
+					{
+						name: 'Naturtrüb',
+						slug: 'paulaner-hefe-weissbier',
+					},
+				],
 			},
 			// {
 			// 	name: 'Hoegaarden',
@@ -3281,22 +3420,27 @@
 				name: 'Holland Crown',
 				slug: 'h-west-b-v-holland-crown',
 			},
-			{
-				name: 'Palm',
-				slug: 'palm',
-			},
-			{
-				name: 'Abbot Ale',
-				slug: 'greene-king-abbot-ale',
-			},
-			{
-				name: 'Brûler Blonde',
-				slug: 'belgian-brew-factory-bruler-blonde',
-			},
 			// {
-			// 	name: 'Brûler Brune',
-			// 	slug: 'belgian-brew-factory-bruler-brune',
+			// 	name: 'Palm',
+			// 	slug: 'palm',
 			// },
+			// {
+			// 	name: 'Abbot Ale',
+			// 	slug: 'greene-king-abbot-ale',
+			// },
+			{
+				name: 'Brûler',
+				collection: [
+					{
+						name: 'Blonde',
+						slug: 'belgian-brew-factory-bruler-blonde',
+					},
+					{
+						name: 'Brune',
+						slug: 'belgian-brew-factory-bruler-brune',
+					},
+				],
+			},
 			// {
 			// 	name: 'Braufactum Pale Ale',
 			//	slug: 'radeberger-gruppe-braufactum-german-pale-ale',
@@ -3320,46 +3464,51 @@
 			// 	name: 'Nut Butter',
 			// },
 			{
-				name: 'Holiday',
-				slug: 'robim-good-brewery-holiday',
-			},
-			// {
-			// 	name: 'Breakfast',
-			// 	slug: 'robim-good-brewery-breakfast',
-			// },
-			// {
-			// 	name: 'Wake Up',
-			// 	slug: 'robim-good-brewery-wake-up',
-			// },
-			// {
-			// 	name: 'Dream',
-			// 	slug: 'robim-good-brewery-dream',
-			// },
-			// {
-			// 	name: 'Dance',
-			// 	slug: 'robim-good-brewery-dance',
-			// },
-			// {
-			// 	name: 'Crystal',
-			// 	slug: 'robim-good-brewery-crystal',
-			// },
-			// {
-			//   name: 'Amber Ray',
-			// },
-			// {
-			// 	name: 'Space',
-			// 	slug: 'robim-good-brewery-space',
-			// },
-			// {
-			// 	name: 'Idol',
-			// },
-			// {
-			// 	name: 'Irony',
-			// },
-			// {
-			// 	name: 'Relax',
-			// 	slug: 'robim-good-brewery-relax',
-			// }
+				name: 'Robim Good',
+				collection: [
+				{
+					name: 'Holiday',
+					slug: 'robim-good-brewery-holiday',
+				},
+				// {
+				// 	name: 'Breakfast',
+				// 	slug: 'robim-good-brewery-breakfast',
+				// },
+				// {
+				// 	name: 'Wake Up',
+				// 	slug: 'robim-good-brewery-wake-up',
+				// },
+				// {
+				// 	name: 'Dream',
+				// 	slug: 'robim-good-brewery-dream',
+				// },
+				// {
+				// 	name: 'Dance',
+				// 	slug: 'robim-good-brewery-dance',
+				// },
+				// {
+				// 	name: 'Crystal',
+				// 	slug: 'robim-good-brewery-crystal',
+				// },
+				// {
+				//   name: 'Amber Ray',
+				// },
+				{
+					name: 'Space',
+					slug: 'robim-good-brewery-space',
+				},
+				// {
+				// 	name: 'Idol',
+				// },
+				// {
+				// 	name: 'Irony',
+				// },
+				// {
+				// 	name: 'Relax',
+				// 	slug: 'robim-good-brewery-relax',
+				// },
+				],
+			}
 		],
 
 	},
@@ -3433,10 +3582,10 @@
 					// 	name: 'Irish Stout',
 					// 	slug: 'oharas-irish-stout',
 					// },
-					{
-						name: 'Irish Stout Nitro',
-						slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
-					},
+					// {
+					// 	name: 'Irish Stout Nitro',
+					// 	slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
+					// },
 					{
 						name: 'Leann Folláin',
 						slug: 'oharas-leann-follain',
@@ -3509,10 +3658,10 @@
 			{
 				name: 'Belhaven',
 				collection: [
-					{
-						name: 'Black',
-						slug: 'belhaven-black',
-					},
+					// {
+					// 	name: 'Black',
+					// 	slug: 'belhaven-black',
+					// },
 					{
 						name: 'McCallum`s Stout',
 						slug: 'belhaven-mccallums-stout',
@@ -3553,15 +3702,15 @@
 			// 		},
 			// 	],
 			// },
-			{
-				name: 'Franziskaner',
-				collection: [
-					{
-						name: 'Naturtrüb',
-						slug: 'franziskaner-hefe-weissbier-naturtrub',
-					}
-				],
-			},
+			// {
+			// 	name: 'Franziskaner',
+			// 	collection: [
+			// 		{
+			// 			name: 'Naturtrüb',
+			// 			slug: 'franziskaner-hefe-weissbier-naturtrub',
+			// 		}
+			// 	],
+			// },
 			{
 				name: 'Paulaner',
 				collection: [
@@ -3632,10 +3781,10 @@
 					// },
 				],
 			},
-			{
-				name: 'XII Flemish Red Ale',
-				slug: 'sosab-sour-ale-brewery-xii-flemish-red-ale',
-			},
+			// {
+			// 	name: 'XII Flemish Red Ale',
+			// 	slug: 'sosab-sour-ale-brewery-xii-flemish-red-ale',
+			// },
 			// {
 			// 	name: 'Saison 1858',
 			// 	slug: 'brasserie-du-bocq-saison-1858',
@@ -3690,15 +3839,15 @@
 					},
 				],
 			},
-			// {
-			// 	name: 'Paulaner',
-			// 	collection: [
-			// 		{
-			// 			name: 'Alkoholfrei',
-			// 			slug: 'paulaner-brauerei-paulaner-weissbier-alkoholfrei-0-0',
-			// 		},
-			// 	],
-			// },
+			{
+				name: 'Paulaner',
+				collection: [
+					{
+						name: 'Alkoholfrei',
+						slug: 'paulaner-brauerei-paulaner-weissbier-alkoholfrei-0-0',
+					},
+				],
+			},
 		],
 
 	},
