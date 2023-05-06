@@ -242,6 +242,8 @@
 				],
 				weight: 220,
 				cost: 22.00,
+				img: '2167/695240823/20230503_155629.jpg',
+				alias: 'salmon-carpaccio',
 			},
 
 			// {
@@ -1174,12 +1176,13 @@
 
 			{
 				name: [
-					'Оссобуко из говядины с печёным картофелем',
-					'Beef ossobuco with baked potatoes',
+					'Оссобуко из говядины с печёными овощами',
+					'Beef ossobuco with baked vegetables',
 				],
 				weight: 420,
 				cost: 24.00,
-				alias: 'sea-bass-fillet-with-wild-rice-and-curry-sauce',
+				img: '3499/695242155/20230504_172614.jpg',
+				alias: 'beef-ossobuco-with-baked-vegetables',
 			},
 
 			{
@@ -1419,6 +1422,7 @@
 						],
 						weight: 430,
 						cost: 18.00,
+						img: '1023/695239679/20230504_174915.jpg',
 					},
 					{
 						name: [
