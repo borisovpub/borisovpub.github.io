@@ -263,6 +263,8 @@
 				],
 				weight: 290,
 				cost: 18.00,
+				img: '319/696041791/20230504_171708.jpg',
+				alias: 'beef-heart-tartare-with-spinach-cream',
 			},
 
 			{
@@ -714,6 +716,8 @@
 				],
 				weight: 310,
 				cost: 14.00,
+				img: '5327/696046799/20230503_155541.jpg',
+				alias: 'vegetable-salad-with-radish-and-avocado',
 			},
 
 			{
@@ -723,6 +727,8 @@
 				],
 				weight: 270,
 				cost: 15.00,
+				img: '2791/696052455/20230503_155431.jpg',
+				alias: 'salad-with-shrimps-avocado-and-grapefruit',
 			},
 
 			{
@@ -732,6 +738,8 @@
 				],
 				weight: 250,
 				cost: 16.00,
+				img: '5117/696054781/20230503_155324.jpg',
+				alias: 'salad-with-strawberries-and-camembert',
 			},
 
 			// {
@@ -1249,6 +1257,8 @@
 				],
 				weight: 470,
 				cost: 24.00,
+				img: '165/696033445/20230504_172015.jpg',
+				alias: 'duck-leg-with-cauliflower-cream',
 			},
 
 			// {
@@ -1269,8 +1279,8 @@
 				],
 				weight: 500,
 				cost: 26.00,
-				img: '6990/541334350/20220430_143710.jpg',
-				alias: 'rabbit-leg-with-gratin-and-mushroom-sauce',
+				img: '3580/696028668/20230504_171624.jpg',
+				alias: 'rabbi-leg-with-mashed-potatoes',
 			},
 
 			{
@@ -1703,15 +1713,6 @@
 			//   weight: 150,
 			//   cost: 6.00,
 			// },
-
-			{
-				name: [
-					'Шоколадный фондан',
-					'Chocolate fondant',
-				],
-				weight: 150,
-				cost: 9.00,
-			},
 
 			{
 				name: [
