@@ -33,11 +33,6 @@
 			min-width: 100px;
 		}
 
-		form {
-			padding: 10px;
-			line-height: 24px;
-		}
-
 	</style>
 
 </head>
@@ -45,13 +40,16 @@
 <body>
 
 <div class="page">
-	<form>
-		В наш дружный коллектив требуются <input class="prof" value="официанты и повара" />!<br />По всем вопросам в директ или по телефону <input class="tel" value="+375 (33) 661-24-56" />
-	</form>
 	<button>Скачать</button>
 </div>
 
-<script>( ( /** Window */ window ) => {
+<script>( ( /** Window */ window ) =>  window.fetch( '/lunch/data.json?' + window.Math.random() ).then( ( response ) => response.json() ).then( ( /** { { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } } */ data ) => {
+
+	/** @typedef { [ string, number, number ] } Lunch */
+
+	/** @typedef { [ string | Lunch ] } LunchCollection */
+
+	/** @typedef { [ string, string, number, number ] } Brunch */
 
 	/** @noinline */
 	var querySelector = ( node, selector ) => node.querySelector( selector );
@@ -65,7 +63,7 @@
 
 		button.disabled = true;
 
-		const getDataURL = ( uri ) => new window.Promise( async ( resolve, reject ) => {
+		var getDataURL = ( uri ) => new window.Promise( async ( resolve, reject ) => {
 
 			const reader = new window.FileReader();
 
@@ -76,7 +74,7 @@
 
 		} );
 
-		const dataURL = await new window.Promise( async ( resolve, reject ) => {
+		var dataURL = await new window.Promise( async ( resolve, reject ) => {
 
 			var img = new window.Image();
 
@@ -95,31 +93,56 @@
 
 			img.setAttribute( 'src', 'data:image/svg+xml;utf8,' + window.encodeURIComponent( `
 				<svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+
 					<style>
+
 						@font-face {
 							font-family: "Open Sans Condensed Light";
 							src: local( "Open Sans Condensed Light" ),
-								url( "${ await getDataURL( '/@/OpenSansCondensed-Light.ttf' ) }" );
+							url( "${ await getDataURL( '/@/OpenSansCondensed-Light.ttf' ) }" );
 						}
+
 						text {
-							text-transform: uppercase;
 							font-family: "Open Sans Condensed Light", Arial, sans-serif;
-							font-size: 60px;
-							fill: #fff;
+							font-size: 50px;
+							fill: #2a2829;
 						}
+
+						text,
 						text > * {
 							text-anchor: middle;
 						}
+
 					</style>
-					<image href="${ await getDataURL( 'bg.png' ) }" width="1080" height="1920" />
-					<text transform="translate(540,420)">
-						<tspan x="0" dy="0">В наш дружный</tspan>
-						<tspan x="0" dy="80">коллектив требуются</tspan>
-						<tspan x="0" dy="80">${ querySelector( document, '.prof' ).value }!</tspan>
-						<tspan x="0" dy="180">По всем вопросам в директ</tspan>
-						<tspan x="0" dy="80">или по телефону</tspan>
-						<tspan x="0" dy="80">${ querySelector( document, '.tel' ).value }</tspan>
-					</text>
+
+					<image href="${ await getDataURL( ( ( new Date() ).getUTCDate() - 1 ) % 9 + '.png' ) }" width="1080" height="1920" />
+
+					<g transform="translate(125,680)">
+
+						<rect width="830" height="990" rx="30" ry="30" fill="#f7f7f4" />
+
+						<g transform="translate(50,50)">
+							<circle fill="#4FB2FC" cx="25" cy="25" r="25"/>
+							<ellipse fill="#fff" cx="25" cy="24.11" rx="16.54" ry="12.82"/>
+							<polygon fill="#fff" points="11.82,38.76 18.15,36.63 24.48,34.51 19.47,30.09 14.46,25.67 13.14,32.21 "/>
+						</g>
+
+						<text x="415" y="90" style="font-weight:bold">Обеденное меню с 12:00 до 16:00</text>
+
+						<text transform="translate(415,100)">
+						${
+							data.lunch.slice( 0, 4 ).map( ( [ n, ...d ] ) => `
+								<tspan x="0" dy="90" style="text-transform:uppercase">${ n }</tspan>
+								${
+									d.map( ( [ n ] ) => `
+										<tspan x="0" dy="55">${ n }</tspan>
+									` ).join( '' )
+								}
+							` ).join( '' )
+						}
+						</text>
+					</g>
+
 				</svg>
 			` ) );
 
@@ -127,7 +150,7 @@
 
 		const a = document.createElement( 'a' );
 		a.setAttribute( 'href', dataURL );
-		a.setAttribute( 'download', 'vacancy.png' );
+		a.setAttribute( 'download', 'lunch.png' );
 		a.style.display = 'none';
 
 		page.appendChild( a );
@@ -138,7 +161,7 @@
 
 	} );
 
-} )( this )</script>
+} ) )( this )</script>
 
 </body>
 
