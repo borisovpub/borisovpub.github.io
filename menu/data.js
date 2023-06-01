@@ -256,16 +256,16 @@
 			// 	alias: 'beef-tartare-with-gratin',
 			// },
 
-			{
-				name: [
-					'Тартар из бычьего сердца с кремом из шпината',
-					'Beef heart tartare with spinach cream',
-				],
-				weight: 290,
-				cost: 18.00,
-				img: '319/696041791/20230504_171708.jpg',
-				alias: 'beef-heart-tartare-with-spinach-cream',
-			},
+			// {
+			// 	name: [
+			// 		'Тартар из бычьего сердца с кремом из шпината',
+			// 		'Beef heart tartare with spinach cream',
+			// 	],
+			// 	weight: 290,
+			// 	cost: 18.00,
+			// 	img: '319/696041791/20230504_171708.jpg',
+			// 	alias: 'beef-heart-tartare-with-spinach-cream',
+			// },
 
 			{
 				name: [
@@ -309,15 +309,26 @@
 			// 	],
 			// },
 
+			// {
+			// 	name: [
+			// 		'Тартар из тунца на бриошь',
+			// 		'Tuna tartare on Brioche',
+			// 	],
+			// 	alias: 'tartare-on-brioche',
+			// 	weight: 280,
+			// 	cost: 21.00,
+			// 	img: '3121/623594545/20221203_125302.jpg',
+			// },
+
 			{
 				name: [
-					'Тартар из тунца на бриошь',
-					'Tuna tartare on Brioche',
+					'Тартар из тунца в сфере из авокадо',
+					'Tuna tartare in an avocado sphere',
 				],
-				alias: 'tartare-on-brioche',
-				weight: 280,
-				cost: 21.00,
-				img: '3121/623594545/20221203_125302.jpg',
+				// alias: 'tartare-on-brioche',
+				weight: 230,
+				cost: 20.00,
+				// img: '3121/623594545/20221203_125302.jpg',
 			},
 
 			{
@@ -685,16 +696,16 @@
 				alias: 'salad-with-roast-beef-and-grilled-vegetables',
 			},
 
-			{
-				name: [
-					'Салат с утиной грудкой, вишней и камамбером',
-					'Salad with duck breast, cherries and camembert',
-				],
-				weight: 300,
-				cost: 16,
-				img: '1143/622953591/20221128_131706.jpg',
-				alias: 'salad-with-duck-breast-cherries-and-camembert',
-			},
+			// {
+			// 	name: [
+			// 		'Салат с утиной грудкой, вишней и камамбером',
+			// 		'Salad with duck breast, cherries and camembert',
+			// 	],
+			// 	weight: 300,
+			// 	cost: 16,
+			// 	img: '1143/622953591/20221128_131706.jpg',
+			// 	alias: 'salad-with-duck-breast-cherries-and-camembert',
+			// },
 
 		],
 
@@ -709,38 +720,38 @@
 
 		collection: [
 
-			{
-				name: [
-					'Салат овощной с редисом и авокадо',
-					'Vegetable salad with radish and avocado',
-				],
-				weight: 310,
-				cost: 14.00,
-				img: '5327/696046799/20230503_155541.jpg',
-				alias: 'vegetable-salad-with-radish-and-avocado',
-			},
+			// {
+			// 	name: [
+			// 		'Салат овощной с редисом и авокадо',
+			// 		'Vegetable salad with radish and avocado',
+			// 	],
+			// 	weight: 310,
+			// 	cost: 14.00,
+			// 	img: '5327/696046799/20230503_155541.jpg',
+			// 	alias: 'vegetable-salad-with-radish-and-avocado',
+			// },
 
-			{
-				name: [
-					'Салат с креветками, авокадо и грейпфрутом',
-					'Salad with shrimps, avocado and grapefruit',
-				],
-				weight: 270,
-				cost: 15.00,
-				img: '2791/696052455/20230503_155431.jpg',
-				alias: 'salad-with-shrimps-avocado-and-grapefruit',
-			},
+			// {
+			// 	name: [
+			// 		'Салат с креветками, авокадо и грейпфрутом',
+			// 		'Salad with shrimps, avocado and grapefruit',
+			// 	],
+			// 	weight: 270,
+			// 	cost: 15.00,
+			// 	img: '2791/696052455/20230503_155431.jpg',
+			// 	alias: 'salad-with-shrimps-avocado-and-grapefruit',
+			// },
 
-			{
-				name: [
-					'Салат с клубникой и камамбером',
-					'Salad with strawberries and camembert',
-				],
-				weight: 250,
-				cost: 16.00,
-				img: '5117/696054781/20230503_155324.jpg',
-				alias: 'salad-with-strawberries-and-camembert',
-			},
+			// {
+			// 	name: [
+			// 		'Салат с клубникой и камамбером',
+			// 		'Salad with strawberries and camembert',
+			// 	],
+			// 	weight: 250,
+			// 	cost: 16.00,
+			// 	img: '5117/696054781/20230503_155324.jpg',
+			// 	alias: 'salad-with-strawberries-and-camembert',
+			// },
 
 			// {
 			// 	name: [
@@ -760,16 +771,16 @@
 			//   cost: 14.50,
 			// },
 
-			// {
-			// 	name: [
-			// 		'Салат с креветками и грушей',
-			// 		'Salad with prawns and pear',
-			// 	],
-			// 	weight: 310,
-			// 	cost: 16.20,
-			// 	img: '8129/623271873/photo_2022-12-02_15-19-50.jpg',
-			// 	alias: 'salad-with-prawns-and-pear',
-			// },
+			{
+				name: [
+					'Салат с креветками и грушей',
+					'Salad with prawns and pear',
+				],
+				weight: 310,
+				cost: 16.20,
+				img: '8129/623271873/photo_2022-12-02_15-19-50.jpg',
+				alias: 'salad-with-prawns-and-pear',
+			},
 
 			// {
 			// 	name: [
@@ -783,6 +794,16 @@
 			// 		'7143/593099751/20220913_143759.jpg',
 			// 	],
 			// },
+
+			{
+				name: [
+					'Салат с угрём',
+					'Salad with eel',
+				],
+				weight: 210,
+				cost: 15.50,
+				alias: 'salad-meat',
+			},
 
 			{
 				name: [
@@ -889,6 +910,18 @@
 				tp: 3,
 			},
 
+			{
+				name: [
+					'Бургер с угрём',
+					'Burger with eel',
+				],
+				weight: 330,
+				cost: 14.50,
+				// img: '7643/541007323/20220429_114605.jpg',
+				// alias: 'beef-steak-burger',
+				tp: 2,
+			},
+
 			// {
 			// 	name: [
 			// 		'Фишбургер с треской',
@@ -952,17 +985,17 @@
 			// 	tp: 2,
 			// },
 
-			{
-				name: [
-					'Бургер с куриным бедром и айоли',
-					'Chicken thigh burger with aioli',
-				],
-				weight: 250,
-				cost: 14.00,
-				img: '6902/471030518/IMG_3753.jpg',
-				alias: 'chicken-thigh-burger-with-aioli',
-				tp: 2,
-			},
+			// {
+			// 	name: [
+			// 		'Бургер с куриным бедром и айоли',
+			// 		'Chicken thigh burger with aioli',
+			// 	],
+			// 	weight: 250,
+			// 	cost: 14.00,
+			// 	img: '6902/471030518/IMG_3753.jpg',
+			// 	alias: 'chicken-thigh-burger-with-aioli',
+			// 	tp: 2,
+			// },
 
 			{
 				name: [
@@ -1227,15 +1260,15 @@
 			// 	],
 			// },
 
-			// {
-			// 	name: [
-			// 		'Утка с белыми грибами и печёным картофелем',
-			// 		'Duck with porcini mushrooms and potatoes',
-			// 	],
-			// 	weight: 380,
-			// 	cost: 24.50,
-			// 	alias: 'duck-with-porcini-mushrooms-and-baked-potatoes',
-			// },
+			{
+				name: [
+					'Утка с белыми грибами и печёным картофелем',
+					'Duck with porcini mushrooms and potatoes',
+				],
+				weight: 380,
+				cost: 24.50,
+				alias: 'duck-with-porcini-mushrooms-and-baked-potatoes',
+			},
 
 			// {
 			// 	name: [
@@ -1250,16 +1283,16 @@
 			// 	],
 			// },
 
-			{
-				name: [
-					'Утиная ножка с кремом из цветной капусты',
-					'Duck leg with cauliflower cream',
-				],
-				weight: 470,
-				cost: 24.00,
-				img: '165/696033445/20230504_172015.jpg',
-				alias: 'duck-leg-with-cauliflower-cream',
-			},
+			// {
+			// 	name: [
+			// 		'Утиная ножка с кремом из цветной капусты',
+			// 		'Duck leg with cauliflower cream',
+			// 	],
+			// 	weight: 470,
+			// 	cost: 24.00,
+			// 	img: '165/696033445/20230504_172015.jpg',
+			// 	alias: 'duck-leg-with-cauliflower-cream',
+			// },
 
 			// {
 			// 	name: [
@@ -1407,16 +1440,16 @@
 				tp: 1,
 			},
 
-			{
-				name: [
-					'Пирог с курицей',
-					'Chicken pie',
-				],
-				weight: 500,
-				cost: 19.00,
-				alias: 'chicken-pie',
-				tp: 1,
-			},
+			// {
+			// 	name: [
+			// 		'Пирог с курицей',
+			// 		'Chicken pie',
+			// 	],
+			// 	weight: 500,
+			// 	cost: 19.00,
+			// 	alias: 'chicken-pie',
+			// 	tp: 1,
+			// },
 
 			{
 				name: [
@@ -1431,7 +1464,7 @@
 							'with duck and creamy mushroom sauce',
 						],
 						weight: 430,
-						cost: 18.00,
+						cost: 18.50,
 						img: '1023/695239679/20230504_174915.jpg',
 					},
 					{
@@ -1440,7 +1473,7 @@
 							'with roast beef',
 						],
 						weight: 380,
-						cost: 14.20,
+						cost: 14.70,
 						img: '6322/623597746/20221203_125714.jpg',
 					},
 					{
@@ -1449,7 +1482,7 @@
 							'with salmon',
 						],
 						weight: 350,
-						cost: 15.30,
+						cost: 15.80,
 						img: '6190/623597614/20221203_125604.jpg',
 					},
 					{
@@ -1458,7 +1491,7 @@
 							'with mushroom caviar',
 						],
 						weight: 390,
-						cost: 10.80,
+						cost: 11.30,
 						img: '6430/623597854/20221203_125821.jpg',
 					},
 					{
@@ -1467,7 +1500,7 @@
 							'with sour cream',
 						],
 						weight: 280,
-						cost: 6.50,
+						cost: 7.00,
 						img: '6070/623597494/20221203_125507.jpg',
 					},
 				],
@@ -2043,7 +2076,7 @@
 							'Cranberry with orange',
 						],
 						weight: 250,
-						cost: 5.5,
+						cost: 6,
 					},
 
 					// {
@@ -2052,7 +2085,7 @@
 					// 		'Sea buckthorn tea',
 					// 	],
 					// 	weight: 250,
-					// 	cost: 5.5,
+					// 	cost: 6,
 					// },
 
 					{
@@ -2061,7 +2094,7 @@
 							'Mandarin tea',
 						],
 						weight: 250,
-						cost: 5.5,
+						cost: 6,
 					},
 
 					{
@@ -2070,7 +2103,7 @@
 							'Green tea with kiwi',
 						],
 						weight: 250,
-						cost: 5.5,
+						cost: 6,
 					},
 
 				],
@@ -3393,14 +3426,18 @@
 
 		collection: [
 			{
-				name: 'Belhaven',
-				collection: [
-					{
-						name: 'Black',
-						slug: 'belhaven-black',
-					},
-				],
+				name: 'Guinness',
+				slug: 'guinness-draught',
 			},
+			// {
+			// 	name: 'Belhaven',
+			// 	collection: [
+			// 		{
+			// 			name: 'Black',
+			// 			slug: 'belhaven-black',
+			// 		},
+			// 	],
+			// },
 			{
 				name: 'Old Speckled Hen',
 				slug: 'greene-king-old-speckled-hen',
@@ -3498,10 +3535,10 @@
 				// {
 				//   name: 'Amber Ray',
 				// },
-				{
-					name: 'Space',
-					slug: 'robim-good-brewery-space',
-				},
+				// {
+				// 	name: 'Space',
+				// 	slug: 'robim-good-brewery-space',
+				// },
 				// {
 				// 	name: 'Idol',
 				// },
@@ -3677,10 +3714,10 @@
 				name: 'Greene King IPA',
 				slug: 'greene-king-ipa',
 			},
-			{
-				name: 'Old Speckled Hen',
-				slug: 'greene-king-old-speckled-hen',
-			},
+			// {
+			// 	name: 'Old Speckled Hen',
+			// 	slug: 'greene-king-old-speckled-hen',
+			// },
 			{
 				name: 'Pilsner Urquell',
 				slug: 'pilsner-urquell',
