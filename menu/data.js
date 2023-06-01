@@ -1354,6 +1354,7 @@
 				weight: 340,
 				cost: 20.00,
 				alias: 'turkey-in-a-creamy-peanut-sauce',
+				tp: 1,
 			},
 
 			{
@@ -1376,6 +1377,7 @@
 				weight: 590,
 				cost: 19.00,
 				alias: 'roast-pork-with-porcini-mushrooms',
+				tp: 1,
 			},
 
 			{
