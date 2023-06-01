@@ -362,8 +362,8 @@
 				],
 				weight: 1500,
 				cost: 50.00,
-				// img: '7800/423960184/IMG_7791.jpg',
-				// alias: 'beer-set',
+				img: '1924/707889028/IMG_8457.JPG',
+				alias: 'grill-set-11-years',
 			},
 
 			{
