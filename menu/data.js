@@ -928,8 +928,8 @@
 				],
 				weight: 330,
 				cost: 14.50,
-				// img: '7643/541007323/20220429_114605.jpg',
-				// alias: 'beef-steak-burger',
+				img: '973/707879885/20230520_123542.jpg',
+				alias: 'burger-with-eel',
 				tp: 2,
 			},
 
