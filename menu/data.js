@@ -357,6 +357,17 @@
 
 			{
 				name: [
+					'Гриль-сет "11 лет"',
+					'Grill set "11 years"',
+				],
+				weight: 1500,
+				cost: 50.00,
+				// img: '7800/423960184/IMG_7791.jpg',
+				// alias: 'beer-set',
+			},
+
+			{
+				name: [
 					'Пивной сет',
 					'Beer Set',
 				],
