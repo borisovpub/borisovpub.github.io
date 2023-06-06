@@ -2,6 +2,7 @@ User-agent: *
 Disallow: *?*
 Disallow: *.json
 Disallow: */print
+Disallow: */ig
 Disallow: *.max
 Sitemap: https://irish-pub.by/sitemap.xml
 Sitemap: https://bakery.irish-pub.by/sitemap.xml
