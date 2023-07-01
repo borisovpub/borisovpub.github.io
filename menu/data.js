@@ -355,16 +355,16 @@
 
 		collection: [
 
-			{
-				name: [
-					'Гриль-сет "11 лет"',
-					'Grill set "11 years"',
-				],
-				weight: 1500,
-				cost: 50.00,
-				img: '1924/707889028/IMG_8457.JPG',
-				alias: 'grill-set-11-years',
-			},
+			// {
+			// 	name: [
+			// 		'Гриль-сет "11 лет"',
+			// 		'Grill set "11 years"',
+			// 	],
+			// 	weight: 1500,
+			// 	cost: 50.00,
+			// 	img: '1924/707889028/IMG_8457.JPG',
+			// 	alias: 'grill-set-11-years',
+			// },
 
 			{
 				name: [
@@ -1226,16 +1226,16 @@
 
 		collection: [
 
-			{
-				name: [
-					'Оссобуко из говядины с печёными овощами',
-					'Beef ossobuco with baked vegetables',
-				],
-				weight: 420,
-				cost: 24.00,
-				img: '3499/695242155/20230504_172614.jpg',
-				alias: 'beef-ossobuco-with-baked-vegetables',
-			},
+			// {
+			// 	name: [
+			// 		'Оссобуко из говядины с печёными овощами',
+			// 		'Beef ossobuco with baked vegetables',
+			// 	],
+			// 	weight: 420,
+			// 	cost: 24.00,
+			// 	img: '3499/695242155/20230504_172614.jpg',
+			// 	alias: 'beef-ossobuco-with-baked-vegetables',
+			// },
 
 			{
 				name: [
@@ -1893,7 +1893,7 @@
 
 			{
 				name: [
-					'Чёрный, Зелёный, Травяной, Молочный улун, Персиковый улун, Земляничный улун, Жасминовый улун, Красный дракон, Красный апельсин, Чёрная смородина, Клубника со сливками, Мохито, Ванильный бергамот, Крем-брюле',
+					'Чёрный, Зелёный, Травяной, Молочный улун, Персиковый улун, Земляничный улун, Жасминовый улун, Красный дракон, Красный апельсин, Чёрная смородина, Мохито, Крем-брюле',
 					'Black, Green, Herbal, Milk oolong, Peach oolong, Strawberry oolong, Jasmine oolong, Red dragon, Red orange, Black currant, Strawberries with cream, Mojito, Vanilla bergamot, Creme brulee',
 				],
 				cost: 4.50,
@@ -3451,10 +3451,10 @@
 			// 		},
 			// 	],
 			// },
-			{
-				name: 'Old Speckled Hen',
-				slug: 'greene-king-old-speckled-hen',
-			},
+			// {
+			// 	name: 'Old Speckled Hen',
+			// 	slug: 'greene-king-old-speckled-hen',
+			// },
 			{
 				name: 'Paulaner',
 				collection: [
@@ -3820,22 +3820,22 @@
 					},
 				],
 			},
-			{
-				name: 'Petrus',
-				collection: [
-					{
-						name: 'Red',
-						slug: 'brouwerij-de-brabandere-petrus-red',
-					},
-					// {
-					// 	name: 'Bordelux',
-					// 	slug: 'brouwerij-de-brabandere-petrus-bordeaux',
-					// },
-					// {
-					// 	name: 'Rood Bruin',
-					// },
-				],
-			},
+			// {
+			// 	name: 'Petrus',
+			// 	collection: [
+			// 		{
+			// 			name: 'Red',
+			// 			slug: 'brouwerij-de-brabandere-petrus-red',
+			// 		},
+			// 		{
+			// 			name: 'Bordelux',
+			// 			slug: 'brouwerij-de-brabandere-petrus-bordeaux',
+			// 		},
+			// 		{
+			// 			name: 'Rood Bruin',
+			// 		},
+			// 	],
+			// },
 			// {
 			// 	name: 'XII Flemish Red Ale',
 			// 	slug: 'sosab-sour-ale-brewery-xii-flemish-red-ale',
@@ -3863,9 +3863,13 @@
 						name: 'Чёрносмородиновый ламбик',
 						slug: 'medovarus-chernosmorodinovyj-lambik',
 					},
+					// {
+					// 	name: 'Малиновый ламбик',
+					// 	slug: 'medovarus-malinovyj-lambik',
+					// },
 					{
-						name: 'Малиновый ламбик',
-						slug: 'medovarus-malinovyj-lambik',
+						name: 'Грушевый сидр',
+						slug: 'medovarus-perry',
 					},
 				],
 			},
