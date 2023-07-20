@@ -16,7 +16,7 @@
 					'Croutons with garlic',
 				],
 				weight: 210,
-				cost: 6.20,
+				cost: 6.50,
 				img: '5260/306467980/IMG_7940.jpg',
 				alias: 'croutons-with-garlic',
 			},
@@ -27,7 +27,7 @@
 					'Chicken fillet with french fries',
 				],
 				weight: 330,
-				cost: 11.50,
+				cost: 12.00,
 				img: '2723/476408483/IMG_4329.JPG',
 				alias: 'chicken-fillet-with-french-fries'
 			},
@@ -38,7 +38,7 @@
 					'Cheese balls',
 				],
 				weight: 250,
-				cost: 12.90,
+				cost: 13.00,
 				img: '6778/623245946/20221202_125228.jpg',
 				alias: 'cheese-balls',
 			},
@@ -60,7 +60,7 @@
 					'Roasted mushrooms',
 				],
 				weight: 250,
-				cost: 9.80,
+				cost: 10.00,
 				img: '5654/306468374/IMG_7979.jpg',
 				alias: 'roasted-mushrooms',
 			},
@@ -82,7 +82,7 @@
 					'Roasted almonds',
 				],
 				weight: 70,
-				cost: 8.10,
+				cost: 8.20,
 				img: '2026/623249386/20221202_125424.jpg',
 				alias: 'roasted-almonds',
 			},
@@ -93,7 +93,7 @@
 					'Onion rings',
 				],
 				weight: 225,
-				cost: 10.00,
+				cost: 11.00,
 				img: '5316/306468036/IMG_7948.jpg',
 				alias: 'onion-rings',
 			},
@@ -111,7 +111,7 @@
 							'classic',
 						],
 						weight: 325,
-						cost: 12.30,
+						cost: 12.50,
 						img: '4819/623252179/20221202_125543.jpg',
 					},
 					{
@@ -120,7 +120,7 @@
 							'in spicy glaze',
 						],
 						weight: 325,
-						cost: 12.30,
+						cost: 12.50,
 						img: '4580/623251940/20221202_125609.jpg',
 					},
 				],
@@ -132,7 +132,7 @@
 					'Mussels and vongole in tom yum sauce',
 				],
 				weight: 490,
-				cost: 23.10,
+				cost: 23.50,
 				alias: 'mussels-and-vongole-in-tom-yum-sauce',
 			},
 
@@ -151,6 +151,15 @@
 
 			{
 				name: [
+					'Запечённый камамбер с мёдом и орехами',
+					'Baked camembert with honey and nuts',
+				],
+				weight: 230,
+				cost: 16.50,
+			},
+
+			{
+				name: [
 					'Домашнее сало на бородинском хлебе',
 					'Homemade salo on Borodino bread',
 				],
@@ -166,7 +175,7 @@
 					'Meat plate',
 				],
 				weight: 280,
-				cost: 18.70,
+				cost: 19.00,
 				img: '1857/476407617/IMG_4373.jpg',
 				alias: 'meet-plate',
 			},
@@ -177,7 +186,7 @@
 					'Cheese plate',
 				],
 				weight: 250,
-				cost: 23.00,
+				cost: 24.00,
 				img: '7340/623254700/20221202_131135.jpg',
 				alias: 'cheese-plate',
 			},
@@ -188,7 +197,7 @@
 					'Fish plate',
 				],
 				weight: 370,
-				cost: 22.00,
+				cost: 22.50,
 				img: '2230/623593654/20221203_124815.jpg',
 				alias: 'fish-plate',
 			},
@@ -210,7 +219,7 @@
 					'Set of pickles',
 				],
 				weight: 650,
-				cost: 18,
+				cost: 18.5,
 				img: '1407/623256959/20221202_131220.jpg',
 				alias: 'set-of-pickles',
 			},
@@ -230,21 +239,21 @@
 					'Beef carpaccio',
 				],
 				weight: 170,
-				cost: 17.00,
+				cost: 18.00,
 				img: '2647/623594071/20221203_124834.jpg',
 				alias: 'beef-carpaccio',
 			},
 
-			{
-				name: [
-					'Карпаччо из сёмги',
-					'Salmon carpaccio',
-				],
-				weight: 220,
-				cost: 22.00,
-				img: '2167/695240823/20230503_155629.jpg',
-				alias: 'salmon-carpaccio',
-			},
+			// {
+			// 	name: [
+			// 		'Карпаччо из сёмги',
+			// 		'Salmon carpaccio',
+			// 	],
+			// 	weight: 220,
+			// 	cost: 22.00,
+			// 	img: '2167/695240823/20230503_155629.jpg',
+			// 	alias: 'salmon-carpaccio',
+			// },
 
 			// {
 			// 	name: [
@@ -309,6 +318,15 @@
 			// 	],
 			// },
 
+			{
+				name: [
+					'Тартар из сёмги на бриошь',
+					'Salmon tartare on Brioche',
+				],
+				weight: 230,
+				cost: 20.00,
+			},
+
 			// {
 			// 	name: [
 			// 		'Тартар из тунца на бриошь',
@@ -372,7 +390,7 @@
 					'Beer Set',
 				],
 				weight: 790,
-				cost: 30.00,
+				cost: 31.5,
 				img: '7800/423960184/IMG_7791.jpg',
 				alias: 'beer-set',
 			},
@@ -392,7 +410,7 @@
 					'Chicken Set',
 				],
 				weight: 1000,
-				cost: 30.20,
+				cost: 32.00,
 				img: '4739/463516291/IMG_2187.jpg',
 				alias: 'chicken-set',
 			},
@@ -403,7 +421,7 @@
 					'Meat Set',
 				],
 				weight: 900,
-				cost: 44.00,
+				cost: 45.00,
 				img: '7571/463699347/IMG_2199.jpg',
 				alias: 'meat-set',
 			},
@@ -414,7 +432,7 @@
 					'Sea Set',
 				],
 				weight: 800,
-				cost: 57.80,
+				cost: 59.00,
 				img: '5724/463697500/IMG_2518.jpg',
 				alias: 'sea-set',
 			},
@@ -788,7 +806,7 @@
 					'Salad with prawns and pear',
 				],
 				weight: 310,
-				cost: 16.20,
+				cost: 17.00,
 				img: '8129/623271873/photo_2022-12-02_15-19-50.jpg',
 				alias: 'salad-with-prawns-and-pear',
 			},
@@ -812,7 +830,7 @@
 					'Salad with eel',
 				],
 				weight: 210,
-				cost: 15.50,
+				cost: 16.00,
 				alias: 'salad-meat',
 			},
 
@@ -822,7 +840,7 @@
 					'Salad "Meat"',
 				],
 				weight: 300,
-				cost: 15.00,
+				cost: 15.50,
 				alias: 'salad-meat',
 			},
 
@@ -865,60 +883,83 @@
 
 			{
 				name: [
-					'Брускетты с ростбифом',
-					'Bruschetta with roast beef',
+					'Брускетты',
+					'Bruschettas',
 				],
-				weight: 200,
-				cost: 11.00,
-				img: '6535/586004871/20220819_160827.jpg',
-				alias: 'roast-beef-bruschettas',
+				collection: [
+					{
+						name: [
+							'с вяленой свининой',
+							'with dried pork',
+						],
+						weight: 200,
+						cost: 11.50,
+					},
+					{
+						name: [
+							'с ростбифом',
+							'with roast beef',
+						],
+						weight: 200,
+						cost: 13.00,
+						img: '6535/586004871/20220819_160827.jpg',
+						alias: 'roast-beef-bruschettas',
+					},
+					{
+						name: [
+							'с сёмгой',
+							'with salmon',
+						],
+						weight: 200,
+						cost: 13.00,
+						img: '7316/586005652/20220819_161038.jpg',
+						alias: 'salmon-bruschettas',
+					},
+				]
+
 			},
 
 			{
 				name: [
-					'Брускетты с сёмгой',
-					'Bruschetta with salmon',
+					'Клаб-сэндвич',
+					'Club sandwich',
 				],
-				weight: 200,
-				cost: 13.00,
-				img: '7316/586005652/20220819_161038.jpg',
-				alias: 'salmon-bruschettas',
-			},
+				collection: [
+					{
+						name: [
+							'с курицей',
+							'chicken',
+						],
+						weight: 300,
+						cost: 11.0,
+						img: '7475/622943539/20221128_145152.jpg',
+						alias: 'chicken-club-sandwich',
+						tp: 3,
+					},
 
-			{
-				name: [
-					'Клаб-сэндвич с курицей',
-					'Chicken club sandwich',
+					{
+						name: [
+							'с ростбифом',
+							'roast beef',
+						],
+						weight: 250,
+						cost: 11.00,
+						img: '6113/471029729/IMG_3722.jpg',
+						alias: 'roast-beef-club-sandwich',
+						tp: 3,
+					},
+					{
+						name: [
+							'с сёмгой',
+							'salmon',
+						],
+						weight: 210,
+						cost: 11.50,
+						img: '5996/471029612/IMG_3859.jpg',
+						alias: 'salmond-club-sandwich',
+						tp: 3,
+					},
 				],
-				weight: 300,
-				cost: 10.0,
-				img: '7475/622943539/20221128_145152.jpg',
-				alias: 'chicken-club-sandwich',
-				tp: 3,
-			},
-
-			{
-				name: [
-					'Клаб-сэндвич с ростбифом',
-					'Roast beef club sandwich',
-				],
-				weight: 250,
-				cost: 10.00,
-				img: '6113/471029729/IMG_3722.jpg',
-				alias: 'roast-beef-club-sandwich',
-				tp: 3,
-			},
-
-			{
-				name: [
-					'Клаб-сэндвич с сёмгой',
-					'Salmon club sandwich',
-				],
-				weight: 210,
-				cost: 11.00,
-				img: '5996/471029612/IMG_3859.jpg',
-				alias: 'salmond-club-sandwich',
-				tp: 3,
 			},
 
 			{
@@ -927,7 +968,7 @@
 					'Burger with eel',
 				],
 				weight: 330,
-				cost: 14.50,
+				cost: 15.50,
 				img: '973/707879885/20230520_123542.jpg',
 				alias: 'burger-with-eel',
 				tp: 2,
@@ -965,7 +1006,7 @@
 					'Beef cheek burger',
 				],
 				weight: 280,
-				cost: 13.00,
+				cost: 13.50,
 				img: '1928/471189384/IMG_3989.jpg',
 				alias: 'beef-cheek-burger',
 				tp: 2,
@@ -1014,7 +1055,7 @@
 					'Burger with smoked pork',
 				],
 				weight: 350,
-				cost: 12.50,
+				cost: 13.00,
 				img: '441/593093049/20220913_163340.jpg',
 				alias: 'burger-with-smoked-pork',
 				tp: 2,
@@ -1193,21 +1234,21 @@
 							'with chicken',
 						],
 						weight: 290,
-						cost: 9.80,
+						cost: 10.30,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
 						weight: 290,
-						cost: 12.30,
+						cost: 12.80,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
 						weight: 290,
-						cost: 11.00,
+						cost: 11.50,
 					},
 				],
 				tp: 1,
@@ -1237,26 +1278,26 @@
 			// 	alias: 'beef-ossobuco-with-baked-vegetables',
 			// },
 
-			{
-				name: [
-					'Филе морского окуня с диким рисом',
-					'Sea bass fillet with wild rice and curry sauce',
-				],
-				weight: 410,
-				cost: 22.00,
-				alias: 'sea-bass-fillet-with-wild-rice-and-curry-sauce',
-			},
-
 			// {
 			// 	name: [
-			// 		'Дорадо с запечёнными овощами',
-			// 		'Dorado with baked vegetables',
+			// 		'Филе морского окуня с диким рисом',
+			// 		'Sea bass fillet with wild rice and curry sauce',
 			// 	],
-			// 	weight: 500,
-			// 	cost: 36.80,
-			// 	img: '2083/541059107/20220429_104351.jpg',
-			// 	alias: 'dorado-with-baked-vegetables',
+			// 	weight: 410,
+			// 	cost: 22.00,
+			// 	alias: 'sea-bass-fillet-with-wild-rice-and-curry-sauce',
 			// },
+
+			{
+				name: [
+					'Дорадо с запечёнными овощами',
+					'Dorado with baked vegetables',
+				],
+				weight: 500,
+				cost: 36.80,
+				img: '2083/541059107/20220429_104351.jpg',
+				alias: 'dorado-with-baked-vegetables',
+			},
 
 			// {
 			// 	name: [
@@ -1322,20 +1363,38 @@
 					'Rabbit leg with mashed potatoes',
 				],
 				weight: 500,
-				cost: 26.00,
+				cost: 27.50,
 				img: '3580/696028668/20230504_171624.jpg',
 				alias: 'rabbi-leg-with-mashed-potatoes',
 			},
 
 			{
 				name: [
-					'Язык говяжий с булгуром и вишнёвым барбекю',
-					'Beef tongue with bulgur and cherry BBQ',
+					'Ризотто из булгура со свиным языком и белыми грибами',
+					'Bulgur risotto with pork tongue and porcini mushrooms',
 				],
-				weight: 360,
-				cost: 20.00,
-				alias: 'beef-tongue-with-bulgur-and-cherry-bbq',
+				weight: 500,
+				cost: 18.00,
 			},
+
+			{
+				name: [
+					'Свиная вырезка с овощами и нектарином',
+					'Pork tenderloin with vegetables and nectarine',
+				],
+				weight: 500,
+				cost: 18.00,
+			},
+
+			// {
+			// 	name: [
+			// 		'Язык говяжий с булгуром и вишнёвым барбекю',
+			// 		'Beef tongue with bulgur and cherry BBQ',
+			// 	],
+			// 	weight: 360,
+			// 	cost: 20.00,
+			// 	alias: 'beef-tongue-with-bulgur-and-cherry-bbq',
+			// },
 
 			// {
 			// 	name: [
@@ -1352,9 +1411,18 @@
 					'Turkey in creamy nut sauce',
 				],
 				weight: 340,
-				cost: 20.00,
+				cost: 21.00,
 				alias: 'turkey-in-a-creamy-peanut-sauce',
 				tp: 1,
+			},
+
+			{
+				name: [
+					'Куриные сердечки в сметане с картофелем',
+					'Chicken hearts in sour cream with potatoes',
+				],
+				weight: 430,
+				cost: 14.00,
 			},
 
 			{
@@ -1369,27 +1437,27 @@
 				tp: 1,
 			},
 
-			{
-				name: [
-					'Жаркое из свинины с белыми грибами',
-					'Roast pork with porcini mushrooms',
-				],
-				weight: 590,
-				cost: 19.00,
-				alias: 'roast-pork-with-porcini-mushrooms',
-				tp: 1,
-			},
+			// {
+			// 	name: [
+			// 		'Жаркое из свинины с белыми грибами',
+			// 		'Roast pork with porcini mushrooms',
+			// 	],
+			// 	weight: 590,
+			// 	cost: 19.00,
+			// 	alias: 'roast-pork-with-porcini-mushrooms',
+			// 	tp: 1,
+			// },
 
-			{
-				name: [
-					'Буженина с квашеной капустой и фасолью',
-					'Boiled pork with sauerkraut and beans',
-				],
-				weight: 480,
-				cost: 20.00,
-				alias: 'boiled-pork-with-sauerkraut-and-beans',
-				tp: 1,
-			},
+			// {
+			// 	name: [
+			// 		'Буженина с квашеной капустой и фасолью',
+			// 		'Boiled pork with sauerkraut and beans',
+			// 	],
+			// 	weight: 480,
+			// 	cost: 20.00,
+			// 	alias: 'boiled-pork-with-sauerkraut-and-beans',
+			// 	tp: 1,
+			// },
 
 			{
 				name: [
@@ -1397,7 +1465,7 @@
 					'Beef with mashed potatoes and truffle oil',
 				],
 				weight: 430,
-				cost: 18.00,
+				cost: 20.00,
 				alias: 'beef-with-mashed-potatoes-and-truffle-oil',
 			},
 
@@ -1447,7 +1515,7 @@
 					'Beef cheek with mashed potatoes',
 				],
 				weight: 250,
-				cost: 16.00,
+				cost: 16.50,
 				img: '6026/551581578/20220527_120049.jpg',
 				alias: 'beef-cheek-with-mashed-potatoes',
 				tp: 1,
@@ -1477,7 +1545,7 @@
 							'with duck and creamy mushroom sauce',
 						],
 						weight: 430,
-						cost: 18.50,
+						cost: 19.00,
 						img: '1023/695239679/20230504_174915.jpg',
 					},
 					{
@@ -1486,7 +1554,7 @@
 							'with roast beef',
 						],
 						weight: 380,
-						cost: 14.70,
+						cost: 15.00,
 						img: '6322/623597746/20221203_125714.jpg',
 					},
 					{
@@ -1495,7 +1563,7 @@
 							'with salmon',
 						],
 						weight: 350,
-						cost: 15.80,
+						cost: 16.00,
 						img: '6190/623597614/20221203_125604.jpg',
 					},
 					{
@@ -1504,7 +1572,7 @@
 							'with mushroom caviar',
 						],
 						weight: 390,
-						cost: 11.30,
+						cost: 11.50,
 						img: '6430/623597854/20221203_125821.jpg',
 					},
 					{
@@ -1553,7 +1621,7 @@
 					'Pork shank',
 				],
 				weight: 1000,
-				cost: 32.00,
+				cost: 33.00,
 				img: '5465/423974233/IMG_8357.jpg',
 				alias: 'pork-shank',
 				tp: 1,
@@ -1733,14 +1801,14 @@
 				cost: 9.00,
 			},
 
-			{
-				name: [
-					'Лимонный тарт',
-					'Lemon tart',
-				],
-				weight: 150,
-				cost: 9.00,
-			},
+			// {
+			// 	name: [
+			// 		'Лимонный тарт',
+			// 		'Lemon tart',
+			// 	],
+			// 	weight: 150,
+			// 	cost: 9.00,
+			// },
 
 			// {
 			// 	name: [
@@ -1759,6 +1827,15 @@
 			//   weight: 150,
 			//   cost: 6.00,
 			// },
+
+			{
+				name: [
+					'Жареное мороженое',
+					'Fried ice cream',
+				],
+				weight: 250,
+				cost: 8.00,
+			},
 
 			{
 				name: [
@@ -1893,8 +1970,8 @@
 
 			{
 				name: [
-					'Чёрный, Зелёный, Травяной, Молочный улун, Персиковый улун, Земляничный улун, Жасминовый улун, Красный дракон, Красный апельсин, Чёрная смородина, Мохито, Крем-брюле',
-					'Black, Green, Herbal, Milk oolong, Peach oolong, Strawberry oolong, Jasmine oolong, Red dragon, Red orange, Black currant, Strawberries with cream, Mojito, Vanilla bergamot, Creme brulee',
+					'Чёрный, Зелёный, Травяной, Молочный улун, Персиковый улун, Земляничный улун, Жасминовый улун, Красный апельсин, Чёрная смородина, Мохито, Крем-брюле',
+					'Black, Green, Herbal, Milk oolong, Peach oolong, Strawberry oolong, Jasmine oolong, Red orange, Black currant, Strawberries with cream, Mojito, Vanilla bergamot, Creme brulee',
 				],
 				cost: 4.50,
 			},
@@ -3466,10 +3543,6 @@
 			},
 			// {
 			// 	name: 'Hoegaarden',
-			// 	alc: 4.9,
-			// 	den: 11.7,
-			// 	cap: 0.5,
-			// 	cost: 13.00,
 			// },
 			{
 				name: 'Holland Crown',
@@ -3541,10 +3614,10 @@
 				// 	name: 'Dance',
 				// 	slug: 'robim-good-brewery-dance',
 				// },
-				// {
-				// 	name: 'Crystal',
-				// 	slug: 'robim-good-brewery-crystal',
-				// },
+				{
+					name: 'Crystal',
+					slug: 'robim-good-brewery-crystal',
+				},
 				// {
 				//   name: 'Amber Ray',
 				// },
@@ -3633,10 +3706,10 @@
 						name: 'Irish Red Nitro',
 						slug: 'oharas-nitro-irish-red',
 					},
-					// {
-					// 	name: 'Irish Stout',
-					// 	slug: 'oharas-irish-stout',
-					// },
+					{
+						name: 'Irish Stout',
+						slug: 'oharas-irish-stout',
+					},
 					// {
 					// 	name: 'Irish Stout Nitro',
 					// 	slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
@@ -3663,28 +3736,39 @@
 					// },
 				]
 			},
-			// {
-			// 	name: 'Hobgoblin',
-			// 	collection: [
-			// 		{
-			// 			name: 'Ruby',
-			// 		},
-			// 		{
-			// 			name: 'Gold',
-			// 			slug: 'wychwood-brewery-hobgoblin-gold',
-			// 		},
-			// 		{
-			// 			name: 'IPA',
-			// 			slug: 'wychwood-brewery-hobgoblin-ipa',
-			// 		},
-			// 	],
-			// },
-			// {
-			// 	name: 'King Goblin',
-			// },
-			// {
-			// 	name: 'Double Chocolate',
-			// },
+			{
+				name: 'Hobgoblin',
+				collection: [
+					{
+						name: 'Ruby',
+						slug: 'wychwood-brewery-hobgoblin-ruby',
+					},
+					{
+						name: 'Gold',
+						slug: 'wychwood-brewery-hobgoblin-gold',
+					},
+					{
+						name: 'IPA',
+						slug: 'wychwood-brewery-hobgoblin-ipa',
+					},
+				],
+			},
+			{
+				name: 'King Goblin',
+				slug: 'wychwood-brewery-king-goblin',
+			},
+			{
+				name: 'Double Chocolate',
+				slug: 'youngs-double-chocolate-stout',
+			},
+			{
+				name: 'Dry Neck',
+				slug: 'wychwood-brewery-dryneck',
+			},
+			{
+				name: 'Shipyard American IPA',
+				slug: 'marstons-brewery-shipyard-american-ipa',
+			},
 			{
 				name: 'Saltaire',
 				collection: [
@@ -3820,22 +3904,26 @@
 					},
 				],
 			},
-			// {
-			// 	name: 'Petrus',
-			// 	collection: [
-			// 		{
-			// 			name: 'Red',
-			// 			slug: 'brouwerij-de-brabandere-petrus-red',
-			// 		},
-			// 		{
-			// 			name: 'Bordelux',
-			// 			slug: 'brouwerij-de-brabandere-petrus-bordeaux',
-			// 		},
-			// 		{
-			// 			name: 'Rood Bruin',
-			// 		},
-			// 	],
-			// },
+			{
+				name: 'Hoegaarden',
+				slug: 'hoegaarden-wit',
+			},
+			{
+				name: 'Petrus',
+				collection: [
+					{
+						name: 'Red',
+						slug: 'brouwerij-de-brabandere-petrus-red',
+					},
+					// {
+					// 	name: 'Bordelux',
+					// 	slug: 'brouwerij-de-brabandere-petrus-bordeaux',
+					// },
+					// {
+					// 	name: 'Rood Bruin',
+					// },
+				],
+			},
 			// {
 			// 	name: 'XII Flemish Red Ale',
 			// 	slug: 'sosab-sour-ale-brewery-xii-flemish-red-ale',
