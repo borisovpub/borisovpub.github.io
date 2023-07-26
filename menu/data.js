@@ -1775,12 +1775,12 @@
 			// },
 
 			{
-			  name: [
-			    'Чизкейк "Нью-Йорк"',
-			    'New York Cheesecake',
-			  ],
-			  weight: 150,
-			  cost: 9.00,
+				name: [
+					'Чизкейк "Нью-Йорк"',
+					'New York Cheesecake',
+				],
+				weight: 150,
+				cost: 9.00,
 			},
 
 			// {
