@@ -320,8 +320,8 @@
 
 			{
 				name: [
-					'Тартар из сёмги на бриошь',
-					'Salmon tartare on Brioche',
+					'Тартар из сёмги',
+					'Salmon tartare',
 				],
 				weight: 230,
 				cost: 20.40,
@@ -887,14 +887,14 @@
 					'Bruschettas',
 				],
 				collection: [
-					{
-						name: [
-							'с вяленой свининой',
-							'with dried pork',
-						],
-						weight: 200,
-						cost: 11.90,
-					},
+					// {
+					// 	name: [
+					// 		'с вяленой свининой',
+					// 		'with dried pork',
+					// 	],
+					// 	weight: 200,
+					// 	cost: 11.90,
+					// },
 					{
 						name: [
 							'с ростбифом',
@@ -921,8 +921,8 @@
 
 			{
 				name: [
-					'Клаб-сэндвич',
-					'Club sandwich',
+					'Итальянский сэндвич',
+					'Italian sandwich',
 				],
 				collection: [
 					{
@@ -932,8 +932,8 @@
 						],
 						weight: 300,
 						cost: 11.30,
-						img: '7475/622943539/20221128_145152.jpg',
-						alias: 'chicken-club-sandwich',
+						// img: '7475/622943539/20221128_145152.jpg',
+						// alias: 'chicken-club-sandwich',
 						tp: 3,
 					},
 
@@ -944,8 +944,8 @@
 						],
 						weight: 250,
 						cost: 11.30,
-						img: '6113/471029729/IMG_3722.jpg',
-						alias: 'roast-beef-club-sandwich',
+						// img: '6113/471029729/IMG_3722.jpg',
+						// alias: 'roast-beef-club-sandwich',
 						tp: 3,
 					},
 					{
@@ -955,8 +955,8 @@
 						],
 						weight: 210,
 						cost: 11.90,
-						img: '5996/471029612/IMG_3859.jpg',
-						alias: 'salmond-club-sandwich',
+						// img: '5996/471029612/IMG_3859.jpg',
+						// alias: 'salmond-club-sandwich',
 						tp: 3,
 					},
 				],
@@ -1416,14 +1416,14 @@
 				tp: 1,
 			},
 
-			{
-				name: [
-					'Куриные сердечки в сметане с картофелем',
-					'Chicken hearts in sour cream with potatoes',
-				],
-				weight: 430,
-				cost: 14.60,
-			},
+			// {
+			// 	name: [
+			// 		'Куриные сердечки в сметане с картофелем',
+			// 		'Chicken hearts in sour cream with potatoes',
+			// 	],
+			// 	weight: 430,
+			// 	cost: 14.60,
+			// },
 
 			{
 				name: [
@@ -1459,14 +1459,34 @@
 			// 	tp: 1,
 			// },
 
+			// {
+			// 	name: [
+			// 		'Говядина с картофелем и трюфельным маслом',
+			// 		'Beef with mashed potatoes and truffle oil',
+			// 	],
+			// 	weight: 430,
+			// 	cost: 20.50,
+			// 	alias: 'beef-with-mashed-potatoes-and-truffle-oil',
+			// },
+
 			{
 				name: [
-					'Говядина с картофелем и трюфельным маслом',
-					'Beef with mashed potatoes and truffle oil',
+					'Оссобуко из говядины',
+					'Beef ossobuco',
 				],
-				weight: 430,
-				cost: 20.50,
-				alias: 'beef-with-mashed-potatoes-and-truffle-oil',
+				weight: 100,
+				dif: 1,
+				cost: 9.80,
+			},
+
+			{
+				name: [
+					'Говяжьи рёбра',
+					'Beef ribs',
+				],
+				weight: 100,
+				dif: 1,
+				cost: 10.50,
 			},
 
 			{
@@ -1483,6 +1503,7 @@
 							'classic',
 						],
 						weight: 100,
+						dif: 1,
 						cost: 9.30,
 					},
 					{
@@ -1491,6 +1512,7 @@
 							'smoked',
 						],
 						weight: 100,
+						dif: 1,
 						cost: 9.30,
 					},
 				],
@@ -1588,6 +1610,16 @@
 				tp: 1,
 			},
 
+			{
+				name: [
+					'Куриные колбаски с картофелем',
+					'Chicken sausages with potatoes',
+				],
+				weight: 380,
+				cost: 14,
+				tp: 1,
+			},
+
 			// {
 			// 	name: [
 			// 		'Колбаски с картофелем и квашенной капустой',
@@ -1621,6 +1653,7 @@
 					'Pork shank',
 				],
 				weight: 1000,
+				dif: 1,
 				cost: 33.20,
 				img: '5465/423974233/IMG_8357.jpg',
 				alias: 'pork-shank',
@@ -1765,23 +1798,23 @@
 				cost: 10.20,
 			},
 
-			// {
-			// 	name: [
-			// 		'Чизкейк с белыми грибами',
-			// 		'Cheesecake with porcini mushrooms',
-			// 	],
-			// 	weight: 150,
-			// 	cost: 8.60,
-			// },
-
 			{
 				name: [
-					'Чизкейк "Нью-Йорк"',
-					'New York Cheesecake',
+					'Чизкейк с белыми грибами',
+					'Cheesecake with porcini mushrooms',
 				],
-				weight: 150,
-				cost: 9.20,
+				weight: 170,
+				cost: 9.40,
 			},
+
+			// {
+			// 	name: [
+			// 		'Чизкейк "Нью-Йорк"',
+			// 		'New York Cheesecake',
+			// 	],
+			// 	weight: 150,
+			// 	cost: 9.20,
+			// },
 
 			// {
 			// 	name: [
@@ -2413,17 +2446,17 @@
 				],
 			},
 
-			{
-				name: 'Heinz Eifel Gewürztraminer',
-				weight: [
-					'сх',
-					'dr',
-				],
-				cost: [
-					7.80,
-					40.00,
-				],
-			},
+			// {
+			// 	name: 'Heinz Eifel Gewürztraminer',
+			// 	weight: [
+			// 		'сх',
+			// 		'dr',
+			// 	],
+			// 	cost: [
+			// 		7.80,
+			// 		40.00,
+			// 	],
+			// },
 
 			// {
 			// 	name: 'Cape Dream Chenin Blanc',
@@ -2468,8 +2501,8 @@
 					'dr',
 				],
 				cost: [
-					7.00,
-					35.00,
+					8.00,
+					45.00,
 				],
 			},
 
@@ -2488,17 +2521,17 @@
 				],
 			},
 
-			{
-				name: 'Fortius Blanco',
-				weight: [
-					'сх',
-					'dr',
-				],
-				cost: [
-					8.90,
-					46.70,
-				],
-			},
+			// {
+			// 	name: 'Fortius Blanco',
+			// 	weight: [
+			// 		'сх',
+			// 		'dr',
+			// 	],
+			// 	cost: [
+			// 		8.90,
+			// 		46.70,
+			// 	],
+			// },
 
 		],
 
@@ -2549,8 +2582,8 @@
 					'dr',
 				],
 				cost: [
-					7.00,
-					35.00,
+					8.00,
+					45.00,
 				],
 			},
 
@@ -2722,8 +2755,8 @@
 			{
 				name: 'Stories of Italy Montepulciano',
 				weight: [
-					'п-сх',
-					's-dr',
+					'сх',
+					'dr',
 				],
 				cost: [
 					8.00,
@@ -2738,8 +2771,8 @@
 					'dr',
 				],
 				cost: [
-					7.00,
-					35.00,
+					8.00,
+					45.00,
 				],
 			},
 
@@ -3544,10 +3577,10 @@
 			// {
 			// 	name: 'Hoegaarden',
 			// },
-			{
-				name: 'Holland Crown',
-				slug: 'h-west-b-v-holland-crown',
-			},
+			// {
+			// 	name: 'Holland Crown',
+			// 	slug: 'h-west-b-v-holland-crown',
+			// },
 			// {
 			// 	name: 'Palm',
 			// 	slug: 'palm',
@@ -3649,6 +3682,10 @@
 		],
 
 		collection: [
+			{
+				name: 'Cooneys Irish Cider',
+				slug: 'adams-cider-company-cooneys-irish-cider',
+			},
 			 // {
 			 //   name: 'Lindemans Kriek',
 			 // },
@@ -3710,10 +3747,10 @@
 						name: 'Irish Stout',
 						slug: 'oharas-irish-stout',
 					},
-					// {
-					// 	name: 'Irish Stout Nitro',
-					// 	slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
-					// },
+					{
+						name: 'Irish Stout Nitro',
+						slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
+					},
 					{
 						name: 'Leann Folláin',
 						slug: 'oharas-leann-follain',
@@ -3722,10 +3759,10 @@
 						name: 'White Haze',
 						slug: 'oharas-white-haze',
 					},
-					{
-						name: 'West Coast IPA',
-						slug: 'o-hara-s-brewery-o-hara-s-west-coast-ipa',
-					},
+					// {
+					// 	name: 'West Coast IPA',
+					// 	slug: 'o-hara-s-brewery-o-hara-s-west-coast-ipa',
+					// },
 					// {
 					// 	name: 'Hazy IPA',
 					// 	slug: 'o-hara-s-brewery-o-hara-s-hazy-ipa',
@@ -3735,6 +3772,31 @@
 					// 	slug: 'o-hara-s-brewery-hop-adventure-series-talus',
 					// },
 				]
+			},
+			{
+				name: 'Fuller`s',
+				collection: [
+					{
+						name: 'London Pride',
+						slug: 'fullers-london-pride',
+					},
+					{
+						name: 'London Porter',
+						slug: 'fullers-london-porter',
+					},
+					{
+						name: 'Black Cab Stout',
+						slug: 'fullers-black-cab-stout',
+					},
+					{
+						name: 'ESB',
+						slug: 'fullers-esb',
+					},
+					{
+						name: 'Honey Dew',
+						slug: 'fullers-honey-dew',
+					},
+				],
 			},
 			{
 				name: 'Hobgoblin',
@@ -3770,6 +3832,10 @@
 				slug: 'marstons-brewery-shipyard-american-ipa',
 			},
 			{
+				name: 'Bombardier',
+				slug: 'eagle-brewery-formerly-charles-wells-bombardier-premium-british-ale-2022',
+			},
+			{
 				name: 'Saltaire',
 				collection: [
 					{
@@ -3780,45 +3846,45 @@
 						name: 'Cascade',
 						slug: 'saltaire-brewery-cascade',
 					},
-					{
-						name: 'Unity',
-						slug: 'saltaire-brewery-unity',
-					},
+					// {
+					// 	name: 'Unity',
+					// 	slug: 'saltaire-brewery-unity',
+					// },
 					{
 						name: 'Citra',
 						slug: 'saltaire-brewery-citra',
 					},
-					{
-						name: 'Triple Choc',
-						slug: 'saltaire-brewery-triple-chocoholic',
-					},
-				],
-			},
-			{
-				name: 'Belhaven',
-				collection: [
 					// {
-					// 	name: 'Black',
-					// 	slug: 'belhaven-black',
+					// 	name: 'Triple Choc',
+					// 	slug: 'saltaire-brewery-triple-chocoholic',
 					// },
-					{
-						name: 'McCallum`s Stout',
-						slug: 'belhaven-mccallums-stout',
-					},
 				],
 			},
-			{
-				name: 'Greene King IPA',
-				slug: 'greene-king-ipa',
-			},
+			// {
+			// 	name: 'Belhaven',
+			// 	collection: [
+			// 		// {
+			// 		// 	name: 'Black',
+			// 		// 	slug: 'belhaven-black',
+			// 		// },
+			// 		{
+			// 			name: 'McCallum`s Stout',
+			// 			slug: 'belhaven-mccallums-stout',
+			// 		},
+			// 	],
+			// },
+			// {
+			// 	name: 'Greene King IPA',
+			// 	slug: 'greene-king-ipa',
+			// },
 			// {
 			// 	name: 'Old Speckled Hen',
 			// 	slug: 'greene-king-old-speckled-hen',
 			// },
-			{
-				name: 'Pilsner Urquell',
-				slug: 'pilsner-urquell',
-			},
+			// {
+			// 	name: 'Pilsner Urquell',
+			// 	slug: 'pilsner-urquell',
+			// },
 			{
 				name: 'Budweiser',
 				collection: [
@@ -3870,23 +3936,23 @@
 					},
 				],
 			},
-			{
-				name: 'Ayinger',
-				collection: [
-					{
-						name: 'Kellerbier',
-						slug: 'ayinger-kellerbier',
-					},
-					{
-						name: 'Lager Hell',
-						slug: 'ayinger-lager-hell',
-					},
-					{
-						name: 'Bräuweisse',
-						slug: 'ayinger-brauweisse',
-					},
-				],
-			},
+			// {
+			// 	name: 'Ayinger',
+			// 	collection: [
+			// 		{
+			// 			name: 'Kellerbier',
+			// 			slug: 'ayinger-kellerbier',
+			// 		},
+			// 		{
+			// 			name: 'Lager Hell',
+			// 			slug: 'ayinger-lager-hell',
+			// 		},
+			// 		{
+			// 			name: 'Bräuweisse',
+			// 			slug: 'ayinger-brauweisse',
+			// 		},
+			// 	],
+			// },
 			{
 				name: 'Leffe',
 				collection: [

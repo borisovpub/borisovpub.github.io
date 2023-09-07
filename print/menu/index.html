@@ -186,6 +186,18 @@
 			grid-template-columns: auto min-content 11mm;
 		}
 
+		.item.dif .nbsp:after,
+		.item.dif .cost:after {
+			content: '*';
+			opacity: 0.7;
+		}
+
+		.item.dif .cost:after {
+			font-family: "Open Sans Condensed Light", Arial, sans-serif;
+			font-size: calc( 13.2pt * var(--ratio ) );
+			position: absolute;
+		}
+
 		.shot .name {
 			font-size: calc( 16pt * var( --ratio ) );
 		}
@@ -198,11 +210,21 @@
 			content: ".";
 		}
 
+		.desc {
+			position: absolute;
+			bottom: 12mm;
+			opacity: 0.7;
+		}
+
+		.desc > .dif {
+			font-family: "Open Sans Condensed", Arial, sans-serif;
+		}
+
 		.img {
 			width: 96.5mm;
 			text-align: center;
 			position: absolute;
-			bottom: 12mm;
+			bottom: 20mm;
 		}
 
 		@media screen {
@@ -354,10 +376,10 @@
 </article>
 
 <article class="page">
-	<div style="--ratio:0.99"></div>
+	<div style="--ratio:1"></div>
 	<div style="--ratio:0.82"></div>
 	<div style="text-align:center"></div>
-	<div style="--ratio:0.94"></div>
+	<div style="--ratio:0.96"></div>
 </article>
 
 <script>( ( /** Window */ window ) => Promise.all( [
@@ -543,7 +565,7 @@
 		var right = querySelector( li, 'div:last-of-type' );
 		var bottom = querySelector( li, 'ul' );
 
-		var name = querySelector( left, 'span' );
+		var name = querySelector( left, '.nbsp' );
 
 		name.textContent = getName( data.name );
 
@@ -557,6 +579,10 @@
 
 		if ( data.cost ) {
 			appendChild( right, createCost( data.cost ) );
+		}
+
+		if ( data.dif ) {
+			li.classList.add( 'dif' );
 		}
 
 		if ( data.collection ) {
@@ -802,7 +828,8 @@
 	appendChild( colon[ 2 ], createSection( menu.Garnish, createDish ) );
 	appendChild( colon[ 2 ], createSection( menu.Desserts, createDish ) );
 	// colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="bc.svg" style="height:31.417mm" /></div>' );
-	colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
+	// colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
+	colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="desc"><span class="dif">*</span> У блюд помеченных звёздчкой цена зависит от веса</div>' );
 
 	appendChild( colon[ 3 ], createSection( menu.Gasing, createDish ) );
 	appendChild( colon[ 3 ], createSection( menu.Coffee, createDish ) );
