@@ -373,6 +373,15 @@
 
 		collection: [
 
+			{
+				name: [
+					'Октоберфест сет',
+					'Oktoberfest Set',
+				],
+				weight: 1450,
+				cost: 37.00,
+			},
+
 			// {
 			// 	name: [
 			// 		'Гриль-сет "11 лет"',
@@ -3549,6 +3558,19 @@
 
 		collection: [
 			{
+				name: 'Paulaner',
+				collection: [
+					// {
+					// 	name: 'Naturtrüb',
+					// 	slug: 'paulaner-hefe-weissbier',
+					// },
+					{
+						name: 'Oktoberfest',
+						slug: 'paulaner-brauerei-paulaner-oktoberfest-bier-2023',
+					},
+				],
+			},
+			{
 				name: 'Guinness',
 				slug: 'guinness-draught',
 			},
@@ -3565,15 +3587,6 @@
 			// 	name: 'Old Speckled Hen',
 			// 	slug: 'greene-king-old-speckled-hen',
 			// },
-			{
-				name: 'Paulaner',
-				collection: [
-					{
-						name: 'Naturtrüb',
-						slug: 'paulaner-hefe-weissbier',
-					},
-				],
-			},
 			// {
 			// 	name: 'Hoegaarden',
 			// },
@@ -3926,10 +3939,10 @@
 						name: 'Münchner Hell',
 						slug: 'paulaner-original-munchner-hell',
 					},
-					// {
-					// 	name: 'Naturtrüb',
-					// 	slug: 'paulaner-hefe-weissbier',
-					// },
+					{
+						name: 'Naturtrüb',
+						slug: 'paulaner-hefe-weissbier',
+					},
 					{
 						name: 'Dunkel',
 						slug: 'paulaner-hefe-weissbier-dunkel',

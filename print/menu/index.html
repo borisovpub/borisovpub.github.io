@@ -369,7 +369,7 @@
 <body>
 
 <article class="page">
-	<div style="--ratio:1"></div>
+	<div style="--ratio:0.99"></div>
 	<div style="--ratio:0.98"></div>
 	<div></div>
 	<div></div>
@@ -379,7 +379,7 @@
 	<div style="--ratio:1"></div>
 	<div style="--ratio:0.82"></div>
 	<div style="text-align:center"></div>
-	<div style="--ratio:0.96"></div>
+	<div style="--ratio:0.95"></div>
 </article>
 
 <script>( ( /** Window */ window ) => Promise.all( [
@@ -658,7 +658,11 @@
 			if ( data.slug && ( data = info.find( ( d ) => d.slug === data.slug ) ) ) {
 
 				var sku = data.skus.reduce(
-					( a, b ) => a.volume > b.volume ? a : b,
+					( a, b ) =>
+						a.volume == 0.5 ? a :
+						b.volume == 0.5 ? b :
+						a.volume > b.volume ? a : b
+					,
 					{ volume: 0 }
 				);
 
