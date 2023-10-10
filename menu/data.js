@@ -93,7 +93,7 @@
 					'Onion rings',
 				],
 				weight: 225,
-				cost: 11.00,
+				cost: 12.00,
 				img: '5316/306468036/IMG_7948.jpg',
 				alias: 'onion-rings',
 			},
@@ -276,15 +276,24 @@
 			// 	alias: 'beef-heart-tartare-with-spinach-cream',
 			// },
 
+			// {
+			// 	name: [
+			// 		'Тартар из говядины с картофелем пай',
+			// 		'Beef tartare with potato straws',
+			// 	],
+			// 	weight: 175,
+			// 	cost: 20.40,
+			// 	img: '6924/623262476/photo_2022-12-02_15-06-20.jpg',
+			// 	alias: 'beef-tartare-with-potato-straws',
+			// },
+
 			{
 				name: [
-					'Тартар из говядины с картофелем пай',
-					'Beef tartare with potato straws',
+					'Тартар из говядины с мусом из пармезана',
+					'Beef tartare with parmesan mousse	',
 				],
-				weight: 175,
+				weight: 195,
 				cost: 20.40,
-				img: '6924/623262476/photo_2022-12-02_15-06-20.jpg',
-				alias: 'beef-tartare-with-potato-straws',
 			},
 
 			// {
@@ -323,7 +332,7 @@
 					'Тартар из сёмги',
 					'Salmon tartare',
 				],
-				weight: 230,
+				weight: 200,
 				cost: 20.40,
 			},
 
@@ -340,14 +349,23 @@
 
 			{
 				name: [
-					'Тартар из тунца в сфере из авокадо',
-					'Tuna tartare in an avocado sphere',
+					'Тартар из тунца',
+					'Tuna tartare',
 				],
-				// alias: 'tartare-on-brioche',
-				weight: 230,
+				weight: 200,
 				cost: 20.00,
-				// img: '3121/623594545/20221203_125302.jpg',
 			},
+
+			// {
+			// 	name: [
+			// 		'Тартар из тунца в сфере из авокадо',
+			// 		'Tuna tartare in an avocado sphere',
+			// 	],
+			// 	// alias: 'tartare-on-brioche',
+			// 	weight: 230,
+			// 	cost: 20.00,
+			// 	// img: '3121/623594545/20221203_125302.jpg',
+			// },
 
 			{
 				name: [
@@ -373,14 +391,14 @@
 
 		collection: [
 
-			{
-				name: [
-					'Октоберфест сет',
-					'Oktoberfest Set',
-				],
-				weight: 1450,
-				cost: 37.00,
-			},
+			// {
+			// 	name: [
+			// 		'Октоберфест сет',
+			// 		'Oktoberfest Set',
+			// 	],
+			// 	weight: 1450,
+			// 	cost: 37.00,
+			// },
 
 			// {
 			// 	name: [
@@ -619,27 +637,27 @@
 				tp: 1,
 			},
 
-			{
-				name: [
-					'Холодник',
-					'Cold borscht',
-				],
-				weight: 250,
-				cost: 4.40,
-				tp: 1,
-			},
-
 			// {
 			// 	name: [
-			// 		'Крем-суп из шампиньонов',
-			// 		'Champignon cream soup',
+			// 		'Холодник',
+			// 		'Cold borscht',
 			// 	],
 			// 	weight: 250,
-			// 	cost: 5.00,
-			// 	img: '4019/306466739/IMG_7621.jpg',
-			// 	alias: 'mushroom-soup',
+			// 	cost: 4.40,
 			// 	tp: 1,
 			// },
+
+			{
+				name: [
+					'Крем-суп из шампиньонов',
+					'Champignon cream soup',
+				],
+				weight: 250,
+				cost: 5.50,
+				img: '4019/306466739/IMG_7621.jpg',
+				alias: 'mushroom-soup',
+				tp: 1,
+			},
 
 			{
 				name: [
@@ -700,17 +718,6 @@
 					},
 				],
 			},
-
-			// {
-			// 	name: [
-			// 		'Оливье с уткой',
-			// 		'Olivier with duck',
-			// 	],
-			// 	weight: 200,
-			// 	cost: 13.00,
-			// 	img: '4560/623595984/20221203_130814.jpg',
-			// 	alias: 'olivier-with-duck',
-			// },
 
 			{
 				name: [
@@ -835,13 +842,24 @@
 
 			{
 				name: [
-					'Салат с угрём',
-					'Salad with eel',
+					'Оливье с уткой',
+					'Olivier with duck',
 				],
-				weight: 210,
-				cost: 16.70,
-				alias: 'salad-meat',
+				weight: 200,
+				cost: 13.00,
+				img: '4560/623595984/20221203_130814.jpg',
+				alias: 'olivier-with-duck',
 			},
+
+			// {
+			// 	name: [
+			// 		'Салат с угрём',
+			// 		'Salad with eel',
+			// 	],
+			// 	weight: 210,
+			// 	cost: 16.70,
+			// 	alias: 'salad-meat',
+			// },
 
 			{
 				name: [
@@ -930,8 +948,8 @@
 
 			{
 				name: [
-					'Итальянский сэндвич',
-					'Italian sandwich',
+					'Клаб-сэндвич',
+					'Club sandwich',
 				],
 				collection: [
 					{
@@ -1229,13 +1247,45 @@
 				tp: 1,
 			},
 
+			// {
+			// 	name: [
+			// 		'Дранбургер',
+			// 		'Dranburger',
+			// 	],
+			// 	img: '6013/622942077/20221128_144439.jpg',
+			// 	alias: 'dranburger',
+			// 	collection: [
+			// 		{
+			// 			name: [
+			// 				'с курицей',
+			// 				'with chicken',
+			// 			],
+			// 			weight: 290,
+			// 			cost: 10.60,
+			// 		}, {
+			// 			name: [
+			// 				'с говядиной',
+			// 				'with beef',
+			// 			],
+			// 			weight: 290,
+			// 			cost: 13.10,
+			// 		}, {
+			// 			name: [
+			// 				'со свининой и говядиной',
+			// 				'with pork and beef',
+			// 			],
+			// 			weight: 290,
+			// 			cost: 11.80,
+			// 		},
+			// 	],
+			// 	tp: 1,
+			// },
+
 			{
 				name: [
-					'Дранбургер',
-					'Dranburger',
+					'Бургер луково-острый',
+					'Spicy onion burger',
 				],
-				img: '6013/622942077/20221128_144439.jpg',
-				alias: 'dranburger',
 				collection: [
 					{
 						name: [
@@ -1243,21 +1293,21 @@
 							'with chicken',
 						],
 						weight: 290,
-						cost: 10.60,
+						cost: 13.10,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
 						weight: 290,
-						cost: 13.10,
+						cost: 16.10,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
 						weight: 290,
-						cost: 11.80,
+						cost: 14.60,
 					},
 				],
 				tp: 1,
@@ -1275,6 +1325,15 @@
 		],
 
 		collection: [
+
+			{
+				name: [
+					'Угорь c цукини и тартаром из огурца',
+					'Eel with zucchini and cucumber tartare',
+				],
+				weight: 330,
+				cost: 26,
+			},
 
 			// {
 			// 	name: [
@@ -1297,16 +1356,16 @@
 			// 	alias: 'sea-bass-fillet-with-wild-rice-and-curry-sauce',
 			// },
 
-			{
-				name: [
-					'Дорадо с запечёнными овощами',
-					'Dorado with baked vegetables',
-				],
-				weight: 500,
-				cost: 36.80,
-				img: '2083/541059107/20220429_104351.jpg',
-				alias: 'dorado-with-baked-vegetables',
-			},
+			// {
+			// 	name: [
+			// 		'Дорадо с запечёнными овощами',
+			// 		'Dorado with baked vegetables',
+			// 	],
+			// 	weight: 500,
+			// 	cost: 36.80,
+			// 	img: '2083/541059107/20220429_104351.jpg',
+			// 	alias: 'dorado-with-baked-vegetables',
+			// },
 
 			// {
 			// 	name: [
@@ -1366,15 +1425,24 @@
 			// 	alias: 'rabbit-leg-with-gratin-and-mushroom-sauce',
 			// },
 
+			// {
+			// 	name: [
+			// 		'Кроличья нога с картофельным пюре',
+			// 		'Rabbit leg with mashed potatoes',
+			// 	],
+			// 	weight: 500,
+			// 	cost: 27.90,
+			// 	img: '3580/696028668/20230504_171624.jpg',
+			// 	alias: 'rabbi-leg-with-mashed-potatoes',
+			// },
+
 			{
 				name: [
-					'Кроличья нога с картофельным пюре',
-					'Rabbit leg with mashed potatoes',
+					'Томлёный кролик с рагу из овощей',
+					'Stewed rabbit with vegetable stew',
 				],
-				weight: 500,
-				cost: 27.90,
-				img: '3580/696028668/20230504_171624.jpg',
-				alias: 'rabbi-leg-with-mashed-potatoes',
+				weight: 450,
+				cost: 24,
 			},
 
 			{
@@ -1388,12 +1456,21 @@
 
 			{
 				name: [
-					'Свиная вырезка с овощами и нектарином',
-					'Pork tenderloin with vegetables and nectarine',
+					'Перлотто с овощами, томлёной свиной вырезкой и вареньем из томатов',
+					'Perlotto with vegetables, stewed pork tenderloin and tomato jam',
 				],
-				weight: 500,
-				cost: 18.90,
+				weight: 480,
+				cost: 24.00,
 			},
+
+			// {
+			// 	name: [
+			// 		'Свиная вырезка с овощами и нектарином',
+			// 		'Pork tenderloin with vegetables and nectarine',
+			// 	],
+			// 	weight: 500,
+			// 	cost: 18.90,
+			// },
 
 			// {
 			// 	name: [
@@ -1478,25 +1555,25 @@
 			// 	alias: 'beef-with-mashed-potatoes-and-truffle-oil',
 			// },
 
-			{
-				name: [
-					'Оссобуко из говядины',
-					'Beef ossobuco',
-				],
-				weight: 100,
-				dif: 1,
-				cost: 9.80,
-			},
+			// {
+			// 	name: [
+			// 		'Оссобуко из говядины',
+			// 		'Beef ossobuco',
+			// 	],
+			// 	weight: 100,
+			// 	dif: 1,
+			// 	cost: 9.80,
+			// },
 
-			{
-				name: [
-					'Говяжьи рёбра',
-					'Beef ribs',
-				],
-				weight: 100,
-				dif: 1,
-				cost: 10.50,
-			},
+			// {
+			// 	name: [
+			// 		'Говяжьи рёбра',
+			// 		'Beef ribs',
+			// 	],
+			// 	weight: 100,
+			// 	dif: 1,
+			// 	cost: 10.50,
+			// },
 
 			{
 				name: [
@@ -1526,6 +1603,15 @@
 					},
 				],
 				tp: 1,
+			},
+
+			{
+				name: [
+					'Бефстроганов с белыми грибами',
+					'Beef Stroganoff with porcini mushrooms',
+				],
+				weight: 510,
+				cost: 26,
 			},
 
 			{
@@ -2109,23 +2195,23 @@
 						cost: 6.00,
 					},
 
-					{
-						name: [
-							'Вода с апельсином и грейпфрутом',
-							'Water with orange and grapefruit',
-						],
-						weight: 1000,
-						cost: 4.50,
-					},
+					// {
+					// 	name: [
+					// 		'Вода с апельсином и грейпфрутом',
+					// 		'Water with orange and grapefruit',
+					// 	],
+					// 	weight: 1000,
+					// 	cost: 4.50,
+					// },
 
-					{
-						name: [
-							'Вода с мятой и лаймом',
-							'Water with mint and lime',
-						],
-						weight: 1000,
-						cost: 4.50,
-					},
+					// {
+					// 	name: [
+					// 		'Вода с мятой и лаймом',
+					// 		'Water with mint and lime',
+					// 	],
+					// 	weight: 1000,
+					// 	cost: 4.50,
+					// },
 
 				],
 
@@ -2211,14 +2297,14 @@
 						cost: 6.20,
 					},
 
-					// {
-					// 	name: [
-					// 		'Облепиховый чай',
-					// 		'Sea buckthorn tea',
-					// 	],
-					// 	weight: 250,
-					// 	cost: 6.20,
-					// },
+					{
+						name: [
+							'Облепиховый чай',
+							'Sea buckthorn tea',
+						],
+						weight: 250,
+						cost: 6.50,
+					},
 
 					{
 						name: [
@@ -2443,17 +2529,17 @@
 				],
 			},
 
-			{
-				name: 'Heinz Eifel Riesling',
-				weight: [
-					'псх',
-					's-dr',
-				],
-				cost: [
-					7.80,
-					40.00,
-				],
-			},
+			// {
+			// 	name: 'Heinz Eifel Riesling',
+			// 	weight: [
+			// 		'псх',
+			// 		's-dr',
+			// 	],
+			// 	cost: [
+			// 		7.80,
+			// 		40.00,
+			// 	],
+			// },
 
 			// {
 			// 	name: 'Heinz Eifel Gewürztraminer',
@@ -2541,6 +2627,18 @@
 			// 		46.70,
 			// 	],
 			// },
+
+			{
+				name: 'Hans Baer Riesling',
+				weight: [
+					'сх',
+					'dr',
+				],
+				cost: [
+					8.90,
+					49.40,
+				],
+			},
 
 		],
 
@@ -2773,17 +2871,17 @@
 				],
 			},
 
-			{
-				name: 'Monterio Tempranillo',
-				weight: [
-					'сх',
-					'dr',
-				],
-				cost: [
-					8.00,
-					45.00,
-				],
-			},
+			// {
+			// 	name: 'Monterio Tempranillo',
+			// 	weight: [
+			// 		'сх',
+			// 		'dr',
+			// 	],
+			// 	cost: [
+			// 		8.00,
+			// 		45.00,
+			// 	],
+			// },
 
 			{
 				name: [
@@ -3558,21 +3656,21 @@
 
 		collection: [
 			{
-				name: 'Paulaner',
-				collection: [
-					// {
-					// 	name: 'Naturtrüb',
-					// 	slug: 'paulaner-hefe-weissbier',
-					// },
-					{
-						name: 'Oktoberfest',
-						slug: 'paulaner-brauerei-paulaner-oktoberfest-bier-2023',
-					},
-				],
-			},
-			{
 				name: 'Guinness',
 				slug: 'guinness-draught',
+			},
+			{
+				name: 'Paulaner',
+				collection: [
+					{
+						name: 'Naturtrüb',
+						slug: 'paulaner-hefe-weissbier',
+					},
+					// {
+					// 	name: 'Oktoberfest',
+					// 	slug: 'paulaner-brauerei-paulaner-oktoberfest-bier-2023',
+					// },
+				],
 			},
 			// {
 			// 	name: 'Belhaven',
@@ -3756,10 +3854,10 @@
 						name: 'Irish Red Nitro',
 						slug: 'oharas-nitro-irish-red',
 					},
-					{
-						name: 'Irish Stout',
-						slug: 'oharas-irish-stout',
-					},
+					// {
+					// 	name: 'Irish Stout',
+					// 	slug: 'oharas-irish-stout',
+					// },
 					{
 						name: 'Irish Stout Nitro',
 						slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
@@ -3797,10 +3895,10 @@
 						name: 'London Porter',
 						slug: 'fullers-london-porter',
 					},
-					{
-						name: 'Black Cab Stout',
-						slug: 'fullers-black-cab-stout',
-					},
+					// {
+					// 	name: 'Black Cab Stout',
+					// 	slug: 'fullers-black-cab-stout',
+					// },
 					{
 						name: 'ESB',
 						slug: 'fullers-esb',
@@ -3848,31 +3946,31 @@
 				name: 'Bombardier',
 				slug: 'eagle-brewery-formerly-charles-wells-bombardier-premium-british-ale-2022',
 			},
-			{
-				name: 'Saltaire',
-				collection: [
-					{
-						name: 'Best',
-						slug: 'saltaire-brewery-best',
-					},
-					{
-						name: 'Cascade',
-						slug: 'saltaire-brewery-cascade',
-					},
-					// {
-					// 	name: 'Unity',
-					// 	slug: 'saltaire-brewery-unity',
-					// },
-					{
-						name: 'Citra',
-						slug: 'saltaire-brewery-citra',
-					},
-					// {
-					// 	name: 'Triple Choc',
-					// 	slug: 'saltaire-brewery-triple-chocoholic',
-					// },
-				],
-			},
+			// {
+			// 	name: 'Saltaire',
+			// 	collection: [
+			// 		{
+			// 			name: 'Best',
+			// 			slug: 'saltaire-brewery-best',
+			// 		},
+			// 		{
+			// 			name: 'Cascade',
+			// 			slug: 'saltaire-brewery-cascade',
+			// 		},
+			// 		// {
+			// 		// 	name: 'Unity',
+			// 		// 	slug: 'saltaire-brewery-unity',
+			// 		// },
+			// 		{
+			// 			name: 'Citra',
+			// 			slug: 'saltaire-brewery-citra',
+			// 		},
+			// 		// {
+			// 		// 	name: 'Triple Choc',
+			// 		// 	slug: 'saltaire-brewery-triple-chocoholic',
+			// 		// },
+			// 	],
+			// },
 			// {
 			// 	name: 'Belhaven',
 			// 	collection: [
@@ -3939,10 +4037,10 @@
 						name: 'Münchner Hell',
 						slug: 'paulaner-original-munchner-hell',
 					},
-					{
-						name: 'Naturtrüb',
-						slug: 'paulaner-hefe-weissbier',
-					},
+					// {
+					// 	name: 'Naturtrüb',
+					// 	slug: 'paulaner-hefe-weissbier',
+					// },
 					{
 						name: 'Dunkel',
 						slug: 'paulaner-hefe-weissbier-dunkel',
@@ -3983,10 +4081,10 @@
 					},
 				],
 			},
-			{
-				name: 'Hoegaarden',
-				slug: 'hoegaarden-wit',
-			},
+			// {
+			// 	name: 'Hoegaarden',
+			// 	slug: 'hoegaarden-wit',
+			// },
 			{
 				name: 'Petrus',
 				collection: [
