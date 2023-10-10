@@ -2098,8 +2098,8 @@
 
 			{
 				name: [
-					'Чёрный, Зелёный, Травяной, Молочный улун, Персиковый улун, Земляничный улун, Жасминовый улун, Красный апельсин, Чёрная смородина, Мохито, Крем-брюле',
-					'Black, Green, Herbal, Milk oolong, Peach oolong, Strawberry oolong, Jasmine oolong, Red orange, Black currant, Strawberries with cream, Mojito, Vanilla bergamot, Creme brulee',
+					'Чёрный, Зелёный, Травяной, Молочный улун, Персиковый улун, Земляничный улун, Жасминовый улун, Красный апельсин, Чёрная смородина, Мохито, Крем-брюле, Весёлый Фрукт',
+					'Black, Green, Herbal, Milk oolong, Peach oolong, Strawberry oolong, Jasmine oolong, Red orange, Black currant, Strawberries with cream, Mojito, Vanilla bergamot, Creme brulee, CheerfulCheerful FruitFruit',
 				],
 				cost: 4.60,
 			},
