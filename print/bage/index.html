@@ -199,7 +199,7 @@
 			for ( let form of page.querySelectorAll( 'form' ) ) {
 				let n = querySelector( form, '[name="name"]' ).value;
 				let p = querySelector( form, '[name="prof"]' ).value;
-				if ( n ) arr.push( n + ',' + p );
+				if ( n ) arr.push( [ n, p ] );
 			}
 
 			window.location = '?' + window.encodeURIComponent( arr.join( ';' ) );
