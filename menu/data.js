@@ -2403,17 +2403,17 @@
 			// 	],
 			// },
 
-			{
-				name: 'Fantini Farnese Pinot Grigio',
-				weight: [
-					'псх',
-					's-dr',
-				],
-				cost: [
-					8.90,
-					49.40,
-				],
-			},
+			// {
+			// 	name: 'Fantini Farnese Pinot Grigio',
+			// 	weight: [
+			// 		'псх',
+			// 		's-dr',
+			// 	],
+			// 	cost: [
+			// 		8.90,
+			// 		49.40,
+			// 	],
+			// },
 
 			// {
 			// 	name: 'Fortius Blanco Navarra Chardonnay',
@@ -2529,6 +2529,18 @@
 				],
 			},
 
+			{
+				name: 'Heinz Eifel "K" Riesling',
+				weight: [
+					'псл',
+					's-sw',
+				],
+				cost: [
+					8,
+					45.00,
+				],
+			},
+
 			// {
 			// 	name: 'Heinz Eifel Riesling',
 			// 	weight: [
@@ -2565,41 +2577,41 @@
 			// 	],
 			// },
 
-			{
-				name: 'Stories of Italy Trebbiano Chardonnay',
-				weight: [
-					'п-сх',
-					's-dr',
-				],
-				cost: [
-					8.00,
-					42.80,
-				],
-			},
+			// {
+			// 	name: 'Stories of Italy Trebbiano Chardonnay',
+			// 	weight: [
+			// 		'п-сх',
+			// 		's-dr',
+			// 	],
+			// 	cost: [
+			// 		8.00,
+			// 		42.80,
+			// 	],
+			// },
 
-			{
-				name: 'Campo Viejo Semiduice',
-				weight: [
-					'псл',
-					's-sw',
-				],
-				cost: [
-					8.00,
-					45.00,
-				],
-			},
+			// {
+			// 	name: 'Campo Viejo Semiduice',
+			// 	weight: [
+			// 		'псл',
+			// 		's-sw',
+			// 	],
+			// 	cost: [
+			// 		8.00,
+			// 		45.00,
+			// 	],
+			// },
 
-			{
-				name: 'Monterio Blanco Viura',
-				weight: [
-					'сх',
-					'dr',
-				],
-				cost: [
-					8.00,
-					45.00,
-				],
-			},
+			// {
+			// 	name: 'Monterio Blanco Viura',
+			// 	weight: [
+			// 		'сх',
+			// 		'dr',
+			// 	],
+			// 	cost: [
+			// 		8.00,
+			// 		45.00,
+			// 	],
+			// },
 
 			{
 				name: [
@@ -2637,6 +2649,42 @@
 				cost: [
 					8.90,
 					49.40,
+				],
+			},
+
+			{
+				name: 'Louis Eschenauer Chardonnay',
+				weight: [
+					'сх',
+					'dr',
+				],
+				cost: [
+					7.50,
+					42.00,
+				],
+			},
+
+			{
+				name: 'Tini Pinot Grigio',
+				weight: [
+					'сх',
+					'dr',
+				],
+				cost: [
+					7.00,
+					41.00,
+				],
+			},
+
+			{
+				name: 'Tini Bianco',
+				weight: [
+					'сх',
+					'dr',
+				],
+				cost: [
+					6.50,
+					38.00,
 				],
 			},
 
@@ -2694,6 +2742,18 @@
 				],
 			},
 
+			{
+				name: 'French Dog Grenache',
+				weight: [
+					'псх',
+					's-dr',
+				],
+				cost: [
+					8.00,
+					46.00,
+				],
+			},
+
 		],
 
 	},
@@ -2712,26 +2772,26 @@
 
 		collection: [
 
-			{
-				name: 'Primo Fantini Sangiovese-Merlot',
-				weight: [
-					'псх',
-					's-dr',
-				],
-				cost: [
-					8.00,
-					42.80,
-				],
-			},
+			// {
+			// 	name: 'Primo Fantini Sangiovese-Merlot',
+			// 	weight: [
+			// 		'псх',
+			// 		's-dr',
+			// 	],
+			// 	cost: [
+			// 		8.00,
+			// 		42.80,
+			// 	],
+			// },
 
-			{
-				name: 'Luccarelli Primitivo',
-				weight: [
-					'псх',
-					's-dr',
-				],
-				cost: 52.00,
-			},
+			// {
+			// 	name: 'Luccarelli Primitivo',
+			// 	weight: [
+			// 		'псх',
+			// 		's-dr',
+			// 	],
+			// 	cost: 52.00,
+			// },
 
 			// {
 			// 	name: 'Eagle Creek Zinfandel',
@@ -2823,17 +2883,17 @@
 				],
 			},
 
-			{
-				name: 'Cape Dream Pinotage',
-				weight: [
-					'сх',
-					'dr',
-				],
-				cost: [
-					7.00,
-					37.00,
-				],
-			},
+			// {
+			// 	name: 'Cape Dream Pinotage',
+			// 	weight: [
+			// 		'сх',
+			// 		'dr',
+			// 	],
+			// 	cost: [
+			// 		7.00,
+			// 		37.00,
+			// 	],
+			// },
 
 			{
 				name: 'Los Molinos Tempranillo',
@@ -2859,17 +2919,17 @@
 			//   ],
 			// },
 
-			{
-				name: 'Stories of Italy Montepulciano',
-				weight: [
-					'сх',
-					'dr',
-				],
-				cost: [
-					8.00,
-					42.80,
-				],
-			},
+			// {
+			// 	name: 'Stories of Italy Montepulciano',
+			// 	weight: [
+			// 		'сх',
+			// 		'dr',
+			// 	],
+			// 	cost: [
+			// 		8.00,
+			// 		42.80,
+			// 	],
+			// },
 
 			// {
 			// 	name: 'Monterio Tempranillo',
@@ -2895,6 +2955,54 @@
 				cost: [
 					7.00,
 					38.00,
+				],
+			},
+
+			{
+				name: 'Louis Eschenauer Syrah',
+				weight: [
+					'сх',
+					's-dr',
+				],
+				cost: [
+					7.50,
+					42.00,
+				],
+			},
+
+			{
+				name: 'Melini Chianti',
+				weight: [
+					'п-сх',
+					's-dr',
+				],
+				cost: [
+					8.50,
+					49.00,
+				],
+			},
+
+			{
+				name: 'Tini Rosso',
+				weight: [
+					'сх',
+					'dr',
+				],
+				cost: [
+					6.50,
+					38.00,
+				],
+			},
+
+			{
+				name: 'El Descanso "Carmenere"',
+				weight: [
+					'сх',
+					'dr',
+				],
+				cost: [
+					7.50,
+					44.00,
 				],
 			},
 
@@ -3655,9 +3763,18 @@
 		],
 
 		collection: [
+			// {
+			// 	name: 'Guinness',
+			// 	slug: 'guinness-draught',
+			// },
 			{
-				name: 'Guinness',
-				slug: 'guinness-draught',
+				name: 'O`Hara`s',
+				collection: [
+					{
+						name: 'Irish Stout Nitro',
+						slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
+					},
+				]
 			},
 			{
 				name: 'Paulaner',
@@ -3707,9 +3824,18 @@
 						name: 'Blonde',
 						slug: 'belgian-brew-factory-bruler-blonde',
 					},
+					// {
+					// 	name: 'Brune',
+					// 	slug: 'belgian-brew-factory-bruler-brune',
+					// },
+				],
+			},
+			{
+				name: 'Petrus',
+				collection: [
 					{
 						name: 'Brune',
-						slug: 'belgian-brew-factory-bruler-brune',
+						slug: 'brouwerij-de-brabandere-petrus-brune',
 					},
 				],
 			},
@@ -3858,10 +3984,10 @@
 					// 	name: 'Irish Stout',
 					// 	slug: 'oharas-irish-stout',
 					// },
-					{
-						name: 'Irish Stout Nitro',
-						slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
-					},
+					// {
+					// 	name: 'Irish Stout Nitro',
+					// 	slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
+					// },
 					{
 						name: 'Leann Folláin',
 						slug: 'oharas-leann-follain',
@@ -3938,10 +4064,10 @@
 				name: 'Dry Neck',
 				slug: 'wychwood-brewery-dryneck',
 			},
-			{
-				name: 'Shipyard American IPA',
-				slug: 'marstons-brewery-shipyard-american-ipa',
-			},
+			// {
+			// 	name: 'Shipyard American IPA',
+			// 	slug: 'marstons-brewery-shipyard-american-ipa',
+			// },
 			{
 				name: 'Bombardier',
 				slug: 'eagle-brewery-formerly-charles-wells-bombardier-premium-british-ale-2022',
@@ -4124,10 +4250,10 @@
 						name: 'Вишнёвый крик',
 						slug: 'medovarus-kriek',
 					},
-					{
-						name: 'Чёрносмородиновый ламбик',
-						slug: 'medovarus-chernosmorodinovyj-lambik',
-					},
+					// {
+					// 	name: 'Чёрносмородиновый ламбик',
+					// 	slug: 'medovarus-chernosmorodinovyj-lambik',
+					// },
 					// {
 					// 	name: 'Малиновый ламбик',
 					// 	slug: 'medovarus-malinovyj-lambik',
