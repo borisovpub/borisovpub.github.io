@@ -168,7 +168,7 @@
 				],
 				cap: 200,
 				cost: 9,
-				img: 'Мандаринка.png',
+				img: 'Мандаринка.svg',
 				color: 0xEC9335,
 				scale: 1.1,
 			},
