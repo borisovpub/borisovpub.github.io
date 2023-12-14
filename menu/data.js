@@ -2994,8 +2994,20 @@
 				],
 			},
 
+			// {
+			// 	name: 'El Descanso "Carmenere"',
+			// 	weight: [
+			// 		'сх',
+			// 		'dr',
+			// 	],
+			// 	cost: [
+			// 		7.50,
+			// 		44.00,
+			// 	],
+			// },
+
 			{
-				name: 'El Descanso "Carmenere"',
+				name: 'El Descanso Cabernet Sauvignon',
 				weight: [
 					'сх',
 					'dr',
@@ -3004,6 +3016,15 @@
 					7.50,
 					44.00,
 				],
+			},
+
+			{
+				name: 'Luccarelli Primitivo',
+				weight: [
+					'п-сх',
+					's-dr',
+				],
+				cost: 52.00,
 			},
 
 		],
@@ -3151,8 +3172,16 @@
 				],
 			},
 
+			// {
+			// 	name: 'Martini Fiero',
+			// 	cost: [
+			// 		5.30,
+			// 		105.00,
+			// 	],
+			// },
+
 			{
-				name: 'Martini Fiero',
+				name: 'Martini Rosso',
 				cost: [
 					5.30,
 					105.00,
@@ -3385,15 +3414,19 @@
 			// 	],
 			// },
 
-			// {
-			// 	name: 'Laphroaig',
-			// 	collection: [
-			// 		{
-			// 			name: 'Select',
-			// 			cost: 15.00,
-			// 		},
-			// 	],
-			// },
+			{
+				name: 'Laphroaig',
+				collection: [
+					{
+						name: '10 лет',
+						cost: 27.00,
+					},
+					// {
+					// 	name: 'Select',
+					// 	cost: 15.00,
+					// },
+				],
+			},
 
 			{
 				name: 'Smokedhead',
@@ -3606,15 +3639,15 @@
 
 		collection: [
 
-			{
-				name: 'Hennessy',
-				collection: [
-					{
-						name: 'VS',
-						cost: 16.80,
-					},
-				],
-			},
+			// {
+			// 	name: 'Hennessy',
+			// 	collection: [
+			// 		{
+			// 			name: 'VS',
+			// 			cost: 16.80,
+			// 		},
+			// 	],
+			// },
 
 			{
 				name: [
@@ -3972,10 +4005,10 @@
 			{
 				name: 'O`Hara`s',
 				collection: [
-					{
-						name: 'Pale Ale',
-						slug: 'oharas-irish-pale-ale',
-					},
+					// {
+					// 	name: 'Pale Ale',
+					// 	slug: 'oharas-irish-pale-ale',
+					// },
 					{
 						name: 'Irish Red Nitro',
 						slug: 'oharas-nitro-irish-red',
@@ -3988,10 +4021,10 @@
 					// 	name: 'Irish Stout Nitro',
 					// 	slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
 					// },
-					{
-						name: 'Leann Folláin',
-						slug: 'oharas-leann-follain',
-					},
+					// {
+					// 	name: 'Leann Folláin',
+					// 	slug: 'oharas-leann-follain',
+					// },
 					{
 						name: 'White Haze',
 						slug: 'oharas-white-haze',
