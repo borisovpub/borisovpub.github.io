@@ -4068,10 +4068,10 @@
 				// 	name: 'Dance',
 				// 	slug: 'robim-good-brewery-dance',
 				// },
-				{
-					name: 'Crystal',
-					slug: 'robim-good-brewery-crystal',
-				},
+				// {
+				// 	name: 'Crystal',
+				// 	slug: 'robim-good-brewery-crystal',
+				// },
 				// {
 				//   name: 'Amber Ray',
 				// },
@@ -4090,7 +4090,16 @@
 				// 	slug: 'robim-good-brewery-relax',
 				// },
 				],
-			}
+			},
+			{
+				name: 'Zubr',
+				collection: [
+					{
+						name: 'Gold',
+						slug: 'zubr-gold',
+					},
+				],
+			},
 		],
 
 	},
@@ -4103,10 +4112,10 @@
 		],
 
 		collection: [
-			{
-				name: 'Cooneys Irish Cider',
-				slug: 'adams-cider-company-cooneys-irish-cider',
-			},
+			// {
+			// 	name: 'Cooneys Irish Cider',
+			// 	slug: 'adams-cider-company-cooneys-irish-cider',
+			// },
 			 // {
 			 //   name: 'Lindemans Kriek',
 			 // },
@@ -4176,10 +4185,10 @@
 					// 	name: 'Leann Folláin',
 					// 	slug: 'oharas-leann-follain',
 					// },
-					{
-						name: 'White Haze',
-						slug: 'oharas-white-haze',
-					},
+					// {
+					// 	name: 'White Haze',
+					// 	slug: 'oharas-white-haze',
+					// },
 					// {
 					// 	name: 'West Coast IPA',
 					// 	slug: 'o-hara-s-brewery-o-hara-s-west-coast-ipa',
@@ -4201,14 +4210,14 @@
 						name: 'London Pride',
 						slug: 'fullers-london-pride',
 					},
-					{
-						name: 'London Porter',
-						slug: 'fullers-london-porter',
-					},
 					// {
-					// 	name: 'Black Cab Stout',
-					// 	slug: 'fullers-black-cab-stout',
+					// 	name: 'London Porter',
+					// 	slug: 'fullers-london-porter',
 					// },
+					{
+						name: 'Black Cab Stout',
+						slug: 'fullers-black-cab-stout',
+					},
 					{
 						name: 'ESB',
 						slug: 'fullers-esb',
@@ -4216,6 +4225,10 @@
 					{
 						name: 'Honey Dew',
 						slug: 'fullers-honey-dew',
+					},
+					{
+						name: 'India Pale Ale',
+						slug: 'fullers-black-cab-stout',
 					},
 				],
 			},
@@ -4236,18 +4249,18 @@
 					},
 				],
 			},
-			{
-				name: 'King Goblin',
-				slug: 'wychwood-brewery-king-goblin',
-			},
+			// {
+			// 	name: 'King Goblin',
+			// 	slug: 'wychwood-brewery-king-goblin',
+			// },
 			{
 				name: 'Double Chocolate',
 				slug: 'youngs-double-chocolate-stout',
 			},
-			{
-				name: 'Dry Neck',
-				slug: 'wychwood-brewery-dryneck',
-			},
+			// {
+			// 	name: 'Dry Neck',
+			// 	slug: 'wychwood-brewery-dryneck',
+			// },
 			// {
 			// 	name: 'Shipyard American IPA',
 			// 	slug: 'marstons-brewery-shipyard-american-ipa',

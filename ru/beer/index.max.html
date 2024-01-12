@@ -387,9 +387,10 @@
 	/**
 	 * @param { HTMLElement } slot
 	 * @param { Array< Beer > } beers
+	 * @param { boolean } skus
 	 * @returns { HTMLElement }
 	 */
-	var buildBeers = ( slot, beers ) => {
+	var buildBeers = ( slot, beers, skus = true ) => {
 
 		var i, l, j, m;
 
@@ -447,36 +448,61 @@
 			if ( beer.abv ) beerABV.textContent = toNumber( beer.abv );
 			if ( beer.ibu ) beerIBU.textContent = toNumber( beer.ibu );
 
-			j = 0; m = beer.skus.length;
-			for ( ; j<m; ++j ) {
+			if ( skus ) {
 
-				sku = beer.skus[ j ];
+				j = 0; m = beer.skus.length;
+				for ( ; j<m; ++j ) {
 
-				if ( !sku.price ) continue;
+					sku = beer.skus[ j ];
 
-				skuNode = cloneNode( skuTemplate );
+					if ( !sku.price ) continue;
 
-				skuVolume = querySelector( skuNode, '.volume' );
-				skuPacking = querySelector( skuNode, '.packing' );
-				skuPrice = querySelector( skuNode, '.price' );
+					skuNode = cloneNode( skuTemplate );
 
-				if ( sku.volume ) skuVolume.textContent = toNumber( sku.volume );
-				if ( sku.packing ) skuPacking.textContent = PACKING[ sku.packing ];
-				//if ( sku.price ) skuPrice.textContent = toNumber( sku.price );
+					skuVolume = querySelector( skuNode, '.volume' );
+					skuPacking = querySelector( skuNode, '.packing' );
+					skuPrice = querySelector( skuNode, '.price' );
 
-				appendChild( querySelector( beerNode, '.skus' ), skuNode );
+					if ( sku.volume ) skuVolume.textContent = toNumber( sku.volume );
+					if ( sku.packing ) skuPacking.textContent = PACKING[ sku.packing ];
+					//if ( sku.price ) skuPrice.textContent = toNumber( sku.price );
+
+					appendChild( querySelector( beerNode, '.skus' ), skuNode );
+
+				}
 
 			}
 
 			appendChild( slot, beerNode );
 
-
 		}
 
 	};
 
-	buildBeers( querySelector( document, '#draft ul' ), beers.tap );
-	buildBeers( querySelector( document, '#other ul' ), beers.other );
+	buildBeers(
+		querySelector( document, '#draft ul' ),
+		beers.tap,
+		false
+	);
+
+	buildBeers(
+		querySelector( document, '#other ul' ),
+		beers.other
+			.map( ( b ) => {
+				b.breweries.name = b.breweries
+					.map( ( { name } ) => name )
+					.sort( ( a, b ) =>
+						a > b ? 1 : -1
+					)
+					.toString()
+				;
+				console.log( b.breweries)
+				return b;
+			} )
+			.sort( ( a, b ) =>
+				a.breweries.name > b.breweries.name ? 1 : -1
+			)
+	);
 
 } ) )( this )</script>
 
