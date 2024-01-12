@@ -336,7 +336,14 @@
 	</section>
 </footer>
 
-<script>( ( /** Window */ window ) => window.fetch( '/lunch/data.json?' + window.Math.random() ).then( ( response ) => response.json() ).then( ( /** { mode: 0 | 1 | 2, lunch: Array< LunchCollection >, brunch: Array< Brunch > } */ data ) => {
+<script>( ( /** Window */ window ) => window.fetch( '/lunch/data.json?' + window.Math.random() )
+.then( ( response ) => response.json().then( ( data ) => {
+
+	data.date = new window.Date( response.headers.get( 'Last-Modified' ) );
+	return data;
+
+} ) )
+.then( ( /** { mode: 0 | 1 | 2, lunch: Array< LunchCollection >, brunch: Array< Brunch >, date: Date } */ data ) => {
 
 	/** @typedef { [ string, number, number ] } Lunch */
 
@@ -359,12 +366,14 @@
 		.replace( /'/g, '’' )
 	;
 
-	var document = window.document;
+	var Date =		window.Date;
+	var document =	window.document;
 
 	var name = querySelector( document, 'h2 span' );
 	var collection = querySelector( document, 'article ul' );
 
-	var d = new window.Date();
+	var d = new Date();
+	var q = data.date;
 
 	var i, l, j, m;
 
@@ -372,7 +381,11 @@
 	var lunchCollection, lunchCollectionNode, lunchCollectionTemplate;
 	var brunch, brunchNode, brunchTemplate;
 
-	querySelector( document, 'h2 time' ).textContent = pad2( d.getDate() ) + '.' + pad2( d.getUTCMonth() + 1 ) + '.' + d.getUTCFullYear();
+	querySelector( document, 'h2 time' ).textContent = pad2( d.getUTCDate() ) + '.' + pad2( d.getUTCMonth() + 1 ) + '.' + d.getUTCFullYear();
+
+	if ( d.getUTCDate() == q.getUTCDate() && q.getUTCHours() >= 16 - 3 ) {
+		d = new Date( q.getTime() + 24 * 60 * 60 * 1000 );
+	}
 
 	switch ( data.mode ) {
 
