@@ -4022,19 +4022,19 @@
 			// 	name: 'Abbot Ale',
 			// 	slug: 'greene-king-abbot-ale',
 			// },
-			{
-				name: 'Brûler',
-				collection: [
-					{
-						name: 'Blonde',
-						slug: 'belgian-brew-factory-bruler-blonde',
-					},
-					// {
-					// 	name: 'Brune',
-					// 	slug: 'belgian-brew-factory-bruler-brune',
-					// },
-				],
-			},
+			// {
+			// 	name: 'Brûler',
+			// 	collection: [
+			// 		{
+			// 			name: 'Blonde',
+			// 			slug: 'belgian-brew-factory-bruler-blonde',
+			// 		},
+			// 		// {
+			// 		// 	name: 'Brune',
+			// 		// 	slug: 'belgian-brew-factory-bruler-brune',
+			// 		// },
+			// 	],
+			// },
 			{
 				name: 'Petrus',
 				collection: [
@@ -4468,10 +4468,10 @@
 						name: 'Вишнёвый крик',
 						slug: 'medovarus-kriek',
 					},
-					// {
-					// 	name: 'Чёрносмородиновый ламбик',
-					// 	slug: 'medovarus-chernosmorodinovyj-lambik',
-					// },
+					{
+						name: 'Чёрносмородиновый ламбик',
+						slug: 'medovarus-chernosmorodinovyj-lambik',
+					},
 					// {
 					// 	name: 'Малиновый ламбик',
 					// 	slug: 'medovarus-malinovyj-lambik',
