@@ -2680,17 +2680,17 @@
 				],
 			},
 
-			{
-				name: 'Heinz Eifel "K" Riesling',
-				weight: [
-					'псл',
-					's-sw',
-				],
-				cost: [
-					8,
-					45.00,
-				],
-			},
+			// {
+			// 	name: 'Heinz Eifel "K" Riesling',
+			// 	weight: [
+			// 		'псл',
+			// 		's-sw',
+			// 	],
+			// 	cost: [
+			// 		8,
+			// 		45.00,
+			// 	],
+			// },
 
 			// {
 			// 	name: 'Heinz Eifel Riesling',
@@ -2751,6 +2751,18 @@
 			// 		45.00,
 			// 	],
 			// },
+
+			{
+				name: 'Campo Viejo Rioja',
+				weight: [
+					'псл',
+					's-sw',
+				],
+				cost: [
+					8.00,
+					45.00,
+				],
+			},
 
 			// {
 			// 	name: 'Monterio Blanco Viura',
@@ -2830,8 +2842,8 @@
 			{
 				name: 'Tini Bianco',
 				weight: [
-					'сх',
-					'dr',
+					'п-сх',
+					's-dr',
 				],
 				cost: [
 					6.50,
@@ -2983,8 +2995,8 @@
 			{
 				name: 'Pampas del Sur Cabernet-Merlot',
 				weight: [
-					'сх',
-					'dr',
+					'п-сх',
+					's-dr',
 				],
 				cost: [
 					8.90,
@@ -3109,17 +3121,17 @@
 				],
 			},
 
-			{
-				name: 'Louis Eschenauer Syrah',
-				weight: [
-					'сх',
-					's-dr',
-				],
-				cost: [
-					7.50,
-					42.00,
-				],
-			},
+			// {
+			// 	name: 'Louis Eschenauer Syrah',
+			// 	weight: [
+			// 		'сх',
+			// 		's-dr',
+			// 	],
+			// 	cost: [
+			// 		7.50,
+			// 		42.00,
+			// 	],
+			// },
 
 			{
 				name: 'Melini Chianti',
@@ -3134,10 +3146,10 @@
 			},
 
 			{
-				name: 'Tini Rosso',
+				name: 'Tini Vino Rosso',
 				weight: [
-					'сх',
-					'dr',
+					'п-сх',
+					's-dr',
 				],
 				cost: [
 					6.50,
@@ -3145,20 +3157,8 @@
 				],
 			},
 
-			// {
-			// 	name: 'El Descanso "Carmenere"',
-			// 	weight: [
-			// 		'сх',
-			// 		'dr',
-			// 	],
-			// 	cost: [
-			// 		7.50,
-			// 		44.00,
-			// 	],
-			// },
-
 			{
-				name: 'El Descanso Cabernet Sauvignon',
+				name: 'El Descanso Carmenere',
 				weight: [
 					'сх',
 					'dr',
@@ -3168,6 +3168,18 @@
 					44.00,
 				],
 			},
+
+			// {
+			// 	name: 'El Descanso Cabernet Sauvignon',
+			// 	weight: [
+			// 		'сх',
+			// 		'dr',
+			// 	],
+			// 	cost: [
+			// 		7.50,
+			// 		44.00,
+			// 	],
+			// },
 
 			{
 				name: 'Luccarelli Primitivo',
@@ -3211,13 +3223,22 @@
 				cost: 34.40,
 			},
 
+			// {
+			// 	name: 'Prosecco Rose',
+			// 	weight: [
+			// 		'брют',
+			// 		'brut',
+			// 	],
+			// 	cost: 46.20,
+			// },
+
 			{
-				name: 'Prosecco Rose',
+				name: 'Prosecco Treviso',
 				weight: [
 					'брют',
 					'brut',
 				],
-				cost: 46.20,
+				cost: 49.00,
 			},
 
 		],
@@ -3287,10 +3308,10 @@
 			// 	],
 			// },
 
-			{
-				name: 'Porto Alegre Ruby',
-				cost: 59.00,
-			},
+			// {
+			// 	name: 'Porto Alegre Ruby',
+			// 	cost: 59.00,
+			// },
 
 			{
 				name: 'Porto Alegre Tawny',
@@ -3579,10 +3600,10 @@
 				],
 			},
 
-			{
-				name: 'Smokedhead',
-				cost: 20.00,
-			},
+			// {
+			// 	name: 'Smokedhead',
+			// 	cost: 20.00,
+			// },
 
 		],
 
@@ -3708,13 +3729,13 @@
 				cost: 4.50,
 			},
 
-			{
-				name: [
-					'Хреновуха',
-					'Horseradish',
-				],
-				cost: 4.50,
-			},
+			// {
+			// 	name: [
+			// 		'Хреновуха',
+			// 		'Horseradish',
+			// 	],
+			// 	cost: 4.50,
+			// },
 
 			// {
 			// 	name: [
@@ -3914,10 +3935,10 @@
 						name: 'Espesial',
 						cost: 8.20,
 					},
-					{
-						name: 'Cuban Spiced',
-						cost: 8.20,
-					},
+					// {
+					// 	name: 'Cuban Spiced',
+					// 	cost: 8.20,
+					// },
 				],
 			},
 
