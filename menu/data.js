@@ -100,31 +100,40 @@
 
 			{
 				name: [
-					'Куриные крылья',
-					'Chicken wings',
+					'Куриные крылья BBQ',
+					'Chicken wings BBQ',
 				],
-				alias: 'chicken-wings',
-				collection: [
-					{
-						name: [
-							'классические',
-							'classic',
-						],
-						weight: 325,
-						cost: 13.10,
-						img: '4819/623252179/20221202_125543.jpg',
-					},
-					{
-						name: [
-							'в острой глазури',
-							'in spicy glaze',
-						],
-						weight: 325,
-						cost: 13.10,
-						img: '4580/623251940/20221202_125609.jpg',
-					},
-				],
+				weight: 320,
+				cost: 13.50,
 			},
+
+			// {
+			// 	name: [
+			// 		'Куриные крылья',
+			// 		'Chicken wings',
+			// 	],
+			// 	alias: 'chicken-wings',
+			// 	collection: [
+			// 		{
+			// 			name: [
+			// 				'классические',
+			// 				'classic',
+			// 			],
+			// 			weight: 325,
+			// 			cost: 13.10,
+			// 			img: '4819/623252179/20221202_125543.jpg',
+			// 		},
+			// 		{
+			// 			name: [
+			// 				'в острой глазури',
+			// 				'in spicy glaze',
+			// 			],
+			// 			weight: 325,
+			// 			cost: 13.10,
+			// 			img: '4580/623251940/20221202_125609.jpg',
+			// 		},
+			// 	],
+			// },
 
 			{
 				name: [
@@ -149,24 +158,24 @@
 
 		collection: [
 
-			{
-				name: [
-					'Запечённый камамбер с мёдом и орехами',
-					'Baked camembert with honey and nuts',
-				],
-				weight: 230,
-				cost: 17.20,
-			},
+			// {
+			// 	name: [
+			// 		'Запечённый камамбер с мёдом и орехами',
+			// 		'Baked camembert with honey and nuts',
+			// 	],
+			// 	weight: 230,
+			// 	cost: 17.20,
+			// },
 
 			{
 				name: [
-					'Домашнее сало на бородинском хлебе',
-					'Homemade salo on Borodino bread',
+					'Домашнее сало с бородинским хлебом',
+					'Homemade salo with Borodino bread',
 				],
 				weight: 260,
 				cost: 13.90,
 				img: '7911/476421863/IMG_4404.jpg',
-				alias: 'homemade-salo-on-borodino-bread',
+				alias: 'homemade-salo-with-borodino-bread',
 			},
 
 			{
@@ -242,6 +251,15 @@
 				cost: 18.80,
 				img: '2647/623594071/20221203_124834.jpg',
 				alias: 'beef-carpaccio',
+			},
+
+			{
+				name: [
+					'Ростбиф с соусом "Вителло тоннато"',
+					'Roast beef with Vitello tonnato sauce',
+				],
+				weight: 190,
+				cost: 15.00,
 			},
 
 			// {
@@ -327,14 +345,14 @@
 			// 	],
 			// },
 
-			{
-				name: [
-					'Тартар из сёмги',
-					'Salmon tartare',
-				],
-				weight: 200,
-				cost: 20.40,
-			},
+			// {
+			// 	name: [
+			// 		'Тартар из сёмги',
+			// 		'Salmon tartare',
+			// 	],
+			// 	weight: 200,
+			// 	cost: 20.40,
+			// },
 
 			// {
 			// 	name: [
@@ -347,14 +365,14 @@
 			// 	img: '3121/623594545/20221203_125302.jpg',
 			// },
 
-			{
-				name: [
-					'Тартар из тунца',
-					'Tuna tartare',
-				],
-				weight: 200,
-				cost: 20.00,
-			},
+			// {
+			// 	name: [
+			// 		'Тартар из тунца',
+			// 		'Tuna tartare',
+			// 	],
+			// 	weight: 200,
+			// 	cost: 20.00,
+			// },
 
 			// {
 			// 	name: [
@@ -479,6 +497,15 @@
 
 			{
 				name: [
+					'Хлебная корзинка',
+					'Bread basket',
+				],
+				weight: 300,
+				cost: 4.00,
+			},
+
+			{
+				name: [
 					'Домашнее сало',
 					'Homemade salo',
 				],
@@ -549,23 +576,23 @@
 				cost: 4.80,
 			},
 
-			{
-				name: [
-					'Чиабатта',
-					'Ciabatta',
-				],
-				weight: 40,
-				cost: 1.30,
-			},
+			// {
+			// 	name: [
+			// 		'Чиабатта',
+			// 		'Ciabatta',
+			// 	],
+			// 	weight: 40,
+			// 	cost: 1.30,
+			// },
 
-			{
-				name: [
-					'Бородинский хлеб',
-					'Borodino bread',
-				],
-				weight: 110,
-				cost: 1.60,
-			},
+			// {
+			// 	name: [
+			// 		'Бородинский хлеб',
+			// 		'Borodino bread',
+			// 	],
+			// 	weight: 110,
+			// 	cost: 1.60,
+			// },
 
 			{
 				name: [
@@ -751,6 +778,36 @@
 			// 	img: '1143/622953591/20221128_131706.jpg',
 			// 	alias: 'salad-with-duck-breast-cherries-and-camembert',
 			// },
+
+			{
+				name: [
+					'Салат с креветками и грушей',
+					'Salad with prawns and pear',
+				],
+				weight: 310,
+				cost: 17.20,
+				img: '8129/623271873/photo_2022-12-02_15-19-50.jpg',
+				alias: 'salad-with-prawns-and-pear',
+			},
+
+			{
+				name: [
+					'Салат "Мясной"',
+					'Salad "Meat"',
+				],
+				weight: 300,
+				cost: 15.90,
+				alias: 'salad-meat',
+			},
+
+			{
+				name: [
+					'Салат "Английский"',
+					'Salad "English"',
+				],
+				weight: 240,
+				cost: 15.00,
+			},
 
 		],
 
@@ -1029,15 +1086,25 @@
 
 			{
 				name: [
-					'Бургер с говяжьей щекой',
-					'Beef cheek burger',
+					'Бургер "Мясника"',
+					'Burger "Butcher"',
 				],
-				weight: 280,
-				cost: 13.80,
-				img: '1928/471189384/IMG_3989.jpg',
-				alias: 'beef-cheek-burger',
+				weight: 330,
+				cost: 14.00,
 				tp: 2,
 			},
+
+			// {
+			// 	name: [
+			// 		'Бургер с говяжьей щекой',
+			// 		'Beef cheek burger',
+			// 	],
+			// 	weight: 280,
+			// 	cost: 13.80,
+			// 	img: '1928/471189384/IMG_3989.jpg',
+			// 	alias: 'beef-cheek-burger',
+			// 	tp: 2,
+			// },
 
 			// {
 			// 	name: [
@@ -1076,17 +1143,17 @@
 			// 	tp: 2,
 			// },
 
-			{
-				name: [
-					'Бургер с копчёной свининой',
-					'Burger with smoked pork',
-				],
-				weight: 350,
-				cost: 13.60,
-				img: '441/593093049/20220913_163340.jpg',
-				alias: 'burger-with-smoked-pork',
-				tp: 2,
-			},
+			// {
+			// 	name: [
+			// 		'Бургер с копчёной свининой',
+			// 		'Burger with smoked pork',
+			// 	],
+			// 	weight: 350,
+			// 	cost: 13.60,
+			// 	img: '441/593093049/20220913_163340.jpg',
+			// 	alias: 'burger-with-smoked-pork',
+			// 	tp: 2,
+			// },
 
 			// {
 			// 	name: [
@@ -1104,7 +1171,7 @@
 					'Классический Чизбургер',
 					'Classic Cheeseburger',
 				],
-				weight: 400,
+				weight: 300,
 				cost: 15.50,
 				img: '1495/650364375/20230210_121917.jpg',
 				alias: 'classic-cheeseburger',
@@ -1380,15 +1447,15 @@
 			// 	],
 			// },
 
-			{
-				name: [
-					'Утка с белыми грибами и печёным картофелем',
-					'Duck with porcini mushrooms and potatoes',
-				],
-				weight: 380,
-				cost: 24.90,
-				alias: 'duck-with-porcini-mushrooms-and-baked-potatoes',
-			},
+			// {
+			// 	name: [
+			// 		'Утка с белыми грибами и печёным картофелем',
+			// 		'Duck with porcini mushrooms and potatoes',
+			// 	],
+			// 	weight: 380,
+			// 	cost: 24.90,
+			// 	alias: 'duck-with-porcini-mushrooms-and-baked-potatoes',
+			// },
 
 			// {
 			// 	name: [
@@ -1413,6 +1480,15 @@
 			// 	img: '165/696033445/20230504_172015.jpg',
 			// 	alias: 'duck-leg-with-cauliflower-cream',
 			// },
+
+			{
+				name: [
+					'Утиная ножка с картофельным пюре и васаби',
+					'Duck leg with mashed potatoes and wasabi',
+				],
+				weight: 330,
+				cost: 22.00,
+			},
 
 			// {
 			// 	name: [
@@ -1445,23 +1521,23 @@
 				cost: 24,
 			},
 
-			{
-				name: [
-					'Ризотто из булгура со свиным языком и белыми грибами',
-					'Bulgur risotto with pork tongue and porcini mushrooms',
-				],
-				weight: 500,
-				cost: 18.90,
-			},
+			// {
+			// 	name: [
+			// 		'Ризотто из булгура со свиным языком и белыми грибами',
+			// 		'Bulgur risotto with pork tongue and porcini mushrooms',
+			// 	],
+			// 	weight: 500,
+			// 	cost: 18.90,
+			// },
 
-			{
-				name: [
-					'Перлотто с овощами, томлёной свиной вырезкой и вареньем из томатов',
-					'Perlotto with vegetables, stewed pork tenderloin and tomato jam',
-				],
-				weight: 480,
-				cost: 24.00,
-			},
+			// {
+			// 	name: [
+			// 		'Перлотто с овощами, томлёной свиной вырезкой и вареньем из томатов',
+			// 		'Perlotto with vegetables, stewed pork tenderloin and tomato jam',
+			// 	],
+			// 	weight: 480,
+			// 	cost: 24.00,
+			// },
 
 			// {
 			// 	name: [
@@ -1577,33 +1653,44 @@
 
 			{
 				name: [
-					'Свиные рёбра',
-					'Pork ribs',
+					'Свиные рёбра BBQ',
+					'Pork ribs BBQ',
 				],
-				img: '273/489791761/IMG_2666.jpg',
-				alias: 'pork-ribs',
-				collection: [
-					{
-						name: [
-							'классические',
-							'classic',
-						],
-						weight: 100,
-						dif: 1,
-						cost: 9.30,
-					},
-					{
-						name: [
-							'копчёные',
-							'smoked',
-						],
-						weight: 100,
-						dif: 1,
-						cost: 9.30,
-					},
-				],
+				weight: 100,
+				dif: 1,
+				cost: 9.30,
 				tp: 1,
 			},
+
+			// {
+			// 	name: [
+			// 		'Свиные рёбра',
+			// 		'Pork ribs',
+			// 	],
+			// 	img: '273/489791761/IMG_2666.jpg',
+			// 	alias: 'pork-ribs',
+			// 	collection: [
+			// 		{
+			// 			name: [
+			// 				'классические',
+			// 				'classic',
+			// 			],
+			// 			weight: 100,
+			// 			dif: 1,
+			// 			cost: 9.30,
+			// 		},
+			// 		{
+			// 			name: [
+			// 				'копчёные',
+			// 				'smoked',
+			// 			],
+			// 			weight: 100,
+			// 			dif: 1,
+			// 			cost: 9.30,
+			// 		},
+			// 	],
+			// 	tp: 1,
+			// },
 
 			{
 				name: [
@@ -1614,15 +1701,25 @@
 				cost: 26,
 			},
 
+			// {
+			// 	name: [
+			// 		'Ростбиф с пюре',
+			// 		'Roast beef with mashed potatoes',
+			// 	],
+			// 	weight: 300,
+			// 	cost: 16.70,
+			// 	img: '3066/435940346/20210504_184818.jpg',
+			// 	alias: 'roast-beef-with-mashed-potatoes',
+			// 	tp: 1,
+			// },
+
 			{
 				name: [
-					'Ростбиф с пюре',
-					'Roast beef with mashed potatoes',
+					'Ростбиф с картофелем',
+					'Roast beef with potatoes',
 				],
-				weight: 300,
+				weight: 335,
 				cost: 16.70,
-				img: '3066/435940346/20210504_184818.jpg',
-				alias: 'roast-beef-with-mashed-potatoes',
 				tp: 1,
 			},
 
@@ -1658,6 +1755,14 @@
 				collection: [
 					{
 						name: [
+							'с колбасками из индейки',
+							'with turkey sausages',
+						],
+						weight: 390,
+						cost: 15.90,
+					},
+					{
+						name: [
 							'с уткой и сливочно-грибным соусом',
 							'with duck and creamy mushroom sauce',
 						],
@@ -1665,15 +1770,15 @@
 						cost: 19.50,
 						img: '1023/695239679/20230504_174915.jpg',
 					},
-					{
-						name: [
-							'с ростбифом',
-							'with roast beef',
-						],
-						weight: 380,
-						cost: 15.60,
-						img: '6322/623597746/20221203_125714.jpg',
-					},
+					// {
+					// 	name: [
+					// 		'с ростбифом',
+					// 		'with roast beef',
+					// 	],
+					// 	weight: 380,
+					// 	cost: 15.60,
+					// 	img: '6322/623597746/20221203_125714.jpg',
+					// },
 					{
 						name: [
 							'с сёмгой',
@@ -1692,26 +1797,36 @@
 						cost: 11.90,
 						img: '6430/623597854/20221203_125821.jpg',
 					},
-					{
-						name: [
-							'со сметаной',
-							'with sour cream',
-						],
-						weight: 280,
-						cost: 7.20,
-						img: '6070/623597494/20221203_125507.jpg',
-					},
+					// {
+					// 	name: [
+					// 		'со сметаной',
+					// 		'with sour cream',
+					// 	],
+					// 	weight: 280,
+					// 	cost: 7.20,
+					// 	img: '6070/623597494/20221203_125507.jpg',
+					// },
 				],
 				tp: 1,
 			},
 
+			// {
+			// 	name: [
+			// 		'Куриные колбаски с картофелем',
+			// 		'Chicken sausages with potatoes',
+			// 	],
+			// 	weight: 380,
+			// 	cost: 14,
+			// 	tp: 1,
+			// },
+
 			{
 				name: [
-					'Куриные колбаски с картофелем',
-					'Chicken sausages with potatoes',
+					'Сосиски "Варшавские" с картофельными байтсами',
+					'"Warsaw" sausages with potato bytes',
 				],
-				weight: 380,
-				cost: 14,
+				weight: 330,
+				cost: 16.6,
 				tp: 1,
 			},
 
@@ -1824,25 +1939,34 @@
 					'Картофельное пюре',
 					'Mashed potatoes',
 				],
-				collection: [
-					{
-						name: [
-							'классическое',
-							'classic',
-						],
-						weight: 150,
-						cost: 3.90,
-					},
-					{
-						name: [
-							'с трюфельным маслом',
-							'with truffle oil',
-						],
-						weight: 150,
-						cost: 4.20,
-					},
-				],
+				weight: 150,
+				cost: 3.90,
 			},
+
+			// {
+			// 	name: [
+			// 		'Картофельное пюре',
+			// 		'Mashed potatoes',
+			// 	],
+			// 	collection: [
+			// 		{
+			// 			name: [
+			// 				'классическое',
+			// 				'classic',
+			// 			],
+			// 			weight: 150,
+			// 			cost: 3.90,
+			// 		},
+			// 		{
+			// 			name: [
+			// 				'с трюфельным маслом',
+			// 				'with truffle oil',
+			// 			],
+			// 			weight: 150,
+			// 			cost: 4.20,
+			// 		},
+			// 	],
+			// },
 
 			{
 				name: [
@@ -1895,12 +2019,21 @@
 
 			{
 				name: [
-					'Чизкейк с белыми грибами',
-					'Cheesecake with porcini mushrooms',
+					'Баскский чизкейк',
+					'Basque cheesecake',
 				],
-				weight: 170,
+				weight: 150,
 				cost: 9.40,
 			},
+
+			// {
+			// 	name: [
+			// 		'Чизкейк с белыми грибами',
+			// 		'Cheesecake with porcini mushrooms',
+			// 	],
+			// 	weight: 170,
+			// 	cost: 9.40,
+			// },
 
 			// {
 			// 	name: [
@@ -1956,13 +2089,22 @@
 			//   cost: 6.00,
 			// },
 
+			// {
+			// 	name: [
+			// 		'Жареное мороженое',
+			// 		'Fried ice cream',
+			// 	],
+			// 	weight: 250,
+			// 	cost: 8.30,
+			// },
+
 			{
 				name: [
-					'Жареное мороженое',
-					'Fried ice cream',
+					'Наполеон',
+					'Napoleon',
 				],
-				weight: 250,
-				cost: 8.30,
+				weight: 150,
+				cost: 9.50,
 			},
 
 			{
@@ -2077,7 +2219,7 @@
 					'Айс-кофе',
 					'Ice coffee',
 				],
-				weight: 200,
+				weight: 300,
 				cost: 5.80,
 			},
 
@@ -2302,7 +2444,7 @@
 							'Облепиховый чай',
 							'Sea buckthorn tea',
 						],
-						weight: 250,
+						weight: 300,
 						cost: 6.50,
 					},
 
@@ -2311,7 +2453,7 @@
 							'Мандариновый чай',
 							'Mandarin tea',
 						],
-						weight: 250,
+						weight: 300,
 						cost: 6.20,
 					},
 
@@ -2320,7 +2462,7 @@
 							'Зелёный чай с киви',
 							'Green tea with kiwi',
 						],
-						weight: 250,
+						weight: 300,
 						cost: 6.20,
 					},
 
@@ -2354,6 +2496,15 @@
 							'Mulled wine',
 						],
 						weight: 370,
+						cost: 14.5,
+					},
+
+					{
+						name: [
+							'Пряная вишня',
+							'Spiced cherry',
+						],
+						weight: 300,
 						cost: 14.5,
 					},
 

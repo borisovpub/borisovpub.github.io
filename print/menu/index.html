@@ -224,7 +224,7 @@
 			width: 96.5mm;
 			text-align: center;
 			position: absolute;
-			bottom: 20mm;
+			bottom: 30mm;
 		}
 
 		@media screen {
@@ -370,7 +370,7 @@
 
 <article class="page">
 	<div style="--ratio:1"></div>
-	<div style="--ratio:0.98"></div>
+	<div style="--ratio:1"></div>
 	<div></div>
 	<div></div>
 </article>
@@ -824,14 +824,14 @@
 
 	appendChild( colon[ 1 ], createSection( menu.Soups, createDish ) );
 	appendChild( colon[ 1 ], createSection( menu.Salads, createDish ) );
-	appendChild( colon[ 1 ], createSection( menu.SeasonalSalads, createDish ) );
+	// appendChild( colon[ 1 ], createSection( menu.SeasonalSalads, createDish ) );
 	appendChild( colon[ 1 ], createSection( menu.BurgersSandwiches, createDish ) );
 	// colon[ 1 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
 
 	appendChild( colon[ 2 ], createSection( menu.HotDishes, createDish ) );
 	appendChild( colon[ 2 ], createSection( menu.Garnish, createDish ) );
 	appendChild( colon[ 2 ], createSection( menu.Desserts, createDish ) );
-	// colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="bc.svg" style="height:31.417mm" /></div>' );
+	colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="bc.svg" style="height:31.417mm" /></div>' );
 	// colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
 	colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="desc"><span class="dif">*</span> У блюд помеченных звёздчкой цена зависит от веса</div>' );
 
