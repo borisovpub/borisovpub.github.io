@@ -757,16 +757,16 @@
 				alias: 'salad-with-duck-and-baked-vegetables',
 			},
 
-			{
-				name: [
-					'Салат с ростбифом и овощами-гриль',
-					'Salad with roast beef and grilled vegetables',
-				],
-				weight: 290,
-				cost: 14.70,
-				img: '5497/472184185/IMG_4020.jpg',
-				alias: 'salad-with-roast-beef-and-grilled-vegetables',
-			},
+			// {
+			// 	name: [
+			// 		'Салат с ростбифом и овощами-гриль',
+			// 		'Salad with roast beef and grilled vegetables',
+			// 	],
+			// 	weight: 290,
+			// 	cost: 14.70,
+			// 	img: '5497/472184185/IMG_4020.jpg',
+			// 	alias: 'salad-with-roast-beef-and-grilled-vegetables',
+			// },
 
 			// {
 			// 	name: [
@@ -790,20 +790,20 @@
 				alias: 'salad-with-prawns-and-pear',
 			},
 
-			{
-				name: [
-					'Салат "Мясной"',
-					'Salad "Meat"',
-				],
-				weight: 300,
-				cost: 15.90,
-				alias: 'salad-meat',
-			},
+			// {
+			// 	name: [
+			// 		'Салат "Мясной"',
+			// 		'Salad "Meat"',
+			// 	],
+			// 	weight: 300,
+			// 	cost: 15.90,
+			// 	alias: 'salad-meat',
+			// },
 
 			{
 				name: [
-					'Салат "Английский"',
-					'Salad "English"',
+					'Салат "Мясной Английский"',
+					'Salad "Meat English"',
 				],
 				weight: 240,
 				cost: 15.00,
@@ -2590,29 +2590,29 @@
 			// 	],
 			// },
 
-			{
-				name: 'Pampas del Sur Chardonnay-Chenin',
-				weight: [
-					'псх',
-					's-dr',
-				],
-				cost: [
-					8.00,
-					42.80,
-				],
-			},
+			// {
+			// 	name: 'Pampas del Sur Chardonnay-Chenin',
+			// 	weight: [
+			// 		'псх',
+			// 		's-dr',
+			// 	],
+			// 	cost: [
+			// 		8.00,
+			// 		42.80,
+			// 	],
+			// },
 
-			{
-				name: 'Pampas del Sur Torrontes',
-				weight: [
-					'псх',
-					's-dr',
-				],
-				cost: [
-					8.90,
-					49.40,
-				],
-			},
+			// {
+			// 	name: 'Pampas del Sur Torrontes',
+			// 	weight: [
+			// 		'псх',
+			// 		's-dr',
+			// 	],
+			// 	cost: [
+			// 		8.90,
+			// 		49.40,
+			// 	],
+			// },
 
 			{
 				name: [
