@@ -117,7 +117,13 @@
 		}
 
 		.sub-title {
-			font-size: calc( 13pt * var( --ratio ) );
+			font-size: calc( 13pt * var( --ratio ) ) !important;
+		}
+
+		.mini .sub-title,
+		.mini .title {
+			font-size: calc( 17pt * var( --ratio ) );
+			line-height: calc( 17pt * var( --ratio ) );
 		}
 
 		.sub-text {
@@ -340,30 +346,6 @@
 		</li>
 	</template>
 
-	<template id="cocktail">
-		<li class="cocktail item ext">
-			<div>
-				<span class="name" contenteditable="true"></span>
-			</div>
-			<div class="opacity sub-text">
-				<span class="cap ml" contenteditable="true"></span>
-			</div>
-			<div></div>
-		</li>
-	</template>
-
-	<template id="shot">
-		<div class="shot item ext">
-			<div class="bold">
-				<span class="name" contenteditable="true"></span>
-			</div>
-			<div class="opacity sub-text">
-				<span class="cap ml" contenteditable="true"></span>
-			</div>
-			<div></div>
-		</div>
-	</template>
-
 </head>
 
 <body>
@@ -377,14 +359,15 @@
 
 <article class="page">
 	<div style="--ratio:1"></div>
-	<div style="--ratio:0.85"></div>
+	<div style="--ratio:0.84"></div>
 	<div style="text-align:center"></div>
 	<div style="--ratio:1"></div>
 </article>
 
 <script>( ( /** Window */ window ) => Promise.all( [
 	window.fetch( '/menu/data.js?' + window.Math.random() ).then( ( respose ) => respose.text() ),
-	window.fetch( 'https://your.beer/api/v1/places/irish-pub' ).then( ( response )  => response.json() ),
+	window.fetch( 'beer.json' ).then( ( response )  => response.json() ),
+	// window.fetch( 'https://your.beer/api/v1/places/irish-pub' ).then( ( response )  => response.json() ),
 ] ).then( ( [ menu, beers ] ) => {
 
 	menu = window.eval( menu );
@@ -450,13 +433,15 @@
 
 	var sectionTemplate = querySelector( document, '#section' );
 
-	var createSection = ( data, createLI, createSUB = null ) => {
+	var createSection = ( data, createLI, createSUB = null, mini = false ) => {
 
 		var result = cloneNode( sectionTemplate );
 
 		var left = querySelector( result, '.title' );
 		var right = querySelector( result, '.sub-title' );
 		var bottom = querySelector( result, 'ul' );
+
+		if ( mini ) querySelector( result, '.section' ).classList.add( 'mini' );
 
 		left.textContent = getName( data.name );
 
@@ -717,48 +702,6 @@
 
 	var createDraftBeer = ( data ) => createBeer( data, beers.tap );
 
-	var cocktailTemplate = querySelector( document, '#cocktail' );
-
-	var createCocktail = ( data ) => {
-
-		var result = cloneNode( cocktailTemplate );
-		var li = querySelector( result, 'li' );
-
-		querySelector( result, '.name' ).textContent = getName( data.name );
-
-		if ( data.cap ) {
-			querySelector( result, '.cap' ).textContent = data.cap;
-		}
-
-		if ( data.cost ) {
-			appendChild( querySelector( li, 'div:last-of-type' ), createCost( data.cost ) );
-		}
-
-		return result;
-
-	};
-
-	var shotTemplate = querySelector( document, '#shot' );
-
-	var createShot = ( data ) => {
-
-		var result = cloneNode( shotTemplate );
-		var div = querySelector( result, 'div' );
-
-		querySelector( result, '.name' ).textContent = getName( data.name );
-
-		if ( data.cap ) {
-			querySelector( result, '.cap' ).textContent = data.cap;
-		}
-
-		if ( data.cost ) {
-			appendChild( querySelector( div, 'div:last-of-type' ), createCost( data.cost ) );
-		}
-
-		return result;
-
-	};
-
 	// Object.values( menu ).forEach( ( o ) => {
 	//
 	// 	var val = 0;
@@ -846,17 +789,18 @@
 	appendChild( colon[ 4 ], createSection( menu.RedWine, createDish, createCapacity ) );
 	appendChild( colon[ 4 ], createSection( menu.SparklingWine, createDish, createCapacity ) );
 	appendChild( colon[ 4 ], createSection( menu.NonAlcoholicWine, createDish, createCapacity ) );
-	appendChild( colon[ 4 ], createSection( menu.PortWine, createDish, createCapacity ) );
+	// appendChild( colon[ 4 ], createSection( menu.PortWine, createDish, createCapacity ) );
 	appendChild( colon[ 4 ], createSection( menu.Martini, createDish, createCapacity ) );
 
-	appendChild( colon[ 5 ], createSection( menu.Tinctures, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( menu.Whiskey, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( menu.Rom, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( menu.Brandy, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( menu.Bitter, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( menu.Vodka, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( menu.Tequila, createAlc, createCapacity ) );
-	appendChild( colon[ 5 ], createSection( menu.Gin, createAlc, createCapacity ) );
+	appendChild( colon[ 5 ], createSection( menu.Tinctures, createAlc, createCapacity, true ) );
+	appendChild( colon[ 5 ], createSection( menu.Whiskey, createAlc, createCapacity, true ) );
+	appendChild( colon[ 5 ], createSection( menu.Rom, createAlc, createCapacity, true ) );
+	appendChild( colon[ 5 ], createSection( menu.Brandy, createAlc, createCapacity, true ) );
+	appendChild( colon[ 5 ], createSection( menu.Bitter, createAlc, createCapacity, true ) );
+	appendChild( colon[ 5 ], createSection( menu.Vodka, createAlc, createCapacity, true ) );
+	appendChild( colon[ 5 ], createSection( menu.Tequila, createAlc, createCapacity, true ) );
+	appendChild( colon[ 5 ], createSection( menu.Gin, createAlc, createCapacity, true ) );
+	appendChild( colon[ 5 ], createSection( menu.Absinthe, createAlc, createCapacity, true ) );
 
 	// appendChild( colon[ 5 ], createSection( data.Cocktails, createCocktail ) );
 	// appendChild( colon[ 5 ], createShot( data.Shot ) );

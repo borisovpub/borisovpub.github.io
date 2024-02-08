@@ -2103,8 +2103,8 @@
 					'Наполеон',
 					'Napoleon',
 				],
-				weight: 150,
-				cost: 9.50,
+				weight: 100,
+				cost: 7.00,
 			},
 
 			{
@@ -2159,10 +2159,16 @@
 				cost: 3.10,
 			},
 
+			// {
+			// 	name: 'Hell',
+			// 	weight: 250,
+			// 	cost: 5.50,
+			// },
+
 			{
-				name: 'Hell',
+				name: 'Burn',
 				weight: 250,
-				cost: 5.50,
+				cost: 7.50,
 			},
 
 		],
@@ -3013,7 +3019,7 @@
 					'псл',
 					's-sw',
 				],
-				cost: 58.00,
+				cost: 65.00,
 			},
 
 			{
@@ -3278,49 +3284,49 @@
 
 	},
 
-	PortWine: {
-
-		name: [
-			'Портвейн',
-			'Port wine',
-		],
-
-		capacity: [
-			125,
-			750,
-		],
-
-		collection: [
-
-			// {
-			// 	name: 'Portal Fine Ruby Porto',
-			// 	cost: [
-			// 		10.20,
-			// 		55.90,
-			// 	],
-			// },
-
-			// {
-			// 	name: 'Portal Fine Tawny Porto',
-			// 	cost: [
-			// 		10.20,
-			// 		55.90,
-			// 	],
-			// },
-
-			// {
-			// 	name: 'Porto Alegre Ruby',
-			// 	cost: 59.00,
-			// },
-
-			{
-				name: 'Porto Alegre Tawny',
-				cost: 59.00,
-			},
-
-		],
-
-	},
+	// PortWine: {
+	//
+	// 	name: [
+	// 		'Портвейн',
+	// 		'Port wine',
+	// 	],
+	//
+	// 	capacity: [
+	// 		125,
+	// 		750,
+	// 	],
+	//
+	// 	collection: [
+	//
+	// 		// {
+	// 		// 	name: 'Portal Fine Ruby Porto',
+	// 		// 	cost: [
+	// 		// 		10.20,
+	// 		// 		55.90,
+	// 		// 	],
+	// 		// },
+	//
+	// 		// {
+	// 		// 	name: 'Portal Fine Tawny Porto',
+	// 		// 	cost: [
+	// 		// 		10.20,
+	// 		// 		55.90,
+	// 		// 	],
+	// 		// },
+	//
+	// 		// {
+	// 		// 	name: 'Porto Alegre Ruby',
+	// 		// 	cost: 59.00,
+	// 		// },
+	//
+	// 		{
+	// 			name: 'Porto Alegre Tawny',
+	// 			cost: 59.00,
+	// 		},
+	//
+	// 	],
+	//
+	// },
 
 	Martini: {
 
@@ -3391,6 +3397,10 @@
 					},
 					{
 						name: 'Stout Edition',
+						cost: 12,
+					},
+					{
+						name: 'IPA Edition',
 						cost: 12,
 					},
 				],
@@ -3800,6 +3810,26 @@
 
 	},
 
+	Absinthe: {
+
+		name: [
+			'Абсент',
+			'Absinthe',
+		],
+
+		capacity: 50,
+
+		collection: [
+
+			{
+				name: 'Pernod',
+				cost: 12.00,
+			},
+
+		],
+
+	},
+
 	Brandy: {
 
 		name: [
@@ -3956,6 +3986,16 @@
 				],
 			},
 
+			{
+				name: 'Angostura',
+				collection: [
+					{
+						name: 'Tamboo Spiced',
+						cost: 11.50,
+					},
+				],
+			},
+
 		],
 
 	},
@@ -4022,19 +4062,19 @@
 			// 	name: 'Abbot Ale',
 			// 	slug: 'greene-king-abbot-ale',
 			// },
-			// {
-			// 	name: 'Brûler',
-			// 	collection: [
-			// 		{
-			// 			name: 'Blonde',
-			// 			slug: 'belgian-brew-factory-bruler-blonde',
-			// 		},
-			// 		// {
-			// 		// 	name: 'Brune',
-			// 		// 	slug: 'belgian-brew-factory-bruler-brune',
-			// 		// },
-			// 	],
-			// },
+			{
+				name: 'Brûler',
+				collection: [
+					{
+						name: 'Blonde',
+						slug: 'belgian-brew-factory-bruler-blonde',
+					},
+					// {
+					// 	name: 'Brune',
+					// 	slug: 'belgian-brew-factory-bruler-brune',
+					// },
+				],
+			},
 			{
 				name: 'Petrus',
 				collection: [
@@ -4056,8 +4096,17 @@
 			// 	slug: 'gletcher-iron-woods',
 			// },
 			{
-				name: 'Milk of Amnesia',
-				slug: 'gletcher-milk-of-amnesia-v-tropic-milkshake-ipa',
+				name: 'Gletcher',
+				collection: [
+					{
+						name: 'Milk of Amnesia',
+						slug: 'gletcher-milk-of-amnesia-v-tropic-milkshake-ipa',
+					},
+					{
+						name: 'Bowlers IPA',
+						slug: 'gletcher-brewery-ipa-2',
+					},
+				]
 			},
 			// {
 			// 	name: 'Underground',
@@ -4112,15 +4161,15 @@
 				// },
 				],
 			},
-			{
-				name: 'Zubr',
-				collection: [
-					{
-						name: 'Gold',
-						slug: 'zubr-gold',
-					},
-				],
-			},
+			// {
+			// 	name: 'Zubr',
+			// 	collection: [
+			// 		{
+			// 			name: 'Gold',
+			// 			slug: 'zubr-gold',
+			// 		},
+			// 	],
+			// },
 		],
 
 	},
@@ -4411,14 +4460,14 @@
 			{
 				name: 'Leffe',
 				collection: [
-					{
-						name: 'Blonde',
-						slug: 'leffe-blonde',
-					},
-					{
-						name: 'Brune',
-						slug: 'leffe-brune',
-					},
+					// {
+					// 	name: 'Blonde',
+					// 	slug: 'leffe-blonde',
+					// },
+					// {
+					// 	name: 'Brune',
+					// 	slug: 'leffe-brune',
+					// },
 					{
 						name: 'Ruby',
 						slug: 'leffe-ruby',
