@@ -1046,17 +1046,17 @@
 				],
 			},
 
-			{
-				name: [
-					'Бургер с угрём',
-					'Burger with eel',
-				],
-				weight: 330,
-				cost: 15.50,
-				img: '973/707879885/20230520_123542.jpg',
-				alias: 'burger-with-eel',
-				tp: 2,
-			},
+			// {
+			// 	name: [
+			// 		'Бургер с угрём',
+			// 		'Burger with eel',
+			// 	],
+			// 	weight: 330,
+			// 	cost: 15.50,
+			// 	img: '973/707879885/20230520_123542.jpg',
+			// 	alias: 'burger-with-eel',
+			// 	tp: 2,
+			// },
 
 			// {
 			// 	name: [
@@ -1393,14 +1393,14 @@
 
 		collection: [
 
-			{
-				name: [
-					'Угорь c цукини и тартаром из огурца',
-					'Eel with zucchini and cucumber tartare',
-				],
-				weight: 330,
-				cost: 26,
-			},
+			// {
+			// 	name: [
+			// 		'Угорь c цукини и тартаром из огурца',
+			// 		'Eel with zucchini and cucumber tartare',
+			// 	],
+			// 	weight: 330,
+			// 	cost: 26,
+			// },
 
 			// {
 			// 	name: [
@@ -1512,14 +1512,14 @@
 			// 	alias: 'rabbi-leg-with-mashed-potatoes',
 			// },
 
-			{
-				name: [
-					'Томлёный кролик с рагу из овощей',
-					'Stewed rabbit with vegetable stew',
-				],
-				weight: 450,
-				cost: 24,
-			},
+			// {
+			// 	name: [
+			// 		'Томлёный кролик с рагу из овощей',
+			// 		'Stewed rabbit with vegetable stew',
+			// 	],
+			// 	weight: 450,
+			// 	cost: 24,
+			// },
 
 			// {
 			// 	name: [
@@ -1746,69 +1746,69 @@
 			// 	tp: 1,
 			// },
 
-			{
-				name: [
-					'Драники',
-					'Draniki',
-				],
-				alias: 'draniki',
-				collection: [
-					{
-						name: [
-							'с колбасками из индейки',
-							'with turkey sausages',
-						],
-						weight: 390,
-						cost: 15.90,
-					},
-					{
-						name: [
-							'с уткой и сливочно-грибным соусом',
-							'with duck and creamy mushroom sauce',
-						],
-						weight: 430,
-						cost: 19.50,
-						img: '1023/695239679/20230504_174915.jpg',
-					},
-					// {
-					// 	name: [
-					// 		'с ростбифом',
-					// 		'with roast beef',
-					// 	],
-					// 	weight: 380,
-					// 	cost: 15.60,
-					// 	img: '6322/623597746/20221203_125714.jpg',
-					// },
-					{
-						name: [
-							'с сёмгой',
-							'with salmon',
-						],
-						weight: 350,
-						cost: 16.70,
-						img: '6190/623597614/20221203_125604.jpg',
-					},
-					{
-						name: [
-							'с соусом из белых грибов',
-							'with mushroom caviar',
-						],
-						weight: 390,
-						cost: 11.90,
-						img: '6430/623597854/20221203_125821.jpg',
-					},
-					// {
-					// 	name: [
-					// 		'со сметаной',
-					// 		'with sour cream',
-					// 	],
-					// 	weight: 280,
-					// 	cost: 7.20,
-					// 	img: '6070/623597494/20221203_125507.jpg',
-					// },
-				],
-				tp: 1,
-			},
+			// {
+			// 	name: [
+			// 		'Драники',
+			// 		'Draniki',
+			// 	],
+			// 	alias: 'draniki',
+			// 	collection: [
+			// 		{
+			// 			name: [
+			// 				'с колбасками из индейки',
+			// 				'with turkey sausages',
+			// 			],
+			// 			weight: 390,
+			// 			cost: 15.90,
+			// 		},
+			// 		{
+			// 			name: [
+			// 				'с уткой и сливочно-грибным соусом',
+			// 				'with duck and creamy mushroom sauce',
+			// 			],
+			// 			weight: 430,
+			// 			cost: 19.50,
+			// 			img: '1023/695239679/20230504_174915.jpg',
+			// 		},
+			// 		// {
+			// 		// 	name: [
+			// 		// 		'с ростбифом',
+			// 		// 		'with roast beef',
+			// 		// 	],
+			// 		// 	weight: 380,
+			// 		// 	cost: 15.60,
+			// 		// 	img: '6322/623597746/20221203_125714.jpg',
+			// 		// },
+			// 		{
+			// 			name: [
+			// 				'с сёмгой',
+			// 				'with salmon',
+			// 			],
+			// 			weight: 350,
+			// 			cost: 16.70,
+			// 			img: '6190/623597614/20221203_125604.jpg',
+			// 		},
+			// 		{
+			// 			name: [
+			// 				'с соусом из белых грибов',
+			// 				'with mushroom caviar',
+			// 			],
+			// 			weight: 390,
+			// 			cost: 11.90,
+			// 			img: '6430/623597854/20221203_125821.jpg',
+			// 		},
+			// 		// {
+			// 		// 	name: [
+			// 		// 		'со сметаной',
+			// 		// 		'with sour cream',
+			// 		// 	],
+			// 		// 	weight: 280,
+			// 		// 	cost: 7.20,
+			// 		// 	img: '6070/623597494/20221203_125507.jpg',
+			// 		// },
+			// 	],
+			// 	tp: 1,
+			// },
 
 			// {
 			// 	name: [
@@ -1903,6 +1903,71 @@
 				alias: 'salmon-steak-with-coconut-lime-sauce',
 			},
 
+		],
+
+	},
+
+	Draniki: {
+
+		name: [
+			'Драники',
+			'Draniki',
+		],
+
+		collection: [
+			{
+				name: [
+					'с колбасками из индейки',
+					'with turkey sausages',
+				],
+				weight: 390,
+				cost: 15.90,
+			},
+			{
+				name: [
+					'с уткой и сливочно-грибным соусом',
+					'with duck and creamy mushroom sauce',
+				],
+				weight: 430,
+				cost: 19.50,
+				img: '1023/695239679/20230504_174915.jpg',
+			},
+			// {
+			// 	name: [
+			// 		'с ростбифом',
+			// 		'with roast beef',
+			// 	],
+			// 	weight: 380,
+			// 	cost: 15.60,
+			// 	img: '6322/623597746/20221203_125714.jpg',
+			// },
+			{
+				name: [
+					'с сёмгой',
+					'with salmon',
+				],
+				weight: 350,
+				cost: 16.70,
+				img: '6190/623597614/20221203_125604.jpg',
+			},
+			{
+				name: [
+					'с соусом из белых грибов',
+					'with mushroom caviar',
+				],
+				weight: 390,
+				cost: 11.90,
+				img: '6430/623597854/20221203_125821.jpg',
+			},
+			{
+				name: [
+					'со сметаной',
+					'with sour cream',
+				],
+				weight: 280,
+				cost: 7.20,
+				img: '6070/623597494/20221203_125507.jpg',
+			},
 		],
 
 	},
@@ -3251,38 +3316,38 @@
 
 	},
 
-	NonAlcoholicWine: {
-
-		name: [
-			'Безалкогольное вино',
-			'Non-alcoholic wine',
-		],
-
-		capacity: 750,
-
-		collection: [
-
-			{
-				name: 'Abbazia',
-				weight: [
-					'красное',
-					'red',
-				],
-				cost: 29,
-			},
-
-			{
-				name: 'Abbazia',
-				weight: [
-					'белое',
-					'white',
-				],
-				cost: 29,
-			},
-
-		],
-
-	},
+	// NonAlcoholicWine: {
+	//
+	// 	name: [
+	// 		'Безалкогольное вино',
+	// 		'Non-alcoholic wine',
+	// 	],
+	//
+	// 	capacity: 750,
+	//
+	// 	collection: [
+	//
+	// 		{
+	// 			name: 'Abbazia',
+	// 			weight: [
+	// 				'красное',
+	// 				'red',
+	// 			],
+	// 			cost: 29,
+	// 		},
+	//
+	// 		{
+	// 			name: 'Abbazia',
+	// 			weight: [
+	// 				'белое',
+	// 				'white',
+	// 			],
+	// 			cost: 29,
+	// 		},
+	//
+	// 	],
+	//
+	// },
 
 	// PortWine: {
 	//
@@ -3695,10 +3760,10 @@
 				cost: 9.80,
 			},
 
-			{
-				name: 'Milagro',
-				cost: 9.10,
-			},
+			// {
+			// 	name: 'Milagro',
+			// 	cost: 9.10,
+			// },
 
 		],
 
@@ -3720,7 +3785,7 @@
 					'Крамбамбуля',
 					'Spiced & Honey',
 				],
-				cost: 4.50,
+				cost: 5,
 			},
 
 			{
@@ -3728,7 +3793,7 @@
 					'Клюковка',
 					'Cranberry',
 				],
-				cost: 4.50,
+				cost: 5,
 			},
 
 			{
@@ -3736,7 +3801,7 @@
 					'Вишнёвка',
 					'Cherry',
 				],
-				cost: 4.50,
+				cost: 5,
 			},
 
 			// {
@@ -3744,7 +3809,7 @@
 			// 		'Хреновуха',
 			// 		'Horseradish',
 			// 	],
-			// 	cost: 4.50,
+			// 	cost: 5,
 			// },
 
 			// {
@@ -3752,7 +3817,7 @@
 			// 		'Мандариновка',
 			// 		'Tangerine',
 			// 	],
-			// 	cost: 4.50,
+			// 	cost: 5,
 			// },
 
 			// {
@@ -3760,7 +3825,7 @@
 			// 		'Кофейная',
 			// 		'Coffee',
 			// 	],
-			// 	cost: 4.50,
+			// 	cost: 5,
 			// },
 
 			{
@@ -3771,7 +3836,7 @@
 							'Сезонная',
 							'Seasonal',
 						],
-						cost: 4.50,
+						cost: 5,
 					},
 				],
 			},
@@ -4084,6 +4149,19 @@
 					},
 				],
 			},
+			{
+				name: 'Budweiser',
+				collection: [
+					{
+						name: 'B:Original',
+						slug: 'budweiser-budvar-original',
+					},
+					// {
+					// 	name: 'B:Dark',
+					// 	slug: 'budweiser-budvar-dark',
+					// },
+				],
+			},
 			// {
 			// 	name: 'Braufactum Pale Ale',
 			//	slug: 'radeberger-gruppe-braufactum-german-pale-ale',
@@ -4235,6 +4313,10 @@
 			{
 				name: 'O`Hara`s',
 				collection: [
+					{
+						name: 'Irish Craft Lager',
+						slug: 'o-haras-irish-craft-lager',
+					},
 					// {
 					// 	name: 'Pale Ale',
 					// 	slug: 'oharas-irish-pale-ale',
@@ -4251,10 +4333,10 @@
 					// 	name: 'Irish Stout Nitro',
 					// 	slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
 					// },
-					// {
-					// 	name: 'Leann Folláin',
-					// 	slug: 'oharas-leann-follain',
-					// },
+					{
+						name: 'Leann Folláin',
+						slug: 'oharas-leann-follain',
+					},
 					// {
 					// 	name: 'White Haze',
 					// 	slug: 'oharas-white-haze',
@@ -4263,14 +4345,22 @@
 					// 	name: 'West Coast IPA',
 					// 	slug: 'o-hara-s-brewery-o-hara-s-west-coast-ipa',
 					// },
-					// {
-					// 	name: 'Hazy IPA',
-					// 	slug: 'o-hara-s-brewery-o-hara-s-hazy-ipa',
-					// },
+					{
+						name: 'Hazy IPA',
+						slug: 'o-hara-s-brewery-o-hara-s-hazy-ipa',
+					},
+					{
+						name: '51st State IPA',
+						slug: 'oharas-51st-state-ipa',
+					},
 					// {
 					// 	name: 'Hop Adventure Talus IPA',
 					// 	slug: 'o-hara-s-brewery-hop-adventure-series-talus',
 					// },
+					{
+						name: 'Hop Adventure Series Strata',
+						slug: 'o-haras-brewery-hop-adventure-series-strata',
+					},
 				]
 			},
 			{
@@ -4392,25 +4482,37 @@
 			{
 				name: 'Budweiser',
 				collection: [
-					{
-						name: 'B:Original',
-						slug: 'budweiser-budvar-original',
-					},
+					// {
+					// 	name: 'B:Original',
+					// 	slug: 'budweiser-budvar-original',
+					// },
 					{
 						name: 'B:Dark',
 						slug: 'budweiser-budvar-dark',
 					},
 				],
 			},
-			// {
-			// 	name: 'Aecht Schlenkerla',
-			// 	collection: [
-			// 		{
-			// 			name: 'Märzen',
-			// 			slug: 'aecht-schlenkerla-rauchbier-marzen',
-			// 		},
-			// 	],
-			// },
+			{
+				name: 'Schlenkerla',
+				collection: [
+					{
+						name: 'Helles Lagerbier',
+						slug: 'helles-schlenkerla-lager',
+					},
+					{
+						name: 'Rauchbier Märzen',
+						slug: 'aecht-schlenkerla-rauchbier-marzen',
+					},
+					{
+						name: 'Erle Schwarzbier',
+						slug: 'schlenkerla-heller-brau-trum-aecht-schlenkerla-erle-schwarzbier',
+					},
+					{
+						name: 'Weichsel Rotbier',
+						slug: 'schlenkerla-heller-brau-trum-aecht-schlenkerla-weichsel-rotbier',
+					},
+				],
+			},
 			// {
 			// 	name: 'Franziskaner',
 			// 	collection: [
@@ -4457,6 +4559,10 @@
 			// 		},
 			// 	],
 			// },
+			{
+				name: 'Blanche de Namur',
+				slug: 'brasserie-du-bocq-blanche-de-namur',
+			},
 			{
 				name: 'Leffe',
 				collection: [

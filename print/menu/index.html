@@ -366,7 +366,7 @@
 
 <script>( ( /** Window */ window ) => Promise.all( [
 	window.fetch( '/menu/data.js?' + window.Math.random() ).then( ( respose ) => respose.text() ),
-	window.fetch( 'beer.json' ).then( ( response )  => response.json() ),
+	window.fetch( 'beer.json?' + window.Math.random() ).then( ( response )  => response.json() ),
 	// window.fetch( 'https://your.beer/api/v1/places/irish-pub' ).then( ( response )  => response.json() ),
 ] ).then( ( [ menu, beers ] ) => {
 
@@ -772,6 +772,7 @@
 	// colon[ 1 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
 
 	appendChild( colon[ 2 ], createSection( menu.HotDishes, createDish ) );
+	appendChild( colon[ 2 ], createSection( menu.Draniki, createDish ) );
 	appendChild( colon[ 2 ], createSection( menu.Garnish, createDish ) );
 	appendChild( colon[ 2 ], createSection( menu.Desserts, createDish ) );
 	colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="bc.svg" style="height:31.417mm" /></div>' );
@@ -788,7 +789,7 @@
 	appendChild( colon[ 4 ], createSection( menu.RoseWine, createDish, createCapacity ) );
 	appendChild( colon[ 4 ], createSection( menu.RedWine, createDish, createCapacity ) );
 	appendChild( colon[ 4 ], createSection( menu.SparklingWine, createDish, createCapacity ) );
-	appendChild( colon[ 4 ], createSection( menu.NonAlcoholicWine, createDish, createCapacity ) );
+	// appendChild( colon[ 4 ], createSection( menu.NonAlcoholicWine, createDish, createCapacity ) );
 	// appendChild( colon[ 4 ], createSection( menu.PortWine, createDish, createCapacity ) );
 	appendChild( colon[ 4 ], createSection( menu.Martini, createDish, createCapacity ) );
 
