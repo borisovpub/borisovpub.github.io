@@ -180,11 +180,17 @@
 		}
 
 		.item > div {
-			display: inline-block;
+			justify-content: space-between;
+			display: inline;
 			line-height: calc( 16pt * var( --ratio ) * var( --ratio ) );
 		}
 
-		.item > div:not( :nth-child( 1 ) ) {
+		.item > div:nth-child( 1 ) {
+			text-indent: -5mm;
+			padding-left: 5mm;
+		}
+
+		.item > div + div {
 			text-align: right;
 		}
 
@@ -318,7 +324,7 @@
 
 	<template id="dish">
 		<li class="dish item">
-			<div><span class="nbsp" contenteditable="true"></span></div>
+			<div><span class="name" contenteditable="true"></span>   <span class="weight opacity brackets sub-text" contenteditable="true"></span></div>
 			<div></div>
 			<ul></ul>
 		</li>
@@ -365,7 +371,7 @@
 </article>
 
 <script>( ( /** Window */ window ) => Promise.all( [
-	window.fetch( '/menu/data.js?' + window.Math.random() ).then( ( respose ) => respose.text() ),
+	window.fetch( '/menu/data.js?' + window.Math.random() ).then( ( response ) => response.text() ),
 	window.fetch( 'beer.json?' + window.Math.random() ).then( ( response )  => response.json() ),
 	// window.fetch( 'https://your.beer/api/v1/places/irish-pub' ).then( ( response )  => response.json() ),
 ] ).then( ( [ menu, beers ] ) => {
@@ -550,7 +556,7 @@
 		var right = querySelector( li, 'div:last-of-type' );
 		var bottom = querySelector( li, 'ul' );
 
-		var name = querySelector( left, '.nbsp' );
+		var name = querySelector( left, '.name' );
 
 		name.textContent = getName( data.name );
 
@@ -559,7 +565,8 @@
 		}
 
 		if ( data.weight ) {
-			appendChild( left, createWeight( data ) );
+			// appendChild( left, createWeight( data ) );
+			querySelector( result, '.weight' ).textContent = getName( data.weight );
 		}
 
 		if ( data.cost ) {
