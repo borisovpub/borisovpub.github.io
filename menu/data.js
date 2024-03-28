@@ -1532,14 +1532,14 @@
 			// 	alias: 'rabbi-leg-with-mashed-potatoes',
 			// },
 
-			// {
-			// 	name: [
-			// 		'Томлёный кролик с рагу из овощей',
-			// 		'Stewed rabbit with vegetable stew',
-			// 	],
-			// 	weight: 450,
-			// 	cost: 24,
-			// },
+			{
+				name: [
+					'Томлёный кролик с рагу из овощей',
+					'Stewed rabbit with vegetable stew',
+				],
+				weight: 450,
+				cost: 25,
+			},
 
 			// {
 			// 	name: [
@@ -1840,15 +1840,15 @@
 			// 	tp: 1,
 			// },
 
-			{
-				name: [
-					'Сосиски "Варшавские" с картофельными байтсами',
-					'"Warsaw" sausages with potato bytes',
-				],
-				weight: 330,
-				cost: 16.6,
-				tp: 1,
-			},
+			// {
+			// 	name: [
+			// 		'Сосиски "Варшавские" с картофельными байтсами',
+			// 		'"Warsaw" sausages with potato bytes',
+			// 	],
+			// 	weight: 330,
+			// 	cost: 16.6,
+			// 	tp: 1,
+			// },
 
 			// {
 			// 	name: [
@@ -2016,7 +2016,7 @@
 					'Country style potatoes',
 				],
 				weight: 150,
-				cost: 3.90,
+				cost: 4.20,
 			},
 
 			{
@@ -2025,7 +2025,7 @@
 					'Mashed potatoes',
 				],
 				weight: 150,
-				cost: 3.90,
+				cost: 4.20,
 			},
 
 			// {
@@ -2253,7 +2253,7 @@
 			{
 				name: 'Burn',
 				weight: 250,
-				cost: 8.20,
+				cost: 7.50,
 			},
 
 		],
@@ -2530,14 +2530,14 @@
 						cost: 6.80,
 					},
 
-					{
-						name: [
-							'Облепиховый чай',
-							'Sea buckthorn tea',
-						],
-						weight: 300,
-						cost: 7.10,
-					},
+					// {
+					// 	name: [
+					// 		'Облепиховый чай',
+					// 		'Sea buckthorn tea',
+					// 	],
+					// 	weight: 300,
+					// 	cost: 7.10,
+					// },
 
 					{
 						name: [
@@ -2967,8 +2967,8 @@
 					's-dr',
 				],
 				cost: [
-					10.20,
-					60.00,
+					9.90,
+					57.00,
 				],
 			},
 
@@ -3083,17 +3083,17 @@
 			//   ],
 			// },
 
-			{
-				name: 'Pampas del Sur Cabernet-Merlot',
-				weight: [
-					'п-сх',
-					's-dr',
-				],
-				cost: [
-					9.70,
-					51.00,
-				],
-			},
+			// {
+			// 	name: 'Pampas del Sur Cabernet-Merlot',
+			// 	weight: [
+			// 		'п-сх',
+			// 		's-dr',
+			// 	],
+			// 	cost: [
+			// 		9.70,
+			// 		51.00,
+			// 	],
+			// },
 
 			{
 				name: [
@@ -3104,7 +3104,7 @@
 					'псл',
 					's-sw',
 				],
-				cost: 71.00,
+				cost: 57.00,
 			},
 
 			{
@@ -3329,7 +3329,7 @@
 					'брют',
 					'brut',
 				],
-				cost: 53.00,
+				cost: 50.00,
 			},
 
 		],
@@ -3671,6 +3671,20 @@
 				],
 			},
 
+			{
+				name: 'Woven',
+				collection: [
+					{
+						name: 'Homemade',
+						cost: 26,
+					},
+					{
+						name: 'Superblend',
+						cost: 26,
+					},
+				],
+			},
+
 			// {
 			// 	name: 'Grant`s',
 			// 	collection: [
@@ -3891,6 +3905,20 @@
 			//   cost: 6.80,
 			// },
 
+			{
+				name: 'Marconi',
+				collection: [
+					{
+						name: 'Stile Mediterraneo',
+						cost: 20,
+					},
+					{
+						name: 'Agrumato',
+						cost: 20,
+					}
+				],
+			},
+
 		],
 
 	},
@@ -4076,6 +4104,13 @@
 				collection: [
 					{
 						name: 'Tamboo Spiced',
+						cost: 12.00,
+					},
+					{
+						name: [
+							'5 лет',
+							'5 years',
+						],
 						cost: 12.00,
 					},
 				],
@@ -4583,23 +4618,23 @@
 				name: 'Blanche de Namur',
 				slug: 'brasserie-du-bocq-blanche-de-namur',
 			},
-			{
-				name: 'Leffe',
-				collection: [
-					// {
-					// 	name: 'Blonde',
-					// 	slug: 'leffe-blonde',
-					// },
-					// {
-					// 	name: 'Brune',
-					// 	slug: 'leffe-brune',
-					// },
-					{
-						name: 'Ruby',
-						slug: 'leffe-ruby',
-					},
-				],
-			},
+			// {
+			// 	name: 'Leffe',
+			// 	collection: [
+			// 		// {
+			// 		// 	name: 'Blonde',
+			// 		// 	slug: 'leffe-blonde',
+			// 		// },
+			// 		// {
+			// 		// 	name: 'Brune',
+			// 		// 	slug: 'leffe-brune',
+			// 		// },
+			// 		{
+			// 			name: 'Ruby',
+			// 			slug: 'leffe-ruby',
+			// 		},
+			// 	],
+			// },
 			// {
 			// 	name: 'Hoegaarden',
 			// 	slug: 'hoegaarden-wit',

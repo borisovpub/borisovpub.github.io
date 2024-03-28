@@ -65,6 +65,12 @@
 
 		}
 
+		.colon {
+			display: grid;
+			grid-template-columns: 46.25mm 46.25mm;
+			grid-gap: 4mm;
+		}
+
 		.page > * {
 			overflow: hidden;
 		}
@@ -126,6 +132,11 @@
 			line-height: calc( 17pt * var( --ratio ) );
 		}
 
+		.mini .item > div {
+			line-height: calc( 15pt * var( --ratio ) * var( --ratio ) );
+			font-size: calc( 12.0pt * var( --ratio ) );
+		}
+
 		.sub-text {
 			font-size: calc( 12pt * var( --ratio ) );
 		}
@@ -185,7 +196,7 @@
 			line-height: calc( 16pt * var( --ratio ) * var( --ratio ) );
 		}
 
-		.item > div:nth-child( 1 ) {
+		.item:not(:only-child) > div:nth-child( 1 ) {
 			text-indent: -5mm;
 			padding-left: 5mm;
 		}
@@ -365,7 +376,13 @@
 
 <article class="page">
 	<div style="--ratio:1"></div>
-	<div style="--ratio:0.84"></div>
+	<div style="--ratio:0.96">
+		<div></div>
+		<div class="colon" style="margin-top:4mm">
+			<span></span>
+			<span></span>
+		</div>
+	</div>
 	<div style="text-align:center"></div>
 	<div style="--ratio:1"></div>
 </article>
@@ -766,6 +783,8 @@
 	// } );
 
 	var colon = querySelectorAll( document, '.page>div' );
+	var colon2 = querySelector( colon[ 5 ], 'div' );
+	var colon3 = querySelectorAll( colon[ 5 ], 'span' );
 
 	appendChild( colon[ 0 ], createSection( menu.BeerStarters, createDish ) );
 	appendChild( colon[ 0 ], createSection( menu.Starters, createDish ) );
@@ -800,15 +819,17 @@
 	// appendChild( colon[ 4 ], createSection( menu.PortWine, createDish, createCapacity ) );
 	appendChild( colon[ 4 ], createSection( menu.Martini, createDish, createCapacity ) );
 
-	appendChild( colon[ 5 ], createSection( menu.Tinctures, createAlc, createCapacity, true ) );
-	appendChild( colon[ 5 ], createSection( menu.Whiskey, createAlc, createCapacity, true ) );
-	appendChild( colon[ 5 ], createSection( menu.Rom, createAlc, createCapacity, true ) );
-	appendChild( colon[ 5 ], createSection( menu.Brandy, createAlc, createCapacity, true ) );
-	appendChild( colon[ 5 ], createSection( menu.Bitter, createAlc, createCapacity, true ) );
-	appendChild( colon[ 5 ], createSection( menu.Vodka, createAlc, createCapacity, true ) );
-	appendChild( colon[ 5 ], createSection( menu.Tequila, createAlc, createCapacity, true ) );
-	appendChild( colon[ 5 ], createSection( menu.Gin, createAlc, createCapacity, true ) );
-	appendChild( colon[ 5 ], createSection( menu.Absinthe, createAlc, createCapacity, true ) );
+	appendChild( colon2, createSection( menu.Tinctures, createAlc, createCapacity ) );
+	appendChild( colon2, createSection( menu.Whiskey, createAlc, createCapacity ) );
+
+	appendChild( colon3[ 0 ], createSection( menu.Rom, createAlc, createCapacity, true ) );
+	appendChild( colon3[ 0 ], createSection( menu.Bitter, createAlc, createCapacity, true ) );
+	appendChild( colon3[ 0 ], createSection( menu.Gin, createAlc, createCapacity, true ) );
+
+	appendChild( colon3[ 1 ], createSection( menu.Vodka, createAlc, createCapacity, true ) );
+	appendChild( colon3[ 1 ], createSection( menu.Brandy, createAlc, createCapacity, true ) );
+	appendChild( colon3[ 1 ], createSection( menu.Tequila, createAlc, createCapacity, true ) );
+	appendChild( colon3[ 1 ], createSection( menu.Absinthe, createAlc, createCapacity, true ) );
 
 	// appendChild( colon[ 5 ], createSection( data.Cocktails, createCocktail ) );
 	// appendChild( colon[ 5 ], createShot( data.Shot ) );
