@@ -4204,19 +4204,19 @@
 					},
 				],
 			},
-			{
-				name: 'Budweiser',
-				collection: [
-					{
-						name: 'B:Original',
-						slug: 'budweiser-budvar-original',
-					},
-					// {
-					// 	name: 'B:Dark',
-					// 	slug: 'budweiser-budvar-dark',
-					// },
-				],
-			},
+			// {
+			// 	name: 'Budweiser',
+			// 	collection: [
+			// 		{
+			// 			name: 'B:Original',
+			// 			slug: 'budweiser-budvar-original',
+			// 		},
+			// 		// {
+			// 		// 	name: 'B:Dark',
+			// 		// 	slug: 'budweiser-budvar-dark',
+			// 		// },
+			// 	],
+			// },
 			// {
 			// 	name: 'Braufactum Pale Ale',
 			//	slug: 'radeberger-gruppe-braufactum-german-pale-ale',
@@ -4271,10 +4271,10 @@
 				// 	name: 'Dance',
 				// 	slug: 'robim-good-brewery-dance',
 				// },
-				// {
-				// 	name: 'Crystal',
-				// 	slug: 'robim-good-brewery-crystal',
-				// },
+				{
+					name: 'Crystal',
+					slug: 'robim-good-brewery-crystal',
+				},
 				// {
 				//   name: 'Amber Ray',
 				// },
