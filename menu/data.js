@@ -1941,7 +1941,7 @@
 					'with turkey sausages',
 				],
 				weight: 390,
-				cost: 15.90,
+				cost: 16.50,
 			},
 			{
 				name: [
@@ -1949,7 +1949,7 @@
 					'with duck and creamy mushroom sauce',
 				],
 				weight: 430,
-				cost: 22.00,
+				cost: 22.80,
 				img: '1023/695239679/20230504_174915.jpg',
 			},
 			// {
@@ -1967,7 +1967,7 @@
 					'with salmon',
 				],
 				weight: 350,
-				cost: 16.70,
+				cost: 17.30,
 				img: '6190/623597614/20221203_125604.jpg',
 			},
 			{
@@ -1976,7 +1976,7 @@
 					'with mushroom caviar',
 				],
 				weight: 390,
-				cost: 11.90,
+				cost: 12.60,
 				img: '6430/623597854/20221203_125821.jpg',
 			},
 			{
@@ -1985,7 +1985,7 @@
 					'with sour cream',
 				],
 				weight: 280,
-				cost: 8.00,
+				cost: 8.40,
 				img: '6070/623597494/20221203_125507.jpg',
 			},
 		],
