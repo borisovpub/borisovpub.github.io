@@ -2331,8 +2331,8 @@
 
 			{
 				name: [
-					'Чёрный, Зелёный, Травяной, Молочный улун, Персиковый улун, Земляничный улун, Жасминовый улун, Красный апельсин, Чёрная смородина, Мохито, Крем-брюле, Весёлый Фрукт',
-					'Black, Green, Herbal, Milk oolong, Peach oolong, Strawberry oolong, Jasmine oolong, Red orange, Black currant, Strawberries with cream, Mojito, Vanilla bergamot, Creme brulee, CheerfulCheerful FruitFruit',
+					'Чёрный, Зелёный, Травяной, Молочный улун, Персиковый улун, Земляничный улун, Жасминовый улун, Красный апельсин, Чёрная смородина, Крем-брюле, Весёлый Фрукт',
+					'Black, Green, Herbal, Milk oolong, Peach oolong, Strawberry oolong, Jasmine oolong, Red orange, Black currant, Strawberries with cream, Vanilla bergamot, Creme brulee, CheerfulCheerful FruitFruit',
 				],
 				cost: 4.60,
 			},
@@ -2411,6 +2411,24 @@
 						],
 						weight: 400,
 						cost: 6.50,
+					},
+
+					{
+						name: [
+							'Мандариновый мохито',
+							'Tangerine mojito',
+						],
+						weight: 400,
+						cost: 6.5,
+					},
+
+					{
+						name: [
+							'Малина-мята',
+							'Raspberry-mint',
+						],
+						weight: 400,
+						cost: 6.5,
 					},
 
 					// {
@@ -2510,56 +2528,56 @@
 
 			},
 
-			{
-
-				name: [
-					'Горячие',
-					'Hot',
-				],
-
-				bold: true,
-
-				collection: [
-
-					{
-						name: [
-							'Клюква с апельсином',
-							'Cranberry with orange',
-						],
-						weight: 250,
-						cost: 6.80,
-					},
-
-					// {
-					// 	name: [
-					// 		'Облепиховый чай',
-					// 		'Sea buckthorn tea',
-					// 	],
-					// 	weight: 300,
-					// 	cost: 7.10,
-					// },
-
-					{
-						name: [
-							'Мандариновый чай',
-							'Mandarin tea',
-						],
-						weight: 300,
-						cost: 6.80,
-					},
-
-					{
-						name: [
-							'Зелёный чай с киви',
-							'Green tea with kiwi',
-						],
-						weight: 300,
-						cost: 6.80,
-					},
-
-				],
-
-			},
+			// {
+			//
+			// 	name: [
+			// 		'Горячие',
+			// 		'Hot',
+			// 	],
+			//
+			// 	bold: true,
+			//
+			// 	collection: [
+			//
+			// 		{
+			// 			name: [
+			// 				'Клюква с апельсином',
+			// 				'Cranberry with orange',
+			// 			],
+			// 			weight: 250,
+			// 			cost: 6.80,
+			// 		},
+			//
+			// 		// {
+			// 		// 	name: [
+			// 		// 		'Облепиховый чай',
+			// 		// 		'Sea buckthorn tea',
+			// 		// 	],
+			// 		// 	weight: 300,
+			// 		// 	cost: 7.10,
+			// 		// },
+			//
+			// 		{
+			// 			name: [
+			// 				'Мандариновый чай',
+			// 				'Mandarin tea',
+			// 			],
+			// 			weight: 300,
+			// 			cost: 6.80,
+			// 		},
+			//
+			// 		{
+			// 			name: [
+			// 				'Зелёный чай с киви',
+			// 				'Green tea with kiwi',
+			// 			],
+			// 			weight: 300,
+			// 			cost: 6.80,
+			// 		},
+			//
+			// 	],
+			//
+			// },
 
 			{
 
@@ -3748,10 +3766,17 @@
 						],
 						cost: 8.90,
 					},
+					// {
+					// 	name: [
+					// 		'Чёрная смородина',
+					// 		'Kurant',
+					// 	],
+					// 	cost: 8.90,
+					// },
 					{
 						name: [
-							'Чёрная смородина',
-							'Kurant',
+							'Лесные ягоды',
+							'Wild Berri',
 						],
 						cost: 8.90,
 					},
@@ -3798,6 +3823,11 @@
 			// 	name: 'Milagro',
 			// 	cost: 9.10,
 			// },
+
+			{
+				name: 'Jose Cuervo',
+				cost: 10,
+			},
 
 		],
 
@@ -4102,10 +4132,10 @@
 			{
 				name: 'Angostura',
 				collection: [
-					{
-						name: 'Tamboo Spiced',
-						cost: 12.00,
-					},
+					// {
+					// 	name: 'Tamboo Spiced',
+					// 	cost: 12.00,
+					// },
 					{
 						name: [
 							'5 лет',
@@ -4182,19 +4212,19 @@
 			// 	name: 'Abbot Ale',
 			// 	slug: 'greene-king-abbot-ale',
 			// },
-			{
-				name: 'Brûler',
-				collection: [
-					{
-						name: 'Blonde',
-						slug: 'belgian-brew-factory-bruler-blonde',
-					},
-					// {
-					// 	name: 'Brune',
-					// 	slug: 'belgian-brew-factory-bruler-brune',
-					// },
-				],
-			},
+			// {
+			// 	name: 'Brûler',
+			// 	collection: [
+			// 		{
+			// 			name: 'Blonde',
+			// 			slug: 'belgian-brew-factory-bruler-blonde',
+			// 		},
+			// 		// {
+			// 		// 	name: 'Brune',
+			// 		// 	slug: 'belgian-brew-factory-bruler-brune',
+			// 		// },
+			// 	],
+			// },
 			{
 				name: 'Petrus',
 				collection: [
@@ -4204,19 +4234,23 @@
 					},
 				],
 			},
-			// {
-			// 	name: 'Budweiser',
-			// 	collection: [
-			// 		{
-			// 			name: 'B:Original',
-			// 			slug: 'budweiser-budvar-original',
-			// 		},
-			// 		// {
-			// 		// 	name: 'B:Dark',
-			// 		// 	slug: 'budweiser-budvar-dark',
-			// 		// },
-			// 	],
-			// },
+			{
+				name: 'Budweiser',
+				collection: [
+					{
+						name: 'B:Original',
+						slug: 'budweiser-budvar-original',
+					},
+					// {
+					// 	name: 'B:Dark',
+					// 	slug: 'budweiser-budvar-dark',
+					// },
+				],
+			},
+			{
+				name: 'Pabst Blue Ribbon',
+				slug: 'pabst-brewing-company-pabst-blue-ribbon',
+			},
 			// {
 			// 	name: 'Braufactum Pale Ale',
 			//	slug: 'radeberger-gruppe-braufactum-german-pale-ale',
@@ -4238,6 +4272,10 @@
 					{
 						name: 'Bowlers IPA',
 						slug: 'gletcher-brewery-ipa-2',
+					},
+					{
+						name: 'Rouge de Fleur',
+						slug: 'gletcher-rouge-de-fleur',
 					},
 				]
 			},
@@ -4550,14 +4588,14 @@
 			{
 				name: 'Schlenkerla',
 				collection: [
-					{
-						name: 'Helles Lagerbier',
-						slug: 'helles-schlenkerla-lager',
-					},
-					{
-						name: 'Rauchbier Märzen',
-						slug: 'aecht-schlenkerla-rauchbier-marzen',
-					},
+					// {
+					// 	name: 'Helles Lagerbier',
+					// 	slug: 'helles-schlenkerla-lager',
+					// },
+					// {
+					// 	name: 'Rauchbier Märzen',
+					// 	slug: 'aecht-schlenkerla-rauchbier-marzen',
+					// },
 					{
 						name: 'Erle Schwarzbier',
 						slug: 'schlenkerla-heller-brau-trum-aecht-schlenkerla-erle-schwarzbier',
@@ -4639,22 +4677,22 @@
 			// 	name: 'Hoegaarden',
 			// 	slug: 'hoegaarden-wit',
 			// },
-			{
-				name: 'Petrus',
-				collection: [
-					{
-						name: 'Red',
-						slug: 'brouwerij-de-brabandere-petrus-red',
-					},
-					// {
-					// 	name: 'Bordelux',
-					// 	slug: 'brouwerij-de-brabandere-petrus-bordeaux',
-					// },
-					// {
-					// 	name: 'Rood Bruin',
-					// },
-				],
-			},
+			// {
+			// 	name: 'Petrus',
+			// 	collection: [
+			// 		{
+			// 			name: 'Red',
+			// 			slug: 'brouwerij-de-brabandere-petrus-red',
+			// 		},
+			// 		// {
+			// 		// 	name: 'Bordelux',
+			// 		// 	slug: 'brouwerij-de-brabandere-petrus-bordeaux',
+			// 		// },
+			// 		// {
+			// 		// 	name: 'Rood Bruin',
+			// 		// },
+			// 	],
+			// },
 			// {
 			// 	name: 'XII Flemish Red Ale',
 			// 	slug: 'sosab-sour-ale-brewery-xii-flemish-red-ale',
