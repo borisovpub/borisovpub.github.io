@@ -135,44 +135,43 @@
 			background: #773;
 		}
 
-		#mode {
+		.mode {
 			position: absolute;
 			left: 50%;
 			top: 50%;
 			width: 250px;
-			height: 40px;
 			transform: translate( -50%, calc( -50% + 120px ) );
-			opacity: 0.6;
 			text-align: center;
 			font-size: 16px;
+
+			display: grid;
+			grid-template-columns: 50% 50%;
+
+			line-height: 26px;
+
 		}
 
-		#mode > * {
-			text-transform: none;
-			line-height: 22px;
-			display: none;
+		.mode .open:before {
+			content: 'Работает сегодня до ';
 		}
 
-		#mode > :before {
-			content: "";
+		.mode .close:before {
+			content: 'Откроется сегодня в ';
+		}
+
+		.mode .open:after,
+		.mode .close:after {
+			content: '';
 			display: inline-block;
-			width: 12px;
-			height: 12px;
-			background: #0f0;
-			border-radius: 6px;
-			margin-right: 6px;
+			width: 10px;
+			height: 10px;
+			background: rgba( 0, 255, 0, 0.6 );
+			border-radius: 5px;
+			margin-left: 6px;
 			box-shadow: 0 0 6px #fff;
 		}
 
-		#mode.close #close {
-			display: inline-block;
-		}
-
-		#mode.open #open {
-			display: inline-block;
-		}
-
-		#close:before {
+		.mode .close:after {
 			background: #f00;
 		}
 
@@ -477,11 +476,38 @@
 
 			],
 
-			"openingHoursSpecification": {
-				"@type": "OpeningHoursSpecification",
-				"opens": "12:00",
-				"closes": "23:00"
-			},
+			"openingHoursSpecification": [
+
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": [
+						"Monday",
+						"Tuesday",
+						"Wednesday",
+						"Thursday"
+					],
+					"opens": "12:00",
+					"closes": "20:00"
+				},
+
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": "Friday",
+					"opens": "12:00",
+					"closes": "02:00"
+				},
+
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": [
+						"Sunday",
+						"Saturday"
+					],
+					"opens": "14:00",
+					"closes": "02:00"
+				}
+
+			],
 
 			"priceRange": "$$",
 
@@ -508,10 +534,11 @@
 	<div class="h1" id="title">Ирландский Паб <i>в Борисове</i></div>
 	<img class="logo" src="/@/logo.svg" width="100" height="100" alt="&#127808;" />
 
-	<div id="mode">
-		<div id="close">Откроется сегодня в <time>12:00</time></div>
-		<div id="open">Работает сегодня до <time>23:00</time></div>
-	</div>
+	<ul class="mode">
+		<li>
+			<time datetime="Mo-Th 12:00-00:00,Fr 12:00-02:00,Sa-Su 14:00-02:00">работает ежедневно</time>
+		</li>
+	</ul>
 
 	<nav>
 		<ul class="inline">
@@ -626,7 +653,13 @@
 <footer>
 	<iframe loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDtPwB4fVdWFMnXP99EEPr9zp2gX3DSqZM&q=place_id:ChIJX9SAw3P42kYRrNSSxo9lIqk&language=ru_RU" title="Google Maps" width="100%" height="450" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
 	<section>
-		<div>Мы работаем ежедневно<br /><time datetime="Mo-Su 12:00-23:00">с 12:00 до 23:00</time><br /><a href="//delivery.irish-pub.by">Доставка</a><br /><time datetime="Mo-Su 11:30-22:00">с 11:30 до 22:00</time></div>
+		<div>
+			Мы работаем ежедневно<br />
+			Пн-Чт <time datetime="Mo-Th 12:00-23:00">с 12:00 до 00:00</time><br />
+			Пт <time datetime="Fr 12:00-23:00">с 12:00 до 02:00</time><br />
+			Сб-Вс <time datetime="Sa-Su 14:00-02:00">с 14:00 до 02:00</time><br />
+<!--			<a href="//delivery.irish-pub.by">Доставка</a><br /><time datetime="Mo-Su 11:30-22:00">с 11:30 до 22:00</time>-->
+		</div>
 		<div>
 			<a class="i" href="tel:+375447661089">+375 (44) 766-10-89</a><br />
 			<a class="i" href="tel:+375177755755">+375 (177) 755-755</a><br />
@@ -643,22 +676,95 @@
 
 <script>( ( /** Window */ window ) => {
 
-	var mode = window.document.querySelector( '#mode' );
+	window.Array.from( window.document.querySelectorAll( '.mode li time' ) ).forEach( ( time ) => {
 
-	( function update() {
+		let days = 'Mo,Tu,We,Th,Fr,Sa,Su'.split( ',' );
 
-		var d = new Date();
-		d = d.getUTCHours() * 60 + d.getUTCMinutes();
+		let mode = [];
 
-		if ( ( 12 - 3 ) * 60 <= d && d < ( 23 - 3 ) * 60 ) {
-			mode.setAttribute( 'class', 'open' );
-		} else {
-			mode.setAttribute( 'class', 'close' );
-		}
+		let pad = ( n ) => ( n < 10 ? '0' : '' ) + n;
 
-		window.setTimeout( update, 60*1e3 );
+		time.getAttribute( 'datetime' ).split( ',' ).forEach( ( datetime ) => {
 
-	} )();
+			let [ d, t ] = datetime.split( ' ' );
+			let s, e;
+
+			if ( d.includes( '-' ) ) {
+
+				d = d.split( '-' );
+				s = days.indexOf( d[ 0 ] );
+				e = days.indexOf( d[ 1 ] );
+
+			} else {
+
+				s = e = days.indexOf( d );
+
+			}
+
+			t = t.split( '-' ).map( ( t ) => {
+				let [ h, m ] = t.split( ':' );
+				return window.parseInt( h ) + window.parseInt( m ) / 60;
+			} );
+
+			for ( ; s<=e; ++s ) {
+				mode[ s ] = t;
+			}
+
+		} );
+
+		time.removeAttribute( 'datetime' );
+
+		days.unshift( days.pop() );
+
+		( function update() {
+
+			let d = new window.Date();
+
+			let i = d.getUTCDay();
+			let j = ( i + 6 ) % 7;
+
+			d = d.getUTCHours() + d.getMinutes() / 60 + 3;
+
+			if ( d < mode[ i ][ 0 ] ) {
+
+				if ( d < mode[ j ][ 1 ] ) {
+
+					j = mode[ j ][ 1 ];
+					i = 1;
+
+				} else {
+
+					j = mode[ i ][ 0 ];
+					i = 0;
+
+				}
+
+			} else {
+
+				if ( mode[ i ][ 0 ] > mode[ i ][ 1 ] || d < mode[ i ][ 1 ] ) {
+
+					j = mode[ i ][ 1 ];
+					i = 1;
+
+				} else {
+
+					j = mode[ j ][ 0 ];
+					i = 0;
+
+				}
+
+			}
+
+			d = new window.Date( j * 60 * 60 * 1e3 );
+
+			time.setAttribute( 'class', i ? 'open' : 'close' );
+			time.textContent = pad( d.getUTCHours() ) + ':' + pad( d.getUTCMinutes() );
+
+			window.setTimeout( update, 60 * 1e3 );
+
+		} )();
+
+	} );
 
 } )( this )</script>
 

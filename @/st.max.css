@@ -82,7 +82,7 @@ a.i[href^="mailto:"]:before {
 }
 
 .inline {
-	display: flex;
+	display: inline-flex;
 }
 
 .inline li {
@@ -433,7 +433,7 @@ footer {
 footer > section {
 	max-width: 1000px;
 	display: inline-grid;
-	grid-template-columns: minmax( 235px, 25% ) minmax( 220px, 20% ) auto;
+	grid-template-columns: minmax( 255px, 25% ) minmax( 220px, 20% ) auto;
 }
 
 
@@ -459,7 +459,7 @@ footer a:hover {
 @media ( max-width: 920px ) {
 
 	footer > section {
-		grid-template-columns: 50% 50%;
+		grid-template-columns: minmax( 255px, 50% ) 50%;
 	}
 
 	#registry,
