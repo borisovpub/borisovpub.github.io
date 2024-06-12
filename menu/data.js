@@ -1004,7 +1004,7 @@
 							'с ростбифом',
 							'with roast beef',
 						],
-						weight: 200,
+						weight: 180,
 						cost: 15,
 						img: '6535/586004871/20220819_160827.jpg',
 						alias: 'roast-beef-bruschettas',
@@ -1014,7 +1014,7 @@
 							'с сёмгой',
 							'with salmon',
 						],
-						weight: 200,
+						weight: 180,
 						cost: 15,
 						img: '7316/586005652/20220819_161038.jpg',
 						alias: 'salmon-bruschettas',
@@ -1034,7 +1034,7 @@
 							'с курицей',
 							'chicken',
 						],
-						weight: 300,
+						weight: 375,
 						cost: 11.30,
 						// img: '7475/622943539/20221128_145152.jpg',
 						// alias: 'chicken-club-sandwich',
@@ -1046,7 +1046,7 @@
 							'с ростбифом',
 							'roast beef',
 						],
-						weight: 250,
+						weight: 360,
 						cost: 11.30,
 						// img: '6113/471029729/IMG_3722.jpg',
 						// alias: 'roast-beef-club-sandwich',
@@ -1057,7 +1057,7 @@
 							'с сёмгой',
 							'salmon',
 						],
-						weight: 210,
+						weight: 230,
 						cost: 11.90,
 						// img: '5996/471029612/IMG_3859.jpg',
 						// alias: 'salmond-club-sandwich',
@@ -1071,7 +1071,7 @@
 					'Бургер с угрём',
 					'Burger with eel',
 				],
-				weight: 330,
+				weight: 285,
 				cost: 15.50,
 				img: '973/707879885/20230520_123542.jpg',
 				alias: 'burger-with-eel',
@@ -1097,7 +1097,7 @@
 					'Стейк-бургер с говядиной',
 					'Steak burger with beef',
 				],
-				weight: 290,
+				weight: 385,
 				cost: 15.50,
 				img: '7643/541007323/20220429_114605.jpg',
 				alias: 'beef-steak-burger',
@@ -1109,7 +1109,7 @@
 					'Бургер "Мясника"',
 					'Burger "Butcher"',
 				],
-				weight: 330,
+				weight: 335,
 				cost: 14.00,
 				tp: 2,
 			},
@@ -1191,7 +1191,7 @@
 					'Классический Чизбургер',
 					'Classic Cheeseburger',
 				],
-				weight: 300,
+				weight: 375,
 				cost: 15.50,
 				img: '1495/650364375/20230210_121917.jpg',
 				alias: 'classic-cheeseburger',
@@ -1211,21 +1211,21 @@
 							'с курицей',
 							'with chicken',
 						],
-						weight: 300,
+						weight: 375,
 						cost: 11.30,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
-						weight: 300,
+						weight: 375,
 						cost: 14.30,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
-						weight: 300,
+						weight: 375,
 						cost: 12.80,
 					},
 				],
@@ -1245,21 +1245,21 @@
 							'с курицей',
 							'with chicken',
 						],
-						weight: 350,
+						weight: 435,
 						cost: 12.30,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
-						weight: 350,
+						weight: 435,
 						cost: 15.30,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
-						weight: 350,
+						weight: 435,
 						cost: 13.80,
 					},
 				],
@@ -1279,21 +1279,21 @@
 							'с курицей',
 							'with chicken',
 						],
-						weight: 350,
+						weight: 385,
 						cost: 12.30,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
-						weight: 350,
+						weight: 385,
 						cost: 15.30,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
-						weight: 350,
+						weight: 385,
 						cost: 13.80,
 					},
 				],
@@ -1313,21 +1313,21 @@
 							'с курицей',
 							'with chicken',
 						],
-						weight: 290,
+						weight: 405,
 						cost: 13.10,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
-						weight: 290,
+						weight: 405,
 						cost: 16.10,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
-						weight: 290,
+						weight: 405,
 						cost: 14.60,
 					},
 				],
@@ -1379,21 +1379,21 @@
 							'с курицей',
 							'with chicken',
 						],
-						weight: 290,
+						weight: 350,
 						cost: 13.10,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
-						weight: 290,
+						weight: 350,
 						cost: 16.10,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
-						weight: 290,
+						weight: 350,
 						cost: 14.60,
 					},
 				],
@@ -3354,38 +3354,38 @@
 
 	},
 
-	// NonAlcoholicWine: {
-	//
-	// 	name: [
-	// 		'Безалкогольное вино',
-	// 		'Non-alcoholic wine',
-	// 	],
-	//
-	// 	capacity: 750,
-	//
-	// 	collection: [
-	//
-	// 		{
-	// 			name: 'Abbazia',
-	// 			weight: [
-	// 				'красное',
-	// 				'red',
-	// 			],
-	// 			cost: 29,
-	// 		},
-	//
-	// 		{
-	// 			name: 'Abbazia',
-	// 			weight: [
-	// 				'белое',
-	// 				'white',
-	// 			],
-	// 			cost: 29,
-	// 		},
-	//
-	// 	],
-	//
-	// },
+	NonAlcoholicWine: {
+
+		name: [
+			'Безалкогольное вино',
+			'Non-alcoholic wine',
+		],
+
+		capacity: 750,
+
+		collection: [
+
+			{
+				name: 'Abbazia',
+				weight: [
+					'красное',
+					'red',
+				],
+				cost: 31,
+			},
+
+			{
+				name: 'Abbazia',
+				weight: [
+					'белое',
+					'white',
+				],
+				cost: 31,
+			},
+
+		],
+
+	},
 
 	// PortWine: {
 	//
@@ -3699,6 +3699,10 @@
 					{
 						name: 'Superblend',
 						cost: 26,
+					},
+					{
+						name: 'Peachy',
+						cost: 29,
 					},
 				],
 			},
@@ -4132,10 +4136,10 @@
 			{
 				name: 'Angostura',
 				collection: [
-					// {
-					// 	name: 'Tamboo Spiced',
-					// 	cost: 12.00,
-					// },
+					{
+						name: 'Tamboo Spiced',
+						cost: 12.00,
+					},
 					{
 						name: [
 							'5 лет',
@@ -4247,10 +4251,10 @@
 					// },
 				],
 			},
-			{
-				name: 'Pabst Blue Ribbon',
-				slug: 'pabst-brewing-company-pabst-blue-ribbon',
-			},
+			// {
+			// 	name: 'Pabst Blue Ribbon',
+			// 	slug: 'pabst-brewing-company-pabst-blue-ribbon',
+			// },
 			// {
 			// 	name: 'Braufactum Pale Ale',
 			//	slug: 'radeberger-gruppe-braufactum-german-pale-ale',
@@ -4273,10 +4277,10 @@
 						name: 'Bowlers IPA',
 						slug: 'gletcher-brewery-ipa-2',
 					},
-					{
-						name: 'Rouge de Fleur',
-						slug: 'gletcher-rouge-de-fleur',
-					},
+					// {
+					// 	name: 'Rouge de Fleur',
+					// 	slug: 'gletcher-rouge-de-fleur',
+					// },
 				]
 			},
 			// {
