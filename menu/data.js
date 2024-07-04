@@ -2247,7 +2247,7 @@
 			{
 				name: 'Hell',
 				weight: 250,
-				cost: 7.50,
+				cost: 4.50,
 			},
 
 			{
