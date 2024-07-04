@@ -673,27 +673,27 @@
 				tp: 1,
 			},
 
-			// {
-			// 	name: [
-			// 		'Холодник',
-			// 		'Cold borscht',
-			// 	],
-			// 	weight: 250,
-			// 	cost: 4.40,
-			// 	tp: 1,
-			// },
-
 			{
 				name: [
-					'Крем-суп из шампиньонов',
-					'Champignon cream soup',
+					'Холодник',
+					'Cold borscht',
 				],
 				weight: 250,
-				cost: 5.50,
-				img: '4019/306466739/IMG_7621.jpg',
-				alias: 'mushroom-soup',
+				cost: 4.40,
 				tp: 1,
 			},
+
+			// {
+			// 	name: [
+			// 		'Крем-суп из шампиньонов',
+			// 		'Champignon cream soup',
+			// 	],
+			// 	weight: 250,
+			// 	cost: 5.50,
+			// 	img: '4019/306466739/IMG_7621.jpg',
+			// 	alias: 'mushroom-soup',
+			// 	tp: 1,
+			// },
 
 			{
 				name: [
@@ -2244,11 +2244,11 @@
 				cost: 3.40,
 			},
 
-			// {
-			// 	name: 'Hell',
-			// 	weight: 250,
-			// 	cost: 5.50,
-			// },
+			{
+				name: 'Hell',
+				weight: 250,
+				cost: 7.50,
+			},
 
 			{
 				name: 'Burn',
@@ -4479,10 +4479,10 @@
 						name: 'ESB',
 						slug: 'fullers-esb',
 					},
-					{
-						name: 'Honey Dew',
-						slug: 'fullers-honey-dew',
-					},
+					// {
+					// 	name: 'Honey Dew',
+					// 	slug: 'fullers-honey-dew',
+					// },
 					{
 						name: 'India Pale Ale',
 						slug: 'fullers-black-cab-stout',
@@ -4656,10 +4656,10 @@
 			// 		},
 			// 	],
 			// },
-			{
-				name: 'Blanche de Namur',
-				slug: 'brasserie-du-bocq-blanche-de-namur',
-			},
+			// {
+			// 	name: 'Blanche de Namur',
+			// 	slug: 'brasserie-du-bocq-blanche-de-namur',
+			// },
 			// {
 			// 	name: 'Leffe',
 			// 	collection: [
