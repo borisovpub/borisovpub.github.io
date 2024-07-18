@@ -16,7 +16,7 @@
 					'Croutons with garlic',
 				],
 				weight: 210,
-				cost: 6.70,
+				cost: 7,
 				img: '5260/306467980/IMG_7940.jpg',
 				alias: 'croutons-with-garlic',
 			},
@@ -27,7 +27,7 @@
 					'Chicken fillet with french fries',
 				],
 				weight: 330,
-				cost: 12.50,
+				cost: 13.40,
 				img: '2723/476408483/IMG_4329.JPG',
 				alias: 'chicken-fillet-with-french-fries'
 			},
@@ -37,8 +37,8 @@
 					'Сырные шарики',
 					'Cheese balls',
 				],
-				weight: 250,
-				cost: 13.60,
+				weight: 230,
+				cost: 14,
 				img: '6778/623245946/20221202_125228.jpg',
 				alias: 'cheese-balls',
 			},
@@ -59,8 +59,8 @@
 					'Шампиньоны-фри',
 					'Roasted mushrooms',
 				],
-				weight: 250,
-				cost: 10.40,
+				weight: 300,
+				cost: 11,
 				img: '5654/306468374/IMG_7979.jpg',
 				alias: 'roasted-mushrooms',
 			},
@@ -71,7 +71,7 @@
 					'Fried prawns in batter',
 				],
 				weight: 190,
-				cost: 25.00,
+				cost: 22.00,
 				img: '7473/623246641/20221202_125246.jpg',
 				alias: 'fried-prawns-in-batter',
 			},
@@ -82,7 +82,7 @@
 					'Roasted almonds',
 				],
 				weight: 70,
-				cost: 8.50,
+				cost: 8.80,
 				img: '2026/623249386/20221202_125424.jpg',
 				alias: 'roasted-almonds',
 			},
@@ -92,8 +92,8 @@
 					'Луковые кольца',
 					'Onion rings',
 				],
-				weight: 225,
-				cost: 13.50,
+				weight: 220,
+				cost: 14,
 				img: '5316/306468036/IMG_7948.jpg',
 				alias: 'onion-rings',
 			},
@@ -119,8 +119,8 @@
 							'классические',
 							'classic',
 						],
-						weight: 325,
-						cost: 13.50,
+						weight: 275,
+						cost: 14,
 						img: '4819/623252179/20221202_125543.jpg',
 					},
 					{
@@ -128,8 +128,8 @@
 							'в острой глазури',
 							'in spicy glaze',
 						],
-						weight: 325,
-						cost: 13.50,
+						weight: 275,
+						cost: 14,
 						img: '4580/623251940/20221202_125609.jpg',
 					},
 				],
@@ -140,7 +140,7 @@
 					'Мидии и вонголе в соусе "Том ям"',
 					'Mussels and vongole in tom yum sauce',
 				],
-				weight: 420,
+				weight: 375,
 				cost: 25.00,
 				alias: 'mussels-and-vongole-in-tom-yum-sauce',
 			},
@@ -173,7 +173,7 @@
 					'Homemade salo with Borodino bread',
 				],
 				weight: 260,
-				cost: 13.90,
+				cost: 14,
 				img: '7911/476421863/IMG_4404.jpg',
 				alias: 'homemade-salo-with-borodino-bread',
 			},
@@ -184,7 +184,7 @@
 					'Meat plate',
 				],
 				weight: 280,
-				cost: 19.50,
+				cost: 20,
 				img: '1857/476407617/IMG_4373.jpg',
 				alias: 'meet-plate',
 			},
@@ -206,7 +206,7 @@
 					'Fish plate',
 				],
 				weight: 370,
-				cost: 24.00,
+				cost: 24.50,
 				img: '2230/623593654/20221203_124815.jpg',
 				alias: 'fish-plate',
 			},
@@ -227,8 +227,8 @@
 					'Сет солений',
 					'Set of pickles',
 				],
-				weight: 650,
-				cost: 19.6,
+				weight: 630,
+				cost: 19,
 				img: '1407/623256959/20221202_131220.jpg',
 				alias: 'set-of-pickles',
 			},
@@ -247,8 +247,8 @@
 					'Карпаччо из говядины',
 					'Beef carpaccio',
 				],
-				weight: 170,
-				cost: 19.50,
+				weight: 210,
+				cost: 21,
 				img: '2647/623594071/20221203_124834.jpg',
 				alias: 'beef-carpaccio',
 			},
@@ -310,8 +310,8 @@
 					'Тартар из говядины с мусом из пармезана',
 					'Beef tartare with parmesan mousse	',
 				],
-				weight: 195,
-				cost: 21.00,
+				weight: 200,
+				cost: 23.00,
 			},
 
 			// {
@@ -391,7 +391,7 @@
 					'Seafood with fresh vegetables',
 				],
 				weight: 265,
-				cost: 25.00,
+				cost: 26.00,
 				img: '5709/306468429/IMG_8005.jpg',
 				alias: 'seafood-with-fresh-vegetables',
 			},
@@ -415,7 +415,7 @@
 					'"St. Patrick" Set',
 				],
 				weight: 1000,
-				cost: 47.00,
+				cost: 48.00,
 			},
 
 			// {
@@ -444,7 +444,7 @@
 					'Beer Set',
 				],
 				weight: 790,
-				cost: 32.8,
+				cost: 34.4,
 				img: '7800/423960184/IMG_7791.jpg',
 				alias: 'beer-set',
 			},
@@ -464,7 +464,7 @@
 					'Chicken Set',
 				],
 				weight: 1000,
-				cost: 33.00,
+				cost: 35.00,
 				img: '4739/463516291/IMG_2187.jpg',
 				alias: 'chicken-set',
 			},
@@ -475,7 +475,7 @@
 					'Meat Set',
 				],
 				weight: 900,
-				cost: 48.00,
+				cost: 50.00,
 				img: '7571/463699347/IMG_2199.jpg',
 				alias: 'meat-set',
 			},
@@ -485,7 +485,7 @@
 					'Морской сет',
 					'Sea Set',
 				],
-				weight: 800,
+				weight: 770,
 				cost: 60.00,
 				img: '5724/463697500/IMG_2518.jpg',
 				alias: 'sea-set',
@@ -722,7 +722,7 @@
 					'Greek salad',
 				],
 				weight: 250,
-				cost: 12.30,
+				cost: 13,
 				img: '1162/551576714/20220527_120617.jpg',
 				alias: 'greek-salad',
 			},
@@ -739,8 +739,8 @@
 							'с курицей',
 							'with chicken',
 						],
-						weight: 250,
-						cost: 13.60,
+						weight: 300,
+						cost: 14,
 						img: '7694/472186382/IMG_4141.jpg',
 					},
 					{
@@ -748,7 +748,7 @@
 							'с сёмгой',
 							'with salmon',
 						],
-						weight: 250,
+						weight: 300,
 						cost: 17.00,
 						img: '3960/623595384/20221203_130558.jpg',
 					},
@@ -760,8 +760,8 @@
 					'Салат с уткой и запечёнными овощами',
 					'Salad with duck and baked vegetables',
 				],
-				weight: 220,
-				cost: 15.80,
+				weight: 340,
+				cost: 17,
 				img: '3421/472182109/IMG_4050.jpg',
 				alias: 'salad-with-duck-and-baked-vegetables',
 			},
@@ -794,21 +794,21 @@
 					'Salad with prawns and pear',
 				],
 				weight: 310,
-				cost: 17.20,
+				cost: 20,
 				img: '8129/623271873/photo_2022-12-02_15-19-50.jpg',
 				alias: 'salad-with-prawns-and-pear',
 			},
 
-			{
-				name: [
-					'Оливье с уткой',
-					'Olivier with duck',
-				],
-				weight: 200,
-				cost: 13.00,
-				img: '4560/623595984/20221203_130814.jpg',
-				alias: 'olivier-with-duck',
-			},
+			// {
+			// 	name: [
+			// 		'Оливье с уткой',
+			// 		'Olivier with duck',
+			// 	],
+			// 	weight: 200,
+			// 	cost: 13.00,
+			// 	img: '4560/623595984/20221203_130814.jpg',
+			// 	alias: 'olivier-with-duck',
+			// },
 
 			{
 				name: [
@@ -816,7 +816,7 @@
 					'Salad "Meat"',
 				],
 				weight: 300,
-				cost: 18.00,
+				cost: 19.50,
 				alias: 'salad-meat',
 			},
 
@@ -1035,7 +1035,7 @@
 							'chicken',
 						],
 						weight: 375,
-						cost: 11.30,
+						cost: 12,
 						// img: '7475/622943539/20221128_145152.jpg',
 						// alias: 'chicken-club-sandwich',
 						tp: 3,
@@ -1047,7 +1047,7 @@
 							'roast beef',
 						],
 						weight: 360,
-						cost: 11.30,
+						cost: 13.50,
 						// img: '6113/471029729/IMG_3722.jpg',
 						// alias: 'roast-beef-club-sandwich',
 						tp: 3,
@@ -1058,7 +1058,7 @@
 							'salmon',
 						],
 						weight: 230,
-						cost: 11.90,
+						cost: 14,
 						// img: '5996/471029612/IMG_3859.jpg',
 						// alias: 'salmond-club-sandwich',
 						tp: 3,
@@ -1072,7 +1072,7 @@
 					'Burger with eel',
 				],
 				weight: 285,
-				cost: 15.50,
+				cost: 16,
 				img: '973/707879885/20230520_123542.jpg',
 				alias: 'burger-with-eel',
 				tp: 2,
@@ -1098,7 +1098,7 @@
 					'Steak burger with beef',
 				],
 				weight: 385,
-				cost: 15.50,
+				cost: 16,
 				img: '7643/541007323/20220429_114605.jpg',
 				alias: 'beef-steak-burger',
 				tp: 2,
@@ -1110,7 +1110,7 @@
 					'Burger "Butcher"',
 				],
 				weight: 335,
-				cost: 14.00,
+				cost: 14.50,
 				tp: 2,
 			},
 
@@ -1192,7 +1192,7 @@
 					'Classic Cheeseburger',
 				],
 				weight: 375,
-				cost: 15.50,
+				cost: 16,
 				img: '1495/650364375/20230210_121917.jpg',
 				alias: 'classic-cheeseburger',
 				tp: 1,
@@ -1212,21 +1212,21 @@
 							'with chicken',
 						],
 						weight: 375,
-						cost: 11.30,
+						cost: 13,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
 						weight: 375,
-						cost: 14.30,
+						cost: 15,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
 						weight: 375,
-						cost: 12.80,
+						cost: 14,
 					},
 				],
 				tp: 1,
@@ -1246,21 +1246,21 @@
 							'with chicken',
 						],
 						weight: 435,
-						cost: 12.30,
+						cost: 13.50,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
 						weight: 435,
-						cost: 15.30,
+						cost: 15.50,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
 						weight: 435,
-						cost: 13.80,
+						cost: 14.50,
 					},
 				],
 				tp: 1,
@@ -1280,21 +1280,21 @@
 							'with chicken',
 						],
 						weight: 385,
-						cost: 12.30,
+						cost: 13.50,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
 						weight: 385,
-						cost: 15.30,
+						cost: 15.50,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
 						weight: 385,
-						cost: 13.80,
+						cost: 14.50,
 					},
 				],
 				tp: 1,
@@ -1314,21 +1314,21 @@
 							'with chicken',
 						],
 						weight: 405,
-						cost: 13.10,
+						cost: 14.00,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
 						weight: 405,
-						cost: 16.10,
+						cost: 16.00,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
 						weight: 405,
-						cost: 14.60,
+						cost: 15.00,
 					},
 				],
 				tp: 1,
@@ -1368,37 +1368,37 @@
 			// 	tp: 1,
 			// },
 
-			{
-				name: [
-					'Бургер луково-острый',
-					'Spicy onion burger',
-				],
-				collection: [
-					{
-						name: [
-							'с курицей',
-							'with chicken',
-						],
-						weight: 350,
-						cost: 13.10,
-					}, {
-						name: [
-							'с говядиной',
-							'with beef',
-						],
-						weight: 350,
-						cost: 16.10,
-					}, {
-						name: [
-							'со свининой и говядиной',
-							'with pork and beef',
-						],
-						weight: 350,
-						cost: 14.60,
-					},
-				],
-				tp: 1,
-			},
+			// {
+			// 	name: [
+			// 		'Бургер луково-острый',
+			// 		'Spicy onion burger',
+			// 	],
+			// 	collection: [
+			// 		{
+			// 			name: [
+			// 				'с курицей',
+			// 				'with chicken',
+			// 			],
+			// 			weight: 350,
+			// 			cost: 13.10,
+			// 		}, {
+			// 			name: [
+			// 				'с говядиной',
+			// 				'with beef',
+			// 			],
+			// 			weight: 350,
+			// 			cost: 16.10,
+			// 		}, {
+			// 			name: [
+			// 				'со свининой и говядиной',
+			// 				'with pork and beef',
+			// 			],
+			// 			weight: 350,
+			// 			cost: 14.60,
+			// 		},
+			// 	],
+			// 	tp: 1,
+			// },
 
 		],
 
@@ -1419,7 +1419,7 @@
 					'Eel with zucchini and cucumber tartare',
 				],
 				weight: 345,
-				cost: 28,
+				cost: 31,
 			},
 
 			// {
@@ -1467,15 +1467,15 @@
 			// 	],
 			// },
 
-			// {
-			// 	name: [
-			// 		'Утка с белыми грибами и печёным картофелем',
-			// 		'Duck with porcini mushrooms and potatoes',
-			// 	],
-			// 	weight: 380,
-			// 	cost: 24.90,
-			// 	alias: 'duck-with-porcini-mushrooms-and-baked-potatoes',
-			// },
+			{
+				name: [
+					'Утка с белыми грибами и печёным картофелем',
+					'Duck with porcini mushrooms and potatoes',
+				],
+				weight: 380,
+				cost: 25,
+				alias: 'duck-with-porcini-mushrooms-and-baked-potatoes',
+			},
 
 			// {
 			// 	name: [
@@ -1501,14 +1501,14 @@
 			// 	alias: 'duck-leg-with-cauliflower-cream',
 			// },
 
-			{
-				name: [
-					'Утиная ножка с картофельным пюре и васаби',
-					'Duck leg with mashed potatoes and wasabi',
-				],
-				weight: 330,
-				cost: 22.00,
-			},
+			// {
+			// 	name: [
+			// 		'Утиная ножка с картофельным пюре и васаби',
+			// 		'Duck leg with mashed potatoes and wasabi',
+			// 	],
+			// 	weight: 330,
+			// 	cost: 22.00,
+			// },
 
 			// {
 			// 	name: [
@@ -1538,7 +1538,7 @@
 					'Stewed rabbit with vegetable stew',
 				],
 				weight: 450,
-				cost: 25,
+				cost: 28,
 			},
 
 			// {
@@ -1593,7 +1593,7 @@
 					'Turkey in creamy nut sauce',
 				],
 				weight: 340,
-				cost: 21.50,
+				cost: 23,
 				alias: 'turkey-in-a-creamy-peanut-sauce',
 				tp: 1,
 			},
@@ -1612,8 +1612,8 @@
 					'Куриное филе в сливочно-грибном соусе с картофелем',
 					'Chicken fillet in creamy mushroom sauce with potatoes',
 				],
-				weight: 310,
-				cost: 16.70,
+				weight: 350,
+				cost: 17.30,
 				img: '1946/435963802/20210504_201918.jpg',
 				alias: 'chicken-fillet-in-creamy-mushroom-sauce',
 				tp: 1,
@@ -1671,46 +1671,46 @@
 			// 	cost: 10.50,
 			// },
 
-			{
-				name: [
-					'Свиные рёбра BBQ',
-					'Pork ribs BBQ',
-				],
-				weight: 100,
-				dif: 1,
-				cost: 9.30,
-				tp: 1,
-			},
-
 			// {
 			// 	name: [
-			// 		'Свиные рёбра',
-			// 		'Pork ribs',
+			// 		'Свиные рёбра BBQ',
+			// 		'Pork ribs BBQ',
 			// 	],
-			// 	img: '273/489791761/IMG_2666.jpg',
-			// 	alias: 'pork-ribs',
-			// 	collection: [
-			// 		{
-			// 			name: [
-			// 				'классические',
-			// 				'classic',
-			// 			],
-			// 			weight: 100,
-			// 			dif: 1,
-			// 			cost: 9.30,
-			// 		},
-			// 		{
-			// 			name: [
-			// 				'копчёные',
-			// 				'smoked',
-			// 			],
-			// 			weight: 100,
-			// 			dif: 1,
-			// 			cost: 9.30,
-			// 		},
-			// 	],
+			// 	weight: 100,
+			// 	dif: 1,
+			// 	cost: 9.30,
 			// 	tp: 1,
 			// },
+
+			{
+				name: [
+					'Свиные рёбра',
+					'Pork ribs',
+				],
+				img: '273/489791761/IMG_2666.jpg',
+				alias: 'pork-ribs',
+				collection: [
+					{
+						name: [
+							'классические',
+							'classic',
+						],
+						weight: 100,
+						dif: 1,
+						cost: 9.90,
+					},
+					{
+						name: [
+							'копчёные',
+							'smoked',
+						],
+						weight: 100,
+						dif: 1,
+						cost: 9.90,
+					},
+				],
+				tp: 1,
+			},
 
 			{
 				name: [
@@ -1718,7 +1718,7 @@
 					'Beef Stroganoff with porcini mushrooms',
 				],
 				weight: 390,
-				cost: 28,
+				cost: 29,
 			},
 
 			// {
@@ -1739,7 +1739,7 @@
 					'Roast beef with potatoes',
 				],
 				weight: 335,
-				cost: 16.70,
+				cost: 18,
 				tp: 1,
 			},
 
@@ -1748,8 +1748,8 @@
 					'Говяжья щека с пюре',
 					'Beef cheek with mashed potatoes',
 				],
-				weight: 250,
-				cost: 17.20,
+				weight: 240,
+				cost: 17.50,
 				img: '6026/551581578/20220527_120049.jpg',
 				alias: 'beef-cheek-with-mashed-potatoes',
 				tp: 1,
@@ -1884,7 +1884,7 @@
 				],
 				weight: 1000,
 				dif: 1,
-				cost: 33.20,
+				cost: 35,
 				img: '5465/423974233/IMG_8357.jpg',
 				alias: 'pork-shank',
 				tp: 1,
@@ -1895,8 +1895,8 @@
 					'Стейк из свинины',
 					'Pork steak',
 				],
-				weight: 220,
-				cost: 17.80,
+				weight: 240,
+				cost: 19,
 				img: '7920/489807600/IMG_2542.jpg',
 				alias: 'pork-steak',
 			},
@@ -1906,8 +1906,8 @@
 					'Стейк из говядины с мисо-маслом',
 					'Beef steak with miso butter',
 				],
-				weight: 200,
-				cost: 24.00,
+				weight: 250,
+				cost: 26.00,
 				img: '738/489808610/IMG_2478.jpg',
 				alias: 'beef-steak-with-miso-butter',
 			},
@@ -1917,7 +1917,7 @@
 					'Стейк из сёмги с кокосово-лаймовым соусом',
 					'Salmon steak with coconut-lime sauce',
 				],
-				weight: 210,
+				weight: 240,
 				cost: 28.00,
 				img: '6791/489814663/IMG_4323.JPG',
 				alias: 'salmon-steak-with-coconut-lime-sauce',
@@ -1940,16 +1940,16 @@
 					'с колбасками из индейки',
 					'with turkey sausages',
 				],
-				weight: 390,
-				cost: 16.50,
+				weight: 450,
+				cost: 17,
 			},
 			{
 				name: [
 					'с уткой и сливочно-грибным соусом',
 					'with duck and creamy mushroom sauce',
 				],
-				weight: 430,
-				cost: 22.80,
+				weight: 450,
+				cost: 23,
 				img: '1023/695239679/20230504_174915.jpg',
 			},
 			// {
@@ -1966,7 +1966,7 @@
 					'с сёмгой',
 					'with salmon',
 				],
-				weight: 350,
+				weight: 400,
 				cost: 17.30,
 				img: '6190/623597614/20221203_125604.jpg',
 			},
@@ -1975,8 +1975,8 @@
 					'с соусом из белых грибов',
 					'with mushroom caviar',
 				],
-				weight: 390,
-				cost: 12.60,
+				weight: 380,
+				cost: 13.50,
 				img: '6430/623597854/20221203_125821.jpg',
 			},
 			{
@@ -1984,8 +1984,8 @@
 					'со сметаной',
 					'with sour cream',
 				],
-				weight: 280,
-				cost: 8.40,
+				weight: 350,
+				cost: 8.50,
 				img: '6070/623597494/20221203_125507.jpg',
 			},
 		],
@@ -2058,7 +2058,7 @@
 					'Овощи свежие',
 					'Fresh vegetables',
 				],
-				weight: 160,
+				weight: 150,
 				cost: 4.90,
 			},
 
@@ -4176,6 +4176,15 @@
 				]
 			},
 			{
+				name: 'Theakston',
+				collection: [
+					{
+						name: 'XB',
+						slug: 'theakston-xb',
+					}
+				],
+			},
+			{
 				name: 'Paulaner',
 				collection: [
 					{
@@ -4345,6 +4354,18 @@
 			// 		},
 			// 	],
 			// },
+			{
+				name: '',
+				collection: [
+					{
+						name: [
+							'Пиво дня',
+							'Beer of the Day'
+						],
+						cost: 11,
+					}
+				]
+			}
 		],
 
 	},

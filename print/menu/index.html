@@ -661,8 +661,8 @@
 			var result = cloneNode( beerTemplate );
 			var li = querySelector( result, 'li' );
 
-			querySelector( li, '.name' ).textContent = getName( name || data.name );
-			if ( name ) querySelector( li, '.kind' ).textContent = getName( data.name );
+			querySelector( li, '.name' ).textContent = getName( name == null ? data.name : name );
+			if ( name != null ) querySelector( li, '.kind' ).textContent = getName( data.name );
 
 			if ( data.slug && ( data = info.find( ( d ) => d.slug === data.slug ) ) ) {
 
@@ -693,6 +693,14 @@
 
 				if ( data.ibu ) {
 					querySelector( li, '.ibu' ).textContent = data.ibu;
+				}
+
+			} else {
+
+				querySelector( li, '.cap' ).textContent = 0.5;
+
+				if ( data.cost ) {
+					appendChild( querySelector( li, 'div:last-of-type' ), createCost( data.cost ) );
 				}
 
 			}
