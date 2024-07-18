@@ -679,7 +679,7 @@
 					'Cold borscht',
 				],
 				weight: 250,
-				cost: 4.40,
+				cost: 5.50,
 				tp: 1,
 			},
 
@@ -4091,10 +4091,14 @@
 						name: 'Black',
 						cost: 9.00,
 					},
+					// {
+					// 	name: 'Spiced',
+					// 	cost: 9.50,
+					// },
 					{
-						name: 'Spiced',
-						cost: 9.50,
-					},
+						name: 'Oakheart',
+						cost: 9.5,
+					}
 				],
 			},
 
@@ -4543,10 +4547,10 @@
 			// 	name: 'Shipyard American IPA',
 			// 	slug: 'marstons-brewery-shipyard-american-ipa',
 			// },
-			{
-				name: 'Bombardier',
-				slug: 'eagle-brewery-formerly-charles-wells-bombardier-premium-british-ale-2022',
-			},
+			// {
+			// 	name: 'Bombardier',
+			// 	slug: 'eagle-brewery-formerly-charles-wells-bombardier-premium-british-ale-2022',
+			// },
 			// {
 			// 	name: 'Saltaire',
 			// 	collection: [

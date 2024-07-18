@@ -618,8 +618,8 @@
 			var result = cloneNode( alcTemplate );
 			var li = querySelector( result, 'li' );
 
-			querySelector( li, '.name' ).textContent = getName( name || data.name );
-			if ( name ) querySelector( li, '.kind' ).textContent = getName( data.name );
+			querySelector( li, '.name' ).textContent = getName( name == null ? data.name : name );
+			if ( name != null ) querySelector( li, '.kind' ).textContent = getName( data.name );
 
 			if ( data.cost ) {
 				appendChild( querySelector( li, 'div:last-of-type' ), createCost( data.cost ) );
