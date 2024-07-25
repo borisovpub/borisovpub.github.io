@@ -500,11 +500,19 @@
 				{
 					"@type": "OpeningHoursSpecification",
 					"dayOfWeek": [
-						"Sunday",
 						"Saturday"
 					],
 					"opens": "14:00",
 					"closes": "02:00"
+				},
+
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": [
+						"Sunday"
+					],
+					"opens": "14:00",
+					"closes": "00:00"
 				}
 
 			],
@@ -536,7 +544,7 @@
 
 	<ul class="mode">
 		<li>
-			<time datetime="Mo-Th 12:00-00:00,Fr 12:00-02:00,Sa-Su 14:00-02:00">работает ежедневно</time>
+			<time datetime="Mo-Th 12:00-00:00,Fr 12:00-02:00,Sa 14:00-02:00,Su 14:00-00:00">работает ежедневно</time>
 		</li>
 	</ul>
 
@@ -655,10 +663,10 @@
 	<section>
 		<div>
 			Мы работаем ежедневно<br />
-			Пн-Чт <time datetime="Mo-Th 12:00-23:00">с 12:00 до 00:00</time><br />
-			Пт <time datetime="Fr 12:00-23:00">с 12:00 до 02:00</time><br />
-			Сб-Вс <time datetime="Sa-Su 14:00-02:00">с 14:00 до 02:00</time><br />
-<!--			<a href="//delivery.irish-pub.by">Доставка</a><br /><time datetime="Mo-Su 11:30-22:00">с 11:30 до 22:00</time>-->
+			<time datetime="Mo-Th 12:00-23:00">Пн-Чт с 12:00 до 00:00</time><br />
+			<time datetime="Fr 12:00-23:00">Пт с 12:00 до 02:00</time><br />
+			<time datetime="Sa 14:00-02:00">Сб с 14:00 до 02:00</time><br />
+			<time datetime="Su 14:00-00:00">Вс с 14:00 до 00:00</time>
 		</div>
 		<div>
 			<a class="i" href="tel:+375447661089">+375 (44) 766-10-89</a><br />
