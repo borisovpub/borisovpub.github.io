@@ -4252,18 +4252,22 @@
 				],
 			},
 			{
-				name: 'Budweiser',
-				collection: [
-					{
-						name: 'B:Original',
-						slug: 'budweiser-budvar-original',
-					},
-					// {
-					// 	name: 'B:Dark',
-					// 	slug: 'budweiser-budvar-dark',
-					// },
-				],
+				name: 'Estrella',
+				slug: 'damm-estrella-damm-4-6',
 			},
+			// {
+			// 	name: 'Budweiser',
+			// 	collection: [
+			// 		{
+			// 			name: 'B:Original',
+			// 			slug: 'budweiser-budvar-original',
+			// 		},
+			// 		// {
+			// 		// 	name: 'B:Dark',
+			// 		// 	slug: 'budweiser-budvar-dark',
+			// 		// },
+			// 	],
+			// },
 			// {
 			// 	name: 'Pabst Blue Ribbon',
 			// 	slug: 'pabst-brewing-company-pabst-blue-ribbon',
@@ -4401,10 +4405,10 @@
 			// 	name: 'New Yorker',
 			// 	slug: 'new-yorker-fine-lager-beer',
 			// },
-			{
-				name: 'Estrella',
-				slug: 'damm-estrella-damm-4-6',
-			},
+			// {
+			// 	name: 'Estrella',
+			// 	slug: 'damm-estrella-damm-4-6',
+			// },
 			// {
 			//   name: 'Banana Bread',
 			// },
@@ -4529,6 +4533,10 @@
 						name: 'IPA',
 						slug: 'wychwood-brewery-hobgoblin-ipa',
 					},
+					{
+						name: 'Sout',
+						slug: 'wychwood-brewery-hobgoblin-stout',
+					},
 				],
 			},
 			// {
@@ -4604,10 +4612,10 @@
 			{
 				name: 'Budweiser',
 				collection: [
-					// {
-					// 	name: 'B:Original',
-					// 	slug: 'budweiser-budvar-original',
-					// },
+					{
+						name: 'B:Original',
+						slug: 'budweiser-budvar-original',
+					},
 					{
 						name: 'B:Dark',
 						slug: 'budweiser-budvar-dark',

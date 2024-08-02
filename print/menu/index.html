@@ -389,8 +389,8 @@
 
 <script>( ( /** Window */ window ) => Promise.all( [
 	window.fetch( '/menu/data.js?' + window.Math.random() ).then( ( response ) => response.text() ),
-	window.fetch( 'beer.json?' + window.Math.random() ).then( ( response )  => response.json() ),
-	// window.fetch( 'https://your.beer/api/v1/places/irish-pub' ).then( ( response )  => response.json() ),
+	// window.fetch( 'beer.json?' + window.Math.random() ).then( ( response )  => response.json() ),
+	window.fetch( 'https://your.beer/api/v1/places/irish-pub' ).then( ( response )  => response.json() ),
 ] ).then( ( [ menu, beers ] ) => {
 
 	menu = window.eval( menu );
