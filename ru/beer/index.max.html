@@ -111,8 +111,12 @@
 			line-height: 1.4;
 		}
 
-		.ibu:not( :empty ):before,
-		.abv:not( :empty ):before {
+		.style:empty {
+			display: none;
+		}
+
+		.style:not( :empty ):after,
+		.ibu:not( :empty ):before {
 			content: "•";
 			margin: 0 4px;
 		}
@@ -451,7 +455,7 @@
 				if ( beer.beer_style.slug ) setAttribute( beerStyle, 'href', '//your.beer/beers/' + beer.beer_style.slug );
 				if ( beer.beer_style.name ) beerStyle.textContent = beer.beer_style.name;
 			}
-			if ( beer.abv ) beerABV.textContent = toNumber( beer.abv );
+			beerABV.textContent = toNumber( beer.abv );
 			if ( beer.ibu ) beerIBU.textContent = toNumber( beer.ibu );
 
 			if ( skus ) {

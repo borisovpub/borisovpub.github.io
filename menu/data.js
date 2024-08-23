@@ -4179,15 +4179,15 @@
 					},
 				]
 			},
-			{
-				name: 'Theakston',
-				collection: [
-					{
-						name: 'XB',
-						slug: 'theakston-xb',
-					}
-				],
-			},
+			// {
+			// 	name: 'Theakston',
+			// 	collection: [
+			// 		{
+			// 			name: 'XB',
+			// 			slug: 'theakston-xb',
+			// 		}
+			// 	],
+			// },
 			{
 				name: 'Paulaner',
 				collection: [
@@ -4290,10 +4290,10 @@
 						name: 'Milk of Amnesia',
 						slug: 'gletcher-milk-of-amnesia-v-tropic-milkshake-ipa',
 					},
-					{
-						name: 'Bowlers IPA',
-						slug: 'gletcher-brewery-ipa-2',
-					},
+					// {
+					// 	name: 'Bowlers IPA',
+					// 	slug: 'gletcher-brewery-ipa-2',
+					// },
 					// {
 					// 	name: 'Rouge de Fleur',
 					// 	slug: 'gletcher-rouge-de-fleur',
@@ -4362,18 +4362,18 @@
 			// 		},
 			// 	],
 			// },
-			{
-				name: '',
-				collection: [
-					{
-						name: [
-							'Пиво дня',
-							'Beer of the Day'
-						],
-						cost: 11,
-					}
-				]
-			}
+			// {
+			// 	name: '',
+			// 	collection: [
+			// 		{
+			// 			name: [
+			// 				'Пиво дня',
+			// 				'Beer of the Day'
+			// 			],
+			// 			cost: 11,
+			// 		}
+			// 	]
+			// }
 		],
 
 	},
@@ -4492,10 +4492,10 @@
 			{
 				name: 'Fuller`s',
 				collection: [
-					{
-						name: 'London Pride',
-						slug: 'fullers-london-pride',
-					},
+					// {
+					// 	name: 'London Pride',
+					// 	slug: 'fullers-london-pride',
+					// },
 					// {
 					// 	name: 'London Porter',
 					// 	slug: 'fullers-london-porter',
@@ -4534,7 +4534,7 @@
 						slug: 'wychwood-brewery-hobgoblin-ipa',
 					},
 					{
-						name: 'Sout',
+						name: 'Stout',
 						slug: 'wychwood-brewery-hobgoblin-stout',
 					},
 				],
@@ -4543,10 +4543,10 @@
 			// 	name: 'King Goblin',
 			// 	slug: 'wychwood-brewery-king-goblin',
 			// },
-			{
-				name: 'Double Chocolate',
-				slug: 'youngs-double-chocolate-stout',
-			},
+			// {
+			// 	name: 'Double Chocolate',
+			// 	slug: 'youngs-double-chocolate-stout',
+			// },
 			// {
 			// 	name: 'Dry Neck',
 			// 	slug: 'wychwood-brewery-dryneck',
@@ -4585,6 +4585,23 @@
 			// 	],
 			// },
 			// {
+			{
+				name: 'Theakston',
+				collection: [
+					{
+						name: 'Lightfoot',
+						slug: 'theakston-lightfoot',
+					},
+					{
+						name: 'Old Peculier',
+						slug: 'theakston-old-peculier',
+					},
+					{
+						name: 'Peculier IPA',
+						slug: 'theakston-peculier-ipa',
+					},
+				],
+			},
 			// 	name: 'Belhaven',
 			// 	collection: [
 			// 		// {
@@ -4689,10 +4706,10 @@
 			// 		},
 			// 	],
 			// },
-			// {
-			// 	name: 'Blanche de Namur',
-			// 	slug: 'brasserie-du-bocq-blanche-de-namur',
-			// },
+			{
+				name: 'Blanche de Namur',
+				slug: 'brasserie-du-bocq-blanche-de-namur',
+			},
 			// {
 			// 	name: 'Leffe',
 			// 	collection: [
@@ -4714,22 +4731,26 @@
 			// 	name: 'Hoegaarden',
 			// 	slug: 'hoegaarden-wit',
 			// },
-			// {
-			// 	name: 'Petrus',
-			// 	collection: [
-			// 		{
-			// 			name: 'Red',
-			// 			slug: 'brouwerij-de-brabandere-petrus-red',
-			// 		},
-			// 		// {
-			// 		// 	name: 'Bordelux',
-			// 		// 	slug: 'brouwerij-de-brabandere-petrus-bordeaux',
-			// 		// },
-			// 		// {
-			// 		// 	name: 'Rood Bruin',
-			// 		// },
-			// 	],
-			// },
+			{
+				name: 'Petrus',
+				collection: [
+					// {
+					// 	name: 'Red',
+					// 	slug: 'brouwerij-de-brabandere-petrus-red',
+					// },
+					// {
+					// 	name: 'Bordelux',
+					// 	slug: 'brouwerij-de-brabandere-petrus-bordeaux',
+					// },
+					// {
+					// 	name: 'Rood Bruin',
+					// },
+					{
+						name: 'Blond',
+						slug: 'brouwerij-de-brabandere-petrus-blond',
+					},
+				],
+			},
 			// {
 			// 	name: 'XII Flemish Red Ale',
 			// 	slug: 'sosab-sour-ale-brewery-xii-flemish-red-ale',
@@ -4779,28 +4800,41 @@
 		],
 
 		collection: [
+
+			// {
+			// 	name: 'Clausthaler',
+			// 	collection: [
+			// 		{
+			// 			name: '',
+			// 			slug: 'radeberger-clausthaler-non-alcoholic',
+			// 		},
+			// 		{
+			// 			name: 'Dry Hopped',
+			// 			slug: 'radeberger-gruppe-clausthaler-dry-hopped',
+			// 		},
+			// 	],
+			// },
+
+			// {
+			// 	name: 'Paulaner',
+			// 	collection: [
+			// 		{
+			// 			name: 'Alkoholfrei',
+			// 			slug: 'paulaner-brauerei-paulaner-weissbier-alkoholfrei-0-0',
+			// 		},
+			// 	],
+			// },
+
 			{
-				name: 'Clausthaler',
+				name: 'Primátor',
 				collection: [
 					{
-						name: '',
-						slug: 'radeberger-clausthaler-non-alcoholic',
-					},
-					{
-						name: 'Dry Hopped',
-						slug: 'radeberger-gruppe-clausthaler-dry-hopped',
-					},
+						name: 'Free Mother In Law',
+						slug: 'primator-free-mother-in-law',
+					}
 				],
-			},
-			{
-				name: 'Paulaner',
-				collection: [
-					{
-						name: 'Alkoholfrei',
-						slug: 'paulaner-brauerei-paulaner-weissbier-alkoholfrei-0-0',
-					},
-				],
-			},
+			}
+
 		],
 
 	},
