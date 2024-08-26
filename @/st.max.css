@@ -370,6 +370,7 @@ aside .vr {
 aside .hr {
 	border-top-width: 1px;
 	padding: 20px 0;
+	width: 100%;
 }
 
 aside .vr {
