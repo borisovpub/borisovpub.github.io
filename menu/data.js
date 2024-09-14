@@ -411,21 +411,21 @@
 
 			{
 				name: [
+					'Октоберфест сет',
+					'Oktoberfest Set',
+				],
+				weight: 1200,
+				cost: 38.00,
+			},
+
+			{
+				name: [
 					'Сет "Святой Патрик"',
 					'"St. Patrick" Set',
 				],
 				weight: 1000,
 				cost: 48.00,
 			},
-
-			// {
-			// 	name: [
-			// 		'Октоберфест сет',
-			// 		'Oktoberfest Set',
-			// 	],
-			// 	weight: 1450,
-			// 	cost: 37.00,
-			// },
 
 			// {
 			// 	name: [
@@ -4192,13 +4192,13 @@
 				name: 'Paulaner',
 				collection: [
 					{
+						name: 'Oktoberfest',
+						slug: 'paulaner-brauerei-paulaner-oktoberfest-bier-2024',
+					},
+					{
 						name: 'Naturtrüb',
 						slug: 'paulaner-hefe-weissbier',
 					},
-					// {
-					// 	name: 'Oktoberfest',
-					// 	slug: 'paulaner-brauerei-paulaner-oktoberfest-bier-2023',
-					// },
 				],
 			},
 			// {
