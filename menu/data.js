@@ -409,14 +409,14 @@
 
 		collection: [
 
-			{
-				name: [
-					'Октоберфест сет',
-					'Oktoberfest Set',
-				],
-				weight: 1200,
-				cost: 38.00,
-			},
+			// {
+			// 	name: [
+			// 		'Октоберфест сет',
+			// 		'Oktoberfest Set',
+			// 	],
+			// 	weight: 1200,
+			// 	cost: 38.00,
+			// },
 
 			{
 				name: [
@@ -673,27 +673,27 @@
 				tp: 1,
 			},
 
-			{
-				name: [
-					'Холодник',
-					'Cold borscht',
-				],
-				weight: 250,
-				cost: 5.50,
-				tp: 1,
-			},
-
 			// {
 			// 	name: [
-			// 		'Крем-суп из шампиньонов',
-			// 		'Champignon cream soup',
+			// 		'Холодник',
+			// 		'Cold borscht',
 			// 	],
 			// 	weight: 250,
 			// 	cost: 5.50,
-			// 	img: '4019/306466739/IMG_7621.jpg',
-			// 	alias: 'mushroom-soup',
 			// 	tp: 1,
 			// },
+
+			{
+				name: [
+					'Крем-суп из шампиньонов',
+					'Champignon cream soup',
+				],
+				weight: 250,
+				cost: 5.50,
+				img: '4019/306466739/IMG_7621.jpg',
+				alias: 'mushroom-soup',
+				tp: 1,
+			},
 
 			{
 				name: [
@@ -3605,7 +3605,7 @@
 				collection: [
 					{
 						name: 'Faunder`s Reserve',
-						cost: 11.50,
+						cost: 15,
 					},
 					{
 						name: [
@@ -4191,10 +4191,10 @@
 			{
 				name: 'Paulaner',
 				collection: [
-					{
-						name: 'Oktoberfest',
-						slug: 'paulaner-brauerei-paulaner-oktoberfest-bier-2024',
-					},
+					// {
+					// 	name: 'Oktoberfest',
+					// 	slug: 'paulaner-brauerei-paulaner-oktoberfest-bier-2024',
+					// },
 					{
 						name: 'Naturtrüb',
 						slug: 'paulaner-hefe-weissbier',
@@ -4640,6 +4640,14 @@
 				],
 			},
 			{
+				name: 'Primátor',
+				collection: [
+					{
+						name: 'IPA',
+						slug: 'primator-ipa',
+					}
+				],
+			},			{
 				name: 'Schlenkerla',
 				collection: [
 					// {
@@ -4801,19 +4809,19 @@
 
 		collection: [
 
-			// {
-			// 	name: 'Clausthaler',
-			// 	collection: [
-			// 		{
-			// 			name: '',
-			// 			slug: 'radeberger-clausthaler-non-alcoholic',
-			// 		},
-			// 		{
-			// 			name: 'Dry Hopped',
-			// 			slug: 'radeberger-gruppe-clausthaler-dry-hopped',
-			// 		},
-			// 	],
-			// },
+			{
+				name: 'Clausthaler',
+				collection: [
+					{
+						name: '',
+						slug: 'binding-brauerei-ag-clausthaler-original-sans-alcool',
+					},
+					// {
+					// 	name: 'Dry Hopped',
+					// 	slug: 'radeberger-gruppe-clausthaler-dry-hopped',
+					// },
+				],
+			},
 
 			// {
 			// 	name: 'Paulaner',
@@ -4833,7 +4841,7 @@
 						slug: 'primator-free-mother-in-law',
 					}
 				],
-			}
+			},
 
 		],
 
