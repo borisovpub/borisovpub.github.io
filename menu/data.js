@@ -3759,14 +3759,28 @@
 			{
 				name: 'Absolut',
 				collection: [
-					{
-						name: '',
-						cost: 8.00,
-					},
+					// {
+					// 	name: '',
+					// 	cost: 8.00,
+					// },
 					{
 						name: [
 							'Лимон',
 							'Lemon',
+						],
+						cost: 8.90,
+					},
+					{
+						name: [
+							'Ваниль',
+							'Vanilia',
+						],
+						cost: 8.90,
+					},
+					{
+						name: [
+							'Мандарин',
+							'Mandrin',
 						],
 						cost: 8.90,
 					},
@@ -3777,13 +3791,13 @@
 					// 	],
 					// 	cost: 8.90,
 					// },
-					{
-						name: [
-							'Лесные ягоды',
-							'Wild Berri',
-						],
-						cost: 8.90,
-					},
+					// {
+					// 	name: [
+					// 		'Лесные ягоды',
+					// 		'Wild Berri',
+					// 	],
+					// 	cost: 8.90,
+					// },
 				],
 			},
 
@@ -4171,23 +4185,31 @@
 			// 	slug: 'guinness-draught',
 			// },
 			{
+				name: 'Theakston',
+				collection: [
+					// {
+					// 	name: 'XB',
+					// 	slug: 'theakston-xb',
+					// },
+					{
+						name: 'Barista Stout',
+						slug: 'theakston-barista-stout',
+					},
+				],
+			},
+			{
 				name: 'O`Hara`s',
 				collection: [
+					// {
+					// 	name: 'Irish Stout Nitro',
+					// 	slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
+					// },
 					{
-						name: 'Irish Stout Nitro',
-						slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
+						name: '51st State IPA',
+						slug: 'oharas-51st-state-ipa',
 					},
 				]
 			},
-			// {
-			// 	name: 'Theakston',
-			// 	collection: [
-			// 		{
-			// 			name: 'XB',
-			// 			slug: 'theakston-xb',
-			// 		}
-			// 	],
-			// },
 			{
 				name: 'Paulaner',
 				collection: [
