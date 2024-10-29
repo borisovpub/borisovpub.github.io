@@ -755,16 +755,16 @@
 				],
 			},
 
-			{
-				name: [
-					'Салат с уткой и запечёнными овощами',
-					'Salad with duck and baked vegetables',
-				],
-				weight: 340,
-				cost: 17,
-				img: '3421/472182109/IMG_4050.jpg',
-				alias: 'salad-with-duck-and-baked-vegetables',
-			},
+			// {
+			// 	name: [
+			// 		'Салат с уткой и запечёнными овощами',
+			// 		'Salad with duck and baked vegetables',
+			// 	],
+			// 	weight: 340,
+			// 	cost: 17,
+			// 	img: '3421/472182109/IMG_4050.jpg',
+			// 	alias: 'salad-with-duck-and-baked-vegetables',
+			// },
 
 			// {
 			// 	name: [
@@ -810,15 +810,15 @@
 			// 	alias: 'olivier-with-duck',
 			// },
 
-			{
-				name: [
-					'Салат "Мясной"',
-					'Salad "Meat"',
-				],
-				weight: 300,
-				cost: 19.50,
-				alias: 'salad-meat',
-			},
+			// {
+			// 	name: [
+			// 		'Салат "Мясной"',
+			// 		'Salad "Meat"',
+			// 	],
+			// 	weight: 300,
+			// 	cost: 19.50,
+			// 	alias: 'salad-meat',
+			// },
 
 			// {
 			// 	name: [
@@ -828,6 +828,16 @@
 			// 	weight: 240,
 			// 	cost: 15.00,
 			// },
+
+			{
+				name: [
+					'Мясной салат',
+					'Meat salad',
+				],
+				weight: 300,
+				cost: 19.50,
+				alias: 'meat-salad',
+			},
 
 		],
 
@@ -893,16 +903,16 @@
 			//   cost: 14.50,
 			// },
 
-			{
-				name: [
-					'Салат с креветками и грушей',
-					'Salad with prawns and pear',
-				],
-				weight: 310,
-				cost: 17.20,
-				img: '8129/623271873/photo_2022-12-02_15-19-50.jpg',
-				alias: 'salad-with-prawns-and-pear',
-			},
+			// {
+			// 	name: [
+			// 		'Салат с креветками и грушей',
+			// 		'Salad with prawns and pear',
+			// 	],
+			// 	weight: 310,
+			// 	cost: 17.20,
+			// 	img: '8129/623271873/photo_2022-12-02_15-19-50.jpg',
+			// 	alias: 'salad-with-prawns-and-pear',
+			// },
 
 			// {
 			// 	name: [
@@ -922,8 +932,8 @@
 					'Оливье с уткой',
 					'Olivier with duck',
 				],
-				weight: 200,
-				cost: 13.00,
+				weight: 250,
+				cost: 15.00,
 				img: '4560/623595984/20221203_130814.jpg',
 				alias: 'olivier-with-duck',
 			},
@@ -938,15 +948,15 @@
 			// 	alias: 'salad-meat',
 			// },
 
-			{
-				name: [
-					'Салат "Мясной"',
-					'Salad "Meat"',
-				],
-				weight: 300,
-				cost: 15.90,
-				alias: 'salad-meat',
-			},
+			// {
+			// 	name: [
+			// 		'Салат "Мясной"',
+			// 		'Salad "Meat"',
+			// 	],
+			// 	weight: 300,
+			// 	cost: 15.90,
+			// 	alias: 'salad-meat',
+			// },
 
 			// {
 			// 	name: [
@@ -961,16 +971,16 @@
 			// 	],
 			// },
 
-			// {
-			// 	name: [
-			// 		'Салат с хурмой и курицей',
-			// 		'Salad with persimmon and chicken',
-			// 	],
-			// 	weight: 370,
-			// 	cost: 13,
-			// 	img: '5815/622950071/20221128_131556.jpg',
-			// 	alias: 'salad-with-persimmon-and-chicken',
-			// },
+			{
+				name: [
+					'Салат с хурмой и курицей',
+					'Salad with persimmon and chicken',
+				],
+				weight: 250,
+				cost: 15,
+				img: '5815/622950071/20221128_131556.jpg',
+				alias: 'salad-with-persimmon-and-chicken',
+			},
 
 		],
 
