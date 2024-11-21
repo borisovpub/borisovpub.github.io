@@ -444,7 +444,7 @@
 					'Beer Set',
 				],
 				weight: 790,
-				cost: 34.4,
+				cost: 36,
 				img: '7800/423960184/IMG_7791.jpg',
 				alias: 'beer-set',
 			},
@@ -841,7 +841,7 @@
 
 			{
 				name: [
-					'Салат с запечённой индейкой, авакадо и беконом',
+					'Салат с запечённой индейкой, авокадо и беконом',
 					'Salad with baked turkey, avocado and bacon',
 				],
 				weight: 305,
@@ -2361,8 +2361,8 @@
 
 			{
 				name: [
-					'Чёрный, Зелёный, Травяной, Молочный улун, Персиковый улун, Земляничный улун, Жасминовый улун, Красный апельсин, Чёрная смородина, Крем-брюле, Весёлый Фрукт',
-					'Black, Green, Herbal, Milk oolong, Peach oolong, Strawberry oolong, Jasmine oolong, Red orange, Black currant, Strawberries with cream, Vanilla bergamot, Creme brulee, CheerfulCheerful FruitFruit',
+					'Чёрный, Зелёный, Травяной, Молочный улун, Персиковый улун, Земляничный улун, Жасминовый улун, Красный апельсин, Чёрная смородина, Бергамот, Весёлый Фрукт',
+					'Black, Green, Herbal, Milk oolong, Peach oolong, Strawberry oolong, Jasmine oolong, Red orange, Black currant, Strawberries with cream, Vanilla bergamot, Bergamot, Cheerful Fruit',
 				],
 				cost: 4.60,
 			},
@@ -3378,6 +3378,15 @@
 					'brut',
 				],
 				cost: 50.00,
+			},
+
+			{
+				name: 'Asti Martini',
+				weight: [
+					'сл',
+					'sw',
+				],
+				cost: 55,
 			},
 
 		],
