@@ -809,9 +809,9 @@
 	appendChild( colon[ 2 ], createSection( menu.Draniki, createDish ) );
 	appendChild( colon[ 2 ], createSection( menu.Garnish, createDish ) );
 	appendChild( colon[ 2 ], createSection( menu.Desserts, createDish ) );
-	colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="bc.svg" style="height:31.417mm" /></div>' );
+	colon[ 2 ].insertAdjacentHTML( 'beforeend', `<div class="img"><img src="bc.svg" style="height:31.417mm" /></div>` );
 	// colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
-	colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="desc"><span class="dif">*</span> У блюд помеченных звёздчкой цена зависит от веса</div>' );
+	colon[ 2 ].insertAdjacentHTML( 'beforeend', `<div class="desc"><span class="dif">*</span> ${ getName( [ 'У блюд помеченных звёздчкой цена зависит от веса', 'For dishes marked with an asterisk, the price depends on the weight' ] ) }</div>` );
 
 	appendChild( colon[ 3 ], createSection( menu.Gasing, createDish ) );
 	appendChild( colon[ 3 ], createSection( menu.Coffee, createDish ) );

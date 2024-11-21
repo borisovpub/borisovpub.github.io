@@ -424,7 +424,7 @@
 					'"St. Patrick" Set',
 				],
 				weight: 1000,
-				cost: 48.00,
+				cost: 50.00,
 			},
 
 			// {
@@ -464,7 +464,7 @@
 					'Chicken Set',
 				],
 				weight: 1000,
-				cost: 35.00,
+				cost: 41.00,
 				img: '4739/463516291/IMG_2187.jpg',
 				alias: 'chicken-set',
 			},
@@ -475,7 +475,7 @@
 					'Meat Set',
 				],
 				weight: 900,
-				cost: 50.00,
+				cost: 54.00,
 				img: '7571/463699347/IMG_2199.jpg',
 				alias: 'meat-set',
 			},
@@ -486,7 +486,7 @@
 					'Sea Set',
 				],
 				weight: 770,
-				cost: 60.00,
+				cost: 63.00,
 				img: '5724/463697500/IMG_2518.jpg',
 				alias: 'sea-set',
 			},
@@ -837,6 +837,16 @@
 				weight: 300,
 				cost: 19.50,
 				alias: 'meat-salad',
+			},
+
+			{
+				name: [
+					'Салат с запечённой индейкой, авакадо и беконом',
+					'Salad with baked turkey, avocado and bacon',
+				],
+				weight: 305,
+				cost: 19,
+				tp: 1,
 			},
 
 		],
@@ -1597,14 +1607,24 @@
 			// 	cost: 19.90,
 			// },
 
+			// {
+			// 	name: [
+			// 		'Индейка в сливочно-ореховом соусе',
+			// 		'Turkey in creamy nut sauce',
+			// 	],
+			// 	weight: 340,
+			// 	cost: 23,
+			// 	alias: 'turkey-in-a-creamy-peanut-sauce',
+			// 	tp: 1,
+			// },
+
 			{
 				name: [
-					'Индейка в сливочно-ореховом соусе',
-					'Turkey in creamy nut sauce',
+					'Запечённая индейка в сливочно-ореховом соусе',
+					'Backed turkey in creamy walnut sauce',
 				],
-				weight: 340,
-				cost: 23,
-				alias: 'turkey-in-a-creamy-peanut-sauce',
+				weight: 350,
+				cost: 24,
 				tp: 1,
 			},
 
@@ -4284,7 +4304,7 @@
 				],
 			},
 			{
-				name: 'Estrella',
+				name: 'Estrella Damm',
 				slug: 'damm-estrella-damm-4-6',
 			},
 			// {
@@ -4438,7 +4458,7 @@
 			// 	slug: 'new-yorker-fine-lager-beer',
 			// },
 			// {
-			// 	name: 'Estrella',
+			// 	name: 'Estrella Damm',
 			// 	slug: 'damm-estrella-damm-4-6',
 			// },
 			// {
@@ -4491,10 +4511,10 @@
 					// 	name: 'Irish Stout Nitro',
 					// 	slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
 					// },
-					{
-						name: 'Leann Folláin',
-						slug: 'oharas-leann-follain',
-					},
+					// {
+					// 	name: 'Leann Folláin',
+					// 	slug: 'oharas-leann-follain',
+					// },
 					// {
 					// 	name: 'White Haze',
 					// 	slug: 'oharas-white-haze',
@@ -4507,10 +4527,10 @@
 						name: 'Hazy IPA',
 						slug: 'o-hara-s-brewery-o-hara-s-hazy-ipa',
 					},
-					{
-						name: '51st State IPA',
-						slug: 'oharas-51st-state-ipa',
-					},
+					// {
+					// 	name: '51st State IPA',
+					// 	slug: 'oharas-51st-state-ipa',
+					// },
 					// {
 					// 	name: 'Hop Adventure Talus IPA',
 					// 	slug: 'o-hara-s-brewery-hop-adventure-series-talus',
@@ -4532,21 +4552,21 @@
 					// 	name: 'London Porter',
 					// 	slug: 'fullers-london-porter',
 					// },
-					{
-						name: 'Black Cab Stout',
-						slug: 'fullers-black-cab-stout',
-					},
-					{
-						name: 'ESB',
-						slug: 'fullers-esb',
-					},
+					// {
+					// 	name: 'Black Cab Stout',
+					// 	slug: 'fullers-black-cab-stout',
+					// },
+					// {
+					// 	name: 'ESB',
+					// 	slug: 'fullers-esb',
+					// },
 					// {
 					// 	name: 'Honey Dew',
 					// 	slug: 'fullers-honey-dew',
 					// },
 					{
 						name: 'India Pale Ale',
-						slug: 'fullers-black-cab-stout',
+						slug: 'fullers-ipa',
 					},
 				],
 			},
@@ -4677,9 +4697,14 @@
 					{
 						name: 'IPA',
 						slug: 'primator-ipa',
-					}
+					},
+					{
+						name: '13 Polotmavé',
+						slug: 'primator-13-polotmave',
+					},
 				],
-			},			{
+			},
+			{
 				name: 'Schlenkerla',
 				collection: [
 					// {
@@ -4799,6 +4824,27 @@
 			// 	name: 'Saison 1858',
 			// 	slug: 'brasserie-du-bocq-saison-1858',
 			// },
+			{
+				name: 'Partner In Cream',
+				slug: 'paradox-partner-in-cream',
+			},
+			{
+				name: 'Brewmen',
+				collection: [
+					{
+						name: 'Tomato Soul',
+						slug: 'brewmen-tomato-soul',
+					}
+				],
+			},
+			{
+				name: 'Тени Саур',
+				slug: 'black-cat-brewery-teni-saur',
+			},
+			{
+				name: 'For All the Wolves',
+				slug: 'black-cat-brewery-for-all-the-wolves',
+			},
 			{
 				name: 'Medovarus',
 				collection: [
