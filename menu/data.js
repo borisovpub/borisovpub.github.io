@@ -3404,22 +3404,31 @@
 
 		collection: [
 
-			{
-				name: 'Abbazia',
-				weight: [
-					'красное',
-					'red',
-				],
-				cost: 31,
-			},
+			// {
+			// 	name: 'Abbazia',
+			// 	weight: [
+			// 		'красное',
+			// 		'red',
+			// 	],
+			// 	cost: 31,
+			// },
+			//
+			// {
+			// 	name: 'Abbazia',
+			// 	weight: [
+			// 		'белое',
+			// 		'white',
+			// 	],
+			// 	cost: 31,
+			// },
 
 			{
-				name: 'Abbazia',
+				name: 'Freixenet',
 				weight: [
 					'белое',
 					'white',
 				],
-				cost: 31,
+				cost: 40,
 			},
 
 		],
