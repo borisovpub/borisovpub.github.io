@@ -16,7 +16,7 @@
 					'Croutons with garlic',
 				],
 				weight: 210,
-				cost: 7,
+				cost: 7.5,
 				img: '5260/306467980/IMG_7940.jpg',
 				alias: 'croutons-with-garlic',
 			},
@@ -27,7 +27,7 @@
 					'Chicken fillet with french fries',
 				],
 				weight: 330,
-				cost: 13.40,
+				cost: 13.90,
 				img: '2723/476408483/IMG_4329.JPG',
 				alias: 'chicken-fillet-with-french-fries'
 			},
@@ -38,7 +38,7 @@
 					'Cheese balls',
 				],
 				weight: 230,
-				cost: 14,
+				cost: 14.5,
 				img: '6778/623245946/20221202_125228.jpg',
 				alias: 'cheese-balls',
 			},
@@ -60,7 +60,7 @@
 					'Roasted mushrooms',
 				],
 				weight: 300,
-				cost: 11,
+				cost: 11.6,
 				img: '5654/306468374/IMG_7979.jpg',
 				alias: 'roasted-mushrooms',
 			},
@@ -71,7 +71,7 @@
 					'Fried prawns in batter',
 				],
 				weight: 190,
-				cost: 22.00,
+				cost: 23.40,
 				img: '7473/623246641/20221202_125246.jpg',
 				alias: 'fried-prawns-in-batter',
 			},
@@ -82,7 +82,7 @@
 					'Roasted almonds',
 				],
 				weight: 70,
-				cost: 8.80,
+				cost: 9.20,
 				img: '2026/623249386/20221202_125424.jpg',
 				alias: 'roasted-almonds',
 			},
@@ -93,7 +93,7 @@
 					'Onion rings',
 				],
 				weight: 220,
-				cost: 14,
+				cost: 14.5,
 				img: '5316/306468036/IMG_7948.jpg',
 				alias: 'onion-rings',
 			},
@@ -120,7 +120,7 @@
 							'classic',
 						],
 						weight: 275,
-						cost: 14,
+						cost: 14.5,
 						img: '4819/623252179/20221202_125543.jpg',
 					},
 					{
@@ -129,7 +129,7 @@
 							'in spicy glaze',
 						],
 						weight: 275,
-						cost: 14,
+						cost: 14.5,
 						img: '4580/623251940/20221202_125609.jpg',
 					},
 				],
@@ -141,7 +141,7 @@
 					'Mussels and vongole in tom yum sauce',
 				],
 				weight: 375,
-				cost: 25.00,
+				cost: 26.00,
 				alias: 'mussels-and-vongole-in-tom-yum-sauce',
 			},
 
@@ -173,7 +173,7 @@
 					'Homemade salo with Borodino bread',
 				],
 				weight: 260,
-				cost: 14,
+				cost: 14.5,
 				img: '7911/476421863/IMG_4404.jpg',
 				alias: 'homemade-salo-with-borodino-bread',
 			},
@@ -184,7 +184,7 @@
 					'Meat plate',
 				],
 				weight: 280,
-				cost: 20,
+				cost: 21,
 				img: '1857/476407617/IMG_4373.jpg',
 				alias: 'meet-plate',
 			},
@@ -195,7 +195,7 @@
 					'Cheese plate',
 				],
 				weight: 250,
-				cost: 27.00,
+				cost: 28.00,
 				img: '7340/623254700/20221202_131135.jpg',
 				alias: 'cheese-plate',
 			},
@@ -206,7 +206,7 @@
 					'Fish plate',
 				],
 				weight: 370,
-				cost: 24.50,
+				cost: 26.00,
 				img: '2230/623593654/20221203_124815.jpg',
 				alias: 'fish-plate',
 			},
@@ -217,7 +217,7 @@
 					'Vegetable plate',
 				],
 				weight: 300,
-				cost: 11.60,
+				cost: 12.10,
 				img: '65/623255617/20221202_131148.jpg',
 				alias: 'vegetable-plate',
 			},
@@ -228,7 +228,7 @@
 					'Set of pickles',
 				],
 				weight: 630,
-				cost: 19,
+				cost: 20.1,
 				img: '1407/623256959/20221202_131220.jpg',
 				alias: 'set-of-pickles',
 			},
@@ -248,7 +248,7 @@
 					'Beef carpaccio',
 				],
 				weight: 210,
-				cost: 21,
+				cost: 22.5,
 				img: '2647/623594071/20221203_124834.jpg',
 				alias: 'beef-carpaccio',
 			},
@@ -311,7 +311,7 @@
 					'Beef tartare with parmesan mousse	',
 				],
 				weight: 200,
-				cost: 23.00,
+				cost: 24.50,
 			},
 
 			// {
@@ -391,7 +391,7 @@
 					'Seafood with fresh vegetables',
 				],
 				weight: 265,
-				cost: 26.00,
+				cost: 27.50,
 				img: '5709/306468429/IMG_8005.jpg',
 				alias: 'seafood-with-fresh-vegetables',
 			},
@@ -424,7 +424,7 @@
 					'"St. Patrick" Set',
 				],
 				weight: 1000,
-				cost: 50.00,
+				cost: 54.00,
 			},
 
 			// {
@@ -444,7 +444,7 @@
 					'Beer Set',
 				],
 				weight: 790,
-				cost: 36,
+				cost: 38,
 				img: '7800/423960184/IMG_7791.jpg',
 				alias: 'beer-set',
 			},
@@ -464,7 +464,7 @@
 					'Chicken Set',
 				],
 				weight: 1000,
-				cost: 41.00,
+				cost: 43.50,
 				img: '4739/463516291/IMG_2187.jpg',
 				alias: 'chicken-set',
 			},
@@ -475,7 +475,7 @@
 					'Meat Set',
 				],
 				weight: 900,
-				cost: 54.00,
+				cost: 55.5,
 				img: '7571/463699347/IMG_2199.jpg',
 				alias: 'meat-set',
 			},
@@ -486,7 +486,7 @@
 					'Sea Set',
 				],
 				weight: 770,
-				cost: 63.00,
+				cost: 65.50,
 				img: '5724/463697500/IMG_2518.jpg',
 				alias: 'sea-set',
 			},
@@ -510,7 +510,7 @@
 					'Bread basket',
 				],
 				weight: 300,
-				cost: 4.00,
+				cost: 5.00,
 			},
 
 			{
@@ -519,16 +519,16 @@
 					'Homemade salo',
 				],
 				weight: 50,
-				cost: 3.90,
+				cost: 4.00,
 			},
 
 			{
 				name: [
-					'Курица Ballantine`s',
-					'Ballantine`s chicken',
+					'Вяленая говядина',
+					'Dried beef',
 				],
 				weight: 50,
-				cost: 3.90,
+				cost: 4.00,
 			},
 
 			{
@@ -537,7 +537,7 @@
 					'Roast beef',
 				],
 				weight: 50,
-				cost: 5.00,
+				cost: 5.20,
 			},
 
 			{
@@ -546,7 +546,7 @@
 					'Salty pork',
 				],
 				weight: 50,
-				cost: 3.90,
+				cost: 4.00,
 			},
 
 			{
@@ -555,7 +555,7 @@
 					'Camembert',
 				],
 				weight: 40,
-				cost: 5.50,
+				cost: 5.70,
 			},
 
 			{
@@ -564,7 +564,7 @@
 					'Dorblu',
 				],
 				weight: 40,
-				cost: 4.80,
+				cost: 5.00,
 			},
 
 			{
@@ -573,7 +573,7 @@
 					'Chechil',
 				],
 				weight: 40,
-				cost: 4.80,
+				cost: 5.00,
 			},
 
 			{
@@ -582,7 +582,7 @@
 					'Parmesan',
 				],
 				weight: 40,
-				cost: 4.80,
+				cost: 5.00,
 			},
 
 			// {
@@ -609,7 +609,7 @@
 					'Olives',
 				],
 				weight: 30,
-				cost: 2.90,
+				cost: 3.00,
 			},
 
 			{
@@ -618,7 +618,7 @@
 					'Black olives',
 				],
 				weight: 30,
-				cost: 2.90,
+				cost: 3.00,
 			},
 
 			{
@@ -627,7 +627,7 @@
 					'Jalapeno',
 				],
 				weight: 20,
-				cost: 2.50,
+				cost: 2.60,
 			},
 
 			{
@@ -636,7 +636,7 @@
 					'Sriracha sauce',
 				],
 				weight: 30,
-				cost: 1.80,
+				cost: 1.90,
 			},
 
 			{
@@ -667,7 +667,7 @@
 					'Solyanka',
 				],
 				weight: 250,
-				cost: 7.00,
+				cost: 7.40,
 				img: '3993/306466713/IMG_7648.jpg',
 				alias: 'solyanka',
 				tp: 1,
@@ -689,7 +689,7 @@
 					'Champignon cream soup',
 				],
 				weight: 250,
-				cost: 5.50,
+				cost: 5.70,
 				img: '4019/306466739/IMG_7621.jpg',
 				alias: 'mushroom-soup',
 				tp: 1,
@@ -722,7 +722,7 @@
 					'Greek salad',
 				],
 				weight: 250,
-				cost: 13,
+				cost: 13.5,
 				img: '1162/551576714/20220527_120617.jpg',
 				alias: 'greek-salad',
 			},
@@ -740,7 +740,7 @@
 							'with chicken',
 						],
 						weight: 300,
-						cost: 14,
+						cost: 14.5,
 						img: '7694/472186382/IMG_4141.jpg',
 					},
 					{
@@ -749,7 +749,7 @@
 							'with salmon',
 						],
 						weight: 300,
-						cost: 17.00,
+						cost: 17.50,
 						img: '3960/623595384/20221203_130558.jpg',
 					},
 				],
@@ -794,7 +794,7 @@
 					'Salad with prawns and pear',
 				],
 				weight: 310,
-				cost: 20,
+				cost: 21,
 				img: '8129/623271873/photo_2022-12-02_15-19-50.jpg',
 				alias: 'salad-with-prawns-and-pear',
 			},
@@ -835,7 +835,7 @@
 					'Meat salad',
 				],
 				weight: 300,
-				cost: 19.50,
+				cost: 20.50,
 				alias: 'meat-salad',
 			},
 
@@ -943,7 +943,7 @@
 					'Olivier with duck',
 				],
 				weight: 250,
-				cost: 15.00,
+				cost: 15.50,
 				img: '4560/623595984/20221203_130814.jpg',
 				alias: 'olivier-with-duck',
 			},
@@ -987,7 +987,7 @@
 					'Salad with persimmon and chicken',
 				],
 				weight: 250,
-				cost: 15,
+				cost: 16,
 				img: '5815/622950071/20221128_131556.jpg',
 				alias: 'salad-with-persimmon-and-chicken',
 			},
@@ -1025,7 +1025,7 @@
 							'with roast beef',
 						],
 						weight: 180,
-						cost: 15,
+						cost: 15.5,
 						img: '6535/586004871/20220819_160827.jpg',
 						alias: 'roast-beef-bruschettas',
 					},
@@ -1035,7 +1035,7 @@
 							'with salmon',
 						],
 						weight: 180,
-						cost: 15,
+						cost: 15.5,
 						img: '7316/586005652/20220819_161038.jpg',
 						alias: 'salmon-bruschettas',
 					},
@@ -1055,7 +1055,7 @@
 							'chicken',
 						],
 						weight: 375,
-						cost: 12,
+						cost: 13,
 						// img: '7475/622943539/20221128_145152.jpg',
 						// alias: 'chicken-club-sandwich',
 						tp: 3,
@@ -1067,7 +1067,7 @@
 							'roast beef',
 						],
 						weight: 360,
-						cost: 13.50,
+						cost: 14.50,
 						// img: '6113/471029729/IMG_3722.jpg',
 						// alias: 'roast-beef-club-sandwich',
 						tp: 3,
@@ -1078,7 +1078,7 @@
 							'salmon',
 						],
 						weight: 230,
-						cost: 14,
+						cost: 15,
 						// img: '5996/471029612/IMG_3859.jpg',
 						// alias: 'salmond-club-sandwich',
 						tp: 3,
@@ -1092,7 +1092,7 @@
 					'Burger with eel',
 				],
 				weight: 285,
-				cost: 16,
+				cost: 17.5,
 				img: '973/707879885/20230520_123542.jpg',
 				alias: 'burger-with-eel',
 				tp: 2,
@@ -1118,7 +1118,7 @@
 					'Steak burger with beef',
 				],
 				weight: 385,
-				cost: 16,
+				cost: 17.5,
 				img: '7643/541007323/20220429_114605.jpg',
 				alias: 'beef-steak-burger',
 				tp: 2,
@@ -1130,7 +1130,7 @@
 					'Burger "Butcher"',
 				],
 				weight: 335,
-				cost: 14.50,
+				cost: 16,
 				tp: 2,
 			},
 
@@ -1212,7 +1212,7 @@
 					'Classic Cheeseburger',
 				],
 				weight: 375,
-				cost: 16,
+				cost: 17.5,
 				img: '1495/650364375/20230210_121917.jpg',
 				alias: 'classic-cheeseburger',
 				tp: 1,
@@ -1232,21 +1232,21 @@
 							'with chicken',
 						],
 						weight: 375,
-						cost: 13,
+						cost: 14.5,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
 						weight: 375,
-						cost: 15,
+						cost: 16.5,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
 						weight: 375,
-						cost: 14,
+						cost: 15.5,
 					},
 				],
 				tp: 1,
@@ -1266,21 +1266,21 @@
 							'with chicken',
 						],
 						weight: 435,
-						cost: 13.50,
+						cost: 15,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
 						weight: 435,
-						cost: 15.50,
+						cost: 17,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
 						weight: 435,
-						cost: 14.50,
+						cost: 16,
 					},
 				],
 				tp: 1,
@@ -1300,21 +1300,21 @@
 							'with chicken',
 						],
 						weight: 385,
-						cost: 13.50,
+						cost: 15,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
 						weight: 385,
-						cost: 15.50,
+						cost: 17,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
 						weight: 385,
-						cost: 14.50,
+						cost: 16,
 					},
 				],
 				tp: 1,
@@ -1334,21 +1334,21 @@
 							'with chicken',
 						],
 						weight: 405,
-						cost: 14.00,
+						cost: 15.5,
 					}, {
 						name: [
 							'с говядиной',
 							'with beef',
 						],
 						weight: 405,
-						cost: 16.00,
+						cost: 17.5,
 					}, {
 						name: [
 							'со свининой и говядиной',
 							'with pork and beef',
 						],
 						weight: 405,
-						cost: 15.00,
+						cost: 16.50,
 					},
 				],
 				tp: 1,
@@ -1439,7 +1439,7 @@
 					'Eel with zucchini and cucumber tartare',
 				],
 				weight: 345,
-				cost: 31,
+				cost: 31.5,
 			},
 
 			// {
@@ -1624,7 +1624,7 @@
 					'Backed turkey in creamy walnut sauce',
 				],
 				weight: 350,
-				cost: 24,
+				cost: 25,
 				tp: 1,
 			},
 
@@ -1643,7 +1643,7 @@
 					'Chicken fillet in creamy mushroom sauce with potatoes',
 				],
 				weight: 350,
-				cost: 17.30,
+				cost: 18,
 				img: '1946/435963802/20210504_201918.jpg',
 				alias: 'chicken-fillet-in-creamy-mushroom-sauce',
 				tp: 1,
@@ -1727,7 +1727,7 @@
 						],
 						weight: 100,
 						dif: 1,
-						cost: 9.90,
+						cost: 10.30,
 					},
 					{
 						name: [
@@ -1736,7 +1736,7 @@
 						],
 						weight: 100,
 						dif: 1,
-						cost: 9.90,
+						cost: 10.30,
 					},
 				],
 				tp: 1,
@@ -1748,7 +1748,7 @@
 					'Beef Stroganoff with porcini mushrooms',
 				],
 				weight: 390,
-				cost: 29,
+				cost: 30,
 			},
 
 			// {
@@ -1769,7 +1769,7 @@
 					'Roast beef with potatoes',
 				],
 				weight: 335,
-				cost: 18,
+				cost: 20,
 				tp: 1,
 			},
 
@@ -1779,7 +1779,7 @@
 					'Beef cheek with mashed potatoes',
 				],
 				weight: 240,
-				cost: 17.50,
+				cost: 19,
 				img: '6026/551581578/20220527_120049.jpg',
 				alias: 'beef-cheek-with-mashed-potatoes',
 				tp: 1,
@@ -1914,7 +1914,7 @@
 				],
 				weight: 1000,
 				dif: 1,
-				cost: 35,
+				cost: 38,
 				img: '5465/423974233/IMG_8357.jpg',
 				alias: 'pork-shank',
 				tp: 1,
@@ -1926,7 +1926,7 @@
 					'Pork steak',
 				],
 				weight: 240,
-				cost: 19,
+				cost: 20,
 				img: '7920/489807600/IMG_2542.jpg',
 				alias: 'pork-steak',
 			},
@@ -1937,7 +1937,7 @@
 					'Beef steak with miso butter',
 				],
 				weight: 250,
-				cost: 26.00,
+				cost: 27.00,
 				img: '738/489808610/IMG_2478.jpg',
 				alias: 'beef-steak-with-miso-butter',
 			},
@@ -1971,7 +1971,7 @@
 					'with turkey sausages',
 				],
 				weight: 450,
-				cost: 17,
+				cost: 18,
 			},
 			{
 				name: [
@@ -1979,7 +1979,7 @@
 					'with duck and creamy mushroom sauce',
 				],
 				weight: 450,
-				cost: 23,
+				cost: 24,
 				img: '1023/695239679/20230504_174915.jpg',
 			},
 			// {
@@ -1997,7 +1997,7 @@
 					'with salmon',
 				],
 				weight: 400,
-				cost: 17.30,
+				cost: 18.00,
 				img: '6190/623597614/20221203_125604.jpg',
 			},
 			{
@@ -2006,7 +2006,7 @@
 					'with mushroom caviar',
 				],
 				weight: 380,
-				cost: 13.50,
+				cost: 14.00,
 				img: '6430/623597854/20221203_125821.jpg',
 			},
 			{
@@ -2015,7 +2015,7 @@
 					'with sour cream',
 				],
 				weight: 350,
-				cost: 8.50,
+				cost: 8.70,
 				img: '6070/623597494/20221203_125507.jpg',
 			},
 		],
@@ -2037,7 +2037,7 @@
 					'French fries',
 				],
 				weight: 150,
-				cost: 5.80,
+				cost: 6.00,
 			},
 
 			{
@@ -2046,7 +2046,7 @@
 					'Country style potatoes',
 				],
 				weight: 150,
-				cost: 4.20,
+				cost: 4.50,
 			},
 
 			{
@@ -2055,7 +2055,7 @@
 					'Mashed potatoes',
 				],
 				weight: 150,
-				cost: 4.20,
+				cost: 4.50,
 			},
 
 			// {
@@ -2089,7 +2089,7 @@
 					'Fresh vegetables',
 				],
 				weight: 150,
-				cost: 4.90,
+				cost: 5.00,
 			},
 
 			{
@@ -2098,7 +2098,7 @@
 					'Grilled vegetables',
 				],
 				weight: 150,
-				cost: 6.30,
+				cost: 6.50,
 			},
 
 		],
@@ -2120,7 +2120,7 @@
 					'Apple strudel',
 				],
 				weight: 220,
-				cost: 9.20,
+				cost: 9.50,
 			},
 
 			{
@@ -2129,7 +2129,7 @@
 					'Cherry strudel',
 				],
 				weight: 220,
-				cost: 10.20,
+				cost: 10.50,
 			},
 
 			{
@@ -2138,7 +2138,7 @@
 					'Basque cheesecake',
 				],
 				weight: 150,
-				cost: 9.40,
+				cost: 9.80,
 			},
 
 			// {
@@ -2174,7 +2174,7 @@
 					'Chocolate fondant',
 				],
 				weight: 150,
-				cost: 9.20,
+				cost: 9.50,
 			},
 
 			// {
@@ -2219,7 +2219,7 @@
 					'Napoleon',
 				],
 				weight: 100,
-				cost: 7.00,
+				cost: 7.50,
 			},
 
 			{
@@ -2228,7 +2228,7 @@
 					'Ice cream',
 				],
 				weight: 180,
-				cost: 7.00,
+				cost: 7.20,
 			},
 
 		],
@@ -2247,43 +2247,43 @@
 			{
 				name: 'Coca cola',
 				weight: 500,
-				cost: 4.60,
+				cost: 4.80,
 			},
 
 			{
 				name: 'Fanta',
 				weight: 500,
-				cost: 4.60,
+				cost: 4.80,
 			},
 
 			{
 				name: 'Sprite',
 				weight: 500,
-				cost: 4.60,
+				cost: 4.80,
 			},
 
 			{
 				name: 'Schweppes',
 				weight: 500,
-				cost: 5.20,
+				cost: 5.40,
 			},
 
 			{
 				name: 'Bonaqua',
 				weight: 500,
-				cost: 3.40,
+				cost: 3.50,
 			},
 
 			{
 				name: 'Hell',
 				weight: 250,
-				cost: 4.50,
+				cost: 5.00,
 			},
 
 			{
 				name: 'Burn',
 				weight: 250,
-				cost: 7.50,
+				cost: 8.00,
 			},
 
 		],
@@ -2305,7 +2305,7 @@
 					'Espresso',
 				],
 				weight: 30,
-				cost: 3.80,
+				cost: 3.90,
 			},
 
 			{
@@ -2314,7 +2314,7 @@
 					'Americano',
 				],
 				weight: 110,
-				cost: 3.80,
+				cost: 3.90,
 			},
 
 			{
@@ -2323,7 +2323,7 @@
 					'Cappuccino',
 				],
 				weight: 200,
-				cost: 4.80,
+				cost: 4.90,
 			},
 
 			{
@@ -2332,7 +2332,7 @@
 					'Cocoa with marshmallows',
 				],
 				weight: 200,
-				cost: 4.40,
+				cost: 4.60,
 			},
 
 			{
@@ -2341,7 +2341,7 @@
 					'Ice coffee',
 				],
 				weight: 300,
-				cost: 5.80,
+				cost: 6.00,
 			},
 
 		],
@@ -2364,7 +2364,7 @@
 					'Чёрный, Зелёный, Травяной, Молочный улун, Персиковый улун, Земляничный улун, Жасминовый улун, Красный апельсин, Чёрная смородина, Бергамот, Весёлый Фрукт',
 					'Black, Green, Herbal, Milk oolong, Peach oolong, Strawberry oolong, Jasmine oolong, Red orange, Black currant, Strawberries with cream, Vanilla bergamot, Bergamot, Cheerful Fruit',
 				],
-				cost: 4.60,
+				cost: 4.80,
 			},
 
 
@@ -2388,7 +2388,7 @@
 					'Яблоко, Апельсин, Апельсин + Манго, Ананас, Вишня, Грейпфрут, Томат, Виноград, Морс Клюква + Виноград',
 					'Apple, Orange, Orange + Mango, Pineapple, Cherry, Grapefruit, Tomato, Grapes, Morse Cranberry + Grapes',
 				],
-				cost: 3.40,
+				cost: 3.60,
 			},
 
 		],
@@ -2422,7 +2422,7 @@
 							'Lychee',
 						],
 						weight: 250,
-						cost: 6.50,
+						cost: 6.70,
 					},
 
 					{
@@ -2431,7 +2431,7 @@
 							'Kiwi-tarragon',
 						],
 						weight: 380,
-						cost: 6.50,
+						cost: 6.70,
 					},
 
 					{
@@ -2440,7 +2440,7 @@
 							'Mojito',
 						],
 						weight: 400,
-						cost: 6.50,
+						cost: 6.70,
 					},
 
 					{
@@ -2449,7 +2449,7 @@
 							'Tangerine mojito',
 						],
 						weight: 400,
-						cost: 6.5,
+						cost: 6.7,
 					},
 
 					{
@@ -2458,7 +2458,7 @@
 							'Raspberry-mint',
 						],
 						weight: 400,
-						cost: 6.5,
+						cost: 6.7,
 					},
 
 					// {
@@ -2473,7 +2473,7 @@
 					{
 						name: 'Love is...',
 						weight: 380,
-						cost: 6.50,
+						cost: 6.70,
 					},
 
 					// {
@@ -2515,7 +2515,7 @@
 							'Strawberry',
 						],
 						weight: 310,
-						cost: 9.50,
+						cost: 9.90,
 					},
 
 					{
@@ -2524,7 +2524,7 @@
 							'Chocolate',
 						],
 						weight: 310,
-						cost: 9.50,
+						cost: 9.90,
 					},
 
 					{
@@ -2533,7 +2533,7 @@
 							'Snickers',
 						],
 						weight: 310,
-						cost: 9.50,
+						cost: 9.90,
 					},
 
 					{
@@ -2542,7 +2542,7 @@
 							'Pistachio',
 						],
 						weight: 310,
-						cost: 9.50,
+						cost: 9.90,
 					},
 
 					// {
@@ -2626,7 +2626,7 @@
 							'Irish strudel',
 						],
 						weight: 310,
-						cost: 16.0,
+						cost: 17.0,
 					},
 
 					{
@@ -2635,7 +2635,7 @@
 							'Mulled wine',
 						],
 						weight: 370,
-						cost: 16.0,
+						cost: 17.0,
 					},
 
 					{
@@ -2644,7 +2644,7 @@
 							'Spiced cherry',
 						],
 						weight: 300,
-						cost: 16.0,
+						cost: 17.0,
 					},
 
 					// {
@@ -3540,19 +3540,19 @@
 							'3 года',
 							'3 years',
 						],
-						cost: 12.00,
+						cost: 12.50,
 					},
 					{
 						name: 'Crested',
-						cost: 14,
+						cost: 14.50,
 					},
 					{
 						name: 'Stout Edition',
-						cost: 14,
+						cost: 14.50,
 					},
 					{
 						name: 'IPA Edition',
-						cost: 14,
+						cost: 14.50,
 					},
 				],
 			},
@@ -3565,7 +3565,7 @@
 							'3 года',
 							'3 years',
 						],
-						cost: 9.20,
+						cost: 9.70,
 					},
 				],
 			},
@@ -3575,11 +3575,11 @@
 				collection: [
 					{
 						name: 'Original',
-						cost: 9.00,
+						cost: 9.50,
 					},
 					{
 						name: 'Black Bush',
-						cost: 12.00,
+						cost: 12.50,
 					},
 				],
 			},
@@ -3589,7 +3589,7 @@
 				collection: [
 					{
 						name: 'Single Pot Still',
-						cost: 18,
+						cost: 18.50,
 					},
 				],
 			},
@@ -3602,7 +3602,7 @@
 							'12 лет',
 							'12 years',
 						],
-						cost: 22,
+						cost: 22.50,
 					},
 				],
 			},
@@ -3612,7 +3612,7 @@
 				collection: [
 					{
 						name: 'White',
-						cost: 9.00,
+						cost: 9.50,
 					},
 					// {
 					// 	name: 'Black',
@@ -3626,11 +3626,11 @@
 				collection: [
 					{
 						name: '№7',
-						cost: 13.50,
+						cost: 14,
 					},
 					{
 						name: 'Honey',
-						cost: 14.00,
+						cost: 14.50,
 					},
 				],
 			},
@@ -3643,7 +3643,7 @@
 							'3 года',
 							'3 years',
 						],
-						cost: 9.00,
+						cost: 9.50,
 					},
 				],
 			},
@@ -3653,21 +3653,21 @@
 				collection: [
 					{
 						name: 'Faunder`s Reserve',
-						cost: 15,
+						cost: 15.50,
 					},
 					{
 						name: [
 							'12 лет',
 							'12 years',
 						],
-						cost: 16.00,
+						cost: 16.50,
 					},
 					{
 						name: [
 							'15 лет',
 							'15 years',
 						],
-						cost: 20.00,
+						cost: 21,
 					},
 				],
 			},
@@ -3677,19 +3677,19 @@
 				collection: [
 					{
 						name: 'Original',
-						cost: 18.00,
+						cost: 18.50,
 					},
 					{
 						name: 'Lasanta',
-						cost: 21.00,
+						cost: 22,
 					},
 					{
 						name: 'Quinta Ruban',
-						cost: 23.00,
+						cost: 24.00,
 					},
 					{
 						name: 'Nectar D`or',
-						cost: 23.00,
+						cost: 24.00,
 					},
 				],
 			},
@@ -3702,14 +3702,14 @@
 							'12 лет',
 							'12 years',
 						],
-						cost: 22.00,
+						cost: 22.50,
 					},
 					{
 						name: [
 							'15 лет',
 							'15 years',
 						],
-						cost: 24.00,
+						cost: 24.50,
 					},
 				],
 			},
@@ -3722,7 +3722,7 @@
 							'12 лет',
 							'12 years',
 						],
-						cost: 15.00,
+						cost: 15.50,
 					},
 				],
 			},
@@ -3732,7 +3732,7 @@
 				collection: [
 					{
 						name: 'Red Label',
-						cost: 9.00,
+						cost: 9.50,
 					},
 				],
 			},
@@ -3765,19 +3765,19 @@
 			// 	],
 			// },
 
-			{
-				name: 'Laphroaig',
-				collection: [
-					{
-						name: '10 лет',
-						cost: 27.00,
-					},
-					// {
-					// 	name: 'Select',
-					// 	cost: 15.00,
-					// },
-				],
-			},
+			// {
+			// 	name: 'Laphroaig',
+			// 	collection: [
+			// 		{
+			// 			name: '10 лет',
+			// 			cost: 27.00,
+			// 		},
+			// 		// {
+			// 		// 	name: 'Select',
+			// 		// 	cost: 15.00,
+			// 		// },
+			// 	],
+			// },
 
 			// {
 			// 	name: 'Smokedhead',
@@ -3801,7 +3801,7 @@
 
 			{
 				name: 'Finlandia',
-				cost: 8.50,
+				cost: 8.90,
 			},
 
 			{
@@ -3816,21 +3816,21 @@
 							'Лимон',
 							'Lemon',
 						],
-						cost: 8.90,
+						cost: 9.30,
 					},
 					{
 						name: [
 							'Ваниль',
 							'Vanilia',
 						],
-						cost: 8.90,
+						cost: 9.30,
 					},
 					{
 						name: [
 							'Мандарин',
 							'Mandrin',
 						],
-						cost: 8.90,
+						cost: 9.30,
 					},
 					// {
 					// 	name: [
@@ -3854,7 +3854,7 @@
 					'Брестъ-Литовскъ',
 					'Brest-Litovsk',
 				],
-				cost: 3.10,
+				cost: 3.40,
 			},
 
 			{
@@ -3862,7 +3862,7 @@
 					'Сябры',
 					'Syabry',
 				],
-				cost: 2.90,
+				cost: 3.30,
 			},
 
 		],
@@ -3882,7 +3882,7 @@
 
 			{
 				name: 'Olmeca',
-				cost: 12.00,
+				cost: 12.50,
 			},
 
 			// {
@@ -3892,7 +3892,7 @@
 
 			{
 				name: 'Jose Cuervo',
-				cost: 10,
+				cost: 10.50,
 			},
 
 		],
@@ -3915,7 +3915,7 @@
 					'Крамбамбуля',
 					'Spiced & Honey',
 				],
-				cost: 5,
+				cost: 5.30,
 			},
 
 			{
@@ -3923,7 +3923,7 @@
 					'Клюковка',
 					'Cranberry',
 				],
-				cost: 5,
+				cost: 5.30,
 			},
 
 			{
@@ -3931,7 +3931,7 @@
 					'Вишнёвка',
 					'Cherry',
 				],
-				cost: 5,
+				cost: 5.30,
 			},
 
 			// {
@@ -3966,7 +3966,7 @@
 							'Сезонная',
 							'Seasonal',
 						],
-						cost: 5,
+						cost: 5.30,
 					},
 				],
 			},
@@ -3988,12 +3988,12 @@
 
 			{
 				name: 'Beefeater',
-				cost: 9.00,
+				cost: 9.50,
 			},
 
 			{
 				name: 'Bombay Sapphire',
-				cost: 10.50,
+				cost: 11,
 			},
 
 			// {
@@ -4006,11 +4006,11 @@
 				collection: [
 					{
 						name: 'Stile Mediterraneo',
-						cost: 20,
+						cost: 21,
 					},
 					{
 						name: 'Agrumato',
-						cost: 20,
+						cost: 21,
 					}
 				],
 			},
@@ -4032,7 +4032,7 @@
 
 			{
 				name: 'Pernod',
-				cost: 13.00,
+				cost: 13.50,
 			},
 
 		],
@@ -4071,28 +4071,28 @@
 							'Ани',
 							'Ani',
 						],
-						cost: 11.00,
+						cost: 11.50,
 					},
 					{
 						name: [
 							'Ахтамар',
 							'Akhtamar',
 						],
-						cost: 14.00,
+						cost: 14.50,
 					},
 					{
 						name: [
 							'Априкот',
 							'Apricot',
 						],
-						cost: 10.00,
+						cost: 10.50,
 					},
 					{
 						name: [
 							'Вишня',
 							'Cherry',
 						],
-						cost: 10.00,
+						cost: 10.50,
 					},
 				],
 			},
@@ -4114,17 +4114,17 @@
 
 			{
 				name: 'Jägermeister',
-				cost: 14.00,
+				cost: 14.50,
 			},
 
 			{
 				name: 'Becherovka',
-				cost: 10.00,
+				cost: 10.50,
 			},
 
 			{
 				name: 'Campari',
-				cost: 11.00,
+				cost: 11.50,
 			},
 
 		],
@@ -4147,11 +4147,11 @@
 				collection: [
 					{
 						name: 'Superior',
-						cost: 8.50,
+						cost: 9,
 					},
 					{
 						name: 'Black',
-						cost: 9.00,
+						cost: 9.50,
 					},
 					// {
 					// 	name: 'Spiced',
@@ -4159,7 +4159,7 @@
 					// },
 					{
 						name: 'Oakheart',
-						cost: 9.5,
+						cost: 10,
 					}
 				],
 			},
@@ -4172,11 +4172,11 @@
 							'3 года',
 							'3 anos',
 						],
-						cost: 7.50,
+						cost: 8,
 					},
 					{
 						name: 'Espesial',
-						cost: 8.20,
+						cost: 8.70,
 					},
 					// {
 					// 	name: 'Cuban Spiced',
@@ -4190,7 +4190,7 @@
 				collection: [
 					{
 						name: 'Black',
-						cost: 8.50,
+						cost: 9,
 					},
 					// {
 					// 	name: 'Spiced',
@@ -4204,14 +4204,14 @@
 				collection: [
 					{
 						name: 'Tamboo Spiced',
-						cost: 12.00,
+						cost: 12.50,
 					},
 					{
 						name: [
 							'5 лет',
 							'5 years',
 						],
-						cost: 12.00,
+						cost: 12.50,
 					},
 				],
 			},
@@ -4847,13 +4847,24 @@
 				slug: 'paradox-partner-in-cream',
 			},
 			{
-				name: 'Brewmen',
-				collection: [
-					{
-						name: 'Tomato Soul',
-						slug: 'brewmen-tomato-soul',
-					}
-				],
+				name: 'Tomato Soul',
+				slug: 'brewmen-tomato-soul',
+			},
+			{
+				name: 'Morning Manya',
+				slug: 'zavod-morning-manya',
+			},
+			{
+				name: 'Шабаны',
+				slug: 'chibis-brewery-shabany',
+			},
+			{
+				name: 'Кикимора',
+				slug: 'brewlok-kikimora',
+			},
+			{
+				name: 'MLKO+',
+				slug: 'bakunin-moloko',
 			},
 			{
 				name: 'Тени Саур',
@@ -4862,6 +4873,14 @@
 			{
 				name: 'For All the Wolves',
 				slug: 'black-cat-brewery-for-all-the-wolves',
+			},
+			{
+				name: 'Blanche A`la Citronnelle',
+				slug: 'panzer-brewery-blanche-a-la-citronnelle',
+			},
+			{
+				name: 'Banana Kraken',
+				slug: 'panzer-brewery-banana-kraken',
 			},
 			{
 				name: 'Medovarus',
