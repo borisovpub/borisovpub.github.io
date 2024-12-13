@@ -157,11 +157,11 @@
 		const a = document.createElement( 'img' );
 		a.setAttribute( 'src', dataURL );
 		a.setAttribute( 'download', 'lunch.png' );
-		// a.style.display = 'none';
+		a.style.display = 'none';
 
 		page.appendChild( a );
-		// a.click();
-		// page.removeChild( a );
+		a.click();
+		page.removeChild( a );
 
 		button.disabled = false;
 
