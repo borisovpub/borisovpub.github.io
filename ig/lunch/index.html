@@ -91,6 +91,12 @@
 
 			} );
 
+			var fixText = ( txt ) => window.String( txt )
+				.replace( /-/g, '‑' )
+				.replace( /`([^`]+)`/g, '«$1»' )
+				.replace( /'/g, '’' )
+			;
+
 			img.setAttribute( 'src', 'data:image/svg+xml;utf8,' + window.encodeURIComponent( `
 				<svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
 
@@ -132,10 +138,10 @@
 						<text transform="translate(415,100)">
 						${
 							data.lunch.slice( 0, 4 ).map( ( [ n, ...d ] ) => `
-								<tspan x="0" dy="90" style="text-transform:uppercase">${ n }</tspan>
+								<tspan x="0" dy="90" style="text-transform:uppercase">${ fixText( n ) }</tspan>
 								${
 									d.map( ( [ n ] ) => `
-										<tspan x="0" dy="55">${ n }</tspan>
+										<tspan x="0" dy="55">${ fixText( n ) }</tspan>
 									` ).join( '' )
 								}
 							` ).join( '' )
@@ -148,14 +154,14 @@
 
 		} );
 
-		const a = document.createElement( 'a' );
-		a.setAttribute( 'href', dataURL );
+		const a = document.createElement( 'img' );
+		a.setAttribute( 'src', dataURL );
 		a.setAttribute( 'download', 'lunch.png' );
-		a.style.display = 'none';
+		// a.style.display = 'none';
 
 		page.appendChild( a );
-		a.click();
-		page.removeChild( a );
+		// a.click();
+		// page.removeChild( a );
 
 		button.disabled = false;
 

@@ -281,7 +281,7 @@
 			lunchCollection = data.lunch[ i ];
 			lunchCollectionNode = cloneNode( lunchCollectionTemplate );
 
-			querySelector( lunchCollectionNode, 'span' ).textContent = lunchCollection.shift();
+			querySelector( lunchCollectionNode, 'span' ).textContent = fixText( lunchCollection.shift() );
 
 			j = 0; m = lunchCollection.length;
 			for ( ; j<m; ++j ) {
