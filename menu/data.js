@@ -138,7 +138,7 @@
 			{
 				name: [
 					'Мидии и вонголе в соусе "Том ям"',
-					'Mussels and vongole in tom yum sauce',
+					'Mussels and vongole in Tom Yum sauce',
 				],
 				weight: 375,
 				cost: 26.00,
@@ -308,7 +308,7 @@
 			{
 				name: [
 					'Тартар из говядины с мусом из пармезана',
-					'Beef tartare with parmesan mousse	',
+					'Beef tartare with parmesan mousse',
 				],
 				weight: 200,
 				cost: 24.50,
@@ -1798,70 +1798,6 @@
 
 			// {
 			// 	name: [
-			// 		'Драники',
-			// 		'Draniki',
-			// 	],
-			// 	alias: 'draniki',
-			// 	collection: [
-			// 		{
-			// 			name: [
-			// 				'с колбасками из индейки',
-			// 				'with turkey sausages',
-			// 			],
-			// 			weight: 390,
-			// 			cost: 15.90,
-			// 		},
-			// 		{
-			// 			name: [
-			// 				'с уткой и сливочно-грибным соусом',
-			// 				'with duck and creamy mushroom sauce',
-			// 			],
-			// 			weight: 430,
-			// 			cost: 19.50,
-			// 			img: '1023/695239679/20230504_174915.jpg',
-			// 		},
-			// 		// {
-			// 		// 	name: [
-			// 		// 		'с ростбифом',
-			// 		// 		'with roast beef',
-			// 		// 	],
-			// 		// 	weight: 380,
-			// 		// 	cost: 15.60,
-			// 		// 	img: '6322/623597746/20221203_125714.jpg',
-			// 		// },
-			// 		{
-			// 			name: [
-			// 				'с сёмгой',
-			// 				'with salmon',
-			// 			],
-			// 			weight: 350,
-			// 			cost: 16.70,
-			// 			img: '6190/623597614/20221203_125604.jpg',
-			// 		},
-			// 		{
-			// 			name: [
-			// 				'с соусом из белых грибов',
-			// 				'with mushroom caviar',
-			// 			],
-			// 			weight: 390,
-			// 			cost: 11.90,
-			// 			img: '6430/623597854/20221203_125821.jpg',
-			// 		},
-			// 		// {
-			// 		// 	name: [
-			// 		// 		'со сметаной',
-			// 		// 		'with sour cream',
-			// 		// 	],
-			// 		// 	weight: 280,
-			// 		// 	cost: 7.20,
-			// 		// 	img: '6070/623597494/20221203_125507.jpg',
-			// 		// },
-			// 	],
-			// 	tp: 1,
-			// },
-
-			// {
-			// 	name: [
 			// 		'Куриные колбаски с картофелем',
 			// 		'Chicken sausages with potatoes',
 			// 	],
@@ -1957,11 +1893,11 @@
 
 	},
 
-	Draniki: {
+	PotatoPancakes: {
 
 		name: [
 			'Драники',
-			'Draniki',
+			'Potato pancakes',
 		],
 
 		collection: [
@@ -2003,7 +1939,7 @@
 			{
 				name: [
 					'с соусом из белых грибов',
-					'with mushroom caviar',
+					'with porcini mushroom sauce',
 				],
 				weight: 380,
 				cost: 14.00,
@@ -2409,7 +2345,6 @@
 				name: [
 					'Холодные',
 					'Cold',
-
 				],
 
 				bold: true,
@@ -3422,11 +3357,20 @@
 			// 	cost: 31,
 			// },
 
+			// {
+			// 	name: 'Freixenet',
+			// 	weight: [
+			// 		'белое',
+			// 		'white',
+			// 	],
+			// 	cost: 40,
+			// },
+
 			{
 				name: 'Freixenet',
 				weight: [
-					'белое',
-					'white',
+					'розовое',
+					'rose',
 				],
 				cost: 40,
 			},
@@ -3687,10 +3631,10 @@
 						name: 'Quinta Ruban',
 						cost: 24.00,
 					},
-					{
-						name: 'Nectar D`or',
-						cost: 24.00,
-					},
+					// {
+					// 	name: 'Nectar D`or',
+					// 	cost: 24.00,
+					// },
 				],
 			},
 
@@ -3811,13 +3755,13 @@
 					// 	name: '',
 					// 	cost: 8.00,
 					// },
-					{
-						name: [
-							'Лимон',
-							'Lemon',
-						],
-						cost: 9.30,
-					},
+					// {
+					// 	name: [
+					// 		'Лимон',
+					// 		'Lemon',
+					// 	],
+					// 	cost: 9.30,
+					// },
 					{
 						name: [
 							'Ваниль',
@@ -4008,10 +3952,10 @@
 						name: 'Stile Mediterraneo',
 						cost: 21,
 					},
-					{
-						name: 'Agrumato',
-						cost: 21,
-					}
+					// {
+					// 	name: 'Agrumato',
+					// 	cost: 21,
+					// }
 				],
 			},
 
@@ -4232,30 +4176,30 @@
 			// 	name: 'Guinness',
 			// 	slug: 'guinness-draught',
 			// },
-			{
-				name: 'Theakston',
-				collection: [
-					// {
-					// 	name: 'XB',
-					// 	slug: 'theakston-xb',
-					// },
-					{
-						name: 'Barista Stout',
-						slug: 'theakston-barista-stout',
-					},
-				],
-			},
+			// {
+			// 	name: 'Theakston',
+			// 	collection: [
+			// 		// {
+			// 		// 	name: 'XB',
+			// 		// 	slug: 'theakston-xb',
+			// 		// },
+			// 		{
+			// 			name: 'Barista Stout',
+			// 			slug: 'theakston-barista-stout',
+			// 		},
+			// 	],
+			// },
 			{
 				name: 'O`Hara`s',
 				collection: [
-					// {
-					// 	name: 'Irish Stout Nitro',
-					// 	slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
-					// },
 					{
-						name: '51st State IPA',
-						slug: 'oharas-51st-state-ipa',
+						name: 'Irish Stout Nitro',
+						slug: 'o-hara-s-brewery-o-hara-s-irish-stout-nitro',
 					},
+					// {
+					// 	name: '51st State IPA',
+					// 	slug: 'oharas-51st-state-ipa',
+					// },
 				]
 			},
 			{
@@ -4356,10 +4300,10 @@
 			{
 				name: 'Gletcher',
 				collection: [
-					{
-						name: 'Milk of Amnesia',
-						slug: 'gletcher-milk-of-amnesia-v-tropic-milkshake-ipa',
-					},
+					// {
+					// 	name: 'Milk of Amnesia',
+					// 	slug: 'gletcher-milk-of-amnesia-v-tropic-milkshake-ipa',
+					// },
 					// {
 					// 	name: 'Bowlers IPA',
 					// 	slug: 'gletcher-brewery-ipa-2',
@@ -4517,10 +4461,10 @@
 					// 	name: 'Pale Ale',
 					// 	slug: 'oharas-irish-pale-ale',
 					// },
-					{
-						name: 'Irish Red Nitro',
-						slug: 'oharas-nitro-irish-red',
-					},
+					// {
+					// 	name: 'Irish Red Nitro',
+					// 	slug: 'oharas-nitro-irish-red',
+					// },
 					// {
 					// 	name: 'Irish Stout',
 					// 	slug: 'oharas-irish-stout',
@@ -4553,31 +4497,31 @@
 					// 	name: 'Hop Adventure Talus IPA',
 					// 	slug: 'o-hara-s-brewery-hop-adventure-series-talus',
 					// },
-					{
-						name: 'Hop Adventure Series Strata',
-						slug: 'o-haras-brewery-hop-adventure-series-strata',
-					},
+					// {
+					// 	name: 'Hop Adventure Series Strata',
+					// 	slug: 'o-haras-brewery-hop-adventure-series-strata',
+					// },
 				]
 			},
 			{
 				name: 'Fuller`s',
 				collection: [
-					// {
-					// 	name: 'London Pride',
-					// 	slug: 'fullers-london-pride',
-					// },
-					// {
-					// 	name: 'London Porter',
-					// 	slug: 'fullers-london-porter',
-					// },
-					// {
-					// 	name: 'Black Cab Stout',
-					// 	slug: 'fullers-black-cab-stout',
-					// },
-					// {
-					// 	name: 'ESB',
-					// 	slug: 'fullers-esb',
-					// },
+					{
+						name: 'London Pride',
+						slug: 'fullers-london-pride',
+					},
+					{
+						name: 'London Porter',
+						slug: 'fullers-london-porter',
+					},
+					{
+						name: 'Black Cab Stout',
+						slug: 'fullers-black-cab-stout',
+					},
+					{
+						name: 'ESB',
+						slug: 'fullers-esb',
+					},
 					// {
 					// 	name: 'Honey Dew',
 					// 	slug: 'fullers-honey-dew',
@@ -4585,6 +4529,10 @@
 					{
 						name: 'India Pale Ale',
 						slug: 'fullers-ipa',
+					},
+					{
+						name: '1845',
+						slug: 'fuller-s-griffin-brewery-1845',
 					},
 				],
 			},
@@ -4709,19 +4657,19 @@
 					},
 				],
 			},
-			{
-				name: 'Primátor',
-				collection: [
-					{
-						name: 'IPA',
-						slug: 'primator-ipa',
-					},
-					{
-						name: '13 Polotmavé',
-						slug: 'primator-13-polotmave',
-					},
-				],
-			},
+			// {
+			// 	name: 'Primátor',
+			// 	collection: [
+			// 		{
+			// 			name: 'IPA',
+			// 			slug: 'primator-ipa',
+			// 		},
+			// 		{
+			// 			name: '13 Polotmavé',
+			// 			slug: 'primator-13-polotmave',
+			// 		},
+			// 	],
+			// },
 			{
 				name: 'Schlenkerla',
 				collection: [
@@ -4737,10 +4685,10 @@
 						name: 'Erle Schwarzbier',
 						slug: 'schlenkerla-heller-brau-trum-aecht-schlenkerla-erle-schwarzbier',
 					},
-					{
-						name: 'Weichsel Rotbier',
-						slug: 'schlenkerla-heller-brau-trum-aecht-schlenkerla-weichsel-rotbier',
-					},
+					// {
+					// 	name: 'Weichsel Rotbier',
+					// 	slug: 'schlenkerla-heller-brau-trum-aecht-schlenkerla-weichsel-rotbier',
+					// },
 				],
 			},
 			// {
@@ -4842,14 +4790,14 @@
 			// 	name: 'Saison 1858',
 			// 	slug: 'brasserie-du-bocq-saison-1858',
 			// },
-			{
-				name: 'Partner In Cream',
-				slug: 'paradox-partner-in-cream',
-			},
-			{
-				name: 'Tomato Soul',
-				slug: 'brewmen-tomato-soul',
-			},
+			// {
+			// 	name: 'Partner In Cream',
+			// 	slug: 'paradox-partner-in-cream',
+			// },
+			// {
+			// 	name: 'Tomato Soul',
+			// 	slug: 'brewmen-tomato-soul',
+			// },
 			{
 				name: 'Morning Manya',
 				slug: 'zavod-morning-manya',
@@ -4866,14 +4814,14 @@
 				name: 'MLKO+',
 				slug: 'bakunin-moloko',
 			},
-			{
-				name: 'Тени Саур',
-				slug: 'black-cat-brewery-teni-saur',
-			},
-			{
-				name: 'For All the Wolves',
-				slug: 'black-cat-brewery-for-all-the-wolves',
-			},
+			// {
+			// 	name: 'Тени Саур',
+			// 	slug: 'black-cat-brewery-teni-saur',
+			// },
+			// {
+			// 	name: 'For All the Wolves',
+			// 	slug: 'black-cat-brewery-for-all-the-wolves',
+			// },
 			{
 				name: 'Blanche A`la Citronnelle',
 				slug: 'panzer-brewery-blanche-a-la-citronnelle',
