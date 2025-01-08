@@ -307,7 +307,7 @@
 
 			{
 				name: [
-					'Тартар из говядины с мусом из пармезана',
+					'Тартар из говядины с муссом из пармезана',
 					'Beef tartare with parmesan mousse',
 				],
 				weight: 200,
@@ -4293,10 +4293,6 @@
 			// {
 			//   name: 'Gambrinus',
 			// },
-			// {
-			// 	name: 'Iron Woods',
-			// 	slug: 'gletcher-iron-woods',
-			// },
 			{
 				name: 'Gletcher',
 				collection: [
@@ -4312,15 +4308,19 @@
 					// 	name: 'Rouge de Fleur',
 					// 	slug: 'gletcher-rouge-de-fleur',
 					// },
+					// {
+					// 	name: 'Iron Woods',
+					// 	slug: 'gletcher-iron-woods',
+					// },
+					// {
+					// 	name: 'Underground',
+					// 	slug: 'gletcher-brewery-gletcher-underground-ale',
+					// },
+					// {
+					// 	name: 'Nut Butter',
+					// },
 				]
 			},
-			// {
-			// 	name: 'Underground',
-			// 	slug: 'gletcher-brewery-gletcher-underground-ale',
-			// },
-			// {
-			// 	name: 'Nut Butter',
-			// },
 			{
 				name: 'Robim Good',
 				collection: [

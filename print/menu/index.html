@@ -19,13 +19,13 @@
 		@font-face {
 			font-family: "Open Sans Condensed";
 			src: local( "Open Sans Condensed Bold" ),
-				 url( "/@/OpenSansCondensed-Bold.ttf" );
+			url( "/@/OpenSansCondensed-Bold.ttf" );
 		}
 
 		@font-face {
 			font-family: "Open Sans Condensed Light";
 			src: local( "Open Sans Condensed Light" ),
-				 url( "/@/OpenSansCondensed-Light.ttf" );
+			url( "/@/OpenSansCondensed-Light.ttf" );
 		}
 
 		*,
@@ -44,11 +44,6 @@
 			font-family: "Open Sans Condensed Light", Arial, sans-serif;
 			width: 450mm;
 			height: calc( 640mm - 2mm );
-			background: #fff;
-		}
-
-		[contenteditable="true"] {
-			-webkit-user-modify: read-only;
 		}
 
 		.page {
@@ -65,14 +60,14 @@
 
 		}
 
+		.page > * {
+			overflow: hidden;
+		}
+
 		.colon {
 			display: grid;
 			grid-template-columns: 46.25mm 46.25mm;
 			grid-gap: 4mm;
-		}
-
-		.page > * {
-			overflow: hidden;
 		}
 
 		.bold {
@@ -80,27 +75,40 @@
 			text-transform: uppercase;
 		}
 
-		.brackets:not( :empty ):before {
+		.kind:empty,
+		.brackets:empty,
+		.ml:empty,
+		.L:empty,
+		.percent:empty,
+		.ibu:empty {
+			display: none;
+		}
+
+		.kind:before {
+			content: " ";
+		}
+
+		.brackets:before {
 			content: "(";
 		}
 
-		.brackets:not( :empty ):after {
+		.brackets:after {
 			content: ")";
 		}
 
-		.ml:not( :empty ):after {
+		.ml:after {
 			content: "ml";
 		}
 
-		.L:not( :empty ):after {
+		.L:after {
 			content: "L";
 		}
 
-		.percent:not( :empty ):after {
+		.percent:after {
 			content: "%";
 		}
 
-		.ibu:not( :empty ):after {
+		.ibu:after {
 			content: " IBU";
 		}
 
@@ -141,16 +149,8 @@
 			font-size: calc( 12pt * var( --ratio ) );
 		}
 
-		.nbsp:after {
-			content: "  ";
-		}
-
 		.slash > span:not( :empty ) + :before {
 			content: " / ";
-		}
-
-		.empty {
-			display: none !important;
 		}
 
 		.section {
@@ -176,6 +176,16 @@
 		.section > ul {
 			grid-column-start: 1;
 			grid-column-end: 3;
+		}
+
+		.section .section .sub-title,
+		.section .section .title {
+			line-height: calc( 16pt * var( --ratio ) * var( --ratio ) );
+			font-size: calc( 13.2pt * var( --ratio ) );
+		}
+
+		.section .section:not( :last-of-type ) {
+			padding-bottom: calc( 6pt * var( --ratio ) * var( --ratio ) * var( --ratio ) * var( --ratio ) );
 		}
 
 		.item {
@@ -205,31 +215,31 @@
 			text-align: right;
 		}
 
-		.item.ext {
+		:not( .not-ext ) > .item.ext {
 			grid-template-columns: auto min-content 11mm;
 		}
 
-		.item.dif .nbsp:after,
-		.item.dif .cost:after {
+		.not-ext div:nth-child( 2 ) {
+			display: none;
+		}
+
+		.item.dynamic .name:after,
+		.item.dynamic .price:after {
 			content: '*';
 			opacity: 0.7;
 		}
 
-		.item.dif .cost:after {
+		.item.dynamic .price:after {
 			font-family: "Open Sans Condensed Light", Arial, sans-serif;
 			font-size: calc( 13.2pt * var(--ratio ) );
 			position: absolute;
 		}
 
-		.shot .name {
-			font-size: calc( 16pt * var( --ratio ) );
-		}
-
-		.cost > span + span {
+		.price > span + span {
 			font-size: calc( 11pt * var( --ratio ) );
 		}
 
-		.cost > span + span:not( :empty ):before {
+		.price > span + span:not( :empty ):before {
 			content: ".";
 		}
 
@@ -239,7 +249,7 @@
 			opacity: 0.7;
 		}
 
-		.desc > .dif {
+		.desc > .dynamic {
 			font-family: "Open Sans Condensed", Arial, sans-serif;
 		}
 
@@ -247,14 +257,10 @@
 			width: 96.5mm;
 			text-align: center;
 			position: absolute;
-			bottom: 30mm;
+			bottom: 24mm;
 		}
 
 		@media screen {
-
-			html {
-				background: #999;
-			}
 
 			.page {
 				outline: 1px solid #555;
@@ -275,31 +281,32 @@
 
 		}
 
-		.no-cost .cost {
+		.no-price :has( > .price ),
+		.no-price .price {
 			display: none;
 		}
 
-		.no-cost .section {
-			grid-template-columns: minmax( 0, min-content ) auto;
+		.no-price .section {
+			grid-template-columns: min-content auto;
 			grid-template-areas: "a b" "c c";
 		}
 
-		.no-cost .section > .title {
+		.no-price .section > .title {
 			grid-area: a;
 			white-space: nowrap;
 		}
 
-		.no-cost .section > .sub-title {
+		.no-price .section > .sub-title {
 			grid-area: b;
 			text-align: left;
 			padding-left: 2mm;
 		}
 
-		.no-cost .section > ul {
+		.no-price .section > ul {
 			grid-area: c;
 		}
 
-		.no-cost .beer {
+		.no-price .item.ext {
 			grid-template-columns: auto min-content;
 		}
 
@@ -307,59 +314,45 @@
 
 	<template id="section">
 		<div class="section">
-			<div class="title bold" contenteditable="true"></div>
-			<div class="sub-title opacity"></div>
+			<div class="title bold"></div>
+			<div class="sub-title opacity slash nowrap"></div>
 			<ul></ul>
 		</div>
 	</template>
 
-	<template id="weight">
-		<span class="weight opacity brackets sub-text" contenteditable="true"></span>
-	</template>
-
-	<template id="slash">
-		<span class="nowrap slash"></span>
-	</template>
-
-	<template id="bold-slash">
-		<span class="bold nowrap slash"></span>
-	</template>
-
-	<template id="cost">
-		<span class="cost bold"><span contenteditable="true"></span><span contenteditable="true"></span></span>
+	<template id="price">
+		<span class="price bold"><span></span><span></span></span>
 	</template>
 
 	<template id="ml">
-		<span class="ml" contenteditable="true"></span>
+		<span class="ml"></span>
 	</template>
 
 	<template id="dish">
 		<li class="dish item">
-			<div><span class="name" contenteditable="true"></span>   <span class="weight opacity brackets sub-text" contenteditable="true"></span></div>
-			<div></div>
+			<div><span class="name"></span>  <span class="opacity brackets sub-text"></span></div>
+			<div class="nowrap"></div>
 			<ul></ul>
 		</li>
 	</template>
 
-	<template id="alc">
-		<li class="dish item">
-			<div><span class="name" contenteditable="true"></span> <span class="kind opacity" contenteditable="true"></span></div>
-			<div></div>
+	<template id="drink">
+		<li class="drink item ext">
+			<div><span><span class="name"></span><span class="kind opacity"></span></span>  <span class="opacity brackets sub-text"></span></div>
+			<div class="opacity sub-text nowrap slash"></div>
+			<div class="nowrap slash"></div>
 		</li>
 	</template>
 
 	<template id="beer">
 		<li class="beer item ext">
-			<div>
-				<span class="name" contenteditable="true"></span>
-				<span class="kind opacity" contenteditable="true"></span>
-			</div>
+			<div><span class="name"></span><span class="kind opacity"></span></div>
 			<div class="opacity nowrap sub-text slash">
-				<span class="ibu" contenteditable="true"></span>
-				<span class="alc percent" contenteditable="true"></span>
-				<span class="cap L" contenteditable="true"></span>
+				<span class="ibu"></span>
+				<span class="alc percent"></span>
+				<span class="cap L"></span>
 			</div>
-			<div></div>
+			<div class="nowrap"></div>
 		</li>
 	</template>
 
@@ -368,239 +361,116 @@
 <body>
 
 <article class="page">
-	<div style="--ratio:1"></div>
-	<div style="--ratio:1"></div>
+	<div></div>
+	<div></div>
 	<div></div>
 	<div></div>
 </article>
 
 <article class="page">
-	<div style="--ratio:1"></div>
-	<div style="--ratio:0.97">
+	<div></div>
+	<div>
 		<div></div>
 		<div class="colon" style="margin-top:4mm">
-			<span></span>
-			<span></span>
+			<span class="mini"></span>
+			<span class="mini"></span>
 		</div>
 	</div>
 	<div style="text-align:center"></div>
-	<div style="--ratio:1"></div>
+	<div></div>
 </article>
 
-<script>( ( /** Window */ window ) => Promise.all( [
-	window.fetch( '/menu/data.js?' + window.Math.random() ).then( ( response ) => response.text() ),
-	// window.fetch( 'beer.json?' + window.Math.random() ).then( ( response )  => response.json() ),
-	window.fetch( 'https://your.beer/api/v1/places/irish-pub' ).then( ( response )  => response.json() ),
-] ).then( ( [ menu, beers ] ) => {
+<script type="module">
 
-	menu = window.eval( menu );
+	import iiko from '/@/iiko.max.mjs';
+	import yourBeer from '/@/beer.max.mjs';
 
+	const beers = yourBeer();
+
+	const params = new URLSearchParams( location.search );
+
+	/** @type { string } */
+	const lang = params.has( 'en' ) ? 'en' : 'ru';
 	/**
-	 * @typedef { {
-	 * 		id: number,
-	 * 		slug: string,
-	 * 		name: string,
-	 * 		breweries: Array< {
-	 * 			id: number,
-	 *			name: string,
-	 * 		} >,
-	 * 		logo_image: string,
-	 * 		beer_style: {
-	 * 			slug: string,
-	 * 			name: string,
-	 * 		},
-	 * 		gravity: null,
-	 * 		abv: number,
-	 * 		ibu: number,
-	 * 		avg_rating: number,
-	 * 		date_start: string,
-	 * 		is_checked: boolean,
-	 * 		skus: Array< {
-	 * 		    price: number,
-	 * 		    volume: string,
-	 * 		    packing: string,
-	 * 		} >,
-	 * 		sale_data: {
-	 * 			tap_number: string,
-	 * 			start_sales_at: string,
-	 * 			shop_price: boolean,
-	 * 		},
-	 * } } Beer
+	 * @param { string } txt
+	 * @returns { string }
 	 */
-
-	beers = beers.beers;
-
-	var params = new window.URLSearchParams( window.location.search );
-
-	/** @noinline */
-	var querySelector = ( node, selector ) => node.querySelector( selector );
-	/** @noinline */
-	var querySelectorAll = ( node, selector ) => node.querySelectorAll( selector );
-	/** @noinline */
-	var cloneNode = ( node ) => document.importNode( node.content, true );
-	/** @noinline */
-	var appendChild = ( node, child ) => node.appendChild( child );
-
-	var fixText = ( txt ) => window.String( txt )
-		.replace( /-/g, '‑' )
-		.replace( /[`']/g, '’' )
-		.replace( /"([^"]+)"/g, '«$1»' )
+	const fixText = ( txt ) => String( txt )
+		.replace( /-/g, '‑' ) // заменяем на неразрывный дефис
+		.replace( /'/g, '’' ) // заменяем на красивый апостраф
+		.replace( /"([^"]+)"/g, '«$1»' ) // заменяем на красивые ковычки
+		.replace( / (с|with|к|to|в|in|но|on|the|из|from|of) /g, ' $1 ' ) // всталяем неразрывный пробел после предлогов
 	;
 
-	var document =	window.document;
-	var Array =		window.Array;
+	/**
+	 * @param { { ru?: string, en?: string } } data
+	 * @returns { string }
+	 */
+	const getName = ( data ) =>
+		fixText( data[ lang ] || data.ru || '' )
+	;
 
-	var lang = params.has( 'en' ) ? 1 : 0;
+	const sectionTemplate =		document.querySelector( '#section' );
 
-	var getName = ( data ) => fixText( Array.isArray( data ) ? data[ lang ] : data );
+	const priceTemplate =		document.querySelector( '#price' );
+	const mlTemplate =			document.querySelector( '#ml' );
 
-	var sectionTemplate = querySelector( document, '#section' );
+	const dishTemplate =		document.querySelector( '#dish' );
+	const drinkTemplate =		document.querySelector( '#drink' );
+	const beerTemplate =		document.querySelector( '#beer' );
 
-	var createSection = ( data, createLI, createSUB = null, mini = false ) => {
+	/** @type { Record< string, { ru: string, en: string } > } */
+	const wines = {
+		'брют': { ru: 'брют', en: 'brut' },
+		'сх': { ru: 'сх', en: 'dr' },
+		'псх': { ru: 'п-сх', en: 's-dr' },
+		'псл': { ru: 'п-сл', en: 's-sw' },
+		'сл': { ru: 'сл', en: 'sw' },
+		'бел': { ru: 'белое', en: 'white' },
+		'крс': { ru: 'красное', en: 'red' },
+		'роз': { ru: 'розовое', en: 'rose' },
+	};
 
-		var result = cloneNode( sectionTemplate );
+	/**
+	 * @param { Product } product
+	 * @param { Product } [parent]
+	 * @returns { Promise< Node > }
+	 */
+	const createDishProduct = async ( product, parent ) => {
 
-		var left = querySelector( result, '.title' );
-		var right = querySelector( result, '.sub-title' );
-		var bottom = querySelector( result, 'ul' );
+		let result = dishTemplate.content.cloneNode( true );
+		let li = result.querySelector( 'li' );
 
-		if ( mini ) querySelector( result, '.section' ).classList.add( 'mini' );
+		li.querySelector( '.name' ).textContent = getName( product );
 
-		left.textContent = getName( data.name );
-
-		if ( createSUB ) {
-			appendChild( right, createSUB( data ) );
+		if ( product.dynamic ) {
+			li.classList.add( 'dynamic' );
 		}
 
-		var arr = data.collection;
-		var i = 0, l = arr.length;
+		if ( product.products ) {
 
-		if ( l > 0 ) {
-
-			for ( ; i<l; ++i ) {
-				appendChild( bottom, createLI( arr[ i ] ) );
+			for ( let child of product.products ) {
+				li.querySelector( 'ul' ).appendChild( await createDishProduct( child, product ) );
 			}
 
 		} else {
 
-			querySelector( result, '.section' ).classList.add( 'empty' );
+			let size = product?.units?.[ 0 ]?.size || 0;
+			let price = product?.units?.[ 0 ]?.price || 0;
 
-		}
+			if ( parent ) {
 
-		return result;
+				size += parent?.units?.[ 0 ]?.size || 0;
+				price += parent?.units?.[ 0 ]?.price || 0;
 
-	};
+			}
 
-	var weightTemplate = querySelector( document, '#weight' );
+			if ( size ) {
+				result.querySelector( '.brackets' ).textContent = size;
+			}
 
-	var createWeight = ( data ) => {
-
-		var result = cloneNode( weightTemplate );
-		querySelector( result, 'span' ).textContent = getName( data.weight );
-
-		return result;
-
-	};
-
-	var costTemplate = querySelector( document, '#cost' );
-
-	var slashTemplate = querySelector( document, '#slash' );
-	var boldSlashTemplate = querySelector( document, '#bold-slash' );
-
-	var createCost = ( data ) => {
-
-		var result, span;
-
-		if ( Array.isArray( data ) ) {
-
-			result = cloneNode( boldSlashTemplate );
-			span = querySelector( result, 'span' );
-
-			appendChild( span, createCost( data[ 0 ] ) );
-			appendChild( span, createCost( data[ 1 ] ) );
-
-		} else {
-
-			result = cloneNode( costTemplate );
-			span = querySelectorAll( result, '.cost span' );
-
-			var c = data.toFixed( 2 ).split( '.' );
-
-			span[ 0 ].textContent = c[ 0 ];
-			span[ 1 ].textContent = c[ 1 ];
-
-		}
-
-		return result;
-
-	};
-
-	var mlTemplate = querySelector( document, '#ml' );
-
-	var createML = ( data ) => {
-
-		var result, span;
-
-		if ( Array.isArray( data ) ) {
-
-			result = cloneNode( slashTemplate );
-			span = querySelector( result, 'span' );
-
-			appendChild( span, createML( data[ 0 ] ) );
-			appendChild( span, createML( data[ 1 ] ) );
-
-		} else {
-
-			result = cloneNode( mlTemplate );
-			querySelector( result, 'span' ).textContent = data;
-
-		}
-
-		return result;
-
-	};
-
-	var createCapacity = ( data ) => createML( data.capacity );
-
-	var dishTemplate = querySelector( document, '#dish' );
-
-	var createDish = ( data ) => {
-
-		var result = cloneNode( dishTemplate );
-		var li = querySelector( result, 'li' );
-
-		var left = querySelector( li, 'div' );
-		var right = querySelector( li, 'div:last-of-type' );
-		var bottom = querySelector( li, 'ul' );
-
-		var name = querySelector( left, '.name' );
-
-		name.textContent = getName( data.name );
-
-		if ( data.bold ) {
-			name.classList.add( 'bold' );
-		}
-
-		if ( data.weight ) {
-			// appendChild( left, createWeight( data ) );
-			querySelector( result, '.weight' ).textContent = getName( data.weight );
-		}
-
-		if ( data.cost ) {
-			appendChild( right, createCost( data.cost ) );
-		}
-
-		if ( data.dif ) {
-			li.classList.add( 'dif' );
-		}
-
-		if ( data.collection ) {
-
-			var arr = data.collection;
-			var i = 0, l = arr.length;
-
-			for ( ; i<l; ++i ) {
-				appendChild( bottom, createDish( arr[ i ] ) );
+			if ( price ) {
+				li.querySelector( 'div:last-of-type' ).appendChild( await createPrice( price ) );
 			}
 
 		}
@@ -609,42 +479,115 @@
 
 	};
 
-	var alcTemplate = querySelector( document, '#alc' );
+	/**
+	 * @param { Product } product
+	 * @param { string } [name]
+	 * @returns { Promise< Node > }
+	 */
+	const createDrinkProduct = async ( product, name ) => {
 
-	var createAlc = ( data ) => {
+		let v;
 
-		var createItem = ( data, name = null ) => {
+		let result = drinkTemplate.content.cloneNode( true );
+		let li = result.querySelector( 'li' );
 
-			var result = cloneNode( alcTemplate );
-			var li = querySelector( result, 'li' );
+		li.querySelector( '.name' ).textContent = name || getName( product );
+		if ( name ) li.querySelector( '.kind' ).textContent = getName( product );
 
-			querySelector( li, '.name' ).textContent = getName( name == null ? data.name : name );
-			if ( name != null ) querySelector( li, '.kind' ).textContent = getName( data.name );
+		if ( ( v = product?.units[ 0 ]?.size ) ) {
+			li.querySelector( 'div:nth-child( 2 )' ).appendChild( await createML( v ) );
+		}
+		if ( ( v = product?.units[ 0 ]?.price ) ) {
+			li.querySelector( 'div:last-of-type' ).appendChild( await createPrice( v ) );
+		}
 
-			if ( data.cost ) {
-				appendChild( querySelector( li, 'div:last-of-type' ), createCost( data.cost ) );
+		return result;
+
+	};
+
+	/**
+	 * @param { Product } product
+	 * @param { string } [name]
+	 * @returns { Promise< Node > }
+	 */
+	const createBeerProduct = async ( product, name ) => {
+
+		let v;
+
+		let result = beerTemplate.content.cloneNode( true );
+		let li = result.querySelector( 'li' );
+
+		li.querySelector( '.name' ).textContent = name || getName( product );
+		if ( name ) li.querySelector( '.kind' ).textContent = getName( product );
+
+		if ( ( v = ( await beers )[ product.info ] ) ) {
+
+			if ( v.abv ) {
+				li.querySelector( '.alc' ).textContent = v.abv;
 			}
 
-			return result;
-
-		};
-
-		var result, arr;
-
-		if ( ( arr = data.collection ) ) {
-
-			result = document.createDocumentFragment();
-
-			var i = 0, l = arr.length;
-			for ( ; i<l; ++i ) {
-
-				appendChild( result, createItem( arr[ i ], data.name ) );
-
+			if ( v.ibu ) {
+				li.querySelector( '.ibu' ).textContent = v.ibu;
 			}
 
-		} else {
+		}
 
-			result = createItem( data );
+		if ( ( v = product?.units[ 0 ]?.size ) ) {
+			li.querySelector( '.cap' ).textContent = v / 1000;
+		}
+
+		if ( ( v = product?.units[ 0 ]?.price ) ) {
+			li.querySelector( 'div:last-of-type' ).appendChild( await createPrice( v ) );
+		}
+
+		return result;
+
+	};
+
+	/**
+	 * @param { Product } product
+	 * @param { string } [name]
+	 * @returns { Promise< Node > }
+	 */
+	const createWineProduct = async ( product, name ) => {
+
+		let v;
+
+		let result = drinkTemplate.content.cloneNode( true );
+		let li = result.querySelector( 'li' );
+
+		li.querySelector( '.name' ).textContent = name || getName( product );
+		if ( name ) li.querySelector( '.kind' ).textContent = getName( product );
+
+		if ( ( v = wines[ product.info ] ) ) {
+			result.querySelector( '.brackets' ).textContent = getName( v );
+		}
+
+		for ( let { size, price } of product.units ) {
+			li.querySelector( 'div:nth-child( 2 )' ).appendChild( await createML( size ) );
+			li.querySelector( 'div:last-of-type' ).appendChild( await createPrice( price ) );
+		}
+
+		return result;
+
+	};
+
+	/**
+	 * @param { Group } group
+	 * @param { function( Product, Product= ): Promise< Node > } createProduct
+	 * @returns { Promise< Node > }
+	 */
+	const createDishGroup = async ( group, { createProduct = createDishProduct } = {} ) => {
+
+		let result = sectionTemplate.content.cloneNode( true );
+
+		result.querySelector( '.title' ).textContent = getName( group );
+
+		if ( group.products ) {
+
+			for ( let product of group.products ) {
+				result.querySelector( 'ul' ).appendChild( await createProduct( product ) );
+			}
 
 		}
 
@@ -652,79 +595,151 @@
 
 	};
 
-	var beerTemplate = querySelector( document, '#beer' );
+	/**
+	 * @param { Group } group
+	 * @param { function( Product, string= ): Promise< Node > } createProduct
+	 * @returns { Promise< Node > }
+	 */
+	const createDrinkGroup = async ( group, { createProduct = createDrinkProduct } = {} ) => {
 
-	var createBeer = ( data, info = beers.other ) => {
+		let result = sectionTemplate.content.cloneNode( true );
 
-		var createItem = ( data, name = null ) => {
+		let ul = result.querySelector( 'ul' );
 
-			var result = cloneNode( beerTemplate );
-			var li = querySelector( result, 'li' );
+		let products = /** @type { Product[] } */ [];
 
-			querySelector( li, '.name' ).textContent = getName( name == null ? data.name : name );
-			if ( name != null ) querySelector( li, '.kind' ).textContent = getName( data.name );
+		let flag = 0;
 
-			if ( data.slug && ( data = info.find( ( d ) => d.slug === data.slug ) ) ) {
+		if ( group.products ) products.push( ...group.products );
+		if ( group.groups ) group.groups.forEach( ( group ) => group.products && products.push( ...group.products ) );
 
-				var sku = data.skus.reduce(
-					( a, b ) =>
-						a.volume == 0.5 ? a :
-						b.volume == 0.5 ? b :
-						a.volume > b.volume ? a : b
-					,
-					{ volume: 0 }
-				);
+		result.querySelector( '.title' ).textContent = getName( group );
 
-				if ( sku ) {
+		let multi = 0;
+		let prices = {};
+		let sizes;
 
-					if ( sku.volume ) {
-						querySelector( li, '.cap' ).textContent = sku.volume;
+		for ( let product of products ) {
+
+			multi = Math.max( multi, product.units.length );
+
+			for ( let u of product.units ) {
+				( prices[ u.size ] || ( prices[ u.size ] = [] ) ).push( u.price );
+			}
+
+		}
+
+		sizes = Object.keys( prices );
+		if ( multi == sizes.length ) {
+
+			++flag;
+
+			if ( !group.groups ) {
+
+				sizes = sizes.sort().reverse();
+				for ( let size of sizes ) prices[ size ] = new Set( prices[ size ] );
+
+				if ( Object.values( prices ).every( ( p ) => p.size == 1 ) ) {
+
+					++flag;
+
+				}
+
+			}
+
+		}
+
+		if ( flag > 0 ) {
+
+			for ( let { size } of products[ 0 ].units ) {
+
+				let ml = mlTemplate.content.cloneNode( true );
+				ml.querySelector( 'span' ).textContent = size;
+				result.querySelector( '.sub-title' ).appendChild( ml );
+
+			}
+
+			ul.classList.add( 'not-ext' );
+
+		}
+
+		if ( group.products ) {
+
+			if ( flag > 1 ) {
+
+				let name = [];
+
+				for ( let product of group.products ) {
+					name.push( getName( product ).replace( /\s+/g, ' ' ) );
+				}
+
+				ul.appendChild( await createProduct( {
+					ru: name.join( ', ' ),
+					units: group.products[ 0 ].units,
+				} ) );
+
+			} else {
+
+				for ( let product of group.products ) {
+					ul.appendChild( await createProduct( product ) );
+				}
+
+			}
+
+		}
+
+		if ( group.groups ) {
+
+			for ( let child of group.groups ) {
+
+				let name = getName( child );
+
+				for ( let product of child.products ) {
+					ul.appendChild( await createProduct( product, name ) );
+				}
+
+			}
+
+		}
+
+		return result;
+
+	};
+
+	/**
+	 * @param { Group } group
+	 * @returns { Promise< Node > }
+	 */
+	const createBeerGroup = async ( group ) => {
+
+		let result = sectionTemplate.content.cloneNode( true );
+		let ul = result.querySelector( 'ul' );
+
+		result.querySelector( '.title' ).textContent = getName( group );
+
+		if ( group.products ) {
+
+			for ( let product of group.products ) {
+				result.appendChild( await createBeerProduct( product ) );
+			}
+
+		}
+
+		if ( group.groups ) {
+
+			for ( let child of group.groups ) {
+
+				if ( child.products ) {
+
+					let name = getName( child );
+
+					for ( let product of child.products ) {
+						ul.appendChild( await createBeerProduct( product, name ) );
 					}
 
-					if ( sku.price ) {
-						appendChild( querySelector( li, 'div:last-of-type' ), createCost( sku.price ) );
-					}
-
-				}
-
-				if ( data.abv ) {
-					querySelector( li, '.alc' ).textContent = data.abv;
-				}
-
-				if ( data.ibu ) {
-					querySelector( li, '.ibu' ).textContent = data.ibu;
-				}
-
-			} else if ( data ) {
-
-				querySelector( li, '.cap' ).textContent = 0.5;
-
-				if ( data.cost ) {
-					appendChild( querySelector( li, 'div:last-of-type' ), createCost( data.cost ) );
 				}
 
 			}
-
-			return result;
-
-		};
-
-		var result, arr;
-
-		if ( ( arr = data.collection ) ) {
-
-			result = document.createDocumentFragment();
-
-			var i = 0, l = arr.length;
-			for ( ; i<l; ++i ) {
-
-				appendChild( result, createItem( arr[ i ], data.name ) );
-
-			}
-
-		} else {
-
-			result = createItem( data );
 
 		}
 
@@ -732,126 +747,115 @@
 
 	};
 
-	var createDraftBeer = ( data ) => createBeer( data, beers.tap );
+	/**
+	 * @param { Group } group
+	 * @param { function( Group, { createProduct: function( Product ): Promise< Node > } ): Promise< Node > } createGroup
+	 * @param { function( Product ): Promise< Node > } [createProduct]
+	 * @returns { Promise< Node > }
+	 */
+	const createCollectionGroup = async ( group, { createGroup, createProduct } ) => {
 
-	// Object.values( menu ).forEach( ( o ) => {
-	//
-	// 	var val = 0;
-	// 	var min = Number.POSITIVE_INFINITY;
-	// 	var max = Number.NEGATIVE_INFINITY;
-	//
-	// 	var avg;
-	// 	var cnt = 0;
-	//
-	// 	var check = ( o ) => {
-	//
-	// 		if ( o.cost ) {
-	// 			var cost = Array.isArray( o.cost ) ? o.cost[ 1 ] : o.cost;
-	// 			val += cost;
-	// 			if ( cost < min ) min = cost;
-	// 			if ( cost > max ) max = cost;
-	// 			cnt++;
-	// 		}
-	//
-	// 		if ( o.collection ) Object.values( o.collection ).forEach( check );
-	//
-	// 	};
-	//
-	// 	var calc = ( o ) => {
-	//
-	// 		if ( o.cost ) {
-	//
-	// 			var cost = Array.isArray( o.cost ) ? o.cost[ 1 ] : o.cost;
-	// 			var ratio;
-	//
-	// 			if ( cost > avg ) {
-	// 				ratio = 2.5 - ( ( ( cost - avg ) / ( max - avg ) * 2.5 ) || 0 );
-	// 			} else {
-	// 				ratio = 2.5 + ( ( ( cost - min ) / ( avg - min ) * 2.5 ) || 0 );
-	// 			}
-	// 			ratio = 10 + ratio / 10;
-	//
-	// 			if ( Array.isArray( o.cost ) ) {
-	// 				o.cost = o.cost.map( ( c ) => Math.round( c * ratio ) / 10 );
-	// 			} else {
-	// 				o.cost = Math.round( o.cost * ratio ) / 10;
-	// 			}
-	// 		}
-	//
-	// 		if ( o.collection ) Object.values( o.collection ).forEach( calc );
-	//
-	// 	};
-	//
-	// 	check( o );
-	//
-	// 	avg = val / cnt;
-	//
-	// 	calc( o );
-	//
-	// } );
+		let result = sectionTemplate.content.cloneNode( true );
 
-	var colon = querySelectorAll( document, '.page>div' );
-	var colon2 = querySelector( colon[ 5 ], 'div' );
-	var colon3 = querySelectorAll( colon[ 5 ], 'span' );
+		result.querySelector( '.title' ).textContent = getName( group );
+		result.querySelector( 'ul' ).appendChild( await createCollection( group, { createGroup, createProduct } ) );
 
-	appendChild( colon[ 0 ], createSection( menu.BeerStarters, createDish ) );
-	appendChild( colon[ 0 ], createSection( menu.Starters, createDish ) );
-	appendChild( colon[ 0 ], createSection( menu.StartersForCompany, createDish ) );
-	appendChild( colon[ 0 ], createSection( menu.Additives, createDish ) );
+		return result;
 
-	appendChild( colon[ 1 ], createSection( menu.Soups, createDish ) );
-	appendChild( colon[ 1 ], createSection( menu.Salads, createDish ) );
-	appendChild( colon[ 1 ], createSection( menu.SeasonalSalads, createDish ) );
-	appendChild( colon[ 1 ], createSection( menu.BurgersSandwiches, createDish ) );
-	// colon[ 1 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
+	};
 
-	appendChild( colon[ 2 ], createSection( menu.HotDishes, createDish ) );
-	appendChild( colon[ 2 ], createSection( menu.PotatoPancakes, createDish ) );
-	appendChild( colon[ 2 ], createSection( menu.Garnish, createDish ) );
-	appendChild( colon[ 2 ], createSection( menu.Desserts, createDish ) );
-	colon[ 2 ].insertAdjacentHTML( 'beforeend', `<div class="img"><img src="bc.svg" style="height:31.417mm" /></div>` );
-	// colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
-	colon[ 2 ].insertAdjacentHTML( 'beforeend', `<div class="desc"><span class="dif">*</span> ${ getName( [ 'У блюд помеченных звёздчкой цена зависит от веса', 'For dishes marked with an asterisk, the price depends on the weight' ] ) }</div>` );
+	/**
+	 * @param { Group } group
+	 * @param { function( Group, { createProduct: function( Product ): Promise< Node > } ): Promise< Node > } createGroup
+	 * @param { function( Product ): Promise< Node > } [createProduct]
+	 * @returns { Promise< Node > }
+	 */
+	const createCollection = async ( group, { createGroup, createProduct } ) => {
 
-	appendChild( colon[ 3 ], createSection( menu.Gasing, createDish ) );
-	appendChild( colon[ 3 ], createSection( menu.Coffee, createDish ) );
-	appendChild( colon[ 3 ], createSection( menu.Tea, createDish, createWeight ) );
-	appendChild( colon[ 3 ], createSection( menu.Juice, createDish, createWeight ) );
-	appendChild( colon[ 3 ], createSection( menu.Cocktails, createDish ) );
+		let result = document.createDocumentFragment();
 
-	appendChild( colon[ 4 ], createSection( menu.WhiteWine, createDish, createCapacity ) );
-	appendChild( colon[ 4 ], createSection( menu.RoseWine, createDish, createCapacity ) );
-	appendChild( colon[ 4 ], createSection( menu.RedWine, createDish, createCapacity ) );
-	appendChild( colon[ 4 ], createSection( menu.SparklingWine, createDish, createCapacity ) );
-	// appendChild( colon[ 4 ], createSection( menu.PortWine, createDish, createCapacity ) );
-	appendChild( colon[ 4 ], createSection( menu.Martini, createDish, createCapacity ) );
-	appendChild( colon[ 4 ], createSection( menu.NonAlcoholicWine, createDish, createCapacity ) );
+		if ( group.groups ) {
 
-	appendChild( colon2, createSection( menu.Tinctures, createAlc, createCapacity ) );
-	appendChild( colon2, createSection( menu.Whiskey, createAlc, createCapacity ) );
+			for ( let child of group.groups ) {
+				result.appendChild( await createGroup( child, { createProduct } ) );
+			}
 
-	appendChild( colon3[ 0 ], createSection( menu.Rom, createAlc, createCapacity, true ) );
-	appendChild( colon3[ 0 ], createSection( menu.Bitter, createAlc, createCapacity, true ) );
-	appendChild( colon3[ 0 ], createSection( menu.Gin, createAlc, createCapacity, true ) );
+		}
 
-	appendChild( colon3[ 1 ], createSection( menu.Vodka, createAlc, createCapacity, true ) );
-	appendChild( colon3[ 1 ], createSection( menu.Brandy, createAlc, createCapacity, true ) );
-	appendChild( colon3[ 1 ], createSection( menu.Tequila, createAlc, createCapacity, true ) );
-	appendChild( colon3[ 1 ], createSection( menu.Absinthe, createAlc, createCapacity, true ) );
+		return result;
 
-	// appendChild( colon[ 5 ], createSection( data.Cocktails, createCocktail ) );
-	// appendChild( colon[ 5 ], createShot( data.Shot ) );
+	};
+
+	/**
+	 * @param { number } price
+	 * @returns { Promise< Node > }
+	 */
+	const createPrice = async ( price ) => {
+
+		const result = priceTemplate.content.cloneNode( true );
+		const span = result.querySelectorAll( '.price span' );
+
+		const c = ( price / 100 ).toFixed( 2 ).split( '.' );
+
+		span[ 0 ].textContent = c[ 0 ];
+		span[ 1 ].textContent = c[ 1 ];
+
+		return result;
+
+	};
+
+	/**
+	 * @param { number } size
+	 * @returns { Promise< Node > }
+	 */
+	const createML = async ( size ) => {
+
+		let result = mlTemplate.content.cloneNode( true );
+		result.querySelector( 'span' ).textContent = size;
+		return result;
+
+	};
+
+	/**
+	 * @param { Node } colon
+	 * @param { [ function( Group, ... ): Promise< Node >, Group, function( Group, ... ): Promise< Node >, function( Product, ... ): Promise< Node >,  ][] } rows
+	 * @returns { void }
+	 */
+	const buildColon = async ( colon, rows ) => {
+
+		for ( let [ createGroup, group, createCollection, createProduct ] of rows ) {
+			if ( group ) {
+				if ( !createCollection ) {
+					createCollection = createGroup;
+					createGroup = null;
+				}
+				colon.appendChild( await createCollection( group, { createGroup, createProduct } ) );
+			}
+		}
+
+	};
+
+	/** @typedef { Group[] & Record< string, Group > } GroupCollection */
+
+	const menu = await iiko( 'f37bf072-9d4e-4608-bd33-23b9dfded9d0' );
+
+	const Menu =	/** @type { GroupCollection } */ menu?.groups;
+	const Kitchen =	/** @type { GroupCollection } */ Menu?.Kitchen?.groups;
+	const Bar =		/** @type { GroupCollection } */ Menu?.Bar?.groups;
+	const Alcohol =	/** @type { GroupCollection } */ Menu?.Alcohol.groups;
+
+	const colon = document.querySelectorAll( '.page>div' );
 
 	colon[ 6 ].insertAdjacentHTML( 'beforeend', `
 		<div style="margin-top: 6cm">
 			<img src="/@/logo.svg" style="width:45mm; filter: invert( 1 )" />
 		</div>
-		<div class="bold" style="font-size: 72pt">${ getName( [ "Меню", "Menu" ] ) }</div>
+		<div class="bold" style="font-size: 72pt">${ getName( menu ) }</div>
 	` );
 
 	colon[ 6 ].insertAdjacentHTML( 'beforeend', `
 		<div class="opacity" style="font-size: 24pt; line-height: 24pt; margin-top: 4.5cm">
-			${ getName( [ 'Закажите', 'Order' ] ) }<br />${ getName( [ 'доставку!', 'Delivery!' ] ) }
+			${ getName( { ru: 'Закажите', en: 'Order' } ) }<br />${ getName( { ru: 'доставку!', en: 'Delivery!' } ) }
 		</div>
 		<div class="opacity" style="margin: 8mm 0 5mm 0">
 			<img src="../qr.svg" />
@@ -860,23 +864,86 @@
 			irish-pub.by
 		</div>
 		<div class="opacity" style="font-size: 18pt; line-height: 18pt; margin-top: 1cm">
-			${ getName( [ 'Специальное меню', 'Special lunch menu' ] ) }<br />
-			${ getName( [ 'обедов по будням', 'on weekdays and' ] ) }<br />
-			${ getName( [ 'и бранчей по выходным', 'brunch on weekends' ] ) }<br />
-			${ getName( [ 'с 12:00 до 16:00', 'from 12:00 to 16:00' ] ) }
+			${ getName( { ru: 'Специальное меню', en: 'Special lunch menu' } ) }<br />
+			${ getName( { ru: 'обедов по будням', en: 'on weekdays and' } ) }<br />
+			${ getName( { ru: 'и бранчей по выходным', en: 'brunch on weekends' } ) }<br />
+			${ getName( { ru: 'с 12:00 до 16:00', en: 'from 12:00 to 16:00' } ) }
 		</div>
 	` );
 
-	appendChild( colon[ 7 ], createSection( menu.DraftBeer, createDraftBeer ) );
-	appendChild( colon[ 7 ], createSection( menu.BottledBeer, createBeer ) );
-	appendChild( colon[ 7 ], createSection( menu.NonAlcoholicBeer, createBeer ) );
+	await buildColon( colon[ 0 ], [
+		[ createDishGroup, Kitchen.BeerStarters ],
+		[ createDishGroup, Kitchen.Starters ],
+		[ createDishGroup, Kitchen.StartersForCompany ],
+		[ createDishGroup, Kitchen.Additives ],
+	] );
 
-	if ( params.has( 'cost' ) ) {
-		document.body.classList.add( 'no-cost' );
+	await buildColon( colon[ 1 ], [
+		[ createDishGroup, Kitchen.Soups ],
+		[ createDishGroup, Kitchen.Salads ],
+		[ createDishGroup, Kitchen.SeasonalSalads ],
+		[ createDishGroup, Kitchen.BurgersSandwiches ],
+	] );
+
+	await buildColon( colon[ 2 ], [
+		[ createDishGroup, Kitchen.HotDishes ],
+		[ createDishGroup, Kitchen.PotatoPancakes ],
+		[ createDishGroup, Kitchen.Garnish ],
+		[ createDishGroup, Kitchen.Desserts ],
+	] );
+
+	await buildColon( colon[ 3 ], [
+		[ createDrinkGroup, Bar.Gasing ],
+		[ createDrinkGroup, Bar.Coffee ],
+		[ createDrinkGroup, Bar.Tea ],
+		[ createDrinkGroup, Bar.Juice ],
+		[ createDrinkGroup, Bar.Cocktails, createCollectionGroup ],
+	] );
+
+	await buildColon( colon[ 4 ], [
+		[ createDrinkGroup, Menu.Wine, createCollection, createWineProduct ],
+	] );
+
+	await buildColon( colon[ 5 ].querySelector( 'div' ), [
+		[ createDrinkGroup, Alcohol.Tinctures ],
+		[ createDrinkGroup, Alcohol.Whiskey ],
+	] );
+
+	await buildColon( colon[ 5 ].querySelector( '.mini:nth-child( 1 )' ), [
+		[ createDrinkGroup, Alcohol.Rom ],
+		[ createDrinkGroup, Alcohol.Bitter ],
+		[ createDrinkGroup, Alcohol.Gin ],
+	] );
+
+	await buildColon( colon[ 5 ].querySelector( '.mini:nth-child( 2 )' ), [
+		[ createDrinkGroup, Alcohol.Vodka ],
+		[ createDrinkGroup, Alcohol.Brandy ],
+		[ createDrinkGroup, Alcohol.Tequila ],
+		[ createDrinkGroup, Alcohol.Absinthe ],
+	] );
+
+	await buildColon( colon[ 7 ], [
+		[ createBeerGroup, Menu.Beer, createCollection ],
+	] );
+
+	// colon[ 1 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
+
+	colon[ 2 ].insertAdjacentHTML( 'beforeend', `<div class="img"><img src="bc.svg" style="height:31.417mm" /></div>` );
+	// colon[ 2 ].insertAdjacentHTML( 'beforeend', '<div class="img"><img src="cb.svg" /></div>' );
+	colon[ 2 ].insertAdjacentHTML( 'beforeend', `<div class="desc"><span class="dynamic">*</span> ${ getName( { ru: 'У блюд помеченных звёздчкой цена зависит от веса', en: 'For dishes marked with an asterisk, the price depends on the weight' } ) }</div>` );
+
+	if ( params.has( 'price' ) ) {
+		document.body.classList.add( 'no-price' );
 	}
 
-} ) )( this )</script>
+	for ( let c of colon ) {
+		let k = 0;
+		while ( c.scrollHeight > c.clientHeight ) {
+			c.style.setProperty( '--ratio', ( 200 - ++k ) / 200 );
+		}
+	}
+
+</script>
 
 </body>
-
 </html>

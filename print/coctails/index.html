@@ -44,12 +44,6 @@
 			font-family: "Open Sans Condensed Light", Arial, sans-serif;
 			width: 450mm;
 			height: calc( 640mm - 2mm );
-			/*background: #fff;*/
-			-webkit-print-color-adjust: exact !important;
-		}
-
-		[contenteditable="true"] {
-			-webkit-user-modify: read-only;
 		}
 
 		.page {
@@ -66,12 +60,8 @@
 
 		}
 
-		@media screen {
-
-			.page > * {
-				overflow: hidden;
-			}
-
+		.page > * {
+			overflow: hidden;
 		}
 
 		.bold {
@@ -79,8 +69,16 @@
 			text-transform: uppercase;
 		}
 
-		.ml:not( :empty ):after {
+		.ml:empty {
+			display: none;
+		}
+
+		.ml:after {
 			content: "ml";
+		}
+
+		.nowrap {
+			white-space: nowrap;
 		}
 
 		.opacity {
@@ -91,50 +89,86 @@
 			opacity: 1;
 		}
 
-		.section {
-			display: block;
-			position: relative;
-			height: calc( 320mm - 16mm );
-		}
-
 		.title {
-			font-size: 33pt;
-			line-height: 40pt;
-			text-align: center;
-			padding-right: 20mm;
-		}
-
-		.title:after {
-			content: "";
-			display: block;
-			width: 69mm;
-			height: 1mm;
-			line-height: 1mm;
-			border-radius: 0.5mm;
-			background: rgba( 0, 0, 0, .2 );
-			left: 5mm;
-			position: relative;
-			margin-bottom: 10mm;
-		}
-
-		.logo {
-			filter: invert( 0.2 );
-			width: auto;
-			height: 18mm;
-			position: absolute;
-			right: 5mm;
-			top: 5mm;
+			font-size: calc( 23pt * var( --ratio ) );
+			line-height: calc( 23pt * var( --ratio ) );
 		}
 
 		.sub-text {
-			font-size: 12pt;
+			font-size: calc( 12pt * var( --ratio ) );
+		}
+
+		.section {
+
+			display: grid;
+			grid-template-columns: auto;
+			grid-gap: calc( 4pt * var( --ratio ) * var( --ratio ) ) 4pt;
+
+			font-size: calc( 13.2pt * var( --ratio ) );
+
+			box-sizing: content-box;
+
+			margin: 0 3mm;
+
+		}
+
+		.section:not( :last-of-type ) {
+			padding-bottom: calc( 12pt * var( --ratio ) * var( --ratio ) * var( --ratio ) * var( --ratio ) );
+		}
+
+		.section > ul {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+
+		.item {
+			display: grid;
+			grid-template-columns: auto min-content 11mm;
+			grid-gap: 0 2mm;
+		}
+
+		.item > ul {
+			margin-left: 6mm;
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+
+		.item > div {
+			justify-content: space-between;
+			display: inline;
+			line-height: calc( 16pt * var( --ratio ) * var( --ratio ) );
+		}
+
+		.item > div + div {
+			text-align: right;
+		}
+
+		.price > span + span {
+			font-size: calc( 11pt * var( --ratio ) );
+		}
+
+		.price > span + span:not( :empty ):before {
+			content: ".";
+		}
+
+		.section.coctails {
+			grid-template-columns: max-content 18mm;
+		}
+
+		.section.coctails .title:after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 0.5mm;
+			line-height: 0.5mm;
+			background: #000;
+			margin-top: 2mm;
 		}
 
 		.cocktail {
 
 			--color: #000;
 			--scale: 1;
-			--ratio: 1;
 
 			font-size: 13pt;
 			line-height: 13pt;
@@ -145,18 +179,18 @@
 			width: 100%;
 			min-height: 22mm;
 
-			margin-bottom: 4mm;
+			margin: 0 -3mm calc( 3.8mm * var( --ratio ) ) -3mm;
 
 		}
 
-		.name {
+		.cocktail .name {
 			font-size: 14pt;
 			line-height: 13pt;
 			padding-right: 5mm;
 			margin-bottom: 1mm;
 		}
 
-		.cost:before {
+		.cocktail .price:before {
 			content: "";
 			display: block;
 			width: 52mm;
@@ -166,12 +200,12 @@
 			left: -51mm;
 		}
 
-		.container {
+		.cocktail .container {
 			height: 1mm;
 			position: relative;
 		}
 
-		.container > * {
+		.cocktail .container > * {
 			display: block;
 			position: absolute;
 			right: 3.5mm;
@@ -179,7 +213,7 @@
 			text-align: center;
 		}
 
-		.cost {
+		.cocktail .price {
 			font-size: 16pt;
 			line-height: 7mm;
 			width: 18mm;
@@ -188,52 +222,46 @@
 			color: #fff;
 		}
 
-		.cost svg {
+		.cocktail .price > span + span {
+			font-size: 12pt;
+		}
+
+		.cocktail .container svg {
 			position: absolute;
 			left: 0;
 			top: 0;
 			z-index: -1;
 		}
 
-		.cost polygon {
+		.cocktail .container polygon {
 			fill: var( --color );
 		}
 
-		.cost > span + span {
-			font-size: 12pt;
-		}
-
-		.cost > span + span:not( :empty ):before {
-			content: ".";
-		}
-
-		.cap {
+		.cocktail .cap {
 			top: 8.5mm;
 		}
 
-		.mix {
+		.cocktail .mix {
 			padding-right: 26mm;
 			margin-bottom: 2mm;
 		}
 
-		.img {
+		.cocktail .img {
 			width: 24mm;
 			position: relative;
 		}
 
-		.img img {
-			width: auto;
-			max-height: 22mm;
-			object-fit: contain;
+		.cocktail .img img {
+			width: 24mm;
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform-origin: 50% 50%;
-			transform: translate( -50%, -50% ) scale( var( --scale ) );
+			transform: translate( -50%, -50% );
 		}
 
 		.cocktail:nth-child( 2n ) {
-			--ratio: -1;
+			--scale: -1;
 		}
 
 		.cocktail:nth-child( 2n ) > div {
@@ -256,7 +284,7 @@
 			text-align: left;
 		}
 
-		.cocktail:nth-child( 2n ) .cost:before {
+		.cocktail:nth-child( 2n ) .price:before {
 			left: auto;
 			right: -51mm;
 		}
@@ -265,7 +293,7 @@
 			right: auto;
 		}
 
-		.cocktail:nth-child( 2n ) .cost svg {
+		.cocktail:nth-child( 2n ) .container svg {
 			transform: scaleX( -1 );
 		}
 
@@ -273,19 +301,7 @@
 			padding: 0 0 0 26mm;
 		}
 
-		.ps {
-			font-size: 14pt;
-			line-height: 15pt;
-			text-align: right;
-			padding: 6mm 5mm 0 10mm;
-			opacity: 0.8;
-		}
-
 		@media screen {
-
-			html {
-				/*background: #999;*/
-			}
 
 			.page {
 				outline: 1px solid #555;
@@ -312,22 +328,29 @@
 
 	</style>
 
+	<template id="cocktail-section">
+		<div class="section coctails">
+			<div class="title bold">Коктейли</div>
+			<div class="logo"><img src="/@/logo.svg" style="width:18mm;height:auto;filter:invert(1)" /></div>
+			<ul></ul>
+		</div>
+	</template>
+
 	<template id="section">
 		<div class="section">
-			<div class="title bold" contenteditable="true"></div>
-			<img class="logo" src="/@/logo.svg" />
+			<div class="title bold"></div>
+			<div></div>
 			<ul></ul>
 		</div>
 	</template>
 
 	<template id="cocktail">
-		<li class="cocktail item">
-			<div class="img"><img /></div>
+		<li class="cocktail">
+			<div class="img"></div>
 			<div>
 				<div class="name bold"></div>
 				<div class="container">
-					<span class="cost bold">
-						<span></span><span></span>
+					<span>
 						<svg xmlns="http://www.w3.org/2000/svg" width="18mm" height="7mm" viewBox="0 0 18 7">
 							<polygon points="0,0 2.5,3.5 0,7 15.5,7 18,3.5 15.5,0"/>
 						</svg>
@@ -339,109 +362,218 @@
 		</li>
 	</template>
 
+	<template id="drink">
+		<li class="item drink">
+			<div><span class="name"></span></div>
+			<div class="opacity sub-text nowrap"></div>
+			<div class="nowrap"></div>
+		</li>
+	</template>
+
+	<template id="price">
+		<span class="price bold"><span></span><span></span></span>
+	</template>
+
+	<template id="ml">
+		<span class="ml"></span>
+	</template>
+
 </head>
 
 <body>
 
-<article class="page"></article>
-<article class="page"></article>
+<article class="page">
+	<div></div>
+</article>
 
-<script type="text/javascript">( ( /** Window */ window ) =>  window.fetch( 'data.js?' + window.Math.random() ).then( ( respose ) => respose.text() ).then( ( data ) => {
+<article class="page">
+	<div></div>
+</article>
 
-	data = window.eval( data );
+<script type="module">
 
-	/** @noinline */
-	var querySelector = ( node, selector ) => node.querySelector( selector );
-	/** @noinline */
-	var querySelectorAll = ( node, selector ) => node.querySelectorAll( selector );
-	/** @noinline */
-	var cloneNode = ( node ) => document.importNode( node.content, true );
-	/** @noinline */
-	var appendChild = ( node, child ) => node.appendChild( child );
+	import iiko from '/@/iiko.max.mjs';
+	import { FastAverageColor } from 'https://unpkg.com/fast-average-color/dist/index.esm.js';
 
-	var document =	window.document;
-	var Array =		window.Array;
+	const fac = new FastAverageColor();
 
-	var lang = window.location.search.replace( /^\?/, '' ) === 'en' ? 1 : 0;
+	const params = new URLSearchParams( location.search );
 
-	var getName = ( data ) => Array.isArray( data ) ? data[ lang ] : data;
+	/** @type { string } */
+	const lang = params.has( 'en' ) ? 'en' : 'ru';
 
-	var sectionTemplate = querySelector( document, '#section' );
+	/**
+	 * @param { { ru?: string, en?: string } } data
+	 * @returns { string }
+	 */
+	const getName = ( data ) =>
+		data[ lang ] || data.ru
+	;
 
-	var createSection = ( data, createLI ) => {
+	const cocktailSectionTemplate =	document.querySelector( '#cocktail-section' );
+	const sectionTemplate =			document.querySelector( '#section' );
 
-		var result = cloneNode( sectionTemplate );
+	const priceTemplate =			document.querySelector( '#price' );
+	const mlTemplate =				document.querySelector( '#ml' );
 
-		var left = querySelector( result, '.title' );
-		var bottom = querySelector( result, 'ul' );
+	const cocktailTemplate =		document.querySelector( '#cocktail' );
+	const drinkTemplate =			document.querySelector( '#drink' );
 
-		left.textContent = getName( data.name );
+	const createCoctailSection = async () => {
+		return cocktailSectionTemplate.content.cloneNode( true ).querySelector( '.section' );
+	};
 
-		var arr = data.collection;
-		var i = 0, l = arr.length;
+	/**
+	 * @param { Product } product
+	 * @returns { Promise< Node > }
+	 */
+	const createCocktailProduct = async ( product ) => {
 
-		for ( ; i<l; ++i ) {
-			appendChild( bottom, createLI( arr[ i ] ) );
+		let v;
+
+		let result = cocktailTemplate.content.cloneNode( true );
+
+		let img = await new Promise( ( resolve, reject ) => {
+			const img = new Image();
+			img.setAttribute( 'crossorigin', 'anonymous' );
+			img.setAttribute( 'src', 'https://corsproxy.io/?url=' + encodeURIComponent( product.img ) );
+			img.addEventListener( 'load', () => resolve( img ), { once: true } );
+		} );
+
+		result.querySelector( 'li' ).style.setProperty( '--color', ( await fac.getColorAsync( img, {
+			ignoredColor: [
+				[ 0, 0, 0, 255, 33 ],
+				[ 255, 255, 255, 255, 128 ],
+			],
+		} ) ).hex );
+
+		result.querySelector( '.img' ).appendChild( img );
+
+		if ( ( v = product?.units[ 0 ]?.price ) ) {
+			result.querySelector( '.container span ' ).appendChild( await createPrice( v ) );
+		}
+
+		if ( ( v = product?.units[ 0 ]?.size ) ) {
+			result.querySelector( '.cap' ).textContent = v;
+		}
+
+		result.querySelector( '.name' ).textContent = product.ru;
+		result.querySelector( '.mix' ).textContent = product.desc.split( /\s*,\s*/g ).map( ( d ) => d.replace( /\s+/g, ' ' ) ).join( ', ' );
+
+		return result;
+
+	};
+
+	/**
+	 * @param { Product } product
+	 * @returns { Promise< Node > }
+	 */
+	const createDrinkProduct = async ( product ) => {
+
+		let v;
+
+		let result = drinkTemplate.content.cloneNode( true );
+		let li = result.querySelector( 'li' );
+
+		li.querySelector( '.name' ).textContent = getName( product );
+
+		if ( ( v = product?.units[ 0 ]?.size ) ) {
+			li.querySelector( 'div:nth-child( 2 )' ).appendChild( await createML( v ) );
+		}
+		if ( ( v = product?.units[ 0 ]?.price ) ) {
+			li.querySelector( 'div:last-of-type' ).appendChild( await createPrice( v ) );
 		}
 
 		return result;
 
 	};
 
-	var cocktailTemplate = querySelector( document, '#cocktail' );
+	/**
+	 * @param { Group } group
+	 * @returns { Promise< Node > }
+	 */
+	const createDrinkGroup = async ( group ) => {
 
-	var createCocktail = ( data ) => {
+		let result = sectionTemplate.content.cloneNode( true );
 
-		var result = cloneNode( cocktailTemplate );
-		var li = querySelector( result, 'li' );
-		var img = querySelector( result, 'img' );
-		var span = querySelectorAll( result, '.cost span' );
+		result.querySelector( '.title' ).textContent = getName( group );
 
-		var c = data.cost.toFixed( 2 ).split( '.' );
+		if ( group.products ) {
 
-		span[ 0 ].textContent = c[ 0 ];
-		span[ 1 ].textContent = c[ 1 ];
+			for ( let product of group.products ) {
+				result.querySelector( 'ul' ).appendChild( await createDrinkProduct( product ) );
+			}
 
-		querySelector( result, '.name' ).textContent = getName( data.name );
-		querySelector( result, '.cap' ).textContent = data.cap;
-		querySelector( result, '.mix' ).textContent = getName( data.mix );
-
-		img.src = data.img;
-
-		if ( data.color ) li.style.setProperty( '--color', '#' + data.color.toString( 16 ) );
-
-		if ( data.scale ) li.style.setProperty( '--scale', data.scale );
+		}
 
 		return result;
 
 	};
 
-	var page = querySelectorAll( document, '.page' );
+	/**
+	 * @param { number } price
+	 * @returns { Promise< Node > }
+	 */
+	const createPrice = async ( price ) => {
 
-	var coctails0 = querySelector( createSection( data.Cocktails0, createCocktail ), '.section' );
-	var coctails1 = querySelector( createSection( data.Cocktails1, createCocktail ), '.section' );
+		const result = priceTemplate.content.cloneNode( true );
+		const span = result.querySelectorAll( '.price span' );
 
-	coctails0.insertAdjacentHTML( 'beforeend', `<div class="ps">${ getName( [
-		'Кроме прочего, у нас всегда можно заказать все базовые и классические коктейли, а так же шоты.<br />Уточняйте у официантов.',
-		'Among other things, you can always order all basic and classic cocktails, as well as shots.<br />Check with waiters.',
-	] ) }</div>` );
+		const c = ( price / 100 ).toFixed( 2 ).split( '.' );
 
-	// coctails1.insertAdjacentHTML( 'beforeend', `<div class="ps">${ getName( [
+		span[ 0 ].textContent = c[ 0 ];
+		span[ 1 ].textContent = c[ 1 ];
+
+		return result;
+
+	};
+
+	/**
+	 * @param { number } size
+	 * @returns { Promise< Node > }
+	 */
+	const createML = async ( size ) => {
+
+		let result = mlTemplate.content.cloneNode( true );
+		result.querySelector( 'span' ).textContent = size;
+		return result;
+
+	};
+
+	const Coctails = await iiko( '7c2c8997-e3f6-4744-a79a-8080e70c505f' );
+
+	const page = document.querySelectorAll( '.page' );
+	const colon = document.querySelectorAll( '.page>div' );
+
+	const ul0 = colon[ 0 ].appendChild( await createCoctailSection() ).querySelector( 'ul' );
+	const ul1 = colon[ 1 ].appendChild( await createCoctailSection() ).querySelector( 'ul' );
+
+	let i = 0;
+
+	do {
+		ul0.appendChild( await createCocktailProduct( Coctails.products[ i++ ] ) );
+	} while ( ul0.clientHeight < 1020 && i < Coctails.products.length );
+
+	do {
+		ul1.appendChild( await createCocktailProduct( Coctails.products[ i++ ] ) );
+	} while ( i < Coctails.products.length );
+
+	colon[ 1 ].appendChild( await createDrinkGroup( Coctails?.groups?.ClassicCocktails ) );
+
+	// coctails0.insertAdjacentHTML( 'beforeend', `<div class="ps">${ getName( [
 	// 	'Кроме прочего, у нас всегда можно заказать все базовые и классические коктейли, а так же шоты.<br />Уточняйте у официантов.',
 	// 	'Among other things, you can always order all basic and classic cocktails, as well as shots.<br />Check with waiters.',
 	// ] ) }</div>` );
 
-	appendChild( page[ 0 ], coctails0 );
-	appendChild( page[ 0 ], coctails0.cloneNode( true ) );
-	appendChild( page[ 0 ], coctails0.cloneNode( true ) );
-	appendChild( page[ 0 ], coctails0.cloneNode( true ) );
+	page[ 0 ].appendChild( colon[ 0 ].cloneNode( true ) );
+	page[ 0 ].appendChild( colon[ 0 ].cloneNode( true ) );
+	page[ 0 ].appendChild( colon[ 0 ].cloneNode( true ) );
 
-	appendChild( page[ 1 ], coctails1 );
-	appendChild( page[ 1 ], coctails1.cloneNode( true ) );
-	appendChild( page[ 1 ], coctails1.cloneNode( true ) );
-	appendChild( page[ 1 ], coctails1.cloneNode( true ) );
+	page[ 1 ].appendChild( colon[ 1 ].cloneNode( true ) );
+	page[ 1 ].appendChild( colon[ 1 ].cloneNode( true ) );
+	page[ 1 ].appendChild( colon[ 1 ].cloneNode( true ) );
 
-} ) )( this )</script>
+</script>
 
 </body>
 
