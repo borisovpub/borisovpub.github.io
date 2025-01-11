@@ -385,8 +385,6 @@
 	import iiko from '/@/iiko.max.mjs';
 	import yourBeer from '/@/beer.max.mjs';
 
-	const beers = yourBeer();
-
 	const params = new URLSearchParams( location.search );
 
 	/** @type { string } */
@@ -836,6 +834,8 @@
 	};
 
 	/** @typedef { Group[] & Record< string, Group > } GroupCollection */
+
+	const beers = yourBeer();
 
 	const menu = await iiko( 'f37bf072-9d4e-4608-bd33-23b9dfded9d0' ); // af690664-816b-41c3-9157-ac2d3d634a3b
 
