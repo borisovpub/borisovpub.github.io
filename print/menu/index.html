@@ -447,9 +447,9 @@
 			li.classList.add( 'dynamic' );
 		}
 
-		if ( product.products ) {
+		if ( product.modifiers ) {
 
-			for ( let child of product.products ) {
+			for ( let child of product.modifiers ) {
 				li.querySelector( 'ul' ).appendChild( await createDishProduct( child, product ) );
 			}
 
@@ -837,7 +837,7 @@
 
 	/** @typedef { Group[] & Record< string, Group > } GroupCollection */
 
-	const menu = await iiko( 'f37bf072-9d4e-4608-bd33-23b9dfded9d0' );
+	const menu = await iiko( 'f37bf072-9d4e-4608-bd33-23b9dfded9d0' ); // af690664-816b-41c3-9157-ac2d3d634a3b
 
 	const Menu =	/** @type { GroupCollection } */ menu?.groups;
 	const Kitchen =	/** @type { GroupCollection } */ Menu?.Kitchen?.groups;
