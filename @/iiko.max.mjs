@@ -122,10 +122,6 @@ export default async ( /** string */ groupID ) /** Group */ => {
 			if ( source.desc ) product.desc = source.desc;
 			if ( source.img ) product.img = source.img;
 
-			if ( product.units.length > 1 ) {
-				product.units.sort( ( a, b ) => a.size - b.size );
-			}
-
 			// если стоит тэг -modifiers, или если у блюда много вариантов
 			// то игнорируем обработку модификаторов
 			if ( m && !( '-modifiers' in source.flags ) ) {
@@ -192,6 +188,7 @@ export default async ( /** string */ groupID ) /** Group */ => {
 
 				if ( key in productMap ) {
 					productMap[ key ].units.push( ... product.units );
+					productMap[ key ].units.sort( ( a, b ) => a.size - b.size );
 				} else {
 					productMap[ key ] = product;
 					return true;

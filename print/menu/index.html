@@ -634,7 +634,7 @@
 
 			if ( !group.groups ) {
 
-				sizes = sizes.sort().reverse();
+				sizes = sizes.reverse();
 				for ( let size of sizes ) prices[ size ] = new Set( prices[ size ] );
 
 				if ( Object.values( prices ).every( ( p ) => p.size == 1 ) ) {
