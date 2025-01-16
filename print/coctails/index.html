@@ -254,6 +254,8 @@
 
 		.cocktail .img img {
 			width: 24mm;
+			height: 40mm;
+			object-fit: cover;
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -329,20 +331,20 @@
 
 	</style>
 
-	<template id="cocktail-section">
-		<div class="section coctails">
-			<div class="title bold">Коктейли</div>
-			<div class="logo"><img src="/@/logo.svg" style="width:18mm;height:auto;filter:invert(1)" /></div>
-			<ul></ul>
-		</div>
+	<template id="price">
+		<span class="price bold"><span></span><span></span></span>
 	</template>
 
-	<template id="section">
-		<div class="section">
-			<div class="title bold"></div>
-			<div></div>
-			<ul></ul>
-		</div>
+	<template id="ml">
+		<span class="ml"></span>
+	</template>
+
+	<template id="drink">
+		<li class="item drink">
+			<div><span class="name"></span></div>
+			<div class="opacity sub-text nowrap"></div>
+			<div class="nowrap"></div>
+		</li>
 	</template>
 
 	<template id="cocktail">
@@ -363,40 +365,38 @@
 		</li>
 	</template>
 
-	<template id="drink">
-		<li class="item drink">
-			<div><span class="name"></span></div>
-			<div class="opacity sub-text nowrap"></div>
-			<div class="nowrap"></div>
-		</li>
+	<template id="section">
+		<div class="section">
+			<div class="title bold"></div>
+			<div></div>
+			<ul></ul>
+		</div>
 	</template>
 
-	<template id="price">
-		<span class="price bold"><span></span><span></span></span>
-	</template>
-
-	<template id="ml">
-		<span class="ml"></span>
+	<template id="colon">
+		<div>
+			<div class="section coctails">
+				<div class="title bold">Коктейли</div>
+				<div class="logo"><img src="/@/logo.svg" style="width:18mm;height:auto;filter:invert(1)" /></div>
+				<ul></ul>
+			</div>
+		</div>
 	</template>
 
 </head>
 
 <body>
 
-<article class="page">
-	<div></div>
-</article>
-
-<article class="page">
-	<div></div>
-</article>
+<article class="page"></article>
+<article class="page"></article>
 
 <script type="module">
 
-	import iiko from '/@/iiko.max.mjs';
-	import { FastAverageColor } from 'https://unpkg.com/fast-average-color/dist/index.esm.js';
+	/** @type { Promise< Group > } */
+	const menu = import( '/@/iiko.max.mjs' ).then( ( { default: iiko } ) => iiko( '7c2c8997-e3f6-4744-a79a-8080e70c505f' ) );
 
-	const fac = new FastAverageColor();
+	/** @type { Promise< FastAverageColor > } */
+	const fac = import( 'https://unpkg.com/fast-average-color/dist/index.esm.js' ).then( ( { FastAverageColor } ) => new FastAverageColor() );
 
 	const params = new URLSearchParams( location.search );
 
@@ -404,125 +404,27 @@
 	const lang = params.has( 'en' ) ? 'en' : 'ru';
 
 	/**
-	 * @param { { ru?: string, en?: string } } data
+	 * @param { ItemText } data
 	 * @returns { string }
 	 */
-	const getName = ( data ) =>
+	const getText = ( data ) =>
 		data[ lang ] || data.ru
 	;
 
-	const cocktailSectionTemplate =	document.querySelector( '#cocktail-section' );
-	const sectionTemplate =			document.querySelector( '#section' );
+	const priceTemplate =		document.querySelector( '#price' );
+	const mlTemplate =			document.querySelector( '#ml' );
 
-	const priceTemplate =			document.querySelector( '#price' );
-	const mlTemplate =				document.querySelector( '#ml' );
+	const drinkTemplate =		document.querySelector( '#drink' );
+	const cocktailTemplate =	document.querySelector( '#cocktail' );
 
-	const cocktailTemplate =		document.querySelector( '#cocktail' );
-	const drinkTemplate =			document.querySelector( '#drink' );
-
-	const createCoctailSection = async () => {
-		return cocktailSectionTemplate.content.cloneNode( true ).querySelector( '.section' );
-	};
-
-	/**
-	 * @param { Product } product
-	 * @returns { Promise< Node > }
-	 */
-	const createCocktailProduct = async ( product ) => {
-
-		let v;
-
-		let result = cocktailTemplate.content.cloneNode( true );
-
-		try {
-
-			let img = await new Promise( ( resolve, reject ) => {
-				const img = new Image();
-				img.setAttribute( 'crossorigin', 'anonymous' );
-				img.setAttribute( 'src', 'https://wsrv.nl/?url=' + encodeURIComponent( product.img ) );
-				img.addEventListener( 'load', () => resolve( img ), { once: true } );
-				img.addEventListener( 'error', reject )
-			} );
-
-			result.querySelector( 'li' ).style.setProperty( '--color', ( await fac.getColorAsync( img, {
-				ignoredColor: [
-					[ 0, 0, 0, 255, 33 ],
-					[ 255, 255, 255, 255, 128 ],
-				],
-			} ) ).hex );
-
-			result.querySelector( '.img' ).appendChild( img );
-
-		} catch ( e ) {
-
-		}
-
-		if ( ( v = product?.units[ 0 ]?.price ) ) {
-			result.querySelector( '.container span ' ).appendChild( await createPrice( v ) );
-		}
-
-		if ( ( v = product?.units[ 0 ]?.size ) ) {
-			result.querySelector( '.cap' ).textContent = v;
-		}
-
-		result.querySelector( '.name' ).textContent = product.ru;
-		result.querySelector( '.mix' ).textContent = product.desc.split( /\s*,\s*/g ).map( ( d ) => d.replace( /\s+/g, ' ' ) ).join( ', ' );
-
-		return result;
-
-	};
-
-	/**
-	 * @param { Product } product
-	 * @returns { Promise< Node > }
-	 */
-	const createDrinkProduct = async ( product ) => {
-
-		let v;
-
-		let result = drinkTemplate.content.cloneNode( true );
-		let li = result.querySelector( 'li' );
-
-		li.querySelector( '.name' ).textContent = getName( product );
-
-		if ( ( v = product?.units[ 0 ]?.size ) ) {
-			li.querySelector( 'div:nth-child( 2 )' ).appendChild( await createML( v ) );
-		}
-		if ( ( v = product?.units[ 0 ]?.price ) ) {
-			li.querySelector( 'div:last-of-type' ).appendChild( await createPrice( v ) );
-		}
-
-		return result;
-
-	};
-
-	/**
-	 * @param { Group } group
-	 * @returns { Promise< Node > }
-	 */
-	const createDrinkGroup = async ( group ) => {
-
-		let result = sectionTemplate.content.cloneNode( true );
-
-		result.querySelector( '.title' ).textContent = getName( group );
-
-		if ( group.products ) {
-
-			for ( let product of group.products ) {
-				result.querySelector( 'ul' ).appendChild( await createDrinkProduct( product ) );
-			}
-
-		}
-
-		return result;
-
-	};
+	const sectionTemplate =		document.querySelector( '#section' );
+	const colonTemplate =		document.querySelector( '#colon' );
 
 	/**
 	 * @param { number } price
-	 * @returns { Promise< Node > }
+	 * @returns { DocumentFragment }
 	 */
-	const createPrice = async ( price ) => {
+	const createPrice = ( price ) => {
 
 		const result = priceTemplate.content.cloneNode( true );
 		const span = result.querySelectorAll( '.price span' );
@@ -538,9 +440,9 @@
 
 	/**
 	 * @param { number } size
-	 * @returns { Promise< Node > }
+	 * @returns { DocumentFragment }
 	 */
-	const createML = async ( size ) => {
+	const createML = ( size ) => {
 
 		let result = mlTemplate.content.cloneNode( true );
 		result.querySelector( 'span' ).textContent = size;
@@ -548,38 +450,124 @@
 
 	};
 
-	const Coctails = await iiko( '7c2c8997-e3f6-4744-a79a-8080e70c505f' );
+	/**
+	 * @param { Product } product
+	 * @returns { Promise< DocumentFragment > }
+	 */
+	const createDrinkProduct = async ( product ) => {
 
-	const page = document.querySelectorAll( '.page' );
-	const colon = document.querySelectorAll( '.page>div' );
+		let v;
 
-	const ul0 = colon[ 0 ].appendChild( await createCoctailSection() ).querySelector( 'ul' );
-	const ul1 = colon[ 1 ].appendChild( await createCoctailSection() ).querySelector( 'ul' );
+		let result = drinkTemplate.content.cloneNode( true );
 
-	let i = 0;
+		result.querySelector( '.name' ).textContent = getText( product.name );
+
+		if ( ( v = product?.units[ 0 ] ) ) {
+			result.querySelector( 'div:nth-child( 2 )' ).appendChild( createML( v.size ) );
+			result.querySelector( 'div:last-of-type' ).appendChild( createPrice( v.price ) );
+		}
+
+		return result;
+
+	};
+
+	/**
+	 * @param { Product } product
+	 * @returns { Promise< Node > }
+	 */
+	const createCocktailProduct = async ( product ) => {
+
+		let v;
+
+		let result = cocktailTemplate.content.cloneNode( true );
+
+		let img;
+
+		do { try {
+
+			img = await new Promise( ( resolve, reject ) => {
+				const img = new Image();
+				img.setAttribute( 'crossorigin', 'anonymous' );
+				img.setAttribute( 'src', 'https://wsrv.nl/?url=' + encodeURIComponent( product.img ) );
+				img.addEventListener( 'load', () => resolve( img ) );
+				img.addEventListener( 'error', reject );
+			} );
+
+		} catch ( e ) {} } while ( !img );
+
+		result.querySelector( 'li' ).style.setProperty( '--color', ( await ( await fac ).getColorAsync( img, {
+			ignoredColor: [
+				[ 0, 0, 0, 255, 33 ],
+				[ 255, 255, 255, 255, 128 ],
+			],
+		} ) ).hex );
+
+		result.querySelector( '.img' ).appendChild( img );
+
+		if ( ( v = product?.units[ 0 ] ) ) {
+			result.querySelector( '.container span ' ).appendChild( createPrice( v.price ) );
+			result.querySelector( '.cap' ).textContent = v.size;
+		}
+
+		result.querySelector( '.name' ).textContent = getText( product.name );
+		result.querySelector( '.mix' ).textContent = getText( product.desc ).split( /\s*,\s*/g ).map( ( d ) => d.replace( /\s+/g, ' ' ) ).join( ', ' );
+
+		return result;
+
+	};
+
+	/**
+	 * @param { Group } group
+	 * @returns { Promise< Node > }
+	 */
+	const createDrinkGroup = async ( group ) => {
+
+		let result = sectionTemplate.content.cloneNode( true );
+
+		result.querySelector( '.title' ).textContent = getText( group.name );
+
+		if ( group.products ) {
+
+			for ( let product of group.products ) {
+				result.querySelector( 'ul' ).appendChild( await createDrinkProduct( product ) );
+			}
+
+		}
+
+		return result;
+
+	};
+
+	const pages = Array.from( document.querySelectorAll( '.page' ) );
+
+	/** @type { HTMLDivElement[] } */
+	const colons = pages.map( ( page ) =>
+		page.appendChild( colonTemplate.content.cloneNode( true ).querySelector( '*' ) )
+	);
+
+	const uls = colons.map( ( c ) => c.querySelector( 'ul' ) );
+
+	const Coctails = await menu;
+
+	for ( let product of Coctails.products ) {
+		uls[ 0 ].appendChild( await createCocktailProduct( product ) );
+	}
 
 	do {
-		ul0.appendChild( await createCocktailProduct( Coctails.products[ i++ ] ) );
-	} while ( ul0.clientHeight < 1020 && i < Coctails.products.length );
+		uls[ 1 ].insertAdjacentElement( 'afterbegin', uls[ 0 ].lastElementChild );
+	} while ( colons[ 0 ].scrollHeight > colons[ 0 ].clientHeight );
 
-	do {
-		ul1.appendChild( await createCocktailProduct( Coctails.products[ i++ ] ) );
-	} while ( i < Coctails.products.length );
-
-	colon[ 1 ].appendChild( await createDrinkGroup( Coctails?.groups?.ClassicCocktails ) );
+	colons[ 1 ].appendChild( await createDrinkGroup( Coctails.groups.ClassicCocktails ) );
 
 	// coctails0.insertAdjacentHTML( 'beforeend', `<div class="ps">${ getName( [
 	// 	'Кроме прочего, у нас всегда можно заказать все базовые и классические коктейли, а так же шоты.<br />Уточняйте у официантов.',
 	// 	'Among other things, you can always order all basic and classic cocktails, as well as shots.<br />Check with waiters.',
 	// ] ) }</div>` );
 
-	page[ 0 ].appendChild( colon[ 0 ].cloneNode( true ) );
-	page[ 0 ].appendChild( colon[ 0 ].cloneNode( true ) );
-	page[ 0 ].appendChild( colon[ 0 ].cloneNode( true ) );
-
-	page[ 1 ].appendChild( colon[ 1 ].cloneNode( true ) );
-	page[ 1 ].appendChild( colon[ 1 ].cloneNode( true ) );
-	page[ 1 ].appendChild( colon[ 1 ].cloneNode( true ) );
+	for ( let i=0; i<3; ++i ) {
+		pages[ 0 ].appendChild( colons[ 0 ].cloneNode( true ) );
+		pages[ 1 ].appendChild( colons[ 1 ].cloneNode( true ) );
+	}
 
 </script>
 

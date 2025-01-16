@@ -1,4 +1,4 @@
-export default async ( /** string */ groupID ) /** Group */ => {
+export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 
 	/**
 	 * @typedef { Object } APIObject
@@ -32,21 +32,33 @@ export default async ( /** string */ groupID ) /** Group */ => {
 	 */
 
 	/**
-	 * @typedef { Object } Item
-	 * @property { string } ru название на русском
-	 * @property { string } en название на английском
-	 * @property { string } info всякая доп-инфа
+	 * @typedef { Object } ItemText
+	 * @property { string } ru текст на русском
+	 * @property { string } [en] текст на английском
 	 */
+
+	/**
+	 * @typedef { Object } Item
+	 * @property { ItemText } name название
+	 * @property { string } [info] всякая доп-инфа
+	 */
+
+	/** @typedef { "dish" | "drink" | "wine" | "beer" } GroupType */
 
 	/**
 	 * @typedef { Item } Group
+	 * @property { GroupType } [type]
+	 * @property { number } [colon]
+	 * @property { boolean } [mini]
 	 * @property { Product[] } [products] дерево пордуктов группы
-	 * @property { Group[] & Record< string, Group > } [groups] дерево дочерних групп
+	 * @property { GroupCollection } [groups] дерево дочерних групп
 	 */
+
+	/** @typedef { Group[] & Record< string, Group > } GroupCollection */
 
 	/**
 	 * @typedef { Item } Product
-	 * @property { string } [desc]
+	 * @property { ItemText } [desc]
 	 * @property { string } [img]
 	 * @property { boolean } dynamic динамический вес
 	 * @property { { size: number, price: number }[] } units вес и цена продукта
@@ -61,13 +73,19 @@ export default async ( /** string */ groupID ) /** Group */ => {
 	const computeGroup = ( source, include = false ) => {
 
 		let group = /** @type { Group } */ {
-			ru: source.ru,
-			en: source.en,
+			name: {
+				ru: source.ru,
+				en: source.en,
+			},
 			products: [],
 			groups: [],
 		};
 
 		let ru, en;
+
+		if ( '-group' in source.flags )	group.type = source.flags[ '-group' ] || '';
+		if ( '-colon' in source.flags )	group.colon = parseInt( source.flags[ '-colon' ] ) || 0;
+		if ( '-mini' in source.flags )	group.mini = true;
 
 		if ( '-subname' in source.flags ) {
 
@@ -90,7 +108,7 @@ export default async ( /** string */ groupID ) /** Group */ => {
 
 			// если указан флаг -name
 			// то у группы, надо удалить имя
-			group.ru = group.en = '';
+			group.name.ru = group.name.en = '';
 
 		}
 
@@ -101,8 +119,10 @@ export default async ( /** string */ groupID ) /** Group */ => {
 
 				// создаём продукт
 			let product = /** @type { Product } */ {
-				ru: source.ru.replace( ru, '$3' ),
-				en: source.en.replace( en, '$3' ),
+				name: {
+					ru: source.ru.replace( ru, '$3' ),
+					en: source.en.replace( en, '$3' ),
+				},
 				dynamic: source.dynamic,
 				info: source.info,
 				units: [],
@@ -113,13 +133,11 @@ export default async ( /** string */ groupID ) /** Group */ => {
 			// для весового товара может приенять кайфициент
 			let dynamic = product.dynamic && parseFloat( source.flags[ '-dynamic' ] ) || 1;
 
-			// добавляем варианты
-			product.units.push( {
-				size: Math.round( source.size * dynamic ),
-				price: Math.round( source.price * dynamic ),
-			} );
+			// вычисляем цену и размер
+			let size = Math.round( source.size * dynamic );
+			let price = Math.round( source.price * dynamic );
 
-			if ( source.desc ) product.desc = source.desc;
+			if ( source.desc ) product.desc = { ru: source.desc };
 			if ( source.img ) product.img = source.img;
 
 			// если стоит тэг -modifiers, или если у блюда много вариантов
@@ -150,10 +168,8 @@ export default async ( /** string */ groupID ) /** Group */ => {
 						avgSize = Math.round( avgPrice / g.products.length );
 
 						// просто добавляем средний вес из модификаторов к основному блюду
-						product.units.forEach( ( u ) => {
-							u.price += avgPrice * ( m.maxAmount - m.freeAmount );
-							u.size += avgSize * m.maxAmount;
-						} );
+						price += avgPrice * ( m.maxAmount - m.freeAmount );
+						size += avgSize * m.maxAmount;
 
 					}
 
@@ -166,10 +182,24 @@ export default async ( /** string */ groupID ) /** Group */ => {
 				} else {
 
 					// делаем разновидности блюда
+					// переносим вес и цену из основного блюда в модификаторы
 					product.modifiers = computeGroup( source.modifier, true ).products;
+					product.modifiers.forEach( ( modifier ) => {
+						modifier.units.forEach( ( u ) => {
+
+							u.price += price;
+							u.size += size;
+
+						} );
+					} );
 
 				}
 
+			}
+
+			// добавляем вариант, если не чикнули
+			if ( price || size ) {
+				product.units.push( { size, price } );
 			}
 
 			group.products.push( product );
@@ -184,7 +214,7 @@ export default async ( /** string */ groupID ) /** Group */ => {
 
 			group.products = group.products.filter( ( product ) => {
 
-				let key = product.ru + '/' + product.info;
+				let key = product.name.ru + '/' + product.info;
 
 				if ( key in productMap ) {
 					productMap[ key ].units.push( ... product.units );
@@ -205,7 +235,13 @@ export default async ( /** string */ groupID ) /** Group */ => {
 			if ( child.groups || child.products ) {
 
 				// если есть английское название, то создаём поле по ключю
-				if ( child.en ) group.groups[ ( child.en || '' ).replace( /\W/g, ' ' ).split( /\s+/g ).map( ( s ) => s.charAt( 0 ).toUpperCase() + s.slice( 1 ) ).join( '' ) ] = child;
+				if ( child.name.en ) group.groups[
+					( child.name.en || '' )
+						.replace( /\W/g, ' ' )
+						.split( /\s+/g )
+						.map( ( s ) => s.charAt( 0 ).toUpperCase() + s.slice( 1 ) )
+						.join( '' )
+					] = child;
 
 				group.groups.push( child );
 

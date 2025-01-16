@@ -1,4 +1,4 @@
-export default async () /** Promise< Record< string, YourBeer >> */ => {
+export default async () /** Promise< Record< string, YourBeer > > */ => {
 
 	/**
 	 * @typedef { Object } YourBeer
@@ -23,7 +23,8 @@ export default async () /** Promise< Record< string, YourBeer >> */ => {
 		await ( await fetch( 'https://your.beer/api/v1/places/irish-pub' ) ).json()
 	;
 
-	const result = /** @type { Record< string, YourBeer > } */ {};
+	/** @type { Record< string, YourBeer > } */
+	const result = {};
 
 	for ( let beer of nomenclature.beers.tap ) {
 		result[ beer.slug ] = beer;
