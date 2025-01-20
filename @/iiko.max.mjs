@@ -50,6 +50,7 @@ export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 	 * @property { GroupType } [type]
 	 * @property { number } [colon]
 	 * @property { boolean } [mini]
+	 * @property { boolean } [noSite=false]
 	 * @property { Product[] } [products] дерево пордуктов группы
 	 * @property { GroupCollection } [groups] дерево дочерних групп
 	 */
@@ -77,12 +78,14 @@ export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 				ru: source.ru,
 				en: source.en,
 			},
+			info: source.info,
 			products: [],
 			groups: [],
 		};
 
 		let ru, en;
 
+		if ( '-site' in source.flags ) group.noSite = true;
 		if ( '-group' in source.flags )	group.type = source.flags[ '-group' ] || '';
 		if ( '-colon' in source.flags )	group.colon = parseInt( source.flags[ '-colon' ] ) || 0;
 		if ( '-mini' in source.flags )	group.mini = true;
@@ -123,8 +126,8 @@ export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 					ru: source.ru.replace( ru, '$3' ),
 					en: source.en.replace( en, '$3' ),
 				},
-				dynamic: source.dynamic,
 				info: source.info,
+				dynamic: source.dynamic,
 				units: [],
 			};
 
@@ -144,54 +147,39 @@ export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 			// то игнорируем обработку модификаторов
 			if ( m && !( '-modifiers' in source.flags ) ) {
 
-				if ( '+modifiers' in source.flags || m.freeAmount == m.maxAmount ) {
+				let modifiers = computeGroup( m, true ).products;
+
+				if ( '+modifiers' in source.flags ) {
 
 					// если флаг устновлен, или модификатор полностью бесплатный
-					// то склеиваем все значения
+					// значит склеиваем все значения
 
-					let g = computeGroup( m );
-					if ( g.products ) {
+					let avgPrice = 0;
+					let avgSize = 0;
 
-						let avgPrice = 0;
-						let avgSize = 0;
+					modifiers.forEach( ( { units: [ { price, size } ] } ) => {
+						avgPrice += price;
+						avgSize += size;
+					} );
 
-						g.products.forEach( ( p ) => {
+					avgPrice = Math.round( avgPrice / modifiers.length );
+					avgSize = Math.round( avgSize / modifiers.length );
 
-							let { price, size } = p.units[ 0 ];
-
-							avgPrice += price;
-							avgSize += size;
-
-						} );
-
-						avgPrice = Math.round( avgPrice / g.products.length );
-						avgSize = Math.round( avgPrice / g.products.length );
-
-						// просто добавляем средний вес из модификаторов к основному блюду
-						price += avgPrice * ( m.maxAmount - m.freeAmount );
-						size += avgSize * m.maxAmount;
-
-					}
-
-				} else if ( source.modifier.maxAmount > 1 ) {
-
-					// модификаторов можно добавлять больше 1
-
-					// TODO: пока не поддерживается, игнорируем
+					// просто добавляем средний вес из модификаторов к основному блюду
+					price += avgPrice * ( m.maxAmount - m.freeAmount );
+					size += avgSize * m.maxAmount;
 
 				} else {
 
 					// делаем разновидности блюда
 					// переносим вес и цену из основного блюда в модификаторы
-					product.modifiers = computeGroup( source.modifier, true ).products;
-					product.modifiers.forEach( ( modifier ) => {
-						modifier.units.forEach( ( u ) => {
 
-							u.price += price;
-							u.size += size;
+					modifiers.forEach( ( { units } ) => units.forEach( ( u ) => {
+						u.price += price;
+						u.size += size;
+					} ) );
 
-						} );
-					} );
+					product.modifiers = modifiers;
 
 				}
 

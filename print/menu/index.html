@@ -403,8 +403,8 @@
 
 	/** @type { Record< string, RegExp > } */
 	const fix = {
-		ru: / (с|со|к|в|на|из|и) /g,
-		en: / (with|to|in|on|the|from|of|and|is) /g,
+		ru: /\s+(с|со|к|в|на|из|и)\s+/g,
+		en: /\s+(with|to|in|on|the|from|of|and|is)\s+/g,
 	};
 
 	/**
@@ -485,8 +485,8 @@
 			let v;
 
 			if ( ( v = product?.units?.[ 0 ] ) ) {
-				result.querySelector( '.brackets' ).textContent = v.size;
-				result.querySelector( 'div:last-of-type' ).appendChild( createPrice( v.price ) );
+				if ( v.size ) result.querySelector( '.brackets' ).textContent = v.size;
+				if ( v.price ) result.querySelector( 'div:last-of-type' ).appendChild( createPrice( v.price ) );
 			}
 
 		}
@@ -510,8 +510,8 @@
 		if ( name ) result.querySelector( '.kind' ).textContent = getText( product.name );
 
 		if ( ( v = product?.units[ 0 ] ) ) {
-			result.querySelector( 'div:nth-child( 2 )' ).appendChild( createML( v.size ) );
-			result.querySelector( 'div:last-of-type' ).appendChild( createPrice( v.price ) );
+			if ( v.size ) result.querySelector( 'div:nth-child( 2 )' ).appendChild( createML( v.size ) );
+			if ( v.price ) result.querySelector( 'div:last-of-type' ).appendChild( createPrice( v.price ) );
 		}
 
 		return result;
@@ -538,8 +538,8 @@
 		}
 
 		if ( ( v = product?.units[ 0 ] ) ) {
-			result.querySelector( '.cap' ).textContent = v.size / 1000;
-			result.querySelector( 'div:last-of-type' ).appendChild( createPrice( v.price ) );
+			if ( v.size ) result.querySelector( '.cap' ).textContent = v.size / 1000;
+			if ( v.price ) result.querySelector( 'div:last-of-type' ).appendChild( createPrice( v.price ) );
 		}
 
 		return result;
@@ -721,12 +721,35 @@
 
 	/**
 	 * @param { Group } group
+	 * @returns { Promise< DocumentFragment > }
+	 */
+	const createGroup = async ( group ) => {
+
+		if ( group.type ) return await groups[ group.type ]( group );
+		else {
+
+			let result = sectionTemplate.content.cloneNode( true );
+
+			result.querySelector( '.title' ).textContent = getText( group.name );
+
+			for ( let child of group.groups ) {
+				result.querySelector( 'ul' ).appendChild( await createGroup( child ) );
+			}
+
+			return result;
+
+		}
+
+	};
+
+	/**
+	 * @param { Group } group
 	 * @param { number } colonNum
 	 * @returns { Promise< void > }
 	 */
 	const buildGroup = async ( group, colonNum = group.colon ) => {
 
-		if ( group.type ) {
+		if ( group.type || group.colon != colonNum ) {
 
 			let colon = colons[ colonNum - 1 ];
 			if ( group.mini ) {
@@ -742,7 +765,7 @@
 
 			}
 
-			colon.appendChild( await groups[ group.type ]( group ) );
+			colon.appendChild( await createGroup( group ) );
 
 		} else if ( group.groups ) {
 
