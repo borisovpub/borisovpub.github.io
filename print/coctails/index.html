@@ -393,7 +393,7 @@
 <script type="module">
 
 	/** @type { Promise< Group > } */
-	const menu = import( '/@/iiko.max.mjs' ).then( ( { default: iiko } ) => iiko( '7c2c8997-e3f6-4744-a79a-8080e70c505f' ) );
+	const menu = import( '/@/js/iiko.mjs' ).then( ( { default: iiko } ) => iiko( '7c2c8997-e3f6-4744-a79a-8080e70c505f' ) );
 
 	/** @type { Promise< FastAverageColor > } */
 	const fac = import( 'https://unpkg.com/fast-average-color/dist/index.esm.js' ).then( ( { FastAverageColor } ) => new FastAverageColor() );

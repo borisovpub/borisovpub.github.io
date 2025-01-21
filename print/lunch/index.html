@@ -203,7 +203,7 @@
 	</article>
 </div>
 
-<script>( ( /** Window */ window ) =>  window.fetch( '/lunch/data.json?' + window.Math.random() ).then( ( response ) => response.json() ).then( ( /** { { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } } */ data ) => {
+<script>( ( /** Window */ window ) =>  window.fetch( '/lunch/data.json?' + window.Math.random() ).then( ( response ) => response.json() ).then( async ( /** { { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } } */ data ) => {
 
 	/** @typedef { [ string, number, number ] } Lunch */
 
@@ -244,63 +244,83 @@
 	var lunchCollection, lunchCollectionNode, lunchCollectionTemplate;
 	var brunch, brunchNode, brunchTemplate;
 
-	if ( data.mode ) {
+	switch ( data.mode ) {
 
-		page.classList.add( 'not-lunch' )
+		case 1: {
 
-		name.textContent = 'Бранч';
+			page.classList.add( 'not-lunch' )
 
-		brunchTemplate = querySelector( document, '#brunch' );
+			name.textContent = 'Бранч';
 
-		i = 0; l = data.brunch.length;
-		for ( ; i<l; ++i ) {
+			/** @type { Promise< Group > } */
+			const brunch = import( '/@/js/iiko.mjs' ).then( ( { default: iiko } ) => iiko( '5aa80f6e-1b3c-4abb-9a52-0c3f772653e8' ) );
 
-			brunch = data.brunch[ i ];
-			brunchNode = cloneNode( brunchTemplate );
+			/**
+			 * @param { ItemText } data
+			 * @returns { string }
+			 */
+			const getText = ( data ) => String( data.ru || '' )
+				.replace( /-/g, '‑' ) // заменяем на неразрывный дефис
+				.replace( /'/g, '’' ) // заменяем на красивый апостраф
+				.replace( /"([^"]+)"/g, '«$1»' ) // заменяем на красивые ковычки
+				.replace( /\s+(с|со|к|в|на|из|и)\s+/g, ' $1 ' ) // всталяем неразрывный пробел после предлогов
+			;
 
-			querySelector( brunchNode, '.name' ).textContent = fixText( brunch[ 0 ] );
-			querySelector( brunchNode, '.weight' ).textContent = brunch[ 2 ];
-			querySelector( brunchNode, '.desc' ).textContent = fixText( brunch[ 1 ] );
+			brunchTemplate = querySelector( document, '#brunch' );
 
-			setCost( querySelector( brunchNode, '.cost' ), brunch[ 3 ] );
+			for ( let product of ( await brunch ).products ) {
 
-			appendChild( collection, brunchNode );
+				brunchNode = cloneNode( brunchTemplate );
 
-		}
+				querySelector( brunchNode, '.name' ).textContent = getText( product.name );
+				querySelector( brunchNode, '.desc' ).textContent = getText( product.desc );
 
-	} else {
+				let v = product?.units[ 0 ];
 
-		name.textContent = 'Обед';
+				querySelector( brunchNode, '.weight' ).textContent = v.size;
+				setCost( querySelector( brunchNode, '.cost' ), v.price / 100 );
 
-		lunchCollectionTemplate = querySelector( document, '#lunch-collection' );
-		lunchTemplate = querySelector( document, '#lunch' );
-
-		i = 0; l = data.lunch.length;
-		for ( ; i<l; ++i ) {
-
-			lunchCollection = data.lunch[ i ];
-			lunchCollectionNode = cloneNode( lunchCollectionTemplate );
-
-			querySelector( lunchCollectionNode, 'span' ).textContent = fixText( lunchCollection.shift() );
-
-			j = 0; m = lunchCollection.length;
-			for ( ; j<m; ++j ) {
-
-				lunch = lunchCollection[ j ];
-				lunchNode = cloneNode( lunchTemplate );
-
-				querySelector( lunchNode, '.name' ).textContent = fixText( lunch[ 0 ] );
-				querySelector( lunchNode, '.weight' ).textContent = lunch[ 1 ];
-
-				setCost( querySelector( lunchNode, '.cost' ), lunch[ 2 ] );
-
-				appendChild( querySelector( lunchCollectionNode, 'ul' ), lunchNode );
+				appendChild( collection, brunchNode );
 
 			}
 
-			appendChild( collection, lunchCollectionNode );
+		} break;
 
-		}
+		case 0: {
+
+			name.textContent = 'Обед';
+
+			lunchCollectionTemplate = querySelector( document, '#lunch-collection' );
+			lunchTemplate = querySelector( document, '#lunch' );
+
+			i = 0; l = data.lunch.length;
+			for ( ; i<l; ++i ) {
+
+				lunchCollection = data.lunch[ i ];
+				lunchCollectionNode = cloneNode( lunchCollectionTemplate );
+
+				querySelector( lunchCollectionNode, 'span' ).textContent = fixText( lunchCollection.shift() );
+
+				j = 0; m = lunchCollection.length;
+				for ( ; j<m; ++j ) {
+
+					lunch = lunchCollection[ j ];
+					lunchNode = cloneNode( lunchTemplate );
+
+					querySelector( lunchNode, '.name' ).textContent = fixText( lunch[ 0 ] );
+					querySelector( lunchNode, '.weight' ).textContent = lunch[ 1 ];
+
+					setCost( querySelector( lunchNode, '.cost' ), lunch[ 2 ] );
+
+					appendChild( querySelector( lunchCollectionNode, 'ul' ), lunchNode );
+
+				}
+
+				appendChild( collection, lunchCollectionNode );
+
+			}
+
+		} break;
 
 	}
 

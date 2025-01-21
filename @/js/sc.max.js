@@ -34,8 +34,8 @@
 		webvisor: true
 	} );
 
-	createScript( '//www.googletagmanager.com/gtag/js?id=' + gid );
-	createScript( '//mc.yandex.ru/metrika/tag.js' );
+	// createScript( '//www.googletagmanager.com/gtag/js?id=' + gid );
+	// createScript( '//mc.yandex.ru/metrika/tag.js' );
 
 	// подменяем историю
 	if ( location.search && history ) history.replaceState( null, document.title, location.pathname );

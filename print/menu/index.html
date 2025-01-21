@@ -158,7 +158,7 @@
 			font-size: calc( 12.0pt * var( --ratio ) );
 		}
 
-		.section {
+		.group {
 
 			display: grid;
 			grid-template-columns: auto min-content;
@@ -170,26 +170,26 @@
 
 		}
 
-		.section:not( :last-of-type ) {
+		.group:not( :last-of-type ) {
 			padding-bottom: calc( 14pt * var( --ratio ) * var( --ratio ) * var( --ratio ) * var( --ratio ) );
 		}
 
-		.section > .sub-title {
+		.group > .sub-title {
 			text-align: right;
 		}
 
-		.section > ul {
+		.group > ul {
 			grid-column-start: 1;
 			grid-column-end: 3;
 		}
 
-		.section .section .sub-title,
-		.section .section .title {
+		.group .group .sub-title,
+		.group .group .title {
 			line-height: calc( 16pt * var( --ratio ) * var( --ratio ) );
 			font-size: calc( 13.2pt * var( --ratio ) );
 		}
 
-		.section .section:not( :last-of-type ) {
+		.group .group:not( :last-of-type ) {
 			padding-bottom: calc( 6pt * var( --ratio ) * var( --ratio ) * var( --ratio ) * var( --ratio ) );
 		}
 
@@ -300,23 +300,23 @@
 			display: none;
 		}
 
-		.no-price .section {
+		.no-price .group {
 			grid-template-columns: min-content auto;
 			grid-template-areas: "a b" "c c";
 		}
 
-		.no-price .section > .title {
+		.no-price .group > .title {
 			grid-area: a;
 			white-space: nowrap;
 		}
 
-		.no-price .section > .sub-title {
+		.no-price .group > .sub-title {
 			grid-area: b;
 			text-align: left;
 			padding-left: 2mm;
 		}
 
-		.no-price .section > ul {
+		.no-price .group > ul {
 			grid-area: c;
 		}
 
@@ -362,8 +362,8 @@
 		</li>
 	</template>
 
-	<template id="section">
-		<div class="section">
+	<template id="group">
+		<div class="group">
 			<div class="title bold"></div>
 			<div class="sub-title opacity slash nowrap"></div>
 			<ul></ul>
@@ -391,10 +391,9 @@
 <script type="module">
 
 	/** @type { Promise< Group > } */
-	const menu = import( '/@/iiko.max.mjs' ).then( ( { default: iiko } ) => iiko( 'f37bf072-9d4e-4608-bd33-23b9dfded9d0' ) );
-
-	/** @type { Promise< Record< string, YourBeer > > } */
-	const beers = import( '/@/beer.max.mjs' ).then( ( { default: yourBeer } ) => yourBeer() );
+	const menu = import( '/@/js/iiko.mjs' ).then( ( { default: iiko } ) => iiko( 'f37bf072-9d4e-4608-bd33-23b9dfded9d0' ) );
+	/** @type { Promise< ( string ) => Promise< YourBeer > > } */
+	const yourBeer = import( '/@/js/your.beer.mjs' ).then( ( { default: yourBeer } ) => yourBeer );
 
 	const params = new URLSearchParams( location.search );
 
@@ -425,7 +424,7 @@
 	const drinkTemplate =		document.querySelector( '#drink' );
 	const beerTemplate =		document.querySelector( '#beer' );
 
-	const sectionTemplate =		document.querySelector( '#section' );
+	const groupTemplate =		document.querySelector( '#group' );
 	const colonTemplate =		document.querySelector( '#colon' );
 
 	/**
@@ -460,15 +459,15 @@
 
 	/**
 	 * @param { Product } product
-	 * @param { ?string } name
+	 * @param { ?string } prefix
 	 * @returns { Promise< DocumentFragment > }
 	 */
-	const createDishProduct = async ( product, name = null ) => {
+	const createDishProduct = async ( product, prefix = null ) => {
 
 		let result = dishTemplate.content.cloneNode( true );
 
-		result.querySelector( '.name' ).textContent = name || getText( product.name );
-		if ( name ) result.querySelector( '.kind' ).textContent = getText( product.name );
+		result.querySelector( '.name' ).textContent = prefix || getText( product.name );
+		if ( prefix ) result.querySelector( '.kind' ).textContent = getText( product.name );
 
 		if ( product.dynamic ) {
 			result.querySelector( 'li' ).classList.add( 'dynamic' );
@@ -497,17 +496,17 @@
 
 	/**
 	 * @param { Product } product
-	 * @param { ?string } name
+	 * @param { ?string } prefix
 	 * @returns { Promise< DocumentFragment > }
 	 */
-	const createDrinkProduct = async ( product, name = null ) => {
+	const createDrinkProduct = async ( product, prefix = null ) => {
 
 		let v;
 
 		let result = drinkTemplate.content.cloneNode( true );
 
-		result.querySelector( '.name' ).textContent = name || getText( product.name );
-		if ( name ) result.querySelector( '.kind' ).textContent = getText( product.name );
+		result.querySelector( '.name' ).textContent = prefix || getText( product.name );
+		if ( prefix ) result.querySelector( '.kind' ).textContent = getText( product.name );
 
 		if ( ( v = product?.units[ 0 ] ) ) {
 			if ( v.size ) result.querySelector( 'div:nth-child( 2 )' ).appendChild( createML( v.size ) );
@@ -520,19 +519,19 @@
 
 	/**
 	 * @param { Product } product
-	 * @param { ?string } name
+	 * @param { ?string } prefix
 	 * @returns { Promise< DocumentFragment > }
 	 */
-	const createBeerProduct = async ( product, name = null ) => {
+	const createBeerProduct = async ( product, prefix = null ) => {
 
 		let v;
 
 		let result = beerTemplate.content.cloneNode( true );
 
-		result.querySelector( '.name' ).textContent = name || getText( product.name );
-		if ( name ) result.querySelector( '.kind' ).textContent = getText( product.name );
+		result.querySelector( '.name' ).textContent = prefix || getText( product.name );
+		if ( prefix ) result.querySelector( '.kind' ).textContent = getText( product.name );
 
-		if ( ( v = ( await beers )[ product.info ] ) ) {
+		if ( ( v = await ( await yourBeer )( product.info ) ) ) {
 			if ( v.abv ) result.querySelector( '.alc' ).textContent = v.abv;
 			if ( v.ibu ) result.querySelector( '.ibu' ).textContent = v.ibu;
 		}
@@ -560,17 +559,17 @@
 
 	/**
 	 * @param { Product } product
-	 * @param { ?string } name
+	 * @param { ?string } prefix
 	 * @returns { Promise< DocumentFragment > }
 	 */
-	const createWineProduct = async ( product, name = null ) => {
+	const createWineProduct = async ( product, prefix = null ) => {
 
 		let v;
 
 		let result = drinkTemplate.content.cloneNode( true );
 
-		result.querySelector( '.name' ).textContent = name || getText( product.name );
-		if ( name ) result.querySelector( '.kind' ).textContent = getText( product.name );
+		result.querySelector( '.name' ).textContent = prefix || getText( product.name );
+		if ( prefix ) result.querySelector( '.kind' ).textContent = getText( product.name );
 
 		if ( ( v = wines[ product.info ] ) ) {
 			result.querySelector( '.brackets' ).textContent = getText( v );
@@ -592,7 +591,7 @@
 	 */
 	const createAbstractDishGroup = async ( createProduct = createDishProduct, group ) => {
 
-		let result = sectionTemplate.content.cloneNode( true );
+		let result = groupTemplate.content.cloneNode( true );
 		let ul = result.querySelector( 'ul' );
 
 		result.querySelector( '.title' ).textContent = getText( group.name );
@@ -610,9 +609,7 @@
 			for ( let child of group.groups ) {
 
 				if ( child.products ) {
-
 					let name = getText( child.name );
-
 					for ( let product of child.products ) {
 						ul.appendChild( await createProduct( product, name ) );
 					}
@@ -728,7 +725,7 @@
 		if ( group.type ) return await groups[ group.type ]( group );
 		else {
 
-			let result = sectionTemplate.content.cloneNode( true );
+			let result = groupTemplate.content.cloneNode( true );
 
 			result.querySelector( '.title' ).textContent = getText( group.name );
 

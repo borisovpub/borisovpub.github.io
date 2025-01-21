@@ -1,0 +1,123 @@
+header {
+	background: #fff;
+	color: #000;
+	height: 50px;
+	width: 100%;
+	text-align: center;
+}
+
+header .content {
+	display: none;
+}
+
+header .mobile {
+	display: flex;
+	justify-content: space-between;
+}
+
+header .title {
+	font-weight: 500;
+	font-size: 17px;
+	line-height: 50px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+header .title:hover {
+	text-decoration: none;
+}
+
+header .icon {
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
+
+header .menu {
+	padding: 18px 17px;
+}
+
+header .info {
+	padding: 16px 15px;
+}
+
+footer {
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 15px;
+	text-align: center;
+}
+
+footer .content {
+	padding: 20px 20px 80px 20px;
+}
+
+footer .left {
+	margin: 0 auto 25px auto;
+	text-align: start;
+	max-width: 310px;
+}
+
+footer .center {
+	max-width: 310px;
+	margin: 30px auto 47px auto;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+footer .center a {
+	display: block;
+	margin: 0 0 8px 0;
+}
+
+footer .company-name {
+	font-weight: 700;
+	font-size: 17px;
+	line-height: 20px;
+	margin: 0 0 8px 0;
+}
+
+footer .details {
+	font-size: 12px;
+	margin: 0 0 8px 0;
+}
+
+footer .social-networks {
+	margin: 25px 0;
+	display: flex;
+	justify-content: center;
+}
+
+footer .apps {
+	margin: 14px 0 0 0;
+	display: flex;
+	justify-content: center;
+}
+
+.layout > .content {
+	background: #F1F1F1;
+	padding: 10px;
+}
+
+.layout > .content .left {
+	display: none;
+}
+
+.scroll {
+	display: none;
+}
+
+.popup {
+	top: 100%;
+}
+
+.popuped .popup {
+	top: 0;
+}
+
+.modal {
+	width: 100%;
+	height: 100%;
+}

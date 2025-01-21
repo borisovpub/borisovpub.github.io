@@ -1,6 +1,6 @@
 {
 
-	"@context": "http://www.schema.org",
+	"@context": "http://schema.org/",
 
 	"@type": [
 		"Organization",
@@ -19,13 +19,13 @@
 
 	"url": "https://irish-pub.by",
 
-	"image": "https://irish-pub.by/@/av.jpg",
-	"logo": "https://irish-pub.by/@/av.jpg",
+	"image": "https://irish-pub.by/@/av.png",
+	"logo": "https://irish-pub.by/@/av.png",
 
 	"geo": {
 		"@type": "GeoCoordinates",
-		"latitude": "54.222662",
-		"longitude": "28.488434"
+		"latitude": 54.222662,
+		"longitude": 28.488434
 	},
 
 	"address": {
@@ -44,13 +44,13 @@
 		"postalCode": "222520"
 	},
 
-	"telephone": "+375177755755",
+	"telephone": [ "+375447661089", "+375177755755" ],
 
 	"contactPoint": {
 		"@type": "ContactPoint",
 		"contactType": "customer service",
 		"email": "info@irish-pub.by",
-		"telephone": "+375177755755",
+		"telephone": [ "+375447661089", "+375177755755" ],
 		"availableLanguage": [ "Russian", "Belarusian", "English" ]
 	},
 
@@ -72,22 +72,60 @@
 		"https://twitter.com/borisov_pub",
 
 		"https://instagram.com/borisov_pub",
-		"https://borisov-pub.tumblr.com/",
 		"https://soundcloud.com/borisov_pub",
 		"https://youtube.com/user/TheBorisovPub",
+		"https://tiktok.com/@borisov_pub",
 
 		"https://tripadvisor.ru/Restaurant_Review-g297307-d3336830-Reviews-Irish_Pub-Barysaw_Minsk_Region.html"
 
 	],
 
-	"openingHoursSpecification": {
-		"@type": "OpeningHoursSpecification",
-		"opens": "12:00",
-		"closes": "23:00"
-	},
+	"openingHoursSpecification": [
+
+		{
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": [
+				"Monday",
+				"Tuesday",
+				"Wednesday",
+				"Thursday"
+			],
+			"opens": "12:00:00",
+			"closes": "00:00:00"
+		},
+
+		{
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": "Friday",
+			"opens": "12:00:00",
+			"closes": "02:00:00"
+		},
+
+		{
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": "Saturday",
+			"opens": "14:00:00",
+			"closes": "02:00:00"
+		},
+
+		{
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": "Sunday",
+			"opens": "14:00:00",
+			"closes": "00:00:00"
+		}
+
+	],
 
 	"priceRange": "$$",
 
-	"acceptsReservations": "True"
+	"hasMenu": [
+		"https://irish-pub.by/ru/menu/",
+		"https://irish-pub.by/ru/beer/",
+		"https://irish-pub.by/ru/lunch/"
+	],
+
+	"acceptsReservations": true,
+	"smokingAllowed": false
 
 }

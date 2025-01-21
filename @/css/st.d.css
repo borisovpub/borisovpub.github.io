@@ -1,0 +1,249 @@
+.mobile {
+	display: none;
+}
+
+.content {
+	display: flex;
+	max-width: 1200px;
+	min-width: 1140px;
+	margin: 0 auto;
+	padding: 0 30px;
+	justify-content: space-between;
+}
+
+header {
+	font-size: 15px;
+	line-height: 18px;
+}
+
+header a {
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+header a:hover {
+	opacity: 1;
+	text-decoration: none !important;
+}
+
+header .content {
+	height: 60px;
+}
+
+header .left {
+	width: 20%;
+	display: flex;
+	align-items: center;
+}
+
+header .right {
+	padding: 0 0 0 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 80%;
+}
+
+header .center {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+
+header .center > * {
+	margin: 0 20px;
+}
+
+header .search {
+	width: 190px;
+}
+
+header .logo {
+	margin: 0 55px 0 0;
+	opacity: 1;
+}
+
+header .logo img {
+	display: block;
+	max-width: var( --header-logo-width );
+	max-height: var( --header-logo-height );
+}
+
+header .social-networks {
+	gap: 12px;
+}
+
+header .social:before {
+	margin: 4px 0;
+}
+
+footer {
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+footer .content {
+	padding: 30px 30px 50px 30px;
+	position: relative;
+}
+
+footer .left {
+	width: 300px;
+	padding: 0 60px 0 15px;
+	flex-shrink: 0;
+}
+
+footer .center {
+	flex-grow: 1;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 19px;
+}
+
+footer .center a {
+	display: block;
+	margin: 0 0 8px 0;
+}
+
+footer .center a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+footer .applications {
+	max-width: 340px;
+	flex-shrink: 0;
+	text-align: right;
+	white-space: normal;
+}
+
+footer .company-name {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 19px;
+	margin: 0 0 8px 0;
+}
+
+footer .details {
+	font-size: 11px;
+	margin: 0 0 8px 0;
+}
+
+footer .social-networks {
+	margin: 20px -6px 0;
+}
+
+footer .application-desc {
+	text-align: right;
+	margin: 10px 0 0 0;
+}
+
+footer .apps {
+	margin: 14px 0 0 0;
+	display: flex;
+	justify-content: center;
+}
+
+.layout > .content {
+	padding: 0 30px;
+}
+
+.layout > .content .left {
+	width: 20%;
+	position: relative;
+	border-right: 1px solid var( --common-splitter-bg, #eee );
+}
+
+.layout > .content .right {
+	width: 80%;
+	padding: 20px 0 20px 20px;
+}
+
+.popup {
+	display: none;
+}
+
+.popuped .popup {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background: rgba( 0, 0, 0, 0.8 );
+}
+
+.popuped {
+	overflow: hidden;
+	padding-right: 16px;
+}
+
+nav {
+	width: 207px;
+	position: sticky;
+	top: 60px;
+}
+
+nav .top {
+	border-bottom: 1px solid var( --common-splitter-bg, #eee );
+	margin: 0 0 20px 0;
+	padding: 20px 0 5px 0;
+}
+
+nav li {
+	position: relative;
+	margin: 0 0 12px 14px;
+}
+
+.social-networks {
+	display: flex;
+}
+
+.back-to-top {
+	width: 50px;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: var( --up-bg ) url( data:image/svg+xml,%3Csvg%20width%3D%2230%22%20height%3D%2256%22%20viewBox%3D%220%200%2030%2056%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M29.1296%2017.3598C30.2901%2016.1817%2030.2901%2014.2716%2029.1296%2013.0935L17.1013%200.883583C15.9407%20-0.294527%2014.059%20-0.294528%2012.8984%200.883582C11.7379%202.06169%2011.7379%203.97179%2012.8984%205.1499L24.9267%2017.3598C26.0873%2018.5379%2027.969%2018.5379%2029.1296%2017.3598Z%22%20fill%3D%22%23C4C4C4%22%2F%3E%0A%3Cpath%20d%3D%22M0.870439%2017.3598C-0.290146%2016.1817%20-0.290146%2014.2716%200.870439%2013.0935L12.8984%200.883582C14.059%20-0.294528%2015.9407%20-0.294527%2017.1013%200.883583C18.2619%202.06169%2018.2621%203.97179%2017.1016%205.1499L5.07329%2017.3598C3.91271%2018.5379%202.03102%2018.5379%200.870439%2017.3598Z%22%20fill%3D%22%23C4C4C4%22%2F%3E%0A%3Cpath%20d%3D%22M15.0003%200.0533733C13.359%200.0533732%2012.0284%201.40402%2012.0284%203.07011L12.0284%2052.9833C12.0284%2054.6494%2013.359%2056%2015.0003%2056C16.6416%2056%2017.9722%2054.6494%2017.9722%2052.9833L17.9722%203.07011C17.9722%201.40402%2016.6416%200.0533733%2015.0003%200.0533733Z%22%20fill%3D%22%23C4C4C4%22%2F%3E%0A%3C%2Fsvg%3E%0A ) 50% 100px no-repeat;
+	display: none;
+	cursor: pointer;
+	background-size: 16px 55px;
+	z-index: 999;
+}
+
+.back-to-top.visible {
+	display: block;
+}
+
+.back-to-top:hover {
+	background-color: var( --up-hover );
+}
+
+.modal {
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.m-worktime {
+	width: 400px;
+	height: 400px;
+}
+
+.m-info {
+	height: 80vh;
+	width: 850px;
+	min-height: 550px;
+	max-height: 640px;
+	padding-left: 490px;
+}
+
+.m-info iframe {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 490px;
+	height: 100%;
+}
+
+.m-info .header {
+	border-bottom: 1px solid rgba( 0, 0, 0, 0.1 );
+}
