@@ -23,7 +23,6 @@ header a {
 
 header a:hover {
 	opacity: 1;
-	text-decoration: none !important;
 }
 
 header .content {
@@ -108,7 +107,6 @@ footer .center a {
 
 footer .center a:hover {
 	color: #fff;
-	text-decoration: none;
 }
 
 footer .applications {

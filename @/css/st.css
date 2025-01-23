@@ -98,13 +98,8 @@ body {
 
 a {
 	color: inherit;
-	cursor: inherit;
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
 	cursor: pointer;
+	text-decoration: none;
 }
 
 ul {
@@ -121,6 +116,11 @@ ul {
 	flex-grow: 1;
 	width: 100%;
 }
+
+.layout > .content .left a:hover {
+	text-decoration: underline;
+}
+
 .layout > .content .right {
 	margin-bottom: 50px;
 }
@@ -335,10 +335,6 @@ main h2 {
 	color: rgba( 0, 0, 0, 0.5 );
 }
 
-.m-info a:hover {
-	text-decoration: none;
-}
-
 .m-info a[href^="tel:"] {
 	margin-top: 8px;
 	padding: 0 0 0 3px;
@@ -433,10 +429,6 @@ main h2 {
 .m-menu a {
 	display: block;
 	position: relative;
-}
-
-.m-menu a:hover {
-	text-decoration: none;
 }
 
 .m-menu .social:before {

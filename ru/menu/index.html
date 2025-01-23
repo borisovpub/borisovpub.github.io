@@ -43,6 +43,15 @@
 			width: 100%;
 		}
 
+		article a:hover {
+			text-decoration: underline;
+		}
+
+		article a:not([href]) {
+			cursor: inherit;
+			text-decoration: inherit;
+		}
+
 		.dish {
 			display: grid;
 			grid-template-columns: auto min-content;
