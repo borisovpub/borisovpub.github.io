@@ -18,7 +18,7 @@
 	 * @param { number } time
 	 * @returns { Promise< void > }
 	 */
-	const timeout = async ( time ) => await new globalThis.Promise( ( resolve ) => globalThis.setTimeout( resolve, time ) );
+	const timeout = async ( time ) => new globalThis.Promise( ( resolve ) => globalThis.setTimeout( resolve, time ) );
 
 	/** @noinline */
 	const createScript = ( src ) => {
@@ -128,7 +128,7 @@
 			} )
 		;
 
-		return ( fetchSchedule = async () => await p )();
+		return ( fetchSchedule = async () => p )();
 
 	};
 
