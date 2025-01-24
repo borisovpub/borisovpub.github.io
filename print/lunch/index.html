@@ -203,7 +203,9 @@
 	</article>
 </div>
 
-<script>( ( /** Window */ window ) =>  window.fetch( '/lunch/data.json?' + window.Math.random() ).then( ( response ) => response.json() ).then( async ( /** { { mode: 0 | 1, lunch: Array< LunchCollection >, brunch: Array< Brunch > } } */ data ) => {
+<script>( async ( /** Window */ window ) => {
+
+	const data = await import( '/@/js/lunch.mjs' ).then( async ( { default: lunch } ) => await lunch() );
 
 	/** @typedef { [ string, number, number ] } Lunch */
 
@@ -326,7 +328,7 @@
 
 	appendChild( page, article.cloneNode( true ) );
 
-} ) )( this )</script>
+} )( this )</script>
 
 </body>
 
