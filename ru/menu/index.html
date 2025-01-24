@@ -147,7 +147,103 @@
 		</li>
 	</template>
 
-	<link rel="alternate" type="application/ld+json" href="/organization.ld.json" />
+	<script type="module">
+
+		/** @type { Promise< Group > } */
+		const kitchen = import( '/@/js/iiko.mjs' ).then( ( { default: iiko } ) => iiko( '7dce3406-3ade-4147-ab6c-8cca59035bfa' ) );
+
+		const String =		globalThis.String;
+		const document =	globalThis.document;
+
+		/**
+		 * @param { ItemText } data
+		 * @returns { string }
+		 */
+		const getText = ( data ) => String( data.ru || '' )
+			.replace( /-/g, '‑' ) // заменяем на неразрывный дефис
+			.replace( /'/g, '’' ) // заменяем на красивый апостраф
+			.replace( /"([^"]+)"/g, '«$1»' ) // заменяем на красивые ковычки
+			.replace( /\s+(с|со|к|в|на|из|и)\s+/g, ' $1 ' ) // всталяем неразрывный пробел после предлогов
+		;
+
+		/**
+		 * @param { number | string } value
+		 * @returns { string }
+		 */
+		const toNumber = ( value ) => String( value || 0 ).replace( '.', ',' );
+
+		const main =			document.querySelector( 'main' );
+
+		const groupTemplate =	document.querySelector( '#group' );
+		const dishTemplate =	document.querySelector( '#dish' );
+
+		/**
+		 * @param { Product } product
+		 * @returns { Promise< DocumentFragment > }
+		 */
+		const createDishProduct = async ( product ) => {
+
+			let result = dishTemplate.content.cloneNode( true );
+
+			let name = result.querySelector( '.name' );
+
+			name.textContent = getText( product.name );
+			if ( product.info ) name.setAttribute( 'href', '//delivery.irish-pub.by/product/' + product.info );
+
+			if ( product.modifiers ) {
+
+				for ( let child of product.modifiers ) {
+					result.querySelector( 'ul' ).appendChild( await createDishProduct( child ) );
+				}
+
+			} else {
+
+				let v;
+
+				if ( ( v = product?.units?.[ 0 ] ) ) {
+					if ( v.size ) result.querySelector( '.weight' ).textContent = v.size;
+					if ( v.price ) result.querySelector( '.price' ).textContent = toNumber( ( v.price / 100 ).toFixed( 2 ) );
+				}
+
+			}
+
+			return result;
+
+		};
+
+		/**
+		 * @param { Group } group
+		 * @returns { Promise< DocumentFragment > }
+		 */
+		const createDishGroup = async ( group ) => {
+
+			let result = groupTemplate.content.cloneNode( true );
+			let title = result.querySelector( '.title' );
+
+			title.textContent = getText( group.name );
+			if ( group.info ) title.setAttribute( 'href', '//delivery.irish-pub.by/s/' + group.info );
+
+			for ( let product of group.products ) {
+				result.querySelector( 'ul' ).appendChild( await createDishProduct( product ) );
+			}
+
+			return result;
+
+		};
+
+		main.classList.add( 'loading' );
+
+		for ( let group of ( await kitchen ).groups ) {
+			if ( !group.noSite ) {
+				main.appendChild( await createDishGroup( group ) );
+			}
+		}
+
+		main.classList.remove( 'loading' );
+
+	</script>
+
+	<script type="module" src="/@/js/sc.mjs"></script>
 
 	<script type="application/ld+json">
 		{
@@ -169,6 +265,8 @@
 			]
 		}
 	</script>
+
+	<link rel="alternate" type="application/ld+json" href="/organization.ld.json" />
 
 </head>
 
@@ -277,101 +375,6 @@
 </div>
 
 <div class="popup"></div>
-
-<script type="module">
-
-	const main = document.querySelector( 'main' );
-
-	/** @type { Promise< Group > } */
-	const kitchen = import( '/@/js/iiko.mjs' ).then( ( { default: iiko } ) => iiko( '7dce3406-3ade-4147-ab6c-8cca59035bfa' ) );
-
-	/**
-	 * @param { ItemText } data
-	 * @returns { string }
-	 */
-	const getText = ( data ) => String( data.ru || '' )
-		.replace( /-/g, '‑' ) // заменяем на неразрывный дефис
-		.replace( /'/g, '’' ) // заменяем на красивый апостраф
-		.replace( /"([^"]+)"/g, '«$1»' ) // заменяем на красивые ковычки
-		.replace( /\s+(с|со|к|в|на|из|и)\s+/g, ' $1 ' ) // всталяем неразрывный пробел после предлогов
-	;
-
-	/**
-	 * @param { number | string } value
-	 * @returns { string }
-	 */
-	const toNumber = ( value ) => String( value || 0 ).replace( '.', ',' );
-
-	const groupTemplate =	document.querySelector( '#group' );
-	const dishTemplate =	document.querySelector( '#dish' );
-
-	/**
-	 * @param { Product } product
-	 * @returns { Promise< DocumentFragment > }
-	 */
-	const createDishProduct = async ( product ) => {
-
-		let result = dishTemplate.content.cloneNode( true );
-
-		let name = result.querySelector( '.name' );
-
-		name.textContent = getText( product.name );
-		if ( product.info ) name.setAttribute( 'href', '//delivery.irish-pub.by/product/' + product.info );
-
-		if ( product.modifiers ) {
-
-			for ( let child of product.modifiers ) {
-				result.querySelector( 'ul' ).appendChild( await createDishProduct( child ) );
-			}
-
-		} else {
-
-			let v;
-
-			if ( ( v = product?.units?.[ 0 ] ) ) {
-				if ( v.size ) result.querySelector( '.weight' ).textContent = v.size;
-				if ( v.price ) result.querySelector( '.price' ).textContent = toNumber( ( v.price / 100 ).toFixed( 2 ) );
-			}
-
-		}
-
-		return result;
-
-	};
-
-	/**
-	 * @param { Group } group
-	 * @returns { Promise< DocumentFragment > }
-	 */
-	const createDishGroup = async ( group ) => {
-
-		let result = groupTemplate.content.cloneNode( true );
-		let title = result.querySelector( '.title' );
-
-		title.textContent = getText( group.name );
-		if ( group.info ) title.setAttribute( 'href', '//delivery.irish-pub.by/s/' + group.info );
-
-		for ( let product of group.products ) {
-			result.querySelector( 'ul' ).appendChild( await createDishProduct( product ) );
-		}
-
-		return result;
-
-	};
-
-	main.classList.add( 'loading' );
-
-	for ( let group of ( await kitchen ).groups ) {
-		if ( !group.noSite ) {
-			main.appendChild( await createDishGroup( group ) );
-		}
-	}
-
-	main.classList.remove( 'loading' );
-
-</script>
-
-<script type="text/javascript" src="/@/js/sc.js" async="async"></script>
 
 </body>
 

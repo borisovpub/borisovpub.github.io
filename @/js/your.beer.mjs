@@ -22,7 +22,7 @@ const nomenclature = ( async () => {
 
 	let response;
 	do {
-		response = await fetch( 'https://your.beer/api/v1/places/irish-pub' );
+		response = await globalThis.fetch( 'https://your.beer/api/v1/places/irish-pub' );
 	} while ( !response.ok );
 
 	return /** @type { { beers: { tap: YourBeer[], other: YourBeer[] } } } */  response.json();

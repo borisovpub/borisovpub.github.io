@@ -1,28 +1,28 @@
-( function ( window ) {
+( ( globalThis ) => {
 
-	var Array = window.Array;
-	var Date = window.Date;
-	var document = window.document;
-	var location = window.location;
-	var history = window.history;
-	var Math = window.Math;
+	const Array =		globalThis.Array;
+	const Date =		globalThis.Date;
+	const document =	globalThis.document;
+	const location =	globalThis.location;
+	const history =		globalThis.history;
+	const Math =		globalThis.Math;
 
-	var fetch = window.fetch;
-	var parseInt = window.parseInt;
+	const fetch =		globalThis.fetch;
+	const parseInt =	globalThis.parseInt;
 
-	var body = document.querySelector( 'body' );
-	var backToTop = document.querySelector( '.back-to-top' );
-	var popup = document.querySelector( '.popup' );
+	const body =		document.querySelector( 'body' );
+	const backToTop =	document.querySelector( '.back-to-top' );
+	const popup =		document.querySelector( '.popup' );
 
 	/**
 	 * @param { number } time
 	 * @returns { Promise< void > }
 	 */
-	var timeout = async ( time ) => await new window.Promise( ( resolve ) => window.setTimeout( resolve, time ) );
+	const timeout = async ( time ) => await new globalThis.Promise( ( resolve ) => globalThis.setTimeout( resolve, time ) );
 
 	/** @noinline */
-	var createScript = ( src ) => {
-		var script = document.createElement( 'script' );
+	const createScript = ( src ) => {
+		const script = document.createElement( 'script' );
 		script.setAttribute( 'type', 'text/javascript' );
 		script.setAttribute( 'async', 'async' );
 		script.setAttribute( 'src', src );
@@ -33,7 +33,7 @@
 	 * @param { string } htm
 	 * @returns { Promise< HTMLElement > }
 	 */
-	var openPopup = async ( htm ) => {
+	const openPopup = async ( htm ) => {
 		popup.innerHTML = await ( await fetch( `/ru/_/${ htm }.htm` ) ).text();
 		popup.querySelectorAll( '.close' ).forEach( ( close ) =>
 			close.addEventListener( 'click', closePopup )
@@ -46,27 +46,45 @@
 	/**
 	 * @returns { Promise< void > }
 	 */
-	var closePopup = async () => {
+	const closePopup = async () => {
 		body.classList.remove( 'popuped' );
 		await timeout( 150 );
 		document.querySelector( '.popup' ).innerHTML = '';
 	};
 
 	/**
+	 * @param { Date } date
+	 * @returns { Promise< { day: number, status: boolean } > }
+	 */
+	const getScheduleStatus = async ( date = new Date() ) =>
+		( await fetchSchedule() ).times[
+			date.getDay() * 48 + date.getUTCHours() * 2 + Math.floor( date.getUTCMinutes() / 30 )
+		]
+	;
+
+	/**
+	 * @param { number } day
+	 * @returns { Promise< { open: string, close: string } > }
+	 */
+	const getSchedule = async ( day ) =>
+		( await fetchSchedule() ).schedule[ day ]
+	;
+
+	/**
 	 * @returns { Promise< { schedule: { open: string, close: string }[], times: { day: number, status: boolean }[] } >}
 	 */
-	var fetchSchedule = async () => {
+	let fetchSchedule = async () => {
 
-		var p = fetch( '/organization.ld.json' )
+		let p = fetch( '/organization.ld.json' )
 			.then( ( response ) => response.json() )
 			.then( ( { openingHoursSpecification } ) => {
 
-				var UTC = Math.round( ( new Date() ).getTimezoneOffset() / 30 );
-				var L = 7 * 48;
+				let UTC = Math.round( ( new Date() ).getTimezoneOffset() / 30 );
+				let L = 7 * 48;
 
-				var schedule = [];
-				var r, times = new Array( L );
-				var d, days = 'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday'.split( ',' );
+				let schedule = [];
+				let r, times = new Array( L );
+				let d, days = 'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday'.split( ',' );
 
 				for ( d = 0; d < 7; ++d ) {
 					times.fill( { day: d, status: false }, d * 48, ( d + 1 ) * 48 );
@@ -88,7 +106,7 @@
 
 					if ( closes < opens ) closes += 48;
 
-					for ( d of window.Array.isArray( dayOfWeek ) ? dayOfWeek : [ dayOfWeek ] ) {
+					for ( d of Array.isArray( dayOfWeek ) ? dayOfWeek : [ dayOfWeek ] ) {
 
 						d = days.indexOf( d );
 						r = { day: d, status: true };
@@ -114,36 +132,16 @@
 
 	};
 
-	/**
-	 * @param { Date } date
-	 * @returns { Promise< { day: number, status: boolean } > }
-	 */
-	var getScheduleStatus = async ( date = new Date() ) =>
-		( await fetchSchedule() ).times[
-			date.getDay() * 48 + date.getUTCHours() * 2 + Math.floor( date.getUTCMinutes() / 30 )
-		]
-	;
-
-	/**
-	 * @param { number } day
-	 * @returns { Promise< { open: string, close: string } > }
-	 */
-	var getSchedule = async ( day ) =>
-		( await fetchSchedule() ).schedule[ day ]
-	;
-
-	/** @noinline */
-	var gid = 'G-3JBY3WBW1R';
-
-	var dl = window.dataLayer = [];
-	var gtag = window.gtag = function() { dl.push( arguments ) };
-	var ym = window.ym = function() { ym.a.push( arguments ) };
+	// noinspection JSMismatchedCollectionQueryUpdate
+	let dl = globalThis.dataLayer = [];
+	let gtag = globalThis.gtag = function() { dl.push( arguments ) };
+	let ym = globalThis.ym = function() { ym.a.push( arguments ) };
 
 	ym.a = [];
 	ym.l = 1 * new Date();
 
 	gtag( 'js', new Date() );
-	gtag( 'config', gid );
+	gtag( 'config', 'G-3JBY3WBW1R' );
 
 	ym( 57548482, 'init', {
 		clickmap: true,
@@ -160,10 +158,10 @@
 
 	if ( backToTop ) {
 
-		var isVisible = false;
+		let isVisible = false;
 
-		var scroll = () => {
-			if ( ( isVisible = window.scrollY > 10 ) ) {
+		let scroll = () => {
+			if ( ( isVisible = globalThis.scrollY > 10 ) ) {
 				backToTop.classList.add( 'visible' );
 			} else {
 				backToTop.classList.remove( 'visible' )
@@ -171,21 +169,22 @@
 		};
 
 		backToTop.addEventListener( 'click', () => {
-			if ( window.navigator.vendor.indexOf( 'Apple' ) !== -1 ) {
-				window.parent.scrollTo( 0, body.getBoundingClientRect().top );
+			// noinspection JSDeprecatedSymbols
+			if ( globalThis.navigator.vendor.indexOf( 'Apple' ) !== -1 ) {
+				globalThis.parent.scrollTo( 0, body.getBoundingClientRect().top );
 			} else {
 				body.scrollIntoView( { behavior: 'smooth' } );
 			}
 		} );
 
-		window.addEventListener( 'scroll', scroll );
+		globalThis.addEventListener( 'scroll', scroll );
 
 		scroll();
 
 	}
 
 	popup.addEventListener( 'click', async ( event ) => {
-		var modal = popup.querySelector( '.modal' );
+		let modal = popup.querySelector( '.modal' );
 		if ( modal && !modal.contains( event.target ) ) {
 			await closePopup();
 		}
@@ -221,7 +220,7 @@
 
 		worktime.update().then( () => {} );
 
-		window.setInterval( worktime.update, 1e3 * 60 );
+		globalThis.setInterval( worktime.update, 1e3 * 60 );
 
 	} );
 
@@ -255,13 +254,10 @@
 
 	document.querySelectorAll( '.menu' ).forEach( ( menu ) => {
 
-		menu.addEventListener( 'click', async () => {
-
-			let popup = await openPopup( 'menu' );
-
-
-		} );
+		menu.addEventListener( 'click', async () =>
+			await openPopup( 'menu' )
+		);
 
 	} );
 
-} )( this );
+} )( globalThis );

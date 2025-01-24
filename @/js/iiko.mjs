@@ -1,5 +1,9 @@
 export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 
+	const RegExp =	globalThis.RegExp;
+
+	const Math =	globalThis.Math;
+
 	/**
 	 * @typedef { Object } APIObject
 	 * @property { string } ru
@@ -134,7 +138,7 @@ export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 			let m = source.modifier;
 
 			// для весового товара может приенять кайфициент
-			let dynamic = product.dynamic && parseFloat( source.flags[ '-dynamic' ] ) || 1;
+			let dynamic = product.dynamic && globalThis.parseFloat( source.flags[ '-dynamic' ] ) || 1;
 
 			// вычисляем цену и размер
 			let size = Math.round( source.size * dynamic );
@@ -245,7 +249,7 @@ export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 
 	let response;
 	do {
-		response = await fetch( `https://irish-pub-by.tiiny.io/?${ groupID }.json` );
+		response = await globalThis.fetch( `https://irish-pub-by.tiiny.io/?${ groupID }.json` );
 	} while ( !response.ok );
 
 	return computeGroup( await response.json() );

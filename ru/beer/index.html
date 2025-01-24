@@ -238,7 +238,194 @@
 		</li>
 	</template>
 
-	<link rel="alternate" type="application/ld+json" href="/organization.ld.json" />
+	<script type="module">
+
+		/** @type { Promise< Group > } */
+		const beer = import( '/@/js/iiko.mjs' ).then( ( { default: iiko } ) => iiko( 'ced9daa6-7254-4773-8bda-b0403f537eb2' ) );
+		/** @type { Promise< ( string ) => Promise< YourBeer > > } */
+		const yourBeer = import( '/@/js/your.beer.mjs' ).then( ( { default: yourBeer } ) => yourBeer );
+
+		const String =		globalThis.String;
+		const document =	globalThis.document;
+
+		/**
+		 * @param { ItemText } data
+		 * @returns { string }
+		 */
+		const getText = ( data ) => String( data.ru || '' )
+			.replace( /-/g, '‑' ) // заменяем на неразрывный дефис
+			.replace( /'/g, '’' ) // заменяем на красивый апостраф
+			.replace( /"([^"]+)"/g, '«$1»' ) // заменяем на красивые ковычки
+		;
+
+		/**
+		 * @param { number | string } value
+		 * @returns { string }
+		 */
+		const toNumber = ( value ) => String( value || 0 ).replace( '.', ',' );
+
+		/** @type { Record< string, string > } */
+		const PACKING = {
+			keg:	'',
+			bottle:	'бутылка',
+			can:	'банка',
+		};
+
+		const main =			document.querySelector( 'main' );
+
+		const groupTemplate =	document.querySelector( '#group' );
+		const beerTemplate =	document.querySelector( '#beer' );
+		const breweryTemplate =	document.querySelector( '#brewery' );
+		const skuTemplate =		document.querySelector( '#sku' );
+
+		/**
+		 * @param { Product } product
+		 * @param { ?string } prefix
+		 * @returns { Promise< DocumentFragment > }
+		 */
+		const createBeerProduct = async ( product, prefix = null ) => {
+
+			let result = beerTemplate.content.cloneNode( true ).querySelector( '.beer' );
+
+			let name =		result.querySelector( '.name' );
+			let sticker =	result.querySelector( '.sticker' );
+			let breweries =	result.querySelector( '.breweries' );
+			let style =		result.querySelector( '.style' );
+			let abv =		result.querySelector( '.abv' );
+			let ibu =		result.querySelector( '.ibu' );
+
+			name.textContent = ( prefix ? prefix + ' ' : '' ) + getText( product.name );
+
+			if ( product.info ) {
+
+				sticker.classList.add( 'loading' );
+
+				name.setAttribute( 'href', '//your.beer/beer/' + product.info );
+				sticker.setAttribute( 'href', '//your.beer/beer/' + product.info );
+
+				yourBeer.then( async ( yourBeer ) => {
+
+					let info = await yourBeer( product.info );
+
+					for ( let b of info?.breweries ) {
+
+						let brewery = breweryTemplate.content.cloneNode( true );
+
+						let a = brewery.querySelector( 'a' );
+
+						if ( b.slug ) a.setAttribute( 'href', '//your.beer/brewery/' + b.slug );
+						if ( b.name ) {
+							a.textContent = b.name;
+							if ( b.name.startsWith( prefix ) ) {
+								name.textContent = getText( product.name );
+							}
+						}
+
+						breweries.appendChild( brewery );
+
+					}
+
+					if ( info?.logo_image ) {
+						let img = document.createElement( 'img' );
+						img.setAttribute( 'src', info.logo_image );
+						// img.setAttribute( 'crossorigin', 'anonymous' );
+						img.setAttribute( 'loading', 'lazy' );
+						img.setAttribute( 'width', 200 );
+						img.setAttribute( 'height', 200 );
+						sticker.appendChild( img );
+
+					}
+
+					if ( info?.beer_style ) {
+						if ( info.beer_style.slug ) style.setAttribute( 'href', '//your.beer/beers/' + info.beer_style.slug );
+						if ( info.beer_style.name ) style.textContent = info.beer_style.name;
+					}
+
+					if ( info?.abv ) {
+						abv.textContent = toNumber( info.abv );
+					}
+
+					if ( info?.ibu ) {
+						ibu.textContent = toNumber( info.ibu );
+					}
+
+					for ( let s of info?.skus ) {
+
+						if ( !s.price ) continue;
+
+						let sku = skuTemplate.content.cloneNode( true );
+
+						let volume = sku.querySelector( '.volume' );
+						let packing = sku.querySelector( '.packing' );
+						let price = sku.querySelector( '.price' );
+
+						if ( s.volume ) volume.textContent = toNumber( s.volume );
+						if ( s.packing ) packing.textContent = PACKING[ s.packing ];
+						if ( s.price ) price.textContent = toNumber( s.price );
+
+						result.querySelector( '.skus' ).appendChild( sku );
+
+					}
+
+					sticker.classList.remove( 'loading' );
+
+				} );
+
+			}
+
+			return result;
+
+		};
+
+		/**
+		 * @param { Group } group
+		 * @returns { Promise< DocumentFragment > }
+		 */
+		const createBeerGroup = async ( group ) => {
+
+			let result = groupTemplate.content.cloneNode( true );
+			let ul = result.querySelector( 'ul' );
+
+			result.querySelector( '.title' ).textContent = getText( group.name );
+
+			if ( group.products ) {
+
+				for ( let product of group.products ) {
+					result.querySelector( 'ul' ).appendChild( await createBeerProduct( product ) );
+				}
+
+			}
+
+			if ( group.groups ) {
+
+				for ( let child of group.groups ) {
+					if ( child.products ) {
+						let name = getText( child.name );
+						for ( let product of child.products ) {
+							ul.appendChild( await createBeerProduct( product, name ) );
+						}
+					}
+				}
+
+			}
+
+			return result;
+
+		};
+
+		main.classList.add( 'loading' );
+
+		for ( let group of ( await beer ).groups ) {
+			if ( !group.noSite ) {
+				main.appendChild( await createBeerGroup( group ) );
+			}
+		}
+
+		main.classList.remove( 'loading' );
+
+	</script>
+
+	<script type="text/javascript" src="/@/js/sc.mjs" async="async"></script>
 
 	<script type="application/ld+json">
 		{
@@ -260,6 +447,8 @@
 			]
 		}
 	</script>
+
+	<link rel="alternate" type="application/ld+json" href="/organization.ld.json" />
 
 </head>
 
@@ -368,192 +557,6 @@
 </div>
 
 <div class="popup"></div>
-
-<script type="module">
-
-	const main = document.querySelector( 'main' );
-
-	/** @type { Promise< Group > } */
-	const beer = import( '/@/js/iiko.mjs' ).then( ( { default: iiko } ) => iiko( 'ced9daa6-7254-4773-8bda-b0403f537eb2' ) );
-	/** @type { Promise< ( string ) => Promise< YourBeer > > } */
-	const yourBeer = import( '/@/js/your.beer.mjs' ).then( ( { default: yourBeer } ) => yourBeer );
-
-	/**
-	 * @param { ItemText } data
-	 * @returns { string }
-	 */
-	const getText = ( data ) => String( data.ru || '' )
-		.replace( /-/g, '‑' ) // заменяем на неразрывный дефис
-		.replace( /'/g, '’' ) // заменяем на красивый апостраф
-		.replace( /"([^"]+)"/g, '«$1»' ) // заменяем на красивые ковычки
-	;
-
-	/**
-	 * @param { number | string } value
-	 * @returns { string }
-	 */
-	const toNumber = ( value ) => String( value || 0 ).replace( '.', ',' );
-
-	/** @type { Record< string, string > } */
-	const PACKING = {
-		keg:	'',
-		bottle:	'бутылка',
-		can:	'банка',
-	};
-
-	const groupTemplate =	document.querySelector( '#group' );
-	const beerTemplate =	document.querySelector( '#beer' );
-	const breweryTemplate =	document.querySelector( '#brewery' );
-	const skuTemplate =		document.querySelector( '#sku' );
-
-	/**
-	 * @param { Product } product
-	 * @param { ?string } prefix
-	 * @returns { Promise< DocumentFragment > }
-	 */
-	const createBeerProduct = async ( product, prefix = null ) => {
-
-		let result = beerTemplate.content.cloneNode( true ).querySelector( '.beer' );
-
-		let name =		result.querySelector( '.name' );
-		let sticker =	result.querySelector( '.sticker' );
-		let breweries =	result.querySelector( '.breweries' );
-		let style =		result.querySelector( '.style' );
-		let abv =		result.querySelector( '.abv' );
-		let ibu =		result.querySelector( '.ibu' );
-
-		name.textContent = ( prefix ? prefix + ' ' : '' ) + getText( product.name );
-
-		if ( product.info ) {
-
-			sticker.classList.add( 'loading' );
-
-			name.setAttribute( 'href', '//your.beer/beer/' + product.info );
-			sticker.setAttribute( 'href', '//your.beer/beer/' + product.info );
-
-			yourBeer.then( async ( yourBeer ) => {
-
-				let info = await yourBeer( product.info );
-
-				for ( let b of info?.breweries ) {
-
-					let brewery = breweryTemplate.content.cloneNode( true );
-
-					let a = brewery.querySelector( 'a' );
-
-					if ( b.slug ) a.setAttribute( 'href', '//your.beer/brewery/' + b.slug );
-					if ( b.name ) {
-						a.textContent = b.name;
-						if ( b.name.startsWith( prefix ) ) {
-							name.textContent = getText( product.name );
-						}
-					}
-
-					breweries.appendChild( brewery );
-
-				}
-
-				if ( info?.logo_image ) {
-					let img = document.createElement( 'img' );
-					img.setAttribute( 'src', info.logo_image );
-					// img.setAttribute( 'crossorigin', 'anonymous' );
-					img.setAttribute( 'loading', 'lazy' );
-					img.setAttribute( 'width', 200 );
-					img.setAttribute( 'height', 200 );
-					sticker.appendChild( img );
-
-				}
-
-				if ( info?.beer_style ) {
-					if ( info.beer_style.slug ) style.setAttribute( 'href', '//your.beer/beers/' + info.beer_style.slug );
-					if ( info.beer_style.name ) style.textContent = info.beer_style.name;
-				}
-
-				if ( info?.abv ) {
-					abv.textContent = toNumber( info.abv );
-				}
-
-				if ( info?.ibu ) {
-					ibu.textContent = toNumber( info.ibu );
-				}
-
-				for ( let s of info?.skus ) {
-
-					if ( !s.price ) continue;
-
-					let sku = skuTemplate.content.cloneNode( true );
-
-					let volume = sku.querySelector( '.volume' );
-					let packing = sku.querySelector( '.packing' );
-					let price = sku.querySelector( '.price' );
-
-					if ( s.volume ) volume.textContent = toNumber( s.volume );
-					if ( s.packing ) packing.textContent = PACKING[ s.packing ];
-					if ( s.price ) price.textContent = toNumber( s.price );
-
-					result.querySelector( '.skus' ).appendChild( sku );
-
-				}
-
-				sticker.classList.remove( 'loading' );
-
-			} );
-
-		}
-
-		return result;
-
-	};
-
-	/**
-	 * @param { Group } group
-	 * @returns { Promise< DocumentFragment > }
-	 */
-	const createBeerGroup = async ( group ) => {
-
-		let result = groupTemplate.content.cloneNode( true );
-		let ul = result.querySelector( 'ul' );
-
-		result.querySelector( '.title' ).textContent = getText( group.name );
-
-		if ( group.products ) {
-
-			for ( let product of group.products ) {
-				result.querySelector( 'ul' ).appendChild( await createBeerProduct( product ) );
-			}
-
-		}
-
-		if ( group.groups ) {
-
-			for ( let child of group.groups ) {
-				if ( child.products ) {
-					let name = getText( child.name );
-					for ( let product of child.products ) {
-						ul.appendChild( await createBeerProduct( product, name ) );
-					}
-				}
-			}
-
-		}
-
-		return result;
-
-	};
-
-	main.classList.add( 'loading' );
-
-	for ( let group of ( await beer ).groups ) {
-		if ( !group.noSite ) {
-			main.appendChild( await createBeerGroup( group ) );
-		}
-	}
-
-	main.classList.remove( 'loading' );
-
-</script>
-
-<script type="text/javascript" src="/@/js/sc.js" async="async"></script>
 
 </body>
 
