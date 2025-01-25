@@ -13,8 +13,8 @@
 @font-face {
 	font-family: "SF Pro Display";
 	src:
-		url( "//corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Regular.woff2" ) format( "woff2" ),
-		url( "//corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Regular.woff" ) format( "woff" )
+		url( "https://corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Regular.woff2" ) format( "woff2" ),
+		url( "https://corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Regular.woff" ) format( "woff" )
 	;
 	font-weight: 400;
 	font-style: normal;
@@ -24,8 +24,8 @@
 @font-face {
 	font-family: "SF Pro Display";
 	src:
-		url( "//corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Medium.woff2" ) format( "woff2" ),
-		url( "//corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Medium.woff" ) format( "woff" )
+		url( "https://corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Medium.woff2" ) format( "woff2" ),
+		url( "https://corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Medium.woff" ) format( "woff" )
 	;
 	font-weight: 500;
 	font-style: normal;
@@ -35,8 +35,8 @@
 @font-face {
 	font-family: "SF Pro Display";
 	src:
-		url( "//corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Semibold.woff2" ) format( "woff2" ),
-		url( "//corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Semibold.woff" ) format( "woff" )
+		url( "https://corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Semibold.woff2" ) format( "woff2" ),
+		url( "https://corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Semibold.woff" ) format( "woff" )
 	;
 	font-weight: 600;
 	font-style: normal;
@@ -46,8 +46,8 @@
 @font-face {
 	font-family: "SF Pro Display";
 	src:
-		url( "//corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Heavy.woff2" ) format( "woff2" ),
-		url( "//corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Heavy.woff" ) format( "woff" )
+		url( "https://corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Heavy.woff2" ) format( "woff2" ),
+		url( "https://corsproxy.io/?url=https://borisovpub.foodpicasso.com/assets/framework/fonts/sfpro/SFProDisplay-Heavy.woff" ) format( "woff" )
 	;
 	font-weight: 900;
 	font-style: normal;
@@ -72,7 +72,7 @@
 	border-bottom-color: black;
 	border-radius: 50%;
 	animation: _spinner 1s infinite linear;
-	visibility: visible;
+	vertical-align: top;
 }
 
 html {
@@ -138,8 +138,7 @@ footer {
 	color: var( --footer-fg );
 }
 
-nav li,
-nav h1 {
+nav :is( li, h1 ) {
 	font-size: 17px;
 	line-height: 20px;
 }
