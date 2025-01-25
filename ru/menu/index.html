@@ -61,12 +61,8 @@
 			grid-column-end: 3;
 		}
 
-		.dish:has( > .desc > :is( span:not( :empty ), div:has( img[src], a[href] ) ) ) > :has( > .name ) {
+		.dish:has( > .desc :is( span:not( :empty ), div > :is( img[src], a[href] ) ) ) > :has( > .name ) {
 			cursor: pointer;
-		}
-
-		.dish.lazy img {
-			display: none;
 		}
 
 		.dish:not( .open ) > .desc {
@@ -85,6 +81,7 @@
 			overflow: hidden;
 		}
 
+		.dish.lazy img,
 		.desc :is( span:empty, img:not( [src] ), a:not( [href] ), div:has( img:not( [src] ) ):has( a:not( [href] ) ) ) {
 			display: none;
 		}
@@ -204,7 +201,7 @@
 				<span></span>
 				<div>
 					<img height="100" width="100" loading="lazy" />
-					<a class="delivery">Заказать доставку</a>
+					<a>Заказать доставку</a>
 				</div>
 			</div>
 			<ul></ul>
