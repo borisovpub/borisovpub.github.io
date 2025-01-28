@@ -37,9 +37,9 @@
 			{ "@language": "en", "@value": "Minsk region" }
 		],
 		"streetAddress": [
-			{ "@language": "ru", "@value": "ул. Ватутина, 32а" },
-			{ "@language": "be", "@value": "вул. Ватуціна, 32а" },
-			{ "@language": "en", "@value": "Vatutina, 32a" }
+			{ "@language": "ru", "@value": "Борисов, Ватутина 32а" },
+			{ "@language": "be", "@value": "Барысаў, Ватуціна 32а" },
+			{ "@language": "en", "@value": "Barysaw, Vatutina 32a" }
 		],
 		"postalCode": "222520"
 	},
@@ -51,7 +51,12 @@
 		"contactType": "customer service",
 		"email": "info@irish-pub.by",
 		"telephone": [ "+375447661089", "+375177755755" ],
-		"availableLanguage": [ "Russian", "Belarusian", "English" ]
+		"availableLanguage": [ "Russian", "Belarusian", "English" ],
+		"sameAs": [
+			"//t.me/borisovpub",
+			"//viber.click/375447661089",
+			"//wa.me/375447661089"
+		]
 	},
 
 	"sameAs": [

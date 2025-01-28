@@ -68,14 +68,6 @@ header .logo img {
 	max-height: var( --header-logo-height );
 }
 
-header .social-networks {
-	gap: 12px;
-}
-
-header .social:before {
-	margin: 4px 0;
-}
-
 footer {
 	font-weight: 400;
 	font-size: 13px;
@@ -129,7 +121,7 @@ footer .details {
 }
 
 footer .social-networks {
-	margin: 20px -6px 0;
+	margin-top: 20px;
 }
 
 footer .application-desc {
@@ -189,10 +181,6 @@ nav .top {
 nav li {
 	position: relative;
 	margin: 0 0 12px 14px;
-}
-
-.social-networks {
-	display: flex;
 }
 
 .back-to-top {

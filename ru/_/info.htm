@@ -6,23 +6,25 @@
 	<div class="contents">
 		<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa9e4d0f26a4777dd339776dc02ee807a61247c1f16af26c767263d808461a66d&amp;source=constructor" width="100%" height="300" frameborder="0"></iframe>
 		<ul>
-			<li>
-				Борисов, Ватутина 32а
-				<a href="tel:+375447661089">+375 (44) 766-10-89</a>
-				<a class="day today">
-					Сегодня: с <span class="d-open"></span> до <span class="d-close"></span>
-					<svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="contact__arrow"><path d="M6.29289 1L3.64645 3.64645M3.64645 3.64645L3.29289 4M3.64645 3.64645L1 1M3.64645 3.64645L4 4" stroke="currentColor"></path></svg>
-				</a>
-				<div>
-					<div class="day d-1"><span>Понедельник:</span> <span class="d-open"></span> − <span class="d-close"></span></div>
-					<div class="day d-2"><span>Вторник:</span> <span class="d-open"></span> − <span class="d-close"></span></div>
-					<div class="day d-3"><span>Среда:</span> <span class="d-open"></span> − <span class="d-close"></span></div>
-					<div class="day d-4"><span>Четверг:</span> <span class="d-open"></span> − <span class="d-close"></span></div>
-					<div class="day d-5"><span>Пятница:</span> <span class="d-open"></span> − <span class="d-close"></span></div>
-					<div class="day d-6"><span>Суббота:</span> <span class="d-open"></span> − <span class="d-close"></span></div>
-					<div class="day d-0"><span>Воскресенье:</span> <span class="d-open"></span> − <span class="d-close"></span></div>
-				</div>
-			</li>
+			<template>
+				<li>
+					<div class="address"></div>
+					<div class="contacts"></div>
+					<div class="day today">
+						Сегодня: с <span class="d-open"></span> до <span class="d-close"></span>
+						<svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.29289 1L3.64645 3.64645M3.64645 3.64645L3.29289 4M3.64645 3.64645L1 1M3.64645 3.64645L4 4" stroke="currentColor"></path></svg>
+					</div>
+					<div>
+						<div class="day d-1"><span>Понедельник:</span> <span class="d-open"></span> − <span class="d-close"></span></div>
+						<div class="day d-2"><span>Вторник:</span> <span class="d-open"></span> − <span class="d-close"></span></div>
+						<div class="day d-3"><span>Среда:</span> <span class="d-open"></span> − <span class="d-close"></span></div>
+						<div class="day d-4"><span>Четверг:</span> <span class="d-open"></span> − <span class="d-close"></span></div>
+						<div class="day d-5"><span>Пятница:</span> <span class="d-open"></span> − <span class="d-close"></span></div>
+						<div class="day d-6"><span>Суббота:</span> <span class="d-open"></span> − <span class="d-close"></span></div>
+						<div class="day d-0"><span>Воскресенье:</span> <span class="d-open"></span> − <span class="d-close"></span></div>
+					</div>
+				</li>
+			</template>
 		</ul>
 	</div>
 </div>

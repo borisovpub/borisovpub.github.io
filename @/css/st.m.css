@@ -82,8 +82,11 @@ footer .details {
 
 footer .social-networks {
 	margin: 25px 0;
-	display: flex;
 	justify-content: center;
+}
+
+footer .applications {
+	font-size: 12px;
 }
 
 footer .apps {
@@ -116,4 +119,8 @@ footer .apps {
 .modal {
 	width: 100%;
 	height: 100%;
+}
+
+.m-info {
+
 }

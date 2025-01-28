@@ -2,10 +2,12 @@
 
 	const Array =		globalThis.Array;
 	const Date =		globalThis.Date;
+	const Promise =		globalThis.Promise;
+	const Math =		globalThis.Math;
+
 	const document =	globalThis.document;
 	const location =	globalThis.location;
 	const history =		globalThis.history;
-	const Math =		globalThis.Math;
 
 	const fetch =		globalThis.fetch;
 	const parseInt =	globalThis.parseInt;
@@ -18,7 +20,7 @@
 	 * @param { number } time
 	 * @returns { Promise< void > }
 	 */
-	const timeout = async ( time ) => new globalThis.Promise( ( resolve ) => globalThis.setTimeout( resolve, time ) );
+	const timeout = async ( time ) => new Promise( ( resolve ) => globalThis.setTimeout( resolve, time ) );
 
 	/** @noinline */
 	const createScript = ( src ) => {
@@ -53,82 +55,147 @@
 	};
 
 	/**
-	 * @param { Date } date
-	 * @returns { Promise< { day: number, status: boolean } > }
+	 * @param { * } v
+	 * @returns { string }
 	 */
-	const getScheduleStatus = async ( date = new Date() ) =>
-		( await fetchSchedule() ).times[
-			date.getDay() * 48 + date.getUTCHours() * 2 + Math.floor( date.getUTCMinutes() / 30 )
-		]
-	;
+	const pad2 = ( v ) => {
+		v = Math.round( v ).toString();
+		return ( v.length < 2 ? '0' : '' ) + v;
+	};
 
 	/**
-	 * @param { number } day
-	 * @returns { Promise< { open: string, close: string } > }
+	 * @param { number } time
+	 * @returns { string }
 	 */
-	const getSchedule = async ( day ) =>
-		( await fetchSchedule() ).schedule[ day ]
-	;
+	const toTime = ( time ) => pad2( time ) + ':' + pad2( ( time % 1 ) * 60 );
 
 	/**
-	 * @returns { Promise< { schedule: { open: string, close: string }[], times: { day: number, status: boolean }[] } >}
+	 * @typedef { {
+	 *     address: string,
+	 *     email: string,
+	 *     telephone: string,
+	 *     social: string[],
+	 *     hours: [ number, number ][],
+	 *     getStatus: () => { day: number, status: boolean },
+	 * } } Organization
 	 */
-	let fetchSchedule = async () => {
 
-		let p = fetch( '/organization.ld.json' )
-			.then( ( response ) => response.json() )
-			.then( ( { openingHoursSpecification } ) => {
+	/**
+	 * @typedef { Organization[] & {
+	 *     getSchedule: function( number= ): [ number, number ][],
+	 *     getStatus: () => { day: number, status: boolean },
+	 * } } Organizations
+	 */
 
-				let UTC = Math.round( ( new Date() ).getTimezoneOffset() / 30 );
-				let L = 7 * 48;
+	/**
+	 * @returns { Promise< Organization > }
+	 */
+	let fetchOrganizations = async () => {
 
-				let schedule = [];
-				let r, times = new Array( L );
-				let d, days = 'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday'.split( ',' );
+		const DAYS = 'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday'.split( ',' );
 
-				for ( d = 0; d < 7; ++d ) {
-					times.fill( { day: d, status: false }, d * 48, ( d + 1 ) * 48 );
-				}
+		const getValue  = ( value ) => Array.isArray( value ) ? value[ 0 ] : value;
 
-				for ( let { dayOfWeek, opens, closes } of openingHoursSpecification ) {
+		const p = /** @type { Promise< Organization > } */ new Promise( async ( resolve ) => {
+
+			const result = /** @type { Organization }*/ [];
+
+			for ( let link of document.querySelectorAll( 'link[rel="alternate"][type="application/ld+json"]' ) ) {
+
+				let schema = await ( await fetch( link.getAttribute( 'href' ) ) ).json();
+
+				let hours = [];
+
+				// noinspection JSUnresolvedReference
+				for ( let { dayOfWeek, opens, closes } of schema.openingHoursSpecification ) {
 
 					opens = opens.split( ':' );
 					closes = closes.split( ':' );
 
-					let ot = opens[ 0 ] + ':' + opens[ 1 ];
-					let ct = closes[ 0 ] + ':' + closes[ 1 ];
+					opens = parseInt( opens[ 0 ] ) + parseInt( opens[ 1 ] ) / 60;
+					closes = parseInt( closes[ 0 ] ) + parseInt( closes[ 1 ] ) / 60;
 
-					opens = opens.map( ( t ) => parseInt( t ) );
-					closes = closes.map( ( t ) => parseInt( t ) );
-
-					opens = opens[ 0 ] * 2 + Math.round( opens[ 1 ] / 30 ) + UTC;
-					closes = closes[ 0 ] * 2 + Math.round( closes[ 1 ] / 30 ) + UTC;
-
-					if ( closes < opens ) closes += 48;
-
-					for ( d of Array.isArray( dayOfWeek ) ? dayOfWeek : [ dayOfWeek ] ) {
-
-						d = days.indexOf( d );
-						r = { day: d, status: true };
-
-						schedule[ d ] = { open: ot, close: ct };
-
-						let o = d * 48 + opens;
-						let c = d * 48 + closes;
-
-						for ( ; o<0; ++o ) times[ o + L ] = r;
-						for ( ; o<c; ++o ) times[ o % L ] = r;
-
+					for ( let day of Array.isArray( dayOfWeek ) ? dayOfWeek : [ dayOfWeek ] ) {
+						hours[ DAYS.indexOf( day ) ] = [ opens, closes ];
 					}
 
 				}
 
-				return ( fetchSchedule = async () => ( { schedule, times } ) )();
+				// noinspection JSUnresolvedReference
+				result.push( {
 
-			} )
-		;
+					address:	schema.address.streetAddress.find( ( a ) => a[ '@language' ] == 'ru' )[ '@value' ],
+					email:		getValue( schema.contactPoint.email ),
+					telephone:	getValue( schema.contactPoint.telephone ),
+					social:		schema.contactPoint.sameAs,
+					hours:		hours,
 
-		return ( fetchSchedule = async () => p )();
+					getStatus( date = new Date() ) {
+
+						const L = 7 * 48;
+
+						const times = new Array( L );
+
+						for ( let d = 0; d < 7; ++d ) {
+							times.fill( { day: d, status: false }, d * 48, ( d + 1 ) * 48 );
+						}
+
+						for ( let d = 0; d < 7; ++d ) {
+
+							let r = { day: d, status: true };
+
+							let t = this.hours[ d ];
+							let o = d * 48 + Math.round( t[ 0 ] * 2 );
+							let c = d * 48 + Math.round( t[ 1 ] * 2 );
+
+							if ( c < o ) c += 48;
+
+							for ( ; o<0; ++o ) times[ o + L ] = r;
+							for ( ; o<c; ++o ) times[ o % L ] = r;
+
+						}
+
+						return ( this.getStatus = ( date = new Date() ) => times[
+							date.getDay() * 48 + date.getHours() * 2 + Math.floor( date.getMinutes() / 30 )
+						] )( date );
+
+					},
+
+				} );
+
+			}
+
+			result.getSchedule = ( day = ( new Date() ).getDay() ) => {
+
+				let o = Number.POSITIVE_INFINITY;
+				let c = Number.NEGATIVE_INFINITY;
+				for ( let f of result ) {
+					let t = f.hours[ day ];
+					o = Math.min( o, t[ 0 ] );
+					c = Math.max( o, ( t[ 1 ] < o ? 24 : 0 ) + t[ 1 ] );
+				}
+				if ( c >= 24 ) c -= 24;
+
+				return [ o, c ];
+
+			};
+
+			result.getStatus = ( date = new Date() ) => {
+
+				let s;
+				for ( let f of result ) {
+					s = f.getStatus( date );
+					if ( s.status ) break;
+				}
+				return s;
+
+			};
+
+			resolve( result );
+
+		} );
+
+		return ( fetchOrganizations = async () => p )();
 
 	};
 
@@ -192,35 +259,39 @@
 
 	document.querySelectorAll( '.worktime' ).forEach( ( worktime ) => {
 
-		worktime.addEventListener( 'click', async () => {
-
-			let popup = await openPopup( 'worktime' );
-
-			for ( let day = 0; day < 7; ++day ) {
-				let { open, close } = await getSchedule( day );
-				let d = popup.querySelector( '.day.d-' + day );
-				d.querySelector( '.d-open' ).textContent = open;
-				d.querySelector( '.d-close' ).textContent = close;
-			}
-
-			let today = await getScheduleStatus();
-			let day = popup.querySelector( '.day.d-' + today.day );
-
-			day.classList.add( 'd-today' );
-			if ( !today.status ) day.classList.add( 'd-closed' );
-
-		} );
-
 		worktime.update = async () => {
 			worktime.classList.add( 'loading' );
-			let { open, close } = await getSchedule( ( await getScheduleStatus() ).day );
-			worktime.textContent = open + '-' + close;
+			let [ o, c ] = ( await fetchOrganizations() ).getSchedule();
+			worktime.textContent = toTime( o ) + '-' + toTime( c );
 			worktime.classList.remove( 'loading' );
 		};
 
 		worktime.update().then( () => {} );
 
 		globalThis.setInterval( worktime.update, 1e3 * 60 );
+
+		if ( !worktime.classList.contains( 'info' ) ) {
+
+			worktime.addEventListener( 'click', async () => {
+
+				let popup = await openPopup( 'worktime' );
+				let organizations = await fetchOrganizations();
+
+				for ( let day = 0; day < 7; ++day ) {
+					let [ o, c ] = organizations.getSchedule( day );
+					popup.querySelector( `.day.d-${ day } .d-open` ).textContent = toTime( o );
+					popup.querySelector( `.day.d-${ day } .d-close` ).textContent = toTime( c );
+				}
+
+				let today = organizations.getStatus();
+				let day = popup.querySelector( '.day.d-' + today.day );
+
+				day.classList.add( 'd-today' );
+				if ( !today.status ) day.classList.add( 'd-closed' );
+
+			} );
+
+		}
 
 	} );
 
@@ -229,24 +300,55 @@
 		info.addEventListener( 'click', async () => {
 
 			let popup = await openPopup( 'info' );
+			let ul = popup.querySelector( 'ul' );
+			let organizationTemplate = ul.querySelector( 'ul template' );
 
-			let d, open, close;
+			for ( let f of await fetchOrganizations() ) {
 
-			for ( let day = 0; day < 7; ++day ) {
-				( { open, close } = await getSchedule( day ) );
-				d = popup.querySelector( '.day.d-' + day );
-				d.querySelector( '.d-open' ).textContent = open;
-				d.querySelector( '.d-close' ).textContent = close;
+				let t;
+
+				let organization = organizationTemplate.content.cloneNode( true );
+				let contacts = organization.querySelector( '.contacts' );
+
+				if ( f.telephone ) {
+					let a = document.createElement( 'a' );
+					a.setAttribute( 'href', 'tel:' + f.telephone );
+					a.textContent = f.telephone.replace( /^\+(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})$/, '+$1 ($2) $3-$4-$5' );
+					contacts.appendChild( a );
+				}
+
+				for ( let s of f.social ) {
+					let a = document.createElement( 'a' );
+					a.setAttribute( 'href', s );
+					a.setAttribute( 'rel', 'nofollow' );
+					a.setAttribute( 'target', '_blank' );
+					a.classList.add( 'social' );
+					contacts.appendChild( a );
+				}
+
+				organization.querySelector( '.address' ).textContent = f.address;
+
+				for ( let day = 0; day < 7; ++day ) {
+
+					t = f.hours[ day ];
+
+					organization.querySelector( `.day.d-${ day } .d-open` ).textContent = toTime( t[ 0 ] );
+					organization.querySelector( `.day.d-${ day } .d-close` ).textContent = toTime( t[ 1 ] );
+
+				}
+
+				t = f.hours[ f.getStatus().day ];
+
+				organization.querySelector( '.day.today .d-open' ).textContent = toTime( t[ 0 ] );
+				organization.querySelector( '.day.today .d-close' ).textContent = toTime( t[ 1 ] );
+
+				organization.querySelector( '.day.today' ).addEventListener( 'click', ( event ) => {
+					event.currentTarget.classList.toggle( 'click' )
+				} );
+
+				ul.appendChild( organization );
+
 			}
-
-			( { open, close } = await getSchedule( ( await getScheduleStatus() ).day ) );
-			d = popup.querySelector( '.day.today' );
-			d.querySelector( '.d-open' ).textContent = open;
-			d.querySelector( '.d-close' ).textContent = close;
-
-			popup.querySelector( 'a.day' ).addEventListener( 'click', ( event ) => {
-				event.currentTarget.classList.toggle( 'click' );
-			} );
 
 		} );
 
