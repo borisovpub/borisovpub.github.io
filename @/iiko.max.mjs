@@ -118,8 +118,6 @@ export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 		// пробегаемся по всем продуктам и создаём
 		source.products.forEach( ( source ) => {
 
-			if ( !source.isIncluded && !( include || '-included' in source.flags ) ) return;
-
 				// создаём продукт
 			let product = /** @type { Product } */ {
 				name: {
