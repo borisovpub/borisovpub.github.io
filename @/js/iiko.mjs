@@ -31,7 +31,6 @@ export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 	 * @property { string } img
 	 * @property { number } size
 	 * @property { number } price
-	 * @property { boolean } isIncluded
 	 * @property { APIModifier } modifier
 	 */
 
@@ -56,7 +55,7 @@ export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 	 * @property { boolean } [mini]
 	 * @property { boolean } [noSite=false]
 	 * @property { Product[] } [products] дерево пордуктов группы
-	 * @property { GroupCollection } [groups] дерево дочерних групп
+	 * @property { GroupCollection } [groups] дерево дочерних группf
 	 */
 
 	/** @typedef { Group[] & Record< string, Group > } GroupCollection */
@@ -121,8 +120,6 @@ export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 
 		// пробегаемся по всем продуктам и создаём
 		source.products.forEach( ( source ) => {
-
-			if ( !source.isIncluded && !( include || '-included' in source.flags ) ) return;
 
 				// создаём продукт
 			let product = /** @type { Product } */ {
@@ -249,6 +246,7 @@ export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 
 	let response;
 	do {
+		// response = await globalThis.fetch( `http://borisovpub.42web.io/iiko/${ groupID }.json` );
 		response = await globalThis.fetch( `https://irish-pub-by.tiiny.io/?${ groupID }.json` );
 	} while ( !response.ok );
 

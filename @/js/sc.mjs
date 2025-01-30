@@ -67,7 +67,7 @@
 	 * @param { number } time
 	 * @returns { string }
 	 */
-	const toTime = ( time ) => pad2( time ) + ':' + pad2( ( time % 1 ) * 60 );
+	const toTime = ( time ) => pad2( time >> 0 ) + ':' + pad2( ( time % 1 ) * 60 );
 
 	/**
 	 * @typedef { {
@@ -107,7 +107,7 @@
 				let hours = [];
 
 				// noinspection JSUnresolvedReference
-				for ( let { dayOfWeek, opens, closes } of schema.openingHoursSpecification ) {
+				for ( let { dayOfWeek = DAYS, opens, closes } of Array.isArray( schema.openingHoursSpecification ) ? schema.openingHoursSpecification : [ schema.openingHoursSpecification ] ) {
 
 					opens = opens.split( ':' );
 					closes = closes.split( ':' );
@@ -127,7 +127,7 @@
 					address:	schema.address.streetAddress.find( ( a ) => a[ '@language' ] == 'ru' )[ '@value' ],
 					email:		getValue( schema.contactPoint.email ),
 					telephone:	getValue( schema.contactPoint.telephone ),
-					social:		schema.contactPoint.sameAs,
+					social:		schema.contactPoint.sameAs || [],
 					hours:		hours,
 
 					getStatus( date = new Date() ) {
@@ -343,7 +343,8 @@
 				organization.querySelector( '.day.today .d-close' ).textContent = toTime( t[ 1 ] );
 
 				organization.querySelector( '.day.today' ).addEventListener( 'click', ( event ) => {
-					event.currentTarget.classList.toggle( 'click' )
+					popup.querySelectorAll( '.day.click' ).forEach( ( day ) => day.classList.remove( 'click' ) );
+					event.currentTarget.classList.add( 'click' );
 				} );
 
 				ul.appendChild( organization );
