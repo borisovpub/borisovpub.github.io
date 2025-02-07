@@ -117,10 +117,6 @@ ul {
 	width: 100%;
 }
 
-.layout > .content .left a:hover {
-	text-decoration: underline;
-}
-
 .layout > .content .right {
 	margin-bottom: 50px;
 }
@@ -136,6 +132,10 @@ header {
 footer {
 	background: var( --footer-bg );
 	color: var( --footer-fg );
+}
+
+nav .top a:hover {
+	text-decoration: underline;
 }
 
 nav :is( li, h1 ) {

@@ -47,7 +47,7 @@
 			display: grid;
 			grid-template-columns: auto min-content;
 			grid-gap: 0 20px;
-			margin: 5px 0;
+			margin-top: 5px;
 		}
 
 		.dish > :has( > .name ) {
@@ -56,7 +56,7 @@
 		}
 
 		.dish > ul {
-			margin-left: 30px;
+			margin: 0 0 5px 30px;
 			grid-column-start: 1;
 			grid-column-end: 3;
 		}
@@ -104,7 +104,7 @@
 
 		.desc > .loading:after {
 			position: absolute;
-			left: calc( 10px + 50px - 24px / 2 );
+			left: calc( 50px - 24px / 2 );
 			top: calc( 5px + 50px - 24px / 2 );
 		}
 
@@ -147,7 +147,7 @@
 			display: none;
 		}
 
-		.down img {
+		nav .bottom img {
 			display: block;
 			overflow: hidden;
 			width: 100%;
@@ -204,7 +204,6 @@
 					<a>Заказать доставку</a>
 				</div>
 			</div>
-			<ul></ul>
 		</li>
 	</template>
 
@@ -247,6 +246,8 @@
 		 */
 		const createDishProduct = async ( product ) => {
 
+			let v;
+
 			let result = dishTemplate.content.cloneNode( true ).querySelector( '.dish' );
 
 			result.querySelector( '.name' ).textContent = getText( product.name );
@@ -261,22 +262,9 @@
 				result.classList.toggle( 'open' );
 			} );
 
-
-			if ( product.modifiers ) {
-
-				for ( let child of product.modifiers ) {
-					result.querySelector( 'ul' ).appendChild( await createDishProduct( child ) );
-				}
-
-			} else {
-
-				let v;
-
-				if ( ( v = product?.units?.[ 0 ] ) ) {
-					if ( v.size ) result.querySelector( '.weight' ).textContent = v.size;
-					if ( v.price ) result.querySelector( '.price' ).textContent = toNumber( ( v.price / 100 ).toFixed( 2 ) );
-				}
-
+			if ( ( v = product?.units?.[ 0 ] ) ) {
+				if ( v.size ) result.querySelector( '.weight' ).textContent = v.size;
+				if ( v.price ) result.querySelector( '.price' ).textContent = toNumber( ( v.price / 100 ).toFixed( 2 ) );
 			}
 
 			if ( product.desc ) {
@@ -289,11 +277,8 @@
 				container.classList.add( 'loading' );
 				img.addEventListener( 'load', () => container.classList.remove( 'loading' ) );
 				img.setAttribute( 'alt', product.name.ru || '' );
-				img.setAttribute( 'src', 'https://wsrv.nl/?h=100&output=webp&maxage=31d&url=' + product.img );
-			}
-
-			if ( product.info ) {
-				result.querySelector( '.desc a' ).setAttribute( 'href', DELIVERY + 'product/' + product.info );
+				img.setAttribute( 'src', '//wsrv.nl/?h=100&output=webp&maxage=31d&url=' + product.img );
+				img.setAttribute( 'crossorigin', 'anonymous' );
 			}
 
 			return result;
@@ -344,6 +329,12 @@
 					"position": 1,
 					"name": "Ирландский Паб в Борисове",
 					"item": "https://irish-pub.by/ru/"
+				},
+				{
+					"@type": "ListItem",
+					"position": 2,
+					"name": "Меню",
+					"item": "https://irish-pub.by/ru/menu/"
 				}
 			]
 		}
@@ -413,7 +404,7 @@
 					<li><a href="/ru/lunch/">Обеды</a></li>
 					<li><a href="//delivery.irish-pub.by">Доставка</a></li>
 				</ul>
-				<div class="down">
+				<div class="bottom">
 					<img loading="lazy" src="/@/sl.webp" width="700" height="800" alt="Салаты" />
 				</div>
 			</nav>

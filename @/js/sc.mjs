@@ -272,7 +272,9 @@
 
 		if ( !worktime.classList.contains( 'info' ) ) {
 
-			worktime.addEventListener( 'click', async () => {
+			worktime.addEventListener( 'click', async ( event ) => {
+
+				event.preventDefault();
 
 				let popup = await openPopup( 'worktime' );
 				let organizations = await fetchOrganizations();
@@ -297,7 +299,9 @@
 
 	document.querySelectorAll( '.info' ).forEach( ( info ) => {
 
-		info.addEventListener( 'click', async () => {
+		info.addEventListener( 'click', async ( event ) => {
+
+			event.preventDefault();
 
 			let popup = await openPopup( 'info' );
 			let ul = popup.querySelector( 'ul' );
