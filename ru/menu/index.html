@@ -235,9 +235,6 @@
 
 		import { openPopup } from '/@/js/sc.mjs';
 
-		/** @noinline */
-		const DELIVERY = '//delivery.irish-pub.by/';
-
 		/** @type { Promise< Group > } */
 		const kitchen = import( '/@/js/iiko.mjs' ).then( ( { default: iiko } ) => iiko( '7dce3406-3ade-4147-ab6c-8cca59035bfa' ) );
 
@@ -322,7 +319,7 @@
 			}
 
 			if ( product.info ) {
-				result.querySelector( '.desc a' ).setAttribute( 'href', DELIVERY + 'product/' + product.info );
+				result.querySelector( '.desc a' ).setAttribute( 'href', '//delivery.irish-pub.by/product/' + product.info );
 			}
 
 			return result;
@@ -339,7 +336,6 @@
 			let title = result.querySelector( '.title' );
 
 			title.textContent = getText( group.name );
-			if ( group.info ) title.setAttribute( 'href', DELIVERY + 's/' + group.info );
 
 			for ( let product of group.products ) {
 				result.querySelector( 'ul' ).appendChild( await createDishProduct( product ) );
