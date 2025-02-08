@@ -112,6 +112,7 @@
 			border-radius: 8px;
 			overflow: hidden;
 			object-fit: cover;
+			cursor: pointer;
 		}
 
 		.desc a {
@@ -155,6 +156,18 @@
 			object-fit: cover;
 		}
 
+		.m-image img {
+			display: block;
+			object-fit: cover;
+			max-height: 100%;
+		}
+
+		.popup.loading:has( .m-image ):after {
+			position: absolute;
+			left: calc( 50% - 12px );
+			top: calc( 50% - 12px );
+		}
+
 	</style>
 
 	<style type="text/css" media="all and ( max-width: 1139px )">
@@ -173,6 +186,17 @@
 			border-radius: 8px;
 			background: #fff;
 			padding: 8px 16px;
+		}
+
+		.m-image {
+			background: rgba( 0, 0, 0, 0.8 );
+		}
+
+		.m-image img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			padding: 20px;
 		}
 
 		@media all and ( max-width: 800px ) {
@@ -208,6 +232,8 @@
 	</template>
 
 	<script type="module">
+
+		import { openPopup } from '/@/js/sc.mjs';
 
 		/** @noinline */
 		const DELIVERY = '//delivery.irish-pub.by/';
@@ -272,13 +298,27 @@
 			}
 
 			if ( product.img ) {
+
 				let container = result.querySelector( '.desc div' );
 				let img = result.querySelector( '.desc img' );
-				container.classList.add( 'loading' );
-				img.addEventListener( 'load', () => container.classList.remove( 'loading' ) );
+
 				img.setAttribute( 'alt', product.name.ru || '' );
 				img.setAttribute( 'src', '//wsrv.nl/?h=100&output=webp&maxage=31d&url=' + product.img );
 				img.setAttribute( 'crossorigin', 'anonymous' );
+
+				img.addEventListener( 'click', async () => {
+					let popup = await openPopup( 'img' );
+					let img = popup.querySelector( 'img' );
+					img.setAttribute( 'alt', product.name.ru || '' );
+					img.setAttribute( 'src', '//wsrv.nl/?h=800&output=webp&maxage=31d&url=' + product.img );
+					img.setAttribute( 'crossorigin', 'anonymous' );
+					img.addEventListener( 'load', () => popup.classList.remove( 'loading' ) );
+					popup.classList.add( 'loading' );
+				} );
+
+				img.addEventListener( 'load', () => container.classList.remove( 'loading' ) );
+				container.classList.add( 'loading' );
+
 			}
 
 			if ( product.info ) {

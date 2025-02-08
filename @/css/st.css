@@ -273,6 +273,10 @@ footer .social:before {
 	background: #F0F0F0;
 }
 
+.modal .close:hover path {
+	fill: #333;
+}
+
 main h2 {
 	font-weight: 900;
 	font-size: 30px;

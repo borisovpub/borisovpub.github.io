@@ -1,4 +1,3 @@
-( ( globalThis ) => {
 
 	const Array =		globalThis.Array;
 	const Date =		globalThis.Date;
@@ -82,13 +81,13 @@
 
 	/**
 	 * @typedef { Organization[] & {
-	 *     getSchedule: function( number= ): [ number, number ][],
+	 *     getSchedule: function( number= ): [ number, number ],
 	 *     getStatus: () => { day: number, status: boolean },
 	 * } } Organizations
 	 */
 
 	/**
-	 * @returns { Promise< Organization > }
+	 * @returns { Promise< Organizations > }
 	 */
 	let fetchOrganizations = async () => {
 
@@ -96,9 +95,9 @@
 
 		const getValue  = ( value ) => Array.isArray( value ) ? value[ 0 ] : value;
 
-		const p = /** @type { Promise< Organization > } */ new Promise( async ( resolve ) => {
+		const p = /** @type { Promise< Organizations > } */ new Promise( async ( resolve ) => {
 
-			const result = /** @type { Organization }*/ [];
+			const result = /** @type { Organizations }*/ [];
 
 			for ( let link of document.querySelectorAll( 'link[rel="alternate"][type="application/ld+json"]' ) ) {
 
@@ -122,7 +121,7 @@
 				}
 
 				// noinspection JSUnresolvedReference
-				result.push( {
+				result.push( /** @type { Organization } */ {
 
 					address:	schema.address.streetAddress.find( ( a ) => a[ '@language' ] == 'ru' )[ '@value' ],
 					email:		getValue( schema.contactPoint.email ),
@@ -184,6 +183,7 @@
 
 				let s;
 				for ( let f of result ) {
+					// noinspection JSCheckFunctionSignatures
 					s = f.getStatus( date );
 					if ( s.status ) break;
 				}
@@ -199,7 +199,6 @@
 
 	};
 
-	// noinspection JSMismatchedCollectionQueryUpdate
 	let dl = globalThis.dataLayer = [];
 	let gtag = globalThis.gtag = function() { dl.push( arguments ) };
 	let ym = globalThis.ym = function() { ym.a.push( arguments ) };
@@ -361,10 +360,13 @@
 
 	document.querySelectorAll( '.menu' ).forEach( ( menu ) => {
 
-		menu.addEventListener( 'click', async () =>
-			await openPopup( 'menu' )
-		);
+		menu.addEventListener( 'click', () => openPopup( 'menu' ) );
 
 	} );
 
-} )( globalThis );
+	export {
+		timeout,
+		openPopup,
+		closePopup,
+		fetchOrganizations,
+	};
