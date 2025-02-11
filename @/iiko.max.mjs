@@ -243,7 +243,7 @@ export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 
 	let response;
 	do {
-		response = await fetch( `https://irish-pub-by.tiiny.io/?${ groupID }.json` );
+		response = await fetch( `https://irish-pub-by.tiiny.io/?iiko/${ groupID }.json` );
 	} while ( !response.ok );
 
 	return computeGroup( await response.json() );
