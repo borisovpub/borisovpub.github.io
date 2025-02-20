@@ -246,7 +246,7 @@ export default async ( /** string */ groupID ) /** Promise< Group > */ => {
 
 	let response;
 	do {
-		response = await globalThis.fetch( `http://irishpubby.vh101.hosterby.com/cloud/menu/${ groupID }.json` );
+		response = await globalThis.fetch( `https://irishpubby.vh101.hosterby.com/cloud/menu/${ groupID }.json` );
 	} while ( !response.ok );
 
 	return computeGroup( await response.json() );
